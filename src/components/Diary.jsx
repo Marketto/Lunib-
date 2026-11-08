@@ -5,6 +5,7 @@ import { Character } from './Characters.jsx';
 import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, filterLog, latestWeight, medKey, toCsv, toMg } from '../lib/meds.js';
 import { formatAge } from '../lib/age.js';
+import ImportCsv, { IMPORT_BTN } from './ImportCsv.jsx';
 import SOURCES from '../../content/sources.json';
 
 const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
@@ -614,6 +615,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
 export default function Diary({ lang, kids, active, setActive, growth, meds, setGrowth, setMeds, setKid }) {
   const s = DIARY_TEXT[lang];
   const [tab, setTab] = useState('growth');
+  const [importing, setImporting] = useState(false);
   const kid = kids[Math.max(0, active)];
   const months = kid ? Math.floor(monthsAt(kid.birth, today())) : null;
   return (
@@ -652,6 +654,9 @@ export default function Diary({ lang, kids, active, setActive, growth, meds, set
         </>
       )}
       {tab === 'meds' && <Meds lang={lang} kid={kid} months={months} meds={meds} setMeds={setMeds} growth={growth} />}
+      {importing
+        ? <ImportCsv lang={lang} kids={kids} active={Math.max(0, active)} growth={growth} meds={meds} setGrowth={setGrowth} setMeds={setMeds} onClose={() => setImporting(false)} />
+        : <button className="btn ghost wide" style={{ marginTop: 14 }} onClick={() => setImporting(true)}>⤒ {IMPORT_BTN[lang]}</button>}
     </div>
   );
 }

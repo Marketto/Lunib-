@@ -1,19 +1,32 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { execSync } from 'node:child_process';
+import pkg from './package.json' with { type: 'json' };
+
+const sha = (() => {
+  if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 7);
+  try { return execSync('git rev-parse --short HEAD').toString().trim(); } catch { return 'dev'; }
+})();
 
 export default defineConfig({
   base: './',
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+    __APP_BUILD__: JSON.stringify(sha),
+    __APP_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10))
+  },
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
-      injectRegister: 'auto',
+      // Aggiornamento gestito dall'app (src/lib/update.js): scarica in background e applica in un momento sicuro
+      registerType: 'prompt',
+      injectRegister: null,
       includeAssets: ['icons/*.svg', 'icons/*.png'],
       manifest: {
         name: 'Lunibù',
         short_name: 'Lunibù',
-        description: 'Risposte basate sulla ricerca per genitori di bambini 0-3 anni',
+        description: 'Ricerca rapida di dati scientifici per genitori di bambini 0-6 anni',
         id: 'lunibu',
         lang: 'it',
         theme_color: '#23284f',

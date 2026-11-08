@@ -1,6 +1,6 @@
 {
   "name": "lunibu",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "PoC: risposte scientifiche per genitori 0-3 anni, offline, IT/RU",
   "scripts": {
     "content": "node scripts/build-growth.mjs && node scripts/build-content.mjs",
@@ -17,7 +17,9 @@
     "framer-motion": "^14.10.1",
     "minisearch": "^7.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "qrcode-generator": "^1.4.4",
+    "read-excel-file": "^5.8.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",

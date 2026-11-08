@@ -5,9 +5,11 @@ import { KidForm } from './Onboarding.jsx';
 import { LangSwitch, tap } from './Common.jsx';
 import { useAudio } from '../lib/audio/useAudio.jsx';
 import InstallCard from './Install.jsx';
+import { ShareCard, VersionLine } from './Share.jsx';
+import SyncCard from './SyncCard.jsx';
 import { TERMS } from '../lib/terms.js';
 
-export default function Settings({ lang, setLang, kids, setKids, onReset }) {
+export default function Settings({ lang, setLang, kids, setKids, onReset, syncState, onSync }) {
   const s = t(lang);
   const audio = useAudio();
   const [draft, setDraft] = useState(kids);
@@ -32,13 +34,16 @@ export default function Settings({ lang, setLang, kids, setKids, onReset }) {
           <motion.button className="btn" onClick={() => setDraft((d) => [...d, { birth: '', name: '' }])} {...tap}>＋ {s.addKid}</motion.button>
         )}
         <motion.button className="btn primary" disabled={!valid || !dirty} {...tap}
-          onClick={() => { setKids(draft.map((k) => ({ birth: k.birth, name: (k.name || '').trim() }))); setSaved(true); }}>
+          onClick={() => { setKids(draft.map((k) => ({ ...k, birth: k.birth, name: (k.name || '').trim() }))); setSaved(true); }}>
           {saved && !dirty ? `✓ ${s.save}` : s.save}
         </motion.button>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>{s.privacyNote}</p>
 
+      <SyncCard lang={lang} state={syncState} onMerge={onSync} />
+
       <InstallCard lang={lang} />
+      <ShareCard lang={lang} />
 
       <h2 style={{ marginTop: 30 }}>{s.language}</h2>
       <div style={{ marginTop: 10 }}><LangSwitch lang={lang} setLang={setLang} /></div>
@@ -70,6 +75,7 @@ export default function Settings({ lang, setLang, kids, setKids, onReset }) {
       </div>
       <a className="btn block" style={{ marginTop: 14, textDecoration: 'none' }} href="#condizioni">{TERMS[lang].title}</a>
       <p className="footnote">{s.disclaimer}</p>
+      <p className="small muted" style={{ marginTop: 24, textAlign: 'center' }}><VersionLine lang={lang} /></p>
     </div>
   );
 }

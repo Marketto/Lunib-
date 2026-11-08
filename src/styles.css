@@ -598,3 +598,33 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .block-src .refs { flex-wrap: wrap; }
 .med-rules { margin: 6px 0 0; padding-left: 18px; }
 .med-rules li { margin: 4px 0; }
+
+/* ---------- Aggiornamento, condivisione, versione ---------- */
+.update-banner { position: fixed; top: max(10px, env(safe-area-inset-top)); left: 12px; right: 12px; margin: 0 auto; max-width: 520px; z-index: 60;
+  display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 10px 12px 10px 16px; border-radius: 18px;
+  background: #2e2f57; color: #fff; font-size: .88rem; box-shadow: 0 10px 30px rgba(20,20,60,.25); }
+.update-banner .btn.small { padding: 7px 12px; font-size: .82rem; background: #fff; color: #2e2f57; border-radius: 12px; white-space: nowrap; }
+.share-card { margin-top: 26px; padding: 18px; border-radius: 24px; background: var(--paper); box-shadow: var(--lift); text-align: center; }
+.share-card h2 { margin: 0 0 4px; }
+.share-card .row { justify-content: center; margin: 12px 0 6px; }
+.share-card .qr { width: 168px; margin: 8px auto 4px; padding: 8px; background: #fff; border-radius: 16px; }
+.share-card .qr svg { display: block; width: 100%; height: auto; }
+.share-card .url { word-break: break-all; }
+.version-line { white-space: nowrap; }
+
+/* Import CSV e condivisione tra genitori */
+.imp, .sync-card { margin-top: 18px; }
+.imp-table { overflow-x: auto; margin: 8px 0; border-radius: 12px; border: 1.5px solid rgba(46,47,87,.12); }
+.imp-table table { border-collapse: collapse; font-size: .8rem; min-width: 100%; }
+.imp-table th, .imp-table td { padding: 6px 10px; text-align: left; white-space: nowrap; border-bottom: 1px solid rgba(46,47,87,.08); }
+.imp-table th { background: var(--mist-2); color: var(--ink); }
+.imp-map { display: flex; gap: 10px; align-items: flex-end; }
+.imp-map .field:first-child { flex: 1; min-width: 0; }
+.imp-map .field.narrow { width: 84px; flex: none; }
+.sync-card .row .btn { flex: 1 1 auto; }
+.sync-card .qr { width: 240px; max-width: 100%; margin: 8px auto; padding: 8px; background: #fff; border-radius: 16px; }
+.sync-card .qr svg { display: block; width: 100%; height: auto; }
+.sync-card input[type=password], .sync-card input[type=file], .imp input[type=file] { width: 100%; padding: 12px 14px; border-radius: 14px; border: 2px solid var(--mist-2); background: var(--paper); font: inherit; }
+.sync-doses { margin: 6px 0; padding-left: 18px; }
+.sync-sheet { position: fixed; inset: 0; z-index: 90; display: flex; align-items: flex-end; justify-content: center; background: rgba(46,47,87,.45); }
+.sync-sheet-in { width: min(100%, 520px); max-height: 90vh; overflow: auto; padding: 20px 18px calc(20px + env(safe-area-inset-bottom)); border-radius: 24px 24px 0 0; background: var(--paper); box-shadow: var(--lift); }

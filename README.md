@@ -127,6 +127,16 @@ ricerca; il livello di evidenza è dichiarato (forte / media / raccomandato da l
   **L'app non calcola né suggerisce dosi.**
 - Ogni avviso e ogni indicazione mostra in linea le sue fonti; le schede mostrano le fonti per voce e per sezione.
 
+## Aggiornamenti, condivisione e sincronizzazione
+
+- **Versione** (`package.json`) e build (commit) visibili in fondo all'app e in Bimbi; novità in `CHANGELOG.md`.
+- **Aggiornamento automatico**: il service worker scarica la nuova versione in background e la applica quando l'app
+  va in secondo piano, così non si perde un modulo a metà (`src/lib/update.js`).
+- **Condividi l'app**: Web Share, copia link e QR code, senza dati.
+- **Import** da altre app: CSV o Excel (.xlsx) con mappatura delle colonne, tutto letto sul telefono.
+- **Altro genitore**: file `.lunibu` cifrato (PBKDF2 + AES-GCM, frase segreta) oppure QR con gli ultimi aggiornamenti
+  nel frammento dell'URL (mai inviato al server); unione per id con tombstone per le cancellazioni (`src/lib/sync.js`).
+
 ## Lavorare al progetto con agenti (Claude Code)
 
 `CLAUDE.md` descrive regole e **router**: ogni operazione va all'agente con il modello/effort adatto

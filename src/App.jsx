@@ -10,6 +10,12 @@ import Settings from './components/Settings.jsx';
 import Sounds, { MiniPlayer } from './components/Sounds.jsx';
 import { GamesList, GameView } from './components/Games.jsx';
 import Diary from './components/Diary.jsx';
+import { QuickReceive } from './components/SyncCard.jsx';
+import { syncFromHash } from './lib/sync.js';
+import { VersionLine, SHARE_TEXT } from './components/Share.jsx';
+import { initUpdates, onUpdate, applyUpdate, dismissUpdated } from './lib/update.js';
+
+initUpdates();
 import { Home, CardView, CategoryView } from './components/Views.jsx';
 import { Backdrop, Mobile } from './components/Paper.jsx';
 import { TermsPage, TermsAccept } from './components/Terms.jsx';
@@ -118,6 +124,25 @@ function BottomNav({ view, go, lang }) {
 // Ogni bimbo ha un id stabile: i diari (crescita, medicine) restano collegati anche se l'ordine cambia
 const withIds = (kids) => kids.map((k) => (k.id ? k : { ...k, id: Math.random().toString(36).slice(2, 10) }));
 
+function UpdateBanner({ lang }) {
+  const [u, setU] = React.useState({ ready: false, justUpdated: null });
+  React.useEffect(() => onUpdate((x) => setU({ ...x })), []);
+  const s = SHARE_TEXT[lang];
+  const msg = u.justUpdated ? s.updated(u.justUpdated.to) : u.ready ? s.ready : null;
+  return (
+    <AnimatePresence>
+      {msg && (
+        <motion.div className="update-banner" role="status" initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -40, opacity: 0 }}>
+          <span>{msg}</span>
+          {u.ready && !u.justUpdated
+            ? <button className="btn small" onClick={applyUpdate}>{s.now}</button>
+            : <button className="btn small" onClick={dismissUpdated}>{s.ok}</button>}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function App() {
   const [state, setState] = useState(() => {
     const st = loadState();
@@ -125,16 +150,29 @@ export default function App() {
   });
   const update = (patch) => setState((s) => ({ ...s, ...patch, ...(patch.kids ? { kids: withIds(patch.kids) } : {}) }));
   useEffect(() => { saveState(state); }, [state]);
+  // Elenchi del diario: aggiorna updatedAt dei record nuovi/modificati e registra una lapide per quelli eliminati
+  const setList = (key) => (next) => setState((s) => {
+    const prev = s[key] || [];
+    const now = new Date().toISOString();
+    const strip = ({ updatedAt, ...r }) => JSON.stringify(r); // eslint-disable-line no-unused-vars
+    const old = new Map(prev.map((r) => [r.id, r]));
+    const stamped = next.map((r) => { const o = old.get(r.id); return !o || strip(o) !== strip(r) ? { ...r, updatedAt: now } : r; });
+    const keep = new Set(next.map((r) => r.id));
+    const deleted = { ...(s.deleted || {}) };
+    for (const r of prev) if (!keep.has(r.id)) deleted[r.id] = now;
+    return { ...s, [key]: stamped, deleted };
+  });
+  const applySync = (m) => setState((s) => ({ ...s, kids: withIds(m.kids), growth: m.growth, meds: m.meds, deleted: m.deleted }));
   return (
     <MotionConfig reducedMotion="user">
       <AudioProvider ambientPref={state.ambient} setAmbientPref={(v) => update({ ambient: v })}>
-        <Shell state={state} setState={setState} update={update} />
+        <Shell state={state} setState={setState} update={update} setList={setList} applySync={applySync} />
       </AudioProvider>
     </MotionConfig>
   );
 }
 
-function Shell({ state, setState, update }) {
+function Shell({ state, setState, update, setList, applySync }) {
   const [route, go] = useHashRoute();
   const [query, setQuery] = useState('');
   const [group, setGroup] = useState('sleep');
@@ -154,6 +192,13 @@ function Shell({ state, setState, update }) {
     prevView.current = v;
   }, [route]); // eslint-disable-line react-hooks/exhaustive-deps
   const { lang, kids, accepted } = state;
+  const [incoming, setIncoming] = useState(() => syncFromHash(window.location.hash));
+  useEffect(() => {
+    const on = () => { const d = syncFromHash(window.location.hash); if (d) setIncoming(d); };
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
+  const closeIncoming = () => { window.history.replaceState(null, '', window.location.pathname + window.location.search); setIncoming(null); };
 
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   useEffect(() => { if (accepted) loadIndex(lang).catch(() => {}); }, [lang, accepted]);
@@ -204,12 +249,12 @@ function Shell({ state, setState, update }) {
   else if (view === 'gioco' && param) content = <GameView lang={lang} id={param} />;
   else if (view === 'diario') content = (
     <Diary {...common} growth={state.growth || []} meds={state.meds || []}
-      setGrowth={(g) => update({ growth: g })} setMeds={(m) => update({ meds: m })}
+      setGrowth={setList('growth')} setMeds={setList('meds')}
       setKid={(k) => update({ kids: kids.map((x) => (x.id === k.id ? k : x)) })} />
   );
   else if (view === 'suoni') content = <Sounds {...common} group={group} setGroup={setGroup} />;
   else if (view === 'bimbi') content = (
-    <Settings lang={lang} setLang={setLang} kids={kids}
+    <Settings lang={lang} setLang={setLang} kids={kids} syncState={state} onSync={applySync}
       setKids={(k) => update({ kids: k, activeKid: Math.min(state.activeKid, k.length - 1) })}
       onReset={() => { clearState(); setState({ lang, accepted: false, kids: [], activeKid: 0, ambient: false }); go(''); }} />
   );
@@ -222,6 +267,8 @@ function Shell({ state, setState, update }) {
       {splashEl}
       {sweep.k > 0 && <CharacterParade k={sweep.k} set={sweep.set} color={sweep.color} />}
       <Backdrop night={night} />
+      <UpdateBanner lang={lang} />
+      {incoming && <QuickReceive lang={lang} data={incoming} state={state} onMerge={applySync} onClose={closeIncoming} />}
       <main className="app">
         <div className="topbar">
           <AnimatePresence>
@@ -243,7 +290,7 @@ function Shell({ state, setState, update }) {
             {content}
           </motion.div>
         </AnimatePresence>
-        <p className="footnote">{s.disclaimerShort}. {s.emergency}. <a href="#condizioni">{TERMS[lang].title}</a></p>
+        <p className="footnote">{s.disclaimerShort}. {s.emergency}. <a href="#condizioni">{TERMS[lang].title}</a> · <VersionLine lang={lang} /></p>
       </main>
       <MiniPlayer lang={lang} go={go} />
       <BottomNav view={view} go={go} lang={lang} />
