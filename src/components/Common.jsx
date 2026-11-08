@@ -28,10 +28,10 @@ export function kidLabel(kid, i, lang) {
 }
 
 // Selettore del figlio: una "pillola" per bimbo + "Tutte le età"
-export function KidPills({ kids, active, setActive, lang, id = 'kp' }) {
+export function KidPills({ kids, active, setActive, lang, id = 'kp', noAll = false }) {
   const s = t(lang);
   const items = kids.map((k, i) => ({ i, label: kidLabel(k, i, lang), age: formatAge(k.birth, lang) }));
-  items.push({ i: -1, label: s.allAges, age: '' });
+  if (!noAll) items.push({ i: -1, label: s.allAges, age: '' });
   return (
     <div className="kid-pills" role="tablist" aria-label={s.searchFor}>
       {items.map((it) => (

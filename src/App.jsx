@@ -9,6 +9,7 @@ import Onboarding from './components/Onboarding.jsx';
 import Settings from './components/Settings.jsx';
 import Sounds, { MiniPlayer } from './components/Sounds.jsx';
 import { GamesList, GameView } from './components/Games.jsx';
+import Diary from './components/Diary.jsx';
 import { Home, CardView, CategoryView } from './components/Views.jsx';
 import { Backdrop, Mobile } from './components/Paper.jsx';
 import { TermsPage, TermsAccept } from './components/Terms.jsx';
@@ -17,7 +18,7 @@ import { CAT } from './lib/categories.js';
 import { getDocsSync } from './lib/search.js';
 import { TERMS, TERMS_VERSION } from './lib/terms.js';
 import { spring, tap } from './components/Common.jsx';
-import { IconBack, IconAsk, IconSounds, IconKids, IconMusic, IconMusicOff, IconBall as IconBlocks } from './components/Icons.jsx';
+import { IconBack, IconAsk, IconSounds, IconKids, IconMusic, IconMusicOff, IconBall as IconBlocks, IconDiary } from './components/Icons.jsx';
 
 // Hash semplici (#card--febbre, #cat--sonno, #suoni, #bimbi): funzionano in ogni contenitore
 function useHashRoute() {
@@ -95,6 +96,7 @@ function BottomNav({ view, go, lang }) {
     ['', s.navAsk, <IconAsk key="a" />, ['', 'card', 'cat']],
     ['giochi', s.navGames, <IconBlocks key="g" />, ['giochi', 'gioco']],
     ['suoni', s.navSounds, <IconSounds key="s" />, ['suoni']],
+    ['diario', s.navDiary, <IconDiary key="d" />, ['diario']],
     ['bimbi', s.navKids, <IconKids key="k" />, ['bimbi']]
   ];
   return (
@@ -113,12 +115,15 @@ function BottomNav({ view, go, lang }) {
   );
 }
 
+// Ogni bimbo ha un id stabile: i diari (crescita, medicine) restano collegati anche se l'ordine cambia
+const withIds = (kids) => kids.map((k) => (k.id ? k : { ...k, id: Math.random().toString(36).slice(2, 10) }));
+
 export default function App() {
   const [state, setState] = useState(() => {
     const st = loadState();
-    return { ambient: false, ...st, lang: st.lang || guessLang() };
+    return { ambient: false, ...st, kids: withIds(st.kids || []), lang: st.lang || guessLang() };
   });
-  const update = (patch) => setState((s) => ({ ...s, ...patch }));
+  const update = (patch) => setState((s) => ({ ...s, ...patch, ...(patch.kids ? { kids: withIds(patch.kids) } : {}) }));
   useEffect(() => { saveState(state); }, [state]);
   return (
     <MotionConfig reducedMotion="user">
@@ -197,6 +202,11 @@ function Shell({ state, setState, update }) {
   else if (view === 'condizioni') content = <TermsPage lang={lang} />;
   else if (view === 'giochi') content = <GamesList {...common} />;
   else if (view === 'gioco' && param) content = <GameView lang={lang} id={param} />;
+  else if (view === 'diario') content = (
+    <Diary {...common} growth={state.growth || []} meds={state.meds || []}
+      setGrowth={(g) => update({ growth: g })} setMeds={(m) => update({ meds: m })}
+      setKid={(k) => update({ kids: kids.map((x) => (x.id === k.id ? k : x)) })} />
+  );
   else if (view === 'suoni') content = <Sounds {...common} group={group} setGroup={setGroup} />;
   else if (view === 'bimbi') content = (
     <Settings lang={lang} setLang={setLang} kids={kids}

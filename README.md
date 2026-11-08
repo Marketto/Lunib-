@@ -112,6 +112,21 @@ Sezione con giochi adulto-bambino o da proporre al bambino da solo, filtrati per
 "da manuale" (famiglia di orsetti), materiali, passi, perché funziona e fonti. Inclusi solo giochi con riscontri nella
 ricerca; il livello di evidenza è dichiarato (forte / media / raccomandato da linee guida / tappa di sviluppo).
 
+## Diario: crescita e medicine
+
+- **Crescita**: peso, lunghezza/altezza (con posizione sdraiato/in piedi, ±0,7 cm) e circonferenza cranica
+  (fino a 36 mesi) sulle curve OMS: WHO Child Growth Standards 2006 (0–5 anni) e WHO Growth Reference 2007 (5–6 anni),
+  metodo LMS con le tabelle ufficiali OMS (`scripts/data-raw`, dai pacchetti `WorldHealthOrganization/anthro` e
+  `anthroplus`). Percentili, grafico con le curve 3–15–50–85–97 ed età corretta per i nati pretermine.
+  Avvisi non diagnostici con fonte (OMS Module C, NICE NG75, RCPCH): fuori ±2/±3 DS, sotto lo 0,4° centile,
+  incrocio di centili (soglie NICE in base al peso alla nascita), calo neonatale > 10%, valori improbabili.
+- **Medicine**: registrazione di qualsiasi farmaco, filtri per farmaco e periodo, grafico delle dosi al giorno, export CSV.
+  Per **paracetamolo e ibuprofene** (solo principi attivi, nessuna marca) un **controllo** prudenziale – intervallo,
+  numero di dosi, mg/kg per dose e al giorno, età/peso minimi, controindicazioni, durata – con limiti verificati su
+  RCP AIFA, NICE NG143, NHS, MHRA, SIP 2016 e linee guida del Minzdrav RF (`src/data/meds.json`).
+  **L'app non calcola né suggerisce dosi.**
+- Ogni avviso e ogni indicazione mostra in linea le sue fonti; le schede mostrano le fonti per voce e per sezione.
+
 ## Lavorare al progetto con agenti (Claude Code)
 
 `CLAUDE.md` descrive regole e **router**: ogni operazione va all'agente con il modello/effort adatto

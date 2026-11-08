@@ -317,7 +317,7 @@
           "from": 12,
           "to": 60
         },
-        "L'AAP raccomanda più livelli di protezione: sorveglianza costante di un adulto a portata di braccio per i bambini sotto i 5 anni, recinzione della piscina sui 4 lati con cancelletto a chiusura automatica, giubbotti salvagente, saper chiamare aiuto e fare la rianimazione."
+        "L'AAP raccomanda più livelli di protezione: sorveglianza costante di un adulto a portata di braccio per lattanti, bambini piccoli e chi non nuota ancora bene, recinzione della piscina sui 4 lati con cancelletto a chiusura automatica, giubbotti salvagente, saper chiamare aiuto e fare la rianimazione."
       ],
       "tips": [
         "In acqua un adulto sempre a portata di braccio, senza telefono in mano.",
@@ -358,7 +358,7 @@
           "from": 12,
           "to": 60
         },
-        "AAP рекомендует несколько уровней защиты: постоянный присмотр взрослого на расстоянии вытянутой руки для детей до 5 лет, ограждение бассейна с 4 сторон с самозакрывающейся калиткой, спасательные жилеты, умение вызвать помощь и провести реанимацию."
+        "AAP рекомендует несколько уровней защиты: постоянный присмотр взрослого на расстоянии вытянутой руки для младенцев, малышей и тех, кто ещё плохо плавает, ограждение бассейна с 4 сторон с самозакрывающейся калиткой, спасательные жилеты, умение вызвать помощь и провести реанимацию."
       ],
       "tips": [
         "В воде взрослый всегда на расстоянии вытянутой руки и без телефона.",
@@ -380,7 +380,7 @@
     ],
     "it": {
       "title": "Bici e casco",
-      "summary": "Il casco riduce di circa la metà il rischio di trauma cranico in caso di incidente in bici. Va indossato sempre, anche per brevi tragitti e sulle bici senza pedali.",
+      "summary": "Il casco si associa a circa la metà in meno di traumi cranici in caso di caduta o incidente in bici. Va indossato sempre, anche per brevi tragitti e sulle bici senza pedali.",
       "keywords": [
         "bici",
         "bicicletta",
@@ -393,7 +393,7 @@
       ],
       "research": [
         "Una meta-analisi di 40 studi su oltre 64.000 ciclisti feriti (Olivier e Creighton 2017) ha trovato che il casco si associa a circa il 51% in meno di traumi cranici, il 69% in meno di traumi cranici gravi e il 65% in meno di traumi cranici mortali.",
-        "Lo studio riguarda tutte le età: non esistono dati specifici per i più piccoli, ma la protezione della testa vale allo stesso modo."
+        "La meta-analisi riguarda tutte le età e non riporta stime separate per i bambini piccoli, ma la protezione della testa è un principio valido anche per loro."
       ],
       "tips": [
         "Casco della misura giusta: appoggiato in piano sulla fronte, cinghie a V sotto le orecchie, un dito tra cinghia e mento.",
@@ -404,7 +404,7 @@
     },
     "ru": {
       "title": "Велосипед и шлем",
-      "summary": "Шлем примерно вдвое снижает риск черепно-мозговой травмы при падении с велосипеда. Его надо надевать всегда, даже на короткие поездки и на беговеле.",
+      "summary": "Шлем связан примерно с вдвое меньшим числом травм головы при падении или аварии на велосипеде. Его надо надевать всегда, даже на короткие поездки и на беговеле.",
       "keywords": [
         "велосипед",
         "шлем",
@@ -416,7 +416,7 @@
       ],
       "research": [
         "Метаанализ 40 исследований, более 64 000 пострадавших велосипедистов (Olivier, Creighton, 2017): шлем связан примерно с 51% меньшим числом травм головы, 69% меньшим числом тяжёлых и 65% меньшим числом смертельных травм головы.",
-        "Исследование охватывает все возрасты: отдельных данных для малышей нет, но защита головы работает так же."
+        "Метаанализ охватывает все возрасты и не приводит отдельных оценок для малышей, но защита головы действует и для них."
       ],
       "tips": [
         "Шлем по размеру: ровно на лбу, ремешки буквой V под ушами, между ремешком и подбородком проходит палец.",

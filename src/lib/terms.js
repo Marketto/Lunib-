@@ -1,12 +1,12 @@
 // Condizioni d'uso e scarico di responsabilità (IT / RU).
 // NB: testo da far verificare a un legale prima della pubblicazione.
-export const TERMS_VERSION = '1.1';
+export const TERMS_VERSION = '1.2';
 export const TERMS_DATE = '2026-11-08';
 
 export const TERMS = {
   it: {
     title: "Condizioni d'uso e avvertenze",
-    updated: 'Versione 1.1 · 8 novembre 2026',
+    updated: 'Versione 1.2 · 8 novembre 2026',
     accept: "Ho letto e accetto le condizioni d'uso",
     read: "Leggi le condizioni d'uso",
     mustAccept: 'Per continuare devi accettare le condizioni.',
@@ -24,6 +24,8 @@ export const TERMS = {
         'I contenuti sono sintesi semplificate e possono essere incompleti, non aggiornati o non adatti alla situazione specifica del tuo bambino. La ricerca scientifica evolve e le raccomandazioni possono cambiare dopo la data di redazione. L\'indice di pertinenza, il filtro per età (con tolleranza di ±3 mesi) e i risultati della ricerca sono indicativi e possono mostrare informazioni non pertinenti o ometterne altre.'],
       ['Fonti e marchi',
         'Ogni scheda indica le fonti consultate. La citazione di un\'organizzazione o di una pubblicazione non implica alcuna affiliazione, approvazione o sponsorizzazione da parte loro. Marchi e nomi citati appartengono ai rispettivi titolari.'],
+      ['Diario di crescita e medicine',
+        'Il diario confronta le misure con gli standard OMS e segnala valori lontani da quelli tipici: non è una diagnosi e una singola misura può essere imprecisa. Il controllo delle medicine NON calcola né suggerisce dosi: verifica soltanto intervalli, numero di dosi e dose per kg rispetto a limiti prudenziali tratti da schede tecniche AIFA e linee guida (NICE, NHS, MHRA, SIP), solo per paracetamolo e ibuprofene. L\'assenza di avvisi non garantisce che una dose sia corretta. Segui sempre la prescrizione, la confezione e il foglietto illustrativo, e per qualsiasi dubbio chiedi al pediatra o al farmacista. I dati restano solo sul dispositivo: esporta il CSV se vuoi conservarli.'],
       ['Suoni e musica',
         'I suoni per dormire e per giocare vanno usati a volume basso, con il dispositivo lontano dal lettino e sotto la responsabilità dell\'adulto. L\'app non può misurare il volume reale nella stanza.'],
       ['Responsabilità dell\'utente',
@@ -38,7 +40,7 @@ export const TERMS = {
   },
   ru: {
     title: 'Условия использования и предупреждения',
-    updated: 'Версия 1.1 · 8 ноября 2026',
+    updated: 'Версия 1.2 · 8 ноября 2026',
     accept: 'Я прочитал(а) и принимаю условия использования',
     read: 'Прочитать условия использования',
     mustAccept: 'Чтобы продолжить, нужно принять условия.',
@@ -56,6 +58,8 @@ export const TERMS = {
         'Материалы — упрощённые обзоры, они могут быть неполными, устаревшими или не подходить к конкретной ситуации вашего ребёнка. Наука развивается, и рекомендации могут измениться после даты подготовки. Показатель релевантности, фильтр по возрасту (с допуском ±3 месяца) и результаты поиска ориентировочны и могут показывать нерелевантную информацию или пропускать нужную.'],
       ['Источники и товарные знаки',
         'В каждой карточке указаны источники. Упоминание организации или публикации не означает связи с ней, её одобрения или спонсорства. Упомянутые товарные знаки и названия принадлежат их владельцам.'],
+      ['Дневник роста и лекарств',
+        'Дневник сравнивает измерения со стандартами ВОЗ и отмечает значения, далёкие от типичных: это не диагноз, и одно измерение может быть неточным. Проверка лекарств НЕ рассчитывает и не предлагает дозы: она лишь сверяет интервалы, число доз и дозу на кг с осторожными пределами из официальных инструкций (AIFA) и рекомендаций (NICE, NHS, MHRA, SIP, Минздрав РФ) — только для парацетамола и ибупрофена. Отсутствие предупреждений не гарантирует, что доза правильная. Всегда следуйте назначению, упаковке и инструкции, а при любых сомнениях спрашивайте педиатра или фармацевта. Данные хранятся только на устройстве: экспортируйте CSV, если хотите их сохранить.'],
       ['Звуки и музыка',
         'Звуки для сна и игры следует использовать на низкой громкости, держа устройство подальше от кроватки, под ответственность взрослого. Приложение не может измерить реальную громкость в комнате.'],
       ['Ответственность пользователя',

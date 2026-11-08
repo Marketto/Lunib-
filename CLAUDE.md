@@ -12,12 +12,14 @@ e invitare ad approfondire e verificare.
    (estrazione da paper, sintesi, riscrittura, traduzione, cambio di fasce d'età) si esegue un passaggio di verifica
    indipendente con l'agente `evidence-verifier` (modello affidabile, effort alto). Chi scrive non verifica se stesso.
 3. **Linguaggio onesto**: associazione ≠ causa; numeri e fasce d'età come nella fonte; prove deboli dichiarate deboli.
-4. **Sicurezza bambini**: soglie di sicurezza (miele < 12 mesi, schermi < 2 anni, frutta secca intera < 5 anni,
+4. **Mai suggerire dosi di farmaci**: il diario controlla solo limiti prudenziali; nessun testo deve poter essere letto come posologia.
+5. **Fonti ovunque**: ogni indicazione mostra le sue fonti in linea (componenti `Refs`/`InlineRefs`).
+6. **Sicurezza bambini**: soglie di sicurezza (miele < 12 mesi, schermi < 2 anni, frutta secca intera < 5 anni,
    latte crudo < 5 anni, nuoto) sono voci `strict: true` senza tolleranza. Schede su possibili patologie: `alert`.
-5. **Mai committare dati sensibili**: niente email personali, token, chiavi, file `.env`. L'unica identità ammessa è
+7. **Mai committare dati sensibili**: niente email personali, token, chiavi, file `.env`. L'unica identità ammessa è
    l'account GitHub del proprietario (autore commit con indirizzo `users.noreply.github.com`).
    Lo script `npm run check:secrets` e gli hook lo controllano.
-6. **Disclaimer sempre visibile** (app e README): strumento di ricerca rapida, non sostituisce i professionisti.
+8. **Disclaimer sempre visibile** (app e README): strumento di ricerca rapida, non sostituisce i professionisti.
 
 ## Router: chi fa cosa (modello ed effort per costo/affidabilità)
 
@@ -60,7 +62,9 @@ npm run check:secrets  # cerca email personali, token e chiavi nei file tracciat
 - `content/cards/<categoria>.json` schede (IT+RU, voci con fasce `from/to`, `strict`, `guide`)
 - `content/games.json` giochi con livello di evidenza (`forte|media|raccomandato|tappa`)
 - `content/sources.json` fonti verificate (id → citazione, URL, tipo)
+- `src/data/meds.json` limiti di controllo per paracetamolo/ibuprofene (dati di ricerca: ogni modifica → `evidence-verifier`)
+- `src/data/growth.json` generato da `scripts/build-growth.mjs` (tabelle LMS OMS in `scripts/data-raw`)
 - `src/lib/` età, ricerca, i18n, audio (`audio/engine.js`, `audio/realistic.js`, `audio/meter.js`)
-- `src/components/` UI (Paper, Characters, Scenes, Views, Sounds, Games, VolumeCheck, Terms)
+- `src/components/` UI (Paper, Characters, Scenes, Views, Sounds, Games, Diary, VolumeCheck, Terms)
 - `scripts/` build contenuti, controlli, hook
 - `.claude/agents/`, `.claude/skills/` configurazione agentica

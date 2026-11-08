@@ -174,8 +174,25 @@ export function CategoryView({ lang, id, months, kids, active, setActive, go }) 
 }
 
 
-function Block({ className = '', title, items, lang, showRanges, delay = 0 }) {
+// Fonte di una voce: autore/ente della fonte citato nel testo (es. "Mindell 2015", "OMS")
+const AUTHOR_ALIASES = { WHO: ['OMS', 'ВОЗ'], AAP: ['AAP'], NICE: ['NICE'], CDC: ['CDC'], EFSA: ['EFSA'], UNICEF: ['UNICEF', 'ЮНИСЕФ'] };
+export function refsFor(text, sources = []) {
+  const t = String(text);
+  return sources.filter((src) => {
+    const first = (src.label.match(/^[\p{L}'’-]+/u) || [''])[0];
+    if (first.length > 2 && t.includes(first)) return true;
+    return (AUTHOR_ALIASES[first] || []).some((a) => t.includes(a));
+  });
+}
+
+export function InlineRefs({ list }) {
+  if (!list.length) return null;
+  return <span className="refs">{list.map((x) => <a key={x.id} href={x.url} target="_blank" rel="noreferrer" title={x.label}>{x.id}</a>)}</span>;
+}
+
+function Block({ className = '', title, items, lang, showRanges, delay = 0, sources = [] }) {
   if (!items.length) return null;
+  const s = t(lang);
   return (
     <motion.section className={`block ${className}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
       transition={{ ...spring, delay: delay * 0.08 }}>
@@ -184,12 +201,13 @@ function Block({ className = '', title, items, lang, showRanges, delay = 0 }) {
         {items.map((x, i) => (
           <motion.li key={i} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }}
             transition={{ ...spring, delay: delay * 0.08 + i * 0.04 }}>
-            {x.t}
+            {x.t} <InlineRefs list={refsFor(x.t, sources)} />
             {showRanges && x.from != null && <span className="chip">{formatRange(x.from, x.to, lang)}</span>}
             {!showRanges && x.match === 'near' && <NearChip lang={lang} />}
           </motion.li>
         ))}
       </ul>
+      {sources.length > 0 && items.some((x) => !refsFor(x.t, sources).length) && <p className="block-src">{s.blockSources} <InlineRefs list={sources} /></p>}
     </motion.section>
   );
 }
@@ -276,7 +294,7 @@ export function CardView({ lang, id, months, kids, active, setActive, go }) {
       </motion.header>
 
       {sec.urgent.length > 0 && (
-        <Block className="urgent" title={s.urgentTitle} items={sec.urgent} lang={lang} showRanges={all} delay={1} />
+        <Block className="urgent" title={s.urgentTitle} items={sec.urgent} lang={lang} sources={card.sources} showRanges={all} delay={1} />
       )}
       {kids.length > 0 && (
         <>
@@ -286,9 +304,9 @@ export function CardView({ lang, id, months, kids, active, setActive, go }) {
       )}
 
       <Guide items={sec.guide} sources={card.sources} lang={lang} showRanges={all} />
-      <Block title={s.whatResearchSays} items={sec.research} lang={lang} showRanges={all} delay={2} />
-      <Block className="tips" title={s.whatYouCanDo} items={sec.tips} lang={lang} showRanges={all} delay={3} />
-      <Block className="flags" title={s.redFlags} items={sec.redFlags} lang={lang} showRanges={all} delay={4} />
+      <Block title={s.whatResearchSays} items={sec.research} lang={lang} sources={card.sources} showRanges={all} delay={2} />
+      <Block className="tips" title={s.whatYouCanDo} items={sec.tips} lang={lang} sources={card.sources} showRanges={all} delay={3} />
+      <Block className="flags" title={s.redFlags} items={sec.redFlags} lang={lang} sources={card.sources} showRanges={all} delay={4} />
 
       <motion.div className="quote-card" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
         {quote}

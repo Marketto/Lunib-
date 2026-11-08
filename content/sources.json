@@ -1,737 +1,852 @@
 {
- "A1": {
-  "label": "Moon RY et al. Sleep-Related Infant Deaths: Updated 2022 Recommendations for Reducing Infant Deaths in the Sleep Environment. Pediatrics. 2022;150(1):e2022057990",
-  "url": "https://doi.org/10.1542/peds.2022-057990",
-  "type": "linea guida"
- },
- "A2": {
-  "label": "Paruthi S et al. Recommended Amount of Sleep for Pediatric Populations: A Consensus Statement of the American Academy of Sleep Medicine. J Clin Sleep Med. 2016;12(6):785-786",
-  "url": "https://doi.org/10.5664/jcsm.5866",
-  "type": "consensus"
- },
- "A3": {
-  "label": "World Health Organization. Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. Geneva: WHO; 2019",
-  "url": "https://www.who.int/publications/i/item/9789241550536",
-  "type": "linea guida"
- },
- "A4": {
-  "label": "Gradisar M et al. Behavioral Interventions for Infant Sleep Problems: A Randomized Controlled Trial. Pediatrics. 2016;137(6):e20151486",
-  "url": "https://doi.org/10.1542/peds.2015-1486",
-  "type": "RCT"
- },
- "A5": {
-  "label": "Price AMH et al. Five-year follow-up of harms and benefits of behavioral infant sleep intervention: randomized trial. Pediatrics. 2012;130(4):643-651",
-  "url": "https://doi.org/10.1542/peds.2011-3467",
-  "type": "RCT"
- },
- "A6": {
-  "label": "Mindell JA et al. Bedtime routines for young children: a dose-dependent association with sleep outcomes. Sleep. 2015;38(5):717-722",
-  "url": "https://doi.org/10.5665/sleep.4662",
-  "type": "studio osservazionale"
- },
- "A7": {
-  "label": "Kramer MS, Kakuma R. Optimal duration of exclusive breastfeeding. Cochrane Database Syst Rev. 2012;(8):CD003517",
-  "url": "https://doi.org/10.1002/14651858.CD003517.pub2",
-  "type": "revisione sistematica"
- },
- "A8": {
-  "label": "Victora CG et al. Breastfeeding in the 21st century: epidemiology, mechanisms, and lifelong effect. Lancet. 2016;387(10017):475-490",
-  "url": "https://doi.org/10.1016/S0140-6736(15)01024-7",
-  "type": "revisione sistematica"
- },
- "A9": {
-  "label": "World Health Organization. WHO Guideline for complementary feeding of infants and young children 6–23 months of age. Geneva: WHO; 2023",
-  "url": "https://www.who.int/publications/i/item/9789240081864",
-  "type": "linea guida"
- },
- "A10": {
-  "label": "Fewtrell M et al. Complementary Feeding: A Position Paper by the ESPGHAN Committee on Nutrition. J Pediatr Gastroenterol Nutr. 2017;64(1):119-132",
-  "url": "https://doi.org/10.1097/MPG.0000000000001454",
-  "type": "position paper"
- },
- "A11": {
-  "label": "Du Toit G et al. Randomized trial of peanut consumption in infants at risk for peanut allergy (LEAP). N Engl J Med. 2015;372(9):803-813",
-  "url": "https://doi.org/10.1056/NEJMoa1414850",
-  "type": "RCT"
- },
- "A12": {
-  "label": "Perkin MR et al. Randomized Trial of Introduction of Allergenic Foods in Breast-Fed Infants (EAT). N Engl J Med. 2016;374(18):1733-1743",
-  "url": "https://doi.org/10.1056/NEJMoa1514210",
-  "type": "RCT"
- },
- "A13": {
-  "label": "Halken S et al. EAACI guideline: Preventing the development of food allergy in infants and young children (2020 update). Pediatr Allergy Immunol. 2021;32(5):843-858",
-  "url": "https://doi.org/10.1111/pai.13496",
-  "type": "linea guida"
- },
- "A14": {
-  "label": "Fangupo LJ et al. A Baby-Led Approach to Eating Solids and Risk of Choking. Pediatrics. 2016;138(4):e20160772",
-  "url": "https://doi.org/10.1542/peds.2016-0772",
-  "type": "RCT"
- },
- "A16": {
-  "label": "Ministero della Salute. Linee di indirizzo per la prevenzione del soffocamento da cibo in età pediatrica. Roma; 2017",
-  "url": "https://www.salute.gov.it/portale/documentazione/p6_2_2_1.jsp?lingua=italiano&id=2618",
-  "type": "linea guida"
- },
- "A17": {
-  "label": "Centers for Disease Control and Prevention (CDC). Preventing Botulism",
-  "url": "https://www.cdc.gov/botulism/prevention/index.html",
-  "type": "ente sanitario"
- },
- "A18": {
-  "label": "Braegger C et al. Vitamin D in the healthy European paediatric population. J Pediatr Gastroenterol Nutr. 2013;56(6):692-701",
-  "url": "https://doi.org/10.1097/MPG.0b013e31828f3c05",
-  "type": "position paper"
- },
- "A19": {
-  "label": "Saggese G et al. Vitamin D in pediatric age: consensus of the Italian Pediatric Society and the Italian Society of Preventive and Social Pediatrics, jointly with the Italian Federation of Pediatricians. Ital J Pediatr. 2018;44(1):51",
-  "url": "https://doi.org/10.1186/s13052-018-0488-7",
-  "type": "consensus"
- },
- "A20": {
-  "label": "Taylor CM et al. Picky/fussy eating in children: Review of definitions, assessment, prevalence and dietary intakes. Appetite. 2015;95:349-359",
-  "url": "https://doi.org/10.1016/j.appet.2015.07.026",
-  "type": "revisione"
- },
- "A21": {
-  "label": "Cooke L. The importance of exposure for healthy eating in childhood: a review. J Hum Nutr Diet. 2007;20(4):294-301",
-  "url": "https://doi.org/10.1111/j.1365-277X.2007.00804.x",
-  "type": "revisione"
- },
- "A22": {
-  "label": "Hewitt L et al. Tummy Time and Infant Health Outcomes: A Systematic Review. Pediatrics. 2020;145(6):e20192168",
-  "url": "https://doi.org/10.1542/peds.2019-2168",
-  "type": "revisione sistematica"
- },
- "A23": {
-  "label": "WHO Multicentre Growth Reference Study Group. WHO Motor Development Study: windows of achievement for six gross motor development milestones. Acta Paediatr Suppl. 2006;450:86-95",
-  "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02379.x",
-  "type": "studio multicentrico"
- },
- "A24": {
-  "label": "Zubler JM et al. Evidence-Informed Milestones for Developmental Surveillance Tools. Pediatrics. 2022;149(3):e2021052138",
-  "url": "https://doi.org/10.1542/peds.2021-052138",
-  "type": "revisione / consensus"
- },
- "A25": {
-  "label": "Durbin DR, Hoffman BD. Child Passenger Safety. Pediatrics. 2018;142(5):e20182460",
-  "url": "https://doi.org/10.1542/peds.2018-2460",
-  "type": "policy statement"
- },
- "A26": {
-  "label": "Legge 1 ottobre 2018, n. 117 (dispositivi antiabbandono, bambini sotto i 4 anni) e DM 2 ottobre 2019, n. 122",
-  "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2018-10-01;117",
-  "type": "norma"
- },
- "A27": {
-  "label": "Peden M et al. (eds). World report on child injury prevention. Geneva: WHO/UNICEF; 2008",
-  "url": "https://www.who.int/publications/i/item/9789241563574",
-  "type": "rapporto"
- },
- "B1": {
-  "label": "NICE. Fever in under 5s: assessment and initial management. NICE guideline NG143; 2019 (aggiornata 2021)",
-  "url": "https://www.nice.org.uk/guidance/ng143",
-  "type": "linea guida"
- },
- "B2": {
-  "label": "Chiappini E et al. 2016 Update of the Italian Pediatric Society Guidelines for Management of Fever in Children. J Pediatr. 2017;180:177-183.e1",
-  "url": "https://doi.org/10.1016/j.jpeds.2016.09.043",
-  "type": "linea guida"
- },
- "B3": {
-  "label": "AAP Subcommittee on Febrile Seizures. Febrile seizures: guideline for the neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011;127(2):389-394",
-  "url": "https://doi.org/10.1542/peds.2010-3318",
-  "type": "linea guida"
- },
- "B4": {
-  "label": "Offringa M et al. Prophylactic drug management for febrile seizures in children. Cochrane Database Syst Rev. 2021;6:CD003031",
-  "url": "https://doi.org/10.1002/14651858.CD003031.pub4",
-  "type": "revisione sistematica"
- },
- "B5": {
-  "label": "Benninga MA et al. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler (Rome IV). Gastroenterology. 2016;150(6):1443-1455.e2",
-  "url": "https://doi.org/10.1053/j.gastro.2016.02.016",
-  "type": "consensus"
- },
- "B6": {
-  "label": "Sung V et al. Lactobacillus reuteri to Treat Infant Colic: A Meta-analysis. Pediatrics. 2018;141(1):e20171811",
-  "url": "https://doi.org/10.1542/peds.2017-1811",
-  "type": "meta-analisi"
- },
- "B7": {
-  "label": "Barr RG et al. Effectiveness of educational materials designed to change knowledge and behaviors regarding crying and shaken-baby syndrome in mothers of newborns: a randomized, controlled trial. Pediatrics. 2009;123(3):972-980",
-  "url": "https://doi.org/10.1542/peds.2008-0908",
-  "type": "RCT"
- },
- "B8": {
-  "label": "Rosen R et al. Pediatric Gastroesophageal Reflux Clinical Practice Guidelines: Joint Recommendations of NASPGHAN and ESPGHAN. J Pediatr Gastroenterol Nutr. 2018;66(3):516-554",
-  "url": "https://doi.org/10.1097/MPG.0000000000001889",
-  "type": "linea guida"
- },
- "B9": {
-  "label": "Tabbers MM et al. Evaluation and treatment of functional constipation in infants and children: evidence-based recommendations from ESPGHAN and NASPGHAN. J Pediatr Gastroenterol Nutr. 2014;58(2):258-274",
-  "url": "https://doi.org/10.1097/MPG.0000000000000266",
-  "type": "linea guida"
- },
- "B10": {
-  "label": "Guarino A et al. ESPGHAN/ESPID evidence-based guidelines for the management of acute gastroenteritis in children in Europe: update 2014. J Pediatr Gastroenterol Nutr. 2014;59(1):132-152",
-  "url": "https://doi.org/10.1097/MPG.0000000000000375",
-  "type": "linea guida"
- },
- "B11": {
-  "label": "NICE. Bronchiolitis in children: diagnosis and management. NICE guideline NG9; 2015 (aggiornata 2021)",
-  "url": "https://www.nice.org.uk/guidance/ng9",
-  "type": "linea guida"
- },
- "B12": {
-  "label": "Ralston SL et al. Clinical Practice Guideline: The Diagnosis, Management, and Prevention of Bronchiolitis. Pediatrics. 2014;134(5):e1474-e1502",
-  "url": "https://doi.org/10.1542/peds.2014-2742",
-  "type": "linea guida"
- },
- "B13": {
-  "label": "Oduwole O et al. Honey for acute cough in children. Cochrane Database Syst Rev. 2018;4:CD007094",
-  "url": "https://doi.org/10.1002/14651858.CD007094.pub5",
-  "type": "revisione sistematica"
- },
- "B14": {
-  "label": "U.S. Food and Drug Administration. Use Caution When Giving Cough and Cold Products to Kids",
-  "url": "https://www.fda.gov/drugs/special-features/use-caution-when-giving-cough-and-cold-products-kids",
-  "type": "ente regolatorio"
- },
- "B15": {
-  "label": "Eichenfield LF et al. Guidelines of care for the management of atopic dermatitis: section 2. Management and treatment of atopic dermatitis with topical therapies. J Am Acad Dermatol. 2014;71(1):116-132",
-  "url": "https://doi.org/10.1016/j.jaad.2014.03.023",
-  "type": "linea guida"
- },
- "B16": {
-  "label": "Chalmers JR et al. Daily emollient during infancy for prevention of eczema: the BEEP randomised controlled trial. Lancet. 2020;395(10228):962-972",
-  "url": "https://doi.org/10.1016/S0140-6736(19)32984-8",
-  "type": "RCT"
- },
- "B17": {
-  "label": "Toumba KJ et al. Guidelines on the use of fluoride for caries prevention in children: an updated EAPD policy document. Eur Arch Paediatr Dent. 2019;20(6):507-516",
-  "url": "https://doi.org/10.1007/s40368-019-00464-2",
-  "type": "linea guida"
- },
- "B18": {
-  "label": "Massignan C et al. Signs and Symptoms of Primary Tooth Eruption: A Meta-analysis. Pediatrics. 2016;137(3):e20153501",
-  "url": "https://doi.org/10.1542/peds.2015-3501",
-  "type": "meta-analisi"
- },
- "B19": {
-  "label": "U.S. Food and Drug Administration. Safely Soothing Teething Pain in Infants and Children (avvertenza su collane e gioielli per la dentizione)",
-  "url": "https://www.fda.gov/consumers/consumer-updates/safely-soothing-teething-pain-infants-and-children",
-  "type": "ente regolatorio"
- },
- "B20": {
-  "label": "Doğramacı EJ, Rossi-Fedele G. Establishing the association between nonnutritive sucking behavior and malocclusions: a systematic review and meta-analysis. J Am Dent Assoc. 2016;147(12):926-934.e6",
-  "url": "https://doi.org/10.1016/j.adaj.2016.08.018",
-  "type": "meta-analisi"
- },
- "B21": {
-  "label": "Romeo RR et al. Beyond the 30-Million-Word Gap: Children’s Conversational Exposure Is Associated With Language-Related Brain Function. Psychol Sci. 2018;29(5):700-710",
-  "url": "https://doi.org/10.1177/0956797617742725",
-  "type": "studio osservazionale"
- },
- "B22": {
-  "label": "Dowdall N et al. Shared Picture Book Reading Interventions for Child Language Development: A Systematic Review and Meta-Analysis. Child Dev. 2020;91(2):e383-e399",
-  "url": "https://doi.org/10.1111/cdev.13225",
-  "type": "meta-analisi"
- },
- "B23": {
-  "label": "Klass P, Miller-Fitzwater A, High PC. Literacy Promotion: An Essential Component of Primary Care Pediatric Practice: Policy Statement. Pediatrics. 2024;154(6):e2024069090",
-  "url": "https://doi.org/10.1542/peds.2024-069090",
-  "type": "policy statement"
- },
- "B24": {
-  "label": "Hoff E et al. Dual language exposure and early bilingual development. J Child Lang. 2012;39(1):1-27",
-  "url": "https://doi.org/10.1017/S0305000910000759",
-  "type": "studio longitudinale"
- },
- "B25": {
-  "label": "AAP Council on Communications and Media. Media and Young Minds. Pediatrics. 2016;138(5):e20162591",
-  "url": "https://doi.org/10.1542/peds.2016-2591",
-  "type": "policy statement"
- },
- "B26": {
-  "label": "Madigan S et al. Association Between Screen Time and Children’s Performance on a Developmental Screening Test. JAMA Pediatr. 2019;173(3):244-250",
-  "url": "https://doi.org/10.1001/jamapediatrics.2018.5056",
-  "type": "studio di coorte"
- },
- "B27": {
-  "label": "Yogman M et al. The Power of Play: A Pediatric Role in Enhancing Development in Young Children. Pediatrics. 2018;142(3):e20182058",
-  "url": "https://doi.org/10.1542/peds.2018-2058",
-  "type": "clinical report"
- },
- "B28": {
-  "label": "Potegal M, Kosorok MR, Davidson RJ. Temper tantrums in young children: 1. Behavioral composition. J Dev Behav Pediatr. 2003;24(3):140-147",
-  "url": "https://doi.org/10.1097/00004703-200306000-00002",
-  "type": "studio osservazionale"
- },
- "B29": {
-  "label": "Belden AC, Thomson NR, Luby JL. Temper tantrums in healthy versus depressed and disruptive preschoolers: defining tantrum behaviors associated with clinical problems. J Pediatr. 2008;152(1):117-122",
-  "url": "https://doi.org/10.1016/j.jpeds.2007.06.030",
-  "type": "studio osservazionale"
- },
- "B30": {
-  "label": "Sege RD, Siegel BS. Effective Discipline to Raise Healthy Children. Pediatrics. 2018;142(6):e20183112",
-  "url": "https://doi.org/10.1542/peds.2018-3112",
-  "type": "policy statement"
- },
- "B31": {
-  "label": "Gershoff ET, Grogan-Kaylor A. Spanking and child outcomes: Old controversies and new meta-analyses. J Fam Psychol. 2016;30(4):453-469",
-  "url": "https://doi.org/10.1037/fam0000191",
-  "type": "meta-analisi"
- },
- "B32": {
-  "label": "Ahnert L et al. Transition to child care: associations with infant-mother attachment, infant negative emotion, and cortisol elevations. Child Dev. 2004;75(3):639-650",
-  "url": "https://doi.org/10.1111/j.1467-8624.2004.00698.x",
-  "type": "studio osservazionale"
- },
- "B33": {
-  "label": "Volling BL. Family transitions following the birth of a sibling: an empirical review of changes in the firstborn’s adjustment. Psychol Bull. 2012;138(3):497-528",
-  "url": "https://doi.org/10.1037/a0026921",
-  "type": "revisione"
- },
- "B34": {
-  "label": "Kaerts N et al. Readiness signs used to define the proper moment to start toilet training: a review of the literature. Neurourol Urodyn. 2012;31(4):437-440",
-  "url": "https://doi.org/10.1002/nau.21211",
-  "type": "revisione"
- },
- "B35": {
-  "label": "Hyman SL, Levy SE, Myers SM. Identification, Evaluation, and Management of Children With Autism Spectrum Disorder. Pediatrics. 2020;145(1):e20193447",
-  "url": "https://doi.org/10.1542/peds.2019-3447",
-  "type": "clinical report"
- },
- "B36": {
-  "label": "Robins DL et al. Validation of the Modified Checklist for Autism in Toddlers, Revised With Follow-up (M-CHAT-R/F). Pediatrics. 2014;133(1):37-45",
-  "url": "https://doi.org/10.1542/peds.2013-1813",
-  "type": "studio di validazione"
- },
- "B37": {
-  "label": "Taylor LE, Swerdfeger AL, Eslick GD. Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies. Vaccine. 2014;32(29):3623-3629",
-  "url": "https://doi.org/10.1016/j.vaccine.2014.04.085",
-  "type": "meta-analisi"
- },
- "B38": {
-  "label": "Legge 31 luglio 2017, n. 119 – Disposizioni urgenti in materia di prevenzione vaccinale",
-  "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-07-31;119",
-  "type": "norma"
- },
- "B39": {
-  "label": "Ministero della Salute. Piano Nazionale di Prevenzione Vaccinale (PNPV) 2023-2025, prorogato al 31/12/2026",
-  "url": "https://www.salute.gov.it/new/it/tema/vaccinazioni/legge-vaccini/",
-  "type": "ente sanitario"
- },
- "C1": {
-  "label": "Spencer JA, Moran DJ, Lee A, Talbert D. White noise and sleep induction. Arch Dis Child. 1990;65(1):135-137",
-  "url": "https://doi.org/10.1136/adc.65.1.135",
-  "type": "RCT"
- },
- "C2": {
-  "label": "Hugh SC et al. Infant Sleep Machines and Hazardous Sound Pressure Levels. Pediatrics. 2014;133(4):677-681",
-  "url": "https://doi.org/10.1542/peds.2013-3617",
-  "type": "studio sperimentale"
- },
- "D3": {
-  "label": "World Health Organization. Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. 2019 (indicazioni 3–4 anni)",
-  "url": "https://iris.who.int/handle/10665/311664",
-  "type": "linea guida"
- },
- "D4": {
-  "label": "Bull FC et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med. 2020;54(24):1451-1462",
-  "url": "https://doi.org/10.1136/bjsports-2020-102955",
-  "type": "linea guida"
- },
- "D5": {
-  "label": "Nevéus T et al. Management and treatment of nocturnal enuresis—an updated standardization document from the International Children’s Continence Society. J Pediatr Urol. 2020;16(1):10-19",
-  "url": "https://doi.org/10.1016/j.jpurol.2019.12.020",
-  "type": "linea guida"
- },
- "D5b": {
-  "label": "Austin PF et al. The standardization of terminology of lower urinary tract function in children and adolescents: update report from the ICCS. Neurourol Urodyn. 2016;35(4):471-481",
-  "url": "https://doi.org/10.1002/nau.22751",
-  "type": "consensus"
- },
- "D5c": {
-  "label": "Forsythe WI, Redmond A. Enuresis and spontaneous cure rate. Study of 1129 enuretics. Arch Dis Child. 1974;49(4):259-263",
-  "url": "https://doi.org/10.1136/adc.49.4.259",
-  "type": "studio di coorte"
- },
- "D6": {
-  "label": "Petit D et al. Childhood Sleepwalking and Sleep Terrors: A Longitudinal Study of Prevalence and Familial Aggregation. JAMA Pediatr. 2015;169(7):653-658",
-  "url": "https://doi.org/10.1001/jamapediatrics.2015.127",
-  "type": "studio di coorte"
- },
- "D7": {
-  "label": "Leung AKC et al. Sleep Terrors: An Updated Review. Curr Pediatr Rev. 2020;16(3):176-182",
-  "url": "https://doi.org/10.2174/1573396315666191014152136",
-  "type": "revisione"
- },
- "D7b": {
-  "label": "Kotagal S. Parasomnias in childhood. Sleep Med Rev. 2009;13(2):157-168",
-  "url": "https://doi.org/10.1016/j.smrv.2008.09.005",
-  "type": "revisione"
- },
- "D8": {
-  "label": "Reilly S et al. Natural history of stuttering to 4 years of age: a prospective community-based study. Pediatrics. 2013;132(3):460-467",
-  "url": "https://doi.org/10.1542/peds.2012-3067",
-  "type": "studio di coorte"
- },
- "D9": {
-  "label": "American Speech-Language-Hearing Association. Fluency Disorders (Practice Portal)",
-  "url": "https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/",
-  "type": "linea guida"
- },
- "D11": {
-  "label": "D.Lgs. 285/1992 (Codice della Strada), art. 172 – Sistemi di ritenuta per bambini",
-  "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-04-30;285~art172",
-  "type": "norma"
- },
- "D12": {
-  "label": "AAP Council on Communications and Media. Media Use in School-Aged Children and Adolescents. Pediatrics. 2016;138(5):e20162592",
-  "url": "https://doi.org/10.1542/peds.2016-2592",
-  "type": "policy statement"
- },
- "D14": {
-  "label": "Gullone E. The development of normal fear: a century of research. Clin Psychol Rev. 2000;20(4):429-451",
-  "url": "https://doi.org/10.1016/S0272-7358(99)00034-3",
-  "type": "revisione"
- },
- "D14b": {
-  "label": "Taylor M et al. The characteristics and correlates of fantasy in school-age children: imaginary companions, impersonation, and social understanding. Dev Psychol. 2004;40(6):1173-1187",
-  "url": "https://doi.org/10.1037/0012-1649.40.6.1173",
-  "type": "studio osservazionale"
- },
- "D15": {
-  "label": "Dovey TM et al. Food neophobia and picky/fussy eating in children: a review. Appetite. 2008;50(2-3):181-193",
-  "url": "https://doi.org/10.1016/j.appet.2007.09.009",
-  "type": "revisione"
- },
- "D15b": {
-  "label": "Taylor CM, Emmett PM. Picky eating in children: causes and consequences. Proc Nutr Soc. 2019;78(2):161-169",
-  "url": "https://doi.org/10.1017/S0029665118002586",
-  "type": "revisione"
- },
- "F1": {
-  "label": "Heyman MB, Abrams SA. Fruit Juice in Infants, Children, and Adolescents: Current Recommendations. Pediatrics. 2017;139(6):e20170967",
-  "url": "https://doi.org/10.1542/peds.2017-0967",
-  "type": "policy statement"
- },
- "F4": {
-  "label": "Hojsak I et al. (ESPGHAN). Arsenic in rice: a cause for concern. J Pediatr Gastroenterol Nutr. 2015;60(1):142-145",
-  "url": "https://doi.org/10.1097/MPG.0000000000000502",
-  "type": "position paper"
- },
- "F5": {
-  "label": "EFSA Scientific Committee. Statement on the benefits of fish/seafood consumption compared to the risks of methylmercury in fish/seafood. EFSA Journal 2015;13(1):3982",
-  "url": "https://doi.org/10.2903/j.efsa.2015.3982",
-  "type": "parere scientifico"
- },
- "F6": {
-  "label": "EFSA BIOHAZ Panel. Scientific Opinion on the public health risks related to the consumption of raw drinking milk. EFSA Journal 2015;13(1):3940",
-  "url": "https://doi.org/10.2903/j.efsa.2015.3940",
-  "type": "parere scientifico"
- },
- "F7": {
-  "label": "Merritt RJ et al. (NASPGHAN). Position Paper: Plant-based Milks. J Pediatr Gastroenterol Nutr. 2020;71(2):276-281",
-  "url": "https://doi.org/10.1097/MPG.0000000000002799",
-  "type": "position paper"
- },
- "F8": {
-  "label": "EFSA NDA Panel. Dietary reference values for sodium. EFSA Journal 2019;17(9):5778",
-  "url": "https://doi.org/10.2903/j.efsa.2019.5778",
-  "type": "parere scientifico"
- },
- "F9": {
-  "label": "Fidler Mis N et al. Sugar in Infants, Children and Adolescents: A Position Paper of the ESPGHAN Committee on Nutrition. J Pediatr Gastroenterol Nutr. 2017;65(6):681-696",
-  "url": "https://doi.org/10.1097/MPG.0000000000001733",
-  "type": "position paper"
- },
- "F10": {
-  "label": "EFSA NDA Panel. Scientific Opinion on the safety of caffeine. EFSA Journal 2015;13(5):4102",
-  "url": "https://doi.org/10.2903/j.efsa.2015.4102",
-  "type": "parere scientifico"
- },
- "F10b": {
-  "label": "Hurrell RF, Reddy M, Cook JD. Inhibition of non-haem iron absorption in man by polyphenolic-containing beverages. Br J Nutr. 1999;81(4):289-295",
-  "url": "https://doi.org/10.1017/S0007114599000537",
-  "type": "RCT"
- },
- "F13": {
-  "label": "Bouvard V et al. (IARC). Carcinogenicity of consumption of red and processed meat. Lancet Oncol. 2015;16(16):1599-1600",
-  "url": "https://doi.org/10.1016/S1470-2045(15)00444-1",
-  "type": "valutazione IARC"
- },
- "F13b": {
-  "label": "EFSA ANS Panel. Re-evaluation of potassium nitrite (E 249) and sodium nitrite (E 250) as food additives. EFSA Journal 2017;15(6):4786",
-  "url": "https://doi.org/10.2903/j.efsa.2017.4786",
-  "type": "parere scientifico"
- },
- "F14": {
-  "label": "CREA. Linee guida per una sana alimentazione. Revisione 2018",
-  "url": "https://www.crea.gov.it/-/on-line-le-linee-guida-per-una-sana-alimentazione-2018",
-  "type": "linea guida"
- },
- "F15": {
-  "label": "EFSA CONTAM Panel. Statement on possible public health risks for infants and young children from the presence of nitrates in leafy vegetables. EFSA Journal 2010;8(12):1935",
-  "url": "https://doi.org/10.2903/j.efsa.2010.1935",
-  "type": "parere scientifico"
- },
- "T1": {
-  "label": "Healey A, Mendelsohn A (AAP). Selecting Appropriate Toys for Young Children in the Digital Era. Pediatrics. 2019;143(1):e20183348",
-  "url": "https://doi.org/10.1542/peds.2018-3348",
-  "type": "clinical report"
- },
- "T2": {
-  "label": "Direttiva 2009/48/CE sulla sicurezza dei giocattoli (sostituita dal Regolamento UE 2025/2509, in applicazione dal 2030)",
-  "url": "https://eur-lex.europa.eu/eli/dir/2009/48/oj",
-  "type": "norma"
- },
- "T3": {
-  "label": "Mubarak A et al. Diagnosis, Management, and Prevention of Button Battery Ingestion in Childhood: An ESPGHAN Position Paper. J Pediatr Gastroenterol Nutr. 2021;73(1):129-136",
-  "url": "https://doi.org/10.1097/MPG.0000000000003048",
-  "type": "position paper"
- },
- "T3b": {
-  "label": "ESPGHAN. Pediatric Magnet Ingestion, Diagnosis, Management, and Prevention: An ESPGHAN Position Paper. J Pediatr Gastroenterol Nutr. 2023;76(4):523-532",
-  "url": "https://doi.org/10.1097/MPG.0000000000003702",
-  "type": "position paper"
- },
- "T4": {
-  "label": "U.S. Consumer Product Safety Commission. Latex Balloons (Document #5087)",
-  "url": "https://www.cpsc.gov/s3fs-public/pdfs/blk_pdf_5087.pdf",
-  "type": "ente regolatorio"
- },
- "T5": {
-  "label": "Briskin S, LaBotz M (AAP). Trampoline Safety in Childhood and Adolescence. Pediatrics. 2012;130(4):774-779",
-  "url": "https://doi.org/10.1542/peds.2012-2082",
-  "type": "policy statement"
- },
- "T6": {
-  "label": "AAP Committee on Injury and Poison Prevention. Injuries Associated With Infant Walkers. Pediatrics. 2001;108(3):790-792",
-  "url": "https://doi.org/10.1542/peds.108.3.790",
-  "type": "policy statement"
- },
- "T6b": {
-  "label": "Sims A et al. Infant Walker-Related Injuries in the United States. Pediatrics. 2018;142(4):e20174332",
-  "url": "https://doi.org/10.1542/peds.2017-4332",
-  "type": "studio epidemiologico"
- },
- "T6c": {
-  "label": "Siegel AC, Burton RV. Effects of Baby Walkers on Motor and Mental Development in Human Infants. J Dev Behav Pediatr. 1999;20(5):355-361",
-  "url": "https://doi.org/10.1097/00004703-199910000-00010",
-  "type": "studio osservazionale"
- },
- "T7": {
-  "label": "ANSES (Francia). Keep water beads out of the reach of children",
-  "url": "https://www.anses.fr/en/node/150327",
-  "type": "ente sanitario"
- },
- "T8": {
-  "label": "U.S. CPSC. CPSC Warns of Strangulation with Crib Toys (Document #5024)",
-  "url": "https://webarchive.library.unt.edu/eot2008/20080916034306/http://www.cpsc.gov/cpscpub/pubs/5024.html",
-  "type": "ente regolatorio"
- },
- "T9": {
-  "label": "Zosh JM et al. Accessing the Inaccessible: Redefining Play as a Spectrum. Front Psychol. 2018;9:1124",
-  "url": "https://doi.org/10.3389/fpsyg.2018.01124",
-  "type": "revisione"
- },
- "T10": {
-  "label": "Dauch C et al. The influence of the number of toys in the environment on toddlers’ play. Infant Behav Dev. 2018;50:78-87",
-  "url": "https://doi.org/10.1016/j.infbeh.2017.11.005",
-  "type": "studio sperimentale"
- },
- "T11": {
-  "label": "Brussoni M et al. What is the Relationship between Risky Outdoor Play and Health in Children? A Systematic Review. Int J Environ Res Public Health. 2015;12(6):6423-6454",
-  "url": "https://doi.org/10.3390/ijerph120606423",
-  "type": "revisione sistematica"
- },
- "T12": {
-  "label": "Sosa AV. Association of the Type of Toy Used During Play With the Quantity and Quality of Parent-Infant Communication. JAMA Pediatr. 2016;170(2):132-137",
-  "url": "https://doi.org/10.1001/jamapediatrics.2015.3753",
-  "type": "studio osservazionale"
- },
- "C3": {
-  "label": "Kardous CA, Shaw PB. Evaluation of smartphone sound measurement applications. J Acoust Soc Am. 2014;135(4):EL186-EL192",
-  "url": "https://doi.org/10.1121/1.4865269",
-  "type": "studio sperimentale"
- },
- "S1": {
-  "label": "Belsky J et al. (NICHD ECCRN). Are there long-term effects of early child care? Child Dev. 2007;78(2):681-701",
-  "url": "https://doi.org/10.1111/j.1467-8624.2007.01021.x",
-  "type": "studio di coorte"
- },
- "S2": {
-  "label": "Vermeer HJ, van IJzendoorn MH. Children’s elevated cortisol levels at daycare: A review and meta-analysis. Early Child Res Q. 2006;21(3):390-401",
-  "url": "https://doi.org/10.1016/j.ecresq.2006.07.004",
-  "type": "meta-analisi"
- },
- "S3": {
-  "label": "van Huizen T, Plantenga J. Do children benefit from universal early childhood education and care? A meta-analysis of evidence from natural experiments. Econ Educ Rev. 2018;66:206-222",
-  "url": "https://doi.org/10.1016/j.econedurev.2018.08.001",
-  "type": "meta-analisi"
- },
- "S4": {
-  "label": "Ulferts H, Wolf KM, Anders Y. Impact of Process Quality in Early Childhood Education and Care on Academic Outcomes: Longitudinal Meta-Analysis. Child Dev. 2019;90(5):1474-1489",
-  "url": "https://doi.org/10.1111/cdev.13296",
-  "type": "meta-analisi"
- },
- "S5": {
-  "label": "Murano D, Sawyer JE, Lipnevich AA. A Meta-Analytic Review of Preschool Social and Emotional Learning Interventions. Rev Educ Res. 2020;90(2):227-263",
-  "url": "https://doi.org/10.3102/0034654320914743",
-  "type": "meta-analisi"
- },
- "S7b": {
-  "label": "Datler W et al. Toddlers’ transition to out-of-home day care: Settling into a new care environment. Infant Behav Dev. 2012;35(3):439-451",
-  "url": "https://doi.org/10.1016/j.infbeh.2012.02.007",
-  "type": "studio osservazionale"
- },
- "S8": {
-  "label": "NICHD Early Child Care Research Network. Child-care effect sizes for the NICHD Study of Early Child Care and Youth Development. Am Psychol. 2006;61(2):99-116",
-  "url": "https://doi.org/10.1037/0003-066X.61.2.99",
-  "type": "studio di coorte"
- },
- "P1": {
-  "label": "Logan K, Cuff S (AAP). Organized Sports for Children, Preadolescents, and Adolescents. Pediatrics. 2019;143(6):e20190997",
-  "url": "https://doi.org/10.1542/peds.2019-0997",
-  "type": "clinical report"
- },
- "P2": {
-  "label": "Brenner JS (AAP). Sports Specialization and Intensive Training in Young Athletes. Pediatrics. 2016;138(3):e20162148",
-  "url": "https://doi.org/10.1542/peds.2016-2148",
-  "type": "clinical report"
- },
- "P3a": {
-  "label": "Shenoi RP et al. (AAP). Prevention of Drowning: Policy Statement. Pediatrics. 2026;158(1):e2026077410",
-  "url": "https://doi.org/10.1542/peds.2026-077410",
-  "type": "policy statement"
- },
- "P3b": {
-  "label": "Brenner RA et al. Association between swimming lessons and drowning in childhood: a case-control study. Arch Pediatr Adolesc Med. 2009;163(3):203-210",
-  "url": "https://doi.org/10.1001/archpediatrics.2008.563",
-  "type": "studio caso-controllo"
- },
- "P4": {
-  "label": "Logan SW et al. Getting the fundamentals of movement: a meta-analysis of the effectiveness of motor skill interventions in children. Child Care Health Dev. 2012;38(3):305-315",
-  "url": "https://doi.org/10.1111/j.1365-2214.2011.01307.x",
-  "type": "meta-analisi"
- },
- "P4b": {
-  "label": "Wick K et al. Interventions to Promote Fundamental Movement Skills in Childcare and Kindergarten: A Systematic Review and Meta-Analysis. Sports Med. 2017;47(10):2045-2068",
-  "url": "https://doi.org/10.1007/s40279-017-0723-1",
-  "type": "meta-analisi"
- },
- "P5": {
-  "label": "Robinson LE et al. Motor Competence and its Effect on Positive Developmental Trajectories of Health. Sports Med. 2015;45(9):1273-1284",
-  "url": "https://doi.org/10.1007/s40279-015-0351-6",
-  "type": "revisione"
- },
- "P6": {
-  "label": "Olivier J, Creighton P. Bicycle injuries and helmet use: a systematic review and meta-analysis. Int J Epidemiol. 2017;46(1):278-292",
-  "url": "https://doi.org/10.1093/ije/dyw153",
-  "type": "meta-analisi"
- },
- "P8": {
-  "label": "Crane J, Temple V. A systematic review of dropout from organized sport among children and youth. Eur Phys Educ Rev. 2015;21(1):114-131",
-  "url": "https://doi.org/10.1177/1356336X14555294",
-  "type": "revisione sistematica"
- },
- "G1b": {
-  "label": "Parrott WG, Gleitman H. Infants’ expectations in play: The joy of peek-a-boo. Cognition and Emotion. 1989;3(4):291-311",
-  "url": "https://doi.org/10.1080/02699938908412710",
-  "type": "studio sperimentale"
- },
- "G2a": {
-  "label": "Whitehurst GJ et al. Accelerating language development through picture book reading. Dev Psychol. 1988;24(4):552-559",
-  "url": "https://doi.org/10.1037/0012-1649.24.4.552",
-  "type": "RCT"
- },
- "G2b": {
-  "label": "Mol SE et al. Added value of dialogic parent–child book readings: A meta-analysis. Early Educ Dev. 2008;19(1):7-26",
-  "url": "https://doi.org/10.1080/10409280701838603",
-  "type": "meta-analisi"
- },
- "G3": {
-  "label": "Levine SC et al. Early puzzle play: A predictor of preschoolers’ spatial transformation skill. Dev Psychol. 2012;48(2):530-542",
-  "url": "https://doi.org/10.1037/a0025913",
-  "type": "studio longitudinale"
- },
- "G4a": {
-  "label": "Verdine BN et al. Deconstructing building blocks: Preschoolers’ spatial assembly performance relates to early mathematical skills. Child Dev. 2014;85(3):1062-1076",
-  "url": "https://doi.org/10.1111/cdev.12165",
-  "type": "studio osservazionale"
- },
- "G4b": {
-  "label": "Uttal DH et al. The malleability of spatial skills: A meta-analysis of training studies. Psychol Bull. 2013;139(2):352-402",
-  "url": "https://doi.org/10.1037/a0028446",
-  "type": "meta-analisi"
- },
- "G5a": {
-  "label": "Siegler RS, Ramani GB. Playing linear numerical board games promotes low-income children’s numerical development. Dev Sci. 2008;11(5):655-661",
-  "url": "https://doi.org/10.1111/j.1467-7687.2008.00714.x",
-  "type": "RCT"
- },
- "G5b": {
-  "label": "Ramani GB, Siegler RS. Promoting broad and stable improvements in low-income children’s numerical knowledge through playing number board games. Child Dev. 2008;79(2):375-394",
-  "url": "https://doi.org/10.1111/j.1467-8624.2007.01131.x",
-  "type": "RCT"
- },
- "G6a": {
-  "label": "Tominey SL, McClelland MM. Red Light, Purple Light: Findings from a randomized trial using circle time games to improve behavioral self-regulation in preschool. Early Educ Dev. 2011;22(3):489-519",
-  "url": "https://doi.org/10.1080/10409289.2011.574258",
-  "type": "RCT"
- },
- "G6b": {
-  "label": "Schmitt SA et al. Strengthening school readiness for Head Start children: Evaluation of a self-regulation intervention. Early Child Res Q. 2015;30(A):20-31",
-  "url": "https://doi.org/10.1016/j.ecresq.2014.08.001",
-  "type": "RCT"
- },
- "G7": {
-  "label": "Diamond A, Lee K. Interventions shown to aid executive function development in children 4 to 12 years old. Science. 2011;333(6045):959-964",
-  "url": "https://doi.org/10.1126/science.1204529",
-  "type": "revisione"
- },
- "G8": {
-  "label": "Lillard AS et al. The impact of pretend play on children’s development: A review of the evidence. Psychol Bull. 2013;139(1):1-34",
-  "url": "https://doi.org/10.1037/a0029321",
-  "type": "revisione"
- },
- "G9a": {
-  "label": "Bryant PE et al. Nursery rhymes, phonological skills and reading. J Child Lang. 1989;16(2):407-428",
-  "url": "https://doi.org/10.1017/S0305000900010485",
-  "type": "studio longitudinale"
- },
- "G9b": {
-  "label": "Ehri LC et al. Phonemic awareness instruction helps children learn to read: Evidence from the National Reading Panel’s meta-analysis. Read Res Q. 2001;36(3):250-287",
-  "url": "https://doi.org/10.1598/RRQ.36.3.2",
-  "type": "meta-analisi"
- },
- "G10": {
-  "label": "Diamond A. Development of the ability to use recall to guide action, as indicated by infants’ performance on AB. Child Dev. 1985;56(4):868-883",
-  "url": "https://doi.org/10.2307/1130099",
-  "type": "studio longitudinale"
- },
- "G11": {
-  "label": "Dankiw KA et al. The impacts of unstructured nature play on health in early childhood development: A systematic review. PLoS One. 2020;15(2):e0229006",
-  "url": "https://doi.org/10.1371/journal.pone.0229006",
-  "type": "revisione sistematica"
- },
- "G12a": {
-  "label": "Tamis-LeMonda CS, Bornstein MH, Baumwell L. Maternal responsiveness and children’s achievement of language milestones. Child Dev. 2001;72(3):748-767",
-  "url": "https://doi.org/10.1111/1467-8624.00313",
-  "type": "studio longitudinale"
- },
- "G12b": {
-  "label": "Tamis-LeMonda CS, Kuchirko Y, Song L. Why is infant language learning facilitated by parental responsiveness? Curr Dir Psychol Sci. 2014;23(2):121-126",
-  "url": "https://doi.org/10.1177/0963721414522813",
-  "type": "revisione"
- },
- "G14": {
-  "label": "Cameron CE et al. Fine motor skills and executive function both contribute to kindergarten achievement. Child Dev. 2012;83(4):1229-1244",
-  "url": "https://doi.org/10.1111/j.1467-8624.2012.01768.x",
-  "type": "studio longitudinale"
- }
+  "A1": {
+    "label": "Moon RY et al. Sleep-Related Infant Deaths: Updated 2022 Recommendations for Reducing Infant Deaths in the Sleep Environment. Pediatrics. 2022;150(1):e2022057990",
+    "url": "https://doi.org/10.1542/peds.2022-057990",
+    "type": "linea guida"
+  },
+  "A2": {
+    "label": "Paruthi S et al. Recommended Amount of Sleep for Pediatric Populations: A Consensus Statement of the American Academy of Sleep Medicine. J Clin Sleep Med. 2016;12(6):785-786",
+    "url": "https://doi.org/10.5664/jcsm.5866",
+    "type": "consensus"
+  },
+  "A3": {
+    "label": "World Health Organization. Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. Geneva: WHO; 2019",
+    "url": "https://www.who.int/publications/i/item/9789241550536",
+    "type": "linea guida"
+  },
+  "A4": {
+    "label": "Gradisar M et al. Behavioral Interventions for Infant Sleep Problems: A Randomized Controlled Trial. Pediatrics. 2016;137(6):e20151486",
+    "url": "https://doi.org/10.1542/peds.2015-1486",
+    "type": "RCT"
+  },
+  "A5": {
+    "label": "Price AMH et al. Five-year follow-up of harms and benefits of behavioral infant sleep intervention: randomized trial. Pediatrics. 2012;130(4):643-651",
+    "url": "https://doi.org/10.1542/peds.2011-3467",
+    "type": "RCT"
+  },
+  "A6": {
+    "label": "Mindell JA et al. Bedtime routines for young children: a dose-dependent association with sleep outcomes. Sleep. 2015;38(5):717-722",
+    "url": "https://doi.org/10.5665/sleep.4662",
+    "type": "studio osservazionale"
+  },
+  "A7": {
+    "label": "Kramer MS, Kakuma R. Optimal duration of exclusive breastfeeding. Cochrane Database Syst Rev. 2012;(8):CD003517",
+    "url": "https://doi.org/10.1002/14651858.CD003517.pub2",
+    "type": "revisione sistematica"
+  },
+  "A8": {
+    "label": "Victora CG et al. Breastfeeding in the 21st century: epidemiology, mechanisms, and lifelong effect. Lancet. 2016;387(10017):475-490",
+    "url": "https://doi.org/10.1016/S0140-6736(15)01024-7",
+    "type": "revisione sistematica"
+  },
+  "A9": {
+    "label": "World Health Organization. WHO Guideline for complementary feeding of infants and young children 6–23 months of age. Geneva: WHO; 2023",
+    "url": "https://www.who.int/publications/i/item/9789240081864",
+    "type": "linea guida"
+  },
+  "A10": {
+    "label": "Fewtrell M et al. Complementary Feeding: A Position Paper by the ESPGHAN Committee on Nutrition. J Pediatr Gastroenterol Nutr. 2017;64(1):119-132",
+    "url": "https://doi.org/10.1097/MPG.0000000000001454",
+    "type": "position paper"
+  },
+  "A11": {
+    "label": "Du Toit G et al. Randomized trial of peanut consumption in infants at risk for peanut allergy (LEAP). N Engl J Med. 2015;372(9):803-813",
+    "url": "https://doi.org/10.1056/NEJMoa1414850",
+    "type": "RCT"
+  },
+  "A12": {
+    "label": "Perkin MR et al. Randomized Trial of Introduction of Allergenic Foods in Breast-Fed Infants (EAT). N Engl J Med. 2016;374(18):1733-1743",
+    "url": "https://doi.org/10.1056/NEJMoa1514210",
+    "type": "RCT"
+  },
+  "A13": {
+    "label": "Halken S et al. EAACI guideline: Preventing the development of food allergy in infants and young children (2020 update). Pediatr Allergy Immunol. 2021;32(5):843-858",
+    "url": "https://doi.org/10.1111/pai.13496",
+    "type": "linea guida"
+  },
+  "A14": {
+    "label": "Fangupo LJ et al. A Baby-Led Approach to Eating Solids and Risk of Choking. Pediatrics. 2016;138(4):e20160772",
+    "url": "https://doi.org/10.1542/peds.2016-0772",
+    "type": "RCT"
+  },
+  "A16": {
+    "label": "Ministero della Salute. Linee di indirizzo per la prevenzione del soffocamento da cibo in età pediatrica. Roma; 2017",
+    "url": "https://www.salute.gov.it/portale/documentazione/p6_2_2_1.jsp?lingua=italiano&id=2618",
+    "type": "linea guida"
+  },
+  "A17": {
+    "label": "Centers for Disease Control and Prevention (CDC). Preventing Botulism",
+    "url": "https://www.cdc.gov/botulism/prevention/index.html",
+    "type": "ente sanitario"
+  },
+  "A18": {
+    "label": "Braegger C et al. Vitamin D in the healthy European paediatric population. J Pediatr Gastroenterol Nutr. 2013;56(6):692-701",
+    "url": "https://doi.org/10.1097/MPG.0b013e31828f3c05",
+    "type": "position paper"
+  },
+  "A19": {
+    "label": "Saggese G et al. Vitamin D in pediatric age: consensus of the Italian Pediatric Society and the Italian Society of Preventive and Social Pediatrics, jointly with the Italian Federation of Pediatricians. Ital J Pediatr. 2018;44(1):51",
+    "url": "https://doi.org/10.1186/s13052-018-0488-7",
+    "type": "consensus"
+  },
+  "A20": {
+    "label": "Taylor CM et al. Picky/fussy eating in children: Review of definitions, assessment, prevalence and dietary intakes. Appetite. 2015;95:349-359",
+    "url": "https://doi.org/10.1016/j.appet.2015.07.026",
+    "type": "revisione"
+  },
+  "A21": {
+    "label": "Cooke L. The importance of exposure for healthy eating in childhood: a review. J Hum Nutr Diet. 2007;20(4):294-301",
+    "url": "https://doi.org/10.1111/j.1365-277X.2007.00804.x",
+    "type": "revisione"
+  },
+  "A22": {
+    "label": "Hewitt L et al. Tummy Time and Infant Health Outcomes: A Systematic Review. Pediatrics. 2020;145(6):e20192168",
+    "url": "https://doi.org/10.1542/peds.2019-2168",
+    "type": "revisione sistematica"
+  },
+  "A23": {
+    "label": "WHO Multicentre Growth Reference Study Group. WHO Motor Development Study: windows of achievement for six gross motor development milestones. Acta Paediatr Suppl. 2006;450:86-95",
+    "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02379.x",
+    "type": "studio multicentrico"
+  },
+  "A24": {
+    "label": "Zubler JM et al. Evidence-Informed Milestones for Developmental Surveillance Tools. Pediatrics. 2022;149(3):e2021052138",
+    "url": "https://doi.org/10.1542/peds.2021-052138",
+    "type": "revisione / consensus"
+  },
+  "A25": {
+    "label": "Durbin DR, Hoffman BD. Child Passenger Safety. Pediatrics. 2018;142(5):e20182460",
+    "url": "https://doi.org/10.1542/peds.2018-2460",
+    "type": "policy statement"
+  },
+  "A26": {
+    "label": "Legge 1 ottobre 2018, n. 117 (dispositivi antiabbandono, bambini sotto i 4 anni) e DM 2 ottobre 2019, n. 122",
+    "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2018-10-01;117",
+    "type": "norma"
+  },
+  "A27": {
+    "label": "Peden M et al. (eds). World report on child injury prevention. Geneva: WHO/UNICEF; 2008",
+    "url": "https://www.who.int/publications/i/item/9789241563574",
+    "type": "rapporto"
+  },
+  "B1": {
+    "label": "NICE. Fever in under 5s: assessment and initial management. NICE guideline NG143; 2019 (aggiornata 2021)",
+    "url": "https://www.nice.org.uk/guidance/ng143",
+    "type": "linea guida"
+  },
+  "B2": {
+    "label": "Chiappini E et al. 2016 Update of the Italian Pediatric Society Guidelines for Management of Fever in Children. J Pediatr. 2017;180:177-183.e1",
+    "url": "https://doi.org/10.1016/j.jpeds.2016.09.043",
+    "type": "linea guida"
+  },
+  "B3": {
+    "label": "AAP Subcommittee on Febrile Seizures. Febrile seizures: guideline for the neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011;127(2):389-394",
+    "url": "https://doi.org/10.1542/peds.2010-3318",
+    "type": "linea guida"
+  },
+  "B4": {
+    "label": "Offringa M et al. Prophylactic drug management for febrile seizures in children. Cochrane Database Syst Rev. 2021;6:CD003031",
+    "url": "https://doi.org/10.1002/14651858.CD003031.pub4",
+    "type": "revisione sistematica"
+  },
+  "B5": {
+    "label": "Benninga MA et al. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler (Rome IV). Gastroenterology. 2016;150(6):1443-1455.e2",
+    "url": "https://doi.org/10.1053/j.gastro.2016.02.016",
+    "type": "consensus"
+  },
+  "B6": {
+    "label": "Sung V et al. Lactobacillus reuteri to Treat Infant Colic: A Meta-analysis. Pediatrics. 2018;141(1):e20171811",
+    "url": "https://doi.org/10.1542/peds.2017-1811",
+    "type": "meta-analisi"
+  },
+  "B7": {
+    "label": "Barr RG et al. Effectiveness of educational materials designed to change knowledge and behaviors regarding crying and shaken-baby syndrome in mothers of newborns: a randomized, controlled trial. Pediatrics. 2009;123(3):972-980",
+    "url": "https://doi.org/10.1542/peds.2008-0908",
+    "type": "RCT"
+  },
+  "B8": {
+    "label": "Rosen R et al. Pediatric Gastroesophageal Reflux Clinical Practice Guidelines: Joint Recommendations of NASPGHAN and ESPGHAN. J Pediatr Gastroenterol Nutr. 2018;66(3):516-554",
+    "url": "https://doi.org/10.1097/MPG.0000000000001889",
+    "type": "linea guida"
+  },
+  "B9": {
+    "label": "Tabbers MM et al. Evaluation and treatment of functional constipation in infants and children: evidence-based recommendations from ESPGHAN and NASPGHAN. J Pediatr Gastroenterol Nutr. 2014;58(2):258-274",
+    "url": "https://doi.org/10.1097/MPG.0000000000000266",
+    "type": "linea guida"
+  },
+  "B10": {
+    "label": "Guarino A et al. ESPGHAN/ESPID evidence-based guidelines for the management of acute gastroenteritis in children in Europe: update 2014. J Pediatr Gastroenterol Nutr. 2014;59(1):132-152",
+    "url": "https://doi.org/10.1097/MPG.0000000000000375",
+    "type": "linea guida"
+  },
+  "B11": {
+    "label": "NICE. Bronchiolitis in children: diagnosis and management. NICE guideline NG9; 2015 (aggiornata 2021)",
+    "url": "https://www.nice.org.uk/guidance/ng9",
+    "type": "linea guida"
+  },
+  "B12": {
+    "label": "Ralston SL et al. Clinical Practice Guideline: The Diagnosis, Management, and Prevention of Bronchiolitis. Pediatrics. 2014;134(5):e1474-e1502",
+    "url": "https://doi.org/10.1542/peds.2014-2742",
+    "type": "linea guida"
+  },
+  "B13": {
+    "label": "Oduwole O et al. Honey for acute cough in children. Cochrane Database Syst Rev. 2018;4:CD007094",
+    "url": "https://doi.org/10.1002/14651858.CD007094.pub5",
+    "type": "revisione sistematica"
+  },
+  "B14": {
+    "label": "U.S. Food and Drug Administration. Use Caution When Giving Cough and Cold Products to Kids",
+    "url": "https://www.fda.gov/drugs/special-features/use-caution-when-giving-cough-and-cold-products-kids",
+    "type": "ente regolatorio"
+  },
+  "B15": {
+    "label": "Eichenfield LF et al. Guidelines of care for the management of atopic dermatitis: section 2. Management and treatment of atopic dermatitis with topical therapies. J Am Acad Dermatol. 2014;71(1):116-132",
+    "url": "https://doi.org/10.1016/j.jaad.2014.03.023",
+    "type": "linea guida"
+  },
+  "B16": {
+    "label": "Chalmers JR et al. Daily emollient during infancy for prevention of eczema: the BEEP randomised controlled trial. Lancet. 2020;395(10228):962-972",
+    "url": "https://doi.org/10.1016/S0140-6736(19)32984-8",
+    "type": "RCT"
+  },
+  "B17": {
+    "label": "Toumba KJ et al. Guidelines on the use of fluoride for caries prevention in children: an updated EAPD policy document. Eur Arch Paediatr Dent. 2019;20(6):507-516",
+    "url": "https://doi.org/10.1007/s40368-019-00464-2",
+    "type": "linea guida"
+  },
+  "B18": {
+    "label": "Massignan C et al. Signs and Symptoms of Primary Tooth Eruption: A Meta-analysis. Pediatrics. 2016;137(3):e20153501",
+    "url": "https://doi.org/10.1542/peds.2015-3501",
+    "type": "meta-analisi"
+  },
+  "B19": {
+    "label": "U.S. Food and Drug Administration. Safely Soothing Teething Pain in Infants and Children (avvertenza su collane e gioielli per la dentizione)",
+    "url": "https://www.fda.gov/consumers/consumer-updates/safely-soothing-teething-pain-infants-and-children",
+    "type": "ente regolatorio"
+  },
+  "B20": {
+    "label": "Doğramacı EJ, Rossi-Fedele G. Establishing the association between nonnutritive sucking behavior and malocclusions: a systematic review and meta-analysis. J Am Dent Assoc. 2016;147(12):926-934.e6",
+    "url": "https://doi.org/10.1016/j.adaj.2016.08.018",
+    "type": "meta-analisi"
+  },
+  "B21": {
+    "label": "Romeo RR et al. Beyond the 30-Million-Word Gap: Children’s Conversational Exposure Is Associated With Language-Related Brain Function. Psychol Sci. 2018;29(5):700-710",
+    "url": "https://doi.org/10.1177/0956797617742725",
+    "type": "studio osservazionale"
+  },
+  "B22": {
+    "label": "Dowdall N et al. Shared Picture Book Reading Interventions for Child Language Development: A Systematic Review and Meta-Analysis. Child Dev. 2020;91(2):e383-e399",
+    "url": "https://doi.org/10.1111/cdev.13225",
+    "type": "meta-analisi"
+  },
+  "B23": {
+    "label": "Klass P, Miller-Fitzwater A, High PC. Literacy Promotion: An Essential Component of Primary Care Pediatric Practice: Policy Statement. Pediatrics. 2024;154(6):e2024069090",
+    "url": "https://doi.org/10.1542/peds.2024-069090",
+    "type": "policy statement"
+  },
+  "B24": {
+    "label": "Hoff E et al. Dual language exposure and early bilingual development. J Child Lang. 2012;39(1):1-27",
+    "url": "https://doi.org/10.1017/S0305000910000759",
+    "type": "studio longitudinale"
+  },
+  "B25": {
+    "label": "AAP Council on Communications and Media. Media and Young Minds. Pediatrics. 2016;138(5):e20162591",
+    "url": "https://doi.org/10.1542/peds.2016-2591",
+    "type": "policy statement"
+  },
+  "B26": {
+    "label": "Madigan S et al. Association Between Screen Time and Children’s Performance on a Developmental Screening Test. JAMA Pediatr. 2019;173(3):244-250",
+    "url": "https://doi.org/10.1001/jamapediatrics.2018.5056",
+    "type": "studio di coorte"
+  },
+  "B27": {
+    "label": "Yogman M et al. The Power of Play: A Pediatric Role in Enhancing Development in Young Children. Pediatrics. 2018;142(3):e20182058",
+    "url": "https://doi.org/10.1542/peds.2018-2058",
+    "type": "clinical report"
+  },
+  "B28": {
+    "label": "Potegal M, Kosorok MR, Davidson RJ. Temper tantrums in young children: 1. Behavioral composition. J Dev Behav Pediatr. 2003;24(3):140-147",
+    "url": "https://doi.org/10.1097/00004703-200306000-00002",
+    "type": "studio osservazionale"
+  },
+  "B29": {
+    "label": "Belden AC, Thomson NR, Luby JL. Temper tantrums in healthy versus depressed and disruptive preschoolers: defining tantrum behaviors associated with clinical problems. J Pediatr. 2008;152(1):117-122",
+    "url": "https://doi.org/10.1016/j.jpeds.2007.06.030",
+    "type": "studio osservazionale"
+  },
+  "B30": {
+    "label": "Sege RD, Siegel BS. Effective Discipline to Raise Healthy Children. Pediatrics. 2018;142(6):e20183112",
+    "url": "https://doi.org/10.1542/peds.2018-3112",
+    "type": "policy statement"
+  },
+  "B31": {
+    "label": "Gershoff ET, Grogan-Kaylor A. Spanking and child outcomes: Old controversies and new meta-analyses. J Fam Psychol. 2016;30(4):453-469",
+    "url": "https://doi.org/10.1037/fam0000191",
+    "type": "meta-analisi"
+  },
+  "B32": {
+    "label": "Ahnert L et al. Transition to child care: associations with infant-mother attachment, infant negative emotion, and cortisol elevations. Child Dev. 2004;75(3):639-650",
+    "url": "https://doi.org/10.1111/j.1467-8624.2004.00698.x",
+    "type": "studio osservazionale"
+  },
+  "B33": {
+    "label": "Volling BL. Family transitions following the birth of a sibling: an empirical review of changes in the firstborn’s adjustment. Psychol Bull. 2012;138(3):497-528",
+    "url": "https://doi.org/10.1037/a0026921",
+    "type": "revisione"
+  },
+  "B34": {
+    "label": "Kaerts N et al. Readiness signs used to define the proper moment to start toilet training: a review of the literature. Neurourol Urodyn. 2012;31(4):437-440",
+    "url": "https://doi.org/10.1002/nau.21211",
+    "type": "revisione"
+  },
+  "B35": {
+    "label": "Hyman SL, Levy SE, Myers SM. Identification, Evaluation, and Management of Children With Autism Spectrum Disorder. Pediatrics. 2020;145(1):e20193447",
+    "url": "https://doi.org/10.1542/peds.2019-3447",
+    "type": "clinical report"
+  },
+  "B36": {
+    "label": "Robins DL et al. Validation of the Modified Checklist for Autism in Toddlers, Revised With Follow-up (M-CHAT-R/F). Pediatrics. 2014;133(1):37-45",
+    "url": "https://doi.org/10.1542/peds.2013-1813",
+    "type": "studio di validazione"
+  },
+  "B37": {
+    "label": "Taylor LE, Swerdfeger AL, Eslick GD. Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies. Vaccine. 2014;32(29):3623-3629",
+    "url": "https://doi.org/10.1016/j.vaccine.2014.04.085",
+    "type": "meta-analisi"
+  },
+  "B38": {
+    "label": "Legge 31 luglio 2017, n. 119 – Disposizioni urgenti in materia di prevenzione vaccinale",
+    "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-07-31;119",
+    "type": "norma"
+  },
+  "B39": {
+    "label": "Ministero della Salute. Piano Nazionale di Prevenzione Vaccinale (PNPV) 2023-2025, prorogato al 31/12/2026",
+    "url": "https://www.salute.gov.it/new/it/tema/vaccinazioni/legge-vaccini/",
+    "type": "ente sanitario"
+  },
+  "C1": {
+    "label": "Spencer JA, Moran DJ, Lee A, Talbert D. White noise and sleep induction. Arch Dis Child. 1990;65(1):135-137",
+    "url": "https://doi.org/10.1136/adc.65.1.135",
+    "type": "RCT"
+  },
+  "C2": {
+    "label": "Hugh SC et al. Infant Sleep Machines and Hazardous Sound Pressure Levels. Pediatrics. 2014;133(4):677-681",
+    "url": "https://doi.org/10.1542/peds.2013-3617",
+    "type": "studio sperimentale"
+  },
+  "D3": {
+    "label": "World Health Organization. Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. 2019 (indicazioni 3–4 anni)",
+    "url": "https://iris.who.int/handle/10665/311664",
+    "type": "linea guida"
+  },
+  "D4": {
+    "label": "Bull FC et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med. 2020;54(24):1451-1462",
+    "url": "https://doi.org/10.1136/bjsports-2020-102955",
+    "type": "linea guida"
+  },
+  "D5": {
+    "label": "Nevéus T et al. Management and treatment of nocturnal enuresis—an updated standardization document from the International Children’s Continence Society. J Pediatr Urol. 2020;16(1):10-19",
+    "url": "https://doi.org/10.1016/j.jpurol.2019.12.020",
+    "type": "linea guida"
+  },
+  "D5b": {
+    "label": "Austin PF et al. The standardization of terminology of lower urinary tract function in children and adolescents: update report from the ICCS. Neurourol Urodyn. 2016;35(4):471-481",
+    "url": "https://doi.org/10.1002/nau.22751",
+    "type": "consensus"
+  },
+  "D5c": {
+    "label": "Forsythe WI, Redmond A. Enuresis and spontaneous cure rate. Study of 1129 enuretics. Arch Dis Child. 1974;49(4):259-263",
+    "url": "https://doi.org/10.1136/adc.49.4.259",
+    "type": "studio di coorte"
+  },
+  "D6": {
+    "label": "Petit D et al. Childhood Sleepwalking and Sleep Terrors: A Longitudinal Study of Prevalence and Familial Aggregation. JAMA Pediatr. 2015;169(7):653-658",
+    "url": "https://doi.org/10.1001/jamapediatrics.2015.127",
+    "type": "studio di coorte"
+  },
+  "D7": {
+    "label": "Leung AKC et al. Sleep Terrors: An Updated Review. Curr Pediatr Rev. 2020;16(3):176-182",
+    "url": "https://doi.org/10.2174/1573396315666191014152136",
+    "type": "revisione"
+  },
+  "D7b": {
+    "label": "Kotagal S. Parasomnias in childhood. Sleep Med Rev. 2009;13(2):157-168",
+    "url": "https://doi.org/10.1016/j.smrv.2008.09.005",
+    "type": "revisione"
+  },
+  "D8": {
+    "label": "Reilly S et al. Natural history of stuttering to 4 years of age: a prospective community-based study. Pediatrics. 2013;132(3):460-467",
+    "url": "https://doi.org/10.1542/peds.2012-3067",
+    "type": "studio di coorte"
+  },
+  "D9": {
+    "label": "American Speech-Language-Hearing Association. Fluency Disorders (Practice Portal)",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/",
+    "type": "linea guida"
+  },
+  "D11": {
+    "label": "D.Lgs. 285/1992 (Codice della Strada), art. 172 – Sistemi di ritenuta per bambini",
+    "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-04-30;285~art172",
+    "type": "norma"
+  },
+  "D12": {
+    "label": "AAP Council on Communications and Media. Media Use in School-Aged Children and Adolescents. Pediatrics. 2016;138(5):e20162592",
+    "url": "https://doi.org/10.1542/peds.2016-2592",
+    "type": "policy statement"
+  },
+  "D14": {
+    "label": "Gullone E. The development of normal fear: a century of research. Clin Psychol Rev. 2000;20(4):429-451",
+    "url": "https://doi.org/10.1016/S0272-7358(99)00034-3",
+    "type": "revisione"
+  },
+  "D14b": {
+    "label": "Taylor M et al. The characteristics and correlates of fantasy in school-age children: imaginary companions, impersonation, and social understanding. Dev Psychol. 2004;40(6):1173-1187",
+    "url": "https://doi.org/10.1037/0012-1649.40.6.1173",
+    "type": "studio osservazionale"
+  },
+  "D15": {
+    "label": "Dovey TM et al. Food neophobia and picky/fussy eating in children: a review. Appetite. 2008;50(2-3):181-193",
+    "url": "https://doi.org/10.1016/j.appet.2007.09.009",
+    "type": "revisione"
+  },
+  "D15b": {
+    "label": "Taylor CM, Emmett PM. Picky eating in children: causes and consequences. Proc Nutr Soc. 2019;78(2):161-169",
+    "url": "https://doi.org/10.1017/S0029665118002586",
+    "type": "revisione"
+  },
+  "F1": {
+    "label": "Heyman MB, Abrams SA. Fruit Juice in Infants, Children, and Adolescents: Current Recommendations. Pediatrics. 2017;139(6):e20170967",
+    "url": "https://doi.org/10.1542/peds.2017-0967",
+    "type": "policy statement"
+  },
+  "F4": {
+    "label": "Hojsak I et al. (ESPGHAN). Arsenic in rice: a cause for concern. J Pediatr Gastroenterol Nutr. 2015;60(1):142-145",
+    "url": "https://doi.org/10.1097/MPG.0000000000000502",
+    "type": "position paper"
+  },
+  "F5": {
+    "label": "EFSA Scientific Committee. Statement on the benefits of fish/seafood consumption compared to the risks of methylmercury in fish/seafood. EFSA Journal 2015;13(1):3982",
+    "url": "https://doi.org/10.2903/j.efsa.2015.3982",
+    "type": "parere scientifico"
+  },
+  "F6": {
+    "label": "EFSA BIOHAZ Panel. Scientific Opinion on the public health risks related to the consumption of raw drinking milk. EFSA Journal 2015;13(1):3940",
+    "url": "https://doi.org/10.2903/j.efsa.2015.3940",
+    "type": "parere scientifico"
+  },
+  "F7": {
+    "label": "Merritt RJ et al. (NASPGHAN). Position Paper: Plant-based Milks. J Pediatr Gastroenterol Nutr. 2020;71(2):276-281",
+    "url": "https://doi.org/10.1097/MPG.0000000000002799",
+    "type": "position paper"
+  },
+  "F8": {
+    "label": "EFSA NDA Panel. Dietary reference values for sodium. EFSA Journal 2019;17(9):5778",
+    "url": "https://doi.org/10.2903/j.efsa.2019.5778",
+    "type": "parere scientifico"
+  },
+  "F9": {
+    "label": "Fidler Mis N et al. Sugar in Infants, Children and Adolescents: A Position Paper of the ESPGHAN Committee on Nutrition. J Pediatr Gastroenterol Nutr. 2017;65(6):681-696",
+    "url": "https://doi.org/10.1097/MPG.0000000000001733",
+    "type": "position paper"
+  },
+  "F10": {
+    "label": "EFSA NDA Panel. Scientific Opinion on the safety of caffeine. EFSA Journal 2015;13(5):4102",
+    "url": "https://doi.org/10.2903/j.efsa.2015.4102",
+    "type": "parere scientifico"
+  },
+  "F10b": {
+    "label": "Hurrell RF, Reddy M, Cook JD. Inhibition of non-haem iron absorption in man by polyphenolic-containing beverages. Br J Nutr. 1999;81(4):289-295",
+    "url": "https://doi.org/10.1017/S0007114599000537",
+    "type": "RCT"
+  },
+  "F13": {
+    "label": "Bouvard V et al. (IARC). Carcinogenicity of consumption of red and processed meat. Lancet Oncol. 2015;16(16):1599-1600",
+    "url": "https://doi.org/10.1016/S1470-2045(15)00444-1",
+    "type": "valutazione IARC"
+  },
+  "F13b": {
+    "label": "EFSA ANS Panel. Re-evaluation of potassium nitrite (E 249) and sodium nitrite (E 250) as food additives. EFSA Journal 2017;15(6):4786",
+    "url": "https://doi.org/10.2903/j.efsa.2017.4786",
+    "type": "parere scientifico"
+  },
+  "F14": {
+    "label": "CREA. Linee guida per una sana alimentazione. Revisione 2018",
+    "url": "https://www.crea.gov.it/-/on-line-le-linee-guida-per-una-sana-alimentazione-2018",
+    "type": "linea guida"
+  },
+  "F15": {
+    "label": "EFSA CONTAM Panel. Statement on possible public health risks for infants and young children from the presence of nitrates in leafy vegetables. EFSA Journal 2010;8(12):1935",
+    "url": "https://doi.org/10.2903/j.efsa.2010.1935",
+    "type": "parere scientifico"
+  },
+  "T1": {
+    "label": "Healey A, Mendelsohn A (AAP). Selecting Appropriate Toys for Young Children in the Digital Era. Pediatrics. 2019;143(1):e20183348",
+    "url": "https://doi.org/10.1542/peds.2018-3348",
+    "type": "clinical report"
+  },
+  "T2": {
+    "label": "Direttiva 2009/48/CE sulla sicurezza dei giocattoli (sostituita dal Regolamento UE 2025/2509, in applicazione dal 2030)",
+    "url": "https://eur-lex.europa.eu/eli/dir/2009/48/oj",
+    "type": "norma"
+  },
+  "T3": {
+    "label": "Mubarak A et al. Diagnosis, Management, and Prevention of Button Battery Ingestion in Childhood: An ESPGHAN Position Paper. J Pediatr Gastroenterol Nutr. 2021;73(1):129-136",
+    "url": "https://doi.org/10.1097/MPG.0000000000003048",
+    "type": "position paper"
+  },
+  "T3b": {
+    "label": "ESPGHAN. Pediatric Magnet Ingestion, Diagnosis, Management, and Prevention: An ESPGHAN Position Paper. J Pediatr Gastroenterol Nutr. 2023;76(4):523-532",
+    "url": "https://doi.org/10.1097/MPG.0000000000003702",
+    "type": "position paper"
+  },
+  "T4": {
+    "label": "U.S. Consumer Product Safety Commission. Latex Balloons (Document #5087)",
+    "url": "https://www.cpsc.gov/s3fs-public/pdfs/blk_pdf_5087.pdf",
+    "type": "ente regolatorio"
+  },
+  "T5": {
+    "label": "Briskin S, LaBotz M (AAP). Trampoline Safety in Childhood and Adolescence. Pediatrics. 2012;130(4):774-779",
+    "url": "https://doi.org/10.1542/peds.2012-2082",
+    "type": "policy statement"
+  },
+  "T6": {
+    "label": "AAP Committee on Injury and Poison Prevention. Injuries Associated With Infant Walkers. Pediatrics. 2001;108(3):790-792",
+    "url": "https://doi.org/10.1542/peds.108.3.790",
+    "type": "policy statement"
+  },
+  "T6b": {
+    "label": "Sims A et al. Infant Walker-Related Injuries in the United States. Pediatrics. 2018;142(4):e20174332",
+    "url": "https://doi.org/10.1542/peds.2017-4332",
+    "type": "studio epidemiologico"
+  },
+  "T6c": {
+    "label": "Siegel AC, Burton RV. Effects of Baby Walkers on Motor and Mental Development in Human Infants. J Dev Behav Pediatr. 1999;20(5):355-361",
+    "url": "https://doi.org/10.1097/00004703-199910000-00010",
+    "type": "studio osservazionale"
+  },
+  "T7": {
+    "label": "ANSES (Francia). Keep water beads out of the reach of children",
+    "url": "https://www.anses.fr/en/node/150327",
+    "type": "ente sanitario"
+  },
+  "T8": {
+    "label": "U.S. CPSC. CPSC Warns of Strangulation with Crib Toys (Document #5024)",
+    "url": "https://webarchive.library.unt.edu/eot2008/20080916034306/http://www.cpsc.gov/cpscpub/pubs/5024.html",
+    "type": "ente regolatorio"
+  },
+  "T9": {
+    "label": "Zosh JM et al. Accessing the Inaccessible: Redefining Play as a Spectrum. Front Psychol. 2018;9:1124",
+    "url": "https://doi.org/10.3389/fpsyg.2018.01124",
+    "type": "revisione"
+  },
+  "T10": {
+    "label": "Dauch C et al. The influence of the number of toys in the environment on toddlers’ play. Infant Behav Dev. 2018;50:78-87",
+    "url": "https://doi.org/10.1016/j.infbeh.2017.11.005",
+    "type": "studio sperimentale"
+  },
+  "T11": {
+    "label": "Brussoni M et al. What is the Relationship between Risky Outdoor Play and Health in Children? A Systematic Review. Int J Environ Res Public Health. 2015;12(6):6423-6454",
+    "url": "https://doi.org/10.3390/ijerph120606423",
+    "type": "revisione sistematica"
+  },
+  "T12": {
+    "label": "Sosa AV. Association of the Type of Toy Used During Play With the Quantity and Quality of Parent-Infant Communication. JAMA Pediatr. 2016;170(2):132-137",
+    "url": "https://doi.org/10.1001/jamapediatrics.2015.3753",
+    "type": "studio osservazionale"
+  },
+  "C3": {
+    "label": "Kardous CA, Shaw PB. Evaluation of smartphone sound measurement applications. J Acoust Soc Am. 2014;135(4):EL186-EL192",
+    "url": "https://doi.org/10.1121/1.4865269",
+    "type": "studio sperimentale"
+  },
+  "S1": {
+    "label": "Belsky J et al. (NICHD ECCRN). Are there long-term effects of early child care? Child Dev. 2007;78(2):681-701",
+    "url": "https://doi.org/10.1111/j.1467-8624.2007.01021.x",
+    "type": "studio di coorte"
+  },
+  "S2": {
+    "label": "Vermeer HJ, van IJzendoorn MH. Children’s elevated cortisol levels at daycare: A review and meta-analysis. Early Child Res Q. 2006;21(3):390-401",
+    "url": "https://doi.org/10.1016/j.ecresq.2006.07.004",
+    "type": "meta-analisi"
+  },
+  "S3": {
+    "label": "van Huizen T, Plantenga J. Do children benefit from universal early childhood education and care? A meta-analysis of evidence from natural experiments. Econ Educ Rev. 2018;66:206-222",
+    "url": "https://doi.org/10.1016/j.econedurev.2018.08.001",
+    "type": "meta-analisi"
+  },
+  "S4": {
+    "label": "Ulferts H, Wolf KM, Anders Y. Impact of Process Quality in Early Childhood Education and Care on Academic Outcomes: Longitudinal Meta-Analysis. Child Dev. 2019;90(5):1474-1489",
+    "url": "https://doi.org/10.1111/cdev.13296",
+    "type": "meta-analisi"
+  },
+  "S5": {
+    "label": "Murano D, Sawyer JE, Lipnevich AA. A Meta-Analytic Review of Preschool Social and Emotional Learning Interventions. Rev Educ Res. 2020;90(2):227-263",
+    "url": "https://doi.org/10.3102/0034654320914743",
+    "type": "meta-analisi"
+  },
+  "S7b": {
+    "label": "Datler W et al. Toddlers’ transition to out-of-home day care: Settling into a new care environment. Infant Behav Dev. 2012;35(3):439-451",
+    "url": "https://doi.org/10.1016/j.infbeh.2012.02.007",
+    "type": "studio osservazionale"
+  },
+  "S8": {
+    "label": "NICHD Early Child Care Research Network. Child-care effect sizes for the NICHD Study of Early Child Care and Youth Development. Am Psychol. 2006;61(2):99-116",
+    "url": "https://doi.org/10.1037/0003-066X.61.2.99",
+    "type": "studio di coorte"
+  },
+  "P1": {
+    "label": "Logan K, Cuff S (AAP). Organized Sports for Children, Preadolescents, and Adolescents. Pediatrics. 2019;143(6):e20190997",
+    "url": "https://doi.org/10.1542/peds.2019-0997",
+    "type": "clinical report"
+  },
+  "P2": {
+    "label": "Brenner JS (AAP). Sports Specialization and Intensive Training in Young Athletes. Pediatrics. 2016;138(3):e20162148",
+    "url": "https://doi.org/10.1542/peds.2016-2148",
+    "type": "clinical report"
+  },
+  "P3a": {
+    "label": "Shenoi RP et al. (AAP). Prevention of Drowning: Policy Statement. Pediatrics. 2026;158(1):e2026077410",
+    "url": "https://doi.org/10.1542/peds.2026-077410",
+    "type": "policy statement"
+  },
+  "P3b": {
+    "label": "Brenner RA et al. Association between swimming lessons and drowning in childhood: a case-control study. Arch Pediatr Adolesc Med. 2009;163(3):203-210",
+    "url": "https://doi.org/10.1001/archpediatrics.2008.563",
+    "type": "studio caso-controllo"
+  },
+  "P4": {
+    "label": "Logan SW et al. Getting the fundamentals of movement: a meta-analysis of the effectiveness of motor skill interventions in children. Child Care Health Dev. 2012;38(3):305-315",
+    "url": "https://doi.org/10.1111/j.1365-2214.2011.01307.x",
+    "type": "meta-analisi"
+  },
+  "P4b": {
+    "label": "Wick K et al. Interventions to Promote Fundamental Movement Skills in Childcare and Kindergarten: A Systematic Review and Meta-Analysis. Sports Med. 2017;47(10):2045-2068",
+    "url": "https://doi.org/10.1007/s40279-017-0723-1",
+    "type": "meta-analisi"
+  },
+  "P5": {
+    "label": "Robinson LE et al. Motor Competence and its Effect on Positive Developmental Trajectories of Health. Sports Med. 2015;45(9):1273-1284",
+    "url": "https://doi.org/10.1007/s40279-015-0351-6",
+    "type": "revisione"
+  },
+  "P6": {
+    "label": "Olivier J, Creighton P. Bicycle injuries and helmet use: a systematic review and meta-analysis. Int J Epidemiol. 2017;46(1):278-292",
+    "url": "https://doi.org/10.1093/ije/dyw153",
+    "type": "meta-analisi"
+  },
+  "P8": {
+    "label": "Crane J, Temple V. A systematic review of dropout from organized sport among children and youth. Eur Phys Educ Rev. 2015;21(1):114-131",
+    "url": "https://doi.org/10.1177/1356336X14555294",
+    "type": "revisione sistematica"
+  },
+  "G1b": {
+    "label": "Parrott WG, Gleitman H. Infants’ expectations in play: The joy of peek-a-boo. Cognition and Emotion. 1989;3(4):291-311",
+    "url": "https://doi.org/10.1080/02699938908412710",
+    "type": "studio sperimentale"
+  },
+  "G2a": {
+    "label": "Whitehurst GJ et al. Accelerating language development through picture book reading. Dev Psychol. 1988;24(4):552-559",
+    "url": "https://doi.org/10.1037/0012-1649.24.4.552",
+    "type": "RCT"
+  },
+  "G2b": {
+    "label": "Mol SE et al. Added value of dialogic parent–child book readings: A meta-analysis. Early Educ Dev. 2008;19(1):7-26",
+    "url": "https://doi.org/10.1080/10409280701838603",
+    "type": "meta-analisi"
+  },
+  "G3": {
+    "label": "Levine SC et al. Early puzzle play: A predictor of preschoolers’ spatial transformation skill. Dev Psychol. 2012;48(2):530-542",
+    "url": "https://doi.org/10.1037/a0025913",
+    "type": "studio longitudinale"
+  },
+  "G4a": {
+    "label": "Verdine BN et al. Deconstructing building blocks: Preschoolers’ spatial assembly performance relates to early mathematical skills. Child Dev. 2014;85(3):1062-1076",
+    "url": "https://doi.org/10.1111/cdev.12165",
+    "type": "studio osservazionale"
+  },
+  "G4b": {
+    "label": "Uttal DH et al. The malleability of spatial skills: A meta-analysis of training studies. Psychol Bull. 2013;139(2):352-402",
+    "url": "https://doi.org/10.1037/a0028446",
+    "type": "meta-analisi"
+  },
+  "G5a": {
+    "label": "Siegler RS, Ramani GB. Playing linear numerical board games promotes low-income children’s numerical development. Dev Sci. 2008;11(5):655-661",
+    "url": "https://doi.org/10.1111/j.1467-7687.2008.00714.x",
+    "type": "RCT"
+  },
+  "G5b": {
+    "label": "Ramani GB, Siegler RS. Promoting broad and stable improvements in low-income children’s numerical knowledge through playing number board games. Child Dev. 2008;79(2):375-394",
+    "url": "https://doi.org/10.1111/j.1467-8624.2007.01131.x",
+    "type": "RCT"
+  },
+  "G6a": {
+    "label": "Tominey SL, McClelland MM. Red Light, Purple Light: Findings from a randomized trial using circle time games to improve behavioral self-regulation in preschool. Early Educ Dev. 2011;22(3):489-519",
+    "url": "https://doi.org/10.1080/10409289.2011.574258",
+    "type": "RCT"
+  },
+  "G6b": {
+    "label": "Schmitt SA et al. Strengthening school readiness for Head Start children: Evaluation of a self-regulation intervention. Early Child Res Q. 2015;30(A):20-31",
+    "url": "https://doi.org/10.1016/j.ecresq.2014.08.001",
+    "type": "RCT"
+  },
+  "G7": {
+    "label": "Diamond A, Lee K. Interventions shown to aid executive function development in children 4 to 12 years old. Science. 2011;333(6045):959-964",
+    "url": "https://doi.org/10.1126/science.1204529",
+    "type": "revisione"
+  },
+  "G8": {
+    "label": "Lillard AS et al. The impact of pretend play on children’s development: A review of the evidence. Psychol Bull. 2013;139(1):1-34",
+    "url": "https://doi.org/10.1037/a0029321",
+    "type": "revisione"
+  },
+  "G9a": {
+    "label": "Bryant PE et al. Nursery rhymes, phonological skills and reading. J Child Lang. 1989;16(2):407-428",
+    "url": "https://doi.org/10.1017/S0305000900010485",
+    "type": "studio longitudinale"
+  },
+  "G9b": {
+    "label": "Ehri LC et al. Phonemic awareness instruction helps children learn to read: Evidence from the National Reading Panel’s meta-analysis. Read Res Q. 2001;36(3):250-287",
+    "url": "https://doi.org/10.1598/RRQ.36.3.2",
+    "type": "meta-analisi"
+  },
+  "G10": {
+    "label": "Diamond A. Development of the ability to use recall to guide action, as indicated by infants’ performance on AB. Child Dev. 1985;56(4):868-883",
+    "url": "https://doi.org/10.2307/1130099",
+    "type": "studio longitudinale"
+  },
+  "G11": {
+    "label": "Dankiw KA et al. The impacts of unstructured nature play on health in early childhood development: A systematic review. PLoS One. 2020;15(2):e0229006",
+    "url": "https://doi.org/10.1371/journal.pone.0229006",
+    "type": "revisione sistematica"
+  },
+  "G12a": {
+    "label": "Tamis-LeMonda CS, Bornstein MH, Baumwell L. Maternal responsiveness and children’s achievement of language milestones. Child Dev. 2001;72(3):748-767",
+    "url": "https://doi.org/10.1111/1467-8624.00313",
+    "type": "studio longitudinale"
+  },
+  "G12b": {
+    "label": "Tamis-LeMonda CS, Kuchirko Y, Song L. Why is infant language learning facilitated by parental responsiveness? Curr Dir Psychol Sci. 2014;23(2):121-126",
+    "url": "https://doi.org/10.1177/0963721414522813",
+    "type": "revisione"
+  },
+  "G14": {
+    "label": "Cameron CE et al. Fine motor skills and executive function both contribute to kindergarten achievement. Child Dev. 2012;83(4):1229-1244",
+    "url": "https://doi.org/10.1111/j.1467-8624.2012.01768.x",
+    "type": "studio longitudinale"
+  },
+  "W1": {
+    "label": "WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards based on length/height, weight and age. Acta Paediatr Suppl. 2006;450:76-85",
+    "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02378.x",
+    "type": "ente sanitario"
+  },
+  "W2": {
+    "label": "de Onis M, Onyango AW, Borghi E, Siyam A, Nishida C, Siekmann J. Development of a WHO growth reference for school-aged children and adolescents. Bull World Health Organ. 2007;85(9):660-667",
+    "url": "https://doi.org/10.2471/BLT.07.043497",
+    "type": "ente sanitario"
+  },
+  "W3": {
+    "label": "WHO. WHO child growth standards: training course on child growth assessment. C: Interpreting growth indicators. Geneva: WHO; 2008",
+    "url": "https://www.who.int/publications/i/item/9789241595070",
+    "type": "ente sanitario"
+  },
+  "W4": {
+    "label": "WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Length/height-for-age, weight-for-age, weight-for-length, weight-for-height and body mass index-for-age: Methods and development. Geneva: WHO; 2006",
+    "url": "https://www.who.int/publications/i/item/924154693X",
+    "type": "ente sanitario"
+  },
+  "W5": {
+    "label": "RCPCH. UK-WHO growth charts 0-4 years – Fact sheet: plotting and assessing infants and toddlers. 2009",
+    "url": "https://www.rcpch.ac.uk/sites/default/files/Plotting_toddlers.pdf",
+    "type": "linea guida"
+  },
+  "W6": {
+    "label": "NICE. Faltering growth: recognition and management of faltering growth in children (NG75). 2017",
+    "url": "https://www.nice.org.uk/guidance/ng75",
+    "type": "linea guida"
+  },
+  "W7": {
+    "label": "WHO, UNICEF. Recommendations for data collection, analysis and reporting on anthropometric indicators in children under 5 years old. Geneva: WHO; 2019",
+    "url": "https://www.who.int/publications/i/item/9789241515559",
+    "type": "ente sanitario"
+  },
+  "M1": {
+    "label": "NICE. Fever in under 5s: assessment and initial management (NG143). 2019",
+    "url": "https://www.nice.org.uk/guidance/ng143/chapter/Recommendations",
+    "type": "linea guida"
+  },
+  "M2": {
+    "label": "NHS. How and when to give paracetamol for children",
+    "url": "https://www.nhs.uk/medicines/paracetamol-for-children/how-and-when-to-give-paracetamol-for-children/",
+    "type": "ente sanitario"
+  },
+  "M3": {
+    "label": "NHS. Ibuprofen for children",
+    "url": "https://www.nhs.uk/medicines/ibuprofen-for-children/",
+    "type": "ente sanitario"
+  },
+  "M4": {
+    "label": "MHRA. UK Public Assessment Report: Liquid paracetamol for children – revised UK dosing instructions. 2011",
+    "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/852396/Liquid_paracetamol_for_children_revised_UK_dosing_instructions_introduced.pdf",
+    "type": "ente regolatorio"
+  },
+  "M5": {
+    "label": "AIFA. Riassunto delle caratteristiche del prodotto (RCP) – paracetamolo per uso pediatrico, AIC 012745 (2026)",
+    "url": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/219/farmaci/12745/stampati?ts=RCP",
+    "type": "ente regolatorio"
+  },
+  "M6": {
+    "label": "AIFA. RCP – ibuprofene 20 mg/ml sospensione orale, AIC 042143 (2025)",
+    "url": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1561/farmaci/42143/stampati?ts=RCP",
+    "type": "ente regolatorio"
+  },
+  "M7": {
+    "label": "AIFA. RCP – ibuprofene sospensione orale per bambini, AIC 034102 (2025)",
+    "url": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3510/farmaci/34102/stampati?ts=RCP",
+    "type": "ente regolatorio"
+  },
+  "M8": {
+    "label": "Chiappini E et al. 2016 Update of the Italian Pediatric Society Guidelines for Management of Fever in Children. J Pediatr. 2017;180:177-183.e1",
+    "url": "https://doi.org/10.1016/j.jpeds.2016.09.043",
+    "type": "linea guida"
+  },
+  "M9": {
+    "label": "Минздрав РФ, Союз педиатров России. Клинические рекомендации «Острая респираторная вирусная инфекция (ОРВИ) у детей». 2022",
+    "url": "https://cr.minzdrav.gov.ru/",
+    "type": "linea guida"
+  },
+  "W8": {
+    "label": "WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Head circumference-for-age, arm circumference-for-age, triceps skinfold-for-age and subscapular skinfold-for-age: Methods and development. Geneva: WHO; 2007",
+    "url": "https://iris.who.int/handle/10665/43706",
+    "type": "ente sanitario"
+  },
+  "W9": {
+    "label": "Cole TJ. Do growth chart centiles need a face lift? BMJ. 1994;308(6929):641-642",
+    "url": "https://doi.org/10.1136/bmj.308.6929.641",
+    "type": "revisione"
+  },
+  "W10": {
+    "label": "WHO. Assessment of infants with microcephaly in the context of Zika virus: interim guidance (WHO/ZIKV/MOC/16.3). 2016",
+    "url": "https://iris.who.int/handle/10665/204475",
+    "type": "ente sanitario"
+  },
+  "W11": {
+    "label": "StatPearls. Macrocephaly. NCBI Bookshelf",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK560786/",
+    "type": "revisione"
+  },
+  "W12": {
+    "label": "WHO. anthro: computation of the WHO Child Growth Standards (R package)",
+    "url": "https://cran.r-project.org/package=anthro",
+    "type": "ente sanitario"
+  },
+  "W13": {
+    "label": "RCPCH. UK-WHO growth charts – Fact sheet: plotting preterm infants. 2009",
+    "url": "https://www.rcpch.ac.uk/sites/default/files/Plotting_preterm_infants.pdf",
+    "type": "linea guida"
+  },
+  "W14": {
+    "label": "AAP/Bright Futures. Recommendations for Preventive Pediatric Health Care (periodicity schedule). 2025",
+    "url": "https://downloads.aap.org/AAP/PDF/periodicity_schedule.pdf",
+    "type": "linea guida"
+  }
 }

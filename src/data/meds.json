@@ -1,0 +1,44 @@
+{
+  "status": "verified-2026-11-08",
+  "note": "Limiti prudenziali per un CONTROLLO, non per calcolare dosi. Verificati da revisione indipendente su RCP AIFA, NICE, NHS, MHRA, SIP, Minzdrav RF.",
+  "sources": ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9"],
+  "active": {
+    "paracetamolo": {
+      "group": "antipyretic",
+      "askDoctorUnderMonths": 3,
+      "maxDays": 3,
+      "contra": ["liver"],
+      "routes": {
+        "oral": { "minIntervalH": 4, "cautionIntervalH": 6, "maxDoses24h": 4, "maxMgPerKgDose": 15, "stopMgPerKgDose": 20, "maxMgPerKgDay": 60 },
+        "rectal": { "minIntervalH": 6, "maxDoses24h": 4, "maxMgPerKgDose": 25, "maxMgPerKgDay": 75 }
+      },
+      "conc": [24, 100],
+      "src": ["M5", "M4", "M2", "M8"],
+      "refs": {
+        "underAge": ["M1", "M4"], "underWeight": ["M5"], "contra": ["M5"],
+        "tooSoon": ["M2", "M4", "M5"], "intervalCaution": ["M5"], "tooMany": ["M2", "M4", "M5"],
+        "doseHigh": ["M4", "M8", "M5"], "doseVeryHigh": ["M4"], "dayHigh": ["M5", "M9", "M4"],
+        "tooLong": ["M2", "M4", "M5"], "alternating": ["M1", "M8", "M9"]
+      }
+    },
+    "ibuprofene": {
+      "group": "antipyretic",
+      "askDoctorUnderMonths": 3,
+      "minWeightKg": 5.6,
+      "maxDays": 3,
+      "maxDaysYoung": { "underMonths": 6, "days": 1 },
+      "contra": ["dehydration", "chickenpox", "kidney", "liver", "nsaidAsthma", "otherNsaid"],
+      "cautions": ["asthma"],
+      "routes": {
+        "oral": { "minIntervalH": 6, "maxDoses24h": 3, "maxMgPerKgDose": 10, "maxMgPerKgDay": 30 }
+      },
+      "conc": [20, 40],
+      "src": ["M6", "M7", "M3", "M8"],
+      "refs": {
+        "underAge": ["M6", "M3"], "underWeight": ["M6"], "contra": ["M6", "M7", "M8"], "caution": ["M8"],
+        "tooSoon": ["M6", "M3"], "tooMany": ["M6", "M3"], "doseHigh": ["M6"], "dayHigh": ["M6", "M9"],
+        "tooLong": ["M3", "M6"], "alternating": ["M1", "M8", "M9"]
+      }
+    }
+  }
+}

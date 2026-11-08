@@ -4,6 +4,7 @@ import { ageMatch, formatRange, formatAge } from '../lib/age.js';
 import { KidPills, kidLabel, spring, tap } from './Common.jsx';
 import Scene from './Scenes.jsx';
 import sources from '../../content/sources.json';
+import { InlineRefs } from './Views.jsx';
 
 const COLORS = ['#fdf0dc', '#e6f5ec', '#ece9fb', '#fde6ec', '#e3eefb', '#fff6d8'];
 
@@ -147,7 +148,7 @@ export function GameView({ lang, id }) {
 
       <section className="block" style={{ '--c': '#a8d0be' }}>
         <h2><i className="dot" />{s.why}</h2>
-        <p style={{ marginTop: 10, lineHeight: 1.6 }}>{t.why}</p>
+        <p style={{ marginTop: 10, lineHeight: 1.6 }}>{t.why} <InlineRefs list={g.sources.map((id) => ({ id, ...sources[id] }))} /></p>
       </section>
 
       {t.tip && <div className="quote-card" style={{ '--c': '#f7d79a' }}>💡 {t.tip}</div>}
