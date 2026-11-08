@@ -43,6 +43,7 @@ export const DIARY_TEXT = {
       newbornLoss: (w) => `Calo di circa il ${w.pct}% rispetto al peso alla nascita: oltre il 10% va valutato.`,
       notRegained: 'A 3 settimane non ha ancora recuperato il peso alla nascita: va valutato.'
     },
+    beforeTerm: 'Prima del termine corretto (40 settimane) le curve OMS non si applicano: il pediatra usa curve specifiche per i pretermine.',
     noWfl: 'Lunibù non calcola il peso-per-lunghezza né il BMI: non può dire se è magro o in sovrappeso.',
     pos: 'Come è stato misurato', lying: 'sdraiato', standing: 'in piedi',
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
@@ -50,7 +51,7 @@ export const DIARY_TEXT = {
     // medicine
     medsIntro: 'Registra ogni farmaco dato. Per paracetamolo e ibuprofene controllo intervalli, numero di dosi e dose per kg rispetto ai limiti delle fonti ufficiali.',
     medsNever: 'Lunibù non calcola né suggerisce dosi. Usa sempre la dose indicata sulla confezione o dal pediatra, in base al peso attuale; per dubbi chiedi al pediatra o al farmacista.',
-    medsRules: ['Controlla la concentrazione: lo stesso principio attivo esiste in gocce e sciroppo con concentrazioni molto diverse (anche 4 volte).', 'Conta insieme tutto il paracetamolo: sciroppo, gocce, supposte e farmaci combinati che lo contengono.', 'Si tratta il malessere, non il numero sul termometro.', 'Sospetto sovradosaggio: contatta subito un centro antiveleni o il 112, anche se il bimbo sembra stare bene.'],
+    medsRules: ['Controlla la concentrazione: lo stesso principio attivo esiste in gocce e sciroppo con concentrazioni molto diverse (anche 4 volte o più).', 'Conta insieme tutto il paracetamolo: sciroppo, gocce, supposte e farmaci combinati che lo contengono.', 'Si tratta il malessere, non il numero sul termometro.', 'Sospetto sovradosaggio: contatta subito un centro antiveleni o il 112, anche se il bimbo sembra stare bene.'],
     addMed: 'Registra un farmaco', med: 'Farmaco', other: 'Altro farmaco…', otherName: 'Nome del farmaco o principio attivo',
     route: 'Via', oral: 'bocca', rectal: 'supposta', amount: 'Quantità', unit: 'Unità', conc: 'Concentrazione (mg/ml, scritta su confezione e foglietto)',
     concOther: 'altra', when: 'Data e ora', note: 'Nota (facoltativa)', flags: 'In questo momento il bimbo…',
@@ -65,20 +66,22 @@ export const DIARY_TEXT = {
       underWeight: (p) => `Sotto i ${fmt(p.kg)} kg questo farmaco non va dato senza indicazione del medico.`,
       contra: (p, s) => `Con questa condizione (${s.flag[p.flag]}) chiedi prima al pediatra.`,
       caution: (p, s) => `Attenzione: ${s.flag[p.flag]}. Chiedi consiglio al pediatra.`,
-      tooSoon: (p) => `Sono passate ${fmt(p.gap)} ore dalla dose precedente: l'intervallo minimo è ${p.hours} ore.`,
-      tooMany: (p) => `${p.n} dosi in 24 ore: il massimo è ${p.max}.`,
+      tooSoon: (p) => `Sono passate ${fmt(p.gap)} ore dalla dose precedente, meno dell'intervallo minimo prudenziale controllato da Lunibù (${p.hours} ore). Confronta con il foglietto della tua confezione e chiedi al pediatra.`,
+      tooMany: (p) => `${p.n} dosi in 24 ore: oltre il limite prudenziale controllato da Lunibù (${p.max}). Confronta con il foglietto della tua confezione e chiedi al pediatra.`,
       doseHigh: (p) => `Questa dose è ${fmt(p.perKg)} mg/kg: sopra il massimo abituale per dose (${p.max} mg/kg). Ricontrolla peso, concentrazione e foglietto.`,
       doseVeryHigh: (p) => `Questa dose è ${fmt(p.perKg)} mg/kg, oltre ${p.max} mg/kg: ricontrolla subito e chiedi al pediatra o a un centro antiveleni.`,
       intervalCaution: (p) => `Molte confezioni indicano almeno ${p.hours} ore tra una dose e l'altra: controlla il foglietto.`,
-      dayHigh: (p) => `Nelle ultime 24 ore: ${fmt(p.perKg)} mg/kg, oltre il massimo giornaliero (${p.max} mg/kg).`,
+      dayHigh: (p) => `Nelle ultime 24 ore, per bocca: ${fmt(p.perKg)} mg/kg, oltre il limite prudenziale controllato da Lunibù (${p.max} mg/kg al giorno). Confronta con il foglietto della tua confezione e chiedi al pediatra.`,
+      rectalBand: 'Per le supposte intervalli e numero massimo di dosi dipendono dalla fascia di peso: segui il foglietto. Le linee guida pediatriche italiane sconsigliano la via rettale, salvo se il bimbo vomita.',
+      mixedRoutes: 'Stai usando vie diverse (bocca e supposta): conta tutto il paracetamolo insieme e, nel dubbio, chiedi al pediatra.',
       oldWeight: (p) => `L'ultimo peso registrato è di ${p.days} giorni fa: aggiornalo per un controllo affidabile.`,
       noWeight: 'Senza un peso registrato non posso controllare la dose per kg: aggiungi il peso in "Crescita".',
       noMg: 'Inserisci la quantità in mg, oppure in ml con la concentrazione, per controllare la dose.',
       tooLong: (p) => `Usato da più di ${p.days === 1 ? '24 ore' : `${p.days} giorni`} di fila: senti il pediatra.`,
-      alternating: (p, s) => `Hai dato anche ${s.names[p.other]} nelle ultime ore: alternare o associare i due farmaci si fa solo su indicazione del medico.`,
+      alternating: (p, s) => `Hai dato anche ${s.names[p.other].toLowerCase()} nelle ultime ore: alternare o associare i due farmaci si fa solo su indicazione del medico.`,
       ok: 'Nessun limite superato tra quelli controllati. Questo non garantisce che la dose sia giusta per il tuo bimbo.'
     },
-    sources: 'Fonti', provisional: 'Limiti in fase di verifica indipendente.'
+    sources: 'Fonti'
   },
   ru: {
     title: 'Дневник', sub: 'Рост и лекарства — только на вашем телефоне.',
@@ -100,7 +103,7 @@ export const DIARY_TEXT = {
       weightVeryHigh: 'Вес намного выше типичных значений (более +3 SD). Педиатр оценивает его относительно длины тела (вес к длине или ИМТ).',
       veryLow: 'Намного ниже типичных для возраста значений ВОЗ (более −3 SD).',
       low: 'Ниже типичных для возраста значений ВОЗ (более −2 SD).',
-      below04: 'Ниже 0,4-го перцентиля: рекомендуется осмотр педиатра, даже если рост равномерный.',
+      below04: 'Ниже 0,4-го перцентиля: рекомендуется осмотр педиатра, даже если ребёнок растёт равномерно.',
       headHigh: 'Окружность головы выше типичных значений (более +2 SD). Часто это семейное: полезно сравнить с родителями.',
       headVeryHigh: 'Окружность головы намного выше типичных значений (более +3 SD).',
       headLow: 'Окружность головы ниже типичных значений (более −2 SD).',
@@ -110,17 +113,18 @@ export const DIARY_TEXT = {
       newbornLoss: (w) => `Потеря около ${w.pct}% веса при рождении: потерю более 10% нужно оценить у врача.`,
       notRegained: 'В 3 недели вес при рождении ещё не восстановлен: нужно показаться врачу.'
     },
+    beforeTerm: 'До достижения скорректированного срока 40 недель кривые ВОЗ не применяются: педиатр использует кривые для недоношенных.',
     noWfl: 'Lunibù не рассчитывает вес к длине и ИМТ: он не может сказать, худой ребёнок или с лишним весом.',
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
     medsIntro: 'Записывайте каждое лекарство. Для парацетамола и ибупрофена проверяются интервалы, число доз и доза на кг по пределам из официальных источников.',
     medsNever: 'Lunibù не рассчитывает и не предлагает дозы. Всегда используйте дозу с упаковки или назначенную педиатром, по текущему весу; при сомнениях спросите педиатра или фармацевта.',
-    medsRules: ['Проверяйте концентрацию: одно и то же вещество выпускают в каплях и сиропе с очень разной концентрацией (до 4 раз).', 'Считайте вместе весь парацетамол: сироп, капли, свечи и комбинированные препараты с ним.', 'Лечат плохое самочувствие, а не цифру на термометре.', 'Подозрение на передозировку: сразу свяжитесь с токсикологическим центром или звоните 112, даже если ребёнок выглядит здоровым.'],
+    medsRules: ['Проверяйте концентрацию: одно и то же вещество выпускают в каплях и сиропе с очень разной концентрацией (в 4 раза и более).', 'Считайте вместе весь парацетамол: сироп, капли, свечи и комбинированные препараты с ним.', 'Лечат плохое самочувствие, а не цифру на термометре.', 'Подозрение на передозировку: сразу свяжитесь с токсикологическим центром или звоните 112, даже если ребёнок выглядит здоровым.'],
     addMed: 'Записать лекарство', med: 'Лекарство', other: 'Другое лекарство…', otherName: 'Название лекарства или действующего вещества',
     route: 'Способ', oral: 'внутрь', rectal: 'свеча', amount: 'Количество', unit: 'Ед.', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)',
     concOther: 'другая', when: 'Дата и время', note: 'Заметка (необязательно)', flags: 'Сейчас у ребёнка…',
-    flag: { dehydration: 'обезвоживание (рвота или понос, мало пьёт)', chickenpox: 'ветрянка', kidney: 'болезнь почек', liver: 'болезнь печени', nsaidAsthma: 'была астма или реакция на аспирин или другие НПВС', otherNsaid: 'принимает другое НПВС', asthma: 'астма' },
+    flag: { dehydration: 'обезвоживание (рвота или понос, мало пьёт)', chickenpox: 'ветрянка', kidney: 'болезнь почек', liver: 'болезнь печени', nsaidAsthma: 'была астма или реакция на аспирин или другие НПВС', otherNsaid: 'параллельно приём другого НПВС', asthma: 'астма' },
     names: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен' },
     check: 'Проверка', saveAnyway: 'Всё равно записать', filters: 'Фильтры', allMeds: 'Все', period: 'Период', days: (d) => (d ? `${d} дн.` : 'всё'),
     noMeds: 'За этот период лекарств не записано.', perDay: 'Доз в день', export: 'Экспорт CSV (для педиатра)',
@@ -131,12 +135,14 @@ export const DIARY_TEXT = {
       underWeight: (p) => `При весе меньше ${fmt(p.kg)} кг это лекарство не дают без указания врача.`,
       contra: (p, s) => `При этом состоянии (${s.flag[p.flag]}) сначала спросите педиатра.`,
       caution: (p, s) => `Внимание: ${s.flag[p.flag]}. Посоветуйтесь с педиатром.`,
-      tooSoon: (p) => `С прошлой дозы прошло ${fmt(p.gap)} ч: минимальный интервал — ${p.hours} ч.`,
-      tooMany: (p) => `${p.n} доз за 24 часа: максимум — ${p.max}.`,
+      tooSoon: (p) => `С прошлой дозы прошло ${fmt(p.gap)} ч — меньше консервативного минимального интервала проверки Lunibù (${p.hours} ч). Сверьтесь с инструкцией к вашей упаковке и спросите педиатра.`,
+      tooMany: (p) => `Доз за 24 часа: ${p.n} — выше консервативного предела проверки Lunibù (${p.max}). Сверьтесь с инструкцией к вашей упаковке и спросите педиатра.`,
       doseHigh: (p) => `Эта доза — ${fmt(p.perKg)} мг/кг: выше обычного максимума на приём (${p.max} мг/кг). Проверьте вес, концентрацию и инструкцию.`,
       doseVeryHigh: (p) => `Эта доза — ${fmt(p.perKg)} мг/кг, больше ${p.max} мг/кг: срочно перепроверьте и спросите педиатра или токсикологический центр.`,
       intervalCaution: (p) => `Во многих инструкциях указан интервал не менее ${p.hours} ч между дозами: проверьте инструкцию.`,
-      dayHigh: (p) => `За последние 24 часа: ${fmt(p.perKg)} мг/кг — больше суточного максимума (${p.max} мг/кг).`,
+      dayHigh: (p) => `За последние 24 часа внутрь: ${fmt(p.perKg)} мг/кг — выше консервативного предела проверки Lunibù (${p.max} мг/кг в сутки). Сверьтесь с инструкцией к вашей упаковке и спросите педиатра.`,
+      rectalBand: 'Для свечей интервалы и максимальное число доз зависят от весовой группы: следуйте инструкции. Итальянские педиатрические рекомендации не советуют ректальный путь, кроме случаев рвоты.',
+      mixedRoutes: 'Вы используете разные способы (внутрь и свечи): считайте весь парацетамол вместе и при сомнениях спросите педиатра.',
       oldWeight: (p) => `Последний вес записан ${p.days} дн. назад: обновите его для надёжной проверки.`,
       noWeight: 'Без записанного веса нельзя проверить дозу на кг: добавьте вес в разделе «Рост».',
       noMg: 'Укажите количество в мг или в мл с концентрацией, чтобы проверить дозу.',
@@ -144,7 +150,7 @@ export const DIARY_TEXT = {
       alternating: (p, s) => `В последние часы давали и ${s.names[p.other].toLowerCase()}: чередовать или сочетать эти лекарства можно только по указанию врача.`,
       ok: 'Ни один из проверяемых пределов не превышен. Это не гарантирует, что доза подходит вашему ребёнку.'
     },
-    sources: 'Источники', provisional: 'Пределы проходят независимую проверку.'
+    sources: 'Источники'
   }
 };
 
@@ -180,7 +186,7 @@ function SourceList({ ids, lang }) {
 export function growthAge(kid, dateISO) {
   const m = monthsAt(kid.birth, dateISO);
   const w = +kid.gaWeeks;
-  if (w && w < 37 && m < (w < 32 ? 24 : 12)) return Math.max(0, m - ((40 - w) * 7) / 30.4375);
+  if (w && w < 37 && m < (w < 32 ? 24 : 12)) return m - ((40 - w) * 7) / 30.4375; // negativo = prima del termine
   return m;
 }
 const hVal = (g, m) => adjustHeight(m, +g.height, g.heightPos || (m < 24 ? 'lying' : 'standing'));
@@ -254,6 +260,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
     return mine.map((g) => {
       const m = growthAge(kid, g.date);
       const ev = {};
+      if (m < 0) return { ...g, m, ev, beforeTerm: true }; // prima del termine corretto le curve OMS non valgono (W13)
       for (const k of Object.keys(INDICATORS)) {
         if (!(g[k] > 0) || m > INDICATORS[k].maxMonths) continue;
         const v = k === 'height' ? hVal(g, m) : +g[k];
@@ -277,6 +284,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
     if (!form) return [];
     const m = growthAge(kid, form.date || today());
     const out = [];
+    if (m < 0) return out;
     for (const k of Object.keys(INDICATORS)) {
       let v = parseFloat(String(form[k] || '').replace(',', '.'));
       if (!(v > 0) || m > INDICATORS[k].maxMonths) continue;
@@ -342,6 +350,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
                 ))}
               </div>
             )}
+            {growthAge(kid, form.date || today()) < 0 && <p className="small muted">{s.beforeTerm} <Refs ids={['W13']} /></p>}
             <WarnBox warnings={draftWarnings} s={s} />
             <p className="small muted">{s.measureTips} <Refs ids={['W4']} /></p>
             <div className="row">
@@ -373,6 +382,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
                   </span>
                 ))}
               </div>
+              {g.beforeTerm && <p className="small muted">{s.beforeTerm} <Refs ids={['W13']} /></p>}
               <WarnBox warnings={warns} s={s} />
             </motion.li>
           );
@@ -395,7 +405,7 @@ function CheckList({ results, s, active }) {
       <ul>
         {msgs.map((r, i) => {
           const m = s.c[r.kind];
-          return <li key={i} className={r.level}>{typeof m === 'function' ? m(r, s) : m} {r.level !== 'info' && <Refs ids={ACTIVE[active]?.refs?.[r.kind] || ACTIVE[active]?.src} />}</li>;
+          return <li key={i} className={r.level}>{typeof m === 'function' ? m(r, s) : m} <Refs ids={ACTIVE[active]?.refs?.[r.kind] || (r.level !== 'info' ? ACTIVE[active]?.src : null)} /></li>;
         })}
         {level === 'ok' && !msgs.some((r) => r.kind === 'noCheck') && <li>{s.c.ok}</li>}
       </ul>

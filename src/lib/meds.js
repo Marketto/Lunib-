@@ -47,27 +47,38 @@ export function checkDose(entry, log, { months, weight }) {
     else if (r.cautionIntervalH && gap < r.cautionIntervalH) out.push({ kind: 'intervalCaution', level: 'info', hours: r.cautionIntervalH });
   }
   const in24 = [entry, ...same.filter((e) => { const t = new Date(e.at).getTime(); return t > at - 24 * H && t <= at; })];
-  if (in24.length > r.maxDoses24h) out.push({ kind: 'tooMany', level: 'warn', max: r.maxDoses24h, n: in24.length });
+  // numero di dosi: conta solo la stessa via se l'altra non ha un massimo verificato (supposte: fasce di peso del foglietto)
+  if (r.maxDoses24h) {
+    const n = in24.filter((e) => (a.routes[e.route] || r).maxDoses24h).length;
+    if (n > r.maxDoses24h) out.push({ kind: 'tooMany', level: 'warn', max: r.maxDoses24h, n });
+  }
+  if (r.followBand) out.push({ kind: 'rectalBand', level: 'info' });
+  if (new Set(in24.map((e) => e.route || 'oral')).size > 1) out.push({ kind: 'mixedRoutes', level: 'info' });
 
   const mg = toMg(entry);
   if (mg && weight?.kg) {
     const perKg = mg / weight.kg;
     if (r.stopMgPerKgDose && perKg > r.stopMgPerKgDose * 1.001) out.push({ kind: 'doseVeryHigh', level: 'stop', perKg, max: r.stopMgPerKgDose });
     else if (r.maxMgPerKgDose && perKg > r.maxMgPerKgDose * 1.001) out.push({ kind: 'doseHigh', level: 'warn', perKg, max: r.maxMgPerKgDose });
-    // totale 24 h su tutte le vie; se c'è una supposta vale il limite (più alto) della via rettale
-    const day = in24.reduce((s, e) => s + (toMg(e) || 0), 0) / weight.kg;
-    const dayMax = Math.max(...in24.map((e) => (a.routes[e.route] || r).maxMgPerKgDay || 0));
-    if (dayMax && day > dayMax * 1.001) out.push({ kind: 'dayHigh', level: 'warn', perKg: day, max: dayMax });
+    // totale 24 h: somma delle frazioni del limite giornaliero di ogni via che ne ha uno verificato
+    let frac = 0, mgKg = 0, dayMax = 0;
+    for (const e of in24) {
+      const lim = (a.routes[e.route] || r).maxMgPerKgDay;
+      if (!lim) continue;
+      const v = (toMg(e) || 0) / weight.kg;
+      frac += v / lim; mgKg += v; dayMax = lim;
+    }
+    if (frac > 1.001) out.push({ kind: 'dayHigh', level: 'warn', perKg: mgKg, max: dayMax });
     if (weight.days > 31) out.push({ kind: 'oldWeight', level: 'info', days: weight.days });
   } else if (mg && !weight) out.push({ kind: 'noWeight', level: 'info' });
   else if (!mg) out.push({ kind: 'noMg', level: 'info' });
 
-  // Uso continuativo: giorni consecutivi con almeno una dose
-  const days = new Set([entry, ...before].map((e) => e.at.slice(0, 10)));
-  let streak = 0;
-  for (let d = new Date(entry.at); days.has(d.toISOString().slice(0, 10)); d = new Date(d.getTime() - 86400000)) streak++;
+  // Uso continuativo: un "episodio" continua finché tra due dosi passano ≤ 24 h
+  const times = [at, ...before.map((e) => new Date(e.at).getTime())].sort((x, y) => y - x);
+  let start = times[0];
+  for (let i = 1; i < times.length && times[i - 1] - times[i] <= 24 * H; i++) start = times[i];
   const maxDays = months != null && a.maxDaysYoung && months < a.maxDaysYoung.underMonths ? a.maxDaysYoung.days : a.maxDays;
-  if (maxDays && streak > maxDays) out.push({ kind: 'tooLong', level: 'warn', days: maxDays });
+  if (maxDays && at - start > maxDays * 24 * H) out.push({ kind: 'tooLong', level: 'warn', days: maxDays });
 
   // Altro antipiretico nelle ultime ore: si alterna solo su indicazione del medico
   const other = log.find((e) => e.kidId === entry.kidId && e.active && e.active !== entry.active && ACTIVE[e.active]?.group === a.group &&

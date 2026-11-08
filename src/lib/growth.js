@@ -113,8 +113,10 @@ export function assess(indicator, sex, months, value, prev, opts = {}) {
     let spaces = 2;
     if (indicator === 'weight' && opts.birthZ != null) spaces = opts.birthZ < -1.341 ? 1 : opts.birthZ > 1.341 ? 3 : 2; // NICE 1.2.1 (W6)
     const thr = spaces * R.space - 0.01;
-    if (hiZ - z >= thr && !towardMedian(hiZ)) warnings.push({ kind: 'crossDown', level: 'warn', spaces });
-    else if (indicator !== 'weight' && z - loZ >= 2 * R.space - 0.01 && !towardMedian(loZ)) warnings.push({ kind: 'crossUp', level: 'warn', spaces: 2 });
+    // esenzione "verso la mediana" solo per altezza e per il peso senza peso alla nascita (testa: ogni salto conta, W5)
+    const exempt = indicator === 'height' || (indicator === 'weight' && opts.birthZ == null);
+    if (hiZ - z >= thr && !(exempt && towardMedian(hiZ))) warnings.push({ kind: 'crossDown', level: 'warn', spaces });
+    else if (indicator !== 'weight' && z - loZ >= 2 * R.space - 0.01 && !(exempt && towardMedian(loZ))) warnings.push({ kind: 'crossUp', level: 'warn', spaces: 2 });
   }
   return { z, p: percentile(z), warnings };
 }

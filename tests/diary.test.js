@@ -96,3 +96,25 @@ describe('regole verificate', () => {
     expect(zScore('height', 'f', 23.99, 86.4)).toBeCloseTo(0, 1);
   });
 });
+
+describe('correzioni verifica finale', () => {
+  const base = { kidId: 'k', active: 'ibuprofene', route: 'oral', unit: 'mg', flags: [] };
+  it('durata: dose serale + mattina dopo non è "più di 24 ore"', () => {
+    const log = [{ ...base, id: 'a', at: '2026-11-07T22:30:00Z', amount: 50 }];
+    const r = checkDose({ ...base, id: 'b', at: '2026-11-08T04:40:00Z', amount: 50 }, log, { months: 5, weight: { kg: 7, days: 1 } });
+    expect(r.map((x) => x.kind)).not.toContain('tooLong');
+  });
+  it('durata: oltre 24 h di episodio sotto i 6 mesi → avviso', () => {
+    const log = ['2026-11-07T06:00:00Z', '2026-11-07T14:00:00Z', '2026-11-07T22:00:00Z'].map((at, i) => ({ ...base, id: 'x' + i, at, amount: 50 }));
+    const r = checkDose({ ...base, id: 'b', at: '2026-11-08T07:00:00Z', amount: 50 }, log, { months: 5, weight: { kg: 7, days: 1 } });
+    expect(r.map((x) => x.kind)).toContain('tooLong');
+  });
+  it('supposte: niente limite di numero, nota sulla fascia di peso', () => {
+    const p = { kidId: 'k', active: 'paracetamolo', route: 'rectal', unit: 'mg', flags: [] };
+    const log = ['00', '04', '08', '12'].map((h, i) => ({ ...p, id: 'r' + i, at: `2026-11-08T${h}:00:00Z`, amount: 125 }));
+    const r = checkDose({ ...p, id: 'n', at: '2026-11-08T16:00:00Z', amount: 125 }, log, { months: 10, weight: { kg: 8, days: 1 } });
+    const k = r.map((x) => x.kind);
+    expect(k).not.toContain('tooMany');
+    expect(k).toContain('rectalBand');
+  });
+});

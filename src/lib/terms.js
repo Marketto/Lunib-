@@ -25,7 +25,7 @@ export const TERMS = {
       ['Fonti e marchi',
         'Ogni scheda indica le fonti consultate. La citazione di un\'organizzazione o di una pubblicazione non implica alcuna affiliazione, approvazione o sponsorizzazione da parte loro. Marchi e nomi citati appartengono ai rispettivi titolari.'],
       ['Diario di crescita e medicine',
-        'Il diario confronta le misure con gli standard OMS e segnala valori lontani da quelli tipici: non è una diagnosi e una singola misura può essere imprecisa. Il controllo delle medicine NON calcola né suggerisce dosi: verifica soltanto intervalli, numero di dosi e dose per kg rispetto a limiti prudenziali tratti da schede tecniche AIFA e linee guida (NICE, NHS, MHRA, SIP), solo per paracetamolo e ibuprofene. L\'assenza di avvisi non garantisce che una dose sia corretta. Segui sempre la prescrizione, la confezione e il foglietto illustrativo, e per qualsiasi dubbio chiedi al pediatra o al farmacista. I dati restano solo sul dispositivo: esporta il CSV se vuoi conservarli.'],
+        'Il diario confronta le misure con gli standard OMS e segnala valori lontani da quelli tipici: non è una diagnosi e una singola misura può essere imprecisa. Il controllo delle medicine NON calcola né suggerisce dosi: verifica soltanto intervalli, numero di dosi e dose per kg rispetto a limiti prudenziali tratti da schede tecniche AIFA e linee guida (NICE, NHS, MHRA, SIP, Ministero della Salute russo), solo per paracetamolo e ibuprofene. L\'assenza di avvisi non garantisce che una dose sia corretta. Segui sempre la prescrizione, la confezione e il foglietto illustrativo, e per qualsiasi dubbio chiedi al pediatra o al farmacista. I dati restano solo sul dispositivo: esporta il CSV se vuoi conservarli.'],
       ['Suoni e musica',
         'I suoni per dormire e per giocare vanno usati a volume basso, con il dispositivo lontano dal lettino e sotto la responsabilità dell\'adulto. L\'app non può misurare il volume reale nella stanza.'],
       ['Responsabilità dell\'utente',
@@ -33,7 +33,7 @@ export const TERMS = {
       ['Esclusione di responsabilità',
         'Nei limiti massimi consentiti dalla legge applicabile, gli autori e i distributori di Lunibù non sono responsabili di danni diretti o indiretti derivanti dall\'uso, dal mancato uso o dall\'interpretazione delle informazioni e dei suoni dell\'app. L\'app è fornita "così com\'è", senza garanzie di completezza, accuratezza o idoneità a uno scopo specifico. Restano salvi i diritti che la legge riconosce inderogabilmente al consumatore.'],
       ['Privacy',
-        'I dati che inserisci (date di nascita ed eventuali nomi) restano solo su questo dispositivo: non vengono inviati a server, non serve un account e non ci sono sistemi di tracciamento. Puoi cancellarli in qualsiasi momento da Bimbi → Cancella tutti i dati.'],
+        'I dati che inserisci (date di nascita, eventuali nomi, misure di crescita e medicine registrate) restano solo su questo dispositivo: non vengono inviati a server, non serve un account e non ci sono sistemi di tracciamento. Puoi cancellarli in qualsiasi momento da Bimbi → Cancella tutti i dati.'],
       ['Modifiche',
         'Queste condizioni possono essere aggiornate. In caso di modifiche ti chiederemo di leggerle e accettarle di nuovo.']
     ]
@@ -65,9 +65,9 @@ export const TERMS = {
       ['Ответственность пользователя',
         'Решения о здоровье, питании, безопасности и воспитании ребёнка принимают те, кто за него отвечает, вместе со специалистами. Пользуясь приложением, вы соглашаетесь критически оценивать информацию и проверять её у специалиста.'],
       ['Ограничение ответственности',
-        'В максимальной степени, допустимой применимым законодательством, авторы и распространители «Маленьких шагов» не несут ответственности за прямой или косвенный ущерб, возникший в результате использования, неиспользования или толкования информации и звуков приложения. Приложение предоставляется «как есть», без гарантий полноты, точности или пригодности для определённой цели. Права, которые закон безусловно предоставляет потребителю, сохраняются.'],
+        'В максимальной степени, допустимой применимым законодательством, авторы и распространители «Lunibù» не несут ответственности за прямой или косвенный ущерб, возникший в результате использования, неиспользования или толкования информации и звуков приложения. Приложение предоставляется «как есть», без гарантий полноты, точности или пригодности для определённой цели. Права, которые закон безусловно предоставляет потребителю, сохраняются.'],
       ['Конфиденциальность',
-        'Введённые данные (даты рождения и имена, если указаны) хранятся только на этом устройстве: они не отправляются на серверы, аккаунт не нужен, систем отслеживания нет. Удалить их можно в любой момент: Дети → Удалить все данные.'],
+        'Введённые данные (даты рождения, имена, если указаны, измерения (вес, рост, голова) и записанные лекарства) хранятся только на этом устройстве: они не отправляются на серверы, аккаунт не нужен, систем отслеживания нет. Удалить их можно в любой момент: Дети → Удалить все данные.'],
       ['Изменения',
         'Эти условия могут обновляться. В случае изменений мы попросим вас прочитать и принять их снова.']
     ]
