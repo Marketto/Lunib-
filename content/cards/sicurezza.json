@@ -1,0 +1,429 @@
+[
+  {
+    "id": "soffocamento",
+    "category": "sicurezza",
+    "ageFrom": 6,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "A16",
+      "A14"
+    ],
+    "it": {
+      "title": "Prevenire il soffocamento da cibo",
+      "summary": "Alcuni cibi, per forma e consistenza, sono particolarmente pericolosi sotto i 4–5 anni. Tagliarli nel modo giusto e mangiare seduti e sorvegliati riduce molto il rischio.",
+      "keywords": [
+        "soffocamento",
+        "si strozza",
+        "si è strozzato",
+        "va di traverso",
+        "disostruzione",
+        "manovra",
+        "uva",
+        "würstel",
+        "wurstel",
+        "frutta secca",
+        "pop corn",
+        "caramelle",
+        "pezzi di cibo",
+        "tagliare il cibo"
+      ],
+      "research": [
+        "Le linee di indirizzo del Ministero della Salute (2017) indicano tra i cibi più a rischio quelli piccoli, tondi, lisci o duri: uva, pomodorini, olive, würstel, frutta secca, caramelle, pop corn.",
+        "Le stesse linee raccomandano di modificare forma e consistenza (tagliare per il lungo, schiacciare, cuocere) e di mangiare sempre seduti e sotto la supervisione di un adulto.",
+        "Lo studio BLISS (Fangupo 2016) mostra che anche l'autosvezzamento è sicuro se i cibi sono preparati in modo adeguato."
+      ],
+      "tips": [
+        "Taglia uva, pomodorini e olive in quattro per il lungo; i würstel per il lungo e poi a pezzetti.",
+        "Niente frutta secca intera, caramelle dure, pop corn o gomme sotto i 4–5 anni.",
+        "Mai mangiare mentre corre, gioca, piange o è in macchina senza sorveglianza.",
+        "Segui un corso di disostruzione pediatrica: imparare le manovre dal vivo fa la differenza."
+      ],
+      "redFlags": [
+        "Dopo un episodio di soffocamento risolto, se resta tosse, respiro rumoroso o affanno, fallo visitare: un frammento può essere rimasto nelle vie aeree."
+      ],
+      "urgent": [
+        "Non riesce a tossire, piangere o parlare, o il colorito diventa bluastro: chiama subito il 112 e inizia le manovre di disostruzione.",
+        "Se tossisce con forza, lascialo tossire e non dare colpi né infilare le dita in bocca: chiama il 112 se non si risolve.",
+        "Bimbo che perde coscienza: 112 e rianimazione cardiopolmonare secondo le indicazioni dell'operatore."
+      ]
+    },
+    "ru": {
+      "title": "Профилактика удушья едой",
+      "summary": "Некоторые продукты из-за формы и консистенции особенно опасны до 4–5 лет. Правильная нарезка и еда сидя под присмотром сильно снижают риск.",
+      "keywords": [
+        "удушье",
+        "подавился",
+        "поперхнулся",
+        "аспирация",
+        "приём геймлиха",
+        "виноград",
+        "сосиски",
+        "орехи",
+        "попкорн",
+        "конфеты",
+        "кусочки еды",
+        "нарезать еду"
+      ],
+      "research": [
+        "Рекомендации Министерства здравоохранения Италии (2017) относят к самым опасным маленькие, круглые, гладкие или твёрдые продукты: виноград, помидоры черри, оливки, сосиски, орехи, леденцы, попкорн.",
+        "Те же рекомендации советуют менять форму и консистенцию (резать вдоль, разминать, варить) и всегда есть сидя под присмотром взрослого.",
+        "Исследование BLISS (Fangupo, 2016) показывает, что и самостоятельный прикорм безопасен при правильном приготовлении еды."
+      ],
+      "tips": [
+        "Режьте виноград, черри и оливки вдоль на четыре части; сосиски — вдоль, а потом кусочками.",
+        "Никаких целых орехов, твёрдых леденцов, попкорна и жвачки до 4–5 лет.",
+        "Никогда не есть на бегу, во время игры, плача или в машине без присмотра.",
+        "Пройдите курс первой помощи при удушье у детей: живая практика очень важна."
+      ],
+      "redFlags": [
+        "Если после эпизода удушья остаётся кашель, шумное дыхание или одышка, покажите ребёнка врачу: в дыхательных путях может остаться кусочек."
+      ],
+      "urgent": [
+        "Не может кашлять, плакать или говорить, или синеет: сразу звоните 112 и начинайте приёмы освобождения дыхательных путей.",
+        "Если сильно кашляет, дайте ему кашлять, не стучите по спине и не лезьте пальцами в рот: звоните 112, если не проходит.",
+        "Ребёнок теряет сознание: 112 и сердечно-лёгочная реанимация по указаниям диспетчера."
+      ]
+    }
+  },
+  {
+    "id": "seggiolino",
+    "category": "sicurezza",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A25",
+      "A26",
+      "D11"
+    ],
+    "it": {
+      "title": "Seggiolino auto: contromarcia il più a lungo possibile",
+      "summary": "L'AAP raccomanda di viaggiare in senso contrario alla marcia finché il seggiolino lo permette per peso e altezza. In Italia sotto i 4 anni è obbligatorio il dispositivo antiabbandono.",
+      "keywords": [
+        "seggiolino",
+        "seggiolino auto",
+        "ovetto",
+        "contromarcia",
+        "auto",
+        "macchina",
+        "isofix",
+        "i-size",
+        "antiabbandono",
+        "cintura",
+        "viaggio in auto"
+      ],
+      "research": [
+        "La policy AAP (Durbin e Hoffman 2018) raccomanda di tenere il bambino in contromarcia il più a lungo possibile, fino ai limiti di peso o altezza del seggiolino, senza più fissare un'età limite di 2 anni.",
+        "La Legge 117/2018, attuata dal DM 122/2019, rende obbligatorio in Italia dal 7 novembre 2019 un dispositivo antiabbandono per i bambini sotto i 4 anni.",
+        {
+          "t": "AAP: dopo la contromarcia, seggiolino in avanti con imbracatura a 5 punti il più a lungo possibile; poi rialzo con schienale finché la cintura dell'auto non sta bene (di solito intorno ai 145 cm, tra 8 e 12 anni).",
+          "from": 24,
+          "to": 72
+        },
+        "Codice della Strada (art. 172): i bambini sotto 1,50 m devono viaggiare con un sistema di ritenuta omologato adatto al loro peso."
+      ],
+      "tips": [
+        "Niente giubbotti imbottiti sotto le cinture: allentano l'imbracatura. Meglio una coperta sopra.",
+        "Le cinture devono essere aderenti: non devi riuscire a pizzicare il tessuto all'altezza della spalla.",
+        "Mai il seggiolino in contromarcia davanti a un airbag frontale attivo.",
+        "Usa il seggiolino anche per i tragitti brevi.",
+        "Evita seggiolini usati di cui non conosci la storia: dopo un incidente vanno sostituiti.",
+        {
+          "t": "Tutti i bambini viaggiano sul sedile posteriore.",
+          "from": 24,
+          "to": 72
+        }
+      ]
+    },
+    "ru": {
+      "title": "Автокресло: против хода движения как можно дольше",
+      "summary": "AAP рекомендует перевозить ребёнка против хода движения, пока кресло это позволяет по весу и росту. В Италии для детей до 4 лет обязательно устройство против забывания в машине.",
+      "keywords": [
+        "автокресло",
+        "автолюлька",
+        "против хода",
+        "машина",
+        "автомобиль",
+        "isofix",
+        "i-size",
+        "устройство против забывания",
+        "ремни",
+        "поездка"
+      ],
+      "research": [
+        "Позиция AAP (Durbin, Hoffman, 2018): держать ребёнка против хода движения как можно дольше, до пределов кресла по весу или росту, без прежней возрастной границы в 2 года.",
+        "Закон 117/2018 и указ DM 122/2019 с 7 ноября 2019 года обязывают в Италии использовать устройство против забывания для детей младше 4 лет.",
+        {
+          "t": "AAP: после положения против хода — кресло по ходу с 5-точечными ремнями как можно дольше; затем бустер со спинкой, пока ремень автомобиля не будет правильно прилегать (обычно около 145 см, в 8–12 лет).",
+          "from": 24,
+          "to": 72
+        },
+        "Правила дорожного движения Италии (ст. 172): дети ростом ниже 1,50 м должны ездить в сертифицированном удерживающем устройстве, подходящем по весу."
+      ],
+      "tips": [
+        "Без пухлых курток под ремнями — они ослабляют крепление. Лучше накрыть пледом сверху.",
+        "Ремни должны прилегать плотно: на плече не должно получаться защипнуть ткань.",
+        "Никогда не ставьте кресло против хода перед активной фронтальной подушкой безопасности.",
+        "Используйте кресло и для коротких поездок.",
+        "Избегайте б/у кресел с неизвестной историей: после аварии их нужно менять.",
+        {
+          "t": "Все дети ездят на заднем сиденье.",
+          "from": 24,
+          "to": 72
+        }
+      ]
+    }
+  },
+  {
+    "id": "casa-sicura",
+    "category": "sicurezza",
+    "ageFrom": 6,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "A27"
+    ],
+    "it": {
+      "title": "Casa sicura: cadute, acqua, ustioni, veleni",
+      "summary": "Cadute, annegamento, ustioni e avvelenamenti sono tra le cause principali di incidenti nei bambini piccoli, e molti si possono prevenire con semplici accorgimenti.",
+      "keywords": [
+        "sicurezza in casa",
+        "incidenti domestici",
+        "cadute",
+        "caduto dal letto",
+        "annegamento",
+        "piscina",
+        "vasca",
+        "ustioni",
+        "scottature",
+        "avvelenamento",
+        "ha ingoiato",
+        "detersivi",
+        "farmaci",
+        "batterie a bottone",
+        "magneti",
+        "cancelletto"
+      ],
+      "research": [
+        "Il rapporto OMS/UNICEF sulla prevenzione degli incidenti nei bambini (Peden 2008) individua cadute, annegamento, ustioni e avvelenamenti tra le principali cause di lesioni nell'infanzia.",
+        "Lo stesso rapporto indica che misure ambientali, come barriere, chiusure di sicurezza e conservazione corretta di prodotti pericolosi, sono tra gli interventi più efficaci.",
+        "I bambini piccoli possono annegare in pochi centimetri d'acqua e in pochi secondi, senza fare rumore."
+      ],
+      "tips": [
+        "Mai lasciarlo da solo sul fasciatoio, sul letto o sul divano, nemmeno per un attimo.",
+        "Cancelletti sulle scale, blocchi su finestre e balconi, mobili fissati al muro.",
+        "Sorveglianza continua vicino all'acqua: vasca, piscina, secchi; svuota sempre la vasca dopo il bagnetto.",
+        "Farmaci, detersivi, batterie a bottone e magneti in alto e sotto chiave.",
+        "Manici delle pentole rivolti verso l'interno, bevande calde lontane dal bimbo; controlla la temperatura dell'acqua del bagnetto."
+      ],
+      "redFlags": [
+        "Dopo una caduta: vomito, sonnolenza insolita, pianto inconsolabile o bernoccolo grande vanno valutati.",
+        "Ustione più grande del palmo della sua mano, o su viso, mani, genitali o articolazioni."
+      ],
+      "urgent": [
+        "Sospetta ingestione di batteria a bottone, magneti, farmaci o prodotti chimici: 112 o Centro Antiveleni subito, senza far vomitare.",
+        "Dopo una caduta: perdita di coscienza, convulsioni, difficoltà a muoversi o a respirare.",
+        "Dopo un episodio in acqua, anche se sembra stare bene: tosse persistente, respiro difficile o sonnolenza."
+      ]
+    },
+    "ru": {
+      "title": "Безопасный дом: падения, вода, ожоги, отравления",
+      "summary": "Падения, утопление, ожоги и отравления — среди главных причин травм у маленьких детей, и многие из них можно предотвратить простыми мерами.",
+      "keywords": [
+        "безопасность дома",
+        "домашние травмы",
+        "падения",
+        "упал с кровати",
+        "утопление",
+        "бассейн",
+        "ванна",
+        "ожоги",
+        "отравление",
+        "проглотил",
+        "бытовая химия",
+        "лекарства",
+        "батарейка",
+        "магниты",
+        "ворота безопасности"
+      ],
+      "research": [
+        "Доклад ВОЗ/ЮНИСЕФ о профилактике детского травматизма (Peden, 2008) называет падения, утопление, ожоги и отравления среди основных причин травм в детстве.",
+        "В том же докладе отмечено, что изменения среды — барьеры, защитные замки и правильное хранение опасных средств — одни из самых эффективных мер.",
+        "Маленькие дети могут утонуть в нескольких сантиметрах воды за несколько секунд и бесшумно."
+      ],
+      "tips": [
+        "Никогда не оставляйте малыша одного на пеленальном столе, кровати или диване, даже на мгновение.",
+        "Ворота на лестницах, блокираторы на окнах и балконах, мебель закреплена на стене.",
+        "Постоянный присмотр рядом с водой: ванна, бассейн, вёдра; всегда сливайте ванну после купания.",
+        "Лекарства, химия, батарейки-таблетки и магниты — высоко и под замком.",
+        "Ручки кастрюль повёрнуты внутрь, горячие напитки подальше от малыша; проверяйте температуру воды для купания."
+      ],
+      "redFlags": [
+        "После падения: рвота, необычная сонливость, неутешный плач или большая шишка требуют осмотра.",
+        "Ожог больше его ладони или на лице, руках, половых органах или суставах."
+      ],
+      "urgent": [
+        "Подозрение на проглатывание батарейки-таблетки, магнитов, лекарств или химии: сразу 112 или токсикологический центр, не вызывайте рвоту.",
+        "После падения: потеря сознания, судороги, трудности с движением или дыханием.",
+        "После эпизода в воде, даже если кажется, что всё хорошо: стойкий кашель, затруднённое дыхание или сонливость."
+      ]
+    }
+  },
+  {
+    "id": "nuoto-acqua",
+    "category": "sicurezza",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "P3a",
+      "P3b"
+    ],
+    "it": {
+      "title": "Corsi di nuoto e sicurezza in acqua",
+      "summary": "L'AAP consiglia di iniziare i corsi di nuoto dopo il primo compleanno. Nuotare aiuta, ma da solo non protegge dall'annegamento: serve sempre un adulto a portata di braccio.",
+      "keywords": [
+        "nuoto",
+        "corso di nuoto",
+        "piscina",
+        "acquaticità",
+        "neonatale",
+        "annegamento",
+        "mare",
+        "braccioli",
+        "giubbotto salvagente",
+        "sicurezza acqua"
+      ],
+      "research": [
+        {
+          "t": "AAP (Shenoi 2026): non ci sono prove che i corsi di acquaticità per lattanti riducano l'annegamento; possono essere un momento piacevole, non una protezione.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "AAP (Shenoi 2026): iniziare i corsi di nuoto dopo il primo compleanno.",
+          "from": 12,
+          "to": 72,
+          "strict": true
+        },
+        {
+          "t": "In uno studio caso-controllo (Brenner 2009) tra 1 e 4 anni i corsi di nuoto erano associati a un rischio di annegamento più basso (circa −88%), ma i numeri erano piccoli e l'incertezza ampia.",
+          "from": 12,
+          "to": 60
+        },
+        "L'AAP raccomanda più livelli di protezione: sorveglianza costante di un adulto a portata di braccio per i bambini sotto i 5 anni, recinzione della piscina sui 4 lati con cancelletto a chiusura automatica, giubbotti salvagente, saper chiamare aiuto e fare la rianimazione."
+      ],
+      "tips": [
+        "In acqua un adulto sempre a portata di braccio, senza telefono in mano.",
+        "Braccioli e ciambelle non sono dispositivi di sicurezza: in barca e al lago serve il giubbotto salvagente omologato.",
+        "Anche se sa nuotare, non lasciarlo mai solo vicino all'acqua.",
+        "Impara la rianimazione pediatrica: è un regalo per tutta la famiglia."
+      ]
+    },
+    "ru": {
+      "title": "Плавание и безопасность на воде",
+      "summary": "AAP советует начинать уроки плавания после первого дня рождения. Умение плавать помогает, но само по себе не защищает от утопления: взрослый всегда должен быть на расстоянии вытянутой руки.",
+      "keywords": [
+        "плавание",
+        "уроки плавания",
+        "бассейн",
+        "грудничковое плавание",
+        "утопление",
+        "море",
+        "нарукавники",
+        "спасательный жилет",
+        "безопасность на воде"
+      ],
+      "research": [
+        {
+          "t": "AAP (Shenoi, 2026): нет доказательств, что грудничковое плавание снижает риск утопления; это может быть приятным занятием, но не защитой.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "AAP (Shenoi, 2026): начинать уроки плавания после первого дня рождения.",
+          "from": 12,
+          "to": 72,
+          "strict": true
+        },
+        {
+          "t": "В исследовании случай-контроль (Brenner, 2009) в возрасте 1–4 лет уроки плавания были связаны с меньшим риском утопления (примерно −88%), но число случаев было малым, а неопределённость — большой.",
+          "from": 12,
+          "to": 60
+        },
+        "AAP рекомендует несколько уровней защиты: постоянный присмотр взрослого на расстоянии вытянутой руки для детей до 5 лет, ограждение бассейна с 4 сторон с самозакрывающейся калиткой, спасательные жилеты, умение вызвать помощь и провести реанимацию."
+      ],
+      "tips": [
+        "В воде взрослый всегда на расстоянии вытянутой руки и без телефона.",
+        "Нарукавники и круги — не средства безопасности: в лодке и на озере нужен сертифицированный спасательный жилет.",
+        "Даже если ребёнок умеет плавать, никогда не оставляйте его одного у воды.",
+        "Научитесь детской реанимации — это подарок для всей семьи."
+      ]
+    }
+  },
+  {
+    "id": "bici-casco",
+    "category": "sicurezza",
+    "ageFrom": 24,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "P6"
+    ],
+    "it": {
+      "title": "Bici e casco",
+      "summary": "Il casco riduce di circa la metà il rischio di trauma cranico in caso di incidente in bici. Va indossato sempre, anche per brevi tragitti e sulle bici senza pedali.",
+      "keywords": [
+        "bici",
+        "bicicletta",
+        "casco",
+        "bici senza pedali",
+        "monopattino",
+        "rotelle",
+        "pedalare",
+        "trauma cranico"
+      ],
+      "research": [
+        "Una meta-analisi di 40 studi su oltre 64.000 ciclisti feriti (Olivier e Creighton 2017) ha trovato che il casco si associa a circa il 51% in meno di traumi cranici, il 69% in meno di traumi cranici gravi e il 65% in meno di traumi cranici mortali.",
+        "Lo studio riguarda tutte le età: non esistono dati specifici per i più piccoli, ma la protezione della testa vale allo stesso modo."
+      ],
+      "tips": [
+        "Casco della misura giusta: appoggiato in piano sulla fronte, cinghie a V sotto le orecchie, un dito tra cinghia e mento.",
+        "Usalo anche su monopattino, pattini e bici senza pedali.",
+        "Dai il buon esempio indossandolo anche tu.",
+        "Sostituiscilo dopo un urto importante."
+      ]
+    },
+    "ru": {
+      "title": "Велосипед и шлем",
+      "summary": "Шлем примерно вдвое снижает риск черепно-мозговой травмы при падении с велосипеда. Его надо надевать всегда, даже на короткие поездки и на беговеле.",
+      "keywords": [
+        "велосипед",
+        "шлем",
+        "беговел",
+        "самокат",
+        "боковые колёса",
+        "кататься",
+        "травма головы"
+      ],
+      "research": [
+        "Метаанализ 40 исследований, более 64 000 пострадавших велосипедистов (Olivier, Creighton, 2017): шлем связан примерно с 51% меньшим числом травм головы, 69% меньшим числом тяжёлых и 65% меньшим числом смертельных травм головы.",
+        "Исследование охватывает все возрасты: отдельных данных для малышей нет, но защита головы работает так же."
+      ],
+      "tips": [
+        "Шлем по размеру: ровно на лбу, ремешки буквой V под ушами, между ремешком и подбородком проходит палец.",
+        "Надевайте его и на самокат, ролики и беговел.",
+        "Показывайте пример — надевайте шлем сами.",
+        "Меняйте шлем после сильного удара."
+      ]
+    }
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "id": "capricci",
+    "category": "emozioni",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "B28",
+      "B29",
+      "B30"
+    ],
+    "it": {
+      "title": "Capricci e crisi di rabbia",
+      "summary": "Le crisi di rabbia sono una parte normale dello sviluppo tra 1 e 4 anni: il bimbo prova emozioni forti ma non sa ancora gestirle. Alcune caratteristiche però meritano attenzione.",
+      "keywords": [
+        "capricci",
+        "crisi di rabbia",
+        "rabbia",
+        "urla",
+        "si butta a terra",
+        "scenate",
+        "terrible two",
+        "morde",
+        "picchia",
+        "aggressività",
+        "non accetta un no",
+        "frustrazione"
+      ],
+      "research": [
+        "Uno studio sul comportamento durante le crisi (Potegal 2003) descrive rabbia e tristezza che si intrecciano: è un'onda emotiva, non una strategia.",
+        "Uno studio clinico (Belden 2008) indica come più preoccupanti le crisi con aggressività verso persone o oggetti nella maggior parte degli episodi, autolesionismo, durata media oltre 25 minuti, crisi molto frequenti o incapacità di calmarsi da solo.",
+        "L'AAP (Sege 2018) raccomanda una disciplina positiva: limiti chiari, coerenza e attenzione ai comportamenti positivi."
+      ],
+      "tips": [
+        "Resta vicino e calmo; nomina l'emozione: \"Sei arrabbiato perché volevi restare al parco\".",
+        "Durante la crisi parla poco: le spiegazioni funzionano meglio dopo, quando è tranquillo.",
+        "Proteggi lui e gli altri se diventa aggressivo, senza punizioni fisiche.",
+        "Previeni dove puoi: fame, stanchezza e transizioni improvvise sono i grandi inneschi.",
+        "Avvisa prima dei cambiamenti e offri piccole scelte."
+      ],
+      "redFlags": [
+        "Si fa male da solo durante le crisi (sbatte la testa, si morde).",
+        "Crisi che durano spesso più di 25 minuti, o molto frequenti ogni giorno.",
+        "Aggressività verso le persone nella maggior parte degli episodi, o non riesce mai a calmarsi da solo.",
+        "Le crisi aumentano dopo i 4 anni o si associano a un ritardo del linguaggio."
+      ]
+    },
+    "ru": {
+      "title": "Капризы и истерики",
+      "summary": "Вспышки гнева — нормальная часть развития от 1 до 4 лет: ребёнок испытывает сильные эмоции, но ещё не умеет с ними справляться. Некоторые особенности, однако, требуют внимания.",
+      "keywords": [
+        "капризы",
+        "истерики",
+        "гнев",
+        "кричит",
+        "падает на пол",
+        "сцены",
+        "кризис двух лет",
+        "кусается",
+        "дерётся",
+        "агрессия",
+        "не принимает нет",
+        "фрустрация"
+      ],
+      "research": [
+        "Исследование поведения во время истерик (Potegal, 2003) описывает переплетение гнева и грусти: это эмоциональная волна, а не стратегия.",
+        "Клиническое исследование (Belden, 2008) указывает как более тревожные истерики с агрессией к людям или предметам в большинстве эпизодов, самоповреждением, средней длительностью более 25 минут, очень частыми вспышками или неспособностью успокоиться самому.",
+        "AAP (Sege, 2018) рекомендует позитивную дисциплину: чёткие границы, последовательность и внимание к хорошему поведению."
+      ],
+      "tips": [
+        "Оставайтесь рядом и спокойны; назовите эмоцию: «Ты злишься, потому что хотел остаться в парке».",
+        "Во время истерики говорите мало: объяснения лучше работают потом, когда он успокоится.",
+        "Защитите его и других, если он агрессивен, без физических наказаний.",
+        "Предупреждайте, где можете: голод, усталость и резкие переходы — главные триггеры.",
+        "Заранее предупреждайте о переменах и предлагайте маленький выбор."
+      ],
+      "redFlags": [
+        "Причиняет себе вред во время истерик (бьётся головой, кусает себя).",
+        "Истерики часто длятся более 25 минут или очень часты каждый день.",
+        "Агрессия к людям в большинстве эпизодов или никогда не может успокоиться сам.",
+        "Истерики усиливаются после 4 лет или сочетаются с задержкой речи."
+      ]
+    }
+  },
+  {
+    "id": "disciplina",
+    "category": "emozioni",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B30",
+      "B31"
+    ],
+    "it": {
+      "title": "Sculaccioni e punizioni: cosa dice la ricerca",
+      "summary": "Le punizioni fisiche non migliorano il comportamento nel tempo e sono associate a più aggressività e problemi. L'AAP raccomanda alternative positive.",
+      "keywords": [
+        "sculacciata",
+        "sculaccioni",
+        "schiaffo",
+        "punizioni",
+        "punire",
+        "disciplina",
+        "regole",
+        "no",
+        "time out",
+        "urlare",
+        "educazione",
+        "limiti"
+      ],
+      "research": [
+        "Una meta-analisi su decenni di studi (Gershoff e Grogan-Kaylor 2016) ha associato le sculacciate a esiti peggiori, come più aggressività e problemi di comportamento, e a nessun beneficio a lungo termine.",
+        "La policy AAP (Sege e Siegel 2018) sconsiglia sia le punizioni fisiche sia le umiliazioni verbali, e indica strategie basate su relazione, regole chiare e rinforzo positivo.",
+        "Riconoscere e lodare i comportamenti desiderati li rende più frequenti."
+      ],
+      "tips": [
+        "Poche regole, semplici e dette in positivo: \"Camminiamo in casa\" invece di \"Non correre\".",
+        "Loda i comportamenti specifici: \"Grazie per aver messo a posto i cubi\".",
+        "Usa conseguenze logiche e immediate, ad esempio mettere via per un po' il gioco lanciato.",
+        "Se sei al limite, prenditi una pausa: anche i genitori hanno bisogno di calmarsi.",
+        "Dopo un momento difficile, ripara: un abbraccio e due parole ricostruiscono il legame."
+      ]
+    },
+    "ru": {
+      "title": "Шлепки и наказания: что говорят исследования",
+      "summary": "Физические наказания не улучшают поведение со временем и связаны с большей агрессией и проблемами. AAP рекомендует позитивные альтернативы.",
+      "keywords": [
+        "шлёпать",
+        "шлепки",
+        "пощёчина",
+        "наказания",
+        "наказывать",
+        "дисциплина",
+        "правила",
+        "нельзя",
+        "тайм-аут",
+        "кричать",
+        "воспитание",
+        "границы"
+      ],
+      "research": [
+        "Метаанализ исследований за несколько десятилетий (Gershoff, Grogan-Kaylor, 2016) связал шлепки с худшими исходами — большей агрессией и проблемами поведения — и не выявил долгосрочной пользы.",
+        "Позиция AAP (Sege, Siegel, 2018) не рекомендует ни физические наказания, ни словесное унижение и предлагает стратегии на основе отношений, чётких правил и положительного подкрепления.",
+        "Если замечать и хвалить желаемое поведение, оно становится чаще."
+      ],
+      "tips": [
+        "Мало правил, простых и в позитивной форме: «Дома ходим шагом» вместо «Не бегай».",
+        "Хвалите конкретные действия: «Спасибо, что убрал кубики».",
+        "Используйте логичные и немедленные последствия, например уберите на время брошенную игрушку.",
+        "Если вы на пределе, сделайте паузу: родителям тоже нужно успокоиться.",
+        "После трудного момента восстановите связь: объятие и пара слов многое значат."
+      ]
+    }
+  },
+  {
+    "id": "inserimento-nido",
+    "category": "emozioni",
+    "ageFrom": 6,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "B32"
+    ],
+    "it": {
+      "title": "Inserimento al nido o alla scuola dell'infanzia",
+      "summary": "Le prime settimane al nido sono un cambiamento impegnativo per il bimbo. Un inserimento graduale, con il genitore presente all'inizio, aiuta ad affrontarlo.",
+      "keywords": [
+        "nido",
+        "asilo nido",
+        "inserimento",
+        "ambientamento",
+        "ansia da separazione",
+        "piange quando vado via",
+        "distacco",
+        "scuola dell'infanzia",
+        "materna",
+        "separazione",
+        "scuola dell'infanzia",
+        "materna",
+        "primo giorno di scuola"
+      ],
+      "research": [
+        "Uno studio (Ahnert 2004) ha misurato livelli di cortisolo più alti nei bimbi nelle prime settimane di nido rispetto a casa, a indicare che il distacco è un vero impegno emotivo.",
+        "Nello stesso studio la presenza del genitore durante le prime fasi dell'inserimento e un attaccamento sicuro erano associati a reazioni di stress più contenute.",
+        "Piangere al momento del saluto è comune e di solito si attenua con le settimane."
+      ],
+      "tips": [
+        "Pianifica un inserimento graduale: prima insieme, poi brevi distacchi che si allungano.",
+        "Saluta sempre prima di andare via, in modo breve e sereno: sparire di nascosto aumenta l'ansia.",
+        "Crea un piccolo rito del saluto e porta un oggetto da casa.",
+        "Parla con le educatrici di abitudini, sonno e segnali del tuo bimbo.",
+        "Aspettati qualche giorno più difficile anche dopo che sembrava ambientato: è normale."
+      ]
+    },
+    "ru": {
+      "title": "Адаптация в яслях и детском саду",
+      "summary": "Первые недели в яслях — серьёзная перемена для малыша. Постепенная адаптация с присутствием родителя в начале помогает её пройти.",
+      "keywords": [
+        "ясли",
+        "детский сад",
+        "садик",
+        "адаптация",
+        "тревога разлуки",
+        "плачет когда ухожу",
+        "расставание",
+        "сепарация",
+        "детский сад",
+        "первый день в саду"
+      ],
+      "research": [
+        "Исследование (Ahnert, 2004) показало более высокий уровень кортизола у малышей в первые недели в яслях по сравнению с домом: расставание — реальная эмоциональная нагрузка.",
+        "В том же исследовании присутствие родителя на первых этапах адаптации и надёжная привязанность были связаны с менее выраженной стрессовой реакцией.",
+        "Плач при прощании — частое явление, обычно со временем он ослабевает."
+      ],
+      "tips": [
+        "Планируйте постепенную адаптацию: сначала вместе, затем короткие расставания, которые удлиняются.",
+        "Всегда прощайтесь перед уходом — коротко и спокойно: исчезать тайком значит усиливать тревогу.",
+        "Придумайте маленький ритуал прощания и дайте с собой вещь из дома.",
+        "Расскажите воспитателям о привычках, сне и сигналах вашего малыша.",
+        "Будьте готовы к трудным дням даже после того, как казалось, что он привык: это нормально."
+      ]
+    }
+  },
+  {
+    "id": "fratellino",
+    "category": "emozioni",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "B33"
+    ],
+    "it": {
+      "title": "Arriva un fratellino o una sorellina",
+      "summary": "Dopo la nascita di un fratello è comune che il primogenito mostri gelosia, regressioni o più capricci. Di solito sono reazioni temporanee.",
+      "keywords": [
+        "fratellino",
+        "sorellina",
+        "secondo figlio",
+        "gelosia",
+        "geloso",
+        "regressione",
+        "torna a fare la pipì addosso",
+        "primogenito",
+        "nuovo nato",
+        "fratelli"
+      ],
+      "research": [
+        "Una revisione della letteratura (Volling 2012) riporta che dopo la nascita di un fratello molti primogeniti mostrano cambiamenti: più richieste di attenzione, regressioni, problemi di sonno o comportamento.",
+        "Nella maggior parte dei casi questi cambiamenti sono temporanei; il clima familiare e il sostegno ai genitori influenzano l'adattamento.",
+        "Le reazioni variano molto in base all'età e al temperamento del primogenito."
+      ],
+      "tips": [
+        "Preparalo con libri e racconti semplici, senza troppo anticipo per i più piccoli.",
+        "Tieni ogni giorno un piccolo momento solo per lui, anche 10 minuti.",
+        "Coinvolgilo se vuole (\"Mi passi il pannolino?\"), senza obbligarlo.",
+        "Accetta le regressioni con pazienza: tornano indietro da sole.",
+        "Evita grandi cambiamenti nello stesso periodo, come togliere il pannolino o cambiare letto."
+      ]
+    },
+    "ru": {
+      "title": "Появляется братик или сестрёнка",
+      "summary": "После рождения второго ребёнка старший часто ревнует, «откатывается» назад или чаще капризничает. Обычно это временные реакции.",
+      "keywords": [
+        "братик",
+        "сестрёнка",
+        "второй ребёнок",
+        "ревность",
+        "ревнует",
+        "регресс",
+        "снова писается",
+        "старший ребёнок",
+        "новорождённый",
+        "сиблинги"
+      ],
+      "research": [
+        "Обзор литературы (Volling, 2012): после рождения сиблинга у многих старших детей появляются изменения — больше требований внимания, регресс, проблемы со сном или поведением.",
+        "В большинстве случаев изменения временные; на адаптацию влияют атмосфера в семье и поддержка родителей.",
+        "Реакции сильно зависят от возраста и темперамента старшего ребёнка."
+      ],
+      "tips": [
+        "Подготовьте его с помощью книжек и простых рассказов; малышам — не слишком заранее.",
+        "Каждый день уделяйте немного времени только ему, хотя бы 10 минут.",
+        "Вовлекайте, если он хочет («Подашь подгузник?»), но не заставляйте.",
+        "Принимайте регресс терпеливо: он проходит сам.",
+        "Избегайте больших перемен в тот же период, например отучения от подгузника или смены кровати."
+      ]
+    }
+  },
+  {
+    "id": "vasino",
+    "category": "emozioni",
+    "ageFrom": 18,
+    "ageTo": 60,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "B34",
+      "B9"
+    ],
+    "it": {
+      "title": "Togliere il pannolino: quando è pronto?",
+      "summary": "Non esiste un'età giusta per tutti: si parte quando il bimbo mostra segnali di prontezza, di solito tra i 18 e i 36 mesi, con un approccio sereno e senza punizioni.",
+      "keywords": [
+        "vasino",
+        "togliere il pannolino",
+        "spannolinamento",
+        "pannolino",
+        "pipì",
+        "cacca nel vasino",
+        "water",
+        "riduttore",
+        "incidenti",
+        "pipì a letto",
+        "controllo sfinterico"
+      ],
+      "research": [
+        "Una revisione (Kaerts 2012) elenca i segnali di prontezza più usati: stare asciutto per un paio d'ore, interesse per il bagno, capacità di comunicare il bisogno e di seguire semplici istruzioni.",
+        "La stessa revisione nota che non c'è un accordo unico su quali segnali siano decisivi: conviene guardare il bimbo nel suo insieme.",
+        "La stitichezza può ostacolare lo spannolinamento, e la pressione può peggiorare la tendenza a trattenere."
+      ],
+      "tips": [
+        "Scegli un periodo tranquillo, senza traslochi, nascite o inizio del nido.",
+        "Proponi il vasino a orari regolari, ad esempio dopo i pasti e al risveglio.",
+        "Gli incidenti sono normali: puliscili senza commenti negativi.",
+        "Loda l'impegno, non solo il risultato.",
+        "Il pannolino per la notte spesso resta ancora a lungo: il controllo notturno arriva più tardi."
+      ]
+    },
+    "ru": {
+      "title": "Отказ от подгузника: когда малыш готов?",
+      "summary": "Единого «правильного» возраста нет: начинают, когда ребёнок показывает признаки готовности, обычно от 18 до 36 месяцев, спокойно и без наказаний.",
+      "keywords": [
+        "горшок",
+        "приучение к горшку",
+        "снять подгузник",
+        "подгузник",
+        "писать в горшок",
+        "какать в горшок",
+        "унитаз",
+        "сиденье",
+        "промахи",
+        "ночной энурез"
+      ],
+      "research": [
+        "Обзор (Kaerts, 2012) перечисляет самые используемые признаки готовности: остаётся сухим пару часов, интересуется туалетом, может сообщить о потребности и выполнять простые просьбы.",
+        "В том же обзоре отмечено, что единого мнения о решающих признаках нет: лучше смотреть на ребёнка в целом.",
+        "Запор может мешать приучению к горшку, а давление усиливает склонность сдерживаться."
+      ],
+      "tips": [
+        "Выберите спокойный период — без переезда, рождения братика или начала яслей.",
+        "Предлагайте горшок регулярно, например после еды и после сна.",
+        "Промахи нормальны: убирайте их без негативных комментариев.",
+        "Хвалите старание, а не только результат.",
+        "Ночной подгузник часто остаётся надолго: ночной контроль приходит позже."
+      ]
+    }
+  },
+  {
+    "id": "paure",
+    "category": "emozioni",
+    "ageFrom": 24,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "D14",
+      "D14b"
+    ],
+    "it": {
+      "title": "Paure del buio, dei mostri e amici immaginari",
+      "summary": "Paura del buio, dei mostri, degli animali o di separarsi sono tipiche dell'età prescolare e di solito si attenuano crescendo. Anche l'amico immaginario è normale.",
+      "keywords": [
+        "paura del buio",
+        "paura dei mostri",
+        "paure",
+        "ha paura",
+        "amico immaginario",
+        "fantasia",
+        "ansia",
+        "paura di separarsi",
+        "non vuole dormire da solo"
+      ],
+      "research": [
+        "Una revisione di un secolo di studi (Gullone 2000) descrive le paure del buio, delle creature immaginarie, degli animali e della separazione come comuni e normali in età prescolare, in calo con l'età.",
+        "Le paure diventano un problema quando sono eccessive per l'età, durano a lungo e limitano la vita quotidiana del bambino o della famiglia.",
+        "In uno studio americano (Taylor 2004) il 65% dei bambini aveva avuto un amico immaginario entro i 7 anni: è un segno di fantasia, non di un problema."
+      ],
+      "tips": [
+        "Prendi sul serio la paura senza ridicolizzarla: \"Capisco che il buio ti spaventa\".",
+        "Una lucina notturna o un pupazzo \"guardiano\" possono aiutare.",
+        "Avvicinati a ciò che spaventa a piccoli passi, insieme e senza forzare.",
+        "Limita storie, video e notizie spaventose, soprattutto la sera.",
+        "Accogli con curiosità l'amico immaginario: è un modo per esercitare linguaggio ed emozioni."
+      ],
+      "redFlags": [
+        "Una paura molto intensa che dura da mesi e gli impedisce di fare cose normali per la sua età.",
+        "Forte angoscia per settimane ogni volta che vi separate, con mal di pancia o rifiuto di andare all'asilo.",
+        "Cambiamenti improvvisi dopo un evento difficile (lutto, incidente, separazione)."
+      ]
+    },
+    "ru": {
+      "title": "Страх темноты, монстров и воображаемые друзья",
+      "summary": "Страх темноты, монстров, животных или расставания типичен для дошкольного возраста и обычно ослабевает с ростом. Воображаемый друг — тоже норма.",
+      "keywords": [
+        "страх темноты",
+        "боится монстров",
+        "страхи",
+        "боится",
+        "воображаемый друг",
+        "фантазия",
+        "тревога",
+        "страх разлуки",
+        "не хочет спать один"
+      ],
+      "research": [
+        "Обзор исследований за целый век (Gullone, 2000) описывает страхи темноты, воображаемых существ, животных и разлуки как частые и нормальные у дошкольников, с возрастом они ослабевают.",
+        "Страхи становятся проблемой, когда они чрезмерны для возраста, длятся долго и мешают повседневной жизни ребёнка или семьи.",
+        "В американском исследовании (Taylor, 2004) у 65% детей к 7 годам был воображаемый друг: это признак фантазии, а не проблемы."
+      ],
+      "tips": [
+        "Относитесь к страху серьёзно и не высмеивайте: «Я понимаю, что темнота тебя пугает».",
+        "Помочь может ночник или игрушка-«охранник».",
+        "Приближайтесь к пугающему маленькими шагами, вместе и без принуждения.",
+        "Ограничьте страшные истории, видео и новости, особенно вечером.",
+        "Принимайте воображаемого друга с интересом: так ребёнок тренирует речь и эмоции."
+      ],
+      "redFlags": [
+        "Очень сильный страх, который длится месяцами и мешает делать обычные для возраста вещи.",
+        "Сильная тревога неделями при каждом расставании, с болью в животе или отказом идти в садик.",
+        "Резкие изменения после тяжёлого события (утрата, авария, развод)."
+      ]
+    }
+  },
+  {
+    "id": "nido-ricerca",
+    "category": "emozioni",
+    "ageFrom": 6,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "S8",
+      "S1",
+      "S3",
+      "S4",
+      "S2",
+      "S7b",
+      "B32"
+    ],
+    "it": {
+      "title": "Nido e scuola dell'infanzia: cosa dice la ricerca",
+      "summary": "Conta soprattutto la qualità del servizio, e la famiglia resta l'influenza più forte. Gli effetti della frequenza esistono ma sono piccoli, positivi o negativi a seconda di qualità e ore.",
+      "keywords": [
+        "nido",
+        "asilo nido",
+        "scuola dell'infanzia",
+        "materna",
+        "mandarlo al nido",
+        "fa bene il nido",
+        "quando iscriverlo",
+        "socializzazione",
+        "qualità del nido",
+        "ore al nido"
+      ],
+      "research": [
+        "Il grande studio americano NICHD (NICHD 2006; Belsky 2007) ha trovato che il modo di essere genitori pesa più del tipo di cura: a 4 anni e mezzo l'effetto della qualità del nido sul linguaggio era circa un terzo di quello della famiglia.",
+        "Nello stesso studio una qualità più alta si associava a un vocabolario migliore fino alla prima media; più ore in strutture collettive si associavano a un po' più di comportamenti difficili segnalati dalle maestre. Gli effetti erano piccoli.",
+        "Una meta-analisi di esperimenti naturali europei e non (van Huizen e Plantenga 2018) trova risultati misti nel complesso, ma servizi di alta qualità con effetti positivi costanti, maggiori per i bambini di famiglie svantaggiate; l'età d'ingresso non cambiava in modo coerente i risultati.",
+        "Una meta-analisi di 17 studi europei (Ulferts 2019) collega la qualità delle interazioni educative a piccoli vantaggi in linguaggio e matematica che durano negli anni di scuola.",
+        {
+          "t": "Una meta-analisi (Vermeer e van IJzendoorn 2006) ha trovato livelli di cortisolo, l'ormone dello stress, più alti nei giorni di nido che a casa, soprattutto sotto i 3 anni.",
+          "from": 6,
+          "to": 36
+        }
+      ],
+      "tips": [
+        "Guarda la qualità: educatrici stabili e calde, gruppi piccoli, rapporto adulti/bambini adeguato, tempo per giocare.",
+        "Se puoi scegliere, valuta anche quante ore al giorno: per i più piccoli giornate lunghe sono più impegnative.",
+        "Fai un inserimento graduale con te presente all'inizio (Ahnert 2004).",
+        "Non pensare che \"non piange più\" voglia dire per forza che si è ambientato: conta che esplori, sorrida e interagisca (Datler 2012).",
+        "A casa continuate a leggere, giocare e parlare: è l'ingrediente che pesa di più."
+      ]
+    },
+    "ru": {
+      "title": "Ясли и детский сад: что говорят исследования",
+      "summary": "Важнее всего качество учреждения, а семья остаётся самым сильным влиянием. Эффекты посещения есть, но они небольшие — положительные или отрицательные в зависимости от качества и количества часов.",
+      "keywords": [
+        "ясли",
+        "детский сад",
+        "садик",
+        "отдавать в сад",
+        "полезен ли сад",
+        "когда отдавать",
+        "социализация",
+        "качество сада",
+        "часы в саду"
+      ],
+      "research": [
+        "Крупное американское исследование NICHD (NICHD, 2006; Belsky, 2007): родительское поведение влияет сильнее, чем тип ухода; в 4,5 года эффект качества яслей на речь составлял около трети эффекта семьи.",
+        "В том же исследовании более высокое качество было связано с лучшим словарным запасом вплоть до 6-го класса; больше часов в группах — с немного большим числом поведенческих трудностей по оценке воспитателей. Эффекты были небольшими.",
+        "Метаанализ естественных экспериментов (van Huizen, Plantenga, 2018): в целом результаты смешанные, но качественные учреждения стабильно дают положительный эффект, особенно для детей из неблагополучных семей; возраст начала посещения не менял результаты последовательно.",
+        "Метаанализ 17 европейских исследований (Ulferts, 2019) связывает качество педагогического взаимодействия с небольшими преимуществами в речи и математике, сохраняющимися в школьные годы.",
+        {
+          "t": "Метаанализ (Vermeer, van IJzendoorn, 2006) выявил более высокий уровень кортизола, гормона стресса, в дни в яслях, чем дома, особенно до 3 лет.",
+          "from": 6,
+          "to": 36
+        }
+      ],
+      "tips": [
+        "Смотрите на качество: стабильные и тёплые воспитатели, небольшие группы, достаточное число взрослых на детей, время для игры.",
+        "Если есть выбор, учитывайте и количество часов в день: для малышей длинные дни труднее.",
+        "Проводите адаптацию постепенно, в начале оставаясь рядом (Ahnert, 2004).",
+        "«Перестал плакать» не всегда значит «привык»: важно, что ребёнок исследует, улыбается и общается (Datler, 2012).",
+        "Дома продолжайте читать, играть и разговаривать — это весит больше всего."
+      ]
+    }
+  },
+  {
+    "id": "socialita",
+    "category": "emozioni",
+    "ageFrom": 18,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "A24",
+      "S5",
+      "B27"
+    ],
+    "it": {
+      "title": "Amici e socialità: come cresce",
+      "summary": "Si passa dal giocare accanto agli altri al giocare insieme, rispettando turni e regole. Le tappe CDC/AAP aiutano a sapere cosa aspettarsi a ogni età.",
+      "keywords": [
+        "socialità",
+        "amici",
+        "gioca da solo",
+        "non gioca con gli altri",
+        "condividere",
+        "fare a turno",
+        "empatia",
+        "timido",
+        "abilità sociali",
+        "litiga"
+      ],
+      "research": [
+        {
+          "t": "CDC/AAP 2022, 2 anni: nota quando qualcuno è triste o ferito e guarda il tuo viso per capire come reagire in situazioni nuove.",
+          "from": 18,
+          "to": 30
+        },
+        {
+          "t": "CDC/AAP, 30 mesi: gioca accanto agli altri bambini e a volte con loro.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "CDC/AAP, 3 anni: nota gli altri bambini e si unisce al loro gioco; si calma entro 10 minuti dopo il saluto al nido.",
+          "from": 30,
+          "to": 48
+        },
+        {
+          "t": "CDC/AAP, 4 anni: fa finta di essere qualcun altro, chiede di giocare con gli amici, consola chi è triste e gli piace aiutare.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "CDC/AAP, 5 anni: segue le regole e fa a turno nei giochi con altri bambini.",
+          "from": 54,
+          "to": 72
+        },
+        "Una meta-analisi di 48 studi (Murano 2020) mostra che i programmi di educazione socio-emotiva nella scuola dell'infanzia migliorano le competenze sociali e riducono i comportamenti problematici, con effetti da piccoli a medi."
+      ],
+      "tips": [
+        "Organizza ogni tanto incontri di gioco con uno o due bambini: per iniziare, piccoli gruppi sono più facili.",
+        "Dai un nome alle emozioni (\"Luca è triste perché…\") e chiedi cosa si potrebbe fare.",
+        "Giochi a turni come rotolare una palla o i giochi da tavolo semplici allenano l'attesa.",
+        "Non forzare la condivisione dei giochi preferiti: proponi di metterli via prima che arrivino gli amici.",
+        "La timidezza è un tratto, non un difetto: dai tempo e resta vicino all'inizio."
+      ],
+      "redFlags": [
+        "Non mostra interesse per le altre persone o non cerca di condividere con te ciò che lo interessa.",
+        "Perde abilità sociali o di linguaggio che aveva.",
+        "Aggressività frequente che non migliora, o le maestre segnalano difficoltà importanti."
+      ]
+    },
+    "ru": {
+      "title": "Друзья и общение: как это развивается",
+      "summary": "Ребёнок переходит от игры рядом с другими к совместной игре с очерёдностью и правилами. Этапы CDC/AAP помогают понять, чего ждать в каждом возрасте.",
+      "keywords": [
+        "общение",
+        "друзья",
+        "играет один",
+        "не играет с детьми",
+        "делиться",
+        "по очереди",
+        "эмпатия",
+        "стеснительный",
+        "социальные навыки",
+        "ссорится"
+      ],
+      "research": [
+        {
+          "t": "CDC/AAP 2022, 2 года: замечает, когда кому-то грустно или больно, и смотрит на ваше лицо, чтобы понять, как реагировать в новой ситуации.",
+          "from": 18,
+          "to": 30
+        },
+        {
+          "t": "CDC/AAP, 30 месяцев: играет рядом с другими детьми и иногда с ними.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "CDC/AAP, 3 года: замечает других детей и присоединяется к их игре; успокаивается в течение 10 минут после прощания в садике.",
+          "from": 30,
+          "to": 48
+        },
+        {
+          "t": "CDC/AAP, 4 года: изображает кого-то другого, просится поиграть с друзьями, утешает того, кому грустно, любит помогать.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "CDC/AAP, 5 лет: соблюдает правила и очерёдность в играх с другими детьми.",
+          "from": 54,
+          "to": 72
+        },
+        "Метаанализ 48 исследований (Murano, 2020): программы социально-эмоционального обучения в детском саду улучшают социальные навыки и уменьшают проблемное поведение, эффекты от малых до средних."
+      ],
+      "tips": [
+        "Иногда устраивайте игровые встречи с одним-двумя детьми: для начала маленькие группы проще.",
+        "Называйте эмоции («Лука грустит, потому что…») и спрашивайте, что можно сделать.",
+        "Игры по очереди — катать мяч, простые настольные игры — учат ждать.",
+        "Не заставляйте делиться любимыми игрушками: предложите убрать их до прихода друзей.",
+        "Застенчивость — черта, а не недостаток: дайте время и будьте рядом в начале."
+      ],
+      "redFlags": [
+        "Не проявляет интереса к другим людям и не пытается делиться с вами тем, что его интересует.",
+        "Теряет уже освоенные социальные или речевые навыки.",
+        "Частая агрессия, которая не проходит, или воспитатели сообщают о серьёзных трудностях."
+      ]
+    }
+  }
+]

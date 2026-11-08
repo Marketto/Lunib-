@@ -1,0 +1,282 @@
+[
+  {
+    "id": "pancia-in-giu", "from": 0, "to": 7, "mode": "insieme", "minutes": "3–10", "scene": "tummy", "evidence": "media",
+    "sources": ["A3", "A22"],
+    "it": {
+      "title": "A pancia in giù, faccia a faccia",
+      "intro": "Un gioco per i primissimi mesi, da sveglio e sempre con te accanto.",
+      "materials": ["Un tappetino morbido", "Un giochino colorato o uno specchio infrangibile"],
+      "steps": ["Metti il bimbo a pancia in giù sul tappeto o sul tuo petto.", "Sdraiati davanti a lui, con il viso alla sua altezza.", "Muovi piano il giochino davanti ai suoi occhi e parlagli con voce allegra.", "Fermati appena protesta e riprova più tardi: più momenti brevi vanno benissimo."],
+      "why": "L'OMS consiglia almeno 30 minuti al giorno a pancia in giù per i bimbi che non si spostano ancora. Una revisione sistematica (Hewitt 2020) lo associa a un migliore sviluppo motorio e a meno testa piatta.",
+      "tip": "Per dormire, invece, sempre a pancia in su."
+    },
+    "ru": {
+      "title": "На животике, лицом к лицу",
+      "intro": "Игра для самых первых месяцев: только когда малыш не спит и вы рядом.",
+      "materials": ["Мягкий коврик", "Яркая игрушка или небьющееся зеркальце"],
+      "steps": ["Положите малыша на живот на коврик или себе на грудь.", "Лягте перед ним, лицом на уровне его лица.", "Медленно двигайте игрушку перед глазами и говорите весёлым голосом.", "Остановитесь, как только он начнёт протестовать, и попробуйте позже: несколько коротких подходов — это отлично."],
+      "why": "ВОЗ советует не меньше 30 минут в день на животе для детей, которые ещё не ползают. Систематический обзор (Hewitt, 2020) связывает это с лучшим моторным развитием и меньшим риском плоского затылка.",
+      "tip": "А спать — всегда на спине."
+    }
+  },
+  {
+    "id": "botta-e-risposta", "from": 0, "to": 18, "mode": "insieme", "minutes": "5", "scene": "faces", "evidence": "media",
+    "sources": ["G12a", "G12b"],
+    "it": {
+      "title": "Botta e risposta di versi e sorrisi",
+      "intro": "Una \"conversazione\" senza parole: lui fa un verso, tu rispondi.",
+      "materials": ["Niente: bastate voi due"],
+      "steps": ["Mettiti faccia a faccia, a 20–30 cm da lui.", "Aspetta che faccia un verso, un sorriso o un gesto.", "Rispondi subito imitandolo o dando un nome a ciò che guarda (\"Sì, la palla!\").", "Lascia una pausa: tocca di nuovo a lui."],
+      "why": "In uno studio longitudinale (Tamis-LeMonda 2001) le risposte pronte e affettuose delle mamme a 9 e 13 mesi predicevano un raggiungimento più precoce delle tappe del linguaggio. È un'associazione, non una prova di causa.",
+      "tip": "Spegni la TV in sottofondo: lascia più spazio agli scambi."
+    },
+    "ru": {
+      "title": "Разговор звуками и улыбками",
+      "intro": "«Беседа» без слов: он издаёт звук — вы отвечаете.",
+      "materials": ["Ничего: только вы вдвоём"],
+      "steps": ["Расположитесь лицом к лицу, на расстоянии 20–30 см.", "Подождите, пока он издаст звук, улыбнётся или сделает жест.", "Сразу ответьте: повторите за ним или назовите то, на что он смотрит («Да, мячик!»).", "Сделайте паузу: теперь снова его очередь."],
+      "why": "В лонгитюдном исследовании (Tamis-LeMonda, 2001) быстрые и тёплые ответы мам в 9 и 13 месяцев предсказывали более раннее достижение речевых этапов. Это связь, а не доказательство причины.",
+      "tip": "Выключите фоновый телевизор: останется больше места для общения."
+    }
+  },
+  {
+    "id": "cucu", "from": 6, "to": 18, "mode": "insieme", "minutes": "5", "scene": "peekaboo", "evidence": "raccomandato",
+    "sources": ["B27", "G1b"],
+    "it": {
+      "title": "Cucù… settete!",
+      "intro": "Il classico dei classici: sparire e ricomparire, con tanta attesa e tante risate.",
+      "materials": ["Le tue mani o un foulard leggero"],
+      "steps": ["Copriti il viso con le mani o il foulard.", "Chiedi \"Dov'è la mamma? Dov'è il papà?\" con voce sorpresa.", "Ricompari dicendo \"Cucù!\" con un grande sorriso.", "Ripeti, cambiando un po' i tempi: l'attesa è il bello."],
+      "why": "L'AAP (Yogman 2018) consiglia il cucù tra 7 e 12 mesi: i giochi ripetitivi danno al bambino la gioia di prevedere cosa succederà. Uno studio (Parrott e Gleitman 1989) mostra che i lattanti si aspettano la ricomparsa della stessa persona. È un gioco consigliato e piacevole, non un \"allenamento\" con benefici dimostrati.",
+      "tip": "Quando sarà più grande, sarà lui a nascondersi."
+    },
+    "ru": {
+      "title": "Ку-ку!",
+      "intro": "Классика из классик: исчезать и появляться, с ожиданием и смехом.",
+      "materials": ["Ваши ладони или лёгкий платок"],
+      "steps": ["Закройте лицо руками или платком.", "Спросите удивлённо: «Где мама? Где папа?»", "Появитесь со словами «Ку-ку!» и широкой улыбкой.", "Повторяйте, немного меняя паузы: всё удовольствие — в ожидании."],
+      "why": "AAP (Yogman, 2018) советует «ку-ку» в 7–12 месяцев: повторяющиеся игры дарят ребёнку радость предсказывать, что будет дальше. Исследование (Parrott, Gleitman, 1989) показывает, что младенцы ожидают появления того же человека. Это рекомендуемая приятная игра, а не «тренировка» с доказанной пользой.",
+      "tip": "Когда подрастёт, прятаться будет он сам."
+    }
+  },
+  {
+    "id": "nascondi-trova", "from": 6, "to": 15, "mode": "insieme", "minutes": "5", "scene": "hide", "evidence": "tappa",
+    "sources": ["G10", "B27"],
+    "it": {
+      "title": "Dov'è finito il pupazzo?",
+      "intro": "Nascondere un giochino sotto un panno, mentre lui guarda.",
+      "materials": ["Un pupazzo che gli piace", "Un panno o una tazza capovolta"],
+      "steps": ["Mostragli il pupazzo e fallo \"parlare\".", "Mentre ti guarda, coprilo per metà con il panno.", "Lascia che lo scopra da solo e festeggia.", "Quando ci riesce, coprilo del tutto; poi prova con due panni."],
+      "why": "In questi mesi i bambini scoprono che le cose esistono anche quando non si vedono: studi descrittivi (Diamond 1985) mostrano che la capacità di ricordare dove è nascosto un oggetto cresce mese dopo mese. Il gioco segue questa tappa; non ci sono prove che la acceleri.",
+      "tip": "Usa oggetti grandi: niente pezzi piccoli che possa mettere in bocca."
+    },
+    "ru": {
+      "title": "Где же мишка?",
+      "intro": "Прячьте игрушку под платок, пока малыш смотрит.",
+      "materials": ["Любимая игрушка", "Платок или перевёрнутая чашка"],
+      "steps": ["Покажите игрушку и «поговорите» за неё.", "Пока он смотрит, накройте её платком наполовину.", "Дайте ему самому её найти и порадуйтесь вместе.", "Когда получится, накройте полностью; потом попробуйте с двумя платками."],
+      "why": "В эти месяцы дети открывают, что предметы существуют, даже когда их не видно: описательные исследования (Diamond, 1985) показывают, что способность помнить, где спрятан предмет, растёт с каждым месяцем. Игра следует за этим этапом; доказательств, что она его ускоряет, нет.",
+      "tip": "Берите крупные предметы: никаких мелких деталей, которые можно взять в рот."
+    }
+  },
+  {
+    "id": "lettura-dialogica", "from": 18, "to": 72, "mode": "insieme", "minutes": "10", "scene": "reading", "evidence": "forte",
+    "sources": ["G2a", "G2b"],
+    "it": {
+      "title": "Leggere facendo domande",
+      "intro": "La \"lettura dialogica\": il bambino diventa il narratore e tu lo aiuti.",
+      "materials": ["Un libro illustrato che gli piace"],
+      "steps": ["Indica una figura e chiedi \"Cos'è questo?\" o \"Cosa sta facendo?\".", "Ascolta la risposta e lodala.", "Arricchiscila: se dice \"cane\", rispondi \"Sì, un cane marrone che corre!\".", "Chiedigli di ripetere la frase più lunga, poi passate alla pagina dopo."],
+      "why": "Uno studio controllato (Whitehurst 1988, bimbi di 21–35 mesi) e una meta-analisi di 16 studi (Mol 2008) mostrano che questo modo di leggere migliora il vocabolario espressivo più della lettura semplice. L'effetto è più forte a 2–3 anni e si riduce verso i 4–5.",
+      "tip": "Bastano pochi minuti al giorno, sempre nello stesso momento."
+    },
+    "ru": {
+      "title": "Читать, задавая вопросы",
+      "intro": "«Диалогическое чтение»: ребёнок становится рассказчиком, а вы помогаете.",
+      "materials": ["Любимая книжка с картинками"],
+      "steps": ["Покажите на картинку и спросите: «Что это?» или «Что он делает?»", "Выслушайте ответ и похвалите.", "Расширьте его: если говорит «собака», ответьте «Да, коричневая собака бежит!»", "Попросите повторить фразу подлиннее и переходите к следующей странице."],
+      "why": "Контролируемое исследование (Whitehurst, 1988, дети 21–35 месяцев) и метаанализ 16 исследований (Mol, 2008) показывают, что такое чтение улучшает активный словарь сильнее, чем простое чтение. Эффект сильнее в 2–3 года и уменьшается к 4–5.",
+      "tip": "Достаточно нескольких минут в день, в одно и то же время."
+    }
+  },
+  {
+    "id": "puzzle", "from": 24, "to": 60, "mode": "entrambi", "minutes": "10–15", "scene": "puzzle", "evidence": "media",
+    "sources": ["G3"],
+    "it": {
+      "title": "Puzzle a misura",
+      "intro": "Dai puzzle a incastro di 2–4 pezzi fino a quelli più grandi.",
+      "materials": ["Puzzle adatti all'età (pezzi grandi, senza parti piccole sotto i 3 anni)"],
+      "steps": ["Scegli un puzzle facile: deve riuscirci quasi da solo.", "Gira insieme a lui i pezzi e cercate gli angoli o i colori uguali.", "Usa parole di spazio: \"sopra\", \"girato\", \"accanto\".", "Quando è sicuro, passate a un puzzle un po' più difficile."],
+      "why": "Uno studio longitudinale (Levine 2012) ha trovato che i bambini che giocavano più spesso con i puzzle tra 2 e 4 anni avevano a 4 anni e mezzo migliori abilità di ruotare mentalmente le forme. È un'associazione: gli autori non la considerano ancora una prova di causa.",
+      "tip": "Le parole di spazio che usi contano quanto il puzzle."
+    },
+    "ru": {
+      "title": "Пазлы по возрасту",
+      "intro": "От рамок-вкладышей на 2–4 детали до пазлов побольше.",
+      "materials": ["Пазлы по возрасту (крупные детали, без мелких частей до 3 лет)"],
+      "steps": ["Выберите лёгкий пазл: ребёнок должен справляться почти сам.", "Вместе поворачивайте детали, ищите углы и одинаковые цвета.", "Используйте слова о пространстве: «сверху», «повернуть», «рядом».", "Когда станет уверенно, переходите к пазлу чуть сложнее."],
+      "why": "Лонгитюдное исследование (Levine, 2012): дети, которые чаще собирали пазлы в 2–4 года, в 4,5 года лучше мысленно вращали фигуры. Это связь: авторы пока не считают её доказательством причины.",
+      "tip": "Слова о пространстве, которые вы произносите, так же важны, как сам пазл."
+    }
+  },
+  {
+    "id": "costruzioni-modello", "from": 30, "to": 72, "mode": "entrambi", "minutes": "10–20", "scene": "blocks", "evidence": "media",
+    "sources": ["G4a", "G4b"],
+    "it": {
+      "title": "Costruisci come me",
+      "intro": "Tu costruisci una piccola torre o un ponte, lui prova a copiarlo.",
+      "materials": ["Cubi o mattoncini grandi"],
+      "steps": ["Costruisci un modello semplice con 3–4 pezzi.", "Dagli gli stessi pezzi e chiedigli di copiarlo.", "Confrontate i due modelli insieme: \"Il rosso va sopra o sotto?\".", "Scambiatevi i ruoli: ora costruisce lui e tu copi."],
+      "why": "Uno studio su bimbi di 3 anni (Verdine 2014) ha trovato che chi sa copiare costruzioni con i mattoncini ha anche migliori abilità matematiche iniziali. Una meta-analisi (Uttal 2013) mostra che le abilità spaziali si possono allenare. Il legame diretto tra costruzioni a casa e matematica non è dimostrato.",
+      "tip": "Con meno pezzi a disposizione il gioco dura di più."
+    },
+    "ru": {
+      "title": "Построй как я",
+      "intro": "Вы строите маленькую башню или мостик, а ребёнок пробует повторить.",
+      "materials": ["Кубики или крупный конструктор"],
+      "steps": ["Постройте простую модель из 3–4 деталей.", "Дайте ему такие же детали и попросите повторить.", "Сравните модели вместе: «Красный сверху или снизу?»", "Поменяйтесь ролями: теперь строит он, а вы повторяете."],
+      "why": "Исследование трёхлеток (Verdine, 2014): кто умеет копировать постройки из конструктора, тот лучше справляется и с начальной математикой. Метаанализ (Uttal, 2013) показывает, что пространственные навыки можно тренировать. Прямая связь между домашним конструктором и математикой не доказана.",
+      "tip": "Чем меньше деталей под рукой, тем дольше игра."
+    }
+  },
+  {
+    "id": "rime-sillabe", "from": 24, "to": 72, "mode": "insieme", "minutes": "5–10", "scene": "rhymes", "evidence": "media",
+    "sources": ["G9a", "G9b"],
+    "it": {
+      "title": "Filastrocche, rime e battimani",
+      "intro": "Cantare, rimare e battere le mani sulle sillabe delle parole.",
+      "materials": ["Filastrocche che conoscete", "Le vostre mani"],
+      "steps": ["Recitate una filastrocca con i gesti.", "Fermati prima della parola in rima e lascia che la completi lui.", "Battete le mani sulle sillabe del suo nome: \"Lu-ca\", \"So-fi-a\".", "Dai 4 anni: \"Cosa fa rima con gatto? Matto, piatto…\"."],
+      "why": "Uno studio longitudinale (Bryant 1989) ha trovato che conoscere le filastrocche a 3 anni predice la lettura e la scrittura anni dopo, attraverso la capacità di sentire i suoni delle parole. Una meta-analisi (Ehri 2001) mostra che allenare questa consapevolezza fonologica aiuta a imparare a leggere.",
+      "tip": "Anche in russo o in altre lingue: i suoni allenano la stessa abilità."
+    },
+    "ru": {
+      "title": "Потешки, рифмы и хлопки",
+      "intro": "Петь, рифмовать и хлопать по слогам слов.",
+      "materials": ["Знакомые потешки", "Ваши ладони"],
+      "steps": ["Расскажите потешку с жестами.", "Остановитесь перед рифмой и дайте ребёнку договорить.", "Прохлопайте по слогам его имя: «Лу-ка», «Со-фи-я».", "С 4 лет: «Что рифмуется с “кот”? Рот, торт…»"],
+      "why": "Лонгитюдное исследование (Bryant, 1989): знание потешек в 3 года предсказывает чтение и письмо через годы — через умение слышать звуки слов. Метаанализ (Ehri, 2001): тренировка этого фонологического восприятия помогает научиться читать.",
+      "tip": "Подойдут и итальянские, и русские стихи: звуки тренируют один и тот же навык."
+    }
+  },
+  {
+    "id": "far-finta", "from": 24, "to": 72, "mode": "entrambi", "minutes": "10–30", "scene": "pretend", "evidence": "raccomandato",
+    "sources": ["B27", "G8"],
+    "it": {
+      "title": "Facciamo finta che…",
+      "intro": "Cucinare per gli orsetti, curare la bambola, fare il negozio.",
+      "materials": ["Pentoline, tazze, scatole, vestiti vecchi"],
+      "steps": ["Proponi una situazione: \"Facciamo finta che i pupazzi hanno fame\".", "Segui le sue idee e aggiungi piccoli problemi da risolvere (\"Oh, è finito il latte!\").", "Fai parlare i personaggi e dai nome alle loro emozioni.", "Lascia che sia lui a guidare la storia."],
+      "why": "L'AAP (Yogman 2018) consiglia di lasciare tempo e spazio al gioco di finzione. Una grande revisione (Lillard 2013) però avverte che le prove che il \"far finta\" migliori da solo intelligenza, creatività o autocontrollo sono deboli: è prezioso soprattutto come gioco naturale e occasione di dialogo e racconto.",
+      "tip": "Oggetti semplici stimolano più idee dei giocattoli che fanno tutto da soli."
+    },
+    "ru": {
+      "title": "Давай понарошку…",
+      "intro": "Готовить для мишек, лечить куклу, играть в магазин.",
+      "materials": ["Кастрюльки, чашки, коробки, старая одежда"],
+      "steps": ["Предложите ситуацию: «Давай понарошку игрушки проголодались».", "Следуйте за его идеями и добавляйте маленькие задачки («Ой, кончилось молоко!»).", "Говорите за персонажей и называйте их эмоции.", "Пусть историю ведёт он."],
+      "why": "AAP (Yogman, 2018) советует оставлять время и место для игры понарошку. Но большой обзор (Lillard, 2013) предупреждает: доказательства, что такая игра сама по себе улучшает интеллект, творчество или самоконтроль, слабые. Она ценна прежде всего как естественная игра и повод для разговора и рассказа.",
+      "tip": "Простые предметы рождают больше идей, чем игрушки, которые всё делают сами."
+    }
+  },
+  {
+    "id": "statue-musicali", "from": 30, "to": 72, "mode": "insieme", "minutes": "5–10", "scene": "freeze", "evidence": "media",
+    "sources": ["G6a", "G6b", "G7"],
+    "it": {
+      "title": "Statue musicali",
+      "intro": "Si balla finché c'è musica; quando si ferma, tutti immobili come statue.",
+      "materials": ["Musica (anche dalla sezione Suoni → Per giocare)"],
+      "steps": ["Fate partire la musica e ballate liberamente.", "Fermate la musica all'improvviso: tutti immobili!", "Ripartite; ogni tanto cambiate regola: \"quando si ferma, si salta\".", "Più avanti invertite le regole: si balla nel silenzio e ci si ferma con la musica."],
+      "why": "Giochi di stop e via come questo fanno parte di programmi che, in studi controllati nella scuola dell'infanzia (Tominey e McClelland 2011; Schmitt 2015), hanno migliorato l'autoregolazione, soprattutto nei bambini che partivano più indietro. Le prove riguardano i programmi completi in classe, non il singolo gioco a casa.",
+      "tip": "Aumenta la difficoltà piano piano: è così che si allena l'autocontrollo (Diamond e Lee 2011)."
+    },
+    "ru": {
+      "title": "Музыкальные статуи",
+      "intro": "Танцуем, пока играет музыка; когда она останавливается, все замирают как статуи.",
+      "materials": ["Музыка (можно из раздела Звуки → Для игры)"],
+      "steps": ["Включите музыку и свободно танцуйте.", "Внезапно остановите музыку: все замерли!", "Продолжайте; иногда меняйте правило: «когда стоп — прыгаем».", "Позже поменяйте правила местами: танцуем в тишине и замираем под музыку."],
+      "why": "Игры «стоп — вперёд» входят в программы, которые в контролируемых исследованиях в детском саду (Tominey, McClelland, 2011; Schmitt, 2015) улучшили саморегуляцию, особенно у детей, начинавших с низкого уровня. Доказательства касаются полных программ в группе, а не одной игры дома.",
+      "tip": "Повышайте сложность постепенно — так тренируется самоконтроль (Diamond, Lee, 2011)."
+    }
+  },
+  {
+    "id": "semaforo-testa-piedi", "from": 36, "to": 72, "mode": "insieme", "minutes": "5–10", "scene": "traffic", "evidence": "forte",
+    "sources": ["G6a", "G6b"],
+    "it": {
+      "title": "Semaforo e \"testa–piedi\"",
+      "intro": "Giochi in cui bisogna fare il contrario di ciò che viene naturale.",
+      "materials": ["Due fogli colorati (rosso e verde, poi altri colori)"],
+      "steps": ["Semaforo: con il verde si cammina, con il rosso ci si ferma.", "Cambia le regole: ora il viola vuol dire fermarsi e il rosso camminare.", "Testa–piedi: quando dici \"tocca la testa\" deve toccarsi i piedi, e viceversa.", "Aggiungi ginocchia e spalle quando diventa facile."],
+      "why": "In uno studio controllato su 276 bambini (Schmitt 2015) 8 settimane di giochi come questi in classe hanno migliorato l'autoregolazione rispetto al gruppo di controllo. Nello studio pilota (Tominey e McClelland 2011) i benefici si vedevano nei bambini con meno autocontrollo all'inizio.",
+      "tip": "Ridete degli errori: sbagliare fa parte del gioco."
+    },
+    "ru": {
+      "title": "Светофор и «голова — ноги»",
+      "intro": "Игры, в которых надо делать наоборот.",
+      "materials": ["Два цветных листа (красный и зелёный, потом другие цвета)"],
+      "steps": ["Светофор: на зелёный идём, на красный стоим.", "Поменяйте правила: теперь фиолетовый — стоп, а красный — идём.", "«Голова — ноги»: когда вы говорите «дотронься до головы», он трогает ноги, и наоборот.", "Добавьте колени и плечи, когда станет легко."],
+      "why": "В контролируемом исследовании 276 детей (Schmitt, 2015) 8 недель таких игр в группе улучшили саморегуляцию по сравнению с контрольной группой. В пилотном исследовании (Tominey, McClelland, 2011) польза была видна у детей с более слабым самоконтролем в начале.",
+      "tip": "Смейтесь над ошибками: ошибаться — часть игры."
+    }
+  },
+  {
+    "id": "gioco-oca-numeri", "from": 48, "to": 72, "mode": "insieme", "minutes": "15", "scene": "board", "evidence": "forte",
+    "sources": ["G5a", "G5b"],
+    "it": {
+      "title": "Il percorso dei numeri da 1 a 10",
+      "intro": "Un gioco dell'oca semplicissimo, fatto in casa, con le caselle in fila.",
+      "materials": ["Un foglio con 10 caselle numerate in linea retta", "Due pedine", "Una trottola o un dado con 1 e 2"],
+      "steps": ["Disegnate insieme 10 caselle in fila, numerate da 1 a 10.", "A turno si tira e si avanza di 1 o 2 caselle.", "Mentre muove la pedina dice ad alta voce i numeri: \"4, 5\".", "Vince chi arriva al 10: poi si ricomincia."],
+      "why": "In studi controllati (Siegler e Ramani 2008; Ramani e Siegler 2008) bambini di 4–5 anni che hanno giocato circa un'ora in tutto a un percorso lineare numerato hanno migliorato confronto tra numeri, conteggio e stima, con effetti ancora presenti dopo 9 settimane. Con un percorso di soli colori i benefici non c'erano.",
+      "tip": "La chiave è la fila dritta e il dire i numeri ad alta voce."
+    },
+    "ru": {
+      "title": "Числовая дорожка от 1 до 10",
+      "intro": "Очень простая самодельная игра-ходилка с клетками в один ряд.",
+      "materials": ["Лист с 10 пронумерованными клетками в одну линию", "Две фишки", "Волчок или кубик с 1 и 2"],
+      "steps": ["Нарисуйте вместе 10 клеток в ряд с числами от 1 до 10.", "По очереди бросайте и двигайтесь на 1 или 2 клетки.", "Передвигая фишку, ребёнок вслух называет числа: «4, 5».", "Побеждает тот, кто дойдёт до 10, — и начинаем снова."],
+      "why": "В контролируемых исследованиях (Siegler, Ramani, 2008; Ramani, Siegler, 2008) дети 4–5 лет, сыгравшие в сумме около часа в линейную числовую дорожку, улучшили сравнение чисел, счёт и оценку, и эффект сохранялся через 9 недель. С дорожкой из одних цветов пользы не было.",
+      "tip": "Главное — прямой ряд и проговаривание чисел вслух."
+    }
+  },
+  {
+    "id": "natura-libera", "from": 12, "to": 72, "mode": "entrambi", "minutes": "30+", "scene": "nature", "evidence": "media",
+    "sources": ["G11"],
+    "it": {
+      "title": "Esploratori all'aperto",
+      "intro": "Parco, bosco, prato: tempo libero per esplorare, raccogliere, arrampicarsi.",
+      "materials": ["Vestiti che si possono sporcare", "Un sacchetto per i tesori"],
+      "steps": ["Scegli un posto sicuro e lascialo esplorare a modo suo.", "Proponi piccole missioni: trovare tre foglie diverse, un sasso liscio.", "Lascia spazio anche a giochi inventati da lui.", "A casa guardate insieme i \"tesori\" e raccontate la giornata."],
+      "why": "Una revisione sistematica (Dankiw 2020) collega il gioco libero nella natura a più attività fisica e a giochi di immaginazione più ricchi, con possibili benefici sociali e motori; la qualità degli studi è però variabile.",
+      "tip": "Sorveglianza attenta vicino all'acqua e niente frutti o funghi raccolti in bocca."
+    },
+    "ru": {
+      "title": "Исследователи на природе",
+      "intro": "Парк, лес, луг: свободное время, чтобы исследовать, собирать, лазать.",
+      "materials": ["Одежда, которую не жалко испачкать", "Мешочек для сокровищ"],
+      "steps": ["Выберите безопасное место и дайте ребёнку исследовать по-своему.", "Предлагайте маленькие задания: найти три разных листа, гладкий камень.", "Оставляйте место и для игр, которые он придумает сам.", "Дома рассмотрите вместе «сокровища» и расскажите о дне."],
+      "why": "Систематический обзор (Dankiw, 2020) связывает свободную игру на природе с большей физической активностью и более богатой игрой воображения, с возможной пользой для социальных и моторных навыков; качество исследований, однако, разное.",
+      "tip": "Внимательный присмотр у воды и никаких собранных ягод и грибов в рот."
+    }
+  },
+  {
+    "id": "copia-forme", "from": 36, "to": 72, "mode": "entrambi", "minutes": "10", "scene": "drawing", "evidence": "media",
+    "sources": ["G14"],
+    "it": {
+      "title": "Copia la forma",
+      "intro": "Disegnare cerchi, croci, quadrati e casette copiando un modello.",
+      "materials": ["Fogli", "Pastelli a cera grossi o matite"],
+      "steps": ["Disegna una forma semplice: una riga, un cerchio.", "Chiedigli di disegnarla uguale accanto alla tua.", "Passate a croce, quadrato, triangolo man mano che cresce.", "Poi componete figure: una casetta, un sole, un pupazzo."],
+      "why": "Uno studio longitudinale (Cameron 2012) ha trovato che la capacità di copiare forme a 5 anni predice i risultati all'inizio della scuola primaria, indipendentemente dall'autocontrollo. È un'associazione, non una prova che esercitarsi a casa migliori i risultati.",
+      "tip": "Lodate l'impegno, non la perfezione del disegno."
+    },
+    "ru": {
+      "title": "Повтори фигуру",
+      "intro": "Рисовать круги, крестики, квадраты и домики по образцу.",
+      "materials": ["Бумага", "Толстые восковые мелки или карандаши"],
+      "steps": ["Нарисуйте простую фигуру: линию, круг.", "Попросите нарисовать такую же рядом с вашей.", "По мере роста переходите к крестику, квадрату, треугольнику.", "Потом составляйте картинки: домик, солнце, человечка."],
+      "why": "Лонгитюдное исследование (Cameron, 2012): умение копировать фигуры в 5 лет предсказывает результаты в начале школы независимо от самоконтроля. Это связь, а не доказательство, что домашние упражнения улучшают результаты.",
+      "tip": "Хвалите старание, а не идеальность рисунка."
+    }
+  }
+]

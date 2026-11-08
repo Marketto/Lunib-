@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "schermi",
+    "category": "gioco",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A3",
+      "B25",
+      "B26",
+      "D4",
+      "D12"
+    ],
+    "it": {
+      "title": "Schermi, TV e tablet: quanto e quando",
+      "summary": "L'OMS sconsiglia gli schermi prima dei 2 anni e indica al massimo 1 ora al giorno tra 2 e 4 anni, meglio se meno. Le videochiamate con i familiari sono un'eccezione.",
+      "keywords": [
+        "schermi",
+        "tablet",
+        "tv",
+        "televisione",
+        "cartoni animati",
+        "telefono",
+        "cellulare",
+        "smartphone",
+        "youtube",
+        "tempo davanti allo schermo",
+        "videochiamata",
+        "app"
+      ],
+      "research": [
+        {
+          "t": "Linee guida OMS (2019): prima dei 2 anni il tempo davanti agli schermi non è raccomandato.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Linee guida OMS (2019): a 2 anni non più di 1 ora al giorno, e meno è meglio.",
+          "from": 24,
+          "to": 36,
+          "strict": true
+        },
+        {
+          "t": "Linee guida OMS (2019): da 3 a 4 anni al massimo 1 ora al giorno, e meno è meglio.",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "L'AAP (2016) sconsiglia gli schermi sotto i 18 mesi, salvo le videochiamate con i familiari.",
+          "from": 0,
+          "to": 18
+        },
+        {
+          "t": "AAP (2016): tra 18 e 24 mesi, se si usano, contenuti di qualità guardati insieme a un adulto.",
+          "from": 18,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "Uno studio di coorte (Madigan 2019) ha associato più tempo davanti agli schermi a 24 e 36 mesi a risultati peggiori nei test di sviluppo nei mesi successivi.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "OMS (2020): dai 5 anni limitare il tempo seduti, soprattutto davanti agli schermi per svago.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Niente schermi durante i pasti e nell'ora prima della nanna.",
+        "Se guardate qualcosa, fatelo insieme e parlatene: così diventa un'occasione di linguaggio.",
+        "Spegni la TV in sottofondo quando nessuno la guarda.",
+        "Scegli contenuti lenti e adatti all'età, senza pubblicità e senza riproduzione automatica.",
+        "Anche il tuo uso del telefono davanti a lui conta: prova momenti \"senza schermi\" per tutti.",
+        {
+          "t": "Dai 5 anni (AAP): fate un piano familiare con regole su tempi e contenuti, niente dispositivi nell'ora prima di dormire e niente schermi in camera da letto.",
+          "from": 60,
+          "to": 72
+        }
+      ]
+    },
+    "ru": {
+      "title": "Экраны, телевизор и планшет: сколько и когда",
+      "summary": "ВОЗ не рекомендует экраны до 2 лет и советует не больше 1 часа в день с 2 до 4 лет, лучше меньше. Видеозвонки с родными — исключение.",
+      "keywords": [
+        "экраны",
+        "планшет",
+        "телевизор",
+        "мультики",
+        "телефон",
+        "смартфон",
+        "youtube",
+        "экранное время",
+        "видеозвонок",
+        "приложения"
+      ],
+      "research": [
+        {
+          "t": "Рекомендации ВОЗ (2019): до 2 лет экранное время не рекомендуется.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Рекомендации ВОЗ (2019): в 2 года — не больше 1 часа в день, и чем меньше, тем лучше.",
+          "from": 24,
+          "to": 36,
+          "strict": true
+        },
+        {
+          "t": "Рекомендации ВОЗ (2019): в 3–4 года — не больше 1 часа в день, и чем меньше, тем лучше.",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "AAP (2016) не рекомендует экраны до 18 месяцев, кроме видеозвонков с родными.",
+          "from": 0,
+          "to": 18
+        },
+        {
+          "t": "AAP (2016): в 18–24 месяца, если используются, — качественный контент вместе со взрослым.",
+          "from": 18,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "Когортное исследование (Madigan, 2019) связало большее экранное время в 24 и 36 месяцев с худшими результатами тестов развития в последующие месяцы.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "ВОЗ (2020): с 5 лет ограничивать время сидя, особенно перед экранами для развлечения.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Без экранов во время еды и за час до сна.",
+        "Если смотрите что-то — вместе и обсуждайте: так это становится поводом для разговора.",
+        "Выключайте фоновый телевизор, когда его никто не смотрит.",
+        "Выбирайте спокойный контент по возрасту, без рекламы и автовоспроизведения.",
+        "Ваше собственное использование телефона при малыше тоже важно: попробуйте время «без экранов» для всех.",
+        {
+          "t": "С 5 лет (AAP): составьте семейный план с правилами по времени и содержанию, никаких устройств за час до сна и в спальне.",
+          "from": 60,
+          "to": 72
+        }
+      ]
+    }
+  },
+  {
+    "id": "gioco-libero",
+    "category": "gioco",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B27",
+      "A3",
+      "D3",
+      "D4"
+    ],
+    "it": {
+      "title": "Il potere del gioco",
+      "summary": "Il gioco libero e il gioco insieme all'adulto sostengono lo sviluppo del cervello, del linguaggio, delle emozioni e del corpo. Non servono giocattoli costosi.",
+      "keywords": [
+        "gioco",
+        "giocare",
+        "giocattoli",
+        "come giocare",
+        "gioco libero",
+        "noia",
+        "attività",
+        "movimento",
+        "giochi per neonati",
+        "gioco simbolico",
+        "attività fisica"
+      ],
+      "research": [
+        "Il report AAP \"The Power of Play\" (Yogman 2018) descrive il gioco come essenziale per lo sviluppo delle funzioni esecutive, del linguaggio e delle abilità sociali, e per ridurre lo stress.",
+        "Il gioco guidato dal bambino, con un adulto disponibile e partecipe, è particolarmente efficace.",
+        {
+          "t": "L'OMS (2019) raccomanda per i bimbi di 1–2 anni almeno 180 minuti al giorno di attività fisica di qualsiasi intensità.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "OMS (2019): a 3–4 anni almeno 180 minuti di attività fisica al giorno, di cui almeno 60 di movimento vivace.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "OMS (2020): dai 5 anni in media almeno 60 minuti al giorno di attività moderata o intensa.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Segui il suo interesse: lascia che sia lui a guidare il gioco e tu commenta e partecipa.",
+        "Oggetti semplici funzionano benissimo: scatole, pentole, cucchiai, cuscini, acqua.",
+        "Ogni giorno un po' di gioco all'aperto, quando possibile.",
+        {
+          "t": "Il gioco del \"far finta\" (cucinare, telefonare, accudire una bambola) è molto prezioso dai 18 mesi in su.",
+          "from": 18,
+          "to": 48
+        },
+        "Annoiarsi un po' va bene: stimola l'inventiva."
+      ]
+    },
+    "ru": {
+      "title": "Сила игры",
+      "summary": "Свободная игра и игра со взрослым поддерживают развитие мозга, речи, эмоций и тела. Дорогие игрушки не нужны.",
+      "keywords": [
+        "игра",
+        "играть",
+        "игрушки",
+        "как играть",
+        "свободная игра",
+        "скука",
+        "занятия",
+        "движение",
+        "игры для малышей",
+        "сюжетная игра",
+        "физическая активность"
+      ],
+      "research": [
+        "Отчёт AAP «The Power of Play» (Yogman, 2018) называет игру необходимой для развития исполнительных функций, речи и социальных навыков, а также для снижения стресса.",
+        "Особенно эффективна игра, которую ведёт ребёнок, при доступном и вовлечённом взрослом.",
+        {
+          "t": "ВОЗ (2019) рекомендует детям 1–2 лет не меньше 180 минут физической активности любой интенсивности в день.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "ВОЗ (2019): в 3–4 года — не меньше 180 минут физической активности в день, из них не меньше 60 минут активного движения.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "ВОЗ (2020): с 5 лет в среднем не меньше 60 минут умеренной или интенсивной активности в день.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Следуйте за его интересом: пусть игру ведёт он, а вы комментируйте и участвуйте.",
+        "Простые предметы отлично подходят: коробки, кастрюли, ложки, подушки, вода.",
+        "Каждый день немного игры на улице, если возможно.",
+        {
+          "t": "Игра «понарошку» (готовить, звонить, заботиться о кукле) очень ценна с 18 месяцев.",
+          "from": 18,
+          "to": 48
+        },
+        "Немного поскучать — нормально: это развивает фантазию."
+      ]
+    }
+  },
+  {
+    "id": "movimento-3-6",
+    "category": "gioco",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "D3",
+      "D4"
+    ],
+    "it": {
+      "title": "Quanto movimento serve tra 3 e 6 anni",
+      "summary": "A 3–4 anni l'OMS consiglia almeno 3 ore di movimento al giorno, di cui un'ora vivace; dai 5 anni almeno un'ora al giorno di attività moderata o intensa.",
+      "keywords": [
+        "movimento",
+        "attività fisica",
+        "sport",
+        "correre",
+        "giocare all'aperto",
+        "sedentario",
+        "quanto deve muoversi",
+        "parco"
+      ],
+      "research": [
+        {
+          "t": "OMS (2019): a 3–4 anni almeno 180 minuti al giorno di attività fisica di qualsiasi intensità, di cui almeno 60 minuti di movimento moderato o vivace, distribuiti nella giornata.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "OMS (2019): a 3–4 anni non tenerlo fermo (passeggino, seggiolino) per più di 1 ora di fila; quando sta seduto, meglio leggere e raccontare storie insieme.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "OMS (2020): dai 5 anni una media di almeno 60 minuti al giorno di attività moderata o intensa, e almeno 3 giorni a settimana giochi più intensi che rinforzano muscoli e ossa.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Non serve uno sport organizzato: correre, saltare, arrampicarsi, andare in bicicletta e ballare contano tutti.",
+        "Ogni giorno un po' di tempo all'aperto, anche con il brutto tempo se vestiti bene.",
+        "Usa le gambe nella vita di tutti i giorni: andare a piedi all'asilo, fare le scale.",
+        "Muoviti con lui: i bambini imitano gli adulti."
+      ]
+    },
+    "ru": {
+      "title": "Сколько движения нужно с 3 до 6 лет",
+      "summary": "В 3–4 года ВОЗ советует не меньше 3 часов движения в день, из них час активного; с 5 лет — не меньше часа в день умеренной или интенсивной активности.",
+      "keywords": [
+        "движение",
+        "физическая активность",
+        "спорт",
+        "бегать",
+        "игры на улице",
+        "малоподвижность",
+        "сколько должен двигаться",
+        "площадка"
+      ],
+      "research": [
+        {
+          "t": "ВОЗ (2019): в 3–4 года не меньше 180 минут физической активности любой интенсивности в день, из них не меньше 60 минут умеренной или активной, в течение дня.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "ВОЗ (2019): в 3–4 года не держать ребёнка неподвижным (коляска, кресло) больше 1 часа подряд; когда он сидит, лучше читать и рассказывать истории вместе.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "ВОЗ (2020): с 5 лет в среднем не меньше 60 минут умеренной или интенсивной активности в день и не меньше 3 дней в неделю более интенсивные игры для мышц и костей.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Организованный спорт не обязателен: бег, прыжки, лазание, велосипед и танцы — всё считается.",
+        "Каждый день немного на улице, даже в плохую погоду, если тепло одеты.",
+        "Двигайтесь в повседневной жизни: пешком в садик, по лестнице.",
+        "Двигайтесь вместе: дети подражают взрослым."
+      ]
+    }
+  },
+  {
+    "id": "giochi-0-12",
+    "category": "gioco",
+    "ageFrom": 0,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B27",
+      "T1",
+      "T2",
+      "T6",
+      "T6b",
+      "T6c",
+      "T8",
+      "T12",
+      "A3",
+      "T3",
+      "T4"
+    ],
+    "it": {
+      "title": "Giochi sì e giochi no: 0–12 mesi",
+      "summary": "Nel primo anno il gioco migliore sei tu: facce, voci, cucù e oggetti sicuri da toccare e mettere in bocca. Alcuni oggetti sono pericolosi o inutili.",
+      "keywords": [
+        "giochi neonato",
+        "giocattoli",
+        "che giochi comprare",
+        "girello",
+        "giostrina",
+        "palestrina",
+        "sonaglio",
+        "giochi da evitare",
+        "giochi primo anno"
+      ],
+      "research": [
+        "L'AAP (Yogman 2018) indica per il primo anno giochi di sguardi e sorrisi, cucù e oggetti sicuri da esplorare anche con la bocca.",
+        "L'AAP (Healey 2019) ricorda che i giocattoli servono soprattutto a giocare insieme: quelli elettronici da soli non danno l'interazione di cui il bambino ha bisogno."
+      ],
+      "tips": [
+        "Controlla l'etichetta CE e l'avviso \"non adatto a bambini sotto i 36 mesi\".",
+        "Pochi giochi alla volta, da ruotare, valgono più di tanti tutti insieme."
+      ],
+      "guide": [
+        {
+          "t": "Cucù, canzoncine, facce e smorfie",
+          "v": "si",
+          "why": "Il gioco di scambio con l'adulto è la base dello sviluppo sociale e del linguaggio (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Sonagli, anelli, oggetti morbidi da afferrare e mordere",
+          "v": "si",
+          "why": "A questa età si esplora con mani e bocca: servono oggetti grandi, robusti e lavabili.",
+          "src": "B27"
+        },
+        {
+          "t": "Libri cartonati",
+          "v": "si",
+          "why": "In uno studio (Sosa 2016) con i libri gli adulti parlavano di più ai bambini che con i giochi elettronici.",
+          "src": "T12"
+        },
+        {
+          "t": "Tempo libero sul tappeto, a pancia in giù",
+          "v": "si",
+          "why": "L'OMS consiglia almeno 30 minuti al giorno a pancia in giù per i bimbi che non si spostano ancora.",
+          "src": "A3"
+        },
+        {
+          "t": "Giochi elettronici con luci e suoni",
+          "v": "limita",
+          "why": "Con questi giochi i genitori parlano meno e ci sono meno scambi (Sosa 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Girello",
+          "v": "no",
+          "why": "Non aiuta a camminare, può ritardare lo sviluppo motorio e causa cadute dalle scale: l'AAP ne chiede il divieto.",
+          "src": "T6"
+        },
+        {
+          "t": "Giostrine e palestrine tese sul lettino, dopo i 5 mesi",
+          "v": "no",
+          "why": "Rischio di strangolamento: vanno tolte quando il bimbo si spinge su mani e ginocchia o a 5 mesi.",
+          "src": "T8",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "Giochi con piccole parti, cordini lunghi, giocattoli per bimbi più grandi",
+          "v": "no",
+          "why": "Rischio di soffocamento e strangolamento: la normativa UE li vieta sotto i 36 mesi.",
+          "src": "T2"
+        },
+        {
+          "t": "Oggetti con batterie a bottone accessibili, magneti",
+          "v": "no",
+          "why": "Se ingeriti possono causare lesioni gravissime in poche ore.",
+          "src": "T3"
+        },
+        {
+          "t": "Palloncini sgonfi o scoppiati",
+          "v": "no",
+          "why": "Secondo la CPSC sono la prima causa di morte per soffocamento tra i prodotti per bambini.",
+          "src": "T4"
+        }
+      ]
+    },
+    "ru": {
+      "title": "Игрушки: можно и нельзя, 0–12 месяцев",
+      "summary": "На первом году лучшая игрушка — вы: лица, голос, «ку-ку» и безопасные предметы, которые можно трогать и брать в рот. Некоторые вещи опасны или бесполезны.",
+      "keywords": [
+        "игрушки для новорождённого",
+        "игрушки",
+        "какие игрушки купить",
+        "ходунки",
+        "мобиль",
+        "развивающий коврик",
+        "погремушка",
+        "опасные игрушки",
+        "игрушки первого года"
+      ],
+      "research": [
+        "AAP (Yogman, 2018): на первом году — игры взглядами и улыбками, «ку-ку» и безопасные предметы, которые можно исследовать и ртом.",
+        "AAP (Healey, 2019): игрушки нужны прежде всего для совместной игры; электронные сами по себе не дают нужного ребёнку общения."
+      ],
+      "tips": [
+        "Проверяйте маркировку CE и предупреждение «не для детей младше 36 месяцев».",
+        "Несколько игрушек, которые меняются по очереди, лучше, чем много сразу."
+      ],
+      "guide": [
+        {
+          "t": "«Ку-ку», песенки, рожицы",
+          "v": "si",
+          "why": "Игра-общение со взрослым — основа социального и речевого развития (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Погремушки, кольца, мягкие предметы, чтобы хватать и грызть",
+          "v": "si",
+          "why": "В этом возрасте мир исследуют руками и ртом: нужны крупные, прочные, моющиеся предметы.",
+          "src": "B27"
+        },
+        {
+          "t": "Картонные книжки",
+          "v": "si",
+          "why": "В исследовании (Sosa, 2016) с книгами взрослые говорили с детьми больше, чем с электронными игрушками.",
+          "src": "T12"
+        },
+        {
+          "t": "Свободное время на коврике, на животе",
+          "v": "si",
+          "why": "ВОЗ советует не меньше 30 минут в день на животе для детей, которые ещё не ползают.",
+          "src": "A3"
+        },
+        {
+          "t": "Электронные игрушки со светом и звуками",
+          "v": "limita",
+          "why": "С ними родители меньше разговаривают и меньше обмениваются репликами (Sosa, 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Ходунки",
+          "v": "no",
+          "why": "Не помогают научиться ходить, могут задерживать моторное развитие и приводят к падениям с лестниц: AAP призывает их запретить.",
+          "src": "T6"
+        },
+        {
+          "t": "Мобили и растяжки над кроваткой после 5 месяцев",
+          "v": "no",
+          "why": "Риск удушения: убрать, когда малыш встаёт на четвереньки, или в 5 месяцев.",
+          "src": "T8",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "Игрушки с мелкими деталями, длинными шнурками, игрушки для старших детей",
+          "v": "no",
+          "why": "Риск удушья и удушения: законодательство ЕС запрещает их детям до 36 месяцев.",
+          "src": "T2"
+        },
+        {
+          "t": "Предметы с доступными батарейками-таблетками, магниты",
+          "v": "no",
+          "why": "При проглатывании могут вызвать тяжелейшие повреждения за несколько часов.",
+          "src": "T3"
+        },
+        {
+          "t": "Ненадутые или лопнувшие воздушные шарики",
+          "v": "no",
+          "why": "По данным CPSC, это главная причина смерти от удушья среди детских товаров.",
+          "src": "T4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "giochi-1-3",
+    "category": "gioco",
+    "ageFrom": 12,
+    "ageTo": 36,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B27",
+      "T1",
+      "T2",
+      "T3",
+      "T3b",
+      "T4",
+      "T7",
+      "T10",
+      "T12",
+      "B25"
+    ],
+    "it": {
+      "title": "Giochi sì e giochi no: 1–3 anni",
+      "summary": "Costruzioni, incastri, giochi di finzione e tanto movimento. Pochi giochi semplici e un adulto presente valgono più di tanti giochi elettronici.",
+      "keywords": [
+        "giochi 2 anni",
+        "giocattoli",
+        "che giochi comprare",
+        "costruzioni",
+        "puzzle",
+        "far finta",
+        "tablet",
+        "giochi da evitare",
+        "perline",
+        "calamite"
+      ],
+      "research": [
+        "L'AAP (Yogman 2018) consiglia per 1–3 anni cubi, contenitori, cucchiai di legno, puzzle e occasioni di far finta.",
+        "In uno studio (Dauch 2018) bimbi di 18–30 mesi con 4 giochi giocavano più a lungo e in modi più vari rispetto a quando ne avevano 16."
+      ],
+      "tips": [
+        "Tieni a disposizione pochi giochi e ruotali ogni tanto.",
+        "Siediti a terra e segui il suo gioco: commenta, imita, proponi."
+      ],
+      "guide": [
+        {
+          "t": "Cubi, incastri, contenitori, puzzle semplici",
+          "v": "si",
+          "why": "Allenano mani, pensiero e pazienza; l'AAP li indica proprio per questa età.",
+          "src": "B27"
+        },
+        {
+          "t": "Giochi di finzione: cucina, bambole, telefono finto",
+          "v": "si",
+          "why": "Il gioco simbolico (una banana diventa un telefono) sviluppa linguaggio e immaginazione.",
+          "src": "B27"
+        },
+        {
+          "t": "Palla, spingere e tirare, giochi di movimento",
+          "v": "si",
+          "why": "Correre, arrampicarsi e la lotta per gioco crescono con il camminare e fanno bene.",
+          "src": "B27"
+        },
+        {
+          "t": "Libri da sfogliare insieme",
+          "v": "si",
+          "why": "Con i libri gli adulti usano più parole e più specifiche (Sosa 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Troppi giocattoli tutti insieme",
+          "v": "limita",
+          "why": "Con meno giochi i bambini giocano più a lungo con ciascuno (Dauch 2018).",
+          "src": "T10"
+        },
+        {
+          "t": "Giochi elettronici e app \"educative\"",
+          "v": "limita",
+          "why": "Molte promesse educative non sono dimostrate; non sostituiscono il gioco con l'adulto (AAP).",
+          "src": "T1"
+        },
+        {
+          "t": "Tablet e telefono per giocare da solo sotto i 2 anni",
+          "v": "no",
+          "why": "L'AAP sconsiglia i media digitali sotto i 18 mesi, salvo le videochiamate.",
+          "src": "B25",
+          "from": 12,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "Giochi con piccole parti (avviso \"non adatto sotto i 36 mesi\")",
+          "v": "no",
+          "why": "Rischio di soffocamento: per legge non sono per questa età.",
+          "src": "T2"
+        },
+        {
+          "t": "Calamite piccole e potenti, giochi magnetici con pezzi staccabili",
+          "v": "no",
+          "why": "Se ne ingerisce più di una possono attrarsi attraverso l'intestino e causare lesioni gravi.",
+          "src": "T3b"
+        },
+        {
+          "t": "Perline d'acqua (water beads)",
+          "v": "no",
+          "why": "Se ingerite si gonfiano e possono bloccare l'intestino.",
+          "src": "T7"
+        },
+        {
+          "t": "Palloncini sgonfi o scoppiati",
+          "v": "no",
+          "why": "Prima causa di morte per soffocamento tra i prodotti per bambini (CPSC); sotto gli 8 anni solo con un adulto.",
+          "src": "T4"
+        }
+      ]
+    },
+    "ru": {
+      "title": "Игрушки: можно и нельзя, 1–3 года",
+      "summary": "Конструкторы, сортеры, сюжетные игры и много движения. Несколько простых игрушек и взрослый рядом лучше множества электронных.",
+      "keywords": [
+        "игрушки в 2 года",
+        "игрушки",
+        "какие игрушки купить",
+        "конструктор",
+        "пазлы",
+        "игра понарошку",
+        "планшет",
+        "опасные игрушки",
+        "бусины",
+        "магниты"
+      ],
+      "research": [
+        "AAP (Yogman, 2018) советует в 1–3 года кубики, контейнеры, деревянные ложки, пазлы и возможность играть понарошку.",
+        "В исследовании (Dauch, 2018) дети 18–30 месяцев с 4 игрушками играли дольше и разнообразнее, чем с 16."
+      ],
+      "tips": [
+        "Держите в доступе немного игрушек и иногда меняйте их.",
+        "Сядьте на пол и следуйте за его игрой: комментируйте, повторяйте, предлагайте."
+      ],
+      "guide": [
+        {
+          "t": "Кубики, сортеры, контейнеры, простые пазлы",
+          "v": "si",
+          "why": "Развивают руки, мышление и терпение; AAP рекомендует их именно в этом возрасте.",
+          "src": "B27"
+        },
+        {
+          "t": "Игры понарошку: кухня, куклы, игрушечный телефон",
+          "v": "si",
+          "why": "Символическая игра (банан становится телефоном) развивает речь и воображение.",
+          "src": "B27"
+        },
+        {
+          "t": "Мяч, каталки, подвижные игры",
+          "v": "si",
+          "why": "Бег, лазание и игровая возня развиваются вместе с ходьбой и полезны.",
+          "src": "B27"
+        },
+        {
+          "t": "Книжки, чтобы листать вместе",
+          "v": "si",
+          "why": "С книгами взрослые используют больше слов, и более точных (Sosa, 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Слишком много игрушек сразу",
+          "v": "limita",
+          "why": "С меньшим количеством игрушек дети дольше играют с каждой (Dauch, 2018).",
+          "src": "T10"
+        },
+        {
+          "t": "Электронные игрушки и «развивающие» приложения",
+          "v": "limita",
+          "why": "Многие обещания пользы не доказаны; они не заменяют игру со взрослым (AAP).",
+          "src": "T1"
+        },
+        {
+          "t": "Планшет и телефон для самостоятельной игры до 2 лет",
+          "v": "no",
+          "why": "AAP не рекомендует цифровые медиа до 18 месяцев, кроме видеозвонков.",
+          "src": "B25",
+          "from": 12,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "Игрушки с мелкими деталями (пометка «не для детей до 36 месяцев»)",
+          "v": "no",
+          "why": "Риск удушья: по закону не для этого возраста.",
+          "src": "T2"
+        },
+        {
+          "t": "Маленькие сильные магниты, магнитные игрушки со съёмными деталями",
+          "v": "no",
+          "why": "Если проглотить несколько, они притягиваются через стенки кишечника и вызывают тяжёлые повреждения.",
+          "src": "T3b"
+        },
+        {
+          "t": "Гидрогелевые шарики (орбизы)",
+          "v": "no",
+          "why": "При проглатывании набухают и могут закупорить кишечник.",
+          "src": "T7"
+        },
+        {
+          "t": "Ненадутые или лопнувшие шарики",
+          "v": "no",
+          "why": "Главная причина смерти от удушья среди детских товаров (CPSC); до 8 лет — только со взрослым.",
+          "src": "T4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "giochi-3-6",
+    "category": "gioco",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B27",
+      "T9",
+      "T11",
+      "T1",
+      "T5",
+      "T3b",
+      "T7",
+      "T4",
+      "D12"
+    ],
+    "it": {
+      "title": "Giochi sì e giochi no: 3–6 anni",
+      "summary": "Spazio a fantasia, giochi con gli amici, all'aperto e un po' di avventura. Alcuni giochi però restano pericolosi a questa età.",
+      "keywords": [
+        "giochi 4 anni",
+        "giochi 5 anni",
+        "giocattoli",
+        "che giochi comprare",
+        "trampolino",
+        "giochi all'aperto",
+        "giochi da tavolo",
+        "videogiochi",
+        "giochi da evitare"
+      ],
+      "research": [
+        "L'AAP (Yogman 2018) consiglia tra 4 e 6 anni tempo e spazio per inventare scene e ruoli, giocare con gli amici e all'aperto.",
+        "Una revisione sistematica (Brussoni 2015) conclude, pur con prove di bassa qualità, che il gioco all'aperto con un po' di rischio favorisce la salute dei bambini."
+      ],
+      "tips": [
+        "Lascia del tempo non organizzato: la noia fa nascere giochi nuovi.",
+        "Nel \"gioco guidato\" tu prepari l'occasione e lui guida: è un ottimo modo per imparare giocando."
+      ],
+      "guide": [
+        {
+          "t": "Travestimenti, pupazzi, teatrini, giochi di ruolo",
+          "v": "si",
+          "why": "Inventare scene e ruoli sviluppa linguaggio, regole sociali e autocontrollo (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Gioco all'aperto: correre, arrampicarsi, esplorare",
+          "v": "si",
+          "why": "Favorisce attività fisica, abilità sociali e comportamento (Brussoni 2015).",
+          "src": "T11"
+        },
+        {
+          "t": "Giochi da tavolo semplici, costruzioni, disegno e lavoretti",
+          "v": "si",
+          "why": "Allenano attenzione, turni, regole e manualità; con l'adulto diventano \"gioco guidato\".",
+          "src": "T9"
+        },
+        {
+          "t": "Giocare con altri bambini",
+          "v": "si",
+          "why": "L'AAP consiglia di programmare tempo con gli amici: si impara a condividere e negoziare.",
+          "src": "B27"
+        },
+        {
+          "t": "Videogiochi e app",
+          "v": "limita",
+          "why": "Solo contenuti adatti all'età, con regole chiare su tempi e luoghi e mai nell'ora prima di dormire (AAP).",
+          "src": "D12"
+        },
+        {
+          "t": "Trampolino elastico in giardino",
+          "v": "no",
+          "why": "L'AAP lo sconsiglia fortemente; sotto i 6 anni il rischio di fratture è più alto. Se si usa: un bambino alla volta, niente capriole, adulto che guarda.",
+          "src": "T5"
+        },
+        {
+          "t": "Calamite potenti e piccole (anche nei set da costruzione per grandi)",
+          "v": "no",
+          "why": "L'ingestione di più calamite può causare perforazioni intestinali.",
+          "src": "T3b"
+        },
+        {
+          "t": "Perline d'acqua (water beads)",
+          "v": "no",
+          "why": "Una volta ingerite si gonfiano e possono causare un'occlusione intestinale.",
+          "src": "T7"
+        },
+        {
+          "t": "Palloncini sgonfi senza un adulto",
+          "v": "no",
+          "why": "Sotto gli 8 anni solo con supervisione; raccogli subito i pezzi di quelli scoppiati (CPSC).",
+          "src": "T4"
+        }
+      ]
+    },
+    "ru": {
+      "title": "Игрушки и игры: можно и нельзя, 3–6 лет",
+      "summary": "Простор для фантазии, игр с друзьями, на улице и немного приключений. Но некоторые игры в этом возрасте остаются опасными.",
+      "keywords": [
+        "игры в 4 года",
+        "игры в 5 лет",
+        "игрушки",
+        "какие игрушки купить",
+        "батут",
+        "игры на улице",
+        "настольные игры",
+        "видеоигры",
+        "опасные игрушки"
+      ],
+      "research": [
+        "AAP (Yogman, 2018) советует в 4–6 лет время и место, чтобы придумывать сцены и роли, играть с друзьями и на улице.",
+        "Систематический обзор (Brussoni, 2015) при доказательствах низкого качества заключает, что игра на улице с долей риска полезна для здоровья детей."
+      ],
+      "tips": [
+        "Оставляйте неорганизованное время: из скуки рождаются новые игры.",
+        "В «направляемой игре» вы создаёте возможность, а ведёт ребёнок — отличный способ учиться играя."
+      ],
+      "guide": [
+        {
+          "t": "Переодевания, куклы, кукольный театр, ролевые игры",
+          "v": "si",
+          "why": "Придумывать сцены и роли — значит развивать речь, социальные правила и самоконтроль (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Игры на улице: бегать, лазать, исследовать",
+          "v": "si",
+          "why": "Способствуют физической активности, социальным навыкам и поведению (Brussoni, 2015).",
+          "src": "T11"
+        },
+        {
+          "t": "Простые настольные игры, конструкторы, рисование и поделки",
+          "v": "si",
+          "why": "Тренируют внимание, очерёдность, правила и моторику; со взрослым — «направляемая игра».",
+          "src": "T9"
+        },
+        {
+          "t": "Игры с другими детьми",
+          "v": "si",
+          "why": "AAP советует планировать время с друзьями: так учатся делиться и договариваться.",
+          "src": "B27"
+        },
+        {
+          "t": "Видеоигры и приложения",
+          "v": "limita",
+          "why": "Только по возрасту, с понятными правилами времени и места и никогда за час до сна (AAP).",
+          "src": "D12"
+        },
+        {
+          "t": "Батут во дворе",
+          "v": "no",
+          "why": "AAP настоятельно не рекомендует; до 6 лет выше риск переломов. Если всё же используется: по одному, без сальто, взрослый внимательно следит.",
+          "src": "T5"
+        },
+        {
+          "t": "Сильные маленькие магниты (в том числе в конструкторах для старших)",
+          "v": "no",
+          "why": "Проглатывание нескольких магнитов может вызвать перфорацию кишечника.",
+          "src": "T3b"
+        },
+        {
+          "t": "Гидрогелевые шарики (орбизы)",
+          "v": "no",
+          "why": "Проглоченные, они набухают и могут вызвать кишечную непроходимость.",
+          "src": "T7"
+        },
+        {
+          "t": "Ненадутые шарики без взрослого",
+          "v": "no",
+          "why": "До 8 лет только под присмотром; сразу собирайте кусочки лопнувших (CPSC).",
+          "src": "T4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sport-bambini",
+    "category": "gioco",
+    "ageFrom": 24,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "P1",
+      "P2",
+      "P8",
+      "P4",
+      "P4b",
+      "P5",
+      "D3",
+      "D4"
+    ],
+    "it": {
+      "title": "Quale sport e quando?",
+      "summary": "Prima dei 6 anni conta il movimento libero e vario più dello sport organizzato. La scelta va fatta in base al divertimento del bambino, non alla specializzazione precoce.",
+      "keywords": [
+        "sport",
+        "quale sport",
+        "a che età lo sport",
+        "calcio",
+        "danza",
+        "ginnastica",
+        "nuoto",
+        "arti marziali",
+        "corsi",
+        "attività sportiva",
+        "psicomotricità"
+      ],
+      "research": [
+        "L'AAP (Logan e Cuff 2019) indica i 6 anni come età adatta per iniziare la maggior parte degli sport organizzati: prima molti bambini non hanno ancora abilità e attenzione sufficienti, e serve tanto gioco libero.",
+        "Per 2–5 anni l'AAP suggerisce attività di base come correre, nuotare, capriole, lanciare e afferrare, senza competizione.",
+        "Due meta-analisi (Logan 2012; Wick 2017) mostrano che programmi di movimento ben strutturati nella prima infanzia migliorano le abilità motorie di base, più del solo gioco libero; la qualità delle prove è però bassa.",
+        "Una revisione (Robinson 2015) associa una buona competenza motoria da piccoli a più attività fisica e a un peso sano negli anni successivi.",
+        "L'AAP (Brenner 2016) sconsiglia di specializzarsi in un solo sport prima dei 15–16 anni: la specializzazione precoce si associa a più infortuni da sovraccarico e abbandoni.",
+        "Una revisione sull'abbandono dello sport (Crane e Temple 2015) indica come cause principali la mancanza di divertimento, il sentirsi poco capaci e le pressioni."
+      ],
+      "tips": [
+        "Prima dei 6 anni: corsi di movimento o psicomotricità, nuoto, danza, giochi con la palla, bici: varietà e divertimento.",
+        "Scegli in base a ciò che gli piace e al suo carattere: c'è chi ama il gruppo e chi preferisce attività individuali.",
+        "Tieni conto anche di orari, distanza e costi: lo sport che dura è quello sostenibile per la famiglia.",
+        "Più sport diversi sono meglio di uno solo: allenano abilità diverse e riducono il rischio di stancarsi.",
+        "Niente pressioni sui risultati: chiedigli se si è divertito, non se ha vinto."
+      ]
+    },
+    "ru": {
+      "title": "Какой спорт и когда?",
+      "summary": "До 6 лет свободное и разнообразное движение важнее организованного спорта. Выбирать стоит по тому, что ребёнку нравится, а не ради ранней специализации.",
+      "keywords": [
+        "спорт",
+        "какой спорт",
+        "с какого возраста спорт",
+        "футбол",
+        "танцы",
+        "гимнастика",
+        "плавание",
+        "единоборства",
+        "секции",
+        "кружки"
+      ],
+      "research": [
+        "AAP (Logan, Cuff, 2019) называет 6 лет подходящим возрастом для начала большинства организованных видов спорта: до этого у многих детей недостаточно навыков и внимания, и нужно много свободной игры.",
+        "Для 2–5 лет AAP предлагает базовые занятия: бег, плавание, кувырки, бросание и ловля — без соревнований.",
+        "Два метаанализа (Logan, 2012; Wick, 2017): хорошо организованные программы движения в раннем возрасте улучшают базовые двигательные навыки лучше, чем только свободная игра; однако качество доказательств низкое.",
+        "Обзор (Robinson, 2015) связывает хорошую двигательную компетентность в детстве с большей физической активностью и здоровым весом в дальнейшем.",
+        "AAP (Brenner, 2016) не рекомендует специализироваться в одном виде спорта до 15–16 лет: ранняя специализация связана с травмами от перегрузки и уходом из спорта.",
+        "Обзор причин ухода из спорта (Crane, Temple, 2015): главные причины — отсутствие удовольствия, ощущение, что не получается, и давление."
+      ],
+      "tips": [
+        "До 6 лет: занятия по развитию движений, плавание, танцы, игры с мячом, велосипед — разнообразие и удовольствие.",
+        "Выбирайте по интересам и характеру: кто-то любит группу, кто-то — индивидуальные занятия.",
+        "Учитывайте расписание, расстояние и стоимость: долго продолжается тот спорт, который посилен семье.",
+        "Несколько видов спорта лучше одного: развиваются разные навыки и меньше риск устать.",
+        "Без давления на результат: спрашивайте, было ли весело, а не победил ли он."
+      ]
+    }
+  }
+]

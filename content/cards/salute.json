@@ -1,0 +1,1204 @@
+[
+  {
+    "id": "febbre",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B1",
+      "B2"
+    ],
+    "it": {
+      "title": "Febbre: quando preoccuparsi",
+      "summary": "La febbre di solito è una reazione utile dell'organismo alle infezioni. Conta di più l'età del bimbo e come sta, rispetto al numero sul termometro.",
+      "keywords": [
+        "febbre",
+        "temperatura",
+        "termometro",
+        "scotta",
+        "febbre alta",
+        "38",
+        "39",
+        "40",
+        "brividi",
+        "neonato con febbre",
+        "lattante con febbre"
+      ],
+      "research": [
+        {
+          "t": "Le linee guida NICE (2019) considerano ad alto rischio un bimbo sotto i 3 mesi con temperatura di 38 °C o più.",
+          "from": 0,
+          "to": 3
+        },
+        {
+          "t": "Le linee guida NICE (2019) considerano a rischio intermedio un bimbo di 3–6 mesi con temperatura di 39 °C o più.",
+          "from": 3,
+          "to": 6
+        },
+        "Le linee guida della Società Italiana di Pediatria (Chiappini 2017) ricordano che l'obiettivo è il benessere del bambino, non abbassare a tutti i costi la temperatura.",
+        "Colorito, reattività, respiro e quanto beve aiutano a capire la gravità più del valore della febbre."
+      ],
+      "tips": [
+        "Misura la temperatura con un termometro elettronico (ascellare nei più piccoli).",
+        "Offri spesso da bere o il seno: la disidratazione è il rischio principale.",
+        "Vestilo in modo leggero; spugnature e bagni freddi non sono raccomandati.",
+        "Osserva come sta quando la febbre scende: se gioca e beve, è un buon segno."
+      ],
+      "redFlags": [
+        {
+          "t": "Febbre di 39 °C o più in un bimbo di 3–6 mesi.",
+          "from": 3,
+          "to": 6
+        },
+        "Febbre che dura più di 3 giorni.",
+        "Beve poco, fa meno pipì, è insolitamente irritabile o sonnolento.",
+        "Febbre con macchie sulla pelle, dolore all'orecchio, tosse insistente o pianto mentre fa la pipì."
+      ],
+      "urgent": [
+        {
+          "t": "Febbre di 38 °C o più in un bimbo sotto i 3 mesi.",
+          "from": 0,
+          "to": 3
+        },
+        "Macchie rosso-violacee che non scompaiono premendo con un bicchiere.",
+        "Difficoltà a respirare, colorito grigio, pallido o bluastro.",
+        "Bimbo molto abbattuto, difficile da svegliare, rigidità del collo o convulsioni.",
+        "Segni di disidratazione importante: niente pipì per molte ore, bocca secca, pianto senza lacrime.",
+        {
+          "t": "Fontanella (la parte morbida della testa) infossata.",
+          "from": 0,
+          "to": 18
+        }
+      ]
+    },
+    "ru": {
+      "title": "Температура: когда волноваться",
+      "summary": "Повышенная температура обычно полезная реакция организма на инфекцию. Важнее возраст малыша и его состояние, чем цифра на градуснике.",
+      "keywords": [
+        "температура",
+        "жар",
+        "лихорадка",
+        "градусник",
+        "высокая температура",
+        "38",
+        "39",
+        "40",
+        "озноб",
+        "температура у новорождённого",
+        "температура у грудничка"
+      ],
+      "research": [
+        {
+          "t": "Рекомендации NICE (2019) относят к группе высокого риска малыша младше 3 месяцев с температурой 38 °C и выше.",
+          "from": 0,
+          "to": 3
+        },
+        {
+          "t": "Рекомендации NICE (2019) относят к промежуточному риску ребёнка 3–6 месяцев с температурой 39 °C и выше.",
+          "from": 3,
+          "to": 6
+        },
+        "Рекомендации Итальянского общества педиатрии (Chiappini, 2017): цель — самочувствие ребёнка, а не снижение температуры любой ценой.",
+        "Цвет кожи, активность, дыхание и количество выпитого лучше говорят о тяжести, чем цифра на термометре."
+      ],
+      "tips": [
+        "Измеряйте температуру электронным термометром (у малышей — в подмышке).",
+        "Часто предлагайте питьё или грудь: главный риск — обезвоживание.",
+        "Одевайте легко; обтирания и прохладные ванны не рекомендуются.",
+        "Смотрите, как малыш себя чувствует, когда температура снижается: если играет и пьёт — это хороший знак."
+      ],
+      "redFlags": [
+        {
+          "t": "Температура 39 °C и выше у ребёнка 3–6 месяцев.",
+          "from": 3,
+          "to": 6
+        },
+        "Температура держится дольше 3 дней.",
+        "Мало пьёт, реже писает, необычно раздражителен или сонлив.",
+        "Температура с сыпью, болью в ухе, упорным кашлем или плачем при мочеиспускании."
+      ],
+      "urgent": [
+        {
+          "t": "Температура 38 °C и выше у малыша младше 3 месяцев.",
+          "from": 0,
+          "to": 3
+        },
+        "Красно-фиолетовые пятна, которые не бледнеют при надавливании стаканом.",
+        "Затруднённое дыхание, серый, бледный или синюшный цвет кожи.",
+        "Малыш очень вялый, его трудно разбудить, ригидность шеи или судороги.",
+        "Признаки сильного обезвоживания: нет мочи много часов, сухой рот, плач без слёз.",
+        {
+          "t": "Запавший родничок (мягкое место на голове).",
+          "from": 0,
+          "to": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": "antipiretici",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "B1",
+      "B2"
+    ],
+    "it": {
+      "title": "Paracetamolo e ibuprofene: come usarli",
+      "summary": "Si usano per far stare meglio il bimbo, non per abbassare la temperatura a ogni costo. La dose dipende dal peso e va confermata dal pediatra.",
+      "keywords": [
+        "paracetamolo",
+        "ibuprofene",
+        "tachipirina",
+        "nurofen",
+        "antipiretico",
+        "antifebbrile",
+        "alternare",
+        "dose",
+        "supposta",
+        "sciroppo",
+        "farmaci febbre"
+      ],
+      "research": [
+        "NICE (2019) sconsiglia di usare gli antipiretici con il solo obiettivo di abbassare la temperatura; vanno usati se il bimbo è sofferente.",
+        "NICE suggerisce di passare all'altro farmaco solo se il disagio persiste o ritorna prima della dose successiva, e di non alternarli di routine.",
+        "La Società Italiana di Pediatria (Chiappini 2017) sconsiglia l'uso combinato di paracetamolo e ibuprofene.",
+        "Gli antipiretici non prevengono le convulsioni febbrili."
+      ],
+      "tips": [
+        "Calcola la dose sul peso, non sull'età, usando il dosatore della confezione.",
+        "Rispetta l'intervallo minimo tra le dosi e il numero massimo di dosi al giorno indicato.",
+        "Non dare mai aspirina ai bambini.",
+        "Se il bimbo vomita molto o beve pochissimo, chiedi al pediatra prima di dare ibuprofene."
+      ],
+      "redFlags": [
+        {
+          "t": "Bimbo sotto i 3 mesi: chiedi sempre al pediatra prima di qualsiasi farmaco.",
+          "from": 0,
+          "to": 3
+        },
+        "Il bimbo resta molto sofferente nonostante il farmaco alla dose corretta.",
+        "Dubbi sulla dose, o sospetto di aver dato una dose troppo alta: contatta subito il pediatra o un Centro Antiveleni."
+      ]
+    },
+    "ru": {
+      "title": "Парацетамол и ибупрофен: как применять",
+      "summary": "Их дают, чтобы малышу стало легче, а не чтобы любой ценой сбить температуру. Доза зависит от веса и должна быть согласована с педиатром.",
+      "keywords": [
+        "парацетамол",
+        "ибупрофен",
+        "нурофен",
+        "панадол",
+        "жаропонижающее",
+        "чередовать",
+        "доза",
+        "свечи",
+        "сироп",
+        "лекарство от температуры"
+      ],
+      "research": [
+        "NICE (2019) не рекомендует давать жаропонижающие только ради снижения температуры; их применяют, если ребёнку плохо.",
+        "NICE советует переходить на другой препарат только если дискомфорт сохраняется или возвращается до следующей дозы, и не чередовать их постоянно.",
+        "Итальянское общество педиатрии (Chiappini, 2017) не рекомендует совместное применение парацетамола и ибупрофена.",
+        "Жаропонижающие не предотвращают фебрильные судороги."
+      ],
+      "tips": [
+        "Рассчитывайте дозу по весу, а не по возрасту, используя дозатор из упаковки.",
+        "Соблюдайте минимальный интервал между приёмами и максимальное число доз в сутки.",
+        "Никогда не давайте детям аспирин.",
+        "Если малыш часто рвёт или почти не пьёт, спросите педиатра, прежде чем давать ибупрофен."
+      ],
+      "redFlags": [
+        {
+          "t": "Малыш младше 3 месяцев: всегда консультируйтесь с педиатром перед любым лекарством.",
+          "from": 0,
+          "to": 3
+        },
+        "Ребёнку по-прежнему очень плохо, несмотря на правильную дозу.",
+        "Сомнения в дозе или подозрение на передозировку: сразу свяжитесь с педиатром или токсикологическим центром."
+      ]
+    }
+  },
+  {
+    "id": "convulsioni-febbrili",
+    "category": "salute",
+    "ageFrom": 6,
+    "ageTo": 60,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B3",
+      "B4"
+    ],
+    "it": {
+      "title": "Convulsioni con la febbre",
+      "summary": "Le convulsioni febbrili colpiscono il 2–5% dei bambini tra 6 mesi e 5 anni. Spaventano molto, ma quelle semplici di solito non lasciano conseguenze.",
+      "keywords": [
+        "convulsioni",
+        "convulsione febbrile",
+        "crisi",
+        "scosse",
+        "occhi rovesciati",
+        "irrigidimento",
+        "svenimento",
+        "febbre e convulsioni"
+      ],
+      "research": [
+        "Le linee guida AAP (2011) definiscono la convulsione febbrile semplice come generalizzata, sotto i 15 minuti e senza ripetersi nelle 24 ore.",
+        "Riguarda il 2–5% dei bambini tra 6 e 60 mesi.",
+        "Una revisione Cochrane (Offringa 2021) non ha trovato benefici degli antipiretici nel prevenire le ricadute."
+      ],
+      "tips": [
+        "Mantieni la calma e guarda l'orologio: la durata è un'informazione importante.",
+        "Metti il bimbo sul fianco, su una superficie sicura, lontano da oggetti pericolosi.",
+        "Non mettergli niente in bocca e non cercare di trattenere i movimenti.",
+        "Dopo la crisi è normale che sia stanco e confuso per un po'."
+      ],
+      "redFlags": [
+        "Dopo ogni convulsione, anche se breve e già passata, fai valutare il bimbo dal pediatra.",
+        "Se è già successo in passato, chiedi al pediatra un piano su cosa fare."
+      ],
+      "urgent": [
+        "Prima convulsione in assoluto: chiama il 112.",
+        "La crisi dura più di 5 minuti o si ripete.",
+        "Il bimbo fa fatica a respirare o resta poco reattivo dopo la crisi.",
+        "Rigidità del collo, macchie sulla pelle o vomito ripetuto."
+      ]
+    },
+    "ru": {
+      "title": "Судороги при температуре",
+      "summary": "Фебрильные судороги бывают у 2–5% детей от 6 месяцев до 5 лет. Они очень пугают, но простые судороги обычно проходят без последствий.",
+      "keywords": [
+        "судороги",
+        "фебрильные судороги",
+        "приступ",
+        "подёргивания",
+        "закатывает глаза",
+        "напряжение тела",
+        "потеря сознания",
+        "температура и судороги"
+      ],
+      "research": [
+        "Рекомендации AAP (2011): простые фебрильные судороги — генерализованные, короче 15 минут и не повторяются в течение 24 часов.",
+        "Встречаются у 2–5% детей в возрасте 6–60 месяцев.",
+        "Кокрейновский обзор (Offringa, 2021) не нашёл пользы жаропонижающих в предотвращении повторных судорог."
+      ],
+      "tips": [
+        "Сохраняйте спокойствие и засеките время: длительность — важная информация.",
+        "Положите малыша на бок на безопасную поверхность, уберите опасные предметы.",
+        "Ничего не кладите ему в рот и не удерживайте движения.",
+        "После приступа нормально, что ребёнок какое-то время сонный и растерянный."
+      ],
+      "redFlags": [
+        "После любых судорог, даже коротких и уже прошедших, покажите ребёнка педиатру.",
+        "Если такое уже было, попросите педиатра о плане действий."
+      ],
+      "urgent": [
+        "Первые в жизни судороги: звоните 112.",
+        "Приступ длится больше 5 минут или повторяется.",
+        "Ребёнку трудно дышать или он плохо реагирует после приступа.",
+        "Ригидность шеи, пятна на коже или повторная рвота."
+      ]
+    }
+  },
+  {
+    "id": "coliche",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 5,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B5",
+      "B6",
+      "B7"
+    ],
+    "it": {
+      "title": "Pianto inconsolabile e coliche",
+      "summary": "Le coliche sono lunghi periodi di pianto in un bimbo sano, che iniziano e finiscono entro i 5 mesi. Sono faticose ma passano: è normale avere bisogno di aiuto.",
+      "keywords": [
+        "coliche",
+        "colichette",
+        "pianto",
+        "piange sempre",
+        "pianto inconsolabile",
+        "pancia",
+        "aria",
+        "sera",
+        "probiotici",
+        "lactobacillus reuteri",
+        "scuotere"
+      ],
+      "research": [
+        "I criteri Roma IV (Benninga 2016) definiscono le coliche come pianto prolungato e ricorrente, senza causa evidente, in un bimbo che cresce bene, con inizio e fine prima dei 5 mesi.",
+        "Una meta-analisi (Sung 2018) ha trovato che il probiotico L. reuteri DSM 17938 riduce il pianto nei bimbi allattati al seno; nei bimbi con formula le prove non bastano.",
+        "Il programma \"Period of PURPLE Crying\" (Barr 2009) ha mostrato che informare i genitori sul pianto normale migliora le conoscenze sui rischi dello scuotimento."
+      ],
+      "tips": [
+        "Prova contatto pelle a pelle, fascia, ninna nanna, rumore bianco o una passeggiata.",
+        "Se senti di perdere la pazienza, metti il bimbo al sicuro nel lettino, esci dalla stanza e respira per qualche minuto.",
+        "Chiedi il cambio a un'altra persona: il riposo dei genitori è importante.",
+        "Chiedi al pediatra prima di provare probiotici, gocce o cambi di latte."
+      ],
+      "redFlags": [
+        "Pianto con febbre, vomito ripetuto, diarrea o sangue nelle feci.",
+        "Non cresce, mangia poco o il pianto è molto diverso dal solito (acuto, lamentoso).",
+        "Il pianto continua dopo i 4–5 mesi o ti senti allo stremo."
+      ],
+      "urgent": [
+        "Mai scuotere il bambino: può causare danni cerebrali gravi. Se è successo, chiama subito il 112.",
+        "Pianto con difficoltà a respirare, colorito grigio o bluastro o bimbo che non risponde."
+      ]
+    },
+    "ru": {
+      "title": "Неутешный плач и колики",
+      "summary": "Колики — это долгие периоды плача у здорового малыша, которые начинаются и заканчиваются до 5 месяцев. Это изматывает, но проходит; нуждаться в помощи нормально.",
+      "keywords": [
+        "колики",
+        "плач",
+        "постоянно плачет",
+        "неутешный плач",
+        "животик",
+        "газики",
+        "вечер",
+        "пробиотики",
+        "lactobacillus reuteri",
+        "трясти"
+      ],
+      "research": [
+        "Римские критерии IV (Benninga, 2016): колики — длительный повторяющийся плач без видимой причины у хорошо растущего малыша, начало и окончание до 5 месяцев.",
+        "Метаанализ (Sung, 2018): пробиотик L. reuteri DSM 17938 уменьшает плач у детей на грудном вскармливании; для детей на смеси доказательств недостаточно.",
+        "Программа «Period of PURPLE Crying» (Barr, 2009) показала, что рассказ родителям о нормальном плаче улучшает понимание опасности встряхивания."
+      ],
+      "tips": [
+        "Попробуйте контакт кожа к коже, слинг, колыбельную, белый шум или прогулку.",
+        "Если чувствуете, что теряете терпение, положите малыша в кроватку, выйдите из комнаты и подышите несколько минут.",
+        "Просите вас подменить: отдых родителей важен.",
+        "Спросите педиатра, прежде чем пробовать пробиотики, капли или смену смеси."
+      ],
+      "redFlags": [
+        "Плач с температурой, повторной рвотой, поносом или кровью в стуле.",
+        "Плохо растёт, мало ест или плач сильно отличается от обычного (пронзительный, стонущий).",
+        "Плач продолжается после 4–5 месяцев или вы на пределе сил."
+      ],
+      "urgent": [
+        "Никогда не трясите ребёнка: это может вызвать тяжёлое повреждение мозга. Если это случилось, сразу звоните 112.",
+        "Плач с затруднённым дыханием, серым или синюшным цветом кожи или ребёнок не реагирует."
+      ]
+    }
+  },
+  {
+    "id": "rigurgito",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 18,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B8"
+    ],
+    "it": {
+      "title": "Rigurgito e reflusso",
+      "summary": "Il rigurgito è molto comune nei lattanti sani e di solito migliora da solo nel corso del primo anno. Se il bimbo cresce bene e sta bene, non servono farmaci.",
+      "keywords": [
+        "rigurgito",
+        "reflusso",
+        "rigurgita",
+        "vomita il latte",
+        "sputa latte",
+        "dopo la poppata",
+        "ruttino",
+        "antiacido",
+        "vomito a getto"
+      ],
+      "research": [
+        "Le linee guida NASPGHAN/ESPGHAN (Rosen 2018) sconsigliano i farmaci antiacidi per il solo pianto o il rigurgito visibile in lattanti altrimenti sani.",
+        "Tra i segnali che richiedono una valutazione: vomito verde (biliare), sangue, vomito sempre violento, inizio dopo i 6 mesi e scarsa crescita.",
+        "Nei bimbi con formula il pediatra può valutare latti addensati e pasti più piccoli."
+      ],
+      "tips": [
+        "Evita di sovralimentarlo: pasti più piccoli e frequenti possono aiutare.",
+        "Fai fare il ruttino durante e dopo la poppata.",
+        "Tienilo in braccio in posizione verticale per un po' dopo il pasto.",
+        "Per dormire resta sempre a pancia in su: i cuscini o i materassi inclinati non sono sicuri."
+      ],
+      "redFlags": [
+        "Non prende peso, rifiuta i pasti o piange molto durante la poppata.",
+        "Il rigurgito inizia dopo i 6 mesi o peggiora dopo i 12–18 mesi.",
+        "Tosse insistente o respiro rumoroso legati ai pasti."
+      ],
+      "urgent": [
+        "Vomito verde o con sangue (rosso o color fondo di caffè).",
+        {
+          "t": "Vomito sempre a getto nelle prime settimane di vita.",
+          "from": 0,
+          "to": 3
+        },
+        "Pancia gonfia e dura, bimbo molto abbattuto o segni di disidratazione."
+      ]
+    },
+    "ru": {
+      "title": "Срыгивание и рефлюкс",
+      "summary": "Срыгивание очень часто встречается у здоровых младенцев и обычно проходит само в течение первого года. Если малыш хорошо растёт и чувствует себя хорошо, лекарства не нужны.",
+      "keywords": [
+        "срыгивание",
+        "рефлюкс",
+        "срыгивает",
+        "рвёт молоком",
+        "после кормления",
+        "отрыжка",
+        "антацид",
+        "рвота фонтаном"
+      ],
+      "research": [
+        "Рекомендации NASPGHAN/ESPGHAN (Rosen, 2018) не советуют кислотоподавляющие препараты только из-за плача или видимых срыгиваний у в остальном здоровых младенцев.",
+        "Признаки, требующие осмотра: зелёная (желчная) рвота, кровь, постоянно сильная рвота, начало после 6 месяцев и плохая прибавка веса.",
+        "Детям на смеси педиатр может предложить загущённую смесь и меньшие порции."
+      ],
+      "tips": [
+        "Не перекармливайте: помогают меньшие и более частые кормления.",
+        "Давайте срыгнуть воздух во время и после кормления.",
+        "Подержите малыша вертикально некоторое время после еды.",
+        "Спать — всегда на спине: подушки и наклонные матрасы небезопасны."
+      ],
+      "redFlags": [
+        "Не прибавляет в весе, отказывается от еды или сильно плачет при кормлении.",
+        "Срыгивания начались после 6 месяцев или усиливаются после 12–18 месяцев.",
+        "Упорный кашель или шумное дыхание, связанные с едой."
+      ],
+      "urgent": [
+        "Рвота зелёного цвета или с кровью (красная или цвета кофейной гущи).",
+        {
+          "t": "Постоянная рвота фонтаном в первые недели жизни.",
+          "from": 0,
+          "to": 3
+        },
+        "Вздутый твёрдый живот, сильная вялость или признаки обезвоживания."
+      ]
+    }
+  },
+  {
+    "id": "stitichezza",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "B9"
+    ],
+    "it": {
+      "title": "Stitichezza: non fa la cacca",
+      "summary": "Nei lattanti allattati al seno è normale anche andare di corpo raramente se le feci sono morbide. Nei più grandi la stitichezza è spesso funzionale e si tratta bene.",
+      "keywords": [
+        "stitichezza",
+        "stitico",
+        "non fa la cacca",
+        "cacca dura",
+        "feci dure",
+        "pupù",
+        "spinge",
+        "dolore a fare la cacca",
+        "trattiene",
+        "supposta",
+        "lassativo"
+      ],
+      "research": [
+        "Le linee guida ESPGHAN/NASPGHAN (Tabbers 2014) indicano che nella grande maggioranza dei bambini la stitichezza è funzionale, cioè senza una malattia sottostante.",
+        "Quando serve un trattamento, il pediatra sceglie il farmaco più adatto; non è consigliato l'uso fai-da-te di clisteri o rimedi frequenti.",
+        "Nei bimbi più grandi la paura del dolore porta a trattenere: per questo è importante intervenire presto."
+      ],
+      "tips": [
+        {
+          "t": "Dopo lo svezzamento offri acqua, frutta, verdura e legumi.",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "t": "Durante lo spannolinamento non forzare: proponi il vasino dopo i pasti, con calma e senza fretta.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "Un appoggio sotto i piedi aiuta la posizione sul vasino o sul water.",
+          "from": 18,
+          "to": 48
+        },
+        "Evita rimedi come stimolazioni con termometro o bastoncini."
+      ],
+      "redFlags": [
+        "Feci dure e dolorose per più di 2 settimane, o il bimbo trattiene per paura.",
+        "Sangue nelle feci o ragadi.",
+        {
+          "t": "Stitichezza nelle prime settimane di vita, o primo meconio emesso dopo 48 ore dalla nascita.",
+          "from": 0,
+          "to": 3
+        },
+        "Pancia gonfia, vomito, febbre o scarsa crescita."
+      ]
+    },
+    "ru": {
+      "title": "Запор: малыш не какает",
+      "summary": "У детей на грудном вскармливании редкий стул нормален, если он мягкий. У детей постарше запор обычно функциональный и хорошо лечится.",
+      "keywords": [
+        "запор",
+        "не какает",
+        "твёрдый стул",
+        "твердый кал",
+        "тужится",
+        "больно какать",
+        "сдерживает",
+        "свеча",
+        "слабительное",
+        "стул"
+      ],
+      "research": [
+        "Рекомендации ESPGHAN/NASPGHAN (Tabbers, 2014): у подавляющего большинства детей запор функциональный, то есть без основного заболевания.",
+        "Если нужно лечение, препарат подбирает педиатр; частые клизмы и средства без назначения не рекомендуются.",
+        "Дети постарше из-за страха боли начинают сдерживаться, поэтому важно действовать рано."
+      ],
+      "tips": [
+        {
+          "t": "После начала прикорма предлагайте воду, фрукты, овощи и бобовые.",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "t": "При приучении к горшку не давите: предлагайте горшок после еды, спокойно и без спешки.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "Подставка под ноги улучшает позу на горшке или унитазе.",
+          "from": 18,
+          "to": 48
+        },
+        "Избегайте стимуляции термометром или палочками."
+      ],
+      "redFlags": [
+        "Твёрдый болезненный стул дольше 2 недель или малыш сдерживается из-за страха.",
+        "Кровь в стуле или трещины.",
+        {
+          "t": "Запор в первые недели жизни или первый меконий позже 48 часов после рождения.",
+          "from": 0,
+          "to": 3
+        },
+        "Вздутый живот, рвота, температура или плохой рост."
+      ]
+    }
+  },
+  {
+    "id": "diarrea",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B10"
+    ],
+    "it": {
+      "title": "Diarrea e vomito: evitare la disidratazione",
+      "summary": "Nella gastroenterite la cosa più importante è reidratare con la soluzione reidratante orale, poco e spesso, e continuare ad allattare e mangiare appena possibile.",
+      "keywords": [
+        "diarrea",
+        "scariche",
+        "cacca liquida",
+        "vomito",
+        "gastroenterite",
+        "virus intestinale",
+        "rotavirus",
+        "disidratazione",
+        "soluzione reidratante",
+        "sali",
+        "pupù liquida"
+      ],
+      "research": [
+        "Le linee guida ESPGHAN/ESPID (Guarino 2014) indicano la soluzione reidratante orale a ridotta osmolarità come primo trattamento.",
+        "L'allattamento al seno va continuato, e l'alimentazione abituale va ripresa presto, senza diete di digiuno.",
+        "Bevande zuccherate, succhi e bibite non sono adatti per reidratare."
+      ],
+      "tips": [
+        "Dai la soluzione reidratante a piccoli sorsi o con il cucchiaino ogni pochi minuti, soprattutto se vomita.",
+        "Conta i pannolini bagnati: sono un buon indicatore di idratazione.",
+        "Lava bene le mani e le superfici: i virus intestinali si trasmettono facilmente.",
+        "Non dare farmaci antidiarroici senza indicazione del pediatra."
+      ],
+      "redFlags": [
+        {
+          "t": "Bimbo sotto i 6 mesi con diarrea o vomito ripetuto.",
+          "from": 0,
+          "to": 6
+        },
+        "Diarrea con febbre alta o che dura più di una settimana.",
+        "Non riesce a tenere giù i liquidi."
+      ],
+      "urgent": [
+        "Segni di disidratazione: niente pipì per molte ore, bocca e lingua secche, pianto senza lacrime, occhi o fontanella infossati.",
+        "Bimbo molto sonnolento, difficile da svegliare o molto irritabile.",
+        "Vomito verde, sangue nelle feci o forte dolore alla pancia."
+      ]
+    },
+    "ru": {
+      "title": "Понос и рвота: не допустить обезвоживания",
+      "summary": "При гастроэнтерите главное — восполнять жидкость раствором для пероральной регидратации маленькими порциями и часто, продолжать кормить грудью и есть, как только возможно.",
+      "keywords": [
+        "понос",
+        "диарея",
+        "жидкий стул",
+        "рвота",
+        "гастроэнтерит",
+        "кишечный вирус",
+        "ротавирус",
+        "обезвоживание",
+        "регидратация",
+        "регидрон",
+        "соли"
+      ],
+      "research": [
+        "Рекомендации ESPGHAN/ESPID (Guarino, 2014): первое лечение — раствор для пероральной регидратации со сниженной осмолярностью.",
+        "Грудное вскармливание продолжают, а обычное питание возвращают рано, без голодных пауз.",
+        "Сладкие напитки, соки и газировка не подходят для восполнения жидкости."
+      ],
+      "tips": [
+        "Давайте раствор маленькими глотками или с ложечки каждые несколько минут, особенно при рвоте.",
+        "Считайте мокрые подгузники — это хороший показатель гидратации.",
+        "Тщательно мойте руки и поверхности: кишечные вирусы легко передаются.",
+        "Не давайте противодиарейные средства без назначения педиатра."
+      ],
+      "redFlags": [
+        {
+          "t": "Малыш младше 6 месяцев с поносом или повторной рвотой.",
+          "from": 0,
+          "to": 6
+        },
+        "Понос с высокой температурой или дольше недели.",
+        "Не удерживает жидкость."
+      ],
+      "urgent": [
+        "Признаки обезвоживания: нет мочи много часов, сухие рот и язык, плач без слёз, запавшие глаза или родничок.",
+        "Ребёнок очень сонный, его трудно разбудить, или он очень раздражителен.",
+        "Зелёная рвота, кровь в стуле или сильная боль в животе."
+      ]
+    }
+  },
+  {
+    "id": "tosse-raffreddore",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B11",
+      "B12",
+      "B13",
+      "B14"
+    ],
+    "it": {
+      "title": "Tosse, raffreddore e bronchiolite",
+      "summary": "La maggior parte delle tossi e dei raffreddori è virale e passa da sola. Sotto i 2 anni la bronchiolite può rendere difficile respirare e mangiare: va osservata con attenzione.",
+      "keywords": [
+        "tosse",
+        "raffreddore",
+        "naso chiuso",
+        "catarro",
+        "muco",
+        "bronchiolite",
+        "rsv",
+        "respiro",
+        "fiato corto",
+        "lavaggi nasali",
+        "aerosol",
+        "sciroppo per la tosse",
+        "miele per la tosse"
+      ],
+      "research": [
+        {
+          "t": "Le linee guida NICE (aggiornate 2021) e AAP (Ralston 2014) per la bronchiolite, tipica sotto i 2 anni, non raccomandano di routine antibiotici, broncodilatatori o cortisonici.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Una revisione Cochrane (Oduwole 2018) indica che il miele probabilmente allevia la tosse più del placebo. Si può dare solo dopo i 12 mesi.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        {
+          "t": "La FDA sconsiglia gli sciroppi per tosse e raffreddore con decongestionanti o antistaminici sotto i 2 anni per il rischio di effetti collaterali gravi.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Mai miele sotto i 12 mesi, nemmeno per la tosse: rischio di botulismo.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        }
+      ],
+      "tips": [
+        "Pulisci il naso con soluzione fisiologica prima dei pasti e della nanna.",
+        "Offri pasti più piccoli e frequenti se fa fatica a mangiare.",
+        {
+          "t": "Un cucchiaino di miele prima della nanna può calmare la tosse.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        "Tieni la casa libera dal fumo e lava spesso le mani."
+      ],
+      "redFlags": [
+        "Mangia o beve meno della metà del solito.",
+        "Febbre alta, tosse che dura più di 3 settimane o mal d'orecchio.",
+        "Respiro affannoso o sibilante.",
+        {
+          "t": "Qualsiasi tosse in un bimbo sotto i 3 mesi.",
+          "from": 0,
+          "to": 3
+        }
+      ],
+      "urgent": [
+        "Pause nel respiro (apnee) o colorito bluastro delle labbra.",
+        "Respiro molto veloce, gemito a ogni respiro, rientramenti marcati tra le costole o sotto lo sterno.",
+        "Bimbo molto abbattuto, che non si sveglia bene o non beve."
+      ]
+    },
+    "ru": {
+      "title": "Кашель, насморк и бронхиолит",
+      "summary": "Большинство кашлей и простуд вирусные и проходят сами. До 2 лет бронхиолит может затруднять дыхание и питание — за малышом нужно внимательно наблюдать.",
+      "keywords": [
+        "кашель",
+        "насморк",
+        "заложен нос",
+        "сопли",
+        "мокрота",
+        "бронхиолит",
+        "рсв",
+        "дыхание",
+        "одышка",
+        "промывание носа",
+        "ингаляция",
+        "сироп от кашля",
+        "мёд от кашля"
+      ],
+      "research": [
+        {
+          "t": "Рекомендации NICE (обновлены в 2021) и AAP (Ralston, 2014) по бронхиолиту, типичному до 2 лет, не советуют рутинно назначать антибиотики, бронхолитики или кортикостероиды.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Кокрейновский обзор (Oduwole, 2018): мёд, вероятно, облегчает кашель лучше плацебо. Давать его можно только после 12 месяцев.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        {
+          "t": "FDA не рекомендует детям до 2 лет средства от кашля и простуды с деконгестантами или антигистаминными из-за риска серьёзных побочных эффектов.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Никакого мёда до 12 месяцев, даже от кашля: риск ботулизма.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        }
+      ],
+      "tips": [
+        "Очищайте нос физраствором перед едой и сном.",
+        "Предлагайте еду меньшими порциями и чаще, если малышу тяжело есть.",
+        {
+          "t": "Ложка мёда перед сном может смягчить кашель.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        "Не курите дома и часто мойте руки."
+      ],
+      "redFlags": [
+        "Ест или пьёт меньше половины обычного.",
+        "Высокая температура, кашель дольше 3 недель или боль в ухе.",
+        "Тяжёлое или свистящее дыхание.",
+        {
+          "t": "Любой кашель у малыша младше 3 месяцев.",
+          "from": 0,
+          "to": 3
+        }
+      ],
+      "urgent": [
+        "Остановки дыхания (апноэ) или синюшность губ.",
+        "Очень частое дыхание, кряхтение на каждом вдохе, выраженное втяжение между рёбрами или под грудиной.",
+        "Малыш очень вялый, плохо просыпается или не пьёт."
+      ]
+    }
+  },
+  {
+    "id": "dermatite",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "B15",
+      "B16"
+    ],
+    "it": {
+      "title": "Pelle secca e dermatite atopica",
+      "summary": "La dermatite atopica è frequente nei primi anni. Emollienti ogni giorno e, quando serve, le creme prescritte dal pediatra la tengono sotto controllo.",
+      "keywords": [
+        "dermatite",
+        "dermatite atopica",
+        "eczema",
+        "pelle secca",
+        "chiazze rosse",
+        "prurito",
+        "crosta",
+        "crosta lattea",
+        "crema",
+        "emolliente",
+        "cortisone",
+        "puntini rossi"
+      ],
+      "research": [
+        "Le linee guida dell'American Academy of Dermatology (Eichenfield 2014) indicano gli emollienti come base del trattamento e i corticosteroidi topici come terapia efficace e sicura se usati come prescritto.",
+        {
+          "t": "Lo studio BEEP (Chalmers 2020) ha mostrato che applicare emollienti ogni giorno nel primo anno non previene la comparsa della dermatite, e potrebbe aumentare le infezioni cutanee.",
+          "from": 0,
+          "to": 12
+        },
+        "La dermatite tende a migliorare con la crescita in molti bambini."
+      ],
+      "tips": [
+        "Bagnetti brevi in acqua tiepida, con detergenti delicati e senza profumo.",
+        "Applica l'emolliente subito dopo il bagno, sulla pelle ancora un po' umida.",
+        "Preferisci vestiti di cotone e taglia corta le unghie per ridurre i danni da grattamento.",
+        "Non avere paura del cortisone prescritto: usato bene, è sicuro."
+      ],
+      "redFlags": [
+        "Le chiazze non migliorano con gli emollienti o il prurito disturba il sonno.",
+        "Croste giallastre, pus o zone che si allargano rapidamente (possibile infezione).",
+        "Dermatite associata a scarsa crescita o reazioni dopo i pasti."
+      ],
+      "urgent": [
+        "Comparsa improvvisa di vescicole o piccole ulcere dolorose sulla dermatite, con febbre o bimbo abbattuto (possibile infezione da herpes): va visto in giornata o in Pronto Soccorso."
+      ]
+    },
+    "ru": {
+      "title": "Сухая кожа и атопический дерматит",
+      "summary": "Атопический дерматит часто встречается в первые годы. Ежедневные эмоленты и, при необходимости, назначенные педиатром кремы помогают держать его под контролем.",
+      "keywords": [
+        "дерматит",
+        "атопический дерматит",
+        "экзема",
+        "сухая кожа",
+        "красные пятна",
+        "зуд",
+        "корочки",
+        "молочные корочки",
+        "крем",
+        "эмолент",
+        "гормональная мазь",
+        "сыпь"
+      ],
+      "research": [
+        "Рекомендации Американской академии дерматологии (Eichenfield, 2014): основа лечения — эмоленты, а местные кортикостероиды эффективны и безопасны при применении по назначению.",
+        {
+          "t": "Исследование BEEP (Chalmers, 2020): ежедневные эмоленты на первом году не предотвращают дерматит и, возможно, повышают риск кожных инфекций.",
+          "from": 0,
+          "to": 12
+        },
+        "У многих детей дерматит с возрастом ослабевает."
+      ],
+      "tips": [
+        "Короткие купания в тёплой воде с мягкими средствами без отдушек.",
+        "Наносите эмолент сразу после купания на ещё слегка влажную кожу.",
+        "Выбирайте хлопковую одежду и коротко стригите ногти, чтобы расчёсы меньше повреждали кожу.",
+        "Не бойтесь назначенного гормонального крема: при правильном применении он безопасен."
+      ],
+      "redFlags": [
+        "Пятна не проходят от эмолентов или зуд мешает спать.",
+        "Желтоватые корки, гной или быстро расширяющиеся участки (возможна инфекция).",
+        "Дерматит вместе с плохим ростом или реакциями после еды."
+      ],
+      "urgent": [
+        "Внезапное появление пузырьков или болезненных язвочек на дерматите с температурой или вялостью (возможна герпетическая инфекция): нужен осмотр в тот же день или в приёмном покое."
+      ]
+    }
+  },
+  {
+    "id": "dentizione",
+    "category": "salute",
+    "ageFrom": 4,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "B18",
+      "B17",
+      "B19"
+    ],
+    "it": {
+      "title": "Dentini: dentizione e igiene orale",
+      "summary": "La dentizione può dare irritabilità, bava e un lieve aumento della temperatura, ma non la febbre vera. Dal primo dentino serve il dentifricio al fluoro.",
+      "keywords": [
+        "denti",
+        "dentini",
+        "dentizione",
+        "spuntano i denti",
+        "gengive",
+        "bava",
+        "mordicchia",
+        "dentifricio",
+        "fluoro",
+        "spazzolino",
+        "carie",
+        "collana d'ambra"
+      ],
+      "research": [
+        "Una meta-analisi (Massignan 2016) ha trovato che l'eruzione dei denti si associa a irritazione delle gengive, irritabilità e salivazione, e a un lieve rialzo della temperatura che non arriva a febbre.",
+        {
+          "t": "Linee guida europee (EAPD, Toumba 2019): dal primo dente ai 2 anni dentifricio a 1000 ppm di fluoro, in quantità pari a un chicco di riso.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Linee guida europee (EAPD, Toumba 2019): da 2 a 6 anni dentifricio a 1000 ppm, in quantità pari a un pisello.",
+          "from": 24,
+          "to": 72
+        },
+        "La FDA mette in guardia dalle collane e dai braccialetti per la dentizione, comprese quelle d'ambra, per il rischio di strangolamento e soffocamento."
+      ],
+      "tips": [
+        "Lava i denti due volte al giorno, l'ultima volta dopo l'ultimo pasto prima della nanna.",
+        "Per il fastidio alle gengive: massaggio con un dito pulito o un anello da dentizione freddo (non congelato).",
+        "Evita biberon con latte o bevande zuccherate durante la notte.",
+        "Prima visita dal dentista indicativamente entro il primo-secondo anno, o come consiglia il pediatra."
+      ],
+      "redFlags": [
+        "Febbre di 38 °C o più: non attribuirla ai denti, valuta altre cause con il pediatra.",
+        "Macchie bianche o scure sui denti, o gengive gonfie con pus.",
+        {
+          "t": "Nessun dente a 18 mesi.",
+          "from": 12,
+          "to": 24
+        }
+      ]
+    },
+    "ru": {
+      "title": "Зубки: прорезывание и гигиена",
+      "summary": "Прорезывание может вызывать раздражительность, слюнотечение и небольшое повышение температуры, но не настоящую лихорадку. С первого зуба нужна паста с фтором.",
+      "keywords": [
+        "зубы",
+        "зубки",
+        "прорезывание",
+        "режутся зубы",
+        "дёсны",
+        "слюни",
+        "грызёт",
+        "зубная паста",
+        "фтор",
+        "щётка",
+        "кариес",
+        "янтарные бусы"
+      ],
+      "research": [
+        "Метаанализ (Massignan, 2016): прорезывание связано с раздражением дёсен, капризностью и слюнотечением, а также с небольшим подъёмом температуры, не достигающим лихорадки.",
+        {
+          "t": "Европейские рекомендации (EAPD, Toumba, 2019): от первого зуба до 2 лет — паста с 1000 ppm фтора размером с рисовое зёрнышко.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Европейские рекомендации (EAPD, Toumba, 2019): с 2 до 6 лет — паста с 1000 ppm размером с горошину.",
+          "from": 24,
+          "to": 72
+        },
+        "FDA предупреждает об опасности бус и браслетов для прорезывания, включая янтарные: риск удушения и аспирации."
+      ],
+      "tips": [
+        "Чистите зубы два раза в день, второй раз — после последней еды перед сном.",
+        "При дискомфорте в дёснах: массаж чистым пальцем или охлаждённый (не замороженный) прорезыватель.",
+        "Избегайте бутылочки с молоком или сладкими напитками ночью.",
+        "Первый визит к стоматологу — ориентировочно на первом-втором году или по совету педиатра."
+      ],
+      "redFlags": [
+        "Температура 38 °C и выше: не списывайте её на зубы, обсудите другие причины с педиатром.",
+        "Белые или тёмные пятна на зубах, отёчные дёсны с гноем.",
+        {
+          "t": "Ни одного зуба к 18 месяцам.",
+          "from": 12,
+          "to": 24
+        }
+      ]
+    }
+  },
+  {
+    "id": "vaccini",
+    "category": "salute",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "B37",
+      "B38",
+      "B39"
+    ],
+    "it": {
+      "title": "Vaccinazioni: dubbi frequenti",
+      "summary": "I vaccini proteggono da malattie gravi. In Italia 10 vaccinazioni sono obbligatorie da 0 a 16 anni, altre sono raccomandate e gratuite. Gli studi escludono un legame con l'autismo.",
+      "keywords": [
+        "vaccini",
+        "vaccinazioni",
+        "vaccino",
+        "esavalente",
+        "morbillo",
+        "mpr",
+        "varicella",
+        "autismo e vaccini",
+        "calendario vaccinale",
+        "obbligatori",
+        "reazione al vaccino",
+        "febbre dopo vaccino"
+      ],
+      "research": [
+        "Una meta-analisi su oltre 1,2 milioni di bambini (Taylor 2014) non ha trovato alcuna associazione tra vaccini e autismo.",
+        "La Legge 119/2017 rende obbligatorie 10 vaccinazioni da 0 a 16 anni: polio, difterite, tetano, epatite B, pertosse, Haemophilus influenzae b, morbillo, parotite, rosolia e varicella.",
+        "Il Piano Nazionale di Prevenzione Vaccinale raccomanda e offre gratuitamente anche altri vaccini, come pneumococco, meningococchi e rotavirus."
+      ],
+      "tips": [
+        "Segui il calendario della tua ASL: rispettare i tempi protegge nei mesi più delicati.",
+        "Dopo il vaccino sono comuni febbricola, gonfiore nel punto dell'iniezione e irritabilità per 1–2 giorni.",
+        "Prepara le domande da fare al pediatra o al centro vaccinale prima dell'appuntamento.",
+        "Tieni a portata di mano il libretto delle vaccinazioni."
+      ],
+      "redFlags": [
+        "Febbre alta che dura più di 48 ore dopo il vaccino.",
+        "Gonfiore molto esteso o che peggiora dopo alcuni giorni.",
+        "Pianto inconsolabile per ore."
+      ]
+    },
+    "ru": {
+      "title": "Прививки: частые вопросы",
+      "summary": "Вакцины защищают от тяжёлых болезней. В Италии 10 прививок обязательны с 0 до 16 лет, другие рекомендованы и бесплатны. Исследования исключают связь с аутизмом.",
+      "keywords": [
+        "прививки",
+        "вакцинация",
+        "вакцина",
+        "гексавалентная",
+        "корь",
+        "кпк",
+        "ветрянка",
+        "аутизм и прививки",
+        "календарь прививок",
+        "обязательные",
+        "реакция на прививку",
+        "температура после прививки"
+      ],
+      "research": [
+        "Метаанализ данных более 1,2 миллиона детей (Taylor, 2014) не выявил никакой связи между вакцинами и аутизмом.",
+        "Закон 119/2017 делает обязательными 10 прививок с 0 до 16 лет: полиомиелит, дифтерия, столбняк, гепатит B, коклюш, гемофильная инфекция типа b, корь, паротит, краснуха и ветряная оспа.",
+        "Национальный план вакцинопрофилактики также рекомендует и бесплатно предлагает другие вакцины, например против пневмококка, менингококков и ротавируса."
+      ],
+      "tips": [
+        "Следуйте календарю вашей ASL (местной службы здравоохранения): соблюдение сроков защищает в самые уязвимые месяцы.",
+        "После прививки часто бывают небольшая температура, припухлость в месте укола и капризность на 1–2 дня.",
+        "Подготовьте вопросы педиатру или в прививочный центр заранее.",
+        "Держите прививочный сертификат под рукой."
+      ],
+      "redFlags": [
+        "Высокая температура дольше 48 часов после прививки.",
+        "Очень обширный отёк или отёк, который усиливается через несколько дней.",
+        "Неутешный плач в течение нескольких часов."
+      ]
+    }
+  },
+  {
+    "id": "pipi-a-letto",
+    "category": "salute",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "D5b",
+      "D5",
+      "D5c"
+    ],
+    "it": {
+      "title": "Fa ancora la pipì a letto",
+      "summary": "Bagnare il letto di notte è comune nei bambini piccoli: si parla di enuresi solo dai 5 anni, e ogni anno una parte dei bambini smette da sola.",
+      "keywords": [
+        "pipì a letto",
+        "enuresi",
+        "bagna il letto",
+        "pannolino di notte",
+        "notte asciutta",
+        "si fa la pipì addosso di notte",
+        "allarme enuresi"
+      ],
+      "research": [
+        "Secondo la International Children's Continence Society (Austin 2016) si parla di enuresi notturna solo dai 5 anni: prima è parte del normale sviluppo.",
+        "In uno studio su 1129 bambini (Forsythe 1974) ogni anno circa il 14–16% dei bambini con enuresi smetteva spontaneamente.",
+        "Le linee guida ICCS (Nevéus 2020) indicano come trattamenti di prima scelta l'allarme notturno o la desmopressina, in genere dai 6 anni, dopo una valutazione del pediatra."
+      ],
+      "tips": [
+        "Non punire e non rimproverare: il bambino non lo fa apposta e non riesce a controllarlo.",
+        "Fai bere bene durante il giorno e meno nell'ora prima della nanna; pipì prima di dormire.",
+        "Usa una traversa o un coprimaterasso per ridurre lo stress di tutti.",
+        {
+          "t": "Se ha già 5 anni e la cosa lo fa soffrire, parlane col pediatra: esistono trattamenti efficaci.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "redFlags": [
+        "Si bagna anche di giorno o fa fatica a fare la pipì.",
+        "Stitichezza frequente.",
+        "Ha sempre molta sete o beve moltissimo.",
+        "Torna a bagnarsi dopo essere stato asciutto a lungo, o la cosa lo fa soffrire molto."
+      ]
+    },
+    "ru": {
+      "title": "Всё ещё писается ночью",
+      "summary": "Ночное недержание мочи часто встречается у маленьких детей: об энурезе говорят только с 5 лет, и каждый год часть детей перестаёт сама.",
+      "keywords": [
+        "писается ночью",
+        "энурез",
+        "мокрая постель",
+        "ночной подгузник",
+        "сухие ночи",
+        "будильник от энуреза"
+      ],
+      "research": [
+        "По данным Международного общества детской континенции (Austin, 2016), о ночном энурезе говорят только с 5 лет: до этого это часть нормального развития.",
+        "В исследовании 1129 детей (Forsythe, 1974) каждый год примерно 14–16% детей с энурезом переставали писаться сами.",
+        "Рекомендации ICCS (Nevéus, 2020): методы первого выбора — ночной будильник-сигнализатор или десмопрессин, обычно с 6 лет, после осмотра педиатра."
+      ],
+      "tips": [
+        "Не наказывайте и не ругайте: ребёнок делает это не нарочно и не может это контролировать.",
+        "Пусть хорошо пьёт днём и меньше за час до сна; перед сном — в туалет.",
+        "Используйте впитывающую пелёнку или наматрасник, чтобы всем было спокойнее.",
+        {
+          "t": "Если ребёнку уже 5 лет и он из-за этого переживает, обсудите с педиатром: есть эффективное лечение.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "redFlags": [
+        "Мочится и днём или с трудом мочится.",
+        "Частые запоры.",
+        "Постоянно хочет пить или пьёт очень много.",
+        "Снова начал писаться после долгого «сухого» периода или очень переживает."
+      ]
+    }
+  }
+]

@@ -1,0 +1,1195 @@
+[
+  {
+    "id": "allattamento",
+    "category": "alimentazione",
+    "ageFrom": 0,
+    "ageTo": 24,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A7",
+      "A8",
+      "A9"
+    ],
+    "it": {
+      "title": "Allattamento: quanto e fino a quando",
+      "summary": "L'OMS raccomanda l'allattamento esclusivo al seno per i primi 6 mesi e di continuarlo, insieme ad altri cibi, fino a 2 anni e oltre, se mamma e bimbo lo desiderano.",
+      "keywords": [
+        "allattamento",
+        "allattare",
+        "latte materno",
+        "seno",
+        "tetta",
+        "poppata",
+        "allattamento esclusivo",
+        "latte artificiale",
+        "formula",
+        "svezzare dal seno"
+      ],
+      "research": [
+        {
+          "t": "Una revisione Cochrane (Kramer e Kakuma 2012) ha trovato che l'allattamento esclusivo per 6 mesi riduce le infezioni gastrointestinali rispetto a 3–4 mesi, senza effetti negativi sulla crescita.",
+          "from": 0,
+          "to": 12
+        },
+        "La serie del Lancet (Victora 2016) associa l'allattamento a meno infezioni e ricoveri nei bambini e a benefici di salute anche per la mamma.",
+        "Il latte artificiale è un'alternativa sicura e adeguata quando l'allattamento non è possibile o non è la scelta della famiglia."
+      ],
+      "tips": [
+        "Allatta a richiesta, seguendo i segnali di fame: il bimbo che cerca, si porta le mani alla bocca, schiocca le labbra.",
+        "Se senti dolore persistente o hai dubbi sulla crescita, chiedi aiuto presto a un'ostetrica, a una consulente per l'allattamento o al pediatra.",
+        "Non c'è un'età in cui il latte materno smette di essere utile: decidi tu quando smettere, senza sensi di colpa.",
+        "Qualunque sia il modo in cui nutri il tuo bimbo, il contatto e la vicinanza durante la poppata contano."
+      ]
+    },
+    "ru": {
+      "title": "Грудное вскармливание: сколько и как долго",
+      "summary": "ВОЗ рекомендует исключительно грудное вскармливание первые 6 месяцев и продолжать его вместе с другой едой до 2 лет и дольше, если мама и малыш этого хотят.",
+      "keywords": [
+        "грудное вскармливание",
+        "кормить грудью",
+        "грудное молоко",
+        "грудь",
+        "кормление",
+        "исключительно грудное",
+        "смесь",
+        "искусственное вскармливание",
+        "отлучение от груди"
+      ],
+      "research": [
+        {
+          "t": "Кокрейновский обзор (Kramer, Kakuma, 2012): исключительно грудное вскармливание 6 месяцев снижает число кишечных инфекций по сравнению с 3–4 месяцами без вреда для роста.",
+          "from": 0,
+          "to": 12
+        },
+        "Серия статей в Lancet (Victora, 2016) связывает грудное вскармливание с меньшим числом инфекций и госпитализаций у детей и с пользой для здоровья мамы.",
+        "Детская смесь — безопасная и полноценная альтернатива, когда грудное вскармливание невозможно или семья выбирает другое."
+      ],
+      "tips": [
+        "Кормите по требованию, ориентируясь на признаки голода: малыш ищет грудь, тянет руки ко рту, причмокивает.",
+        "Если есть постоянная боль или сомнения в прибавке веса, обратитесь как можно раньше к акушерке, консультанту по грудному вскармливанию или педиатру.",
+        "Нет возраста, когда грудное молоко перестаёт быть полезным: вы сами решаете, когда закончить, без чувства вины.",
+        "Как бы вы ни кормили малыша, важны близость и контакт во время кормления."
+      ]
+    }
+  },
+  {
+    "id": "svezzamento",
+    "category": "alimentazione",
+    "ageFrom": 4,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A9",
+      "A10",
+      "A14"
+    ],
+    "it": {
+      "title": "Svezzamento: quando e come iniziare",
+      "summary": "Le società pediatriche europee indicano di iniziare con i cibi solidi non prima delle 17 settimane e non dopo le 26; l'OMS indica i 6 mesi. Contano i segnali di prontezza del bimbo.",
+      "keywords": [
+        "svezzamento",
+        "autosvezzamento",
+        "alimentazione complementare",
+        "pappa",
+        "prime pappe",
+        "cibi solidi",
+        "baby led weaning",
+        "blw",
+        "omogeneizzati",
+        "quando iniziare",
+        "sale",
+        "zucchero",
+        "glutine"
+      ],
+      "research": [
+        "ESPGHAN (2017): i cibi complementari non vanno introdotti prima delle 17 settimane né dopo le 26 settimane; l'OMS (2023) indica di iniziare a 6 mesi.",
+        "Niente sale e zucchero aggiunti nel primo anno; il glutine può essere introdotto tra i 4 e i 12 mesi.",
+        "Uno studio controllato (BLISS, Fangupo 2016) ha mostrato che un autosvezzamento con cibi preparati in modo sicuro non aumenta il rischio di soffocamento rispetto all'approccio tradizionale.",
+        "Servono cibi ricchi di ferro (carne, pesce, legumi, uova, cereali fortificati) perché le riserve di ferro calano verso i 6 mesi."
+      ],
+      "tips": [
+        "Segnali di prontezza: sta seduto con poco sostegno, controlla bene la testa, mostra interesse per il cibo e non spinge fuori tutto con la lingua.",
+        "Offri una varietà di sapori, comprese le verdure amare, e riproponi più volte quelli rifiutati.",
+        "Che tu scelga pappe o pezzetti, servi consistenze morbide e forme sicure e tieni sempre il bimbo seduto e sorvegliato.",
+        "Il latte (materno o formula) resta l'alimento principale per buona parte del primo anno."
+      ]
+    },
+    "ru": {
+      "title": "Прикорм: когда и как начинать",
+      "summary": "Европейские педиатрические общества советуют вводить твёрдую пищу не раньше 17 недель и не позже 26; ВОЗ указывает 6 месяцев. Важны признаки готовности малыша.",
+      "keywords": [
+        "прикорм",
+        "педагогический прикорм",
+        "введение прикорма",
+        "первый прикорм",
+        "твёрдая пища",
+        "baby led weaning",
+        "пюре",
+        "когда начинать",
+        "соль",
+        "сахар",
+        "глютен"
+      ],
+      "research": [
+        "ESPGHAN (2017): прикорм не следует вводить раньше 17 недель и позже 26 недель; ВОЗ (2023) рекомендует начинать в 6 месяцев.",
+        "Без добавленной соли и сахара на первом году; глютен можно вводить между 4 и 12 месяцами.",
+        "Контролируемое исследование (BLISS, Fangupo, 2016) показало, что самостоятельный прикорм с безопасно приготовленной едой не повышает риск удушья по сравнению с традиционным.",
+        "Нужны продукты, богатые железом (мясо, рыба, бобовые, яйца, обогащённые каши): запасы железа к 6 месяцам снижаются."
+      ],
+      "tips": [
+        "Признаки готовности: сидит с небольшой поддержкой, хорошо держит голову, интересуется едой и не выталкивает всё языком.",
+        "Предлагайте разнообразные вкусы, включая горьковатые овощи, и повторно — те, от которых отказался.",
+        "Пюре или кусочки — подавайте мягкую текстуру безопасной формы, малыш всегда сидит и под присмотром.",
+        "Молоко (грудное или смесь) остаётся основной едой большую часть первого года."
+      ]
+    }
+  },
+  {
+    "id": "allergeni",
+    "category": "alimentazione",
+    "ageFrom": 4,
+    "ageTo": 12,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "A13",
+      "A11",
+      "A12"
+    ],
+    "it": {
+      "title": "Allergeni: uovo e arachidi vanno ritardati?",
+      "summary": "No: ritardare gli alimenti allergizzanti non previene le allergie. Le linee guida europee suggeriscono di introdurre uovo ben cotto e arachidi in forma sicura durante lo svezzamento.",
+      "keywords": [
+        "allergeni",
+        "allergia alimentare",
+        "uovo",
+        "arachidi",
+        "burro di arachidi",
+        "frutta secca",
+        "pesce",
+        "prevenzione allergie",
+        "orticaria",
+        "reazione allergica"
+      ],
+      "research": [
+        "Lo studio LEAP (Du Toit 2015) ha mostrato che dare arachidi regolarmente dai 4–11 mesi a bimbi ad alto rischio riduceva molto l'allergia alle arachidi a 5 anni.",
+        "Le linee guida EAACI (2021) raccomandano di introdurre l'uovo ben cotto (non crudo né pastorizzato poco cotto) quando inizia lo svezzamento, e le arachidi in forma adatta all'età, soprattutto dove l'allergia è frequente.",
+        "Lo studio EAT (Perkin 2016) indica che l'introduzione precoce funziona se l'assunzione è regolare nel tempo."
+      ],
+      "tips": [
+        "Mai arachidi o frutta secca intere sotto i 4–5 anni: usa creme lisce diluite o farine.",
+        "Introduci un alimento nuovo alla volta, di giorno e a casa, così puoi osservare eventuali reazioni.",
+        "Una volta introdotto e tollerato, continua a offrirlo regolarmente.",
+        "Se il bimbo ha un eczema grave o un'allergia già nota, parlane col pediatra prima di introdurre questi cibi."
+      ],
+      "redFlags": [
+        "Orticaria, gonfiore delle labbra o del viso o vomito dopo un alimento nuovo: sospendi quel cibo e senti il pediatra.",
+        "Eczema grave o allergia già diagnosticata: chiedi un piano di introduzione al pediatra."
+      ],
+      "urgent": [
+        "Difficoltà a respirare, tosse insistente o voce rauca improvvisa dopo un alimento.",
+        "Gonfiore della lingua o della gola, pallore, svenimento o bimbo molto abbattuto."
+      ]
+    },
+    "ru": {
+      "title": "Аллергены: нужно ли откладывать яйцо и арахис?",
+      "summary": "Нет: откладывание аллергенных продуктов не предотвращает аллергию. Европейские рекомендации советуют вводить хорошо проваренное яйцо и арахис в безопасной форме во время прикорма.",
+      "keywords": [
+        "аллергены",
+        "пищевая аллергия",
+        "яйцо",
+        "арахис",
+        "арахисовая паста",
+        "орехи",
+        "рыба",
+        "профилактика аллергии",
+        "крапивница",
+        "аллергическая реакция"
+      ],
+      "research": [
+        "Исследование LEAP (Du Toit, 2015): регулярное употребление арахиса с 4–11 месяцев детьми из группы высокого риска сильно снижало аллергию на арахис к 5 годам.",
+        "Рекомендации EAACI (2021): вводить хорошо проваренное яйцо (не сырое и не недоваренное пастеризованное) с началом прикорма, а арахис — в форме, подходящей по возрасту, особенно там, где эта аллергия распространена.",
+        "Исследование EAT (Perkin, 2016) показывает, что раннее введение работает при регулярном употреблении."
+      ],
+      "tips": [
+        "Никаких целых орехов и арахиса до 4–5 лет: используйте гладкую разведённую пасту или муку.",
+        "Вводите по одному новому продукту, днём и дома, чтобы заметить возможную реакцию.",
+        "Если продукт введён и хорошо переносится, продолжайте давать его регулярно.",
+        "Если у малыша тяжёлая экзема или уже известная аллергия, обсудите введение этих продуктов с педиатром."
+      ],
+      "redFlags": [
+        "Крапивница, отёк губ или лица или рвота после нового продукта: прекратите его давать и свяжитесь с педиатром.",
+        "Тяжёлая экзема или диагностированная аллергия: попросите у педиатра план введения."
+      ],
+      "urgent": [
+        "Затруднённое дыхание, упорный кашель или внезапная осиплость после еды.",
+        "Отёк языка или горла, бледность, обморок или сильная вялость."
+      ]
+    }
+  },
+  {
+    "id": "latte-miele",
+    "category": "alimentazione",
+    "ageFrom": 0,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A17",
+      "A10",
+      "A9"
+    ],
+    "it": {
+      "title": "Miele e latte vaccino prima dell'anno",
+      "summary": "Il miele va evitato sotto i 12 mesi per il rischio di botulismo infantile. Sul latte vaccino come bevanda principale prima dell'anno le società pediatriche europee e l'OMS danno indicazioni diverse.",
+      "keywords": [
+        "miele",
+        "botulismo",
+        "latte vaccino",
+        "latte di mucca",
+        "latte intero",
+        "latte crescita",
+        "bevande",
+        "acqua",
+        "succo",
+        "camomilla"
+      ],
+      "research": [
+        "I CDC raccomandano di non dare miele, nemmeno nei prodotti che lo contengono o sul ciuccio, ai bambini sotto 1 anno: può contenere spore del botulino.",
+        "ESPGHAN (2017) indica di non usare il latte vaccino come bevanda principale prima dei 12 mesi; piccole quantità nelle preparazioni vanno bene.",
+        "L'OMS (2023), per i bimbi di 6–11 mesi non allattati al seno, considera accettabile sia il latte formulato sia il latte animale. Molte società pediatriche, compresa ESPGHAN, non concordano.",
+        "Dopo i 12 mesi l'OMS non ritiene necessari i cosiddetti latti di crescita."
+      ],
+      "tips": [
+        "Niente miele prima del primo compleanno, nemmeno cotto nei biscotti o nelle tisane.",
+        "Prima dell'anno, se non allatti al seno, chiedi al pediatra quale latte usare.",
+        "Dopo i 6 mesi l'acqua è la bevanda migliore, da offrire nel bicchiere; evita succhi e bevande zuccherate."
+      ]
+    },
+    "ru": {
+      "title": "Мёд и коровье молоко до года",
+      "summary": "Мёд нельзя давать до 12 месяцев из-за риска детского ботулизма. Насчёт коровьего молока как основного напитка до года европейские педиатрические общества и ВОЗ дают разные рекомендации.",
+      "keywords": [
+        "мёд",
+        "мед",
+        "ботулизм",
+        "коровье молоко",
+        "цельное молоко",
+        "детское молочко",
+        "напитки",
+        "вода",
+        "сок",
+        "чай"
+      ],
+      "research": [
+        "CDC рекомендует не давать детям до 1 года мёд, включая продукты с мёдом и пустышку в мёде: в нём могут быть споры ботулизма.",
+        "ESPGHAN (2017): не использовать коровье молоко как основной напиток до 12 месяцев; небольшие количества в блюдах допустимы.",
+        "ВОЗ (2023) для детей 6–11 месяцев на искусственном вскармливании допускает как смесь, так и молоко животных. Многие педиатрические общества, включая ESPGHAN, не согласны.",
+        "После 12 месяцев ВОЗ не считает необходимыми так называемые «детские молочки» для роста."
+      ],
+      "tips": [
+        "Никакого мёда до первого дня рождения, даже в выпечке или чаях.",
+        "До года, если вы не кормите грудью, уточните у педиатра, какое молоко давать.",
+        "После 6 месяцев лучший напиток — вода из чашки; избегайте соков и сладких напитков."
+      ]
+    }
+  },
+  {
+    "id": "non-mangia",
+    "category": "alimentazione",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "A20",
+      "A21",
+      "D15",
+      "D15b"
+    ],
+    "it": {
+      "title": "Non mangia niente o solo poche cose",
+      "summary": "La selettività alimentare è molto comune tra 1 e 3 anni. Offrire più volte gli stessi cibi, senza pressioni, aumenta l'accettazione.",
+      "keywords": [
+        "non mangia",
+        "inappetenza",
+        "mangia poco",
+        "schizzinoso",
+        "selettività alimentare",
+        "rifiuta le verdure",
+        "neofobia",
+        "capricci a tavola",
+        "appetito",
+        "pappa"
+      ],
+      "research": [
+        "Una revisione (Taylor 2015) descrive la selettività alimentare come frequente nella prima infanzia; nella maggior parte dei casi non influisce sulla crescita.",
+        "La paura dei cibi nuovi (neofobia) compare verso i 2 anni, è più marcata in età prescolare (circa 2–6 anni) e poi tende a ridursi (Dovey 2008).",
+        "Una revisione (Cooke 2007) mostra che assaggiare ripetutamente un cibo aumenta il gradimento e il consumo; spesso servono 8–10 assaggi o più.",
+        "Pressioni, ricatti e premi con il cibo tendono a peggiorare il rifiuto.",
+        "Nella coorte inglese ALSPAC i bambini \"schizzinosi\" erano il 10% a 2 anni, il 15% verso i 3 anni, e poi diminuivano (Taylor ed Emmett 2019)."
+      ],
+      "tips": [
+        "Tu scegli cosa e quando offrire; lui decide quanto mangiarne.",
+        "Metti sempre nel piatto anche un cibo che conosce e gli piace, accanto a quello nuovo.",
+        "Mangiate insieme: i bambini imparano guardando gli adulti.",
+        "Porzioni piccole, pasti a orari regolari, niente spuntini continui o latte in eccesso tra un pasto e l'altro.",
+        "Spegni gli schermi a tavola."
+      ],
+      "redFlags": [
+        "Perde peso o non cresce come previsto dalle curve del pediatra.",
+        "Rifiuta intere categorie di cibi, ha conati, vomito o grande difficoltà a masticare o deglutire.",
+        "Il momento del pasto è sempre fonte di forte stress per tutta la famiglia."
+      ]
+    },
+    "ru": {
+      "title": "Ничего не ест или ест только пару продуктов",
+      "summary": "Избирательность в еде очень распространена от 1 до 3 лет. Повторное предложение тех же продуктов без давления повышает их принятие.",
+      "keywords": [
+        "не ест",
+        "плохой аппетит",
+        "мало ест",
+        "избирательность в еде",
+        "отказывается от овощей",
+        "неофобия",
+        "капризы за столом",
+        "аппетит",
+        "питание"
+      ],
+      "research": [
+        "Обзор (Taylor, 2015) описывает избирательность в еде как частое явление в раннем детстве; в большинстве случаев она не влияет на рост.",
+        "Страх новой еды (неофобия) появляется около 2 лет, сильнее всего выражен в дошкольном возрасте (примерно 2–6 лет) и затем ослабевает (Dovey, 2008).",
+        "Обзор (Cooke, 2007): повторные пробы продукта повышают симпатию к нему и потребление; часто нужно 8–10 проб и больше.",
+        "Давление, уговоры и награды едой обычно усиливают отказ.",
+        "В английской когорте ALSPAC «привередливых» детей было 10% в 2 года, около 15% к 3 годам, затем меньше (Taylor, Emmett, 2019)."
+      ],
+      "tips": [
+        "Вы решаете, что и когда предложить, малыш — сколько съесть.",
+        "Всегда кладите на тарелку рядом с новым продуктом и знакомый, который он любит.",
+        "Ешьте вместе: дети учатся, глядя на взрослых.",
+        "Маленькие порции, регулярные приёмы пищи, без постоянных перекусов и избытка молока между ними.",
+        "Выключайте экраны за столом."
+      ],
+      "redFlags": [
+        "Теряет вес или растёт хуже, чем ожидается по кривым роста.",
+        "Отказывается от целых групп продуктов, давится, срыгивает или с трудом жуёт и глотает.",
+        "Еда — постоянный источник сильного стресса для всей семьи."
+      ]
+    }
+  },
+  {
+    "id": "vitamina-d",
+    "category": "alimentazione",
+    "ageFrom": 0,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A19",
+      "A18"
+    ],
+    "it": {
+      "title": "Vitamina D nel primo anno",
+      "summary": "Le società pediatriche italiane ed europee raccomandano 400 UI al giorno di vitamina D per tutti i lattanti nel primo anno, qualunque sia il tipo di latte.",
+      "keywords": [
+        "vitamina d",
+        "gocce",
+        "integratore",
+        "colecalciferolo",
+        "rachitismo",
+        "ossa",
+        "sole",
+        "supplemento"
+      ],
+      "research": [
+        "Il consensus della Società Italiana di Pediatria (Saggese 2018) indica 400 UI al giorno dalla nascita fino a 12 mesi, sia per i bimbi allattati al seno sia per quelli con formula.",
+        "ESPGHAN (2013) raccomanda la stessa dose per tutti i lattanti europei.",
+        "In presenza di fattori di rischio il pediatra può indicare dosi diverse."
+      ],
+      "tips": [
+        "Dai le gocce ogni giorno alla stessa ora, ad esempio durante una poppata o un pasto.",
+        "Usa sempre il prodotto e la dose indicati dal tuo pediatra.",
+        "Non esporre il neonato al sole diretto per \"fare vitamina D\": la pelle è delicata e serve la protezione."
+      ]
+    },
+    "ru": {
+      "title": "Витамин D на первом году",
+      "summary": "Итальянские и европейские педиатрические общества рекомендуют 400 МЕ витамина D в день всем младенцам на первом году, независимо от вида питания.",
+      "keywords": [
+        "витамин d",
+        "капли",
+        "добавка",
+        "холекальциферол",
+        "рахит",
+        "кости",
+        "солнце",
+        "витамин д"
+      ],
+      "research": [
+        "Консенсус Итальянского общества педиатрии (Saggese, 2018): 400 МЕ в день с рождения до 12 месяцев — и при грудном, и при искусственном вскармливании.",
+        "ESPGHAN (2013) рекомендует ту же дозу всем европейским младенцам.",
+        "При наличии факторов риска педиатр может назначить другую дозу."
+      ],
+      "tips": [
+        "Давайте капли каждый день в одно и то же время, например во время кормления.",
+        "Используйте препарат и дозу, назначенные педиатром.",
+        "Не держите новорождённого на прямом солнце «ради витамина D»: кожа нежная и нуждается в защите."
+      ]
+    }
+  },
+  {
+    "id": "cibi-6-12",
+    "category": "alimentazione",
+    "ageFrom": 6,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A9",
+      "A10",
+      "A13",
+      "A16",
+      "A17",
+      "F1",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F10",
+      "F10b",
+      "F15"
+    ],
+    "it": {
+      "title": "Cibi sì e cibi no: 6–12 mesi",
+      "summary": "Cosa offrire durante lo svezzamento, cosa limitare e cosa evitare, con il perché di ogni scelta.",
+      "keywords": [
+        "cosa può mangiare",
+        "cibi consigliati",
+        "cibi vietati",
+        "cibi da evitare",
+        "svezzamento",
+        "alimenti",
+        "lista cibi",
+        "primo anno"
+      ],
+      "research": [
+        "L'OMS (2023) raccomanda alimenti di origine animale ogni giorno (carne, pesce o uova), frutta e verdura ogni giorno, e legumi spesso.",
+        "ESPGHAN (2017): niente sale né zucchero aggiunti; succhi di frutta e bevande zuccherate vanno evitati."
+      ],
+      "tips": [
+        "Il latte (materno o formula) resta l'alimento principale per buona parte del primo anno.",
+        "Proponi più volte anche i cibi rifiutati: il gusto si costruisce con l'esposizione."
+      ],
+      "guide": [
+        {
+          "t": "Carne, pesce, uova ben cotte, legumi",
+          "v": "si",
+          "why": "Danno ferro e proteine proprio quando le riserve di ferro del bambino calano, verso i 6 mesi.",
+          "src": "A9"
+        },
+        {
+          "t": "Verdura e frutta ogni giorno, anche dal gusto amaro",
+          "v": "si",
+          "why": "L'OMS le raccomanda quotidianamente; assaggi ripetuti aiutano ad accettarle.",
+          "src": "A9"
+        },
+        {
+          "t": "Uovo ben cotto e arachidi in crema liscia o farina",
+          "v": "si",
+          "why": "Introdurli presto e regolarmente riduce il rischio di allergia, secondo le linee guida EAACI.",
+          "src": "A13"
+        },
+        {
+          "t": "Acqua, nel bicchiere o nella tazza",
+          "v": "si",
+          "why": "È la bevanda giusta oltre al latte; succhi e bibite non servono.",
+          "src": "F1"
+        },
+        {
+          "t": "Spinaci, bietole e altre verdure a foglia",
+          "v": "limita",
+          "why": "Possono contenere molti nitrati: porzioni moderate, in frigo subito dopo la cottura, niente spinaci durante una gastroenterite.",
+          "src": "F15"
+        },
+        {
+          "t": "Pesci grandi predatori (pesce spada, squalo, luccio) e tonno",
+          "v": "limita",
+          "why": "Accumulano mercurio. L'EFSA consiglia di limitare queste specie; gli altri pesci vanno benissimo.",
+          "src": "F5"
+        },
+        {
+          "t": "Miele, anche nei biscotti o sul ciuccio",
+          "v": "no",
+          "why": "Può contenere spore del botulino, pericolose sotto i 12 mesi.",
+          "src": "A17",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Sale e zucchero aggiunti",
+          "v": "no",
+          "why": "I reni sono immaturi e il gusto si abitua al dolce e al salato: ESPGHAN li sconsiglia nel primo anno.",
+          "src": "A10"
+        },
+        {
+          "t": "Succhi di frutta e bevande zuccherate",
+          "v": "no",
+          "why": "Zuccheri senza fibre e rischio di carie; l'AAP sconsiglia il succo prima dei 12 mesi.",
+          "src": "F1",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Latte vaccino come bevanda principale",
+          "v": "no",
+          "why": "Poco ferro e troppe proteine: ESPGHAN indica di non usarlo come bevanda principale prima dei 12 mesi (piccole quantità nelle pappe vanno bene).",
+          "src": "A10",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Bevande vegetali (riso, mandorla, avena…) al posto del latte",
+          "v": "no",
+          "why": "Non sono adatte: quelle di riso contengono arsenico; sotto l'anno solo latte materno o formula.",
+          "src": "F4"
+        },
+        {
+          "t": "Uova, carne e pesce crudi o poco cotti; latte crudo e formaggi a latte crudo",
+          "v": "no",
+          "why": "Rischio di Salmonella, Listeria ed E. coli, che nei bimbi sotto i 5 anni può causare gravi complicazioni ai reni.",
+          "src": "F6"
+        },
+        {
+          "t": "Frutta secca intera, uva e pomodorini interi, pezzi duri",
+          "v": "no",
+          "why": "Rischio di soffocamento: tagliare per il lungo in quattro, schiacciare o macinare.",
+          "src": "A16"
+        },
+        {
+          "t": "Tè, tisane e caffè",
+          "v": "no",
+          "why": "Riducono l'assorbimento del ferro (il tè nero fino all'80–90%) e contengono caffeina.",
+          "src": "F10b"
+        }
+      ]
+    },
+    "ru": {
+      "title": "Можно и нельзя: 6–12 месяцев",
+      "summary": "Что давать во время прикорма, что ограничить и чего избегать — и почему.",
+      "keywords": [
+        "что можно есть",
+        "рекомендуемые продукты",
+        "запрещённые продукты",
+        "чего избегать",
+        "прикорм",
+        "продукты",
+        "список продуктов",
+        "первый год"
+      ],
+      "research": [
+        "ВОЗ (2023) рекомендует продукты животного происхождения каждый день (мясо, рыба или яйца), фрукты и овощи каждый день и часто — бобовые.",
+        "ESPGHAN (2017): без добавленной соли и сахара; соков и сладких напитков следует избегать."
+      ],
+      "tips": [
+        "Молоко (грудное или смесь) остаётся основной едой большую часть первого года.",
+        "Снова предлагайте продукты, от которых ребёнок отказался: вкус формируется со временем."
+      ],
+      "guide": [
+        {
+          "t": "Мясо, рыба, хорошо проваренные яйца, бобовые",
+          "v": "si",
+          "why": "Дают железо и белок как раз тогда, когда запасы железа к 6 месяцам снижаются.",
+          "src": "A9"
+        },
+        {
+          "t": "Овощи и фрукты каждый день, в том числе горьковатые",
+          "v": "si",
+          "why": "ВОЗ рекомендует их ежедневно; повторные пробы помогают их принять.",
+          "src": "A9"
+        },
+        {
+          "t": "Хорошо проваренное яйцо и арахис в виде гладкой пасты или муки",
+          "v": "si",
+          "why": "Раннее и регулярное введение снижает риск аллергии (рекомендации EAACI).",
+          "src": "A13"
+        },
+        {
+          "t": "Вода из стаканчика или чашки",
+          "v": "si",
+          "why": "Правильный напиток помимо молока; соки и газировка не нужны.",
+          "src": "F1"
+        },
+        {
+          "t": "Шпинат, мангольд и другая листовая зелень",
+          "v": "limita",
+          "why": "Могут содержать много нитратов: умеренные порции, сразу в холодильник после варки, не давать шпинат при кишечной инфекции.",
+          "src": "F15"
+        },
+        {
+          "t": "Крупные хищные рыбы (меч-рыба, акула, щука) и тунец",
+          "v": "limita",
+          "why": "Накапливают ртуть. EFSA советует ограничивать эти виды; другая рыба подходит отлично.",
+          "src": "F5"
+        },
+        {
+          "t": "Мёд, в том числе в печенье или на пустышке",
+          "v": "no",
+          "why": "Может содержать споры ботулизма, опасные до 12 месяцев.",
+          "src": "A17",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Добавленные соль и сахар",
+          "v": "no",
+          "why": "Почки незрелые, а вкус привыкает к сладкому и солёному: ESPGHAN не рекомендует их на первом году.",
+          "src": "A10"
+        },
+        {
+          "t": "Фруктовые соки и сладкие напитки",
+          "v": "no",
+          "why": "Сахар без клетчатки и риск кариеса; AAP не рекомендует сок до 12 месяцев.",
+          "src": "F1",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Коровье молоко как основной напиток",
+          "v": "no",
+          "why": "Мало железа и слишком много белка: ESPGHAN не советует использовать его как основной напиток до 12 месяцев (немного в блюдах можно).",
+          "src": "A10",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Растительные напитки (рисовый, миндальный, овсяный…) вместо молока",
+          "v": "no",
+          "why": "Не подходят: рисовые содержат мышьяк; до года — только грудное молоко или смесь.",
+          "src": "F4"
+        },
+        {
+          "t": "Сырые или недоваренные яйца, мясо и рыба; сырое молоко и сыры из него",
+          "v": "no",
+          "why": "Риск сальмонеллы, листерии и кишечной палочки, которая у детей до 5 лет может вызвать тяжёлые осложнения на почки.",
+          "src": "F6"
+        },
+        {
+          "t": "Цельные орехи, целый виноград и черри, твёрдые кусочки",
+          "v": "no",
+          "why": "Риск удушья: резать вдоль на четыре части, разминать или измельчать.",
+          "src": "A16"
+        },
+        {
+          "t": "Чай, травяные чаи и кофе",
+          "v": "no",
+          "why": "Снижают усвоение железа (чёрный чай — до 80–90%) и содержат кофеин.",
+          "src": "F10b"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cibi-1-3",
+    "category": "alimentazione",
+    "ageFrom": 12,
+    "ageTo": 36,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A9",
+      "A16",
+      "F1",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F13",
+      "F13b",
+      "F14"
+    ],
+    "it": {
+      "title": "Cibi sì e cibi no: 1–3 anni",
+      "summary": "Dal primo compleanno si mangia quasi come la famiglia, con qualche attenzione in più su sale, zuccheri, bevande e sicurezza.",
+      "keywords": [
+        "cosa può mangiare",
+        "cibi consigliati",
+        "cibi da evitare",
+        "alimentazione 2 anni",
+        "merenda",
+        "succo di frutta",
+        "latte di mucca",
+        "salumi",
+        "dolci"
+      ],
+      "research": [
+        "L'OMS (2023) raccomanda latte animale tra 12 e 23 mesi e sconsiglia i latti di crescita.",
+        "ESPGHAN (2017): gli zuccheri liberi dovrebbero essere meno del 5% delle calorie dai 2 anni, e ancora meno sotto i 2."
+      ],
+      "tips": [
+        "Porta in tavola gli stessi cibi della famiglia, preparati con poco sale.",
+        "Frutta intera al posto di succhi e merendine."
+      ],
+      "guide": [
+        {
+          "t": "Frutta, verdura, legumi e cereali integrali",
+          "v": "si",
+          "why": "Le linee guida italiane (CREA) consigliano più frutta, verdura, legumi e cereali integrali per tutta la famiglia.",
+          "src": "F14"
+        },
+        {
+          "t": "Latte vaccino intero e yogurt bianco",
+          "v": "si",
+          "why": "L'OMS indica il latte animale dopo i 12 mesi; i latti di crescita non servono.",
+          "src": "A9"
+        },
+        {
+          "t": "Pesce, 1–4 porzioni a settimana",
+          "v": "si",
+          "why": "L'EFSA lega i benefici del pesce a 1–4 porzioni a settimana, scegliendo soprattutto specie povere di mercurio.",
+          "src": "F5"
+        },
+        {
+          "t": "Acqua come bevanda abituale",
+          "v": "si",
+          "why": "È la bevanda di riferimento delle linee guida CREA.",
+          "src": "F14"
+        },
+        {
+          "t": "Succo di frutta 100%",
+          "v": "limita",
+          "why": "Al massimo circa 120 ml al giorno (AAP), mai nel biberon o nella tazza da sorseggiare tutto il giorno.",
+          "src": "F1"
+        },
+        {
+          "t": "Sale e cibi molto salati (formaggi stagionati, dadi, snack)",
+          "v": "limita",
+          "why": "Per 1–3 anni l'EFSA indica circa 1,1 g di sodio al giorno (circa 2,8 g di sale) da tutti i cibi: il sale aggiunto serve poco.",
+          "src": "F8"
+        },
+        {
+          "t": "Salumi, würstel e carni lavorate",
+          "v": "limita",
+          "why": "Molto sale e nitriti; la IARC classifica la carne lavorata come cancerogena per l'uomo.",
+          "src": "F13"
+        },
+        {
+          "t": "Dolci, biscotti, merendine e cereali zuccherati",
+          "v": "limita",
+          "why": "ESPGHAN: zuccheri liberi sotto il 5% delle calorie, e ancora meno prima dei 2 anni.",
+          "src": "F9"
+        },
+        {
+          "t": "Pesci grandi predatori e tonno",
+          "v": "limita",
+          "why": "Accumulano mercurio: meglio limitarli e variare con altri pesci.",
+          "src": "F5"
+        },
+        {
+          "t": "Bibite zuccherate, tè freddo, succhi con zucchero",
+          "v": "no",
+          "why": "Zuccheri liquidi senza sazietà: vanno sostituiti con acqua o latte.",
+          "src": "F9"
+        },
+        {
+          "t": "Caffè, bevande con caffeina ed energy drink",
+          "v": "no",
+          "why": "Per i bambini piccoli l'EFSA non ha fissato un livello sicuro di caffeina.",
+          "src": "F10"
+        },
+        {
+          "t": "Bevande di riso",
+          "v": "no",
+          "why": "Possono contenere arsenico: ESPGHAN le sconsiglia nei bambini piccoli.",
+          "src": "F4"
+        },
+        {
+          "t": "Bevande vegetali al posto del latte (mandorla, avena, cocco…)",
+          "v": "no",
+          "why": "Poche proteine e nutrienti: non sono un sostituto adatto. Se serve un'alternativa, chiedi al pediatra (la soia arricchita è la più indicata).",
+          "src": "F7"
+        },
+        {
+          "t": "Latte crudo, formaggi a latte crudo, uova o carne poco cotte",
+          "v": "no",
+          "why": "Rischio di infezioni gravi; l'ISS sconsiglia il latte crudo sotto i 5 anni.",
+          "src": "F6"
+        },
+        {
+          "t": "Frutta secca intera, caramelle dure, pop corn, gomme; uva e würstel non tagliati",
+          "v": "no",
+          "why": "Rischio di soffocamento fino a 4–5 anni: tagliare per il lungo, macinare o evitare.",
+          "src": "A16"
+        }
+      ]
+    },
+    "ru": {
+      "title": "Можно и нельзя: 1–3 года",
+      "summary": "С первого дня рождения ребёнок ест почти как семья, но с вниманием к соли, сахару, напиткам и безопасности.",
+      "keywords": [
+        "что можно есть",
+        "рекомендуемые продукты",
+        "чего избегать",
+        "питание в 2 года",
+        "перекус",
+        "сок",
+        "коровье молоко",
+        "колбаса",
+        "сладкое"
+      ],
+      "research": [
+        "ВОЗ (2023) рекомендует животное молоко с 12 до 23 месяцев и не рекомендует «детские молочки».",
+        "ESPGHAN (2017): свободные сахара — меньше 5% калорий с 2 лет и ещё меньше до 2 лет."
+      ],
+      "tips": [
+        "Давайте те же блюда, что ест семья, с небольшим количеством соли.",
+        "Цельные фрукты вместо соков и сладких перекусов."
+      ],
+      "guide": [
+        {
+          "t": "Фрукты, овощи, бобовые и цельные злаки",
+          "v": "si",
+          "why": "Итальянские рекомендации (CREA) советуют больше фруктов, овощей, бобовых и цельных злаков всей семье.",
+          "src": "F14"
+        },
+        {
+          "t": "Цельное коровье молоко и натуральный йогурт",
+          "v": "si",
+          "why": "ВОЗ рекомендует животное молоко после 12 месяцев; «детские молочки» не нужны.",
+          "src": "A9"
+        },
+        {
+          "t": "Рыба 1–4 раза в неделю",
+          "v": "si",
+          "why": "EFSA связывает пользу рыбы с 1–4 порциями в неделю, преимущественно видов с низким содержанием ртути.",
+          "src": "F5"
+        },
+        {
+          "t": "Вода как основной напиток",
+          "v": "si",
+          "why": "Основной напиток по рекомендациям CREA.",
+          "src": "F14"
+        },
+        {
+          "t": "100% фруктовый сок",
+          "v": "limita",
+          "why": "Не больше примерно 120 мл в день (AAP), никогда в бутылочке или поильнике на весь день.",
+          "src": "F1"
+        },
+        {
+          "t": "Соль и очень солёное (выдержанные сыры, бульонные кубики, снеки)",
+          "v": "limita",
+          "why": "Для 1–3 лет EFSA указывает около 1,1 г натрия в день (около 2,8 г соли) из всех продуктов: добавленная соль почти не нужна.",
+          "src": "F8"
+        },
+        {
+          "t": "Колбасы, сосиски и мясные полуфабрикаты",
+          "v": "limita",
+          "why": "Много соли и нитритов; МАИР относит переработанное мясо к канцерогенам для человека.",
+          "src": "F13"
+        },
+        {
+          "t": "Сладости, печенье, кексы и сладкие хлопья",
+          "v": "limita",
+          "why": "ESPGHAN: свободных сахаров меньше 5% калорий, а до 2 лет ещё меньше.",
+          "src": "F9"
+        },
+        {
+          "t": "Крупные хищные рыбы и тунец",
+          "v": "limita",
+          "why": "Накапливают ртуть: лучше ограничивать и чередовать с другой рыбой.",
+          "src": "F5"
+        },
+        {
+          "t": "Сладкие газировки, холодный чай, соки с сахаром",
+          "v": "no",
+          "why": "Жидкий сахар без сытости: заменяйте водой или молоком.",
+          "src": "F9"
+        },
+        {
+          "t": "Кофе, напитки с кофеином и энергетики",
+          "v": "no",
+          "why": "Для маленьких детей EFSA не установила безопасный уровень кофеина.",
+          "src": "F10"
+        },
+        {
+          "t": "Рисовые напитки",
+          "v": "no",
+          "why": "Могут содержать мышьяк: ESPGHAN не рекомендует их маленьким детям.",
+          "src": "F4"
+        },
+        {
+          "t": "Растительные напитки вместо молока (миндальный, овсяный, кокосовый…)",
+          "v": "no",
+          "why": "Мало белка и питательных веществ: неподходящая замена. Если нужна альтернатива, спросите педиатра (лучше всего обогащённый соевый).",
+          "src": "F7"
+        },
+        {
+          "t": "Сырое молоко, сыры из сырого молока, недоваренные яйца или мясо",
+          "v": "no",
+          "why": "Риск тяжёлых инфекций; ISS не рекомендует сырое молоко до 5 лет.",
+          "src": "F6"
+        },
+        {
+          "t": "Цельные орехи, леденцы, попкорн, жвачка; неразрезанные виноград и сосиски",
+          "v": "no",
+          "why": "Риск удушья до 4–5 лет: резать вдоль, измельчать или избегать.",
+          "src": "A16"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cibi-3-6",
+    "category": "alimentazione",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "F14",
+      "F1",
+      "F5",
+      "F6",
+      "F8",
+      "F9",
+      "F10",
+      "F13",
+      "A16"
+    ],
+    "it": {
+      "title": "Cibi sì e cibi no: 3–6 anni",
+      "summary": "In età prescolare la base è la stessa dieta sana della famiglia; attenzione a bevande zuccherate, sale e cibi a rischio di soffocamento.",
+      "keywords": [
+        "cosa può mangiare",
+        "cibi consigliati",
+        "cibi da evitare",
+        "alimentazione 4 anni",
+        "merenda scuola",
+        "dolci",
+        "patatine",
+        "succo",
+        "frutta secca"
+      ],
+      "research": [
+        "Le linee guida CREA (2018) consigliano per tutti più frutta, verdura, legumi e cereali integrali, acqua in abbondanza, e meno zuccheri e sale.",
+        "OMS e ESPGHAN: zuccheri liberi il più bassi possibile, idealmente sotto il 5% delle calorie."
+      ],
+      "tips": [
+        "Coinvolgilo nella spesa e in cucina: assaggia più volentieri ciò che ha preparato.",
+        "Merende semplici: frutta, yogurt bianco, pane, verdure da sgranocchiare."
+      ],
+      "guide": [
+        {
+          "t": "Frutta e verdura a ogni pasto, legumi più volte a settimana",
+          "v": "si",
+          "why": "Base di una dieta sana secondo le linee guida CREA.",
+          "src": "F14"
+        },
+        {
+          "t": "Acqua",
+          "v": "si",
+          "why": "La bevanda di tutti i giorni, anche a scuola e durante il gioco.",
+          "src": "F14"
+        },
+        {
+          "t": "Pesce 1–4 volte a settimana, variando le specie",
+          "v": "si",
+          "why": "Benefici per la crescita con un consumo regolare (EFSA).",
+          "src": "F5"
+        },
+        {
+          "t": "Succo di frutta 100%",
+          "v": "limita",
+          "why": "Al massimo 120–180 ml al giorno a 4–6 anni (AAP); meglio la frutta intera.",
+          "src": "F1"
+        },
+        {
+          "t": "Sale, snack salati e patatine",
+          "v": "limita",
+          "why": "A 4–6 anni l'EFSA indica circa 1,3 g di sodio al giorno (circa 3,3 g di sale) da tutti i cibi.",
+          "src": "F8"
+        },
+        {
+          "t": "Dolci, merendine, gelati, cereali zuccherati",
+          "v": "limita",
+          "why": "Zuccheri liberi sotto il 5% delle calorie (ESPGHAN): meglio nei pasti che come spuntino continuo.",
+          "src": "F9"
+        },
+        {
+          "t": "Salumi, würstel e carni lavorate",
+          "v": "limita",
+          "why": "Sale e nitriti; carne lavorata cancerogena secondo la IARC.",
+          "src": "F13"
+        },
+        {
+          "t": "Pesce spada, squalo, tonno",
+          "v": "limita",
+          "why": "Specie ricche di mercurio: occasionalmente, non ogni settimana.",
+          "src": "F5"
+        },
+        {
+          "t": "Bibite zuccherate e succhi con zucchero aggiunto",
+          "v": "no",
+          "why": "Zucchero liquido: aumenta il rischio di carie e di eccesso di peso.",
+          "src": "F9"
+        },
+        {
+          "t": "Energy drink, caffè e bevande con caffeina",
+          "v": "no",
+          "why": "L'EFSA indica per i bambini un limite di 3 mg di caffeina per kg di peso al giorno: per un bambino piccolo basta poco per superarlo.",
+          "src": "F10"
+        },
+        {
+          "t": "Latte crudo e formaggi a latte crudo",
+          "v": "no",
+          "why": "L'ISS li sconsiglia sotto i 5 anni per il rischio di infezioni gravi ai reni (SEU).",
+          "src": "F6",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Frutta secca intera, caramelle dure, pop corn, gomme",
+          "v": "no",
+          "why": "Rischio di soffocamento fino a 4–5 anni: meglio macinati o in crema.",
+          "src": "A16",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Frutta secca intera, seduti e sorvegliati",
+          "v": "si",
+          "why": "Dopo i 5 anni si può introdurre, sempre a tavola, mai mentre corre o gioca.",
+          "src": "A16",
+          "from": 60,
+          "to": 72,
+          "strict": true
+        }
+      ]
+    },
+    "ru": {
+      "title": "Можно и нельзя: 3–6 лет",
+      "summary": "В дошкольном возрасте основа — то же здоровое питание, что и у семьи; внимание к сладким напиткам, соли и продуктам с риском удушья.",
+      "keywords": [
+        "что можно есть",
+        "рекомендуемые продукты",
+        "чего избегать",
+        "питание в 4 года",
+        "перекус в садик",
+        "сладкое",
+        "чипсы",
+        "сок",
+        "орехи"
+      ],
+      "research": [
+        "Рекомендации CREA (2018): всем больше фруктов, овощей, бобовых и цельных злаков, много воды, меньше сахара и соли.",
+        "ВОЗ и ESPGHAN: свободных сахаров как можно меньше, в идеале меньше 5% калорий."
+      ],
+      "tips": [
+        "Привлекайте ребёнка к покупкам и готовке: он охотнее пробует то, что приготовил сам.",
+        "Простые перекусы: фрукты, натуральный йогурт, хлеб, овощи «похрустеть»."
+      ],
+      "guide": [
+        {
+          "t": "Фрукты и овощи при каждом приёме пищи, бобовые несколько раз в неделю",
+          "v": "si",
+          "why": "Основа здорового питания по рекомендациям CREA.",
+          "src": "F14"
+        },
+        {
+          "t": "Вода",
+          "v": "si",
+          "why": "Ежедневный напиток — и в саду, и во время игр.",
+          "src": "F14"
+        },
+        {
+          "t": "Рыба 1–4 раза в неделю, разных видов",
+          "v": "si",
+          "why": "Польза для роста при регулярном употреблении (EFSA).",
+          "src": "F5"
+        },
+        {
+          "t": "100% фруктовый сок",
+          "v": "limita",
+          "why": "Не больше 120–180 мл в день в 4–6 лет (AAP); лучше цельные фрукты.",
+          "src": "F1"
+        },
+        {
+          "t": "Соль, солёные снеки и чипсы",
+          "v": "limita",
+          "why": "В 4–6 лет EFSA указывает около 1,3 г натрия в день (около 3,3 г соли) из всех продуктов.",
+          "src": "F8"
+        },
+        {
+          "t": "Сладости, кексы, мороженое, сладкие хлопья",
+          "v": "limita",
+          "why": "Свободных сахаров меньше 5% калорий (ESPGHAN): лучше во время еды, а не как постоянный перекус.",
+          "src": "F9"
+        },
+        {
+          "t": "Колбасы, сосиски и переработанное мясо",
+          "v": "limita",
+          "why": "Соль и нитриты; переработанное мясо — канцероген по МАИР.",
+          "src": "F13"
+        },
+        {
+          "t": "Меч-рыба, акула, тунец",
+          "v": "limita",
+          "why": "Виды с большим содержанием ртути: изредка, не каждую неделю.",
+          "src": "F5"
+        },
+        {
+          "t": "Сладкие газировки и соки с добавленным сахаром",
+          "v": "no",
+          "why": "Жидкий сахар: повышает риск кариеса и лишнего веса.",
+          "src": "F9"
+        },
+        {
+          "t": "Энергетики, кофе и напитки с кофеином",
+          "v": "no",
+          "why": "EFSA указывает для детей предел 3 мг кофеина на кг веса в день: маленькому ребёнку легко его превысить.",
+          "src": "F10"
+        },
+        {
+          "t": "Сырое молоко и сыры из сырого молока",
+          "v": "no",
+          "why": "ISS не рекомендует их до 5 лет из-за риска тяжёлой инфекции с поражением почек (ГУС).",
+          "src": "F6",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Цельные орехи, леденцы, попкорн, жвачка",
+          "v": "no",
+          "why": "Риск удушья до 4–5 лет: лучше измельчённые или в виде пасты.",
+          "src": "A16",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Цельные орехи — сидя и под присмотром",
+          "v": "si",
+          "why": "После 5 лет можно давать, но только за столом, а не на бегу или во время игры.",
+          "src": "A16",
+          "from": 60,
+          "to": 72,
+          "strict": true
+        }
+      ]
+    }
+  }
+]

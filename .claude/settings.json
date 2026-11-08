@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": ["Bash(npm run *)", "Bash(npm test)", "Bash(npx vitest *)", "Bash(git status)", "Bash(git diff *)"],
+    "deny": ["Read(./.env*)", "Bash(git push --force*)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "node scripts/hooks/after-edit.mjs" }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "node scripts/hooks/before-commit.mjs" }]
+      }
+    ]
+  }
+}

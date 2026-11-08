@@ -1,0 +1,445 @@
+[
+  {
+    "id": "sonno-sicuro",
+    "category": "sonno",
+    "ageFrom": 0,
+    "ageTo": 12,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A1"
+    ],
+    "it": {
+      "title": "Nanna sicura: come ridurre il rischio di SIDS",
+      "summary": "Il sonno sulla schiena, su una superficie rigida e piatta, nella stanza dei genitori ma nel proprio lettino, riduce il rischio di morte improvvisa del lattante.",
+      "keywords": [
+        "sids",
+        "morte in culla",
+        "morte improvvisa",
+        "nanna",
+        "culla",
+        "lettino",
+        "dormire a pancia in su",
+        "co-sleeping",
+        "lettone",
+        "cuscino",
+        "paracolpi",
+        "sonno sicuro"
+      ],
+      "research": [
+        "Le raccomandazioni dell'American Academy of Pediatrics (2022) confermano che la posizione supina (a pancia in su) è la più sicura per ogni sonno, anche per i riposini.",
+        "La superficie deve essere rigida, piatta e non inclinata: i prodotti inclinati di oltre 10° non sono sicuri per dormire.",
+        "Condividere la stanza senza condividere il letto, idealmente almeno per i primi 6 mesi, è associato a un rischio minore.",
+        "Offrire il ciuccio al momento della nanna riduce il rischio; nei bimbi allattati al seno conviene aspettare che l'allattamento sia ben avviato.",
+        "Allattamento al seno, assenza di fumo in gravidanza e dopo la nascita e vaccinazioni regolari sono fattori protettivi."
+      ],
+      "tips": [
+        "Metti sempre il bimbo a dormire a pancia in su, anche se poi impara a girarsi da solo.",
+        "Nel lettino solo un materasso rigido e un lenzuolo con angoli: niente cuscini, paracolpi, peluche o coperte morbide.",
+        "Evita di addormentarti con il bimbo sul divano o sulla poltrona: è una delle situazioni più rischiose.",
+        "Non coprirlo troppo: niente cappellino in casa e temperatura della stanza confortevole.",
+        "Se usi un sacco nanna, sceglilo della taglia giusta e senza cappuccio."
+      ]
+    },
+    "ru": {
+      "title": "Безопасный сон: как снизить риск СВДС",
+      "summary": "Сон на спине, на твёрдой ровной поверхности, в комнате родителей, но в собственной кроватке, снижает риск синдрома внезапной детской смерти.",
+      "keywords": [
+        "свдс",
+        "внезапная смерть",
+        "смерть в кроватке",
+        "сон",
+        "кроватка",
+        "люлька",
+        "спать на спине",
+        "совместный сон",
+        "подушка",
+        "бортики",
+        "безопасный сон"
+      ],
+      "research": [
+        "Рекомендации Американской академии педиатрии (2022) подтверждают: положение на спине — самое безопасное для любого сна, включая дневной.",
+        "Поверхность должна быть твёрдой, ровной и без наклона: изделия с наклоном более 10° небезопасны для сна.",
+        "Сон в одной комнате, но не в одной кровати — желательно как минимум первые 6 месяцев — связан с меньшим риском.",
+        "Пустышка во время сна снижает риск; при грудном вскармливании лучше подождать, пока кормление хорошо наладится.",
+        "Грудное вскармливание, отказ от курения во время беременности и после родов и плановая вакцинация — защитные факторы."
+      ],
+      "tips": [
+        "Всегда укладывайте малыша на спину, даже если он уже умеет переворачиваться сам.",
+        "В кроватке — только твёрдый матрас и простыня на резинке: без подушек, бортиков, игрушек и мягких одеял.",
+        "Не засыпайте с малышом на диване или в кресле — это одна из самых опасных ситуаций.",
+        "Не перегревайте: без шапочки дома и с комфортной температурой в комнате.",
+        "Если используете спальный мешок, выбирайте его по размеру и без капюшона."
+      ]
+    }
+  },
+  {
+    "id": "quanto-dorme",
+    "category": "sonno",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A2",
+      "A3"
+    ],
+    "it": {
+      "title": "Quante ore deve dormire il mio bimbo?",
+      "summary": "Le ore di sonno consigliate cambiano molto con l'età: da 14–17 ore nei primi mesi a 10–13 ore verso i 3–4 anni, riposini compresi.",
+      "keywords": [
+        "ore di sonno",
+        "quanto dorme",
+        "dorme poco",
+        "dorme troppo",
+        "riposino",
+        "sonnellino",
+        "pisolino",
+        "fabbisogno di sonno",
+        "nanna"
+      ],
+      "research": [
+        {
+          "t": "OMS (2019): da 0 a 3 mesi servono 14–17 ore di sonno nelle 24 ore, riposini compresi.",
+          "from": 0,
+          "to": 4
+        },
+        {
+          "t": "OMS (2019): da 4 a 11 mesi 12–16 ore nelle 24 ore, riposini compresi.",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "OMS e American Academy of Sleep Medicine concordano: da 1 a 2 anni 11–14 ore nelle 24 ore.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "OMS (2019) e American Academy of Sleep Medicine: tra 3 e 5 anni 10–13 ore nelle 24 ore, riposino compreso.",
+          "from": 36,
+          "to": 72
+        },
+        "Sono intervalli: ogni bambino ha il suo fabbisogno, e conta più come sta di giorno che il numero esatto."
+      ],
+      "tips": [
+        "Osserva l'umore e l'energia durante il giorno: un bimbo sereno e attivo di solito dorme abbastanza.",
+        "Tieni orari regolari per la nanna e la sveglia, anche nel fine settimana.",
+        {
+          "t": "Nei primi mesi il sonno è frammentato: è normale e non dipende da errori dei genitori.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Tra 1 e 3 anni molti bimbi passano da due riposini a uno: segui i segnali di stanchezza.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "Verso i 3–5 anni molti bambini smettono il riposino: se la sera è stanchissimo, anticipa un po' la nanna.",
+          "from": 36,
+          "to": 72
+        }
+      ]
+    },
+    "ru": {
+      "title": "Сколько должен спать малыш?",
+      "summary": "Рекомендуемая продолжительность сна сильно меняется с возрастом: от 14–17 часов в первые месяцы до 10–13 часов к 3–4 годам, включая дневной сон.",
+      "keywords": [
+        "часы сна",
+        "сколько спит",
+        "мало спит",
+        "много спит",
+        "дневной сон",
+        "норма сна",
+        "сон"
+      ],
+      "research": [
+        {
+          "t": "ВОЗ (2019): с 0 до 3 месяцев нужно 14–17 часов сна в сутки, включая дневной.",
+          "from": 0,
+          "to": 4
+        },
+        {
+          "t": "ВОЗ (2019): с 4 до 11 месяцев — 12–16 часов в сутки, включая дневной сон.",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "ВОЗ и Американская академия медицины сна сходятся: с 1 до 2 лет — 11–14 часов в сутки.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "ВОЗ (2019) и Американская академия медицины сна: в 3–5 лет — 10–13 часов в сутки, включая дневной сон.",
+          "from": 36,
+          "to": 72
+        },
+        "Это диапазоны: у каждого ребёнка своя потребность, и важнее самочувствие днём, чем точная цифра."
+      ],
+      "tips": [
+        "Обращайте внимание на настроение и энергию днём: спокойный и активный малыш обычно высыпается.",
+        "Сохраняйте постоянное время укладывания и подъёма, в том числе в выходные.",
+        {
+          "t": "В первые месяцы сон прерывистый — это нормально и не связано с ошибками родителей.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Между 1 и 3 годами многие дети переходят с двух дневных снов на один: ориентируйтесь на признаки усталости.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "К 3–5 годам многие дети перестают спать днём: если вечером ребёнок очень устал, укладывайте его чуть раньше.",
+          "from": 36,
+          "to": 72
+        }
+      ]
+    }
+  },
+  {
+    "id": "risvegli-notturni",
+    "category": "sonno",
+    "ageFrom": 6,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "A4",
+      "A5",
+      "A6"
+    ],
+    "it": {
+      "title": "Si sveglia spesso di notte: cosa funziona",
+      "summary": "Una routine serale costante aiuta il sonno; dopo i 6 mesi alcuni metodi comportamentali graduali sono efficaci e, negli studi, non hanno mostrato effetti negativi a lungo termine.",
+      "keywords": [
+        "risvegli notturni",
+        "si sveglia di notte",
+        "non dorme",
+        "non vuole dormire",
+        "addormentamento",
+        "routine della nanna",
+        "metodo",
+        "estinzione graduale",
+        "sveglia",
+        "notte"
+      ],
+      "research": [
+        "Uno studio in 14 Paesi (Mindell 2015) ha trovato che più spesso si segue una routine serale, migliore è il sonno del bambino: si addormenta prima, si sveglia meno.",
+        "Uno studio controllato (Gradisar 2016) su bimbi di 6–16 mesi ha mostrato che l'estinzione graduale e lo spostamento dell'orario della nanna migliorano il sonno.",
+        "Un follow-up a 5 anni (Price 2012) non ha trovato danni su emozioni, comportamento, stress o relazione genitore-figlio nei bambini trattati con metodi comportamentali.",
+        "Anche un approccio più responsivo è una scelta legittima: i metodi sono opzioni, non obblighi."
+      ],
+      "tips": [
+        "Crea una sequenza breve e sempre uguale: bagnetto o lavaggio, pigiama, lettura, coccola, luce bassa.",
+        "Prova a metterlo nel lettino assonnato ma ancora sveglio, così impara ad addormentarsi da solo.",
+        "Se scegli un metodo graduale, decidi le regole in anticipo con l'altro genitore e mantienile per almeno 1–2 settimane.",
+        "Evita schermi nell'ora prima della nanna.",
+        {
+          "t": "Prima dei 6 mesi i risvegli per mangiare sono normali: non servono metodi.",
+          "from": 0,
+          "to": 6
+        }
+      ]
+    },
+    "ru": {
+      "title": "Часто просыпается ночью: что помогает",
+      "summary": "Постоянный вечерний ритуал улучшает сон; после 6 месяцев некоторые постепенные поведенческие методы эффективны и в исследованиях не показали долгосрочного вреда.",
+      "keywords": [
+        "ночные пробуждения",
+        "просыпается ночью",
+        "не спит",
+        "не хочет спать",
+        "засыпание",
+        "ритуал сна",
+        "метод",
+        "постепенное угасание",
+        "ночь"
+      ],
+      "research": [
+        "Исследование в 14 странах (Mindell, 2015) показало: чем регулярнее вечерний ритуал, тем лучше сон — ребёнок быстрее засыпает и реже просыпается.",
+        "Контролируемое исследование (Gradisar, 2016) у детей 6–16 месяцев: постепенное угасание и сдвиг времени укладывания улучшают сон.",
+        "Наблюдение через 5 лет (Price, 2012) не выявило вреда для эмоций, поведения, уровня стресса и отношений с родителями у детей после поведенческих методов.",
+        "Более отзывчивый подход тоже законный выбор: методы — это варианты, а не обязанность."
+      ],
+      "tips": [
+        "Создайте короткую и всегда одинаковую последовательность: купание или умывание, пижама, книжка, объятия, приглушённый свет.",
+        "Попробуйте класть малыша в кроватку сонным, но ещё не спящим — так он учится засыпать сам.",
+        "Если выбираете постепенный метод, заранее договоритесь о правилах со вторым родителем и соблюдайте их хотя бы 1–2 недели.",
+        "Избегайте экранов за час до сна.",
+        {
+          "t": "До 6 месяцев ночные пробуждения для кормления — норма: методы не нужны.",
+          "from": 0,
+          "to": 6
+        }
+      ]
+    }
+  },
+  {
+    "id": "ciuccio",
+    "category": "sonno",
+    "ageFrom": 0,
+    "ageTo": 48,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A1",
+      "B20",
+      "A17"
+    ],
+    "it": {
+      "title": "Il ciuccio: sì o no, e fino a quando?",
+      "summary": "Il ciuccio durante il sonno riduce il rischio di SIDS nel primo anno; l'uso prolungato negli anni successivi è associato a problemi di allineamento dei denti.",
+      "keywords": [
+        "ciuccio",
+        "succhietto",
+        "succhiotto",
+        "togliere il ciuccio",
+        "denti storti",
+        "malocclusione",
+        "suzione",
+        "pollice"
+      ],
+      "research": [
+        {
+          "t": "L'AAP (2022) raccomanda di offrire il ciuccio alla nanna nel primo anno perché riduce il rischio di SIDS, anche se cade dopo che il bimbo si è addormentato.",
+          "from": 0,
+          "to": 12
+        },
+        {
+          "t": "Nei bimbi allattati al seno è meglio introdurlo quando l'allattamento è ben avviato.",
+          "from": 0,
+          "to": 6
+        },
+        "Una meta-analisi (Doğramacı 2016) ha trovato un'associazione tra suzione non nutritiva prolungata (ciuccio o dito) e malocclusioni come il morso aperto."
+      ],
+      "tips": [
+        "Non forzarlo se il bimbo lo rifiuta, e non rimetterlo in bocca se cade mentre dorme.",
+        {
+          "t": "Mai intingerlo nel miele o nello zucchero: il miele è vietato sotto l'anno per il rischio di botulismo.",
+          "from": 0,
+          "to": 12
+        },
+        "Non legarlo con cordini al collo o alla culla.",
+        {
+          "t": "Dopo i 2 anni prova a limitarlo gradualmente al momento della nanna, con calma e senza punizioni.",
+          "from": 24,
+          "to": 48
+        }
+      ]
+    },
+    "ru": {
+      "title": "Пустышка: да или нет и до какого возраста?",
+      "summary": "Пустышка во время сна снижает риск СВДС на первом году; длительное использование в последующие годы связано с нарушениями прикуса.",
+      "keywords": [
+        "пустышка",
+        "соска",
+        "отучить от соски",
+        "кривые зубы",
+        "прикус",
+        "сосание",
+        "палец"
+      ],
+      "research": [
+        {
+          "t": "AAP (2022) рекомендует предлагать пустышку при укладывании на первом году: это снижает риск СВДС, даже если она выпадает после засыпания.",
+          "from": 0,
+          "to": 12
+        },
+        {
+          "t": "При грудном вскармливании её лучше вводить, когда кормление хорошо наладилось.",
+          "from": 0,
+          "to": 6
+        },
+        "Метаанализ (Doğramacı, 2016) выявил связь между длительным ненутритивным сосанием (пустышка или палец) и нарушениями прикуса, например открытым прикусом."
+      ],
+      "tips": [
+        "Не настаивайте, если малыш отказывается, и не вставляйте пустышку обратно, если она выпала во сне.",
+        {
+          "t": "Никогда не макайте её в мёд или сахар: мёд запрещён до года из-за риска ботулизма.",
+          "from": 0,
+          "to": 12
+        },
+        "Не привязывайте её шнурками к шее или кроватке.",
+        {
+          "t": "После 2 лет постепенно ограничивайте её временем сна — спокойно и без наказаний.",
+          "from": 24,
+          "to": 48
+        }
+      ]
+    }
+  },
+  {
+    "id": "incubi-terrori",
+    "category": "sonno",
+    "ageFrom": 18,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "D6",
+      "D7",
+      "D7b"
+    ],
+    "it": {
+      "title": "Incubi e terrori notturni",
+      "summary": "Nel terrore notturno il bambino urla ma non è davvero sveglio e al mattino non ricorda nulla; dall'incubo invece si sveglia, ricorda e si calma in braccio.",
+      "keywords": [
+        "terrore notturno",
+        "pavor nocturnus",
+        "incubi",
+        "urla di notte",
+        "si sveglia urlando",
+        "brutti sogni",
+        "sonnambulismo",
+        "paura di notte"
+      ],
+      "research": [
+        "In una coorte canadese (Petit 2015) i terrori notturni erano frequentissimi da piccoli: 34% a 18 mesi, poi in calo con l'età; nel complesso li ha avuti più di metà dei bambini.",
+        "Una revisione (Leung 2020) spiega che i terrori avvengono nelle prime ore di sonno, dal sonno profondo: il bambino non è sveglio e non ricorda l'episodio.",
+        "Gli incubi avvengono più verso il mattino: il bambino si sveglia del tutto, ricorda il sogno e può essere consolato (Kotagal 2009)."
+      ],
+      "tips": [
+        "Durante un terrore notturno non svegliarlo e non scuoterlo: resta vicino e assicurati che non si faccia male.",
+        "Dopo un incubo consolalo, ascolta il sogno e rassicuralo che è al sicuro.",
+        "Orari regolari e sonno sufficiente riducono gli episodi: la stanchezza li favorisce.",
+        "Se i terrori sono frequenti e sempre alla stessa ora, il pediatra può suggerire di svegliarlo dolcemente poco prima."
+      ],
+      "redFlags": [
+        "Episodi molto frequenti, più volte a notte o a qualsiasi ora della notte.",
+        "Movimenti ripetitivi sempre uguali, o rischio di farsi male.",
+        "Russa forte, fa pause nel respiro o è molto assonnato di giorno."
+      ]
+    },
+    "ru": {
+      "title": "Кошмары и ночные страхи",
+      "summary": "При ночном страхе ребёнок кричит, но на самом деле не проснулся и утром ничего не помнит; после кошмара он просыпается, помнит сон и успокаивается на руках.",
+      "keywords": [
+        "ночные страхи",
+        "ночной ужас",
+        "кошмары",
+        "кричит ночью",
+        "просыпается с криком",
+        "плохие сны",
+        "лунатизм",
+        "страх ночью"
+      ],
+      "research": [
+        "В канадской когорте (Petit, 2015) ночные страхи были очень частыми в раннем возрасте: 34% в 18 месяцев, затем меньше; в целом они были у более чем половины детей.",
+        "Обзор (Leung, 2020): ночные страхи возникают в первые часы сна, из глубокого сна; ребёнок не просыпается и не помнит эпизод.",
+        "Кошмары бывают ближе к утру: ребёнок полностью просыпается, помнит сон, и его можно утешить (Kotagal, 2009)."
+      ],
+      "tips": [
+        "Во время ночного страха не будите и не трясите ребёнка: будьте рядом и следите, чтобы он не ударился.",
+        "После кошмара утешьте, выслушайте сон и скажите, что он в безопасности.",
+        "Режим и достаточный сон уменьшают число эпизодов: усталость их провоцирует.",
+        "Если страхи частые и всегда в одно время, педиатр может посоветовать мягко будить ребёнка незадолго до этого."
+      ],
+      "redFlags": [
+        "Очень частые эпизоды — несколько раз за ночь или в любое время ночи.",
+        "Всегда одинаковые повторяющиеся движения или риск травмы.",
+        "Громко храпит, делает паузы в дыхании или очень сонлив днём."
+      ]
+    }
+  }
+]

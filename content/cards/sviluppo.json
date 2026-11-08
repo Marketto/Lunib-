@@ -1,0 +1,363 @@
+[
+  {
+    "id": "tappe-motorie",
+    "category": "sviluppo",
+    "ageFrom": 0,
+    "ageTo": 24,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "A23",
+      "A24",
+      "A3"
+    ],
+    "it": {
+      "title": "Quando sta seduto, gattona, cammina?",
+      "summary": "Le tappe motorie hanno \"finestre\" ampie: secondo l'OMS si cammina da soli tra 8 e 18 mesi circa. Ogni bimbo ha i suoi tempi, ma alcuni segnali vanno discussi col pediatra.",
+      "keywords": [
+        "tappe dello sviluppo",
+        "sviluppo motorio",
+        "stare seduto",
+        "gattonare",
+        "gattona",
+        "camminare",
+        "primi passi",
+        "non cammina",
+        "in piedi",
+        "rotolare",
+        "ritardo motorio"
+      ],
+      "research": [
+        "Lo studio multicentrico dell'OMS (2006) ha misurato le finestre di acquisizione (1°–99° percentile): seduto senza appoggio 3,8–9,2 mesi; gattonare 5,2–13,5; in piedi con aiuto 4,8–11,4; cammina con aiuto 5,9–13,7; in piedi da solo 6,9–16,9; cammina da solo 8,2–17,6 mesi.",
+        "Alcuni bambini saltano del tutto il gattonamento e passano direttamente a camminare: è una variante normale.",
+        {
+          "t": "Le tappe CDC/AAP (Zubler 2022) indicano a 18 mesi il camminare senza appoggio: se non succede, va valutato.",
+          "from": 12,
+          "to": 24
+        }
+      ],
+      "tips": [
+        "Lascia molto tempo libero sul pavimento, in un ambiente sicuro: è la palestra migliore.",
+        "L'OMS consiglia di non tenerlo legato in seggiolini, passeggino o marsupio per più di 1 ora di fila.",
+        "Gioca a terra con lui: rotolare, strisciare, tirarsi su ai mobili sono tutti allenamenti."
+      ],
+      "redFlags": [
+        {
+          "t": "Non sta seduto da solo a 9–10 mesi o non cammina da solo a 18 mesi.",
+          "from": 6,
+          "to": 24
+        },
+        "Usa sempre un solo lato del corpo, o è molto rigido o molto molle.",
+        "Perde abilità che aveva già acquisito."
+      ]
+    },
+    "ru": {
+      "title": "Когда садится, ползает, ходит?",
+      "summary": "У моторных навыков широкие «окна»: по данным ВОЗ, самостоятельно ходить начинают примерно с 8 до 18 месяцев. У каждого свой темп, но некоторые признаки стоит обсудить с педиатром.",
+      "keywords": [
+        "этапы развития",
+        "моторное развитие",
+        "сидеть",
+        "ползать",
+        "ползает",
+        "ходить",
+        "первые шаги",
+        "не ходит",
+        "стоять",
+        "переворачиваться",
+        "задержка развития"
+      ],
+      "research": [
+        "Многоцентровое исследование ВОЗ (2006) определило окна освоения навыков (1–99-й перцентиль): сидит без опоры 3,8–9,2 мес.; ползает на четвереньках 5,2–13,5; стоит с поддержкой 4,8–11,4; ходит с поддержкой 5,9–13,7; стоит сам 6,9–16,9; ходит сам 8,2–17,6 мес.",
+        "Некоторые дети совсем не ползают и сразу начинают ходить — это вариант нормы.",
+        {
+          "t": "Этапы CDC/AAP (Zubler, 2022): к 18 месяцам ребёнок ходит без опоры; если нет — нужна оценка.",
+          "from": 12,
+          "to": 24
+        }
+      ],
+      "tips": [
+        "Давайте много свободного времени на полу в безопасном месте — это лучший спортзал.",
+        "ВОЗ советует не держать малыша пристёгнутым в креслице, коляске или переноске дольше 1 часа подряд.",
+        "Играйте с ним на полу: перекатываться, ползти, подтягиваться у мебели — всё это тренировка."
+      ],
+      "redFlags": [
+        {
+          "t": "Не сидит сам в 9–10 месяцев или не ходит сам в 18 месяцев.",
+          "from": 6,
+          "to": 24
+        },
+        "Постоянно использует только одну сторону тела, слишком напряжён или слишком вялый.",
+        "Теряет уже освоенные навыки."
+      ]
+    }
+  },
+  {
+    "id": "tummy-time",
+    "category": "sviluppo",
+    "ageFrom": 0,
+    "ageTo": 7,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "A3",
+      "A22"
+    ],
+    "it": {
+      "title": "Tummy time: a pancia in giù da sveglio",
+      "summary": "L'OMS consiglia almeno 30 minuti al giorno a pancia in giù, divisi in più momenti, per i bimbi che non si spostano ancora da soli. Sempre da svegli e sorvegliati.",
+      "keywords": [
+        "tummy time",
+        "pancia in giù",
+        "prono",
+        "testa piatta",
+        "plagiocefalia",
+        "sollevare la testa",
+        "rafforzare il collo",
+        "a pancia sotto"
+      ],
+      "research": [
+        "Le linee guida OMS (2019) raccomandano almeno 30 minuti al giorno in posizione prona, distribuiti nella giornata, per i lattanti non ancora mobili.",
+        "Una revisione sistematica (Hewitt 2020) associa il tummy time a un migliore sviluppo motorio e a un rischio minore di testa piatta (plagiocefalia).",
+        "Per dormire, invece, la posizione giusta resta sempre a pancia in su."
+      ],
+      "tips": [
+        "Inizia dai primi giorni con pochi minuti, più volte al giorno, magari sul tuo petto.",
+        "Mettiti alla sua altezza, con la faccia vicino alla sua, o usa uno specchio infrangibile o giochi colorati.",
+        "Se protesta, fai pause brevi e riprova più tardi: il tempo totale conta più della durata della singola sessione.",
+        "Varia il lato da cui gli parli e da cui lo prendi in braccio."
+      ]
+    },
+    "ru": {
+      "title": "Время на животике, пока малыш бодрствует",
+      "summary": "ВОЗ советует малышам, которые ещё не передвигаются сами, проводить на животе не меньше 30 минут в день, в несколько подходов. Только когда не спит и под присмотром.",
+      "keywords": [
+        "выкладывание на живот",
+        "на животике",
+        "тамми тайм",
+        "плоский затылок",
+        "плагиоцефалия",
+        "держать голову",
+        "укрепить шею",
+        "лежать на животе"
+      ],
+      "research": [
+        "Рекомендации ВОЗ (2019): не меньше 30 минут в день на животе, распределённых в течение дня, для ещё не мобильных младенцев.",
+        "Систематический обзор (Hewitt, 2020) связывает выкладывание на живот с лучшим моторным развитием и меньшим риском плоского затылка (плагиоцефалии).",
+        "Для сна же правильная поза — всегда на спине."
+      ],
+      "tips": [
+        "Начинайте с первых дней с нескольких минут несколько раз в день, например у себя на груди.",
+        "Опуститесь на его уровень, лицом к лицу, или используйте небьющееся зеркало и яркие игрушки.",
+        "Если протестует, делайте короткие перерывы и пробуйте позже: важнее общее время, чем длительность одного подхода.",
+        "Меняйте сторону, с которой разговариваете и берёте малыша на руки."
+      ]
+    }
+  },
+  {
+    "id": "segnali-autismo",
+    "category": "sviluppo",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "B35",
+      "B36",
+      "A24"
+    ],
+    "it": {
+      "title": "Segnali precoci di autismo: cosa osservare",
+      "summary": "L'AAP raccomanda uno screening specifico per l'autismo a 18 e 24 mesi. Riconoscere presto alcuni segnali permette di intervenire prima, quando l'aiuto è più efficace.",
+      "keywords": [
+        "autismo",
+        "spettro autistico",
+        "asd",
+        "non indica",
+        "non risponde al nome",
+        "contatto visivo",
+        "non guarda negli occhi",
+        "m-chat",
+        "screening",
+        "sviluppo sociale",
+        "gioca da solo"
+      ],
+      "research": [
+        "Il report clinico AAP (Hyman 2020) raccomanda la sorveglianza dello sviluppo a ogni visita e lo screening specifico per l'autismo a 18 e 24 mesi.",
+        "Il questionario M-CHAT-R/F, validato (Robins 2014) tra 16 e 30 mesi, aiuta a identificare i bambini da approfondire.",
+        "Un risultato positivo allo screening non è una diagnosi: indica che serve una valutazione specialistica."
+      ],
+      "tips": [
+        "Osserva se indica con il dito per mostrarti qualcosa, se segue il tuo sguardo e se risponde quando lo chiami.",
+        "Gioca faccia a faccia, imita i suoi suoni e gesti, e aspetta la sua risposta.",
+        "Annota esempi concreti da raccontare al pediatra: aiutano molto la valutazione.",
+        "Chiedi del questionario M-CHAT al bilancio di salute dei 18 e dei 24 mesi."
+      ],
+      "redFlags": [
+        {
+          "t": "A 12 mesi non fa ciao con la mano, non indica e non risponde al proprio nome.",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "A 16–18 mesi non usa parole singole, o raramente cerca il tuo sguardo per condividere qualcosa.",
+          "from": 15,
+          "to": 24
+        },
+        "Movimenti ripetitivi molto frequenti, interessi molto ristretti, forte disagio per piccoli cambiamenti.",
+        "Perdita di parole o di abilità sociali già acquisite, a qualsiasi età: parlane subito."
+      ]
+    },
+    "ru": {
+      "title": "Ранние признаки аутизма: на что обратить внимание",
+      "summary": "AAP рекомендует специальный скрининг на аутизм в 18 и 24 месяца. Раннее распознавание признаков позволяет начать помощь раньше, когда она эффективнее.",
+      "keywords": [
+        "аутизм",
+        "расстройство аутистического спектра",
+        "рас",
+        "не показывает пальцем",
+        "не откликается на имя",
+        "зрительный контакт",
+        "не смотрит в глаза",
+        "m-chat",
+        "скрининг",
+        "социальное развитие",
+        "играет один"
+      ],
+      "research": [
+        "Клинический отчёт AAP (Hyman, 2020): наблюдение за развитием на каждом осмотре и специальный скрининг на аутизм в 18 и 24 месяца.",
+        "Опросник M-CHAT-R/F, валидированный (Robins, 2014) для возраста 16–30 месяцев, помогает выявить детей, которым нужно дополнительное обследование.",
+        "Положительный результат скрининга — не диагноз: он означает, что нужна оценка специалиста."
+      ],
+      "tips": [
+        "Посмотрите, показывает ли малыш пальцем, чтобы что-то вам показать, следит ли за вашим взглядом, откликается ли на имя.",
+        "Играйте лицом к лицу, повторяйте его звуки и жесты и ждите ответа.",
+        "Записывайте конкретные примеры для педиатра: это очень помогает оценке.",
+        "Спросите про опросник M-CHAT на осмотрах в 18 и 24 месяца."
+      ],
+      "redFlags": [
+        {
+          "t": "В 12 месяцев не машет «пока», не показывает пальцем и не откликается на имя.",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "В 16–18 месяцев не говорит отдельных слов или редко ищет ваш взгляд, чтобы чем-то поделиться.",
+          "from": 15,
+          "to": 24
+        },
+        "Очень частые повторяющиеся движения, узкие интересы, сильный дискомфорт от мелких перемен.",
+        "Потеря слов или социальных навыков в любом возрасте: обсудите сразу."
+      ]
+    }
+  },
+  {
+    "id": "tappe-3-6",
+    "category": "sviluppo",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "A24"
+    ],
+    "it": {
+      "title": "Cosa sa fare a 4 e 5 anni",
+      "summary": "Le tappe CDC/AAP 2022 per i 4 e i 5 anni: movimento, linguaggio e autonomia. Sono fissate in modo che circa il 75% dei bambini le raggiunga entro quell'età.",
+      "keywords": [
+        "tappe dello sviluppo",
+        "4 anni",
+        "5 anni",
+        "cosa sa fare",
+        "salta su un piede",
+        "abbottonare",
+        "colori",
+        "disegna",
+        "sviluppo prescolare"
+      ],
+      "research": [
+        {
+          "t": "A 4 anni (movimento): prende al volo una palla grande quasi sempre, si serve da solo il cibo o versa l'acqua con un adulto vicino, slaccia qualche bottone, tiene la matita tra le dita e non nel pugno.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "A 4 anni (linguaggio e pensiero): frasi di almeno 4 parole, racconta qualcosa della sua giornata, nomina alcuni colori, disegna una persona con almeno 3 parti del corpo.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "A 5 anni (movimento): salta su un piede e allaccia qualche bottone.",
+          "from": 54,
+          "to": 72
+        },
+        {
+          "t": "A 5 anni (linguaggio): racconta una storia con almeno due eventi, risponde a domande su un libro, riconosce semplici rime.",
+          "from": 54,
+          "to": 72
+        },
+        "Ogni bambino ha i suoi tempi: una singola tappa in ritardo, da sola, di solito non è un problema."
+      ],
+      "tips": [
+        "Giochi con la palla, saltelli, percorsi e bici aiutano la coordinazione.",
+        "Lascia che si vesta, si serva e apparecchi da solo: l'autonomia si allena.",
+        "Disegnare, ritagliare e infilare perline allenano la mano per la scuola.",
+        "Fagli raccontare la giornata e le storie che conosce."
+      ],
+      "redFlags": [
+        "Perde abilità che aveva già.",
+        "Non riesce a fare diverse cose della sua età, o le insegnanti notano difficoltà.",
+        "Dubbi sull'udito o sulla vista."
+      ]
+    },
+    "ru": {
+      "title": "Что умеет в 4 и 5 лет",
+      "summary": "Этапы CDC/AAP 2022 для 4 и 5 лет: движение, речь и самостоятельность. Они установлены так, что около 75% детей достигают их к этому возрасту.",
+      "keywords": [
+        "этапы развития",
+        "4 года",
+        "5 лет",
+        "что умеет",
+        "прыгает на одной ноге",
+        "застёгивает пуговицы",
+        "цвета",
+        "рисует",
+        "развитие дошкольника"
+      ],
+      "research": [
+        {
+          "t": "В 4 года (движение): почти всегда ловит большой мяч, сам накладывает еду или наливает воду при взрослом, расстёгивает некоторые пуговицы, держит карандаш пальцами, а не в кулаке.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "В 4 года (речь и мышление): предложения из 4 и более слов, рассказывает о своём дне, называет несколько цветов, рисует человека хотя бы с 3 частями тела.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "В 5 лет (движение): прыгает на одной ноге и застёгивает некоторые пуговицы.",
+          "from": 54,
+          "to": 72
+        },
+        {
+          "t": "В 5 лет (речь): рассказывает историю хотя бы из двух событий, отвечает на вопросы о книге, узнаёт простые рифмы.",
+          "from": 54,
+          "to": 72
+        },
+        "У каждого ребёнка свой темп: одна отстающая отдельно взятая ступень обычно не проблема."
+      ],
+      "tips": [
+        "Игры с мячом, прыжки, полосы препятствий и велосипед развивают координацию.",
+        "Пусть одевается, накладывает еду и накрывает на стол сам: самостоятельность тренируется.",
+        "Рисование, вырезание и нанизывание бусин готовят руку к школе.",
+        "Просите рассказать о дне и знакомых историях."
+      ],
+      "redFlags": [
+        "Теряет уже освоенные навыки.",
+        "Не может делать многое из того, что умеют сверстники, или воспитатели замечают трудности.",
+        "Сомнения в слухе или зрении."
+      ]
+    }
+  }
+]

@@ -1,0 +1,505 @@
+[
+  {
+    "id": "stimolare-linguaggio",
+    "category": "linguaggio",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "B21",
+      "B22"
+    ],
+    "it": {
+      "title": "Come aiutarlo a parlare",
+      "summary": "Più delle parole ascoltate conta la conversazione: i botta e risposta tra adulto e bambino sono legati allo sviluppo del linguaggio.",
+      "keywords": [
+        "parlare",
+        "linguaggio",
+        "prime parole",
+        "stimolare il linguaggio",
+        "vocabolario",
+        "conversazione",
+        "lallazione",
+        "come farlo parlare",
+        "parole"
+      ],
+      "research": [
+        "Uno studio di neuroimmagine (Romeo 2018, su bambini di 4–6 anni) ha trovato che il numero di scambi conversazionali, più del numero di parole ascoltate, si associa all'attività delle aree cerebrali del linguaggio.",
+        "Una meta-analisi (Dowdall 2020) mostra che i programmi di lettura condivisa di libri illustrati migliorano il linguaggio espressivo e ricettivo.",
+        {
+          "t": "Fin dai primi mesi i lattanti rispondono a voce, sguardo e turni di \"conversazione\" fatti di versi e sorrisi.",
+          "from": 0,
+          "to": 12
+        }
+      ],
+      "tips": [
+        "Rispondi ai suoi versi come se fosse una conversazione, e lascia il tempo per il suo turno.",
+        "Descrivi ciò che fate insieme: \"Ora mettiamo le scarpe rosse\".",
+        {
+          "t": "Riprendi e amplia ciò che dice: se dice \"palla\", rispondi \"Sì, la palla blu rotola!\".",
+          "from": 12,
+          "to": 48
+        },
+        "Canta canzoncine e filastrocche con gesti.",
+        "Riduci la TV in sottofondo: toglie spazio agli scambi."
+      ]
+    },
+    "ru": {
+      "title": "Как помочь малышу заговорить",
+      "summary": "Важнее количества услышанных слов — разговор: обмен репликами между взрослым и ребёнком связан с развитием речи.",
+      "keywords": [
+        "говорить",
+        "речь",
+        "первые слова",
+        "развитие речи",
+        "словарный запас",
+        "разговор",
+        "лепет",
+        "как разговорить",
+        "слова"
+      ],
+      "research": [
+        "Нейровизуализационное исследование (Romeo, 2018, дети 4–6 лет): число разговорных обменов, а не число услышанных слов, связано с активностью речевых зон мозга.",
+        "Метаанализ (Dowdall, 2020): программы совместного чтения книжек с картинками улучшают экспрессивную и импрессивную речь.",
+        {
+          "t": "С первых месяцев младенцы откликаются на голос, взгляд и «разговор» по очереди из звуков и улыбок.",
+          "from": 0,
+          "to": 12
+        }
+      ],
+      "tips": [
+        "Отвечайте на его звуки как в разговоре и оставляйте время для его «реплики».",
+        "Описывайте, что вы делаете вместе: «Сейчас наденем красные ботинки».",
+        {
+          "t": "Повторяйте и расширяйте его слова: если говорит «мяч», ответьте «Да, синий мяч катится!».",
+          "from": 12,
+          "to": 48
+        },
+        "Пойте песенки и потешки с жестами.",
+        "Выключайте фоновый телевизор: он забирает место у общения."
+      ]
+    }
+  },
+  {
+    "id": "ritardo-linguaggio",
+    "category": "linguaggio",
+    "ageFrom": 12,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "A24"
+    ],
+    "it": {
+      "title": "Parla poco: quando preoccuparsi",
+      "summary": "Le tappe CDC/AAP 2022 sono fissate in modo che la maggior parte dei bambini (circa il 75%) le raggiunga entro quell'età: se non ci sono, conviene parlarne col pediatra.",
+      "keywords": [
+        "non parla",
+        "parla poco",
+        "ritardo del linguaggio",
+        "parlatore tardivo",
+        "late talker",
+        "quante parole",
+        "frasi",
+        "logopedista",
+        "tappe del linguaggio",
+        "non dice mamma"
+      ],
+      "research": [
+        {
+          "t": "Tappe CDC/AAP (Zubler 2022): a 12 mesi chiama mamma o papà con un nome speciale e fa ciao con la mano.",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "Tappe CDC/AAP: a 18 mesi prova a dire almeno 3 parole oltre a mamma e papà.",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "Tappe CDC/AAP: a 24 mesi dice almeno 2 parole insieme, per esempio \"altra pappa\".",
+          "from": 24,
+          "to": 30
+        },
+        {
+          "t": "Tappe CDC/AAP: a 30 mesi dice circa 50 parole.",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "t": "Tappe CDC/AAP: a 36 mesi fa conversazioni con almeno due scambi di battute.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "Tappe CDC/AAP: a 4 anni dice frasi di almeno 4 parole, racconta qualcosa della sua giornata e risponde a domande semplici (\"A cosa serve il cappotto?\").",
+          "from": 48,
+          "to": 60
+        },
+        {
+          "t": "Tappe CDC/AAP: a 5 anni racconta una storia con almeno due eventi, risponde a domande su un libro letto insieme, sostiene una conversazione con più di tre scambi e riconosce semplici rime.",
+          "from": 60,
+          "to": 72
+        },
+        "Le tappe sono fissate in modo che circa il 75% dei bambini le raggiunga entro quell'età.",
+        "Valutare presto non significa etichettare: aiuta a capire se serve un sostegno, ad esempio un controllo dell'udito o del logopedista."
+      ],
+      "tips": [
+        "Dagli il tempo di rispondere e non anticipare sempre le sue richieste.",
+        "Offri scelte semplici: \"Vuoi la mela o la banana?\".",
+        "Leggete insieme ogni giorno, indicando e nominando le figure.",
+        "I bimbi bilingui raggiungono le tappe nei tempi tipici considerando le due lingue insieme."
+      ],
+      "redFlags": [
+        {
+          "t": "A 12 mesi non lalla, non indica e non fa gesti come ciao.",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "A 18 mesi non dice parole oltre a mamma e papà, o non capisce richieste semplici.",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "A 24 mesi non unisce due parole.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "A 36 mesi è difficile da capire anche per i familiari.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "A 4–5 anni parla per lo più con parole singole o frasi molto brevi, o non riesce a raccontare cosa ha fatto.",
+          "from": 48,
+          "to": 72
+        },
+        "Perdita di parole già acquisite, o dubbi sull'udito: parlane subito."
+      ]
+    },
+    "ru": {
+      "title": "Мало говорит: когда волноваться",
+      "summary": "Этапы CDC/AAP 2022 установлены так, что большинство детей (около 75%) достигают их к указанному возрасту: если навыка нет, стоит обсудить это с педиатром.",
+      "keywords": [
+        "не говорит",
+        "мало говорит",
+        "задержка речи",
+        "позднее начало речи",
+        "сколько слов",
+        "фразы",
+        "логопед",
+        "этапы речи",
+        "не говорит мама"
+      ],
+      "research": [
+        {
+          "t": "Этапы CDC/AAP (Zubler, 2022): в 12 месяцев зовёт маму или папу особым словом и машет «пока».",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "Этапы CDC/AAP: в 18 месяцев пытается сказать хотя бы 3 слова, кроме «мама» и «папа».",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "Этапы CDC/AAP: в 24 месяца соединяет хотя бы 2 слова, например «ещё каши».",
+          "from": 24,
+          "to": 30
+        },
+        {
+          "t": "Этапы CDC/AAP: в 30 месяцев говорит около 50 слов.",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "t": "Этапы CDC/AAP: в 36 месяцев ведёт разговор хотя бы из двух обменов репликами.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "Этапы CDC/AAP: в 4 года говорит предложениями из 4 и более слов, рассказывает о своём дне и отвечает на простые вопросы («Для чего нужно пальто?»).",
+          "from": 48,
+          "to": 60
+        },
+        {
+          "t": "Этапы CDC/AAP: в 5 лет рассказывает историю хотя бы из двух событий, отвечает на вопросы о прочитанной книге, поддерживает разговор более чем из трёх обменов репликами и узнаёт простые рифмы.",
+          "from": 60,
+          "to": 72
+        },
+        "Этапы установлены так, что около 75% детей достигают их к указанному возрасту.",
+        "Ранняя оценка — не ярлык: она помогает понять, нужна ли поддержка, например проверка слуха или логопед."
+      ],
+      "tips": [
+        "Дайте время ответить и не угадывайте все его желания заранее.",
+        "Предлагайте простой выбор: «Хочешь яблоко или банан?».",
+        "Читайте вместе каждый день, показывая и называя картинки.",
+        "Двуязычные дети достигают этапов в обычные сроки, если учитывать оба языка вместе."
+      ],
+      "redFlags": [
+        {
+          "t": "В 12 месяцев не лепечет, не показывает пальцем и не машет «пока».",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "В 18 месяцев не говорит слов, кроме «мама» и «папа», или не понимает простых просьб.",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "В 24 месяца не соединяет два слова.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "В 36 месяцев его трудно понять даже близким.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "В 4–5 лет говорит в основном отдельными словами или очень короткими фразами либо не может рассказать, что делал.",
+          "from": 48,
+          "to": 72
+        },
+        "Потеря уже освоенных слов или сомнения в слухе: обсудите сразу."
+      ]
+    }
+  },
+  {
+    "id": "lettura",
+    "category": "linguaggio",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "B23",
+      "B22"
+    ],
+    "it": {
+      "title": "Leggere ad alta voce fin dalla nascita",
+      "summary": "L'American Academy of Pediatrics raccomanda di leggere insieme fin dai primi mesi: la lettura condivisa sostiene linguaggio, attenzione e legame.",
+      "keywords": [
+        "lettura",
+        "leggere",
+        "libri",
+        "libri per neonati",
+        "storie",
+        "lettura ad alta voce",
+        "favola",
+        "nati per leggere",
+        "lettura dialogica",
+        "favola della buonanotte"
+      ],
+      "research": [
+        "La policy AAP (Klass 2024) considera la promozione della lettura una parte essenziale delle cure pediatriche, a partire dalla nascita.",
+        "Una meta-analisi (Dowdall 2020) mostra benefici della lettura condivisa sul linguaggio, maggiori quando l'adulto coinvolge attivamente il bambino.",
+        "Non serve leggere tutto il testo: indicare, nominare, fare domande e lasciare che giri le pagine conta di più."
+      ],
+      "tips": [
+        {
+          "t": "Da 0 a 6 mesi: libri con immagini grandi e contrastate, voce cantilenante, ritmo.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Da 6 a 18 mesi: libri cartonati da toccare e mordicchiare, figure da indicare e nominare.",
+          "from": 6,
+          "to": 18
+        },
+        {
+          "t": "Dopo i 18 mesi: storie brevi, domande aperte (\"Cosa succede adesso?\"), rileggere gli stessi libri tutte le volte che li chiede.",
+          "from": 18,
+          "to": 48
+        },
+        "Rendi la lettura un momento fisso, ad esempio prima della nanna.",
+        {
+          "t": "Dai 3 anni: lascia che sia lui a raccontare la storia guardando le figure, chiedi cosa pensa che succederà e collegala alla sua vita.",
+          "from": 36,
+          "to": 72
+        }
+      ]
+    },
+    "ru": {
+      "title": "Читать вслух с рождения",
+      "summary": "Американская академия педиатрии рекомендует читать вместе с первых месяцев: совместное чтение поддерживает речь, внимание и привязанность.",
+      "keywords": [
+        "чтение",
+        "читать",
+        "книги",
+        "книжки для малышей",
+        "сказки",
+        "чтение вслух",
+        "сказка на ночь",
+        "диалогическое чтение"
+      ],
+      "research": [
+        "Позиция AAP (Klass, 2024): поддержка чтения — необходимая часть педиатрической помощи, начиная с рождения.",
+        "Метаанализ (Dowdall, 2020) показывает пользу совместного чтения для речи, особенно когда взрослый активно вовлекает ребёнка.",
+        "Не обязательно читать весь текст: показывать, называть, задавать вопросы и давать перелистывать страницы важнее."
+      ],
+      "tips": [
+        {
+          "t": "0–6 месяцев: книги с крупными контрастными картинками, напевный голос, ритм.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "6–18 месяцев: картонные книжки, которые можно трогать и грызть, картинки, чтобы показывать и называть.",
+          "from": 6,
+          "to": 18
+        },
+        {
+          "t": "После 18 месяцев: короткие истории, открытые вопросы («Что сейчас будет?»), перечитывайте одни и те же книги, сколько попросит.",
+          "from": 18,
+          "to": 48
+        },
+        "Сделайте чтение постоянным ритуалом, например перед сном.",
+        {
+          "t": "С 3 лет: пусть он сам рассказывает историю по картинкам, спрашивайте, что будет дальше, и связывайте её с его жизнью.",
+          "from": 36,
+          "to": 72
+        }
+      ]
+    }
+  },
+  {
+    "id": "bilinguismo",
+    "category": "linguaggio",
+    "ageFrom": 0,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "B24"
+    ],
+    "it": {
+      "title": "Crescere con due lingue",
+      "summary": "Il bilinguismo non causa ritardi o disturbi del linguaggio. In ciascuna lingua il vocabolario dipende da quanto il bimbo la sente, ma considerando le due lingue insieme è in linea con l'età.",
+      "keywords": [
+        "bilinguismo",
+        "bilingue",
+        "due lingue",
+        "lingua madre",
+        "italiano e russo",
+        "confonde le lingue",
+        "mescola le lingue",
+        "lingua straniera"
+      ],
+      "research": [
+        "Uno studio longitudinale (Hoff 2012) ha trovato che i bimbi bilingui, misurati in una sola lingua, possono avere meno parole; considerando le due lingue insieme, il loro vocabolario è paragonabile a quello dei monolingui.",
+        "La quantità di esposizione a ciascuna lingua predice la velocità di sviluppo in quella lingua.",
+        "Mescolare le lingue nella stessa frase è normale nei bambini bilingui e non è un segno di confusione."
+      ],
+      "tips": [
+        "Parla al bambino nella lingua in cui ti esprimi meglio e con più affetto.",
+        "Cerca occasioni ricche in ogni lingua: libri, canzoni, nonni, amici, videochiamate.",
+        "Non serve una regola rigida: conta la qualità e la quantità dell'esposizione.",
+        "Se hai dubbi sullo sviluppo del linguaggio, chiedi una valutazione che tenga conto di tutte e due le lingue."
+      ]
+    },
+    "ru": {
+      "title": "Расти с двумя языками",
+      "summary": "Двуязычие не вызывает задержки или нарушения речи. Словарный запас в каждом языке зависит от того, сколько ребёнок его слышит, но в сумме двух языков он соответствует возрасту.",
+      "keywords": [
+        "двуязычие",
+        "билингв",
+        "два языка",
+        "родной язык",
+        "итальянский и русский",
+        "путает языки",
+        "смешивает языки",
+        "иностранный язык"
+      ],
+      "research": [
+        "Лонгитюдное исследование (Hoff, 2012): у двуязычных детей при оценке одного языка слов может быть меньше; в сумме двух языков словарь сопоставим с монолингвами.",
+        "Количество времени с каждым языком предсказывает скорость развития в этом языке.",
+        "Смешивание языков в одной фразе нормально для билингвов и не говорит о путанице."
+      ],
+      "tips": [
+        "Говорите с ребёнком на языке, на котором вам легче и теплее выражать себя.",
+        "Ищите богатые возможности на каждом языке: книги, песни, бабушки и дедушки, друзья, видеозвонки.",
+        "Жёсткие правила не обязательны: важны качество и количество общения.",
+        "Если есть сомнения в развитии речи, просите оценку с учётом обоих языков."
+      ]
+    }
+  },
+  {
+    "id": "balbuzie",
+    "category": "linguaggio",
+    "ageFrom": 24,
+    "ageTo": 72,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "D8",
+      "D9"
+    ],
+    "it": {
+      "title": "Balbetta: è normale?",
+      "summary": "La balbuzie inizia spesso tra 2 e 3 anni e mezzo ed è più comune di quanto si pensi. Molti bambini smettono da soli, ma non sempre entro l'anno: alcuni segnali vanno valutati.",
+      "keywords": [
+        "balbuzie",
+        "balbetta",
+        "ripete le sillabe",
+        "si blocca a parlare",
+        "inceppa",
+        "disfluenza",
+        "logopedista"
+      ],
+      "research": [
+        "In uno studio australiano che ha seguito i bambini dalla nascita (Reilly 2013) l'11% aveva iniziato a balbettare entro i 4 anni, per lo più tra i 2 e i 3 anni e mezzo.",
+        "Nello stesso studio solo il 6% aveva smesso entro 12 mesi dall'inizio: il recupero, quando arriva, richiede spesso più tempo.",
+        "I bambini che balbettavano non avevano un linguaggio, un temperamento o una qualità di vita peggiori degli altri.",
+        "Secondo l'ASHA il rischio che persista è maggiore nei maschi, con familiari che balbettano, se dura più di 6–12 mesi o se inizia dopo i 3 anni e mezzo."
+      ],
+      "tips": [
+        "Ascolta con calma e guardalo: conta quello che dice, non come lo dice.",
+        "Non finire le parole al posto suo e non dirgli \"rallenta\" o \"respira\".",
+        "Parla tu più lentamente e con pause: è un modello più utile di qualsiasi correzione.",
+        "Crea momenti tranquilli di chiacchiera, senza fretta e senza domande a raffica."
+      ],
+      "redFlags": [
+        "Tensione evidente nel parlare: smorfie, occhi che sbattono, movimenti della testa.",
+        "Il bambino è frustrato, evita di parlare o tu sei preoccupato.",
+        "Familiari che balbettano, o balbuzie che dura da più di 6–12 mesi senza migliorare.",
+        "Altri dubbi sul linguaggio o sulla pronuncia."
+      ]
+    },
+    "ru": {
+      "title": "Заикается: это нормально?",
+      "summary": "Заикание часто начинается между 2 и 3,5 годами и встречается чаще, чем кажется. Многие дети перестают сами, но не обязательно в течение года: некоторые признаки стоит оценить.",
+      "keywords": [
+        "заикание",
+        "заикается",
+        "повторяет слоги",
+        "запинается",
+        "останавливается на слове",
+        "нарушение плавности речи",
+        "логопед"
+      ],
+      "research": [
+        "В австралийском исследовании, наблюдавшем детей с рождения (Reilly, 2013), у 11% заикание началось до 4 лет, в основном между 2 и 3,5 годами.",
+        "В том же исследовании только 6% перестали заикаться в течение 12 месяцев: если заикание проходит, это часто занимает больше времени.",
+        "У заикающихся детей речь, темперамент и качество жизни были не хуже, чем у остальных.",
+        "По данным ASHA, риск сохранения выше у мальчиков, при заикании у родственников, если оно длится больше 6–12 месяцев или началось после 3,5 лет."
+      ],
+      "tips": [
+        "Слушайте спокойно и смотрите на ребёнка: важно, что он говорит, а не как.",
+        "Не договаривайте за него и не говорите «помедленнее» или «вдохни».",
+        "Говорите сами медленнее и с паузами — это полезнее любых поправок.",
+        "Устраивайте спокойные разговоры без спешки и без потока вопросов."
+      ],
+      "redFlags": [
+        "Заметное напряжение при речи: гримасы, моргание, движения головой.",
+        "Ребёнок расстраивается, избегает говорить, или вы обеспокоены.",
+        "Заикание у родственников или длится больше 6–12 месяцев без улучшения.",
+        "Другие сомнения в речи или произношении."
+      ]
+    }
+  }
+]
