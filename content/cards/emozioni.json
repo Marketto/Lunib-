@@ -1394,5 +1394,204 @@
         "Страх за свою безопасность или безопасность ребёнка: немедленно звоните 112. Не оставайтесь одни."
       ]
     }
+  },
+  {
+    "id": "ansia-6-12",
+    "category": "emozioni",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "K16",
+      "K17"
+    ],
+    "it": {
+      "title": "Ansia nei bambini di 6-12 anni",
+      "summary": "Preoccupazioni e paure fanno parte della crescita. Se l'ansia limita scuola, sonno, amicizie o vita quotidiana, parlane con il pediatra: esistono percorsi di aiuto studiati, anche rivolti ai genitori.",
+      "keywords": [
+        "ansia",
+        "ansioso",
+        "preoccupazioni",
+        "paura",
+        "scuola",
+        "non vuole andare a scuola",
+        "mal di pancia",
+        "evitamento",
+        "timidezza",
+        "panico",
+        "terapia cognitivo-comportamentale",
+        "CBT",
+        "SPACE",
+        "genitori"
+      ],
+      "research": [
+        "Una linea guida dell'AACAP (Walter 2020), per bambini e adolescenti di 6-18 anni, raccomanda la terapia cognitivo-comportamentale (CBT) per diversi disturbi d'ansia (1C: raccomandazione con prove di forza bassa). Raccomanda anche alcuni farmaci (1B, prove moderate) e suggerisce che si possa preferire il trattamento combinato (2C); la scelta dei farmaci spetta allo specialista.",
+        {
+          "t": "Uno studio randomizzato su 124 bambini di 7-14 anni (Lebowitz 2020) ha rilevato che SPACE, un trattamento rivolto solo ai genitori (il terapeuta non vede il bambino), non è risultato inferiore alla CBT del bambino sugli esiti dell'ansia.",
+          "from": 84,
+          "to": 144
+        },
+        {
+          "t": "Nello stesso studio (Lebowitz 2020) SPACE ha ridotto di più l'accomodamento familiare, cioè i cambiamenti nelle routine dei genitori per evitare al bambino l'ansia.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Ascolta senza minimizzare e senza spaventarti.",
+        "Nota se le routine di casa si stanno adattando all'ansia (evitare luoghi, rimanere sempre con lui): è utile parlarne con un professionista.",
+        "Tieni nota di quando l'ansia compare e di cosa la peggiora, per portarla alla visita.",
+        "Per approfondire consulta la linea guida AACAP e lo studio SPACE."
+      ],
+      "redFlags": [
+        "L'ansia limita la scuola.",
+        "L'ansia disturba il sonno.",
+        "L'ansia limita le amicizie.",
+        "L'ansia limita la vita quotidiana del bambino o della famiglia."
+      ]
+    },
+    "ru": {
+      "title": "Тревожность у детей 6-12 лет",
+      "summary": "Беспокойства и страхи — часть взросления. Если тревога мешает школе, сну, дружбе или повседневной жизни, поговорите с педиатром: существуют изученные способы помощи, в том числе направленные на родителей.",
+      "keywords": [
+        "тревога",
+        "тревожный",
+        "беспокойство",
+        "страх",
+        "школа",
+        "не хочет идти в школу",
+        "болит живот",
+        "избегание",
+        "застенчивость",
+        "паника",
+        "когнитивно-поведенческая терапия",
+        "КПТ",
+        "SPACE",
+        "родители"
+      ],
+      "research": [
+        "Клиническое руководство AACAP (Walter, 2020) для детей и подростков 6-18 лет рекомендует когнитивно-поведенческую терапию (КПТ) при ряде тревожных расстройств (1C: рекомендация при низкой силе доказательств). Оно также рекомендует некоторые лекарства (1B, умеренные доказательства) и предполагает, что комбинированное лечение может быть предпочтительнее (2C); решение о лекарствах принимает специалист.",
+        {
+          "t": "Рандомизированное исследование на 124 детях 7-14 лет (Lebowitz, 2020) показало, что SPACE — лечение, направленное только на родителей (терапевт не встречается с ребёнком), — не уступило КПТ, проводимой с ребёнком, по показателям тревоги.",
+          "from": 84,
+          "to": 144
+        },
+        {
+          "t": "В том же исследовании (Lebowitz, 2020) SPACE сильнее снизило семейную аккомодацию, то есть изменения в распорядке родителей, чтобы избавить ребёнка от тревоги.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Слушайте, не преуменьшая и не пугаясь.",
+        "Обратите внимание, не подстраивается ли распорядок дома под тревогу (избегание мест, постоянное присутствие рядом): об этом полезно поговорить со специалистом.",
+        "Записывайте, когда появляется тревога и что её усиливает, и расскажите об этом на приёме.",
+        "Чтобы узнать больше, прочитайте руководство AACAP и исследование SPACE."
+      ],
+      "redFlags": [
+        "Тревога мешает учёбе в школе.",
+        "Тревога нарушает сон.",
+        "Тревога мешает дружбе.",
+        "Тревога ограничивает повседневную жизнь ребёнка или семьи."
+      ]
+    }
+  },
+  {
+    "id": "bullismo",
+    "category": "emozioni",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "urgente",
+    "evidence": "moderata",
+    "sources": [
+      "K18",
+      "K19",
+      "K20",
+      "K21",
+      "E27"
+    ],
+    "it": {
+      "title": "Bullismo e cyberbullismo",
+      "summary": "Il bullismo è frequente e può lasciare conseguenze. Se tuo figlio ne parla, ascoltalo; gli interventi nelle scuole riducono in media bullismo e vittimizzazione di circa il 15-19%, con risultati molto variabili tra gli studi.",
+      "keywords": [
+        "bullismo",
+        "cyberbullismo",
+        "prepotenze",
+        "molestie",
+        "scuola",
+        "compagni",
+        "preso in giro",
+        "esclusione",
+        "social",
+        "chat",
+        "denuncia",
+        "rimozione contenuti",
+        "Garante privacy",
+        "legge 71"
+      ],
+      "research": [
+        "Nell'indagine HBSC 2022 (ISS-EpiCentro) il 20% degli 11enni riferisce «episodi di bullismo» almeno una volta negli ultimi due mesi; la quota scende a circa il 15% a 13 anni e sotto il 10% a 15 anni.",
+        "Nella stessa indagine HBSC 2022 il cyberbullismo riguarda meno del 20% dei ragazzi tra 11 e 15 anni e quello ripetuto meno del 2%.",
+        "Una meta-analisi di 165 studi (Moore 2017) ha valutato che il legame causale con la vittimizzazione è più solido per depressione, ansia, cattiva salute generale e pensieri o comportamenti suicidari, e probabile per fumo e uso di droghe; per altri esiti le prove non bastano per parlare di causa (valutazione degli autori su studi osservazionali).",
+        "Una meta-analisi di 100 valutazioni di programmi scolastici (Gaffney 2021) stima una riduzione di circa il 18-19% dei comportamenti da bullo e di circa il 15-16% della vittimizzazione, con eterogeneità elevata e dati soprattutto auto-riferiti.",
+        "Legge 71/2017 (art. 2): un minore di almeno 14 anni, o un genitore, può chiedere al gestore del sito o del social di oscurare, rimuovere o bloccare i contenuti; il gestore ha 24 ore per prendere in carico e 48 ore per intervenire, altrimenti ci si può rivolgere al Garante privacy, che decide entro 48 ore."
+      ],
+      "tips": [
+        "Chiedi con calma cosa succede, senza giudicare e senza togliergli subito il telefono.",
+        "Conserva messaggi e schermate: servono se devi segnalare ai gestori o alla scuola.",
+        "Parlane con gli insegnanti: esistono programmi scolastici valutati in molti studi (Gaffney 2021).",
+        "Per i contenuti online puoi chiedere la rimozione al gestore del sito o del social e, se non agisce, rivolgerti al Garante privacy (legge 71/2017).",
+        "Per approfondire consulta i dati HBSC e il testo della legge 71."
+      ],
+      "redFlags": [
+        "Tristezza o ansia che non passano: parlane con il pediatra.",
+        "Se parla di farsi del male o di non voler vivere: non lasciarlo solo e contatta subito il pediatra; se non è raggiungibile, vai in Pronto Soccorso."
+      ],
+      "urgent": [
+        "Pensi che sia in pericolo immediato: chiama subito il 112 (numero gratuito di emergenza europeo, in Italia attivo insieme al 118). Non lasciarlo solo."
+      ]
+    },
+    "ru": {
+      "title": "Буллинг и кибербуллинг",
+      "summary": "Буллинг распространён и может оставлять последствия. Если ребёнок рассказывает о нём, выслушайте; школьные программы в среднем снижают травлю и виктимизацию примерно на 15-19%, но результаты сильно различаются между исследованиями.",
+      "keywords": [
+        "буллинг",
+        "кибербуллинг",
+        "травля",
+        "издевательства",
+        "школа",
+        "одноклассники",
+        "дразнят",
+        "исключение из компании",
+        "соцсети",
+        "чат",
+        "жалоба",
+        "удаление контента",
+        "Garante privacy",
+        "закон 71"
+      ],
+      "research": [
+        "В исследовании HBSC 2022 (ISS-EpiCentro) 20% 11-летних сообщают об «эпизодах буллинга» хотя бы раз за последние два месяца; у 13-летних — около 15%, у 15-летних — менее 10%.",
+        "В том же исследовании HBSC 2022 кибербуллинг затрагивает менее 20% подростков 11-15 лет, а повторяющийся — менее 2%.",
+        "Метаанализ 165 исследований (Moore, 2017) показал: причинная связь с травлей наиболее обоснована для депрессии, тревоги, плохого общего здоровья и суицидальных мыслей или поведения и вероятна для курения и употребления наркотиков; для других исходов данных недостаточно, чтобы говорить о причинной связи (оценка авторов по наблюдательным исследованиям).",
+        "Метаанализ 100 оценок школьных программ (Gaffney, 2021) оценивает снижение примерно на 18-19% случаев, когда ребёнок травит других, и примерно на 15-16% случаев, когда он становится жертвой, при высокой неоднородности и преимущественно самоотчётных данных.",
+        "Закон 71/2017 (ст. 2): несовершеннолетний от 14 лет или родитель может попросить владельца сайта или соцсети скрыть, удалить или заблокировать контент; у владельца 24 часа на принятие обращения и 48 часов на действие, иначе можно обратиться в Garante privacy, который решает в течение 48 часов."
+      ],
+      "tips": [
+        "Спокойно спросите, что происходит, без осуждения и не отнимая сразу телефон.",
+        "Сохраняйте сообщения и скриншоты: они нужны для жалобы владельцам платформ или школе.",
+        "Поговорите с учителями: школьные программы против травли изучены во многих исследованиях (Gaffney, 2021).",
+        "Для онлайн-контента можно запросить удаление у владельца сайта или соцсети, а если он не действует, обратиться в Garante privacy (закон 71/2017).",
+        "Чтобы узнать больше, прочитайте данные HBSC и текст закона 71."
+      ],
+      "redFlags": [
+        "Стойкая грусть или тревога: обсудите это с педиатром.",
+        "Если ребёнок говорит о том, чтобы причинить себе вред, или о том, что не хочет жить: не оставляйте его одного и сразу свяжитесь с педиатром; если он недоступен, поезжайте в приёмное отделение больницы."
+      ],
+      "urgent": [
+        "Вы считаете, что ребёнок в непосредственной опасности: немедленно звоните 112 (бесплатный европейский номер экстренной помощи, в Италии работает наряду с 118). Не оставляйте его одного."
+      ]
+    }
   }
 ]

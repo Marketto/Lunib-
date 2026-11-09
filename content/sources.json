@@ -1103,5 +1103,150 @@
     "label": "NHS. Early or delayed puberty (2026)",
     "url": "https://www.nhs.uk/conditions/early-or-delayed-puberty/",
     "type": "ente sanitario"
+  },
+  "K1": {
+    "label": "Paruthi S et al. Consensus Statement of the American Academy of Sleep Medicine on the Recommended Amount of Sleep for Healthy Children: Methodology and Discussion. J Clin Sleep Med. 2016;12(11):1549-1561",
+    "url": "https://doi.org/10.5664/jcsm.6288",
+    "type": "consensus"
+  },
+  "K2": {
+    "label": "Falbe J et al. Sleep Duration, Restfulness, and Screens in the Sleep Environment. Pediatrics. 2015;135(2):e367-e375",
+    "url": "https://doi.org/10.1542/peds.2014-2306",
+    "type": "studio osservazionale"
+  },
+  "K3": {
+    "label": "Hale L, Guan S. Screen time and sleep among school-aged children and adolescents: a systematic literature review. Sleep Med Rev. 2015;21:50-58",
+    "url": "https://doi.org/10.1016/j.smrv.2014.07.007",
+    "type": "revisione sistematica"
+  },
+  "K4": {
+    "label": "American Academy of Sleep Medicine. Press release, 8 agosto 2023 (consigli per il sonno dei bambini)",
+    "url": "https://aasm.org/?p=35320",
+    "type": "società scientifica"
+  },
+  "K5": {
+    "label": "World Health Organization. WHO calls on countries to reduce sugars intake among adults and children. 4 marzo 2015",
+    "url": "https://www.who.int/news/item/04-03-2015-who-calls-on-countries-to-reduce-sugars-intake-among-adults-and-children",
+    "type": "linea guida"
+  },
+  "K6": {
+    "label": "Istituto Superiore di Sanità. OKkio alla SALUTE, indagine 2023: dati",
+    "url": "https://www.epicentro.iss.it/okkioallasalute/indagine-2023-dati",
+    "type": "rapporto"
+  },
+  "K7": {
+    "label": "CREA. Linee guida per una sana alimentazione, 2018 (scheda EpiCentro ISS)",
+    "url": "https://www.epicentro.iss.it/alimentazione/linee-guida-sana-alimentazione-crea-2018",
+    "type": "linea guida"
+  },
+  "K8": {
+    "label": "Nolt D, Moore S, Yan AC, Melnick L; AAP Committee on Infectious Diseases, Council on School Health. Head Lice. Pediatrics. 2022;150(4):e2022059282",
+    "url": "https://doi.org/10.1542/peds.2022-059282",
+    "type": "clinical report"
+  },
+  "K9": {
+    "label": "AAP, AAPOS, AACO, AAO. Visual System Assessment in Infants, Children, and Young Adults by Pediatricians. Pediatrics. 2016;137(1):e20153596",
+    "url": "https://doi.org/10.1542/peds.2015-3596",
+    "type": "policy statement"
+  },
+  "K10": {
+    "label": "NICE. Quality statement 1: Headaches and red flag symptoms in children (QS198)",
+    "url": "https://www.nice.org.uk/guidance/QS198/chapter/quality-statement-1-headaches-and-red-flag-symptoms-in-children",
+    "type": "linea guida"
+  },
+  "K11": {
+    "label": "Oskoui M et al. Practice guideline update summary: Acute treatment of migraine in children and adolescents (AAN/AHS). Headache. 2019;59(8):1158-1173",
+    "url": "https://doi.org/10.1111/head.13628",
+    "type": "linea guida"
+  },
+  "K12": {
+    "label": "ISS - SNLG. Linea guida sulla gestione dei Disturbi Specifici dell'Apprendimento (LG 389), 2022",
+    "url": "https://www.iss.it/documents/20126/8331678/LG-389-AIP_DSA",
+    "type": "linea guida"
+  },
+  "K13": {
+    "label": "Legge 8 ottobre 2010, n. 170: Nuove norme in materia di disturbi specifici di apprendimento in ambito scolastico",
+    "url": "https://www.normattiva.it/eli/id/2010/10/18/010G0192/CONSOLIDATED/",
+    "type": "norma"
+  },
+  "K14": {
+    "label": "NICE. Attention deficit hyperactivity disorder: diagnosis and management (NG87), 2018, aggiornata 2019",
+    "url": "https://www.nice.org.uk/guidance/ng87",
+    "type": "linea guida"
+  },
+  "K15": {
+    "label": "Polanczyk GV, Salum GA, Sugaya LS, Caye A, Rohde LA. Annual Research Review: A meta-analysis of the worldwide prevalence of mental disorders in children and adolescents. J Child Psychol Psychiatry. 2015;56(3):345-365",
+    "url": "https://doi.org/10.1111/jcpp.12381",
+    "type": "meta-analisi"
+  },
+  "K16": {
+    "label": "Lebowitz ER, Marin C, Martino A, Shimshoni Y, Silverman WK. Parent-based treatment as efficacious as cognitive-behavioral therapy for childhood anxiety: a randomized noninferiority study of supportive parenting for anxious childhood emotions (SPACE). J Am Acad Child Adolesc Psychiatry. 2020;59(3):362-372",
+    "url": "https://doi.org/10.1016/j.jaac.2019.02.014",
+    "type": "RCT"
+  },
+  "K17": {
+    "label": "Walter HJ et al. Clinical Practice Guideline for the Assessment and Treatment of Children and Adolescents With Anxiety Disorders (AACAP). J Am Acad Child Adolesc Psychiatry. 2020;59(10):1107-1124",
+    "url": "https://doi.org/10.1016/j.jaac.2020.05.005",
+    "type": "linea guida"
+  },
+  "K18": {
+    "label": "ISS - EpiCentro. HBSC 2022: bullismo e cyberbullismo (indagine 2022)",
+    "url": "https://www.epicentro.iss.it/hbsc/indagine-2022-bullismo",
+    "type": "ente sanitario"
+  },
+  "K19": {
+    "label": "Moore SE et al. Consequences of bullying victimization in childhood and adolescence: a systematic review and meta-analysis. World J Psychiatry. 2017;7(1):60-76",
+    "url": "https://doi.org/10.5498/wjp.v7.i1.60",
+    "type": "meta-analisi"
+  },
+  "K20": {
+    "label": "Gaffney H, Ttofi MM, Farrington DP. Effectiveness of school-based programs to reduce bullying perpetration and victimization: an updated systematic review and meta-analysis. Campbell Syst Rev. 2021;17:e1143",
+    "url": "https://doi.org/10.1002/cl2.1143",
+    "type": "meta-analisi"
+  },
+  "K21": {
+    "label": "Legge 29 maggio 2017, n. 71: Disposizioni a tutela dei minori per la prevenzione e il contrasto del fenomeno del cyberbullismo (testo consolidato, modificato nel 2024: bullismo e cyberbullismo), art. 2",
+    "url": "https://www.normattiva.it/eli/id/2017/06/03/17G00085/CONSOLIDATED",
+    "type": "norma"
+  },
+  "K22": {
+    "label": "Cooper H, Robinson JC, Patall EA. Does homework improve academic achievement? A synthesis of research, 1987-2003. Rev Educ Res. 2006;76(1):1-62",
+    "url": "https://doi.org/10.3102/00346543076001001",
+    "type": "revisione sistematica"
+  },
+  "K23": {
+    "label": "Decreto del Ministero della Salute 24 aprile 2013, art. 3 (certificazione dell'attività sportiva non agonistica) (GU n. 169 del 20/7/2013)",
+    "url": "https://www.federciclismo.it/download/207/decreti-ministeriali/163610/d-m-del-24-aprile-2013.pdf",
+    "type": "norma"
+  },
+  "K24": {
+    "label": "SIP - Società Italiana di Pediatria. Il bambino digitale",
+    "url": "https://www.sip.it/il-bambino-digitale/",
+    "type": "società scientifica"
+  },
+  "K25": {
+    "label": "Orben A, Przybylski AK. The association between adolescent well-being and digital technology use. Nat Hum Behav. 2019;3:173-182",
+    "url": "https://doi.org/10.1038/s41562-018-0506-1",
+    "type": "studio osservazionale"
+  },
+  "K26": {
+    "label": "D.Lgs. 30 giugno 2003, n. 196 (Codice in materia di protezione dei dati personali), art. 2-quinquies",
+    "url": "https://www.brocardi.it/codice-della-privacy/parte-i/titolo-i/capo-ii/art2quinquies.html",
+    "type": "norma"
+  },
+  "K27": {
+    "label": "ASAPS. Seggiolini auto: dal 1 settembre 2024 in vendita solo i seggiolini R129 (i-Size)",
+    "url": "https://asaps.it/downloads/files/ASAPS%20scheda%20seggiolini%20dal%201_settembre%202024(3)%20(1).pdf",
+    "type": "rapporto"
+  },
+  "K28": {
+    "label": "Thomson JA et al. Influence of virtual reality training on the roadside crossing judgments of child pedestrians. J Exp Psychol Appl. 2005;11(3):175-186",
+    "url": "https://doi.org/10.1037/1076-898X.11.3.175",
+    "type": "studio sperimentale"
+  },
+  "K29": {
+    "label": "Ahovuo-Saloranta A et al. Sealants for preventing dental caries in the permanent teeth. Cochrane Database Syst Rev. 2017;CD001830.pub5",
+    "url": "https://doi.org/10.1002/14651858.CD001830.pub5",
+    "type": "revisione sistematica"
   }
 }

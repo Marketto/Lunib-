@@ -359,5 +359,103 @@
         "Сомнения в слухе или зрении."
       ]
     }
+  },
+  {
+    "id": "adhd",
+    "category": "sviluppo",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "K14",
+      "K15"
+    ],
+    "it": {
+      "title": "ADHD: attenzione e iperattività",
+      "summary": "Un po' di distrazione e irrequietezza è comune a questa età. Il NICE spiega come procede la valutazione dell'ADHD, che può essere diagnosticato solo da uno specialista. Parlane col pediatra se i problemi pesano su scuola e casa.",
+      "keywords": [
+        "ADHD",
+        "iperattività",
+        "disattento",
+        "distratto",
+        "irrequieto",
+        "impulsivo",
+        "non sta fermo",
+        "concentrazione",
+        "attenzione",
+        "deficit di attenzione",
+        "scuola",
+        "comportamento",
+        "specialista"
+      ],
+      "research": [
+        "Una meta-analisi sulla prevalenza dei disturbi mentali in bambini e adolescenti (41 studi in 27 paesi; Polanczyk 2015) ha stimato l'ADHD al 3,4% (2,6–4,5).",
+        "Il NICE (NG87, 2018, aggiornata 2019) indica che la diagnosi di ADHD spetta solo a uno specialista (1.3.1).",
+        "Il NICE (NG87) indica che si può considerare un'attesa vigile fino a 10 settimane, con invio allo specialista se le difficoltà persistono con compromissione almeno moderata (1.2.7); se la compromissione è grave, invio diretto (1.2.8).",
+        {
+          "t": "Per i bambini di 5 anni e più il NICE (NG87) indica un sostegno ai genitori mirato all'ADHD (1.5.10).",
+          "from": 72,
+          "to": 144
+        },
+        "Il NICE (NG87) indica di valutare i farmaci solo se una compromissione significativa persiste dopo i cambiamenti dell'ambiente (1.5.13)."
+      ],
+      "tips": [
+        "Annota con esempi quando e dove compaiono le difficoltà (casa, scuola, sport) e da quanto tempo.",
+        "Parlane con gli insegnanti per avere uno sguardo da più contesti.",
+        "Parlane col pediatra, che può indirizzarti a uno specialista: la diagnosi non si fa da soli.",
+        "Routine prevedibili, istruzioni brevi e una cosa alla volta possono aiutare a casa.",
+        "Un sostegno per i genitori centrato sull'ADHD può essere utile: chiedi allo specialista."
+      ],
+      "redFlags": [
+        "Le difficoltà di attenzione o l'irrequietezza durano da tempo e pesano su scuola, amicizie o vita familiare.",
+        "Il bambino si mette in pericolo per impulsività.",
+        "Insegnanti e famiglia notano le stesse difficoltà in più contesti.",
+        "Il bambino è molto scoraggiato o dice di non farcela."
+      ]
+    },
+    "ru": {
+      "title": "СДВГ: внимание и гиперактивность",
+      "summary": "Некоторая рассеянность и непоседливость в этом возрасте встречаются часто. NICE описывает, как проходит оценка СДВГ, который может диагностировать только специалист. Поговорите с педиатром, если трудности мешают в школе и дома.",
+      "keywords": [
+        "СДВГ",
+        "гиперактивность",
+        "невнимательный",
+        "рассеянный",
+        "непоседа",
+        "импульсивный",
+        "не сидит на месте",
+        "концентрация",
+        "внимание",
+        "дефицит внимания",
+        "школа",
+        "поведение",
+        "специалист"
+      ],
+      "research": [
+        "Метаанализ распространённости психических расстройств у детей и подростков (41 исследование в 27 странах; Polanczyk, 2015) оценил распространённость СДВГ в 3,4% (2,6–4,5).",
+        "NICE (NG87, 2018, обновлено в 2019) указывает, что диагноз СДВГ ставит только специалист (1.3.1).",
+        "NICE (NG87) указывает, что можно рассмотреть наблюдение до 10 недель с направлением к специалисту, если трудности сохраняются и нарушения как минимум умеренные (1.2.7); при тяжёлых нарушениях — сразу направлять к специалисту (1.2.8).",
+        {
+          "t": "Для детей от 5 лет NICE (NG87) указывает поддержку родителей, направленную на СДВГ (1.5.10).",
+          "from": 72,
+          "to": 144
+        },
+        "NICE (NG87) указывает рассматривать лекарства, только если значительные нарушения сохраняются после изменений в окружении (1.5.13)."
+      ],
+      "tips": [
+        "Записывайте с примерами, когда и где возникают трудности (дома, в школе, в спорте) и как давно.",
+        "Поговорите с учителями, чтобы увидеть ребёнка в разных обстановках.",
+        "Обсудите это с педиатром, который может направить к специалисту: диагноз самостоятельно не ставится.",
+        "Предсказуемый распорядок, короткие инструкции и по одному делу за раз могут помочь дома.",
+        "Поддержка родителей, ориентированная на СДВГ, может быть полезной: спросите специалиста."
+      ],
+      "redFlags": [
+        "Трудности с вниманием или непоседливость длятся давно и мешают школе, дружбе или жизни семьи.",
+        "Ребёнок подвергает себя опасности из-за импульсивности.",
+        "Учителя и семья замечают одни и те же трудности в разных обстановках.",
+        "Ребёнок сильно упал духом или говорит, что у него не получается."
+      ]
+    }
   }
 ]

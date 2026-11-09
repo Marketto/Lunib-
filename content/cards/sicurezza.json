@@ -425,5 +425,96 @@
         "Меняйте шлем после сильного удара."
       ]
     }
+  },
+  {
+    "id": "strada-auto",
+    "category": "sicurezza",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "D11",
+      "K27",
+      "K28"
+    ],
+    "it": {
+      "title": "In auto e per strada a 6-12 anni",
+      "summary": "Sotto 1,50 m di altezza il bambino viaggia con un sistema di ritenuta omologato. Per attraversare la strada, un solo studio sperimentale ha rilevato miglioramenti con l'allenamento simulato.",
+      "keywords": [
+        "seggiolino",
+        "rialzo",
+        "auto",
+        "cintura",
+        "1,50 m",
+        "R129",
+        "i-Size",
+        "R44",
+        "attraversare la strada",
+        "pedone",
+        "educazione stradale",
+        "strada",
+        "sicurezza stradale"
+      ],
+      "research": [
+        {
+          "t": "Codice della Strada (art. 172, comma 1): i bambini più bassi di 1,50 m devono viaggiare assicurati con un sistema di ritenuta omologato adatto al loro peso.",
+          "from": 72,
+          "to": 144,
+          "strict": true
+        },
+        "Dal 1 settembre 2024 in vendita solo seggiolini R129 (i-Size); i seggiolini R44 già posseduti si possono ancora usare (ASAPS).",
+        {
+          "t": "Uno studio sperimentale controllato (Thomson 2005) ha rilevato che l'allenamento in realtà virtuale ha migliorato i giudizi nell'attraversamento di bambini di 7, 9 e 11 anni, con miglioramenti mantenuti a 8 mesi; è un singolo studio.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Controlla l'altezza: finché è sotto 1,50 m serve il sistema di ritenuta omologato adatto al peso.",
+        "Se hai già un seggiolino R44, puoi continuare a usarlo; nuovi acquisti sono R129.",
+        "Esercitati ad attraversare insieme, parlando di cosa guardare (lo studio citato usava un allenamento simulato, non la strada reale).",
+        "Per approfondire consulta il testo dell'art. 172 e lo studio di Thomson (2005)."
+      ]
+    },
+    "ru": {
+      "title": "В машине и на дороге в 6-12 лет",
+      "summary": "Ребёнок ростом ниже 1,50 м ездит с сертифицированным удерживающим устройством. При переходе дороги одно экспериментальное исследование выявило улучшение после тренировки в симуляторе.",
+      "keywords": [
+        "автокресло",
+        "бустер",
+        "машина",
+        "ремень",
+        "1,50 м",
+        "R129",
+        "i-Size",
+        "R44",
+        "переход дороги",
+        "пешеход",
+        "уроки дорожной безопасности",
+        "дорога",
+        "безопасность на дороге"
+      ],
+      "research": [
+        {
+          "t": "Дорожный кодекс (ст. 172, п. 1): дети ростом ниже 1,50 м должны перевозиться в сертифицированном (омологированном) детском удерживающем устройстве, подходящем по весу.",
+          "from": 72,
+          "to": 144,
+          "strict": true
+        },
+        "С 1.09.2024 в продаже только кресла R129 (i-Size); уже имеющиеся R44 можно использовать (ASAPS).",
+        {
+          "t": "Контролируемое экспериментальное исследование (Thomson, 2005) выявило, что тренировка в виртуальной реальности улучшила оценку при переходе дороги у детей 7, 9 и 11 лет, а улучшения сохранялись через 8 месяцев; это одно исследование.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Проверьте рост: пока он ниже 1,50 м, нужно сертифицированное удерживающее устройство по весу.",
+        "Если у вас уже есть кресло R44, его можно продолжать использовать; новые покупки — R129.",
+        "Тренируйтесь переходить дорогу вместе, обсуждая, куда смотреть (в упомянутом исследовании использовалась тренировка в симуляторе, а не на реальной дороге).",
+        "Чтобы узнать больше, прочитайте текст статьи 172 и исследование Thomson (2005)."
+      ]
+    }
   }
 ]

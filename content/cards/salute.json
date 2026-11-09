@@ -1200,5 +1200,363 @@
         "Снова начал писаться после долгого «сухого» периода или очень переживает."
       ]
     }
+  },
+  {
+    "id": "pidocchi",
+    "category": "salute",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "K8"
+    ],
+    "it": {
+      "title": "Pidocchi: cosa dicono le linee guida",
+      "summary": "I pidocchi sono frequenti a scuola e non sono un segno di scarsa igiene. L'AAP raccomanda di non escludere i bambini dalla scuola. Sul trattamento scegli con pediatra o farmacista.",
+      "keywords": [
+        "pidocchi",
+        "lendini",
+        "prurito alla testa",
+        "testa",
+        "capelli",
+        "scuola",
+        "pediculosi",
+        "pettinino",
+        "infestazione",
+        "contagio",
+        "trattamento"
+      ],
+      "research": [
+        "L'AAP (Nolt 2022) raccomanda di abbandonare le politiche «no-nit», che escludono dalla scuola chi ha lendini, e di non limitare la frequenza scolastica per i pidocchi.",
+        "L'AAP (Nolt 2022) segnala che lo screening dei pidocchi a scuola non è conveniente in termini di costo-efficacia.",
+        "Un'indagine statunitense citata dall'AAP (Nolt 2022) ha trovato pidocchi nell'1,6% dei bambini e lendini nel 3,6%.",
+        "Secondo l'AAP (Nolt 2022) è improbabile che le lendini a più di 1 cm dal cuoio capelluto siano vitali.",
+        "L'AAP (Nolt 2022) indica che esistono diversi trattamenti approvati, da scegliere con pediatra o farmacista perché le età d'uso dei prodotti sono diverse; per alcuni è necessario ripetere solo se si vedono ancora pidocchi vivi. Il pettinino a umido è un'opzione con prove limitate. L'AAP sconsiglia i prodotti non approvati."
+      ],
+      "tips": [
+        "Controlla i capelli con luce buona e un pettinino fitto, soprattutto se il bambino si gratta.",
+        "Se trovi pidocchi vivi, parlane con il pediatra o il farmacista prima di scegliere un trattamento.",
+        "Evita prodotti non approvati o rimedi improvvisati.",
+        "Se informi la scuola o altre famiglie, fallo con discrezione: l'AAP sottolinea la riservatezza per evitare lo stigma.",
+        "Lavarsi spesso non basta a evitarli: non è questione di igiene."
+      ]
+    },
+    "ru": {
+      "title": "Вши: что говорят рекомендации",
+      "summary": "Вши часто встречаются в школе и не признак плохой гигиены. AAP рекомендует не отстранять детей от школы. Способ лечения выбирайте вместе с педиатром или фармацевтом.",
+      "keywords": [
+        "вши",
+        "гниды",
+        "зуд головы",
+        "голова",
+        "волосы",
+        "школа",
+        "педикулёз",
+        "частый гребень",
+        "заражение",
+        "лечение"
+      ],
+      "research": [
+        "AAP (Nolt, 2022) рекомендует отказаться от политики «no-nit», при которой детей с гнидами не допускают в школу, и не ограничивать посещение школы из-за вшей.",
+        "AAP (Nolt, 2022) отмечает, что школьный скрининг на вшей неэффективен с точки зрения затрат и результата.",
+        "Опрос в США, приведённый AAP (Nolt, 2022), нашёл вшей у 1,6% детей и гниды у 3,6%.",
+        "По данным AAP (Nolt, 2022), гниды дальше 1 см от кожи головы вряд ли жизнеспособны.",
+        "AAP (Nolt, 2022) указывает, что существует несколько одобренных средств, которые выбирают вместе с педиатром или фармацевтом, так как возрастные ограничения у продуктов разные; после некоторых повторная обработка нужна, только если снова видны живые вши. Влажное вычёсывание — вариант с ограниченными доказательствами. AAP не рекомендует неодобренные средства."
+      ],
+      "tips": [
+        "Осмотрите волосы при хорошем свете частым гребнем, особенно если ребёнок чешется.",
+        "Если нашли живых вшей, обсудите это с педиатром или фармацевтом, прежде чем выбирать средство.",
+        "Избегайте неодобренных средств и самодельных рецептов.",
+        "Если сообщаете школе или другим семьям, делайте это деликатно: AAP подчёркивает важность конфиденциальности, чтобы избежать стигмы.",
+        "Частое мытьё не защищает от вшей: дело не в гигиене."
+      ]
+    }
+  },
+  {
+    "id": "vista",
+    "category": "salute",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "K9"
+    ],
+    "it": {
+      "title": "Vista: controlli e segnali da non trascurare",
+      "summary": "Il controllo della vista rientra nelle visite pediatriche di routine. Se un controllo non è superato o c'è un'anomalia, il pediatra indirizza allo specialista.",
+      "keywords": [
+        "vista",
+        "occhi",
+        "occhiali",
+        "miopia",
+        "strabismo",
+        "occhio pigro",
+        "ambliopia",
+        "vedere",
+        "lavagna",
+        "strizza gli occhi",
+        "oculista",
+        "riflesso rosso",
+        "palpebra"
+      ],
+      "research": [
+        "Le società pediatriche e oculistiche statunitensi (AAP, AAPOS, AACO, AAO 2016) raccomandano controlli della vista nelle visite pediatriche di routine.",
+        {
+          "t": "Secondo le stesse società (AAP, AAPOS, AACO, AAO 2016) la misura dell'acuità visiva con optotipi è lo standard dai 4 anni ed è più affidabile dai 6.",
+          "from": 72,
+          "to": 144
+        },
+        "Le stesse società (AAP, AAPOS, AACO, AAO 2016) indicano di inviare allo specialista se un controllo non è superato o se si trova un'anomalia, e di considerare familiari di primo grado con ambliopia o strabismo."
+      ],
+      "tips": [
+        "Chiedi al pediatra che la vista sia controllata alle visite di routine.",
+        "Se noti che fatica a vedere (per esempio la lavagna o leggendo), parlane con il pediatra.",
+        "Se un controllo non è superato, fissa la visita con lo specialista senza aspettare.",
+        "Segnala al pediatra se in famiglia ci sono casi di strabismo o occhio pigro.",
+        "Se usa occhiali, parlane con lo specialista per i controlli successivi."
+      ],
+      "redFlags": [
+        "Lacrimazione con fastidio alla luce o cornea opaca o ingrandita: valutazione specialistica tempestiva.",
+        "Palpebra cadente con pupille di dimensioni diverse.",
+        "Riflesso rosso anomalo.",
+        "Parenti di primo grado con ambliopia o strabismo: parlane con il pediatra.",
+        "Un controllo della vista non superato o un'anomalia riscontrata: visita dallo specialista."
+      ]
+    },
+    "ru": {
+      "title": "Зрение: проверки и признаки, которые нельзя пропускать",
+      "summary": "Проверка зрения входит в плановые визиты к педиатру. Если проверка не пройдена или найдена аномалия, педиатр направляет к специалисту.",
+      "keywords": [
+        "зрение",
+        "глаза",
+        "очки",
+        "близорукость",
+        "косоглазие",
+        "ленивый глаз",
+        "амблиопия",
+        "видеть",
+        "доска",
+        "щурится",
+        "окулист",
+        "красный рефлекс",
+        "веко"
+      ],
+      "research": [
+        "Американские педиатрические и офтальмологические общества (AAP, AAPOS, AACO, AAO, 2016) рекомендуют проверять зрение во время плановых визитов к педиатру.",
+        {
+          "t": "По данным тех же обществ (AAP, AAPOS, AACO, AAO, 2016), измерение остроты зрения по оптотипам — стандарт с 4 лет и надёжнее с 6.",
+          "from": 72,
+          "to": 144
+        },
+        "Те же общества (AAP, AAPOS, AACO, AAO, 2016) указывают направлять к специалисту, если проверка не пройдена или найдена аномалия, и учитывать родственников первой степени с амблиопией или косоглазием."
+      ],
+      "tips": [
+        "Просите педиатра проверять зрение на плановых визитах.",
+        "Если замечаете, что ребёнку трудно видеть (например, доску или при чтении), поговорите с педиатром.",
+        "Если проверка не пройдена, запишитесь к специалисту, не откладывая.",
+        "Сообщите педиатру, если в семье были случаи косоглазия или ленивого глаза.",
+        "Если ребёнок носит очки, обсудите со специалистом дальнейшие проверки."
+      ],
+      "redFlags": [
+        "Слезотечение со светобоязнью или мутная либо увеличенная роговица: своевременная консультация специалиста.",
+        "Опущенное веко и зрачки разного размера.",
+        "Изменённый красный рефлекс.",
+        "Родственники первой степени с амблиопией или косоглазием: поговорите с педиатром.",
+        "Непройденная проверка зрения или найденная аномалия: визит к специалисту."
+      ]
+    }
+  },
+  {
+    "id": "mal-di-testa",
+    "category": "salute",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "K10",
+      "K11"
+    ],
+    "it": {
+      "title": "Mal di testa nei bambini: segnali da non trascurare",
+      "summary": "Il mal di testa è comune nei bambini. Le linee guida NICE elencano però alcuni segnali per cui chiedere subito una valutazione medica. Parlane con il pediatra.",
+      "keywords": [
+        "mal di testa",
+        "cefalea",
+        "emicrania",
+        "testa che fa male",
+        "nausea",
+        "vomito",
+        "luce",
+        "scuola",
+        "analgesici",
+        "dolore",
+        "segnali di allarme",
+        "trauma cranico"
+      ],
+      "research": [
+        "Il NICE (QS198) elenca i segnali per cui un bambino sotto i 12 anni con mal di testa va inviato subito a valutazione: cefalea che lo sveglia dal sonno, presente al risveglio, che peggiora progressivamente, scatenata o peggiorata da tosse, starnuto o dal chinarsi, con febbre e segni di meningismo, con vomito, difficoltà di equilibrio, di coordinazione o nel parlare (atassia), alterazione della coscienza o letargia, entro 5 giorni da un trauma cranico, con strabismo o mancata deviazione dello sguardo verso l'alto.",
+        "Le linee guida AAN/AHS sul trattamento dell'emicrania in bambini e adolescenti (Oskoui 2019) indicano che i comuni antidolorifici hanno prove di efficacia nei bambini (può consigliarne uno il pediatra), che conviene trattare presto durante l'attacco e che servono indicazioni sui fattori scatenanti e sull'evitare l'uso eccessivo di farmaci."
+      ],
+      "tips": [
+        "Fai riposare il bambino in un ambiente tranquillo e poco luminoso; offri da bere.",
+        "Tieni un breve diario: quando compare, quanto dura, cosa è successo prima (sonno, pasti, stress, schermi).",
+        "Per i farmaci chiedi al pediatra quale usare e come: qui non diamo indicazioni.",
+        "Evita di ricorrere ai farmaci troppo spesso: parlane con il pediatra se servono di frequente.",
+        "Porta il diario alla visita se il mal di testa si ripete."
+      ],
+      "redFlags": [
+        "Mal di testa frequente che interferisce con scuola, gioco o sonno.",
+        "Bisogno di antidolorifici molto spesso: parlane con il pediatra.",
+        "Hai dubbi sul mal di testa o sulle sue cause: parlane con il pediatra."
+      ],
+      "urgent": [
+        "Il mal di testa lo sveglia dal sonno o è presente al risveglio.",
+        "Il mal di testa peggiora progressivamente.",
+        "Compare o peggiora con tosse, starnuto o quando si china.",
+        "Febbre con rigidità del collo o altri segni di meningismo.",
+        "Vomito insieme al mal di testa.",
+        "Difficoltà di equilibrio, di coordinazione o nel parlare (atassia).",
+        "Alterazione della coscienza o insolita sonnolenza (letargia).",
+        "Mal di testa entro 5 giorni da un colpo alla testa.",
+        "Strabismo o incapacità di guardare verso l'alto."
+      ]
+    },
+    "ru": {
+      "title": "Головная боль у детей: признаки, которые нельзя пропускать",
+      "summary": "Головная боль у детей встречается часто. Однако рекомендации NICE перечисляют признаки, при которых нужно сразу обратиться к врачу. Поговорите с педиатром.",
+      "keywords": [
+        "головная боль",
+        "мигрень",
+        "болит голова",
+        "тошнота",
+        "рвота",
+        "свет",
+        "школа",
+        "обезболивающие",
+        "боль",
+        "тревожные признаки",
+        "травма головы"
+      ],
+      "research": [
+        "NICE (QS198) перечисляет признаки, при которых ребёнка младше 12 лет с головной болью нужно сразу направить на оценку: боль будит ребёнка ото сна, присутствует при пробуждении, постепенно усиливается, возникает или усиливается от кашля, чихания или наклона, сопровождается температурой и признаками менингизма, рвотой, нарушением равновесия, координации или речи (атаксией), нарушением сознания или вялостью, появилась в течение 5 дней после травмы головы, сопровождается косоглазием или невозможностью взгляда вверх.",
+        "Рекомендации AAN/AHS по лечению мигрени у детей и подростков (Oskoui, 2019) указывают, что у распространённых обезболивающих есть доказательства эффективности у детей (какое-либо из них может посоветовать педиатр), что лечить лучше рано во время приступа и что нужны советы по провоцирующим факторам и по недопущению чрезмерного применения лекарств."
+      ],
+      "tips": [
+        "Дайте ребёнку отдохнуть в тихом и неярком месте; предложите попить.",
+        "Ведите короткий дневник: когда появляется, сколько длится, что было до этого (сон, еда, стресс, экраны).",
+        "По поводу лекарств спросите педиатра, что и как использовать: здесь мы не даём указаний.",
+        "Не прибегайте к лекарствам слишком часто: поговорите с педиатром, если они нужны часто.",
+        "Возьмите дневник на приём, если боль повторяется."
+      ],
+      "redFlags": [
+        "Частая головная боль, которая мешает школе, играм или сну.",
+        "Очень частая потребность в обезболивающих: поговорите с педиатром.",
+        "Есть сомнения насчёт головной боли или её причин: обсудите это с педиатром."
+      ],
+      "urgent": [
+        "Головная боль будит ребёнка ото сна или есть при пробуждении.",
+        "Головная боль постепенно усиливается.",
+        "Появляется или усиливается от кашля, чихания или наклона.",
+        "Температура с ригидностью шеи или другими признаками менингизма.",
+        "Рвота вместе с головной болью.",
+        "Нарушение равновесия, координации или речи (атаксия).",
+        "Нарушение сознания или необычная сонливость (вялость).",
+        "Головная боль в течение 5 дней после удара по голове.",
+        "Косоглазие или невозможность смотреть вверх."
+      ]
+    }
+  },
+  {
+    "id": "denti-6-12",
+    "category": "salute",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "K29",
+      "B17"
+    ],
+    "it": {
+      "title": "Denti a 6-12 anni: sigillanti e fluoro",
+      "summary": "I sigillanti sui primi molari permanenti riducono la carie nei bambini di 5-10 anni; per lavare i denti sopra i 6 anni le linee guida EAPD indicano dentifricio al fluoro due volte al giorno.",
+      "keywords": [
+        "denti",
+        "carie",
+        "sigillanti",
+        "molari",
+        "dentifricio",
+        "fluoro",
+        "lavaggio denti",
+        "spazzolino",
+        "dentista",
+        "denti permanenti",
+        "igiene orale",
+        "sciacquare"
+      ],
+      "research": [
+        "Una revisione Cochrane (Ahovuo-Saloranta 2017) su bambini di 5-10 anni: i sigillanti in resina sui primi molari permanenti, rispetto a nessun sigillante, riducono la carie a 24 mesi (OR 0,12; IC 0,08-0,19; 7 studi; certezza moderata).",
+        "Nella stessa revisione (Ahovuo-Saloranta 2017) a 48-54 mesi l'OR è 0,21 (IC 0,16-0,28).",
+        {
+          "t": "Le linee guida EAPD (Toumba 2019) per chi ha più di 6 anni indicano dentifricio con 1450 ppm di fluoro, due volte al giorno, in quantità di 0,5-1 g (fino a coprire tutta la testina dello spazzolino).",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "Le stesse linee guida EAPD (Toumba 2019) indicano di aiutare o supervisionare il lavaggio fino ad almeno 7 anni e di evitare di sciacquare con molta acqua dopo il lavaggio.",
+          "from": 72,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Lava i denti due volte al giorno con dentifricio al fluoro.",
+        "Controlla il lavaggio finché non ha almeno 7 anni.",
+        "Dopo il lavaggio, niente risciacqui abbondanti con acqua.",
+        "Chiedi al dentista se i primi molari permanenti possono essere sigillati.",
+        "Per approfondire consulta la revisione Cochrane e le linee guida EAPD."
+      ]
+    },
+    "ru": {
+      "title": "Зубы в 6-12 лет: герметики и фтор",
+      "summary": "Герметики на первых постоянных молярах снижают кариес у детей 5-10 лет; для чистки зубов после 6 лет руководство EAPD указывает зубную пасту с фтором два раза в день.",
+      "keywords": [
+        "зубы",
+        "кариес",
+        "герметики",
+        "моляры",
+        "зубная паста",
+        "фтор",
+        "чистка зубов",
+        "зубная щётка",
+        "стоматолог",
+        "постоянные зубы",
+        "гигиена полости рта",
+        "полоскание"
+      ],
+      "research": [
+        "Кокрейновский обзор (Ahovuo-Saloranta, 2017) на детях 5-10 лет: герметики на основе смолы на первых постоянных молярах по сравнению с их отсутствием снижают кариес через 24 месяца (OR 0,12; ДИ 0,08-0,19; 7 исследований; умеренная достоверность).",
+        "В том же обзоре (Ahovuo-Saloranta, 2017) через 48-54 месяца OR равен 0,21 (ДИ 0,16-0,28).",
+        {
+          "t": "Руководство EAPD (Toumba, 2019) для детей старше 6 лет указывает зубную пасту с 1450 ppm фтора два раза в день в количестве 0,5-1 г (вплоть до всей длины щетинок).",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "То же руководство EAPD (Toumba, 2019) советует помогать ребёнку чистить зубы или присматривать за чисткой как минимум до 7 лет и не полоскать рот большим количеством воды после чистки.",
+          "from": 72,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Чистите зубы два раза в день зубной пастой с фтором.",
+        "Следите за чисткой, пока ребёнку не исполнится хотя бы 7 лет.",
+        "После чистки пусть ребёнок не полощет рот большим количеством воды.",
+        "Спросите стоматолога, можно ли загерметизировать первые постоянные моляры.",
+        "Чтобы узнать больше, прочитайте обзор Cochrane и руководство EAPD."
+      ]
+    }
   }
 ]

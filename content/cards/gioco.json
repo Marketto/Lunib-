@@ -1008,5 +1008,185 @@
         "Без давления на результат: спрашивайте, было ли весело, а не победил ли он."
       ]
     }
+  },
+  {
+    "id": "sport-6-12",
+    "category": "gioco",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "P2",
+      "K23"
+    ],
+    "it": {
+      "title": "Sport a 6-12 anni: pause e certificato",
+      "summary": "L'AAP raccomanda pause regolari dallo sport principale e di non specializzarsi troppo presto. Il certificato non agonistico annuale serve per le attività sportive parascolastiche organizzate dalla scuola, per chi svolge attività organizzate dal CONI o da società affiliate a Federazioni, Discipline associate o Enti di promozione sportiva riconosciuti dal CONI senza essere atleta agonista, e per i Giochi sportivi studenteschi prima della fase nazionale.",
+      "keywords": [
+        "sport",
+        "allenamento",
+        "pausa",
+        "specializzazione",
+        "una sola disciplina",
+        "certificato",
+        "certificato medico",
+        "non agonistico",
+        "attività parascolastiche",
+        "scuola",
+        "palestra",
+        "società sportiva"
+      ],
+      "research": [
+        "Un clinical report dell'AAP (Brenner 2016), non basato su trial, raccomanda almeno 1-2 giorni a settimana di pausa dallo sport principale.",
+        "Lo stesso clinical report (Brenner 2016) raccomanda almeno 3 mesi l'anno di pausa dallo sport principale, a blocchi di 1 mese.",
+        "Lo stesso clinical report (Brenner 2016) consiglia di rimandare la specializzazione in un solo sport fino alla tarda adolescenza (circa 15-16 anni).",
+        "Decreto del Ministero della Salute 24 aprile 2013 (art. 3): il certificato di attività sportiva non agonistica, annuale, serve agli alunni che svolgono attività fisico-sportive organizzate dalla scuola nelle «attività parascolastiche», a chi svolge attività organizzate dal CONI o da società affiliate a Federazioni, Discipline associate o Enti di promozione sportiva riconosciuti dal CONI senza essere atleta agonista, e a chi partecipa ai Giochi sportivi studenteschi nelle fasi precedenti a quella nazionale; lo rilascia il medico di famiglia o il pediatra del bambino, oppure il medico dello sport."
+      ],
+      "tips": [
+        "Prevedi ogni settimana almeno 1-2 giorni senza lo sport principale.",
+        "Pianifica nell'anno almeno 3 mesi di pausa dallo sport principale, a blocchi di 1 mese.",
+        "Lascia che il bambino provi più sport invece di sceglierne uno solo troppo presto.",
+        "Per il certificato non agonistico chiedi al pediatra o al medico di famiglia.",
+        "Per approfondire consulta il clinical report AAP (Brenner 2016) e il testo del decreto."
+      ]
+    },
+    "ru": {
+      "title": "Спорт в 6-12 лет: перерывы и справка",
+      "summary": "AAP рекомендует регулярно делать перерывы в основном виде спорта и не специализироваться слишком рано. Ежегодная справка для некоревновательного спорта (non agonistico) нужна: для спортивных внеурочных занятий, организованных школой (attività parascolastiche); для занятий, организованных CONI или клубами, аффилированными со спортивными федерациями, ассоциированными дисциплинами или признанными CONI организациями по развитию спорта (enti di promozione sportiva), если ребёнок не зарегистрирован как спортсмен-участник соревнований (atleta agonista); для участия в школьных спортивных играх (Giochi sportivi studenteschi) до национального этапа.",
+      "keywords": [
+        "спорт",
+        "тренировка",
+        "перерыв",
+        "специализация",
+        "один вид спорта",
+        "справка",
+        "медицинская справка",
+        "некоревновательный (non agonistico)",
+        "занятия при школе",
+        "parascolastiche",
+        "спортзал",
+        "спортивный клуб"
+      ],
+      "research": [
+        "Клинический отчёт AAP (Brenner, 2016), основанный не на клинических испытаниях, рекомендует не менее 1-2 дней в неделю перерыва от основного вида спорта.",
+        "Тот же клинический отчёт (Brenner, 2016) рекомендует не менее 3 месяцев в год перерыва от основного вида спорта, блоками по 1 месяцу.",
+        "Тот же клинический отчёт (Brenner, 2016) советует отложить специализацию в одном виде спорта до позднего подросткового возраста (примерно 15-16 лет).",
+        "Декрет Министерства здравоохранения от 24 апреля 2013 (ст. 3): ежегодная справка для некоревновательного спорта (non agonistico) нужна: ученикам, занимающимся физической активностью или спортом во внеурочных занятиях, организованных школой (attività parascolastiche); для занятий, организованных CONI или клубами, аффилированными со спортивными федерациями, ассоциированными дисциплинами или признанными CONI организациями по развитию спорта (enti di promozione sportiva), если ребёнок не зарегистрирован как спортсмен-участник соревнований (atleta agonista); для участия в школьных спортивных играх (Giochi sportivi studenteschi) до национального этапа. Её выдаёт семейный врач или педиатр ребёнка либо спортивный врач."
+      ],
+      "tips": [
+        "Планируйте каждую неделю не менее 1-2 дней без основного вида спорта.",
+        "Закладывайте в год не менее 3 месяцев перерыва от основного вида спорта, блоками по 1 месяцу.",
+        "Пусть ребёнок пробует разные виды спорта, а не выбирает один слишком рано.",
+        "За справкой для некоревновательного (non agonistico) спорта обратитесь к педиатру или семейному врачу.",
+        "Чтобы узнать больше, прочитайте клинический отчёт AAP (Brenner, 2016) и текст декрета."
+      ]
+    }
+  },
+  {
+    "id": "online-6-12",
+    "category": "gioco",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "K24",
+      "K25",
+      "K26",
+      "D12"
+    ],
+    "it": {
+      "title": "Schermi, internet e social a 6-12 anni",
+      "summary": "La SIP indica meno di 2 ore al giorno dopo i 5 anni, con controllo adulto, e di rimandare smartphone personale e social. I dati sul benessere vengono da adolescenti e mostrano associazioni molto piccole.",
+      "keywords": [
+        "schermi",
+        "internet",
+        "smartphone",
+        "cellulare",
+        "social",
+        "tablet",
+        "videogiochi",
+        "tempo davanti allo schermo",
+        "13 anni",
+        "14 anni",
+        "consenso",
+        "privacy",
+        "controllo genitori",
+        "benessere"
+      ],
+      "research": [
+        {
+          "t": "La SIP (Il bambino digitale) indica, dopo i 5 anni, meno di 2 ore al giorno davanti agli schermi con controllo dell'adulto.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "La SIP indica di non dare uno smartphone personale almeno fino ai 13 anni e di non far usare internet senza supervisione prima dei 13 anni.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "La SIP consiglia di rimandare il più possibile l'accesso ai social.",
+          "from": 72,
+          "to": 144
+        },
+        "Uno studio su 355.358 ADOLESCENTI (Orben e Przybylski 2019), quindi non dati di 6-12 anni, trova un'associazione negativa tra uso della tecnologia digitale e benessere che spiega al massimo lo 0,4% della variabilità del benessere; è correlazionale.",
+        "Codice privacy (D.Lgs. 196/2003, art. 2-quinquies): dai 14 anni un minore può dare il consenso al trattamento dei dati personali per i servizi della società dell'informazione; sotto i 14 anni il consenso spetta a chi esercita la responsabilità genitoriale."
+      ],
+      "tips": [
+        "Concorda con la famiglia regole su tempi e contenuti e rispettale anche tu.",
+        "Usa insieme a lui internet e videogiochi, parlando di ciò che vede.",
+        "Prima dei 13 anni evita che navighi senza supervisione.",
+        "Tieni gli schermi fuori dalla camera e dall'ora prima di dormire (vedi la scheda sul sonno).",
+        "Per approfondire consulta la pagina SIP e gli studi citati."
+      ]
+    },
+    "ru": {
+      "title": "Экраны, интернет и соцсети в 6-12 лет",
+      "summary": "SIP советует менее 2 часов в день после 5 лет под контролем взрослого и отложить личный смартфон и соцсети. Данные о благополучии получены на подростках и показывают очень слабую связь.",
+      "keywords": [
+        "экраны",
+        "интернет",
+        "смартфон",
+        "телефон",
+        "соцсети",
+        "планшет",
+        "видеоигры",
+        "время перед экраном",
+        "13 лет",
+        "14 лет",
+        "согласие",
+        "конфиденциальность",
+        "родительский контроль",
+        "благополучие"
+      ],
+      "research": [
+        {
+          "t": "SIP («Цифровой ребёнок») указывает: после 5 лет менее 2 часов в день перед экранами под контролем взрослого.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "SIP советует не давать личный смартфон как минимум до 13 лет и не разрешать пользоваться интернетом без присмотра до 13 лет.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "SIP рекомендует как можно дольше откладывать доступ к соцсетям.",
+          "from": 72,
+          "to": 144
+        },
+        "Исследование на 355 358 ПОДРОСТКАХ (Orben и Przybylski, 2019), то есть не данные о детях 6-12 лет, находит отрицательную связь между использованием цифровых технологий и благополучием, объясняющую не более 0,4% вариации благополучия; это корреляционные данные.",
+        "Кодекс о защите персональных данных (D.Lgs. 196/2003, ст. 2-quinquies): с 14 лет несовершеннолетний может дать согласие на обработку персональных данных для услуг информационного общества; до 14 лет согласие даёт тот, кто осуществляет родительскую ответственность."
+      ],
+      "tips": [
+        "Договоритесь в семье о правилах по времени и контенту и соблюдайте их сами.",
+        "Пользуйтесь интернетом и видеоиграми вместе с ребёнком, обсуждая увиденное.",
+        "До 13 лет не позволяйте ему сидеть в интернете без присмотра.",
+        "Держите экраны вне спальни и за час до сна (см. карточку про сон).",
+        "Чтобы узнать больше, прочитайте страницу SIP и упомянутые исследования."
+      ]
+    }
   }
 ]

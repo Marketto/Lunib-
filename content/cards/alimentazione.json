@@ -1191,5 +1191,88 @@
         }
       ]
     }
+  },
+  {
+    "id": "alimentazione-6-12",
+    "category": "alimentazione",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "K5",
+      "K6",
+      "K7"
+    ],
+    "it": {
+      "title": "Alimentazione a 6–12 anni: zuccheri, colazione e dati italiani",
+      "summary": "L'OMS raccomanda di contenere gli zuccheri liberi. I dati italiani di OKkio alla SALUTE descrivono abitudini e peso dei bambini: sono dati descrittivi, non prove di causa.",
+      "keywords": [
+        "alimentazione",
+        "mangiare",
+        "zuccheri",
+        "dolci",
+        "bibite",
+        "bevande zuccherate",
+        "aranciata",
+        "succhi",
+        "colazione",
+        "merenda",
+        "sovrappeso",
+        "obesità",
+        "peso",
+        "dieta",
+        "schermi",
+        "linee guida"
+      ],
+      "research": [
+        "L'OMS (2015) raccomanda di ridurre gli zuccheri liberi a meno del 10% dell'energia totale (raccomandazione forte); scendere sotto il 5% (circa 25 g, 6 cucchiaini al giorno per un adulto) darebbe ulteriori benefici (raccomandazione condizionata). Gli zuccheri della frutta fresca, della verdura e quelli naturalmente presenti nel latte non sono considerati zuccheri liberi; quelli dei succhi di frutta sì.",
+        "L'OMS (2015) riporta che i bambini che consumano molte bevande zuccherate hanno più probabilità di essere in sovrappeso: è un'associazione.",
+        "L'indagine OKkio alla SALUTE dell'ISS (2023), su oltre 46.000 bambini di terza primaria (8–9 anni), descrive sovrappeso 19,0% e obesità 9,8% (di cui obesità grave 2,6%, inclusa); bevande zuccherate o gassate ogni giorno 24,6%; nessuna colazione 10,9%, colazione inadeguata 36,5%; schermi per più di 2 ore al giorno 45,1%. Sono dati descrittivi: non indicano cause.",
+        "Le Linee guida per una sana alimentazione del CREA (2018) sono il riferimento italiano per approfondire."
+      ],
+      "tips": [
+        "Per sete, acqua: tieni le bibite zuccherate come eccezione.",
+        "Gli zuccheri della frutta fresca, della verdura e del latte non rientrano negli zuccheri liberi dell'OMS; quelli dei succhi di frutta invece sì.",
+        "Una colazione adeguata è un'abitudine da curare: secondo OKkio 2023 quasi metà dei bambini la salta o la fa inadeguata.",
+        "Mangiare insieme e coinvolgere i bambini nella scelta e nella preparazione dei pasti.",
+        "Per approfondire, consulta le linee guida CREA e parlane col pediatra se hai dubbi sul peso."
+      ]
+    },
+    "ru": {
+      "title": "Питание в 6–12 лет: сахар, завтрак и данные по Италии",
+      "summary": "ВОЗ рекомендует ограничивать свободные сахара. Итальянские данные OKkio alla SALUTE описывают привычки и вес детей: это описательные данные, а не доказательства причины.",
+      "keywords": [
+        "питание",
+        "еда",
+        "сахар",
+        "сладости",
+        "напитки",
+        "сладкие напитки",
+        "газировка",
+        "соки",
+        "завтрак",
+        "перекус",
+        "избыточный вес",
+        "ожирение",
+        "вес",
+        "диета",
+        "экраны",
+        "рекомендации"
+      ],
+      "research": [
+        "ВОЗ (2015) рекомендует снизить свободные сахара до менее чем 10% общей энергии (сильная рекомендация); снижение до менее чем 5% (около 25 г, 6 чайных ложек в день для взрослого) принесло бы дополнительную пользу (условная рекомендация). Сахара свежих фруктов, овощей и естественные сахара молока не считаются свободными; сахара фруктовых соков — считаются.",
+        "ВОЗ (2015) сообщает, что у детей, которые много пьют сладких напитков, вероятность избыточного веса выше: это ассоциация.",
+        "Обследование OKkio alla SALUTE Высшего института здравоохранения (ISS, 2023) более чем 46 000 детей третьего класса начальной школы (8–9 лет) описывает избыточный вес 19,0% и ожирение 9,8% (из них тяжёлое ожирение 2,6%, входит в эту цифру); сладкие или газированные напитки каждый день 24,6%; без завтрака 10,9%, неполноценный завтрак 36,5%; экраны более 2 часов в день 45,1%. Это описательные данные: они не указывают на причины.",
+        "Рекомендации CREA по здоровому питанию (2018) — итальянский источник для углублённого изучения."
+      ],
+      "tips": [
+        "Если хочется пить, давайте воду: сладкие напитки оставьте как исключение.",
+        "Сахара свежих фруктов, овощей и молока не входят в свободные сахара по определению ВОЗ, а сахара фруктовых соков — входят.",
+        "Полноценный завтрак — привычка, о которой стоит заботиться: по данным OKkio 2023 почти половина детей его пропускает или завтракает неполноценно.",
+        "Ешьте вместе и привлекайте детей к выбору и приготовлению еды.",
+        "Для углубления обратитесь к рекомендациям CREA и поговорите с педиатром, если есть сомнения насчёт веса."
+      ]
+    }
   }
 ]

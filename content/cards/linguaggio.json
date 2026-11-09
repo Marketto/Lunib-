@@ -501,5 +501,164 @@
         "Другие сомнения в речи или произношении."
       ]
     }
+  },
+  {
+    "id": "dsa",
+    "category": "linguaggio",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "alta",
+    "sources": [
+      "K12",
+      "K13"
+    ],
+    "it": {
+      "title": "Difficoltà a scuola: DSA",
+      "summary": "I Disturbi Specifici dell'Apprendimento (dislessia, disortografia, disgrafia, discalculia) sono riconosciuti dalla legge. Se leggere, scrivere o fare i conti è molto faticoso, parlane con insegnanti e pediatra: la diagnosi spetta ai servizi specialistici.",
+      "keywords": [
+        "DSA",
+        "dislessia",
+        "disgrafia",
+        "disortografia",
+        "discalculia",
+        "difficoltà a scuola",
+        "leggere",
+        "scrivere",
+        "calligrafia",
+        "conti",
+        "matematica",
+        "errori",
+        "apprendimento",
+        "insegnanti",
+        "diagnosi",
+        "legge 170"
+      ],
+      "research": [
+        "La legge 170 (2010) riconosce dislessia, disgrafia, disortografia e discalculia come disturbi specifici dell'apprendimento e non fissa un'età per la diagnosi.",
+        "Nelle certificazioni dell'anno scolastico 2018/19 (dati citati nella linea guida ISS-SNLG 2022) i DSA riguardano il 4,9% degli alunni dalla terza primaria alle superiori e il 3,1% degli alunni di terza, quarta e quinta primaria.",
+        "La linea guida ISS-SNLG (2022) raccomanda cautela nel diagnosticare la discalculia usando solo prove di rappresentazione di quantità non simboliche (per esempio stimare quantità di punti), e indica come buona pratica diagnosticarla dalla terza primaria.",
+        "Per la disgrafia la linea guida ISS-SNLG (2022) indica di segnalare le difficoltà dalla fine della seconda primaria e di diagnosticarla solo alla fine della terza (raccomandazione forte).",
+        "Per i bambini bilingui la linea guida ISS-SNLG (2022) indica almeno 2 anni di scolarizzazione regolare in italiano prima della diagnosi."
+      ],
+      "tips": [
+        "Parla con gli insegnanti: osservano come legge, scrive e calcola rispetto ai compagni.",
+        "Parlane con il pediatra, che può indirizzarti ai servizi per la valutazione.",
+        "Valorizza ciò che il bambino sa fare: i DSA, per definizione della legge 170, si presentano in bambini con capacità cognitive adeguate.",
+        "Se tuo figlio è bilingue, ricorda che servono almeno 2 anni di scuola regolare in italiano prima della diagnosi.",
+        "Per approfondire consulta la linea guida ISS-SNLG e il testo della legge 170."
+      ],
+      "redFlags": [
+        "Leggere, scrivere o fare i conti resta molto faticoso nonostante l'impegno e l'aiuto.",
+        "Il bambino evita i compiti, si scoraggia o dice di «essere stupido».",
+        "Gli insegnanti segnalano difficoltà persistenti rispetto ai compagni.",
+        "Calligrafia molto faticosa o illeggibile, segnalata dalla fine della seconda primaria."
+      ]
+    },
+    "ru": {
+      "title": "Трудности в школе: специфические расстройства обучения (DSA)",
+      "summary": "Специфические расстройства обучения (дислексия, дизорфография, дисграфия, дискалькулия) признаны законом. Если читать, писать или считать очень трудно, поговорите с учителями и педиатром: диагноз ставят специализированные службы.",
+      "keywords": [
+        "DSA",
+        "дислексия",
+        "дисграфия",
+        "дизорфография",
+        "дискалькулия",
+        "трудности в школе",
+        "читать",
+        "писать",
+        "почерк",
+        "счёт",
+        "математика",
+        "ошибки",
+        "обучение",
+        "учителя",
+        "диагноз",
+        "закон 170"
+      ],
+      "research": [
+        "Закон № 170 (2010) признаёт дислексию, дисграфию, дизорфографию и дискалькулию специфическими расстройствами обучения и не устанавливает возраст для диагноза.",
+        "По справкам 2018/19 учебного года (данные, приведённые в рекомендациях ISS-SNLG 2022) DSA затрагивают 4,9% учеников с третьего класса начальной школы до старшей школы и 3,1% учеников 3–5 классов начальной школы.",
+        "Рекомендации ISS-SNLG (2022) советуют осторожность при диагностике дискалькулии только по заданиям на несимволическое представление количества (например, оценка числа точек) и указывают как хорошую практику ставить этот диагноз с третьего класса начальной школы.",
+        "Для дисграфии рекомендации ISS-SNLG (2022) предписывают обращать внимание на трудности с конца второго класса начальной школы, а диагноз ставить только в конце третьего (сильная рекомендация).",
+        "Для двуязычных детей рекомендации ISS-SNLG (2022) указывают минимум 2 года регулярного обучения в итальянской школе до постановки диагноза."
+      ],
+      "tips": [
+        "Поговорите с учителями: они видят, как ребёнок читает, пишет и считает по сравнению с одноклассниками.",
+        "Обсудите это с педиатром, который может направить в службы для обследования.",
+        "Отмечайте то, что ребёнок умеет: по определению закона № 170, DSA бывают у детей с нормальными когнитивными способностями.",
+        "Если ваш ребёнок двуязычный, помните: до диагноза нужно минимум 2 года регулярного обучения в итальянской школе.",
+        "Для углубления изучите рекомендации ISS-SNLG и текст закона № 170."
+      ],
+      "redFlags": [
+        "Читать, писать или считать по-прежнему очень трудно, несмотря на старание и помощь.",
+        "Ребёнок избегает уроков, падает духом или говорит, что он «глупый».",
+        "Учителя сообщают о стойких трудностях по сравнению с одноклассниками.",
+        "Очень трудный или неразборчивый почерк, замеченный с конца второго класса начальной школы."
+      ]
+    }
+  },
+  {
+    "id": "compiti-lettura",
+    "category": "linguaggio",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "bassa",
+    "sources": [
+      "K22"
+    ],
+    "it": {
+      "title": "Compiti a casa: cosa dice la ricerca",
+      "summary": "Le prove sui compiti nella scuola primaria sono deboli: negli studi correlazionali il legame con il rendimento è più debole che nelle classi successive. Consiglio pratico: se i compiti sono sempre molto faticosi, parlane con gli insegnanti.",
+      "keywords": [
+        "compiti",
+        "compiti a casa",
+        "scuola primaria",
+        "rendimento",
+        "studio",
+        "quanto tempo",
+        "tempo dei compiti",
+        "insegnanti",
+        "fatica",
+        "lettura"
+      ],
+      "research": [
+        "Una sintesi di ricerche del 1987-2003 (Cooper 2006) rileva che negli studi correlazionali l'associazione tra compiti e rendimento scolastico è più forte nelle classi 7-12 (circa dalla seconda media alla fine delle superiori) che in quelle K-6 (dall'ultimo anno dell'infanzia fino circa alla prima media).",
+        "Gli autori (Cooper 2006) segnalano che tutti i disegni di studio avevano limiti: sono associazioni, non prove che i compiti migliorino o non migliorino il rendimento."
+      ],
+      "tips": [
+        "Se i compiti diventano una fonte costante di tensione o sono molto faticosi, parlane con gli insegnanti.",
+        "Offri un posto tranquillo e un orario regolare, senza sostituirti al bambino.",
+        "Se leggere o scrivere resta molto difficile nonostante l'impegno, vedi la scheda sui DSA.",
+        "Per approfondire consulta la sintesi di Cooper e colleghi (2006)."
+      ]
+    },
+    "ru": {
+      "title": "Домашние задания: что говорят исследования",
+      "summary": "Данные о домашних заданиях в начальной школе слабые: в корреляционных исследованиях их связь с успеваемостью слабее, чем в старших классах. Практический совет: если задания всегда очень утомительны, поговорите с учителями.",
+      "keywords": [
+        "домашние задания",
+        "уроки",
+        "начальная школа",
+        "успеваемость",
+        "учёба",
+        "сколько времени",
+        "время на уроки",
+        "учителя",
+        "усталость",
+        "чтение"
+      ],
+      "research": [
+        "Обзор исследований 1987-2003 годов (Cooper, 2006) показывает: в корреляционных исследованиях связь между домашними заданиями и успеваемостью сильнее в 7-12 классах, чем в классах K-6 (от подготовительного примерно до 6-го класса).",
+        "Авторы (Cooper, 2006) отмечают, что у всех типов исследований были ограничения: это связи, а не доказательство того, что задания улучшают или не улучшают успеваемость."
+      ],
+      "tips": [
+        "Если задания стали постоянным источником напряжения или очень утомительны, поговорите с учителями.",
+        "Дайте спокойное место и регулярное время, не выполняя задания за ребёнка.",
+        "Если читать или писать по-прежнему очень трудно, несмотря на старания, посмотрите карточку про DSA.",
+        "Чтобы узнать больше, прочитайте обзор Cooper и коллег (2006)."
+      ]
+    }
   }
 ]

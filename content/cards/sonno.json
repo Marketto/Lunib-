@@ -441,5 +441,86 @@
         "Громко храпит, делает паузы в дыхании или очень сонлив днём."
       ]
     }
+  },
+  {
+    "id": "sonno-6-12",
+    "category": "sonno",
+    "ageFrom": 72,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "A2",
+      "K1",
+      "K2",
+      "K3",
+      "K4"
+    ],
+    "it": {
+      "title": "Sonno a 6–12 anni: quante ore e gli schermi",
+      "summary": "Tra 6 e 12 anni l'AASM indica 9–12 ore di sonno ogni 24 ore. Sugli schermi in camera le prove sono di livello medio e di tipo associativo: non dimostrano che siano la causa.",
+      "keywords": [
+        "sonno",
+        "dormire",
+        "ore di sonno",
+        "quante ore",
+        "scuola",
+        "stanchezza",
+        "addormentarsi",
+        "orario",
+        "andare a letto",
+        "schermi",
+        "tablet",
+        "telefono",
+        "tv in camera",
+        "routine della sera"
+      ],
+      "research": [
+        "L'American Academy of Sleep Medicine (Paruthi 2016) raccomanda ai bambini di 6–12 anni 9–12 ore di sonno ogni 24 ore, regolarmente; gli studi su cui si basa sono in gran parte correlazionali.",
+        "Uno studio su 2.048 alunni statunitensi di 4ª e 7ª classe (età media 9,4 e 12,3 anni) (Falbe 2015) ha associato dormire vicino a uno schermo piccolo a 20,6 minuti di sonno in meno nelle notti di scuola e la TV in camera a 18,0 minuti in meno; lo schermo piccolo era associato a più riposo percepito come insufficiente (PR 1,39). Studio trasversale con dati riferiti dai bambini: è un'associazione e può valere in entrambe le direzioni.",
+        "Una revisione sistematica di 67 studi (Hale e Guan 2015) ha trovato nel 90% circa un'associazione sfavorevole tra tempo di schermo e sonno (letto più tardi, meno ore); la causalità non è confermata.",
+        "L'AASM (comunicato 2023) suggerisce una routine rilassante prima di dormire (circa 15 minuti), dispositivi spenti 30–60 minuti prima di spegnere la luce e una camera silenziosa e fresca."
+      ],
+      "tips": [
+        "Scegli un orario di sonno abbastanza regolare, anche nel fine settimana, in modo da arrivare alle 9–12 ore.",
+        "Una routine breve e tranquilla di circa 15 minuti (lavarsi i denti, una lettura insieme) aiuta il passaggio al sonno.",
+        "Prova a spegnere schermi e dispositivi 30–60 minuti prima di andare a letto.",
+        "Se puoi, tieni telefoni e tablet fuori dalla camera durante la notte.",
+        "Camera silenziosa e fresca."
+      ]
+    },
+    "ru": {
+      "title": "Сон в 6–12 лет: сколько часов и экраны",
+      "summary": "В возрасте 6–12 лет AASM рекомендует 9–12 часов сна в сутки. Данные об экранах в спальне среднего уровня и носят ассоциативный характер: они не доказывают, что экраны — причина.",
+      "keywords": [
+        "сон",
+        "спать",
+        "часы сна",
+        "сколько часов",
+        "школа",
+        "усталость",
+        "засыпание",
+        "режим",
+        "ложиться спать",
+        "экраны",
+        "планшет",
+        "телефон",
+        "телевизор в комнате",
+        "вечерний ритуал"
+      ],
+      "research": [
+        "Американская академия медицины сна (Paruthi, 2016) рекомендует детям 6–12 лет 9–12 часов сна в сутки на регулярной основе; исследования, на которых это основано, в основном корреляционные.",
+        "Исследование 2048 американских школьников четвёртого (средний возраст 9,4 года) и седьмого класса (12,3 года) (Falbe, 2015) связало сон рядом с небольшим экраном с уменьшением сна на 20,6 минуты в школьные ночи, а телевизор в комнате — на 18,0 минуты; небольшой экран был связан с более частым ощущением недостаточного отдыха (PR 1,39). Это поперечное исследование с данными со слов детей: это ассоциация, и связь может идти в обе стороны.",
+        "Систематический обзор 67 исследований (Hale, Guan, 2015) примерно в 90% нашёл неблагоприятную связь между временем перед экраном и сном (более позднее время отхода ко сну, меньше часов); причинность не подтверждена.",
+        "AASM (пресс-релиз, 2023) советует спокойный ритуал перед сном (около 15 минут), выключать устройства за 30–60 минут до отбоя и поддерживать в комнате тишину и прохладу."
+      ],
+      "tips": [
+        "Выберите достаточно постоянное время отхода ко сну, в том числе в выходные, чтобы набиралось 9–12 часов.",
+        "Короткий спокойный ритуал около 15 минут (почистить зубы, почитать вместе) помогает перейти ко сну.",
+        "Попробуйте выключать экраны и устройства за 30–60 минут до сна.",
+        "По возможности оставляйте телефоны и планшеты на ночь вне комнаты.",
+        "В комнате тихо и прохладно."
+      ]
+    }
   }
 ]

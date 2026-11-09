@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.9.0 — 9 novembre 2026
+- 14 nuove schede per 6–12 anni: sonno, alimentazione, pidocchi, vista, mal di testa (con segnali urgenti NICE), DSA, ADHD, ansia, bullismo, compiti e lettura, sport e certificato non agonistico, online e privacy, auto e strada (seggiolini R129), denti (sigillanti e fluoro); ogni dato con fonte e verifica indipendente.
+
 ## 1.8.0 — 9 novembre 2026
 - 6–12 anni: tetti di dose per età/peso (paracetamolo, ibuprofene), vitamina D fino a 4000 UI dagli 11 anni (EFSA), soglie OMS del BMI dai 5 anni, tappa «primi segni di pubertà»
 
