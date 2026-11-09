@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { KidPills, Refs, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
-import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
+import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, assessWfl, wflType, wflCurve, WFL_MAX_MONTHS, estimateHeight, dropWeightHigh, GROWTH_RULES, isCorrected, curve, lmsAt, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
 import { MILESTONE_TEXT } from '../lib/i18n.js';
 import { formatAge } from '../lib/age.js';
@@ -29,31 +29,41 @@ export const DIARY_TEXT = {
     chartNote: 'Linee: percentili OMS 3, 15, 50, 85, 97. Punti: le tue misure.',
     over: (max) => `Le curve OMS di questo indicatore sono usate fino a ${max} mesi.`,
     w: {
-      implausible: 'Valore molto improbabile per l\'età: controlla di averlo inserito bene (unità, virgola, data).',
+      implausible: 'Valore molto improbabile per l\'età: controlla di averlo inserito bene (unità, virgola, data). Se il valore è giusto, parlane presto con il pediatra.',
       standingEarly: 'Sotto i 9 mesi la misura "in piedi" è quasi sempre un errore di inserimento: si misura sdraiato.',
       tall: 'Molto più alto della media (oltre +3 DS): per l\'OMS raramente è un problema, ma è bene che il pediatra lo sappia.',
-      weightHigh: 'Peso sopra i valori tipici per l\'età (oltre +2 DS). Il peso da solo non dice se è in sovrappeso: il pediatra lo valuta rispetto alla lunghezza (peso-per-lunghezza o BMI).',
-      weightVeryHigh: 'Peso molto sopra i valori tipici per l\'età (oltre +3 DS). Il pediatra lo valuta rispetto alla lunghezza (peso-per-lunghezza o BMI).',
+      weightHigh: 'Peso per età sopra +2 DS. Il peso per età non serve a dire se c\'è sovrappeso: l\'OMS lo valuta con il peso rispetto alla lunghezza/altezza (o il BMI). Inserisci la lunghezza/altezza misurata lo stesso giorno.',
+      weightVeryHigh: 'Peso per età sopra +3 DS. Il peso per età non serve a dire se c\'è sovrappeso: l\'OMS lo valuta con il peso rispetto alla lunghezza/altezza (o il BMI). Inserisci la lunghezza/altezza misurata lo stesso giorno.',
+      wflOverweight: 'Il peso rispetto alla lunghezza/altezza è sopra +2 DS: secondo i criteri OMS per i bambini sotto i 5 anni rientra nel sovrappeso. Non è una diagnosi: parlane con il pediatra.',
+      wflObese: 'Il peso rispetto alla lunghezza/altezza è sopra +3 DS: secondo i criteri OMS per i bambini sotto i 5 anni rientra nell\'obesità. Non è una diagnosi né una colpa: parlane con il pediatra.',
+      wflRisk: 'Il peso rispetto alla lunghezza/altezza è sopra +1 DS: per l\'OMS è un possibile rischio di sovrappeso, da seguire nel tempo (conta soprattutto se la curva sale verso +2 DS).',
+      wflWasting: 'Il peso rispetto alla lunghezza/altezza è sotto −2 DS: secondo i criteri OMS indica deperimento (peso basso per la lunghezza). Ricontrolla le misure e parlane con il pediatra.',
+      wflSevereWasting: 'Il peso rispetto alla lunghezza/altezza è sotto −3 DS: secondo i criteri OMS indica deperimento grave. Se la misura è corretta, contatta presto il pediatra.',
+      bmiEstimatedOut: 'BMI stimato fuori dall\'intervallo tipico: per una valutazione misura peso e altezza lo stesso giorno.',
       bmiOverweight: 'Il BMI per l\'età è sopra +1 DS: secondo i criteri OMS rientra nel sovrappeso. Non è una diagnosi: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
       bmiObese: 'Il BMI per l\'età è sopra +2 DS: secondo i criteri OMS rientra nell\'obesità. Non è una diagnosi né una colpa: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
       bmiThin: 'Il BMI per l\'età è sotto −2 DS: secondo i criteri OMS rientra nella magrezza. Non è una diagnosi: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
       bmiVeryThin: 'Il BMI per l\'età è sotto −3 DS: secondo i criteri OMS è una magrezza marcata. Non è una diagnosi, ma è bene parlarne presto con il pediatra.',
-      veryLow: 'Molto sotto i valori tipici per l\'età secondo l\'OMS (oltre −3 DS).',
-      low: 'Sotto i valori tipici per l\'età secondo l\'OMS (oltre −2 DS).',
+      veryLow: 'Molto sotto i valori tipici per l\'età secondo l\'OMS (sotto −3 DS).',
+      low: 'Sotto i valori tipici per l\'età secondo l\'OMS (sotto −2 DS).',
       below04: 'Sotto lo 0,4° percentile: è consigliata una valutazione del pediatra anche se la crescita è regolare.',
       headHigh: 'Circonferenza della testa sopra i valori tipici (oltre +2 DS). Spesso è familiare: utile confrontarla con quella dei genitori.',
       headVeryHigh: 'Circonferenza della testa molto sopra i valori tipici (oltre +3 DS).',
-      headLow: 'Circonferenza della testa sotto i valori tipici (oltre −2 DS).',
-      headVeryLow: 'Circonferenza della testa molto sotto i valori tipici (oltre −3 DS).',
-      crossDown: (w) => `Rispetto alle misure precedenti è sceso di almeno ${w.spaces === 1 ? 'una "corsia"' : `${w.spaces} "corsie"`} di percentile.`,
+      headLow: 'Circonferenza della testa sotto i valori tipici (sotto −2 DS).',
+      headVeryLow: 'Circonferenza della testa molto sotto i valori tipici (sotto −3 DS).',
+      crossDown: (w) => `Rispetto alle misure precedenti è sceso di almeno ${w.spaces === 1 ? 'una "corsia"' : `${w.spaces} "corsie"`} di percentile.${w.ind === 'weight' ? ' Se si conferma alla prossima misura (dopo 2–3 settimane), parlane con il pediatra; una malattia recente può far calare il peso per poco tempo.' : ' Parlane con il pediatra.'}`,
       crossUp: 'Rispetto alle misure precedenti è salito di almeno due "corsie" di percentile.',
       newbornLoss: (w) => `Calo di circa il ${w.pct}% rispetto al peso alla nascita: oltre il 10% va valutato.`,
       notRegained: 'A 3 settimane non ha ancora recuperato il peso alla nascita: va valutato.'
     },
     beforeTerm: 'Prima del termine corretto (40 settimane) le curve OMS non si applicano: il pediatra usa curve specifiche per i pretermine.',
-    noWfl: 'Lunibù non calcola il peso-per-lunghezza e non valuta il BMI come magrezza o sovrappeso: non può dire se è magro o in sovrappeso.',
+    noWfl: 'Il peso per età da solo non dice se è magro o in sovrappeso. Sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza, che Lunibù calcola dalle misure fatte lo stesso giorno (scheda Peso/lunghezza); le soglie del BMI valgono dai 5 anni.',
+    wfl: 'Peso/lunghezza', wflLong: (m) => (m < 24 ? 'Peso per lunghezza' : 'Peso per altezza'),
+    wflNote: 'Calcolato solo da peso e lunghezza/altezza misurati lo stesso giorno (OMS 0–5 anni). Linee: percentili 3, 15, 50, 85, 97; asse orizzontale: cm.',
+    bmiEst: 'BMI stimato', bmiEstLegend: 'Cerchio vuoto tratteggiato: BMI stimato (solo posizione, senza soglie).',
+    bmiEstText: (d, d1, d2) => `BMI stimato: peso del ${d} con altezza stimata ${d2 ? `dalle misure del ${d1} e ${d2}` : `dalla misura del ${d1}`}. Non è una misura: per una valutazione misura peso e lunghezza/altezza lo stesso giorno.`,
     over10: 'Dopo i 10 anni l\'OMS usa l\'indice di massa corporea invece del peso per età.',
-    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Fino a 5 anni Lunibù mostra solo la posizione sulle curve OMS; dai 5 anni segnala anche le soglie OMS (sopra +1 DS, sotto −2 DS), senza dare una diagnosi: per interpretarlo chiedi al pediatra.',
+    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Da 2 a 5 anni Lunibù mostra solo la posizione sulle curve OMS: sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza (scheda Peso/lunghezza); dai 5 anni segnala anche le soglie OMS del BMI (sopra +1 DS, sotto −2 DS), senza dare una diagnosi: per interpretarlo chiedi al pediatra. Quando peso e altezza sono misurati in giorni diversi, Lunibù stima l\'altezza dalle misure vicine (scelta prudenziale di Lunibù, ispirata a Bailey 2013, che stimava l\'altezza dalle visite vicine) e mostra il BMI stimato solo come posizione.',
     pos: 'Come è stato misurato', lying: 'sdraiato', standing: 'in piedi',
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
     measureTips: 'Pesa senza vestiti (o con il body), sempre con la stessa bilancia. Sotto i 2 anni la lunghezza si misura sdraiato, poi in piedi senza scarpe. La testa: metro morbido sopra sopracciglia e orecchie, nel punto più largo.',
@@ -131,31 +141,41 @@ export const DIARY_TEXT = {
     chartNote: 'Линии: перцентили ВОЗ 3, 15, 50, 85, 97. Точки: ваши измерения.',
     over: (max) => `Кривые ВОЗ для этого показателя используются до ${max} месяцев.`,
     w: {
-      implausible: 'Очень маловероятное значение для возраста: проверьте ввод (единицы, запятая, дата).',
+      implausible: 'Очень маловероятное значение для возраста: проверьте ввод (единицы, запятая, дата). Если значение верное, скорее обсудите его с педиатром.',
       standingEarly: 'До 9 месяцев измерение «стоя» почти всегда ошибка ввода: измеряют лёжа.',
       tall: 'Намного выше среднего (более +3 SD): по ВОЗ это редко проблема, но педиатру стоит об этом знать.',
-      weightHigh: 'Вес выше типичных для возраста значений (более +2 SD). Один вес не говорит о лишнем весе: педиатр оценивает его относительно длины тела (вес к длине или ИМТ).',
-      weightVeryHigh: 'Вес намного выше типичных значений (более +3 SD). Педиатр оценивает его относительно длины тела (вес к длине или ИМТ).',
+      weightHigh: 'Вес для возраста выше +2 SD. По весу для возраста нельзя судить об избыточном весе: ВОЗ оценивает его по весу относительно длины/роста (или по ИМТ). Добавьте длину/рост, измеренные в тот же день.',
+      weightVeryHigh: 'Вес для возраста выше +3 SD. По весу для возраста нельзя судить об избыточном весе: ВОЗ оценивает его по весу относительно длины/роста (или по ИМТ). Добавьте длину/рост, измеренные в тот же день.',
+      wflOverweight: 'Вес относительно длины/роста выше +2 SD: по критериям ВОЗ для детей до 5 лет это избыточный вес. Это не диагноз: обсудите с педиатром.',
+      wflObese: 'Вес относительно длины/роста выше +3 SD: по критериям ВОЗ для детей до 5 лет это ожирение. Это не диагноз и не вина: обсудите с педиатром.',
+      wflRisk: 'Вес относительно длины/роста выше +1 SD: по ВОЗ это возможный риск избыточного веса; важно следить за динамикой (особенно если кривая поднимается к +2 SD).',
+      wflWasting: 'Вес относительно длины/роста ниже −2 SD: по критериям ВОЗ это истощение (низкий вес для длины). Перепроверьте измерения и обсудите с педиатром.',
+      wflSevereWasting: 'Вес относительно длины/роста ниже −3 SD: по критериям ВОЗ это тяжёлое истощение. Если измерение верное, скорее обратитесь к педиатру.',
+      bmiEstimatedOut: 'Расчётный ИМТ вне типичного диапазона: для оценки измерьте вес и рост в один день.',
       bmiOverweight: 'ИМТ для возраста выше +1 SD: по критериям ВОЗ это относится к избыточному весу. Это не диагноз: поговорите с педиатром, который оценивает рост и привычки в целом.',
       bmiObese: 'ИМТ для возраста выше +2 SD: по критериям ВОЗ это относится к ожирению. Это не диагноз и не вина: поговорите с педиатром, который оценивает рост и привычки в целом.',
       bmiThin: 'ИМТ для возраста ниже −2 SD: по критериям ВОЗ это относится к худобе. Это не диагноз: поговорите с педиатром, который оценивает рост и привычки в целом.',
       bmiVeryThin: 'ИМТ для возраста ниже −3 SD: по критериям ВОЗ это выраженная худоба. Это не диагноз, но лучше скоро поговорить с педиатром.',
-      veryLow: 'Намного ниже типичных для возраста значений ВОЗ (более −3 SD).',
-      low: 'Ниже типичных для возраста значений ВОЗ (более −2 SD).',
+      veryLow: 'Намного ниже типичных для возраста значений ВОЗ (ниже −3 SD).',
+      low: 'Ниже типичных для возраста значений ВОЗ (ниже −2 SD).',
       below04: 'Ниже 0,4-го перцентиля: рекомендуется осмотр педиатра, даже если ребёнок растёт равномерно.',
       headHigh: 'Окружность головы выше типичных значений (более +2 SD). Часто это семейное: полезно сравнить с родителями.',
       headVeryHigh: 'Окружность головы намного выше типичных значений (более +3 SD).',
-      headLow: 'Окружность головы ниже типичных значений (более −2 SD).',
-      headVeryLow: 'Окружность головы намного ниже типичных значений (более −3 SD).',
-      crossDown: (w) => `По сравнению с прошлыми измерениями показатель опустился как минимум на ${w.spaces === 1 ? 'один «коридор»' : `${w.spaces} «коридора»`} перцентилей.`,
+      headLow: 'Окружность головы ниже типичных значений (ниже −2 SD).',
+      headVeryLow: 'Окружность головы намного ниже типичных значений (ниже −3 SD).',
+      crossDown: (w) => `По сравнению с прошлыми измерениями показатель опустился как минимум на ${w.spaces === 1 ? 'один «коридор»' : `${w.spaces} «коридора»`} перцентилей.${w.ind === 'weight' ? ' Если это подтвердится при следующем измерении (через 2–3 недели), обсудите с педиатром; недавняя болезнь может ненадолго снизить вес.' : ' Обсудите с педиатром.'}`,
       crossUp: 'По сравнению с прошлыми измерениями показатель поднялся как минимум на два «коридора» перцентилей.',
       newbornLoss: (w) => `Потеря около ${w.pct}% веса при рождении: потерю более 10% нужно оценить у врача.`,
       notRegained: 'В 3 недели вес при рождении ещё не восстановлен: нужно показаться врачу.'
     },
     beforeTerm: 'До достижения скорректированного срока 40 недель кривые ВОЗ не применяются: педиатр использует кривые для недоношенных.',
-    noWfl: 'Lunibù не рассчитывает вес к длине и не оценивает ИМТ как недостаток или избыток веса: он не может сказать, худой ребёнок или с лишним весом.',
+    noWfl: 'Один вес для возраста не говорит, худой ребёнок или с лишним весом. До 5 лет ВОЗ использует вес относительно длины/роста: Lunibù рассчитывает его по измерениям одного дня (вкладка «Вес/длина»); пороги ИМТ действуют с 5 лет.',
+    wfl: 'Вес/длина', wflLong: (m) => (m < 24 ? 'Вес к длине' : 'Вес к росту'),
+    wflNote: 'Рассчитывается только по весу и длине/росту, измеренным в один день (ВОЗ, 0–5 лет). Линии: перцентили 3, 15, 50, 85, 97; горизонтальная ось: см.',
+    bmiEst: 'Расчётный ИМТ', bmiEstLegend: 'Пустой пунктирный кружок: расчётный ИМТ (только положение, без порогов).',
+    bmiEstText: (d, d1, d2) => `Расчётный ИМТ: вес от ${d} и рост, оценённый ${d2 ? `по измерениям от ${d1} и ${d2}` : `по измерению от ${d1}`}. Это не измерение: для оценки измерьте вес и длину/рост в один день.`,
     over10: 'После 10 лет ВОЗ использует индекс массы тела вместо веса для возраста.',
-    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. До 5 лет Lunibù показывает только положение на кривых ВОЗ; с 5 лет также отмечает пороги ВОЗ (выше +1 SD, ниже −2 SD), без диагноза: для интерпретации обратитесь к педиатру.',
+    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. От 2 до 5 лет Lunibù показывает только положение на кривых ВОЗ: до 5 лет ВОЗ использует вес относительно длины/роста (вкладка «Вес/длина»); с 5 лет также отмечает пороги ВОЗ для ИМТ (выше +1 SD, ниже −2 SD), без диагноза: для интерпретации обратитесь к педиатру. Если вес и рост измерены в разные дни, Lunibù оценивает рост по соседним измерениям (осторожный выбор Lunibù, по аналогии с Bailey 2013, где рост оценивали по соседним визитам) и показывает расчётный ИМТ только как положение на кривой.',
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
@@ -221,7 +241,7 @@ export const DIARY_TEXT = {
   }
 };
 
-const GROWTH_REFS = { bmiOverweight: ['X4'], bmiObese: ['X4'], bmiThin: ['X4'], bmiVeryThin: ['X4'], implausible: ['W7', 'W12'], standingEarly: ['W7'], tall: ['W3'], weightHigh: ['W3'], weightVeryHigh: ['W3'], veryLow: ['W3', 'W1'], low: ['W3', 'W1'], below04: ['W5'], headHigh: ['W11', 'W8'], headVeryHigh: ['W11', 'W8'], headLow: ['W10', 'W8'], headVeryLow: ['W10', 'W8'], crossDown: ['W5', 'W9', 'W6'], crossUp: ['W5', 'W9'], newbornLoss: ['W6'], notRegained: ['W6'] };
+const GROWTH_REFS = { bmiOverweight: ['X4'], bmiObese: ['X4'], bmiThin: ['X4'], bmiVeryThin: ['X4'], implausible: ['W7', 'W12'], standingEarly: ['W7'], tall: ['W3'], weightHigh: ['W3', 'W15'], weightVeryHigh: ['W3', 'W15'], wflOverweight: ['W4', 'W7', 'W15', 'W3'], wflObese: ['W4', 'W7', 'W15', 'W3'], wflRisk: ['W4', 'W7', 'W15', 'W3'], wflWasting: ['W4', 'W7', 'W3'], wflSevereWasting: ['W4', 'W7', 'W3'], bmiEstimatedOut: ['W1', 'W2', 'W16'], veryLow: ['W3', 'W1'], low: ['W3', 'W1'], below04: ['W5'], headHigh: ['W11', 'W8'], headVeryHigh: ['W11', 'W8'], headLow: ['W10', 'W8'], headVeryLow: ['W10', 'W8'], crossDown: ['W5', 'W9', 'W6'], crossUp: ['W5', 'W9'], newbornLoss: ['W6'], notRegained: ['W6'] };
 
 function SourceList({ ids, lang }) {
   const s = DIARY_TEXT[lang];
@@ -269,9 +289,52 @@ function GrowthChart({ indicator, sex, points, upTo, lang }) {
       {Array.from({ length: Math.floor((maxM - minM) / xStep) + 1 }, (_, i) => Math.ceil(minM / xStep) * xStep + i * xStep).filter((m) => m <= maxM).map((m) => (
         <text key={m} x={x(m)} y={Hh - 6} className="axis" textAnchor="middle">{m}{lang === 'ru' ? 'м' : 'm'}</text>
       ))}
-      {points.length > 1 && <path d={path(points.map((p) => [p.m, p.v]))} className="kid-line" />}
+      {points.filter((p) => !p.est).length > 1 && <path d={path(points.filter((p) => !p.est).map((p) => [p.m, p.v]))} className="kid-line" />}
       {points.map((p, i) => (
         <motion.circle key={p.id} cx={x(p.m)} cy={y(p.v)} r={p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
+          style={p.est ? { fill: 'none', strokeDasharray: '3 2', strokeWidth: 2 } : undefined}
+          initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ...spring, delay: 0.05 * i }}>
+          {p.est && <title>{lang === 'ru' ? 'Расчётный ИМТ' : 'BMI stimato'}</title>}
+        </motion.circle>
+      ))}
+    </svg>
+  );
+}
+
+function WflChart({ sex, type, points, ageNow, lang }) {
+  const W = 340, Hh = 220, P = { l: 34, r: 26, t: 10, b: 24 };
+  const tblMin = type === 'wfl' ? 45 : 65, tblMax = type === 'wfl' ? 110 : 120;
+  const mid = points.length ? null : (lmsAt('height', sex, Math.max(0, Math.min(ageNow, 60)))?.[1] || (tblMin + tblMax) / 2);
+  let lo = points.length ? Math.min(...points.map((p) => p.cm)) - 6 : mid - 10;
+  let hi = points.length ? Math.max(...points.map((p) => p.cm)) + 6 : mid + 10;
+  if (hi - lo < 20) { const c = (hi + lo) / 2; lo = c - 10; hi = c + 10; }
+  lo = Math.max(tblMin, Math.floor(lo)); hi = Math.min(tblMax, Math.ceil(hi));
+  const curves = wflCurve(sex, type, lo, hi, 40);
+  const all = [...curves.flatMap((c) => c.pts.map((p) => p[1])), ...points.map((p) => p.v)];
+  const yMin = Math.floor(Math.min(...all) * 0.97), yMax = Math.ceil(Math.max(...all) * 1.02);
+  const x = (v) => P.l + ((v - lo) / (hi - lo || 1)) * (W - P.l - P.r);
+  const y = (v) => Hh - P.b - ((v - yMin) / (yMax - yMin || 1)) * (Hh - P.t - P.b);
+  const path = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('');
+  const band = (a, b) => `${path(a.pts)}L${b.pts.slice().reverse().map((p) => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('L')}Z`;
+  const xStep = hi - lo > 40 ? 10 : 5;
+  return (
+    <svg className="growth-chart" viewBox={`0 0 ${W} ${Hh}`} role="img" aria-label="weight-for-length chart">
+      <path d={band(curves[0], curves[4])} className="band-outer" />
+      <path d={band(curves[1], curves[3])} className="band-inner" />
+      {curves.map((c) => (
+        <g key={c.p}>
+          <path d={path(c.pts)} className={c.p === 50 ? 'p50' : 'pline'} />
+          <text x={W - P.r + 3} y={y(c.pts[c.pts.length - 1][1]) + 3} className="plabel">{c.p}</text>
+        </g>
+      ))}
+      {Array.from({ length: 6 }, (_, i) => yMin + ((yMax - yMin) * i) / 5).map((v) => (
+        <text key={v} x={P.l - 4} y={y(v) + 3} className="axis" textAnchor="end">{fmt(v, 0)}</text>
+      ))}
+      {Array.from({ length: Math.floor((hi - lo) / xStep) + 1 }, (_, i) => Math.ceil(lo / xStep) * xStep + i * xStep).filter((v) => v <= hi).map((v) => (
+        <text key={v} x={x(v)} y={Hh - 6} className="axis" textAnchor="middle">{v}</text>
+      ))}
+      {points.map((p, i) => (
+        <motion.circle key={p.id} cx={x(p.cm)} cy={y(p.v)} r={p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
           initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ...spring, delay: 0.05 * i }} />
       ))}
     </svg>
@@ -305,36 +368,59 @@ function Growth({ lang, kid, growth, setGrowth }) {
   const birthZ = birth ? zScore('weight', sex, growthAge(kid, birth.date), +birth.weight) : null;
   const withEval = useMemo(() => {
     const last = {};
+    const heights = mine.filter((g) => g.height > 0).map((g) => ({ t: monthsAt(kid.birth, g.date), m: growthAge(kid, g.date), date: g.date, id: g.id }))
+      .filter((q) => q.m >= 0 && q.m <= INDICATORS.height.maxMonths)
+      .map((q) => ({ ...q, v: hVal(mine.find((g) => g.id === q.id), q.m) }));
     return mine.map((g) => {
       const m = growthAge(kid, g.date);
+      const corr = isCorrected(kid, g.date);
       const ev = {};
       if (m < 0) return { ...g, m, ev, beforeTerm: true }; // prima del termine corretto le curve OMS non valgono (W13)
       for (const k of INPUTS) {
         if (!(g[k] > 0) || m > INDICATORS[k].maxMonths) continue;
         const v = k === 'height' ? hVal(g, m) : +g[k];
-        ev[k] = assess(k, sex, m, v, last[k], { birthZ });
+        ev[k] = assess(k, sex, m, v, last[k], { birthZ, corr });
         if (k === 'height' && g.heightPos === 'standing' && m < 9) ev[k].warnings.unshift({ kind: 'standingEarly', level: 'check' });
         if (k === 'weight' && birth && g.id !== birth.id) {
           const nb = newbornCheck(+birth.weight, monthsAt(kid.birth, g.date) * 30.4375, +g.weight);
           if (nb) ev[k].warnings.push(nb);
         }
-        (last[k] = last[k] || []).push({ months: m, value: v });
+        (last[k] = last[k] || []).push({ months: m, value: v, corr });
       }
       if (g.weight > 0 && g.height > 0 && m >= INDICATORS.bmi.minMonths && m <= INDICATORS.bmi.maxMonths) {
         const b = bmiOf(+g.weight, hVal(g, m));
         ev.bmi = { ...assess('bmi', sex, m, b), value: b };
       }
+      if (g.weight > 0 && g.height > 0 && m <= WFL_MAX_MONTHS) {
+        const w = assessWfl(sex, m, hVal(g, m), +g.weight);
+        if (w.z != null) {
+          ev.wfl = { ...w, value: +g.weight, cm: hVal(g, m), type: wflType(m) };
+        }
+      } else if (g.weight > 0 && !(g.height > 0) && m >= INDICATORS.bmi.minMonths && m <= INDICATORS.bmi.maxMonths) {
+        // BMI stimato da misure non simultanee: solo posizione (W16)
+        const est = estimateHeight(sex, heights, { t: monthsAt(kid.birth, g.date), m });
+        if (est) {
+          const b = bmiOf(+g.weight, est.h);
+          const a = assess('bmi', sex, m, b);
+          if (a.z != null) ev.bmi = { z: a.z, p: a.p, value: b, estimated: true, dates: est.dates, warnings: Math.abs(a.z) > 2 ? [{ kind: 'bmiEstimatedOut', level: 'info' }] : [] };
+        }
+      }
+      if (ev.weight) ev.weight.warnings = dropWeightHigh(ev.weight.warnings, ev, m);
       return { ...g, m, ev };
     });
-  }, [mine.map((g) => g.id + g.date + g.weight + g.height + g.head).join(), sex, kid.gaWeeks]); // eslint-disable-line
+  }, [mine.map((g) => g.id + g.date + g.weight + g.height + g.head + g.heightPos).join(), sex, kid.gaWeeks]); // eslint-disable-line
 
-  const pts = withEval.filter((g) => g.ev[ind]).map((g) => ({ id: g.id, m: g.m, v: ind === 'height' ? hVal(g, g.m) : ind === 'bmi' ? g.ev.bmi.value : +g[ind], warn: g.ev[ind].warnings.some((w) => w.level !== 'info') }));
+  const pts = withEval.filter((g) => g.ev[ind]).map((g) => ({ id: g.id, m: g.m, v: ind === 'height' ? hVal(g, g.m) : ind === 'bmi' ? g.ev.bmi.value : +g[ind], est: ind === 'bmi' && !!g.ev.bmi.estimated, warn: g.ev[ind].warnings.some((w) => w.level !== 'info') }));
+  const wflType0 = ageNow < 24 ? 'wfl' : 'wfh';
+  const wflPts = withEval.filter((g) => g.ev.wfl && g.ev.wfl.type === wflType0).map((g) => ({ id: g.id, cm: g.ev.wfl.cm, v: g.ev.wfl.value, warn: g.ev.wfl.warnings.some((w) => w.level !== 'info') }));
+  const showWfl = ageNow <= WFL_MAX_MONTHS;
   const showHead = ageNow <= INDICATORS.head.maxMonths || mine.some((g) => g.head);
 
   // Avvisi del modulo mentre si scrive
   const draftWarnings = useMemo(() => {
     if (!form) return [];
     const m = growthAge(kid, form.date || today());
+    const corr = isCorrected(kid, form.date || today());
     const out = [];
     if (m < 0) return out;
     for (const k of INPUTS) {
@@ -344,13 +430,19 @@ function Growth({ lang, kid, growth, setGrowth }) {
         v = hVal({ height: v, heightPos: form.heightPos }, m);
         if (form.heightPos === 'standing' && m < 9) out.push({ kind: 'standingEarly', level: 'check' });
       }
-      const prev = withEval.filter((g) => g.ev[k] && g.date < form.date && g.id !== form.id).map((g) => ({ months: g.m, value: k === 'height' ? hVal(g, g.m) : +g[k] }));
-      out.push(...assess(k, sex, m, v, prev, { birthZ }).warnings.map((w) => ({ ...w, k })));
+      const prev = withEval.filter((g) => g.ev[k] && g.date < form.date && g.id !== form.id).map((g) => ({ months: g.m, value: k === 'height' ? hVal(g, g.m) : +g[k], corr: isCorrected(kid, g.date) }));
+      out.push(...assess(k, sex, m, v, prev, { birthZ, corr }).warnings.map((w) => ({ ...w, k })));
       if (k === 'weight' && birth && birth.date < form.date) {
         const nb = newbornCheck(+birth.weight, monthsAt(kid.birth, form.date) * 30.4375, v);
         if (nb) out.push(nb);
       }
     }
+    const fw = parseFloat(String(form.weight || '').replace(',', '.')), fh = parseFloat(String(form.height || '').replace(',', '.'));
+    if (fw > 0 && fh > 0 && m <= WFL_MAX_MONTHS) {
+      const w = assessWfl(sex, m, hVal({ height: fh, heightPos: form.heightPos }, m), fw);
+      if (w.z != null) return [...dropWeightHigh(out, { wfl: w }, m), ...w.warnings];
+    }
+    if (fw > 0 && fh > 0 && m >= GROWTH_RULES.bmiFromMonths) return dropWeightHigh(out, { bmi: {} }, m);
     return out;
   }, [form, sex]); // eslint-disable-line
 
@@ -366,21 +458,25 @@ function Growth({ lang, kid, growth, setGrowth }) {
     setForm(null);
   };
 
-  const label = { weight: s.weight, height: s.height, head: s.head, bmi: s.bmi };
+  const label = { weight: s.weight, height: s.height, head: s.head, bmi: s.bmi, wfl: s.wfl };
   const showBmi = ageNow >= INDICATORS.bmi.minMonths || mine.some((g) => g.ev?.bmi);
   return (
     <div>
       <div className="seg" role="tablist">
-        {['weight', 'height', ...(showBmi ? ['bmi'] : []), ...(showHead ? ['head'] : [])].map((k) => (
+        {['weight', 'height', ...(showWfl ? ['wfl'] : []), ...(showBmi ? ['bmi'] : []), ...(showHead ? ['head'] : [])].map((k) => (
           <button key={k} className={ind === k ? 'on' : ''} onClick={() => setInd(k)} role="tab" aria-selected={ind === k}>
             {ind === k && <motion.i layoutId="seg-pill" className="seg-pill" transition={spring} />}<span>{label[k]}</span>
           </button>
         ))}
       </div>
       <motion.div className="chart-card" key={ind} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : s.weight} <small>({INDICATORS[ind].unit})</small></h3>
-        <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />
-        <p className="small muted">{s.chartNote} {ind === 'weight' && ageNow < 61 && s.noWfl} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : []), ...(ind === 'bmi' ? ['X4'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? <> {ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)}{ind === 'weight' && <> <Refs ids={['X5']} /></>}</> : ''}</p>
+        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : ind === 'wfl' ? s.wflLong(ageNow) : s.weight} <small>({ind === 'wfl' ? 'kg / cm' : INDICATORS[ind].unit})</small></h3>
+        {ind === 'wfl'
+          ? <WflChart sex={sex} type={wflType0} points={wflPts} ageNow={ageNow} lang={lang} />
+          : <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />}
+        {ind === 'wfl' && <p className="small muted">{s.wflNote} <Refs ids={['W4', 'W7', 'W15']} /></p>}
+        {ind === 'bmi' && pts.some((p) => p.est) && <p className="small muted">{s.bmiEstLegend} <Refs ids={['W16']} /></p>}
+        {ind !== 'wfl' && <p className="small muted">{s.chartNote} {ind === 'weight' && ageNow < 61 && <>{s.noWfl} <Refs ids={['W4', 'W15']} /></>} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : []), ...(ind === 'bmi' ? ['X4', 'W16'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? <> {ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)}{ind === 'weight' && <> <Refs ids={['X5']} /></>}</> : ''}</p>}
         {kid.gaWeeks && kid.gaWeeks < 37 && monthsAt(kid.birth, today()) < (kid.gaWeeks < 32 ? 24 : 12) && <p className="small muted">{s.pretermNote(kid.gaWeeks)} <Refs ids={['W13']} /></p>}
       </motion.div>
 
@@ -430,11 +526,12 @@ function Growth({ lang, kid, growth, setGrowth }) {
               </div>
               <div className="dl-vals">
                 {INPUTS.filter((k) => g[k]).map((k) => (
-                  <span key={k} className={`chip ${g.ev[k]?.warnings.length ? 'chip-warn' : ''}`}>
+                  <span key={k} className={`chip ${g.ev[k]?.warnings.some((w) => w.level !== 'info') ? 'chip-warn' : ''}`}>
                     {label[k]} {fmt(g[k], 2)} {INDICATORS[k].unit}{g.ev[k] ? ` · ${s.pct(g.ev[k].p)}` : ''}
                   </span>
                 ))}
               </div>
+              {g.ev.bmi?.estimated && <p className="small muted">{s.bmiEstText(new Date(g.date).toLocaleDateString(lang), new Date(g.ev.bmi.dates[0]).toLocaleDateString(lang), g.ev.bmi.dates[1] && new Date(g.ev.bmi.dates[1]).toLocaleDateString(lang))} <Refs ids={['W16']} /></p>}
               {g.beforeTerm && <p className="small muted">{s.beforeTerm} <Refs ids={['W13']} /></p>}
               <WarnBox warnings={warns} s={s} />
             </motion.li>

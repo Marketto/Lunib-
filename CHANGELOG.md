@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.11.0 — 9 novembre 2026
+- Crescita rivista sulle fonti OMS/NICE: nuovo grafico peso-per-lunghezza/altezza sotto i 5 anni (soglie OMS), BMI stimato (punto vuoto, solo posizione) quando peso e altezza sono misurati in giorni diversi, avviso di peso alto solo informativo, testi «sotto −2 DS» corretti (anche in russo), calo di percentile da confermare, nessun falso allarme a fine età corretta.
+
 ## 1.10.0 — 9 novembre 2026
 - Tappe dell'età scolare (solo informative, senza avvisi per età): primo dentino che cade, primi denti definitivi (tabelle ADA, AAPD), leggere e scrivere a fine seconda primaria (Consensus Conference ISS).
 - Giochi 6–12 anni: movimento ogni giorno (OMS), sfide di costruzione, lettura guidata a casa; gioco dell'oca con i numeri fino a 8 anni. Livelli di prova più chiari.
