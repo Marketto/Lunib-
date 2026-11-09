@@ -117,3 +117,13 @@ describe('crypto', () => {
     expect(medsOnly.tooLarge).toBe(false);
   });
 });
+
+import { describe as describeFile, maskValue } from '../src/components/ImportCsv.jsx';
+import { it as it2, expect as expect2 } from 'vitest';
+it2('struttura del file senza dati', () => {
+  expect2(maskValue('Maria 09/11/2026 8,5')).toBe('aaaaa 99/99/9999 9,9');
+  const out = describeFile([{ name: 'Growth', rows: [['Date', 'Weight'], ['2026-11-09', '8.5'], ['2026-11-10', '']] }]);
+  expect2(out).toContain('Foglio "Growth" (2 righe)');
+  expect2(out).toContain('- Date: 9999-99-99');
+  expect2(out).not.toContain('8.5');
+});

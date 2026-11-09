@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.1.2 — 9 novembre 2026
+- Import: «Copia la struttura del file» copia solo nomi di fogli e colonne (nessun dato, nessuna foto) per chiedere supporto.
+
 ## 1.1.1 — 9 novembre 2026
 - Frase segreta: contatore dei caratteri, avviso se le due frasi non coincidono, pulsante attivo solo quando è tutto corretto.
 

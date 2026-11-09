@@ -635,3 +635,6 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .pass-count.ok { color: #2f7a55; }
 .form-err { margin: 6px 0 0; padding: 8px 12px; border-radius: 12px; background: #fde0dc; color: #8a1f14; font-weight: 600; }
 .btn.primary:disabled { opacity: .45; }
+.struct-box { margin: 10px 0; padding: 10px 12px; border-radius: 14px; background: rgba(46,47,87,.05); }
+.struct-box p { margin: 0 0 8px; }
+.btn.small { padding: 8px 12px; font-size: .85rem; }

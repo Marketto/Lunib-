@@ -7,6 +7,7 @@ export const IMPORT_BTN = { it: 'Importa da un\'altra app (CSV)', ru: 'Импо�
 
 const TX = {
   it: {
+    structHint: 'Il tuo file non è riconosciuto bene? Copia solo la struttura (nomi dei fogli e delle colonne, nessun dato, nessuna foto) e mandala per ricevere supporto.', structCopy: 'Copia la struttura del file', structCopied: 'Struttura copiata',
     title: 'Importa da CSV o Excel', local: 'Il file viene letto solo sul tuo telefono: non viene inviato da nessuna parte.',
     pick: 'Scegli un file CSV o Excel (.xlsx)', step: (n) => `Passo ${n} di 3`, preview: 'Anteprima delle prime 5 righe',
     next: 'Avanti', back: 'Indietro', cancel: 'Chiudi', empty: 'Nessuna riga leggibile in questo file.', err: 'Impossibile leggere il file.',
@@ -20,6 +21,7 @@ const TX = {
     verify: 'Controlla che i valori importati siano giusti: l\'app non può verificarli.'
   },
   ru: {
+    structHint: 'Файл распознаётся плохо? Скопируйте только структуру (названия листов и столбцов, без данных и фото) и отправьте её для поддержки.', structCopy: 'Скопировать структуру файла', structCopied: 'Структура скопирована',
     title: 'Импорт из CSV или Excel', local: 'Файл читается только на вашем телефоне и никуда не отправляется.',
     pick: 'Выберите файл CSV или Excel (.xlsx)', step: (n) => `Шаг ${n} из 3`, preview: 'Первые 5 строк',
     next: 'Далее', back: 'Назад', cancel: 'Закрыть', empty: 'В этом файле нет читаемых строк.', err: 'Не удалось прочитать файл.',
@@ -35,6 +37,24 @@ const TX = {
 };
 const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен' } };
 const UNITS = { weight: ['kg', 'g', 'lb'], height: ['cm', 'in'], head: ['cm', 'in'], dose: ['mg', 'ml'] };
+
+// Struttura del file SENZA dati: nomi dei fogli, intestazioni e "forma" del primo valore di ogni colonna
+// (cifre → 9, lettere → a). Serve a chiedere supporto senza condividere dati o foto.
+export function maskValue(v) {
+  const t = String(v ?? '').trim();
+  if (!t) return '';
+  return t.slice(0, 24).replace(/\p{L}/gu, 'a').replace(/\d/g, '9');
+}
+export function describe(sheets) {
+  return sheets.filter((sh) => sh.rows.length).map((sh) => {
+    const [head, ...body] = sh.rows;
+    const cols = head.map((h, i) => {
+      const v = body.find((r) => String(r[i] ?? '').trim())?.[i];
+      return `  - ${String(h || '(vuota)').slice(0, 40)}: ${maskValue(v) || '—'}`;
+    });
+    return `Foglio "${sh.name}" (${body.length} righe)\n${cols.join('\n')}`;
+  }).join('\n\n');
+}
 
 export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth, setMeds, onClose }) {
   const s = TX[lang];
@@ -63,22 +83,29 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
         const names = await readSheetNames(f);
         const cell = (v) => (v instanceof Date ? v.toISOString().slice(0, 16).replace('T', ' ').replace(' 00:00', '') : v == null ? '' : String(v));
         let best = null;
+        const struct = [];
         for (const name of names) {
           const r = (await readXlsx(f, { sheet: name })).map((row) => row.map(cell));
+          struct.push({ name, rows: r });
           const g = r.length ? guessMapping(r[0]) : {};
           const score = Object.values(g).filter((x) => x >= 0).length;
           if (r.length > 1 && (!best || score > best.score)) best = { rows: r, score, name };
         }
         rows = best ? best.rows : [];
+        setStructure(describe(struct));
         setSheets(names.length > 1 && best ? `${best.name} (${names.length})` : '');
       } else {
         rows = parseCsv(await f.text()).rows;
+        setStructure(describe([{ name: f.name.replace(/.*\./, '').toUpperCase(), rows }]));
       }
       if (rows.length < 2) { setErr(s.empty); return; }
       setErr(''); setData({ rows }); setMap(guessMapping(rows[0])); setStep(1);
     } catch { setErr(s.err); }
   };
   const [sheets, setSheets] = useState('');
+  const [structure, setStructure] = useState('');
+  const [copied, setCopied] = useState(false);
+  const copyStructure = async () => { try { await navigator.clipboard.writeText(structure); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch {} };
   const ref = React.useRef(null);
   React.useEffect(() => { ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, [step]);
 
@@ -102,6 +129,12 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
       <h3>{s.title} {step > 0 && !result && <small className="muted">· {s.step(step)}</small>}</h3>
       <p className="small muted">{s.local}</p>
       {sheets && step === 1 && <p className="small muted">{lang === 'ru' ? 'Лист' : 'Foglio'}: {sheets}</p>}
+      {structure && step >= 1 && !result && (
+        <div className="struct-box">
+          <p className="small muted">{s.structHint}</p>
+          <button type="button" className="btn ghost small" onClick={copyStructure}>{copied ? `✓ ${s.structCopied}` : s.structCopy}</button>
+        </div>
+      )}
 
       {result ? (
         <>
