@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.1.3 — 9 novembre 2026
+- Import: supporto ai file Excel .xls (formato vecchio), .xlsm e LibreOffice .ods; le immagini nei file vengono ignorate.
+
 ## 1.1.2 — 9 novembre 2026
 - Import: «Copia la struttura del file» copia solo nomi di fogli e colonne (nessun dato, nessuna foto) per chiedere supporto.
 

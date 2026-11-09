@@ -9,7 +9,7 @@ const TX = {
   it: {
     structHint: 'Il tuo file non è riconosciuto bene? Copia solo la struttura (nomi dei fogli e delle colonne, nessun dato, nessuna foto) e mandala per ricevere supporto.', structCopy: 'Copia la struttura del file', structCopied: 'Struttura copiata',
     title: 'Importa da CSV o Excel', local: 'Il file viene letto solo sul tuo telefono: non viene inviato da nessuna parte.',
-    pick: 'Scegli un file CSV o Excel (.xlsx)', step: (n) => `Passo ${n} di 3`, preview: 'Anteprima delle prime 5 righe',
+    pick: 'Scegli un file CSV o Excel (.xls, .xlsx)', step: (n) => `Passo ${n} di 3`, preview: 'Anteprima delle prime 5 righe',
     next: 'Avanti', back: 'Indietro', cancel: 'Chiudi', empty: 'Nessuna riga leggibile in questo file.', err: 'Impossibile leggere il file.',
     mapTitle: 'Collega le colonne', none: '— non importare —',
     f: { date: 'Data / data e ora', weight: 'Peso', height: 'Lunghezza / altezza', head: 'Circonferenza testa', med: 'Nome del farmaco', dose: 'Quantità di farmaco', note: 'Nota' },
@@ -23,7 +23,7 @@ const TX = {
   ru: {
     structHint: 'Файл распознаётся плохо? Скопируйте только структуру (названия листов и столбцов, без данных и фото) и отправьте её для поддержки.', structCopy: 'Скопировать структуру файла', structCopied: 'Структура скопирована',
     title: 'Импорт из CSV или Excel', local: 'Файл читается только на вашем телефоне и никуда не отправляется.',
-    pick: 'Выберите файл CSV или Excel (.xlsx)', step: (n) => `Шаг ${n} из 3`, preview: 'Первые 5 строк',
+    pick: 'Выберите файл CSV или Excel (.xls, .xlsx)', step: (n) => `Шаг ${n} из 3`, preview: 'Первые 5 строк',
     next: 'Далее', back: 'Назад', cancel: 'Закрыть', empty: 'В этом файле нет читаемых строк.', err: 'Не удалось прочитать файл.',
     mapTitle: 'Сопоставьте столбцы', none: '— не импортировать —',
     f: { date: 'Дата / дата и время', weight: 'Вес', height: 'Длина / рост', head: 'Окружность головы', med: 'Название лекарства', dose: 'Количество лекарства', note: 'Заметка' },
@@ -77,15 +77,17 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
     if (!f) return;
     try {
       let rows;
-      if (/\.xlsx$/i.test(f.name)) {
-        // Excel: si carica solo quando serve; si sceglie il foglio con più colonne riconosciute
-        const { default: readXlsx, readSheetNames } = await import('read-excel-file');
-        const names = await readSheetNames(f);
+      if (/\.(xlsx|xlsm|xls|ods)$/i.test(f.name) || /sheet|excel|opendocument/.test(f.type)) {
+        // Excel (.xlsx, vecchio .xls) e LibreOffice (.ods): la libreria si carica solo quando serve.
+        // Si leggono solo i valori delle celle: immagini e foto nel file vengono ignorate.
+        const XLSX = await import('xlsx');
+        const wb = XLSX.read(await f.arrayBuffer(), { cellDates: true, cellStyles: false, bookImages: false });
+        const names = wb.SheetNames;
         const cell = (v) => (v instanceof Date ? v.toISOString().slice(0, 16).replace('T', ' ').replace(' 00:00', '') : v == null ? '' : String(v));
         let best = null;
         const struct = [];
         for (const name of names) {
-          const r = (await readXlsx(f, { sheet: name })).map((row) => row.map(cell));
+          const r = XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, raw: true, defval: '', blankrows: false }).map((row) => row.map(cell));
           struct.push({ name, rows: r });
           const g = r.length ? guessMapping(r[0]) : {};
           const score = Object.values(g).filter((x) => x >= 0).length;
@@ -144,7 +146,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
         </>
       ) : step === 0 ? (
         <>
-          <label className="field"><span>{s.pick}</span><input type="file" accept=".csv,.txt,.xlsx,text/csv,text/plain,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" onChange={onFile} /></label>
+          <label className="field"><span>{s.pick}</span><input type="file" accept=".csv,.txt,.xlsx,.xls,.xlsm,.ods,text/csv,text/plain,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.oasis.opendocument.spreadsheet" onChange={onFile} /></label>
           {err && <p className="small" role="alert">{err}</p>}
           <div className="row"><button className="btn ghost" onClick={onClose}>{s.cancel}</button></div>
         </>
