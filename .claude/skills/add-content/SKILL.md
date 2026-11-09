@@ -10,7 +10,7 @@ description: Add or update an evidence-based card (content/cards) or game (conte
 4. **Scrittura IT** → agente `content-writer`: schema delle schede esistenti; voci per età `{"t","from","to"}`;
    soglie di sicurezza `"strict": true`; possibili patologie → campo `alert`.
 5. **Traduzione** → agente `translator-ru`.
-6. `npm run content` (schema, fonti, allineamento it/ru, fasce 0–72 mesi).
+6. `npm run content` (schema, fonti, allineamento it/ru, fasce 0–144 mesi).
 7. **Verifica testo** → `evidence-verifier` su IT+RU contro le fonti. Applica le correzioni e ripeti 6–7 finché OK.
 8. `npm test` e screenshot con `qa-runner`.
 

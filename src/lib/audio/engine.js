@@ -300,25 +300,25 @@ export const TRACKS = [
   // --- Per dormire: rumori e suoni ---
   { id: 'womb', group: 'sleep', kind: 'noise', from: 0, to: 6, hue: '#f1b4c3', start: () => realTrack(R.womb, 1) },
   { id: 'shush', group: 'sleep', kind: 'noise', from: 0, to: 6, hue: '#cfd6f6', start: () => realTrack(R.shush, 0.8) },
-  { id: 'car', group: 'sleep', kind: 'noise', from: 0, to: 72, hue: '#c6cbe0', start: () => realTrack(R.car, 1) },
+  { id: 'car', group: 'sleep', kind: 'noise', from: 0, to: 144, hue: '#c6cbe0', start: () => realTrack(R.car, 1) },
   { id: 'dryer', group: 'sleep', kind: 'noise', from: 0, to: 24, hue: '#f6cfd8', start: () => realTrack(R.dryer, 0.9) },
-  { id: 'brown', group: 'sleep', kind: 'noise', from: 0, to: 72, hue: '#d9b99b', start: () => realTrack(R.brown, 1) },
-  { id: 'pink', group: 'sleep', kind: 'noise', from: 3, to: 72, hue: '#f6cfd8', start: () => realTrack(R.pink, 1) },
-  { id: 'white', group: 'sleep', kind: 'noise', from: 0, to: 72, hue: '#e8ecf7', start: () => realTrack(R.white, 1) },
-  { id: 'fan', group: 'sleep', kind: 'noise', from: 0, to: 72, hue: '#bfe0d2', start: () => realTrack(R.fan, 1) },
-  { id: 'rain', group: 'sleep', kind: 'nature', from: 6, to: 72, hue: '#a9c7ee', start: () => realTrack(R.rain, 1, 0.12) },
-  { id: 'waves', group: 'sleep', kind: 'nature', from: 6, to: 72, hue: '#9ed3d6', start: () => realTrack(R.waves, 1, 0.2) },
+  { id: 'brown', group: 'sleep', kind: 'noise', from: 0, to: 144, hue: '#d9b99b', start: () => realTrack(R.brown, 1) },
+  { id: 'pink', group: 'sleep', kind: 'noise', from: 3, to: 144, hue: '#f6cfd8', start: () => realTrack(R.pink, 1) },
+  { id: 'white', group: 'sleep', kind: 'noise', from: 0, to: 144, hue: '#e8ecf7', start: () => realTrack(R.white, 1) },
+  { id: 'fan', group: 'sleep', kind: 'noise', from: 0, to: 144, hue: '#bfe0d2', start: () => realTrack(R.fan, 1) },
+  { id: 'rain', group: 'sleep', kind: 'nature', from: 6, to: 144, hue: '#a9c7ee', start: () => realTrack(R.rain, 1, 0.12) },
+  { id: 'waves', group: 'sleep', kind: 'nature', from: 6, to: 144, hue: '#9ed3d6', start: () => realTrack(R.waves, 1, 0.2) },
   // --- Per dormire: musica ---
-  { id: 'brahms', group: 'sleep', kind: 'music', from: 0, to: 72, hue: '#b9b2ec', start: () => startMusicBox(BRAHMS, 66) },
-  { id: 'twinkle', group: 'sleep', kind: 'music', from: 0, to: 72, hue: '#f7d79a', start: () => startMusicBox(TWINKLE, 72) },
-  { id: 'carillon', group: 'sleep', kind: 'music', from: 0, to: 72, hue: '#c9e3b8', start: startCarillon },
-  { id: 'moon', group: 'sleep', kind: 'music', from: 12, to: 72, hue: '#8f8ad6', start: startAmbient },
+  { id: 'brahms', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#b9b2ec', start: () => startMusicBox(BRAHMS, 66) },
+  { id: 'twinkle', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#f7d79a', start: () => startMusicBox(TWINKLE, 72) },
+  { id: 'carillon', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#c9e3b8', start: startCarillon },
+  { id: 'moon', group: 'sleep', kind: 'music', from: 12, to: 144, hue: '#8f8ad6', start: startAmbient },
   // --- Per giocare ---
   { id: 'bubbles', group: 'play', kind: 'music', from: 0, to: 12, hue: '#a9dcf0', start: startBubbles },
-  { id: 'marimba', group: 'play', kind: 'music', from: 6, to: 72, hue: '#f7c48f', start: () => startGroove(96, false) },
-  { id: 'twinkle-play', group: 'play', kind: 'music', from: 6, to: 72, hue: '#f7d79a', start: () => startMarimbaSong(TWINKLE, 108) },
-  { id: 'fra-martino', group: 'play', kind: 'music', from: 12, to: 72, hue: '#f1b4c3', start: startFraMartino },
-  { id: 'dance', group: 'play', kind: 'music', from: 18, to: 72, hue: '#a8d0be', start: () => startGroove(112, true) }
+  { id: 'marimba', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7c48f', start: () => startGroove(96, false) },
+  { id: 'twinkle-play', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7d79a', start: () => startMarimbaSong(TWINKLE, 108) },
+  { id: 'fra-martino', group: 'play', kind: 'music', from: 12, to: 144, hue: '#f1b4c3', start: startFraMartino },
+  { id: 'dance', group: 'play', kind: 'music', from: 18, to: 144, hue: '#a8d0be', start: () => startGroove(112, true) }
 ];
 
 // Guadagni di normalizzazione (misurati, vedi tests/audio): tutte le tracce a volume percepito simile

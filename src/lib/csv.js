@@ -119,7 +119,7 @@ export const RX_VITD = /vitamin[ae]?\s*d|colecalciferol|cholecalciferol|вита
 /** Principio attivo suggerito (preselezionato, modificabile dall'utente) per un nome importato. */
 export const suggestActive = (name) => (RX_VITD.test(String(name || '')) ? 'vitaminaD' : activeOf(name) || '');
 export const activeOf = (name) => (RX_PARA.test(name) ? 'paracetamolo' : RX_IBU.test(name) ? 'ibuprofene' : null);
-const LIMITS = { weight: [0.3, 40], height: [20, 130], head: [20, 60] };
+const LIMITS = { weight: [0.3, 200], height: [20, 230], head: [20, 60] };
 const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
 
 const gKey = (r) => [r.kidId, r.date, r.weight ?? '', r.height ?? '', r.head ?? ''].join('|');

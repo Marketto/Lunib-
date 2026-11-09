@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { KidPills, Refs, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
-import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
+import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
 import { MILESTONE_TEXT } from '../lib/i18n.js';
 import { formatAge } from '../lib/age.js';
@@ -19,7 +19,7 @@ export const DIARY_TEXT = {
   it: {
     title: 'Diario', sub: 'Crescita e medicine, solo sul tuo telefono.',
     tabGrowth: 'Crescita', tabMeds: 'Medicine',
-    weight: 'Peso', height: 'Altezza', head: 'Testa',
+    weight: 'Peso', height: 'Altezza', head: 'Testa', bmi: 'BMI',
     heightLong: (m) => (m < 24 ? 'Lunghezza (sdraiato)' : 'Altezza (in piedi)'), headLong: 'Circonferenza cranica',
     sexAsk: 'Per confrontare con le curve OMS serve sapere se è…', boy: 'un bimbo', girl: 'una bimba',
     pretermQ: 'Nato pretermine?', preterm: 'Settimane di gestazione alla nascita (per l\'età corretta)',
@@ -47,7 +47,9 @@ export const DIARY_TEXT = {
       notRegained: 'A 3 settimane non ha ancora recuperato il peso alla nascita: va valutato.'
     },
     beforeTerm: 'Prima del termine corretto (40 settimane) le curve OMS non si applicano: il pediatra usa curve specifiche per i pretermine.',
-    noWfl: 'Lunibù non calcola il peso-per-lunghezza né il BMI: non può dire se è magro o in sovrappeso.',
+    noWfl: 'Lunibù non calcola il peso-per-lunghezza e non valuta il BMI come magrezza o sovrappeso: non può dire se è magro o in sovrappeso.',
+    over10: 'Dopo i 10 anni l\'OMS usa l\'indice di massa corporea invece del peso per età.',
+    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Lunibù mostra la posizione sulle curve OMS ma non dà un giudizio: per interpretarlo chiedi al pediatra.',
     pos: 'Come è stato misurato', lying: 'sdraiato', standing: 'in piedi',
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
     measureTips: 'Pesa senza vestiti (o con il body), sempre con la stessa bilancia. Sotto i 2 anni la lunghezza si misura sdraiato, poi in piedi senza scarpe. La testa: metro morbido sopra sopracciglia e orecchie, nel punto più largo.',
@@ -75,6 +77,7 @@ export const DIARY_TEXT = {
     units: { mg: 'mg', ml: 'ml', gocce: 'gocce', UI: 'UI', 'µg': 'µg', compresse: 'compresse', bustine: 'bustine', supposte: 'supposte', spruzzi: 'spruzzi', other: '—' },
     c: {
       noCheck: 'Nessun controllo automatico per questo farmaco: segui la prescrizione o il foglietto.',
+      olderChild: 'Oltre i 6 anni Lunibù controlla solo i limiti per kg: verifica sul foglietto anche la dose massima per singola somministrazione e al giorno per l\'età.',
       underAge: (p) => `Sotto i ${p.months} mesi chiedi sempre al pediatra prima di dare questo farmaco. Con febbre ≥ 38 °C sotto i 3 mesi serve una valutazione medica urgente.`,
       underWeight: (p) => `Sotto i ${fmt(p.kg)} kg questo farmaco non va dato senza indicazione del medico.`,
       contra: (p, s) => `Con questa condizione (${s.flag[p.flag]}) chiedi prima al pediatra.`,
@@ -112,7 +115,7 @@ export const DIARY_TEXT = {
   ru: {
     title: 'Дневник', sub: 'Рост и лекарства — только на вашем телефоне.',
     tabGrowth: 'Рост', tabMeds: 'Лекарства',
-    weight: 'Вес', height: 'Рост', head: 'Голова',
+    weight: 'Вес', height: 'Рост', head: 'Голова', bmi: 'ИМТ',
     heightLong: (m) => (m < 24 ? 'Длина тела (лёжа)' : 'Рост (стоя)'), headLong: 'Окружность головы',
     sexAsk: 'Для сравнения с кривыми ВОЗ нужно знать, это…', boy: 'мальчик', girl: 'девочка',
     pretermQ: 'Родился недоношенным?', preterm: 'Срок беременности при рождении, недель (для скорректированного возраста)',
@@ -140,7 +143,9 @@ export const DIARY_TEXT = {
       notRegained: 'В 3 недели вес при рождении ещё не восстановлен: нужно показаться врачу.'
     },
     beforeTerm: 'До достижения скорректированного срока 40 недель кривые ВОЗ не применяются: педиатр использует кривые для недоношенных.',
-    noWfl: 'Lunibù не рассчитывает вес к длине и ИМТ: он не может сказать, худой ребёнок или с лишним весом.',
+    noWfl: 'Lunibù не рассчитывает вес к длине и не оценивает ИМТ как недостаток или избыток веса: он не может сказать, худой ребёнок или с лишним весом.',
+    over10: 'После 10 лет ВОЗ использует индекс массы тела вместо веса для возраста.',
+    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. Lunibù показывает положение на кривых ВОЗ, но не даёт оценки: для интерпретации обратитесь к педиатру.',
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
@@ -167,6 +172,7 @@ export const DIARY_TEXT = {
     units: { mg: 'мг', ml: 'мл', gocce: 'капли', UI: 'МЕ', 'µg': 'мкг', compresse: 'таблетки', bustine: 'пакетики', supposte: 'свечи', spruzzi: 'спреи', other: '—' },
     c: {
       noCheck: 'Для этого лекарства нет автоматической проверки: следуйте назначению или инструкции.',
+      olderChild: 'После 6 лет Lunibù проверяет только пределы на кг: сверьтесь с инструкцией и по максимальной разовой и суточной дозе для возраста.',
       underAge: (p) => `До ${p.months} месяцев всегда спрашивайте педиатра, прежде чем давать это лекарство. При температуре ≥ 38 °C до 3 месяцев нужен срочный осмотр врача.`,
       underWeight: (p) => `При весе меньше ${fmt(p.kg)} кг это лекарство не дают без указания врача.`,
       contra: (p, s) => `При этом состоянии (${s.flag[p.flag]}) сначала спросите педиатра.`,
@@ -291,7 +297,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
       const m = growthAge(kid, g.date);
       const ev = {};
       if (m < 0) return { ...g, m, ev, beforeTerm: true }; // prima del termine corretto le curve OMS non valgono (W13)
-      for (const k of Object.keys(INDICATORS)) {
+      for (const k of INPUTS) {
         if (!(g[k] > 0) || m > INDICATORS[k].maxMonths) continue;
         const v = k === 'height' ? hVal(g, m) : +g[k];
         ev[k] = assess(k, sex, m, v, last[k], { birthZ });
@@ -302,11 +308,15 @@ function Growth({ lang, kid, growth, setGrowth }) {
         }
         (last[k] = last[k] || []).push({ months: m, value: v });
       }
+      if (g.weight > 0 && g.height > 0 && m >= INDICATORS.bmi.minMonths && m <= INDICATORS.bmi.maxMonths) {
+        const b = bmiOf(+g.weight, hVal(g, m));
+        ev.bmi = { ...assess('bmi', sex, m, b), value: b };
+      }
       return { ...g, m, ev };
     });
   }, [mine.map((g) => g.id + g.date + g.weight + g.height + g.head).join(), sex, kid.gaWeeks]); // eslint-disable-line
 
-  const pts = withEval.filter((g) => g.ev[ind]).map((g) => ({ id: g.id, m: g.m, v: ind === 'height' ? hVal(g, g.m) : +g[ind], warn: g.ev[ind].warnings.some((w) => w.level !== 'info') }));
+  const pts = withEval.filter((g) => g.ev[ind]).map((g) => ({ id: g.id, m: g.m, v: ind === 'height' ? hVal(g, g.m) : ind === 'bmi' ? g.ev.bmi.value : +g[ind], warn: g.ev[ind].warnings.some((w) => w.level !== 'info') }));
   const showHead = ageNow <= INDICATORS.head.maxMonths || mine.some((g) => g.head);
 
   // Avvisi del modulo mentre si scrive
@@ -315,7 +325,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
     const m = growthAge(kid, form.date || today());
     const out = [];
     if (m < 0) return out;
-    for (const k of Object.keys(INDICATORS)) {
+    for (const k of INPUTS) {
       let v = parseFloat(String(form[k] || '').replace(',', '.'));
       if (!(v > 0) || m > INDICATORS[k].maxMonths) continue;
       if (k === 'height') {
@@ -335,7 +345,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
   const saveForm = () => {
     const rec = { id: form.id || uid(), kidId: kid.id, date: form.date || today() };
     if (form.height) rec.heightPos = form.heightPos || (monthsAt(kid.birth, rec.date) < 24 ? 'lying' : 'standing');
-    for (const k of Object.keys(INDICATORS)) {
+    for (const k of INPUTS) {
       const v = parseFloat(String(form[k] || '').replace(',', '.'));
       if (v > 0) rec[k] = v;
     }
@@ -344,20 +354,21 @@ function Growth({ lang, kid, growth, setGrowth }) {
     setForm(null);
   };
 
-  const label = { weight: s.weight, height: s.height, head: s.head };
+  const label = { weight: s.weight, height: s.height, head: s.head, bmi: s.bmi };
+  const showBmi = ageNow >= INDICATORS.bmi.minMonths || mine.some((g) => g.ev?.bmi);
   return (
     <div>
       <div className="seg" role="tablist">
-        {['weight', 'height', ...(showHead ? ['head'] : [])].map((k) => (
+        {['weight', 'height', ...(showBmi ? ['bmi'] : []), ...(showHead ? ['head'] : [])].map((k) => (
           <button key={k} className={ind === k ? 'on' : ''} onClick={() => setInd(k)} role="tab" aria-selected={ind === k}>
             {ind === k && <motion.i layoutId="seg-pill" className="seg-pill" transition={spring} />}<span>{label[k]}</span>
           </button>
         ))}
       </div>
       <motion.div className="chart-card" key={ind} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : s.weight} <small>({INDICATORS[ind].unit})</small></h3>
+        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : s.weight} <small>({INDICATORS[ind].unit})</small></h3>
         <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />
-        <p className="small muted">{s.chartNote} {ind === 'weight' && s.noWfl} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? ' ' + s.over(INDICATORS[ind].maxMonths) : ''}</p>
+        <p className="small muted">{s.chartNote} {ind === 'weight' && s.noWfl} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? ' ' + (ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)) : ''}</p>
         {kid.gaWeeks && kid.gaWeeks < 37 && monthsAt(kid.birth, today()) < (kid.gaWeeks < 32 ? 24 : 12) && <p className="small muted">{s.pretermNote(kid.gaWeeks)} <Refs ids={['W13']} /></p>}
       </motion.div>
 
@@ -367,7 +378,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
             <label className="field"><span>{s.date}</span>
               <input type="date" min={kid.birth} max={today()} value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} /></label>
             <div className="field-row">
-              {Object.keys(INDICATORS).filter((k) => k !== 'head' || growthAge(kid, form.date) <= INDICATORS.head.maxMonths).map((k) => (
+              {INPUTS.filter((k) => k !== 'head' || growthAge(kid, form.date) <= INDICATORS.head.maxMonths).map((k) => (
                 <label key={k} className="field"><span>{label[k]} ({INDICATORS[k].unit})</span>
                   <input inputMode="decimal" value={form[k] || ''} onChange={(e) => setForm({ ...form, [k]: e.target.value })} placeholder="0,0" /></label>
               ))}
@@ -406,7 +417,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
                 <button className="link-btn" onClick={() => setGrowth(growth.filter((x) => x.id !== g.id))} aria-label={s.del}>✕</button>
               </div>
               <div className="dl-vals">
-                {Object.keys(INDICATORS).filter((k) => g[k]).map((k) => (
+                {INPUTS.filter((k) => g[k]).map((k) => (
                   <span key={k} className={`chip ${g.ev[k]?.warnings.length ? 'chip-warn' : ''}`}>
                     {label[k]} {fmt(g[k], 2)} {INDICATORS[k].unit}{g.ev[k] ? ` · ${s.pct(g.ev[k].p)}` : ''}
                   </span>

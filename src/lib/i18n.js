@@ -1,7 +1,7 @@
 export const STRINGS = {
   it: {
     appName: 'Lunibù',
-    tagline: 'Risposte basate sulla ricerca, da 0 a 6 anni',
+    tagline: 'Risposte basate sulla ricerca, da 0 a 12 anni',
     welcomeTitle: 'Ciao! 👋',
     welcomeText: 'Rispondo ai dubbi di tutti i giorni con informazioni tratte da linee guida e studi scientifici revisionati. I tuoi dati restano solo su questo telefono.',
     start: 'Cominciamo',
@@ -54,7 +54,8 @@ export const STRINGS = {
     close: 'Chiudi',
     home: 'Home',
     birthFuture: 'La data non può essere nel futuro',
-    over3: 'Questa versione copre 0–6 anni: alcune schede potrebbero non essere adatte.',
+    birthTooOld: 'Lunibù copre i bambini da 0 a 12 anni: controlla la data di nascita.',
+    over3: 'Questa versione copre 0–12 anni: alcune schede potrebbero non essere adatte.',
     nearShort: '±3 mesi',
     guideTitles: { si: 'Consigliati', limita: 'Con moderazione', no: 'Da evitare' },
     installTitle: 'Installa Lunibù',
@@ -84,7 +85,7 @@ export const STRINGS = {
   },
   ru: {
     appName: 'Лунибу',
-    tagline: 'Ответы на основе исследований — от 0 до 6 лет',
+    tagline: 'Ответы на основе исследований — от 0 до 12 лет',
     welcomeTitle: 'Здравствуйте! 👋',
     welcomeText: 'Я отвечаю на повседневные вопросы, опираясь на клинические рекомендации и рецензируемые научные исследования. Ваши данные остаются только на этом телефоне.',
     start: 'Начнём',
@@ -137,7 +138,8 @@ export const STRINGS = {
     close: 'Закрыть',
     home: 'Главная',
     birthFuture: 'Дата не может быть в будущем',
-    over3: 'Эта версия рассчитана на 0–6 лет: некоторые карточки могут не подходить.',
+    birthTooOld: 'Lunibù рассчитан на детей от 0 до 12 лет: проверьте дату рождения.',
+    over3: 'Эта версия рассчитана на 0–12 лет: некоторые карточки могут не подходить.',
     nearShort: '±3 мес.',
     guideTitles: { si: 'Рекомендуется', limita: 'Умеренно', no: 'Избегать' },
     installTitle: 'Установить «Лунибу»',

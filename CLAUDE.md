@@ -1,6 +1,6 @@
 # Lunibù — istruzioni per gli agenti
 
-App PWA per genitori di bambini 0–6 anni (IT/RU), offline, senza backend né AI a runtime.
+App PWA per genitori di bambini 0–12 anni (IT/RU), offline, senza backend né AI a runtime.
 **È solo un'utility per cercare rapidamente dati tratti dalla ricerca**: ogni contenuto deve rimandare alle fonti
 e invitare ad approfondire e verificare.
 

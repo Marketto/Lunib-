@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { t } from '../lib/i18n.js';
+import { validBirth } from '../lib/age.js';
 import { Mobile } from './Paper.jsx';
 import { LangSwitch, spring, tap } from './Common.jsx';
 import { IconLock } from './Icons.jsx';
@@ -31,6 +32,7 @@ export function KidForm({ kid, index, lang, onChange, onRemove }) {
         <input type="date" max={todayISO()} value={kid.birth || ''} onChange={(e) => onChange({ ...kid, birth: e.target.value })} />
       </label>
       {future && <p className="error">{s.birthFuture}</p>}
+      {!future && kid.birth && !validBirth(kid.birth) && <p className="error">{s.birthTooOld}</p>}
       <label className="field">
         <span>{s.nameOptional}</span>
         <input type="text" maxLength={30} value={kid.name || ''} onChange={(e) => onChange({ ...kid, name: e.target.value })} />
@@ -93,7 +95,7 @@ export default function Onboarding({ lang, setLang, onDone, qrData, onQrClose })
     setCount(v);
     setKids((k) => Array.from({ length: v }, (_, i) => k[i] || { birth: '', name: '' }));
   };
-  const valid = kids.every((k) => k.birth && k.birth <= todayISO());
+  const valid = kids.every((k) => validBirth(k.birth));
 
   const accept = (remote) => {
     const r = initialFromImport(remote);

@@ -26,7 +26,7 @@ export default defineConfig({
       manifest: {
         name: 'Lunibù',
         short_name: 'Lunibù',
-        description: 'Ricerca rapida di dati scientifici per genitori di bambini 0-6 anni',
+        description: 'Ricerca rapida di dati scientifici per genitori di bambini 0-12 anni',
         id: 'lunibu',
         lang: 'it',
         theme_color: '#23284f',

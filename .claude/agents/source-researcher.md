@@ -1,6 +1,6 @@
 ---
 name: source-researcher
-description: Finds peer-reviewed papers, meta-analyses and official guidelines for a parenting topic (ages 0-6) and extracts exact citations, DOIs, ages studied and key figures. Use before writing or updating any card or game.
+description: Finds peer-reviewed papers, meta-analyses and official guidelines for a parenting topic (ages 0-12) and extracts exact citations, DOIs, ages studied and key figures. Use before writing or updating any card or game.
 tools: WebSearch, WebFetch, Read, Grep, Glob
 model: sonnet
 effort: medium

@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.6.0 — 9 novembre 2026
+- app estesa fino a 12 anni (fase 1: età, curve OMS di altezza fino a 12 anni, peso fino a 10 e BMI)
+
 ## 1.5.0 — 9 novembre 2026
 - «Tappe»: checklist per età con finestre OMS/CDC/linee guida, avvisi gentili nell'ultimo 25% della finestra, conquiste con data.
 

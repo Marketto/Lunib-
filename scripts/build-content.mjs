@@ -22,7 +22,7 @@ for (const file of fs.readdirSync(cardsDir).filter((f) => f.endsWith('.json')).s
   for (const c of list) {
     const where = `${file}:${c.id}`;
     if (!CATEGORY_IDS.includes(c.category)) errors.push(`${where} categoria sconosciuta ${c.category}`);
-    if (!(c.ageFrom >= 0 && c.ageTo > c.ageFrom && c.ageTo <= 72)) errors.push(`${where} fascia età non valida`);
+    if (!(c.ageFrom >= 0 && c.ageTo > c.ageFrom && c.ageTo <= 144)) errors.push(`${where} fascia età non valida`);
     if (!ALERTS.includes(c.alert)) errors.push(`${where} alert non valido`);
     if (!c.sources?.length) errors.push(`${where} senza fonti`);
     for (const s of c.sources || []) if (!sources[s]) errors.push(`${where} fonte mancante ${s}`);
@@ -57,7 +57,7 @@ const games = JSON.parse(fs.readFileSync(path.join(root, 'content/games.json'), 
 const EV = ['forte', 'media', 'raccomandato', 'tappa'];
 for (const g of games) {
   const where = `games.json:${g.id}`;
-  if (!(g.from >= 0 && g.to > g.from && g.to <= 72)) errors.push(`${where} fascia età non valida`);
+  if (!(g.from >= 0 && g.to > g.from && g.to <= 144)) errors.push(`${where} fascia età non valida`);
   if (!['insieme', 'solo', 'entrambi'].includes(g.mode)) errors.push(`${where} modalità non valida`);
   if (!EV.includes(g.evidence)) errors.push(`${where} livello di evidenza non valido`);
   for (const sid of g.sources || []) if (!sources[sid]) errors.push(`${where} fonte mancante ${sid}`);

@@ -12,6 +12,16 @@ export function ageInMonths(birthISO, today = new Date()) {
   return Math.max(0, m);
 }
 
+export const MAX_KID_MONTHS = 156; // l'app copre 0–12 anni: si accettano bambini fino al 13º compleanno (escluso)
+
+/** Data di nascita valida: non futura e bambino sotto i 13 anni (app 0–12). */
+export function validBirth(birthISO, today = new Date()) {
+  if (!birthISO) return false;
+  const b = new Date(birthISO + 'T00:00:00');
+  if (Number.isNaN(b.getTime()) || b > today) return false;
+  return ageInMonths(birthISO, today) < MAX_KID_MONTHS;
+}
+
 export function ageInDays(birthISO, today = new Date()) {
   const b = new Date(birthISO + 'T00:00:00');
   const t = new Date(today.getFullYear(), today.getMonth(), today.getDate());

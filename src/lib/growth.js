@@ -4,16 +4,20 @@
 import GROWTH from '../data/growth.json';
 
 export const INDICATORS = {
-  weight: { unit: 'kg', maxMonths: 72, restricted: true, step: 0.01 },
-  height: { unit: 'cm', maxMonths: 72, restricted: false, step: 0.1 },
-  head: { unit: 'cm', maxMonths: 36, restricted: false, step: 0.1 } // L=1 (W8); OMS fino a 60 mesi, AAP misura di routine fino a 24 (W14)
+  weight: { unit: 'kg', maxMonths: 120, restricted: true, step: 0.01 }, // OMS 2007: peso per età solo fino a 10 anni (W2)
+  height: { unit: 'cm', maxMonths: 144, restricted: false, step: 0.1 },
+  head: { unit: 'cm', maxMonths: 36, restricted: false, step: 0.1 }, // L=1 (W8); OMS fino a 60 mesi, AAP misura di routine fino a 24 (W14)
+  bmi: { unit: 'kg/m²', minMonths: 24, maxMonths: 144, restricted: true, step: 0.1, derived: true } // calcolato da peso e altezza della stessa misura; OMS 2006 (24-60 mesi) e 2007 (61-144)
 };
+export const INPUTS = ['weight', 'height', 'head']; // indicatori inseriti a mano (bmi è derivato)
+export const bmiOf = (kg, cm) => (kg > 0 && cm > 0 ? kg / ((cm / 100) ** 2) : null);
 
 // Soglie (vedi fonti indicate in GROWTH_SOURCES)
 export const GROWTH_RULES = {
   warnZ: 2,          // oltre ±2 DS: fuori dall'intervallo tipico (OMS)
   strongZ: 3,        // oltre ±3 DS: molto lontano (OMS)
-  implausible: { weight: [-6, 5], height: [-6, 6], head: [-5, 5] }, // flag OMS di valori biologicamente improbabili
+  implausible: { weight: [-6, 5], height: [-6, 6], head: [-5, 5], bmi: [-5, 5] }, // flag OMS di valori biologicamente improbabili
+  // TODO(ricerca in corso): soglie di avviso BMI (sovrappeso/obesità/magrezza) non ancora definite; per ora solo il flag generico 'implausible' (|z| > 5)
   space: 0.67,       // uno "spazio" tra centili maggiori ≈ 2/3 DS (W9)
   minGapDays: { weight: 28, head: 28, height: 90 }, // altezza: non più spesso di ogni 3 mesi (W6)
   newbornDays: 14,   // 0–2 settimane: calo fisiologico, niente confronto tra centili (W5, W6)
@@ -28,7 +32,7 @@ export function lmsAt(indicator, sex, months) {
   const data = GROWTH[indicator];
   const sx = sex === 'f' ? 2 : 1;
   const table = data?.[sx];
-  if (!table || months < 0) return null;
+  if (!table || months < 0 || months < (INDICATORS[indicator]?.minMonths || 0)) return null;
   const max = table.length - 1;
   if (months > max) return null;
   const lerp = (a, b, f) => a.map((v, k) => v + (b[k] - v) * f);
@@ -105,6 +109,7 @@ export function assess(indicator, sex, months, value, prev, opts = {}) {
   const warnings = [];
   const [lo, hi] = R.implausible[indicator];
   if (z < lo || z > hi) warnings.push({ kind: 'implausible', level: 'check' });
+  else if (indicator === 'bmi') { /* TODO(ricerca in corso): nessun avviso BMI oltre 'implausible' */ }
   else if (indicator === 'height' && z > 3) warnings.push({ kind: 'tall', level: 'info' });        // raramente un problema (W3)
   else if (indicator === 'height' && z > 2) { /* nella norma per l'OMS */ }
   else if (indicator === 'weight' && z > 2) warnings.push({ kind: z > 3 ? 'weightVeryHigh' : 'weightHigh', level: 'warn' });
@@ -112,6 +117,7 @@ export function assess(indicator, sex, months, value, prev, opts = {}) {
   else if (z < -3) warnings.push({ kind: 'veryLow', level: 'strong' });
   else if (z < -2) warnings.push({ kind: z < R.below04 ? 'below04' : 'low', level: 'warn' });
 
+  if (indicator === 'bmi') return { z, p: percentile(z), warnings }; // niente confronti tra misure per il BMI finché la ricerca non è completata
   const minGap = R.minGapDays[indicator];
   const prevs = (Array.isArray(prev) ? prev : prev ? [prev] : [])
     .filter((q) => (months - q.months) * DAYS_PER_MONTH >= minGap && q.months * DAYS_PER_MONTH >= R.newbornDays)

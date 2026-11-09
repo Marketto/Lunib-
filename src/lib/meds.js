@@ -69,6 +69,8 @@ export function checkDose(entry, log, { months, weight }) {
   const r = a.routes[entry.route] || a.routes.oral;
 
   if (months != null && months < a.askDoctorUnderMonths) out.push({ kind: 'underAge', level: 'stop', months: a.askDoctorUnderMonths });
+  // Oltre i 6 anni i limiti verificati sono solo in mg/kg: manca un tetto assoluto per dose verificato (in arrivo)
+  if (months != null && months >= 72) out.push({ kind: 'olderChild', level: 'info' });
   if (a.minWeightKg && weight && weight.kg < a.minWeightKg) out.push({ kind: 'underWeight', level: 'stop', kg: a.minWeightKg });
   for (const c of a.contra || []) if (entry.flags?.includes(c)) out.push({ kind: 'contra', level: 'stop', flag: c });
 

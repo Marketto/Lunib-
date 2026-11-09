@@ -1,12 +1,12 @@
 // Condizioni d'uso e scarico di responsabilità (IT / RU).
 // NB: testo da far verificare a un legale prima della pubblicazione.
-export const TERMS_VERSION = '1.3';
+export const TERMS_VERSION = '1.4';
 export const TERMS_DATE = '2026-11-09';
 
 export const TERMS = {
   it: {
     title: "Condizioni d'uso e avvertenze",
-    updated: 'Versione 1.3 · 9 novembre 2026',
+    updated: 'Versione 1.4 · 9 novembre 2026',
     accept: "Ho letto e accetto le condizioni d'uso",
     read: "Leggi le condizioni d'uso",
     mustAccept: 'Per continuare devi accettare le condizioni.',
@@ -40,7 +40,7 @@ export const TERMS = {
   },
   ru: {
     title: 'Условия использования и предупреждения',
-    updated: 'Версия 1.3 · 9 ноября 2026',
+    updated: 'Версия 1.4 · 9 ноября 2026',
     accept: 'Я прочитал(а) и принимаю условия использования',
     read: 'Прочитать условия использования',
     mustAccept: 'Чтобы продолжить, нужно принять условия.',

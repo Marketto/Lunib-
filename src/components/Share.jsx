@@ -8,14 +8,14 @@ export const SHARE_TEXT = {
   it: {
     title: 'Condividi Lunibù', sub: 'Manda il link dell\'app (senza i tuoi dati: restano solo su questo telefono).',
     share: 'Condividi', copy: 'Copia link', copied: 'Link copiato', qr: 'Oppure fai inquadrare questo QR code',
-    message: 'Lunibù: ricerca rapida di dati scientifici per genitori di bambini 0–6 anni. Funziona anche offline.',
+    message: 'Lunibù: ricerca rapida di dati scientifici per genitori di bambini 0–12 anni. Funziona anche offline.',
     version: (v, b, d) => `Versione ${v} · build ${b} · ${d}`,
     updated: (v) => `Lunibù è stata aggiornata alla versione ${v}.`, ready: 'Nuova versione pronta: si aggiornerà alla prossima apertura.', now: 'Aggiorna ora', ok: 'Ok'
   },
   ru: {
     title: 'Поделиться Lunibù', sub: 'Отправьте ссылку на приложение (без ваших данных: они остаются только на этом телефоне).',
     share: 'Поделиться', copy: 'Копировать ссылку', copied: 'Ссылка скопирована', qr: 'Или дайте отсканировать этот QR-код',
-    message: 'Lunibù: быстрый поиск научных данных для родителей детей 0–6 лет. Работает и офлайн.',
+    message: 'Lunibù: быстрый поиск научных данных для родителей детей 0–12 лет. Работает и офлайн.',
     version: (v, b, d) => `Версия ${v} · сборка ${b} · ${d}`,
     updated: (v) => `Lunibù обновлено до версии ${v}.`, ready: 'Новая версия готова: обновится при следующем открытии.', now: 'Обновить сейчас', ok: 'Ок'
   }

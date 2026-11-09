@@ -11,7 +11,7 @@
 > *RU:* Lunibù — **лишь инструмент для быстрого поиска данных** из рекомендаций и исследований. Это не медицинское
 > изделие и не замена педиатру или другим специалистам. **Всегда проверяйте первоисточники.** В экстренных случаях — **112**.
 
-PoC di un'app per genitori di bambini **0–6 anni**: risposte e consigli basati su linee guida e studi
+PoC di un'app per genitori di bambini **0–12 anni**: risposte e consigli basati su linee guida e studi
 scientifici revisionati, in **italiano e russo**, che funziona **offline**, senza backend e senza AI.
 
 ## Cosa fa
@@ -115,7 +115,7 @@ ricerca; il livello di evidenza è dichiarato (forte / media / raccomandato da l
 ## Diario: crescita e medicine
 
 - **Crescita**: peso, lunghezza/altezza (con posizione sdraiato/in piedi, ±0,7 cm) e circonferenza cranica
-  (fino a 36 mesi) sulle curve OMS: WHO Child Growth Standards 2006 (0–5 anni) e WHO Growth Reference 2007 (5–6 anni),
+  (fino a 36 mesi) sulle curve OMS: WHO Child Growth Standards 2006 (0–5 anni) e WHO Growth Reference 2007 (5–12 anni: altezza fino a 12 anni, peso fino a 10, BMI da 24 mesi a 12 anni),
   metodo LMS con le tabelle ufficiali OMS (`scripts/data-raw`, dai pacchetti `WorldHealthOrganization/anthro` e
   `anthroplus`). Percentili, grafico con le curve 3–15–50–85–97 ed età corretta per i nati pretermine.
   Avvisi non diagnostici con fonte (OMS Module C, NICE NG75, RCPCH): fuori ±2/±3 DS, sotto lo 0,4° centile,

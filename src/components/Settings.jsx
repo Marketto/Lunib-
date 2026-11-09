@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { t } from '../lib/i18n.js';
+import { validBirth } from '../lib/age.js';
 import { KidForm } from './Onboarding.jsx';
 import { LangSwitch, tap } from './Common.jsx';
 import { useAudio } from '../lib/audio/useAudio.jsx';
@@ -16,7 +17,7 @@ export default function Settings({ lang, setLang, kids, setKids, onReset, syncSt
   const [saved, setSaved] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const today = new Date().toISOString().slice(0, 10);
-  const valid = draft.length > 0 && draft.every((k) => k.birth && k.birth <= today);
+  const valid = draft.length > 0 && draft.every((k) => validBirth(k.birth));
   const dirty = JSON.stringify(draft) !== JSON.stringify(kids);
 
   return (
