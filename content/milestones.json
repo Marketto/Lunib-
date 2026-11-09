@@ -1,0 +1,588 @@
+{
+  "_note": "Tappe. Mesi. type: who-1-99 | cdc-75pct | guideline-range | not-before. warn=false: solo informativo. verified: dati verificati con evidence-verifier. note: {at, level tip|talk, it, ru} nota che compare da `at` mesi (voci guideline-range). quote: nota di fonte (inglese), non mostrata.",
+  "items": [
+    {
+      "id": "m-tummy",
+      "area": "motor",
+      "from": 0,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "A3"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Tempo a pancia in giù ogni giorno",
+        "info": "OMS 2019: per i lattanti che non si spostano ancora, almeno 30 minuti al giorno a pancia in giù da svegli, distribuiti nella giornata (raccomandazione forte, prove di qualità molto bassa)."
+      },
+      "ru": {
+        "title": "Время на животике каждый день",
+        "info": "ВОЗ 2019: для малышей, которые ещё не передвигаются, не менее 30 минут в день на животике в бодрствовании, в течение дня (сильная рекомендация, доказательства очень низкого качества)."
+      }
+    },
+    {
+      "id": "c-roll",
+      "area": "motor",
+      "from": 4,
+      "to": 6,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Si gira dalla pancia alla schiena"
+      },
+      "ru": {
+        "title": "Переворачивается с животика на спинку"
+      },
+      "quote": "Rolls from tummy to back (6 months)"
+    },
+    {
+      "id": "m-sit",
+      "area": "motor",
+      "from": 3.8,
+      "to": 9.2,
+      "type": "who-1-99",
+      "warn": true,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Sta seduto senza sostegno"
+      },
+      "ru": {
+        "title": "Сидит без опоры"
+      }
+    },
+    {
+      "id": "m-stand-assist",
+      "area": "motor",
+      "from": 4.8,
+      "to": 11.4,
+      "type": "who-1-99",
+      "warn": true,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Sta in piedi con appoggio"
+      },
+      "ru": {
+        "title": "Стоит с опорой"
+      }
+    },
+    {
+      "id": "m-crawl",
+      "area": "motor",
+      "from": 5.2,
+      "to": null,
+      "type": "who-1-99",
+      "warn": false,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Gattona (mani e ginocchia)",
+        "info": "Nello studio OMS la finestra va da 5,2 a 13,5 mesi, ma non tutti i bambini gattonano (il 4,3% non l'ha mai fatto): per questo non ci sono avvisi."
+      },
+      "ru": {
+        "title": "Ползает (на руках и коленях)",
+        "info": "В исследовании ВОЗ окно составляет от 5,2 до 13,5 месяца, но не все дети ползают (4,3% не ползали никогда): поэтому предупреждений нет."
+      }
+    },
+    {
+      "id": "m-walk-assist",
+      "area": "motor",
+      "from": 5.9,
+      "to": 13.7,
+      "type": "who-1-99",
+      "warn": true,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Cammina con appoggio"
+      },
+      "ru": {
+        "title": "Ходит с опорой"
+      }
+    },
+    {
+      "id": "m-stand-alone",
+      "area": "motor",
+      "from": 6.9,
+      "to": 16.9,
+      "type": "who-1-99",
+      "warn": true,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Sta in piedi da solo"
+      },
+      "ru": {
+        "title": "Стоит самостоятельно"
+      }
+    },
+    {
+      "id": "m-walk-alone",
+      "area": "motor",
+      "from": 8.2,
+      "to": 17.6,
+      "type": "who-1-99",
+      "warn": true,
+      "src": [
+        "A23"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Cammina da solo"
+      },
+      "ru": {
+        "title": "Ходит самостоятельно"
+      }
+    },
+    {
+      "id": "c-name",
+      "area": "social",
+      "from": 6,
+      "to": 9,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Si volta quando lo chiami per nome"
+      },
+      "ru": {
+        "title": "Оборачивается, когда его зовут по имени"
+      },
+      "quote": "Looks when you call her name (9 months)"
+    },
+    {
+      "id": "c-wave",
+      "area": "language",
+      "from": 9,
+      "to": 12,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Fa ciao con la manina"
+      },
+      "ru": {
+        "title": "Машет рукой на прощание"
+      },
+      "quote": "Waves bye-bye (1 year)"
+    },
+    {
+      "id": "c-firstwords",
+      "area": "language",
+      "from": 12,
+      "to": 15,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Prova a dire 1–2 parole oltre mamma e papà"
+      },
+      "ru": {
+        "title": "Пытается сказать 1–2 слова, кроме «мама» и «папа»"
+      },
+      "quote": "Tries to say one or two words besides mama or dada (15 months)"
+    },
+    {
+      "id": "c-point",
+      "area": "social",
+      "from": 15,
+      "to": 18,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Indica per mostrarti qualcosa di interessante"
+      },
+      "ru": {
+        "title": "Показывает пальцем на интересное, чтобы показать вам"
+      },
+      "quote": "Points to show you something interesting (18 months)"
+    },
+    {
+      "id": "c-2words",
+      "area": "language",
+      "from": 18,
+      "to": 24,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Unisce due parole (es. «ancora latte»)"
+      },
+      "ru": {
+        "title": "Соединяет два слова (например, «ещё молока»)"
+      },
+      "quote": "Says at least two words together (2 years)"
+    },
+    {
+      "id": "c-50words",
+      "area": "language",
+      "from": 24,
+      "to": 30,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Dice circa 50 parole"
+      },
+      "ru": {
+        "title": "Говорит около 50 слов"
+      },
+      "quote": "Says about 50 words (30 months)"
+    },
+    {
+      "id": "c-understood",
+      "area": "language",
+      "from": 30,
+      "to": 36,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Si fa capire dagli altri quasi sempre"
+      },
+      "ru": {
+        "title": "Говорит так, что окружающие почти всегда понимают"
+      },
+      "quote": "Talks well enough for others to understand, most of the time (3 years)"
+    },
+    {
+      "id": "c-joinplay",
+      "area": "social",
+      "from": 30,
+      "to": 36,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Nota gli altri bambini e si unisce al gioco"
+      },
+      "ru": {
+        "title": "Замечает других детей и присоединяется к игре"
+      },
+      "quote": "Notices other children and joins them to play (3 years)"
+    },
+    {
+      "id": "c-story",
+      "area": "language",
+      "from": 48,
+      "to": 60,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Racconta una storia con almeno due eventi"
+      },
+      "ru": {
+        "title": "Рассказывает историю как минимум из двух событий"
+      },
+      "quote": "Tells a story she heard or made up with at least two events (5 years)"
+    },
+    {
+      "id": "c-turns",
+      "area": "social",
+      "from": 48,
+      "to": 60,
+      "type": "cdc-75pct",
+      "warn": true,
+      "src": [
+        "TP2",
+        "A24"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Segue le regole o fa a turno nei giochi"
+      },
+      "ru": {
+        "title": "Следует правилам или ждёт своей очереди в играх"
+      },
+      "quote": "Follows rules or takes turns when playing games with other children (5 years)"
+    },
+    {
+      "id": "f-start",
+      "area": "feeding",
+      "from": 4,
+      "to": 6,
+      "type": "guideline-range",
+      "warn": true,
+      "src": [
+        "A10",
+        "TP4"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Inizio dello svezzamento",
+        "info": "ESPGHAN: alimenti complementari non prima dei 4 mesi (17 settimane) e non oltre i 6 mesi (26 settimane). OMS: dai 6 mesi."
+      },
+      "ru": {
+        "title": "Начало прикорма",
+        "info": "ESPGHAN: прикорм не раньше 4 месяцев (17 недель) и не позже 6 месяцев (26 недель). ВОЗ: с 6 месяцев."
+      },
+      "note": {
+        "at": 6.5,
+        "level": "talk",
+        "it": "ESPGHAN consiglia di non ritardare oltre i 6 mesi (26 settimane); l'OMS indica di iniziare a 6 mesi: parlane con il pediatra.",
+        "ru": "ESPGHAN советует не откладывать прикорм дольше 6 месяцев (26 недель); ВОЗ рекомендует начинать в 6 месяцев: поговорите с педиатром."
+      }
+    },
+    {
+      "id": "f-allergens",
+      "area": "feeding",
+      "from": 4,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "A10",
+        "TP5",
+        "A16"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Uovo e arachidi (in forma sicura) nel primo anno, senza ritardarli",
+        "info": "ESPGHAN: non ci sono prove che ritardare gli alimenti allergizzanti oltre i 4 mesi riduca il rischio di allergia. Con eczema grave o allergia all'uovo l'introduzione precoce delle arachidi va valutata con il pediatra o l'allergologo (NIAID). Mai arachidi intere prima dei 5 anni: rischio di soffocamento."
+      },
+      "ru": {
+        "title": "Яйцо и арахис (в безопасной форме) в первый год, без отсрочки",
+        "info": "ESPGHAN: нет данных, что откладывание аллергенных продуктов после 4 месяцев снижает риск аллергии. При тяжёлой экземе или аллергии на яйцо раннее введение арахиса нужно обсудить с педиатром или аллергологом (NIAID). Никогда не давайте целый арахис до 5 лет: риск удушья."
+      }
+    },
+    {
+      "id": "f-cup",
+      "area": "feeding",
+      "from": 6,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "TP6"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Offrire il bicchiere"
+      },
+      "ru": {
+        "title": "Предложить чашку"
+      },
+      "quote": "Ideally, this transition will begin around 6 months, when you offer your child a cup for the first time."
+    },
+    {
+      "id": "f-bottle",
+      "area": "feeding",
+      "from": 12,
+      "to": 18,
+      "type": "guideline-range",
+      "warn": true,
+      "src": [
+        "TP6"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Lasciare il biberon"
+      },
+      "ru": {
+        "title": "Отказ от бутылочки"
+      },
+      "quote": "completing the transition sometime between 12 and 18 months",
+      "note": {
+        "at": 18,
+        "level": "tip",
+        "it": "L'AAP consiglia di lasciare il biberon tra 12 e 18 mesi.",
+        "ru": "AAP советует отказаться от бутылочки между 12 и 18 месяцами."
+      }
+    },
+    {
+      "id": "s-roomshare",
+      "area": "sleep",
+      "from": 0,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "A1"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Nella stanza dei genitori, ma nel proprio lettino",
+        "info": "AAP 2022: dormire nella stanza dei genitori, vicino al loro letto ma su una superficie separata pensata per i lattanti, idealmente almeno per i primi 6 mesi."
+      },
+      "ru": {
+        "title": "В комнате родителей, но в своей кроватке",
+        "info": "AAP 2022: спать в комнате родителей, рядом с их кроватью, но на отдельной поверхности, предназначенной для младенцев, в идеале не менее первых 6 месяцев."
+      }
+    },
+    {
+      "id": "d-brush",
+      "area": "dental",
+      "from": 6,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "TP9"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Spazzolino con dentifricio al fluoro dal primo dente",
+        "info": "AAP: dal primo dente, quantità pari a un chicco di riso fino a 3 anni, poi un pisello."
+      },
+      "ru": {
+        "title": "Зубная щётка с фторсодержащей пастой с появления первого зуба",
+        "info": "AAP: с первого зуба, количество размером с рисовое зёрнышко до 3 лет, затем с горошину."
+      }
+    },
+    {
+      "id": "d-visit",
+      "area": "dental",
+      "from": 6,
+      "to": 12,
+      "type": "guideline-range",
+      "warn": true,
+      "src": [
+        "TP9"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Prima visita dal dentista"
+      },
+      "ru": {
+        "title": "Первый визит к стоматологу"
+      },
+      "quote": "See your child's dentist by their first birthday or within six months of their first tooth.",
+      "note": {
+        "at": 12,
+        "level": "talk",
+        "it": "Prenota la prima visita dal dentista (AAP: entro il primo compleanno o entro 6 mesi dal primo dente).",
+        "ru": "Запишитесь на первый визит к стоматологу (AAP: до первого дня рождения или в течение 6 месяцев после первого зуба)."
+      }
+    },
+    {
+      "id": "t-ready",
+      "area": "toilet",
+      "from": 18,
+      "to": null,
+      "type": "not-before",
+      "warn": false,
+      "src": [
+        "TP12",
+        "TP10"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Segnali di prontezza per il vasino",
+        "info": "Di solito i segnali di controllo di vescica e intestino compaiono tra 18 e 24 mesi; fino a un bambino su tre è pronto solo verso i 30 mesi. L'educazione al vasino di solito inizia tra 2 e 3 anni."
+      },
+      "ru": {
+        "title": "Признаки готовности к горшку",
+        "info": "Обычно признаки контроля мочевого пузыря и кишечника появляются между 18 и 24 месяцами; до трети детей готовы только к 30 месяцам. Приучение к горшку обычно начинается в 2–3 года."
+      }
+    },
+    {
+      "id": "t-day",
+      "area": "toilet",
+      "from": 18,
+      "to": 60,
+      "type": "guideline-range",
+      "warn": true,
+      "src": [
+        "TP10",
+        "D5b",
+        "TP11"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Asciutto di giorno",
+        "info": "Molti bambini sono asciutti di giorno verso i 3 anni. Non esserlo entro i 5 anni è insolito e va valutato. Se dopo i 2 anni bagna di giorno e di notte pur riconoscendo lo stimolo e usando il vasino, parlane con il pediatra anche prima dei 5 anni (NICE)."
+      },
+      "ru": {
+        "title": "Сухой днём",
+        "info": "Многие дети остаются сухими днём примерно к 3 годам. Если к 5 годам этого нет, это нетипично и требует оценки. Если после 2 лет ребёнок мочится и днём, и ночью, хотя чувствует позыв и пользуется горшком, поговорите с педиатром, не дожидаясь 5 лет (NICE)."
+      },
+      "note": {
+        "at": 60,
+        "level": "talk",
+        "it": "A 5 anni non essere ancora asciutto di giorno è insolito e va valutato: parlane con il pediatra.",
+        "ru": "Отсутствие дневного контроля к 5 годам нетипично и требует оценки: поговорите с педиатром."
+      }
+    },
+    {
+      "id": "t-night",
+      "area": "toilet",
+      "from": 36,
+      "to": 60,
+      "type": "guideline-range",
+      "warn": true,
+      "src": [
+        "TP11"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Asciutto di notte",
+        "info": "NICE: in genere ci si aspetta che i bambini siano asciutti di notte entro un'età di sviluppo di 5 anni; bagnare il letto sotto i 5 anni è frequente (circa 1 bambino su 5 a 4 anni e mezzo). Il pediatra può dare consigli anche prima."
+      },
+      "ru": {
+        "title": "Сухой ночью",
+        "info": "NICE: обычно ожидается, что дети остаются сухими ночью к возрасту развития 5 лет; ночное мочеиспускание до 5 лет встречается часто (примерно у 1 ребёнка из 5 в 4,5 года). Педиатр может дать советы и раньше."
+      },
+      "note": {
+        "at": 60,
+        "level": "tip",
+        "it": "Dopo i 5 anni bagnare il letto è ancora abbastanza comune e non è colpa del bambino: parlane con il pediatra, che può aiutare.",
+        "ru": "После 5 лет ночное мочеиспускание всё ещё встречается довольно часто и не является виной ребёнка: поговорите с педиатром, он поможет."
+      }
+    }
+  ]
+}

@@ -106,7 +106,7 @@
   },
   "A23": {
     "label": "WHO Multicentre Growth Reference Study Group. WHO Motor Development Study: windows of achievement for six gross motor development milestones. Acta Paediatr Suppl. 2006;450:86-95",
-    "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02379.x",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16817682/",
     "type": "studio multicentrico"
   },
   "A24": {
@@ -878,5 +878,60 @@
     "label": "Wagner CL, Greer FR. Prevention of rickets and vitamin D deficiency in infants, children, and adolescents. Pediatrics. 2008;122(5):1142-52",
     "url": "https://doi.org/10.1542/peds.2008-1862",
     "type": "linea guida"
+  },
+  "TP2": {
+    "label": "CDC. Learn the Signs. Act Early – Milestones (rev. 2022)",
+    "url": "https://www.cdc.gov/act-early/milestones/",
+    "type": "ente sanitario"
+  },
+  "TP4": {
+    "label": "WHO. Infant and young child feeding – fact sheet",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/infant-and-young-child-feeding",
+    "type": "ente sanitario"
+  },
+  "TP5": {
+    "label": "NIAID. Addendum Guidelines for the Prevention of Peanut Allergy in the United States – Summary for Clinicians. 2017",
+    "url": "https://www.niaid.nih.gov/sites/default/files/peanut-allergy-prevention-guidelines-clinician-summary.pdf",
+    "type": "linea guida"
+  },
+  "TP6": {
+    "label": "AAP – HealthyChildren.org. Discontinuing the Bottle",
+    "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Discontinuing-the-Bottle.aspx",
+    "type": "ente sanitario"
+  },
+  "TP9": {
+    "label": "AAP – HealthyChildren.org. Brushing Up on Oral Health: Never Too Early to Start",
+    "url": "https://www.healthychildren.org/English/healthy-living/oral-health/Pages/Brushing-Up-on-Oral-Health-Never-Too-Early-to-Start.aspx",
+    "type": "ente sanitario"
+  },
+  "TP10": {
+    "label": "Baird DC, Bybel M, Kowalski AW. Toilet Training: Common Questions and Answers. Am Fam Physician. 2019;100(8):468-474",
+    "url": "https://www.aafp.org/pubs/afp/issues/2019/1015/p468.html",
+    "type": "revisione"
+  },
+  "TP11": {
+    "label": "NICE. Bedwetting in under 19s (CG111)",
+    "url": "https://www.nice.org.uk/guidance/cg111",
+    "type": "linea guida"
+  },
+  "TP12": {
+    "label": "AAP – HealthyChildren.org. The Right Age to Toilet Train (2022)",
+    "url": "https://www.healthychildren.org/English/ages-stages/toddler/toilet-training/Pages/The-Right-Age-to-Toilet-Train.aspx",
+    "type": "ente sanitario"
+  },
+  "TP13": {
+    "label": "AAP – HealthyChildren.org. Preemie Milestones (2024)",
+    "url": "https://www.healthychildren.org/English/ages-stages/baby/preemie/Pages/Preemie-Milestones.aspx",
+    "type": "ente sanitario"
+  },
+  "TP14": {
+    "label": "CDC. Developmental Monitoring and Screening",
+    "url": "https://www.cdc.gov/act-early/about/developmental-monitoring-and-screening.html",
+    "type": "ente sanitario"
+  },
+  "TP15": {
+    "label": "CDC. Milestone checklists – Key points",
+    "url": "https://www.cdc.gov/act-early/milestones/key-points.html",
+    "type": "ente sanitario"
   }
 }

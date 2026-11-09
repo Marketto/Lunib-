@@ -171,3 +171,63 @@ export const STRINGS = {
 export function t(lang) {
   return STRINGS[lang] || STRINGS.it;
 }
+
+// Testi della scheda «Tappe» (Diario). `{ref}` = posizione delle fonti in linea.
+export const MILESTONE_TEXT = {
+  it: {
+    tab: 'Tappe',
+    header: 'Ogni bambino ha i suoi tempi: queste tappe non sono una diagnosi né uno screening.',
+    alert: 'Se perde abilità che aveva già, o se hai un dubbio, parlane subito con il pediatra, a qualsiasi età.',
+    checks: 'L\'AAP raccomanda screening dello sviluppo a 9, 18 e 30 mesi e dell\'autismo a 18 e 24 mesi.',
+    preterm: (w) => `Fino a 24 mesi uso l'età corretta (nato a ${w} settimane).`,
+    areas: { motor: 'Motricità', language: 'Linguaggio', social: 'Socialità', feeding: 'Alimentazione', sleep: 'Sonno', toilet: 'Vasino', dental: 'Denti' },
+    months: (n) => `${n} ${n === 1 ? 'mese' : 'mesi'}`,
+    window: {
+      'who-1-99': (a, b) => `di solito tra ${a} e ${b} mesi`,
+      'cdc-75pct': (a, b) => `a ${b} mesi lo fa la maggior parte dei bambini`,
+      'guideline-range': (a, b) => `le linee guida indicano tra ${a} e ${b} mesi`,
+      'not-before': (a) => (a === '0' ? 'fin dalla nascita' : `indicato da ${a} mesi`)
+    },
+    open: (a) => `da ${a} mesi`,
+    status: { upcoming: 'tra poco', now: 'in corso', watch: 'da tenere d\'occhio', tip: 'promemoria', late: 'oltre la finestra', past: 'finestra passata', info: 'informazione', done: 'fatto' },
+    watch: 'Siamo nell\'ultima parte della finestra osservata dall\'OMS nei bambini sani: è ancora del tutto normale. Se hai dubbi, parlane con il pediatra.',
+    late: { who: (x) => `Secondo l'OMS il 99% dei bambini sani lo fa entro ${x} mesi: parlane con il pediatra.`,
+      cdc: (x) => `A ${x} mesi la maggior parte dei bambini lo fa (CDC): parlane con il pediatra, senza aspettare.`,
+      other: (x) => `Oltre i ${x} mesi indicati dalle linee guida: parlane con il pediatra.` },
+    past: (n) => `Tappe passate: segna quelle già raggiunte (${n})`,
+    pastNote: 'Se una di queste non è ancora avvenuta, parlane con il pediatra.',
+    when: 'Quando?', save: 'Salva', cancel: 'Annulla', remove: 'Rimuovi',
+    tick: (t) => `Segna come fatto: ${t}`,
+    empty: 'Nessuna tappa da mostrare per questa età.',
+    wins: (n) => `Conquiste (${n})`, noWins: 'Quando segni una tappa compare qui, con la data.',
+    cheer: 'Evviva!'
+  },
+  ru: {
+    tab: 'Вехи',
+    header: 'У каждого ребёнка свой темп: эти вехи не являются ни диагнозом, ни скринингом.',
+    alert: 'Если ребёнок теряет уже приобретённые навыки или у вас есть сомнения, сразу поговорите с педиатром, в любом возрасте.',
+    checks: 'AAP рекомендует скрининг развития в 9, 18 и 30 месяцев, а на аутизм — в 18 и 24 месяца.',
+    preterm: (w) => `До 24 месяцев используется скорректированный возраст (родился на ${w} неделе).`,
+    areas: { motor: 'Моторика', language: 'Речь', social: 'Общение', feeding: 'Питание', sleep: 'Сон', toilet: 'Горшок', dental: 'Зубы' },
+    months: (n) => `${n} мес.`,
+    window: {
+      'who-1-99': (a, b) => `обычно между ${a} и ${b} мес.`,
+      'cdc-75pct': (a, b) => `к ${b} мес. это умеет большинство детей`,
+      'guideline-range': (a, b) => `рекомендации указывают от ${a} до ${b} мес.`,
+      'not-before': (a) => (a === '0' ? 'с рождения' : `рекомендуется с ${a} мес.`)
+    },
+    open: (a) => `с ${a} мес.`,
+    status: { upcoming: 'скоро', now: 'сейчас', watch: 'стоит присмотреться', tip: 'напоминание', late: 'после окна', past: 'окно прошло', info: 'информация', done: 'сделано' },
+    watch: 'Мы в последней части окна, наблюдаемого ВОЗ у здоровых детей: это всё ещё совершенно нормально. Если есть сомнения, поговорите с педиатром.',
+    late: { who: (x) => `По данным ВОЗ, 99% здоровых детей делают это до ${x} мес.: поговорите с педиатром.`,
+      cdc: (x) => `К ${x} мес. большинство детей это умеет (CDC): поговорите с педиатром, не откладывая.`,
+      other: (x) => `Прошло больше ${x} мес., указанных в рекомендациях: поговорите с педиатром.` },
+    past: (n) => `Прошедшие вехи: отметьте уже достигнутые (${n})`,
+    pastNote: 'Если что-то из этого ещё не произошло, поговорите с педиатром.',
+    when: 'Когда?', save: 'Сохранить', cancel: 'Отмена', remove: 'Убрать',
+    tick: (t) => `Отметить как сделанное: ${t}`,
+    empty: 'Для этого возраста нет вех.',
+    wins: (n) => `Достижения (${n})`, noWins: 'Отмеченные вехи появятся здесь, с датой.',
+    cheer: 'Ура!'
+  }
+};

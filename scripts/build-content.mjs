@@ -66,6 +66,26 @@ for (const g of games) {
   for (const lang of LANGS) for (const k of ['title', 'intro', 'why']) if (!g[lang]?.[k]) errors.push(`${where} ${lang}.${k} mancante`);
 }
 
+// Tappe: id univoci, fonti esistenti, finestre coerenti, testi it/ru
+const miles = JSON.parse(fs.readFileSync(path.join(root, 'content/milestones.json'), 'utf8')).items;
+const M_AREAS = ['motor', 'language', 'social', 'feeding', 'sleep', 'toilet', 'dental'];
+const M_TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before'];
+const mSeen = new Set();
+for (const m of miles) {
+  const where = `milestones.json:${m.id}`;
+  if (!m.id || mSeen.has(m.id)) errors.push(`${where} id mancante o duplicato`);
+  mSeen.add(m.id);
+  if (!M_AREAS.includes(m.area)) errors.push(`${where} area non valida ${m.area}`);
+  if (!M_TYPES.includes(m.type)) errors.push(`${where} tipo finestra non valido ${m.type}`);
+  if (!(m.from >= 0)) errors.push(`${where} from non valido`);
+  if (m.to != null && !(m.to > m.from)) errors.push(`${where} to deve essere maggiore di from`);
+  if (typeof m.warn !== 'boolean' || typeof m.verified !== 'boolean') errors.push(`${where} warn/verified devono essere booleani`);
+  if (!m.src?.length) errors.push(`${where} senza fonti`);
+  for (const sid of m.src || []) if (!sources[sid]) errors.push(`${where} fonte mancante ${sid}`);
+  for (const lang of LANGS) if (!m[lang]?.title) errors.push(`${where} ${lang}.title mancante`);
+  if (!!m.it?.info !== !!m.ru?.info) errors.push(`${where} info presente solo in una lingua`);
+}
+
 if (errors.length) {
   console.error('Errori nei contenuti:\n - ' + errors.join('\n - '));
   process.exit(1);

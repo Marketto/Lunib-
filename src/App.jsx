@@ -162,7 +162,7 @@ export default function App() {
     for (const r of prev) if (!keep.has(r.id)) deleted[r.id] = now;
     return { ...s, [key]: stamped, deleted };
   });
-  const applySync = (m) => setState((s) => ({ ...s, kids: withIds(m.kids), growth: m.growth, meds: m.meds, medPlans: m.medPlans || s.medPlans || [], deleted: m.deleted }));
+  const applySync = (m) => setState((s) => ({ ...s, kids: withIds(m.kids), growth: m.growth, meds: m.meds, medPlans: m.medPlans || s.medPlans || [], milestones: m.milestones || s.milestones || [], deleted: m.deleted }));
   return (
     <MotionConfig reducedMotion="user">
       <AudioProvider ambientPref={state.ambient} setAmbientPref={(v) => update({ ambient: v })}>
@@ -251,6 +251,7 @@ function Shell({ state, setState, update, setList, applySync }) {
   else if (view === 'diario') content = (
     <Diary {...common} growth={state.growth || []} meds={state.meds || []}
       setGrowth={setList('growth')} setMeds={setList('meds')} medPlans={state.medPlans || []} setMedPlans={setList('medPlans')}
+      milestones={state.milestones || []} setMilestones={setList('milestones')}
       setKid={(k) => update({ kids: kids.map((x) => (x.id === k.id ? k : x)) })} />
   );
   else if (view === 'suoni') content = <Sounds {...common} group={group} setGroup={setGroup} />;

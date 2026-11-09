@@ -6,6 +6,7 @@ import { formatAge, formatRange } from '../lib/age.js';
 import { PaperIcon } from './Paper.jsx';
 import { IconCare, IconAlert, IconShift } from './Icons.jsx';
 import { Character } from './Characters.jsx';
+import SOURCES from '../../content/sources.json';
 
 export const spring = { type: 'spring', stiffness: 420, damping: 30 };
 export const tap = { whileTap: { scale: 0.95 }, transition: spring };
@@ -155,4 +156,15 @@ export function SkeletonList({ n = 3 }) {
 
 export function itemText(x) {
   return typeof x === 'string' ? x : x.t;
+}
+
+// Riferimenti in linea: ogni indicazione mostra le sue fonti
+export function Refs({ ids }) {
+  const list = [...new Set(ids || [])].filter((id) => SOURCES[id]);
+  if (!list.length) return null;
+  return (
+    <span className="refs">
+      {list.map((id) => <a key={id} href={SOURCES[id].url} target="_blank" rel="noreferrer" title={SOURCES[id].label}>{id}</a>)}
+    </span>
+  );
 }

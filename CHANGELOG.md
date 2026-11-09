@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.5.0 — 9 novembre 2026
+- «Tappe»: checklist per età con finestre OMS/CDC/linee guida, avvisi gentili nell'ultimo 25% della finestra, conquiste con data.
+
 ## 1.4.0 — 9 novembre 2026
 - vitamina D riconosciuta (totale giornaliero confrontato con il limite massimo EFSA per età, raccomandazioni con fonti)
 

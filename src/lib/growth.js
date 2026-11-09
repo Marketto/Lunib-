@@ -87,6 +87,15 @@ export const monthsAt = (birthISO, dateISO) => {
   return d / DAYS_PER_MONTH;
 };
 
+// Età per i confronti OMS: età corretta fino a 24 mesi per i nati pretermine
+// RCPCH (W13): si corregge fino a 1 anno se nato a 32–36 settimane, fino a 2 anni se prima delle 32
+export function growthAge(kid, dateISO) {
+  const m = monthsAt(kid.birth, dateISO);
+  const w = +kid.gaWeeks;
+  if (w && w < 37 && m < (w < 32 ? 24 : 12)) return m - ((40 - w) * 7) / 30.4375; // negativo = prima del termine
+  return m;
+}
+
 // Valuta una misura rispetto agli standard OMS e alle misure precedenti → elenco di avvisi.
 // opts.birthZ: z del peso alla nascita (soglia di calo NICE: 1, 2 o 3 spazi)
 export function assess(indicator, sex, months, value, prev, opts = {}) {

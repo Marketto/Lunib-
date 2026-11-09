@@ -4,7 +4,7 @@ import { exportEncrypted, importEncrypted, mergeData } from './sync.js';
 export const MAX_ATTEMPTS = 3;
 const byId = (a) => [...(a || [])].sort((x, y) => String(x.id).localeCompare(String(y.id)));
 const canon = (d) => JSON.stringify({
-  kids: byId(d.kids), growth: byId(d.growth), meds: byId(d.meds), medPlans: byId(d.medPlans),
+  kids: byId(d.kids), growth: byId(d.growth), meds: byId(d.meds), medPlans: byId(d.medPlans), milestones: byId(d.milestones),
   deleted: Object.fromEntries(Object.entries(d.deleted || {}).sort(([a], [b]) => a.localeCompare(b)))
 });
 
@@ -20,7 +20,7 @@ export async function syncOnce({ transport, fileId, pass, local, appVersion = ''
     const { text, version } = await transport.download(fileId);
     const remote = await importEncrypted(text, pass);
     const m = mergeData(local, remote, { now });
-    const merged = { kids: m.kids, growth: m.growth, meds: m.meds, medPlans: m.medPlans, deleted: m.deleted };
+    const merged = { kids: m.kids, growth: m.growth, meds: m.meds, medPlans: m.medPlans, milestones: m.milestones, deleted: m.deleted };
     // cosa parte da questo telefono: record locali assenti o più recenti sul file remoto
     const newer = (list = [], rlist = []) => {
       const r = new Map(rlist.map((x) => [x.id, x.updatedAt || '']));

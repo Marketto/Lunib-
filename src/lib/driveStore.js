@@ -40,6 +40,6 @@ export async function runSync({ latest, silent = false, fileId, pass, appVersion
     savePass(pass);
     // modifiche locali fatte mentre si aspettava la rete: unione col risultato (le statistiche restano quelle di Drive)
     const m = mergeData(latest(), r.merged);
-    return { merged: { kids: m.kids, growth: m.growth, meds: m.meds, medPlans: m.medPlans, deleted: m.deleted }, stats: r.stats };
+    return { merged: { kids: m.kids, growth: m.growth, meds: m.meds, medPlans: m.medPlans, milestones: m.milestones, deleted: m.deleted }, stats: r.stats };
   } finally { busy = false; }
 }

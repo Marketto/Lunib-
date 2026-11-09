@@ -105,7 +105,7 @@ export default function Onboarding({ lang, setLang, onDone, qrData, onQrClose })
   const fromFile = (pass) => run(async () => { if (!file) throw new Error('bad-file'); accept(await importEncrypted(file, pass)); });
   const fromQr = (pass) => run(async () => { accept(await decodeQr(qrData, pass)); });
   const fromDrive = (pass) => run(async () => {
-    const r = await runSync({ latest: () => ({ kids: [], growth: [], meds: [], medPlans: [], deleted: {} }), fileId: picked, pass, appVersion: version() });
+    const r = await runSync({ latest: () => ({ kids: [], growth: [], meds: [], medPlans: [], milestones: [], deleted: {} }), fileId: picked, pass, appVersion: version() });
     accept(r.merged);
   });
   const connect = () => run(async () => { await getToken(); setLinked(true); });

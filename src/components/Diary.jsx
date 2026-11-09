@@ -1,10 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { KidPills, spring, tap } from './Common.jsx';
+import { KidPills, Refs, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
-import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
+import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
+import { MILESTONE_TEXT } from '../lib/i18n.js';
 import { formatAge } from '../lib/age.js';
+import Milestones from './Milestones.jsx';
 import ImportCsv, { IMPORT_BTN } from './ImportCsv.jsx';
 import SOURCES from '../../content/sources.json';
 
@@ -201,17 +203,6 @@ export const DIARY_TEXT = {
   }
 };
 
-// Riferimenti in linea: ogni indicazione mostra le sue fonti
-export function Refs({ ids }) {
-  const list = [...new Set(ids || [])].filter((id) => SOURCES[id]);
-  if (!list.length) return null;
-  return (
-    <span className="refs">
-      {list.map((id) => <a key={id} href={SOURCES[id].url} target="_blank" rel="noreferrer" title={SOURCES[id].label}>{id}</a>)}
-    </span>
-  );
-}
-
 const GROWTH_REFS = { implausible: ['W7', 'W12'], standingEarly: ['W7'], tall: ['W3'], weightHigh: ['W3'], weightVeryHigh: ['W3'], veryLow: ['W3', 'W1'], low: ['W3', 'W1'], below04: ['W5'], headHigh: ['W11', 'W8'], headVeryHigh: ['W11', 'W8'], headLow: ['W10', 'W8'], headVeryLow: ['W10', 'W8'], crossDown: ['W5', 'W9', 'W6'], crossUp: ['W5', 'W9'], newbornLoss: ['W6'], notRegained: ['W6'] };
 
 function SourceList({ ids, lang }) {
@@ -228,14 +219,6 @@ function SourceList({ ids, lang }) {
   );
 }
 
-// Età per i confronti OMS: età corretta fino a 24 mesi per i nati pretermine
-// RCPCH (W13): si corregge fino a 1 anno se nato a 32–36 settimane, fino a 2 anni se prima delle 32
-export function growthAge(kid, dateISO) {
-  const m = monthsAt(kid.birth, dateISO);
-  const w = +kid.gaWeeks;
-  if (w && w < 37 && m < (w < 32 ? 24 : 12)) return m - ((40 - w) * 7) / 30.4375; // negativo = prima del termine
-  return m;
-}
 const hVal = (g, m) => adjustHeight(m, +g.height, g.heightPos || (m < 24 ? 'lying' : 'standing'));
 
 /* ---------- Grafico crescita ---------- */
@@ -801,7 +784,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
 }
 
 /* ---------- Pagina Diario ---------- */
-export default function Diary({ lang, kids, active, setActive, growth, meds, setGrowth, setMeds, setKid, medPlans = [], setMedPlans }) {
+export default function Diary({ lang, kids, active, setActive, growth, meds, setGrowth, setMeds, setKid, medPlans = [], setMedPlans, milestones = [], setMilestones }) {
   const s = DIARY_TEXT[lang];
   const [tab, setTab] = useState('growth');
   const [importing, setImporting] = useState(false);
@@ -813,10 +796,10 @@ export default function Diary({ lang, kids, active, setActive, growth, meds, set
       <p className="lead">{s.sub}</p>
       <KidPills kids={kids} active={Math.max(0, active)} setActive={setActive} lang={lang} id="dkp" noAll />
       <div className="seg big" role="tablist">
-        {['growth', 'meds'].map((k) => (
+        {['growth', 'meds', 'miles'].map((k) => (
           <button key={k} className={tab === k ? 'on' : ''} onClick={() => setTab(k)} role="tab" aria-selected={tab === k}>
             {tab === k && <motion.i layoutId="diary-tab" className="seg-pill" transition={spring} />}
-            <span>{k === 'growth' ? s.tabGrowth : s.tabMeds}</span>
+            <span>{k === 'growth' ? s.tabGrowth : k === 'meds' ? s.tabMeds : MILESTONE_TEXT[lang].tab}</span>
           </button>
         ))}
       </div>
@@ -843,6 +826,7 @@ export default function Diary({ lang, kids, active, setActive, growth, meds, set
         </>
       )}
       {tab === 'meds' && <Meds lang={lang} kid={kid} months={months} meds={meds} setMeds={setMeds} growth={growth} medPlans={medPlans} setMedPlans={setMedPlans} />}
+      {tab === 'miles' && <Milestones lang={lang} kid={kid} milestones={milestones} setMilestones={setMilestones} />}
       {importing
         ? <ImportCsv lang={lang} kids={kids} active={Math.max(0, active)} growth={growth} meds={meds} setGrowth={setGrowth} setMeds={setMeds} onClose={() => setImporting(false)} />
         : <button className="btn ghost wide" style={{ marginTop: 14 }} onClick={() => setImporting(true)}>⤒ {IMPORT_BTN[lang]}</button>}

@@ -42,7 +42,7 @@ async function decryptBytes(salt, iv, ct, pass) {
 export function buildPayload(state, appVersion = '') {
   return {
     format: 'lunibu-sync', v: 1, exportedAt: new Date().toISOString(), appVersion,
-    kids: state.kids || [], growth: state.growth || [], meds: state.meds || [], medPlans: state.medPlans || [], deleted: state.deleted || {}
+    kids: state.kids || [], growth: state.growth || [], meds: state.meds || [], medPlans: state.medPlans || [], milestones: state.milestones || [], deleted: state.deleted || {}
   };
 }
 
@@ -98,10 +98,12 @@ export function buildQuickPayload(state, { now = Date.now(), medsOnly = false, a
   const kidIds0 = new Set([...growth, ...meds].map((r) => r.kidId));
   // gli schemi dei bimbi coinvolti viaggiano sempre (sono pochi e piccoli); quelli modificati di recente anche da soli se non è "solo medicine"
   const medPlans = (state.medPlans || []).filter((p) => kidIds0.has(p.kidId) || recent(p));
-  const kidIds = new Set([...kidIds0, ...medPlans.map((p) => p.kidId)]);
+  // anche le tappe segnate di recente (pochi record piccoli)
+  const milestones = (state.milestones || []).filter((x) => recent(x) && !medsOnly);
+  const kidIds = new Set([...kidIds0, ...medPlans.map((p) => p.kidId), ...milestones.map((x) => x.kidId)]);
   const kids = (state.kids || []).filter((k) => kidIds.has(k.id)).map(({ id, birth, name, sex }) => ({ id, birth, name, ...(sex ? { sex } : {}) }));
   const deleted = Object.fromEntries(Object.entries(state.deleted || {}).filter(([, t]) => t >= since));
-  return { format: 'lunibu-sync', v: 1, quick: true, exportedAt: new Date(now).toISOString(), appVersion, kids, growth, meds, medPlans, deleted };
+  return { format: 'lunibu-sync', v: 1, quick: true, exportedAt: new Date(now).toISOString(), appVersion, kids, growth, meds, medPlans, milestones, deleted };
 }
 
 /** payload -> stringa base64url per il frammento dell'URL. [flag compressione][salt 16][iv 12][cifrato] */
@@ -153,11 +155,13 @@ export function mergeData(local, remote, { now = Date.now() } = {}) {
   const deleted = { ...(local.deleted || {}) };
   for (const [id, t] of Object.entries(remote.deleted || {})) if (!deleted[id] || t > deleted[id]) deleted[id] = t;
 
-  const mergeList = (lList = [], rList = []) => {
+  const mergeList = (lList = [], rList = [], prefixId = false) => {
     const out = new Map(lList.map((r) => [r.id, r]));
     const added = new Set(), updated = new Set();
     for (const r0 of rList) {
-      const r = remap(r0);
+      let r = remap(r0);
+      // id composti `<kidId>:<voce>`: segue il bimbo se è stato rimappato
+      if (prefixId && r.kidId !== r0.kidId && r.id.startsWith(r0.kidId + ':')) r = { ...r, id: r.kidId + r.id.slice(r0.kidId.length) };
       const cur = out.get(r.id);
       if (!cur) { out.set(r.id, r); added.add(r.id); }
       else if (r.updatedAt && cur.updatedAt && r.updatedAt > cur.updatedAt && !same(r, cur)) { out.set(r.id, r); updated.add(r.id); }
@@ -170,6 +174,7 @@ export function mergeData(local, remote, { now = Date.now() } = {}) {
   const g = mergeList(local.growth, remote.growth);
   const m = mergeList(local.meds, remote.meds);
   const mp = mergeList(local.medPlans, remote.medPlans);
+  const ms = mergeList(local.milestones, remote.milestones, true);
 
   const since = now - H24;
   const recentDoses = m.list
@@ -178,7 +183,7 @@ export function mergeData(local, remote, { now = Date.now() } = {}) {
     .map((e) => ({ id: e.id, kidId: e.kidId, name: e.name, at: e.at, amount: e.amount, unit: e.unit }));
 
   return {
-    kids, growth: g.list, meds: m.list, medPlans: mp.list, deleted,
-    stats: { addedGrowth: g.added.size, addedMeds: m.added.size, updated: g.updated.size + m.updated.size + mp.updated.size, addedPlans: mp.added.size, addedKids, recentDoses }
+    kids, growth: g.list, meds: m.list, medPlans: mp.list, milestones: ms.list, deleted,
+    stats: { addedGrowth: g.added.size, addedMeds: m.added.size, updated: g.updated.size + m.updated.size + mp.updated.size + ms.updated.size, addedMilestones: ms.added.size, addedPlans: mp.added.size, addedKids, recentDoses }
   };
 }

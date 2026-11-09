@@ -648,3 +648,35 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .imp-med:last-of-type { border-bottom: 0; }
 .imp-med .field { display: block; width: 100%; }
 .imp-med .chips { margin-top: 6px; }
+
+/* ---------- Tappe ---------- */
+.diary .seg.big { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 1fr; }
+.ms-header { margin: 14px 0 6px; padding: 12px 14px; border-radius: 18px; background: var(--paper); box-shadow: var(--lift); }
+.ms-area h3 { display: flex; align-items: center; gap: 10px; margin: 20px 0 8px; font-size: 1.1rem; }
+.ms-ico { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 14px; background: var(--ms-bg); }
+.ms-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ms-card { position: relative; padding: 12px 14px; border-radius: 20px; background: var(--paper); box-shadow: var(--lift); border-left: 6px solid var(--ms-bg); }
+.ms-card p { margin: 6px 0 0; }
+.ms-head { display: flex; align-items: center; gap: 10px; }
+.ms-head input[type=checkbox] { width: 24px; height: 24px; flex-shrink: 0; accent-color: var(--ink); }
+.ms-head label { flex: 1; cursor: pointer; }
+.ms-chip { flex-shrink: 0; font-size: .72rem; }
+.ms-chip.watch { background: var(--care-bg); color: var(--care-ink); }
+.ms-chip.late { background: #ffe9c7; color: var(--care-ink); }
+.ms-chip.done { background: #dcefe5; color: #2c5d46; }
+.ms-bar { position: relative; height: 8px; margin: 8px 6px 4px; border-radius: 99px; background: var(--mist-2); }
+.ms-fill { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: var(--lav); }
+.ms-mark { position: absolute; top: -4px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--ink); border: 3px solid var(--paper); box-sizing: border-box; }
+.ms-note { padding: 9px 12px; border-radius: 14px; background: var(--care-bg); color: var(--care-ink); font-size: .88rem; }
+.ms-note.late { border: 1.5px solid var(--care-line); }
+.ms-ask { margin-top: 8px; }
+.ms-card.st-upcoming { opacity: .85; }
+.ms-cheer { position: absolute; right: 12px; top: -26px; display: flex; align-items: center; gap: 6px; padding: 4px 12px 4px 4px; border-radius: 99px; background: var(--paper); box-shadow: var(--lift); font-weight: 700; pointer-events: none; }
+.ms-wins { margin-top: 20px; }
+.ms-wins summary { cursor: pointer; font-weight: 600; padding: 10px 0; }
+.ms-wins .ms-list { margin-top: 6px; }
+.ms-header p { margin: 0 0 6px; }
+.ms-header .ms-alert { padding: 10px 12px; border-radius: 14px; border: 2px solid var(--care-line); background: var(--care-bg); color: var(--care-ink); font-size: 1rem; font-weight: 700; }
+.ms-chip.tip { background: var(--mist-2); }
+.ms-note.tip { border: 1px dashed var(--care-line); }
+.ms-past { margin-top: 16px; }

@@ -120,7 +120,7 @@ export function SyncResult({ s, lang, stats, kids }) {
   );
 }
 
-const readState = (st) => ({ kids: st.kids || [], growth: st.growth || [], meds: st.meds || [], medPlans: st.medPlans || [], deleted: st.deleted || {} });
+const readState = (st) => ({ kids: st.kids || [], growth: st.growth || [], meds: st.meds || [], medPlans: st.medPlans || [], milestones: st.milestones || [], deleted: st.deleted || {} });
 
 export default function SyncCard({ lang, state, onMerge }) {
   const s = TX[lang];
@@ -338,7 +338,7 @@ export function DriveAuto({ lang, state, onMerge }) {
   }, [d.fileId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // dopo una modifica locale (misura, dose, import): sincronizza dopo 8 s di calma, senza rincorrersi
-  const sig = (st) => JSON.stringify(['growth', 'meds', 'medPlans', 'kids'].map((k) => (st[k] || []).map((x) => `${x.id}:${x.updatedAt || ''}`).sort()));
+  const sig = (st) => JSON.stringify(['growth', 'meds', 'medPlans', 'milestones', 'kids'].map((k) => (st[k] || []).map((x) => `${x.id}:${x.updatedAt || ''}`).sort()));
   const lastSig = useRef(null);
   const curSig = sig(state);
   useEffect(() => {
