@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.1.0 — 9 novembre 2026
+- Sincronizzazione facoltativa con Google Drive (file cifrato)
+
 ## 1.0.0 — 8 novembre 2026
 - Prima versione con numero: versione e build visibili in fondo all'app e in Bimbi.
 - Aggiornamento automatico: la nuova versione si scarica in background e si applica quando l'app va in secondo piano (o subito con "Aggiorna ora").

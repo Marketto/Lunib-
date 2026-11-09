@@ -628,3 +628,6 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .sync-doses { margin: 6px 0; padding-left: 18px; }
 .sync-sheet { position: fixed; inset: 0; z-index: 90; display: flex; align-items: flex-end; justify-content: center; background: rgba(46,47,87,.45); }
 .sync-sheet-in { width: min(100%, 520px); max-height: 90vh; overflow: auto; padding: 20px 18px calc(20px + env(safe-area-inset-bottom)); border-radius: 24px 24px 0 0; background: var(--paper); box-shadow: var(--lift); }
+
+.drive-chip { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 80; padding: 10px 16px; border-radius: 999px; border: 2px solid var(--ink, #2e2f57); background: var(--paper); color: var(--ink, #2e2f57); font: inherit; font-weight: 600; box-shadow: var(--lift); cursor: pointer; }
+.drive-chip:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }

@@ -10,7 +10,7 @@ import Settings from './components/Settings.jsx';
 import Sounds, { MiniPlayer } from './components/Sounds.jsx';
 import { GamesList, GameView } from './components/Games.jsx';
 import Diary from './components/Diary.jsx';
-import { QuickReceive } from './components/SyncCard.jsx';
+import { QuickReceive, DriveAuto } from './components/SyncCard.jsx';
 import { syncFromHash } from './lib/sync.js';
 import { VersionLine, SHARE_TEXT } from './components/Share.jsx';
 import { initUpdates, onUpdate, applyUpdate, dismissUpdated } from './lib/update.js';
@@ -268,6 +268,7 @@ function Shell({ state, setState, update, setList, applySync }) {
       {sweep.k > 0 && <CharacterParade k={sweep.k} set={sweep.set} color={sweep.color} />}
       <Backdrop night={night} />
       <UpdateBanner lang={lang} />
+      <DriveAuto lang={lang} state={state} onMerge={applySync} />
       {incoming && <QuickReceive lang={lang} data={incoming} state={state} onMerge={applySync} onClose={closeIncoming} />}
       <main className="app">
         <div className="topbar">

@@ -1,12 +1,12 @@
 // Condizioni d'uso e scarico di responsabilità (IT / RU).
 // NB: testo da far verificare a un legale prima della pubblicazione.
-export const TERMS_VERSION = '1.2';
-export const TERMS_DATE = '2026-11-08';
+export const TERMS_VERSION = '1.3';
+export const TERMS_DATE = '2026-11-09';
 
 export const TERMS = {
   it: {
     title: "Condizioni d'uso e avvertenze",
-    updated: 'Versione 1.2 · 8 novembre 2026',
+    updated: 'Versione 1.3 · 9 novembre 2026',
     accept: "Ho letto e accetto le condizioni d'uso",
     read: "Leggi le condizioni d'uso",
     mustAccept: 'Per continuare devi accettare le condizioni.',
@@ -33,14 +33,14 @@ export const TERMS = {
       ['Esclusione di responsabilità',
         'Nei limiti massimi consentiti dalla legge applicabile, gli autori e i distributori di Lunibù non sono responsabili di danni diretti o indiretti derivanti dall\'uso, dal mancato uso o dall\'interpretazione delle informazioni e dei suoni dell\'app. L\'app è fornita "così com\'è", senza garanzie di completezza, accuratezza o idoneità a uno scopo specifico. Restano salvi i diritti che la legge riconosce inderogabilmente al consumatore.'],
       ['Privacy',
-        'I dati che inserisci (date di nascita, eventuali nomi, misure di crescita e medicine registrate) restano solo su questo dispositivo: non vengono inviati a server, non serve un account e non ci sono sistemi di tracciamento. Puoi cancellarli in qualsiasi momento da Bimbi → Cancella tutti i dati.'],
+        'I dati che inserisci (date di nascita, eventuali nomi, misure di crescita e medicine registrate) restano solo su questo dispositivo: non vengono inviati a server, non serve un account e non ci sono sistemi di tracciamento. Puoi cancellarli in qualsiasi momento da Bimbi → Cancella tutti i dati. La sincronizzazione facoltativa con Google Drive salva un file cifrato nel tuo Drive personale e accede solo a quel file; l\'autore non riceve alcun dato.'],
       ['Modifiche',
         'Queste condizioni possono essere aggiornate. In caso di modifiche ti chiederemo di leggerle e accettarle di nuovo.']
     ]
   },
   ru: {
     title: 'Условия использования и предупреждения',
-    updated: 'Версия 1.2 · 8 ноября 2026',
+    updated: 'Версия 1.3 · 9 ноября 2026',
     accept: 'Я прочитал(а) и принимаю условия использования',
     read: 'Прочитать условия использования',
     mustAccept: 'Чтобы продолжить, нужно принять условия.',
@@ -67,7 +67,7 @@ export const TERMS = {
       ['Ограничение ответственности',
         'В максимальной степени, допустимой применимым законодательством, авторы и распространители «Lunibù» не несут ответственности за прямой или косвенный ущерб, возникший в результате использования, неиспользования или толкования информации и звуков приложения. Приложение предоставляется «как есть», без гарантий полноты, точности или пригодности для определённой цели. Права, которые закон безусловно предоставляет потребителю, сохраняются.'],
       ['Конфиденциальность',
-        'Введённые данные (даты рождения, имена, если указаны, измерения (вес, рост, голова) и записанные лекарства) хранятся только на этом устройстве: они не отправляются на серверы, аккаунт не нужен, систем отслеживания нет. Удалить их можно в любой момент: Дети → Удалить все данные.'],
+        'Введённые данные (даты рождения, имена, если указаны, измерения (вес, рост, голова) и записанные лекарства) хранятся только на этом устройстве: они не отправляются на серверы, аккаунт не нужен, систем отслеживания нет. Удалить их можно в любой момент: Дети → Удалить все данные. Необязательная синхронизация с Google Drive сохраняет зашифрованный файл в вашем личном Drive и получает доступ только к этому файлу; автор не получает никаких данных.'],
       ['Изменения',
         'Эти условия могут обновляться. В случае изменений мы попросим вас прочитать и принять их снова.']
     ]
