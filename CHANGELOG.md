@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.1.1 — 9 novembre 2026
+- Frase segreta: contatore dei caratteri, avviso se le due frasi non coincidono, pulsante attivo solo quando è tutto corretto.
+
 ## 1.1.0 — 9 novembre 2026
 - Sincronizzazione facoltativa con Google Drive (file cifrato)
 

@@ -631,3 +631,7 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 
 .drive-chip { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 80; padding: 10px 16px; border-radius: 999px; border: 2px solid var(--ink, #2e2f57); background: var(--paper); color: var(--ink, #2e2f57); font: inherit; font-weight: 600; box-shadow: var(--lift); cursor: pointer; }
 .drive-chip:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.pass-count { margin: 4px 0 0; font-weight: 700; color: #b0522f; }
+.pass-count.ok { color: #2f7a55; }
+.form-err { margin: 6px 0 0; padding: 8px 12px; border-radius: 12px; background: #fde0dc; color: #8a1f14; font-weight: 600; }
+.btn.primary:disabled { opacity: .45; }

@@ -76,9 +76,11 @@ function PassForm({ s, twice, onSubmit, onCancel, busy, label }) {
       {twice && <label className="field"><span>{s.pass2}</span>
         <input type="password" autoComplete="off" value={b} onChange={(x) => setB(x.target.value)} /></label>}
       {twice && <p className="small muted">{s.hint}</p>}
-      {e && <p className="small" role="alert">{e}</p>}
+      {/* contatore: si vede subito quanti caratteri mancano */}
+      <p className={`small pass-count ${a.length >= MIN_PASS ? 'ok' : ''}`}>{a.length >= MIN_PASS ? '✓' : `${a.length}/${MIN_PASS}`}{twice && b && a !== b ? ` · ${s.mismatch}` : ''}</p>
+      {e && <p className="small form-err" role="alert">{e}</p>}
       <div className="row"><button type="button" className="btn ghost" onClick={onCancel}>{s.cancel}</button>
-        <motion.button type="submit" className="btn primary" disabled={busy} {...tap}>{busy ? s.busy : s.go}</motion.button></div>
+        <motion.button type="submit" className="btn primary" disabled={busy || a.length < MIN_PASS || (twice && a !== b)} {...tap}>{busy ? s.busy : s.go}</motion.button></div>
     </form>
   );
 }
