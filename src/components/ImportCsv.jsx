@@ -1,7 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { tap } from './Common.jsx';
-import { parseCsv, guessMapping, dateOrderState, buildRecords, FIELDS } from '../lib/csv.js';
+import { parseCsv, guessMapping, dateOrderState, buildRecords, FIELDS, detectPreset, buildFromBabyTracker, summarizeMeds } from '../lib/csv.js';
+import { ACTIVE } from '../lib/meds.js';
+
+const MEDMAP_KEY = 'lunibu:medmap'; // scelte dell'utente: restano sul dispositivo, mai nel repository
+const loadMedMap = () => { try { return JSON.parse(localStorage.getItem(MEDMAP_KEY)) || {}; } catch { return {}; } };
+const saveMedMap = (m) => { try { localStorage.setItem(MEDMAP_KEY, JSON.stringify(m)); } catch { /* storage pieno/bloccato */ } };
 
 export const IMPORT_BTN = { it: 'Importa da un\'altra app (CSV)', ru: 'Импорт из другого приложения (CSV)' };
 
@@ -18,7 +23,11 @@ const TX = {
     kidAsk: 'Per quale bimbo sono questi dati?', summary: (g, m, k) => `${g} misure, ${m} medicine, ${k} righe ignorate`,
     reasons: { noDate: 'data mancante o illeggibile', empty: 'nessun dato', badValue: 'valori non plausibili', outOfRange: 'data prima della nascita o futura', noName: 'dose senza nome del farmaco', duplicate: 'già presenti' },
     confirm: 'Importa', done: (g, m) => `Importate ${g} misure e ${m} medicine. Valutazioni e controlli delle dosi si aggiornano da soli.`,
-    verify: 'Controlla che i valori importati siano giusti: l\'app non può verificarli.'
+    verify: 'Controlla che i valori importati siano giusti: l\'app non può verificarli.',
+    recognized: 'Riconosciuto: esportazione di Baby Tracker', medTitle: 'Medicine trovate',
+    medHelp: 'Lunibù non conosce i nomi commerciali: indica tu il principio attivo per attivare il controllo prudenziale.',
+    medTimes: (n) => `${n} volte`, activeLbl: 'Principio attivo', noCheck: 'Nessun controllo', conc: 'Concentrazione (mg/ml, scritta su confezione e foglietto)', concOther: 'altra',
+    notImported: (t, o) => [t && `${t} temperature`, o && `${o} altre attività`].filter(Boolean).join(' e ') + ' non importate (Lunibù non le registra)'
   },
   ru: {
     structHint: 'Файл распознаётся плохо? Скопируйте только структуру (названия листов и столбцов, без данных и фото) и отправьте её для поддержки.', structCopy: 'Скопировать структуру файла', structCopied: 'Структура скопирована',
@@ -32,7 +41,11 @@ const TX = {
     kidAsk: 'Для какого ребёнка эти данные?', summary: (g, m, k) => `${g} измерений, ${m} лекарств, ${k} строк пропущено`,
     reasons: { noDate: 'нет даты или она нечитаема', empty: 'нет данных', badValue: 'неправдоподобные значения', outOfRange: 'дата до рождения или в будущем', noName: 'доза без названия лекарства', duplicate: 'уже есть' },
     confirm: 'Импортировать', done: (g, m) => `Импортировано: ${g} измерений и ${m} лекарств. Оценки и проверки доз обновятся сами.`,
-    verify: 'Проверьте, что импортированные значения верны: приложение не может это проверить.'
+    verify: 'Проверьте, что импортированные значения верны: приложение не может это проверить.',
+    recognized: 'Распознано: экспорт из Baby Tracker', medTitle: 'Найденные лекарства',
+    medHelp: 'Lunibù не знает торговых названий: укажите действующее вещество, чтобы включить осторожную проверку.',
+    medTimes: (n) => `${n} раз`, activeLbl: 'Действующее вещество', noCheck: 'Без проверки', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)', concOther: 'другая',
+    notImported: (t, o) => [t && `${t} измерений температуры`, o && `${o} других записей`].filter(Boolean).join(' и ') + ' не импортированы (Lunibù их не ведёт)'
   }
 };
 const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен' } };
@@ -66,6 +79,19 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
   const [order, setOrder] = useState('dmy');
   const [kidIdx, setKidIdx] = useState(active);
   const [result, setResult] = useState(null);
+  const [preset, setPreset] = useState(null);
+  const [sel, setSel] = useState(() => {
+    const saved = loadMedMap(), out = {};
+    for (const [k, v] of Object.entries(saved)) {
+      const chips = ACTIVE[v.active]?.conc || [];
+      out[k] = { active: v.active || '', conc: v.conc > 0 ? (chips.includes(v.conc) ? String(v.conc) : 'other') : '', concOther: v.conc > 0 && !chips.includes(v.conc) ? String(v.conc) : '' };
+    }
+    return out;
+  });
+  const medMap = useMemo(() => Object.fromEntries(Object.entries(sel).filter(([, v]) => v.active).map(([k, v]) => {
+    const c = v.conc === 'other' ? parseFloat(String(v.concOther).replace(',', '.')) : +v.conc;
+    return [k, { active: v.active, conc: c > 0 ? c : null }];
+  })), [sel]);
 
   const headers = data?.rows[0] || [];
   const body = useMemo(() => (data ? data.rows.slice(1) : []), [data]);
@@ -90,7 +116,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
           const r = XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, raw: true, defval: '', blankrows: false }).map((row) => row.map(cell));
           struct.push({ name, rows: r });
           const g = r.length ? guessMapping(r[0]) : {};
-          const score = Object.values(g).filter((x) => x >= 0).length;
+          const score = detectPreset(r) ? 99 : Object.values(g).filter((x) => x >= 0).length;
           if (r.length > 1 && (!best || score > best.score)) best = { rows: r, score, name };
         }
         rows = best ? best.rows : [];
@@ -101,7 +127,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
         setStructure(describe([{ name: f.name.replace(/.*\./, '').toUpperCase(), rows }]));
       }
       if (rows.length < 2) { setErr(s.empty); return; }
-      setErr(''); setData({ rows }); setMap(guessMapping(rows[0])); setStep(1);
+      setErr(''); setData({ rows }); setMap(guessMapping(rows[0])); setPreset(detectPreset(rows)); setStep(1);
     } catch { setErr(s.err); }
   };
   const [sheets, setSheets] = useState('');
@@ -113,16 +139,20 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
 
   const kid = kids[kidIdx] || kids[0];
   const built = useMemo(() => {
+    if (preset && step >= 1) return buildFromBabyTracker(data.rows, { kid, existing: { growth, meds }, medMap });
     if (step < 3 || !map) return null;
     return buildRecords(body, map, { order: effOrder, wUnit: units.weight, hUnit: units.height, headUnit: units.head, doseUnit: units.dose, kid, names: NAMES[lang], existing: { growth, meds } });
-  }, [step, map, body, units, effOrder, kid, lang]); // eslint-disable-line
+  }, [step, map, body, units, effOrder, kid, lang, preset, medMap]); // eslint-disable-line
   const mapOk = map && map.date >= 0 && ['weight', 'height', 'head', 'med'].some((f) => map[f] >= 0);
   const skipped = built ? Object.values(built.ignored).reduce((a, b) => a + b, 0) : 0;
-  const reasons = built ? Object.entries(built.ignored).filter(([, n]) => n).map(([k, n]) => `${s.reasons[k]}: ${n}`).join('; ') : '';
+  const reasons = built ? Object.entries(built.ignored).filter(([k, n]) => n && s.reasons[k]).map(([k, n]) => `${s.reasons[k]}: ${n}`).join('; ') : '';
+  const medList = built && preset ? summarizeMeds(built.meds) : [];
+  const setSelFor = (key, patch) => setSel((p) => ({ ...p, [key]: { active: '', conc: '', concOther: '', ...p[key], ...patch } }));
 
   const confirm = () => {
     if (built.growth.length) setGrowth([...growth, ...built.growth]);
     if (built.meds.length) setMeds([...meds, ...built.meds]);
+    if (preset) saveMedMap(medMap);
     setResult(s.done(built.growth.length, built.meds.length));
   };
 
@@ -130,6 +160,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
     <motion.section ref={ref} className="diary-form imp" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} aria-label={s.title}>
       <h3>{s.title} {step > 0 && !result && <small className="muted">· {s.step(step)}</small>}</h3>
       <p className="small muted">{s.local}</p>
+      {preset && step >= 1 && !result && <p className="small" role="status"><strong>{s.recognized}</strong></p>}
       {sheets && step === 1 && <p className="small muted">{lang === 'ru' ? 'Лист' : 'Foglio'}: {sheets}</p>}
       {structure && step >= 1 && !result && (
         <div className="struct-box">
@@ -158,8 +189,40 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
               <tbody>{body.slice(0, 5).map((r, i) => <tr key={i}>{headers.map((_, j) => <td key={j}>{r[j]}</td>)}</tr>)}</tbody></table>
           </div>
           <div className="row"><button className="btn ghost" onClick={() => setStep(0)}>{s.back}</button>
-            <motion.button className="btn primary" onClick={() => setStep(2)} {...tap}>{s.next}</motion.button></div>
+            <motion.button className="btn primary" onClick={() => setStep(preset && !medList.length ? 3 : 2)} {...tap}>{s.next}</motion.button></div>
         </>
+      ) : step === 2 && preset ? (
+        medList.length ? (
+          <>
+            <p className="small"><strong>{s.medTitle}</strong></p>
+            <p className="small muted">{s.medHelp}</p>
+            {medList.map((m) => {
+              const v = sel[m.key] || { active: '', conc: '', concOther: '' };
+              const a = ACTIVE[v.active];
+              return (
+                <div key={m.key} className="imp-map">
+                  <label className="field"><span>{m.name} · {s.medTimes(m.count)}</span>
+                    <select aria-label={`${s.activeLbl}: ${m.name}`} value={v.active} onChange={(e) => setSelFor(m.key, { active: e.target.value, conc: '', concOther: '' })}>
+                      <option value="">{s.noCheck}</option>
+                      {Object.keys(ACTIVE).map((k) => <option key={k} value={k}>{NAMES[lang][k] || k}</option>)}
+                    </select></label>
+                  {a && m.ml && (
+                    <div className="field"><span>{s.conc}</span>
+                      <div className="chips">
+                        {[...a.conc, 'other'].map((c) => (
+                          <button type="button" key={c} aria-pressed={String(v.conc) === String(c)} className={`chip ${String(v.conc) === String(c) ? 'on' : ''}`} onClick={() => setSelFor(m.key, { conc: c })}>
+                            {c === 'other' ? s.concOther : `${c} mg/ml`}</button>
+                        ))}
+                        {v.conc === 'other' && <input className="mini-input" inputMode="decimal" aria-label="mg/ml" value={v.concOther} placeholder="mg/ml" onChange={(e) => setSelFor(m.key, { concOther: e.target.value })} />}
+                      </div></div>
+                  )}
+                </div>
+              );
+            })}
+            <div className="row"><button className="btn ghost" onClick={() => setStep(1)}>{s.back}</button>
+              <motion.button className="btn primary" onClick={() => setStep(3)} {...tap}>{s.next}</motion.button></div>
+          </>
+        ) : null
       ) : step === 2 ? (
         <>
           <p className="small"><strong>{s.mapTitle}</strong></p>
@@ -192,9 +255,10 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
             <label className="field"><span>{s.kidAsk}</span>
               <select value={kidIdx} onChange={(e) => setKidIdx(+e.target.value)}>{kids.map((k, i) => <option key={k.id} value={i}>{k.name || k.birth}</option>)}</select></label>
           )}
-          <p role="status"><strong>{s.summary(built.growth.length, built.meds.length, skipped)}</strong>{skipped > 0 && <> ({reasons})</>}</p>
+          <p role="status"><strong>{s.summary(built.growth.length, built.meds.length, skipped - (built.ignored.temperature || 0) - (built.ignored.otherActivities || 0))}</strong>{reasons && <> ({reasons})</>}</p>
+          {preset && (built.ignored.temperature > 0 || built.ignored.otherActivities > 0) && <p className="small muted">{s.notImported(built.ignored.temperature, built.ignored.otherActivities)}</p>}
           <p className="small muted">{s.verify}</p>
-          <div className="row"><button className="btn ghost" onClick={() => setStep(2)}>{s.back}</button>
+          <div className="row"><button className="btn ghost" onClick={() => setStep(preset && !medList.length ? 1 : 2)}>{s.back}</button>
             <motion.button className="btn primary" disabled={!built.growth.length && !built.meds.length} onClick={confirm} {...tap}>{s.confirm}</motion.button></div>
         </>
       )}

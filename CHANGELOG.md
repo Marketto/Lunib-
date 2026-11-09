@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.2.0 — 9 novembre 2026
+- Import diretto dall'esportazione di Baby Tracker (Android); per le medicine indichi tu il principio attivo.
+
 ## 1.1.3 — 9 novembre 2026
 - Import: supporto ai file Excel .xls (formato vecchio), .xlsm e LibreOffice .ods; le immagini nei file vengono ignorate.
 
