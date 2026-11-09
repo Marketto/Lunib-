@@ -1,5 +1,9 @@
 # Novità di Lunibù
 
+## 1.11.1 — 9 novembre 2026
+- Crescita: niente scheda peso-per-lunghezza (il controllo OMS resta, solo come avviso), schede che non si sovrappongono, grafico BMI più leggibile.
+- Medicine: accanto ai mg/kg si vede su quale peso registrato è calcolato; avviso visibile se quel peso ha più di 31 giorni.
+
 ## 1.11.0 — 9 novembre 2026
 - Crescita rivista sulle fonti OMS/NICE: nuovo grafico peso-per-lunghezza/altezza sotto i 5 anni (soglie OMS), BMI stimato (punto vuoto, solo posizione) quando peso e altezza sono misurati in giorni diversi, avviso di peso alto solo informativo, testi «sotto −2 DS» corretti (anche in russo), calo di percentile da confermare, nessun falso allarme a fine età corretta.
 

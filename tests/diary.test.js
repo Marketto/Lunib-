@@ -61,7 +61,7 @@ describe('controllo medicine', () => {
   });
   it('ultimo peso noto', () => {
     const g = [{ kidId: kid, date: '2026-10-01', weight: 9 }, { kidId: kid, date: '2026-11-01', weight: 9.5 }];
-    expect(latestWeight(g, kid, '2026-11-08T10:00:00Z')).toEqual({ kg: 9.5, days: 7 });
+    expect(latestWeight(g, kid, '2026-11-08T10:00:00Z')).toEqual({ kg: 9.5, date: '2026-11-01', days: 7 });
   });
 });
 

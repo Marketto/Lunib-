@@ -529,6 +529,8 @@ ol.steps li:first-child { border-top: 0; }
 .diary .seg button span { position: relative; z-index: 1; }
 .diary .seg .seg-pill { position: absolute; inset: 0; border-radius: 16px; background: var(--paper); box-shadow: var(--lift); }
 .diary .seg:not(.big) { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); }
+.diary .seg[role="tablist"] { display: flex; flex-wrap: wrap; gap: 4px; }
+.diary .seg[role="tablist"] button { flex: 1 1 auto; min-width: 0; padding: 10px 12px; white-space: nowrap; }
 .diary .seg.small { margin-top: 8px; }
 .diary .seg.small button { padding: 7px 4px; font-size: .85rem; }
 .diary .seg.small button.on { background: var(--paper); box-shadow: var(--lift); }

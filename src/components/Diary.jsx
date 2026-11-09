@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { KidPills, Refs, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
-import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, assessWfl, wflType, wflCurve, WFL_MAX_MONTHS, estimateHeight, dropWeightHigh, GROWTH_RULES, isCorrected, curve, lmsAt, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
+import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, assessWfl, wflType, WFL_MAX_MONTHS, estimateHeight, dropWeightHigh, GROWTH_RULES, isCorrected, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
 import { MILESTONE_TEXT } from '../lib/i18n.js';
 import { formatAge } from '../lib/age.js';
@@ -57,13 +57,12 @@ export const DIARY_TEXT = {
       notRegained: 'A 3 settimane non ha ancora recuperato il peso alla nascita: va valutato.'
     },
     beforeTerm: 'Prima del termine corretto (40 settimane) le curve OMS non si applicano: il pediatra usa curve specifiche per i pretermine.',
-    noWfl: 'Il peso per età da solo non dice se è magro o in sovrappeso. Sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza, che Lunibù calcola dalle misure fatte lo stesso giorno (scheda Peso/lunghezza); le soglie del BMI valgono dai 5 anni.',
-    wfl: 'Peso/lunghezza', wflLong: (m) => (m < 24 ? 'Peso per lunghezza' : 'Peso per altezza'),
-    wflNote: 'Calcolato solo da peso e lunghezza/altezza misurati lo stesso giorno (OMS 0–5 anni). Linee: percentili 3, 15, 50, 85, 97; asse orizzontale: cm.',
+    noWfl: 'Il peso per età da solo non dice se è magro o in sovrappeso. Sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza, che Lunibù calcola dalle misure fatte lo stesso giorno; le soglie del BMI valgono dai 5 anni.',
+    wflHint: 'Sotto i 5 anni, se inserisci peso e lunghezza/altezza lo stesso giorno, Lunibù li confronta con gli standard OMS del peso per lunghezza/altezza e ti avvisa solo se serve.',
     bmiEst: 'BMI stimato', bmiEstLegend: 'Cerchio vuoto tratteggiato: BMI stimato (solo posizione, senza soglie).',
     bmiEstText: (d, d1, d2) => `BMI stimato: peso del ${d} con altezza stimata ${d2 ? `dalle misure del ${d1} e ${d2}` : `dalla misura del ${d1}`}. Non è una misura: per una valutazione misura peso e lunghezza/altezza lo stesso giorno.`,
     over10: 'Dopo i 10 anni l\'OMS usa l\'indice di massa corporea invece del peso per età.',
-    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Da 2 a 5 anni Lunibù mostra solo la posizione sulle curve OMS: sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza (scheda Peso/lunghezza); dai 5 anni segnala anche le soglie OMS del BMI (sopra +1 DS, sotto −2 DS), senza dare una diagnosi: per interpretarlo chiedi al pediatra. Quando peso e altezza sono misurati in giorni diversi, Lunibù stima l\'altezza dalle misure vicine (scelta prudenziale di Lunibù, ispirata a Bailey 2013, che stimava l\'altezza dalle visite vicine) e mostra il BMI stimato solo come posizione.',
+    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Da 2 a 5 anni Lunibù mostra solo la posizione sulle curve OMS: sotto i 5 anni l\'OMS usa il peso rispetto a lunghezza/altezza; dai 5 anni segnala anche le soglie OMS del BMI (sopra +1 DS, sotto −2 DS), senza dare una diagnosi: per interpretarlo chiedi al pediatra. Quando peso e altezza sono misurati in giorni diversi, Lunibù stima l\'altezza dalle misure vicine (scelta prudenziale di Lunibù, ispirata a Bailey 2013, che stimava l\'altezza dalle visite vicine) e mostra il BMI stimato solo come posizione.',
     pos: 'Come è stato misurato', lying: 'sdraiato', standing: 'in piedi',
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
     measureTips: 'Pesa senza vestiti (o con il body), sempre con la stessa bilancia. Sotto i 2 anni la lunghezza si misura sdraiato, poi in piedi senza scarpe. La testa: metro morbido sopra sopracciglia e orecchie, nel punto più largo.',
@@ -78,7 +77,7 @@ export const DIARY_TEXT = {
     names: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene', vitaminaD: 'Vitamina D (colecalciferolo)' },
     check: 'Controllo', saveAnyway: 'Registra comunque', filters: 'Filtri', allMeds: 'Tutti', period: 'Periodo', days: (d) => (d ? `${d} giorni` : 'tutto'),
     noMeds: 'Nessun farmaco registrato in questo periodo.', perDay: 'Dosi al giorno', export: 'Esporta CSV (per il pediatra)',
-    perKg: (v) => `${fmt(v)} mg/kg`,
+    perKg: (v, w) => `${fmt(v)} mg/kg` + (w ? ` · su ${fmt(w.kg)} kg del ${w.date.slice(8, 10)}/${w.date.slice(5, 7)}` : ''),
     myMeds: 'Le mie medicine', myMedsEmpty: 'Nessuna medicina ancora: registra una dose o aggiungi una medicina con il suo schema.',
     addPlanMed: '＋ Aggiungi una medicina', lastGiven: 'Ultima dose', never: 'mai data', in24: (n) => `${n} ${n === 1 ? 'dose' : 'dosi'} nelle ultime 24 ore`,
     setPlan: 'Imposta schema', editPlan: 'Modifica schema', delPlan: 'Elimina schema', giveDose: 'Registra una dose', again: '↻ Di nuovo',
@@ -106,7 +105,7 @@ export const DIARY_TEXT = {
       dayHigh: (p) => `Nelle ultime 24 ore, per bocca: ${fmt(p.perKg)} mg/kg, oltre il limite prudenziale controllato da Lunibù (${p.max} mg/kg al giorno). Confronta con il foglietto della tua confezione e chiedi al pediatra.`,
       rectalBand: 'Per le supposte intervalli e numero massimo di dosi dipendono dalla fascia di peso: segui il foglietto. Le linee guida pediatriche italiane sconsigliano la via rettale, salvo se il bimbo vomita.',
       mixedRoutes: 'Stai usando vie diverse (bocca e supposta): conta tutto il paracetamolo insieme e, nel dubbio, chiedi al pediatra.',
-      oldWeight: (p) => `L'ultimo peso registrato è di ${p.days} giorni fa: aggiornalo per un controllo affidabile.`,
+      oldWeight: (p) => `Il controllo usa l'ultimo peso registrato, di ${p.days} giorni prima di questa dose: se nel frattempo è cresciuto, i mg/kg reali sono più bassi. Registra un peso recente per un controllo affidabile.`,
       noWeight: 'Senza un peso registrato non posso controllare la dose per kg: aggiungi il peso in "Crescita".',
       noMg: 'Inserisci la quantità in mg, oppure in ml con la concentrazione, per controllare la dose.',
       tooLong: (p) => `Usato da più di ${p.days === 1 ? '24 ore' : `${p.days} giorni`} di fila: senti il pediatra.`,
@@ -169,13 +168,12 @@ export const DIARY_TEXT = {
       notRegained: 'В 3 недели вес при рождении ещё не восстановлен: нужно показаться врачу.'
     },
     beforeTerm: 'До достижения скорректированного срока 40 недель кривые ВОЗ не применяются: педиатр использует кривые для недоношенных.',
-    noWfl: 'Один вес для возраста не говорит, худой ребёнок или с лишним весом. До 5 лет ВОЗ использует вес относительно длины/роста: Lunibù рассчитывает его по измерениям одного дня (вкладка «Вес/длина»); пороги ИМТ действуют с 5 лет.',
-    wfl: 'Вес/длина', wflLong: (m) => (m < 24 ? 'Вес к длине' : 'Вес к росту'),
-    wflNote: 'Рассчитывается только по весу и длине/росту, измеренным в один день (ВОЗ, 0–5 лет). Линии: перцентили 3, 15, 50, 85, 97; горизонтальная ось: см.',
+    noWfl: 'Один вес для возраста не говорит, худой ребёнок или с лишним весом. До 5 лет ВОЗ использует вес относительно длины/роста: Lunibù рассчитывает его по измерениям одного дня; пороги ИМТ действуют с 5 лет.',
+    wflHint: 'До 5 лет, если вы вводите вес и длину/рост в один день, Lunibù сравнивает их со стандартами ВОЗ «вес к длине/росту» и предупреждает только при необходимости.',
     bmiEst: 'Расчётный ИМТ', bmiEstLegend: 'Пустой пунктирный кружок: расчётный ИМТ (только положение, без порогов).',
     bmiEstText: (d, d1, d2) => `Расчётный ИМТ: вес от ${d} и рост, оценённый ${d2 ? `по измерениям от ${d1} и ${d2}` : `по измерению от ${d1}`}. Это не измерение: для оценки измерьте вес и длину/рост в один день.`,
     over10: 'После 10 лет ВОЗ использует индекс массы тела вместо веса для возраста.',
-    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. От 2 до 5 лет Lunibù показывает только положение на кривых ВОЗ: до 5 лет ВОЗ использует вес относительно длины/роста (вкладка «Вес/длина»); с 5 лет также отмечает пороги ВОЗ для ИМТ (выше +1 SD, ниже −2 SD), без диагноза: для интерпретации обратитесь к педиатру. Если вес и рост измерены в разные дни, Lunibù оценивает рост по соседним измерениям (осторожный выбор Lunibù, по аналогии с Bailey 2013, где рост оценивали по соседним визитам) и показывает расчётный ИМТ только как положение на кривой.',
+    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. От 2 до 5 лет Lunibù показывает только положение на кривых ВОЗ: до 5 лет ВОЗ использует вес относительно длины/роста; с 5 лет также отмечает пороги ВОЗ для ИМТ (выше +1 SD, ниже −2 SD), без диагноза: для интерпретации обратитесь к педиатру. Если вес и рост измерены в разные дни, Lunibù оценивает рост по соседним измерениям (осторожный выбор Lunibù, по аналогии с Bailey 2013, где рост оценивали по соседним визитам) и показывает расчётный ИМТ только как положение на кривой.',
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
@@ -189,7 +187,7 @@ export const DIARY_TEXT = {
     names: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен', vitaminaD: 'Витамин D (колекальциферол)' },
     check: 'Проверка', saveAnyway: 'Всё равно записать', filters: 'Фильтры', allMeds: 'Все', period: 'Период', days: (d) => (d ? `${d} дн.` : 'всё'),
     noMeds: 'За этот период лекарств не записано.', perDay: 'Доз в день', export: 'Экспорт CSV (для педиатра)',
-    perKg: (v) => `${fmt(v)} мг/кг`,
+    perKg: (v, w) => `${fmt(v)} мг/кг` + (w ? ` · при ${fmt(w.kg)} кг от ${w.date.slice(8, 10)}.${w.date.slice(5, 7)}` : ''),
     myMeds: 'Мои лекарства', myMedsEmpty: 'Пока ничего нет: запишите приём или добавьте лекарство со схемой.',
     addPlanMed: '＋ Добавить лекарство', lastGiven: 'Последний приём', never: 'ещё не давали', in24: (n) => `Приёмов за последние 24 часа: ${n}`,
     setPlan: 'Задать схему', editPlan: 'Изменить схему', delPlan: 'Удалить схему', giveDose: 'Записать приём', again: '↻ Ещё раз',
@@ -217,7 +215,7 @@ export const DIARY_TEXT = {
       dayHigh: (p) => `За последние 24 часа внутрь: ${fmt(p.perKg)} мг/кг — выше консервативного предела проверки Lunibù (${p.max} мг/кг в сутки). Сверьтесь с инструкцией к вашей упаковке и спросите педиатра.`,
       rectalBand: 'Для свечей интервалы и максимальное число доз зависят от весовой группы: следуйте инструкции. Итальянские педиатрические рекомендации не советуют ректальный путь, кроме случаев рвоты.',
       mixedRoutes: 'Вы используете разные способы (внутрь и свечи): считайте весь парацетамол вместе и при сомнениях спросите педиатра.',
-      oldWeight: (p) => `Последний вес записан ${p.days} дн. назад: обновите его для надёжной проверки.`,
+      oldWeight: (p) => `Проверка использует последний записанный вес — за ${p.days} дн. до этой дозы: если ребёнок с тех пор вырос, реальные мг/кг ниже. Запишите свежий вес для надёжной проверки.`,
       noWeight: 'Без записанного веса нельзя проверить дозу на кг: добавьте вес в разделе «Рост».',
       noMg: 'Укажите количество в мг или в мл с концентрацией, чтобы проверить дозу.',
       tooLong: (p) => `Применяется дольше ${p.days === 1 ? '24 часов' : `${p.days} дней`} подряд: обратитесь к педиатру.`,
@@ -263,7 +261,8 @@ const hVal = (g, m) => adjustHeight(m, +g.height, g.heightPos || (m < 24 ? 'lyin
 function GrowthChart({ indicator, sex, points, upTo, lang }) {
   const W = 340, Hh = 220, P = { l: 34, r: 26, t: 10, b: 24 };
   const maxM = Math.min(INDICATORS[indicator].maxMonths, Math.max(6, Math.ceil((upTo + 3) / 3) * 3));
-  const minM = Math.max(0, Math.min(maxM - 12, Math.floor(Math.min(upTo, ...points.map((p) => p.m)) - 3)));
+  const lowM = indicator === 'bmi' ? INDICATORS.bmi.minMonths : 0;
+  const minM = Math.max(lowM, Math.min(maxM - 12, Math.floor(Math.min(upTo, ...points.map((p) => p.m)) - 3)));
   const curves = curve(indicator, sex, minM, maxM, 48);
   const all = [...curves.flatMap((c) => c.pts.map((p) => p[1])), ...points.map((p) => p.v)];
   const yMin = Math.floor(Math.min(...all) * 0.97), yMax = Math.ceil(Math.max(...all) * 1.02);
@@ -271,8 +270,11 @@ function GrowthChart({ indicator, sex, points, upTo, lang }) {
   const y = (v) => Hh - P.b - ((v - yMin) / (yMax - yMin || 1)) * (Hh - P.t - P.b);
   const path = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('');
   const band = (a, b) => `${path(a.pts)}L${b.pts.slice().reverse().map((p) => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('L')}Z`;
-  const yTicks = 5, xStep = maxM - minM > 24 ? 12 : maxM - minM > 12 ? 6 : 3;
   const unit = INDICATORS[indicator].unit;
+  const rawStep = (yMax - yMin) / 5, stepBase = unit === 'kg' && rawStep < 1 ? 0.5 : 1;
+  const yStep = Math.max(stepBase, Math.ceil(rawStep / stepBase) * stepBase);
+  const yTickVals = []; for (let v = Math.ceil(yMin / yStep) * yStep; v <= yMax + 1e-9; v += yStep) yTickVals.push(v);
+  const xStep = maxM - minM > 24 ? 12 : maxM - minM > 12 ? 6 : 3;
   return (
     <svg className="growth-chart" viewBox={`0 0 ${W} ${Hh}`} role="img" aria-label={`${indicator} chart`}>
       <path d={band(curves[0], curves[4])} className="band-outer" />
@@ -283,59 +285,19 @@ function GrowthChart({ indicator, sex, points, upTo, lang }) {
           <text x={W - P.r + 3} y={y(c.pts[c.pts.length - 1][1]) + 3} className="plabel">{c.p}</text>
         </g>
       ))}
-      {Array.from({ length: yTicks + 1 }, (_, i) => yMin + ((yMax - yMin) * i) / yTicks).map((v) => (
-        <text key={v} x={P.l - 4} y={y(v) + 3} className="axis" textAnchor="end">{fmt(v, unit === 'kg' ? 1 : 0)}</text>
+      {yTickVals.map((v) => (
+        <text key={v} x={P.l - 4} y={y(v) + 3} className="axis" textAnchor="end">{fmt(v, yStep < 1 ? 1 : 0)}</text>
       ))}
       {Array.from({ length: Math.floor((maxM - minM) / xStep) + 1 }, (_, i) => Math.ceil(minM / xStep) * xStep + i * xStep).filter((m) => m <= maxM).map((m) => (
         <text key={m} x={x(m)} y={Hh - 6} className="axis" textAnchor="middle">{m}{lang === 'ru' ? 'м' : 'm'}</text>
       ))}
       {points.filter((p) => !p.est).length > 1 && <path d={path(points.filter((p) => !p.est).map((p) => [p.m, p.v]))} className="kid-line" />}
-      {points.map((p, i) => (
-        <motion.circle key={p.id} cx={x(p.m)} cy={y(p.v)} r={p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
-          style={p.est ? { fill: 'none', strokeDasharray: '3 2', strokeWidth: 2 } : undefined}
+      {[...points].sort((a, b) => (b.est ? 1 : 0) - (a.est ? 1 : 0)).map((p, i) => (
+        <motion.circle key={p.id} cx={x(p.m)} cy={y(p.v)} r={p.est ? 3.5 : p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
+          style={p.est ? { fill: 'none', strokeDasharray: '2 1.5', strokeWidth: 1.5, opacity: .85 } : undefined}
           initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ...spring, delay: 0.05 * i }}>
           {p.est && <title>{lang === 'ru' ? 'Расчётный ИМТ' : 'BMI stimato'}</title>}
         </motion.circle>
-      ))}
-    </svg>
-  );
-}
-
-function WflChart({ sex, type, points, ageNow, lang }) {
-  const W = 340, Hh = 220, P = { l: 34, r: 26, t: 10, b: 24 };
-  const tblMin = type === 'wfl' ? 45 : 65, tblMax = type === 'wfl' ? 110 : 120;
-  const mid = points.length ? null : (lmsAt('height', sex, Math.max(0, Math.min(ageNow, 60)))?.[1] || (tblMin + tblMax) / 2);
-  let lo = points.length ? Math.min(...points.map((p) => p.cm)) - 6 : mid - 10;
-  let hi = points.length ? Math.max(...points.map((p) => p.cm)) + 6 : mid + 10;
-  if (hi - lo < 20) { const c = (hi + lo) / 2; lo = c - 10; hi = c + 10; }
-  lo = Math.max(tblMin, Math.floor(lo)); hi = Math.min(tblMax, Math.ceil(hi));
-  const curves = wflCurve(sex, type, lo, hi, 40);
-  const all = [...curves.flatMap((c) => c.pts.map((p) => p[1])), ...points.map((p) => p.v)];
-  const yMin = Math.floor(Math.min(...all) * 0.97), yMax = Math.ceil(Math.max(...all) * 1.02);
-  const x = (v) => P.l + ((v - lo) / (hi - lo || 1)) * (W - P.l - P.r);
-  const y = (v) => Hh - P.b - ((v - yMin) / (yMax - yMin || 1)) * (Hh - P.t - P.b);
-  const path = (pts) => pts.map((p, i) => `${i ? 'L' : 'M'}${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('');
-  const band = (a, b) => `${path(a.pts)}L${b.pts.slice().reverse().map((p) => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join('L')}Z`;
-  const xStep = hi - lo > 40 ? 10 : 5;
-  return (
-    <svg className="growth-chart" viewBox={`0 0 ${W} ${Hh}`} role="img" aria-label="weight-for-length chart">
-      <path d={band(curves[0], curves[4])} className="band-outer" />
-      <path d={band(curves[1], curves[3])} className="band-inner" />
-      {curves.map((c) => (
-        <g key={c.p}>
-          <path d={path(c.pts)} className={c.p === 50 ? 'p50' : 'pline'} />
-          <text x={W - P.r + 3} y={y(c.pts[c.pts.length - 1][1]) + 3} className="plabel">{c.p}</text>
-        </g>
-      ))}
-      {Array.from({ length: 6 }, (_, i) => yMin + ((yMax - yMin) * i) / 5).map((v) => (
-        <text key={v} x={P.l - 4} y={y(v) + 3} className="axis" textAnchor="end">{fmt(v, 0)}</text>
-      ))}
-      {Array.from({ length: Math.floor((hi - lo) / xStep) + 1 }, (_, i) => Math.ceil(lo / xStep) * xStep + i * xStep).filter((v) => v <= hi).map((v) => (
-        <text key={v} x={x(v)} y={Hh - 6} className="axis" textAnchor="middle">{v}</text>
-      ))}
-      {points.map((p, i) => (
-        <motion.circle key={p.id} cx={x(p.cm)} cy={y(p.v)} r={p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
-          initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ...spring, delay: 0.05 * i }} />
       ))}
     </svg>
   );
@@ -411,9 +373,6 @@ function Growth({ lang, kid, growth, setGrowth }) {
   }, [mine.map((g) => g.id + g.date + g.weight + g.height + g.head + g.heightPos).join(), sex, kid.gaWeeks]); // eslint-disable-line
 
   const pts = withEval.filter((g) => g.ev[ind]).map((g) => ({ id: g.id, m: g.m, v: ind === 'height' ? hVal(g, g.m) : ind === 'bmi' ? g.ev.bmi.value : +g[ind], est: ind === 'bmi' && !!g.ev.bmi.estimated, warn: g.ev[ind].warnings.some((w) => w.level !== 'info') }));
-  const wflType0 = ageNow < 24 ? 'wfl' : 'wfh';
-  const wflPts = withEval.filter((g) => g.ev.wfl && g.ev.wfl.type === wflType0).map((g) => ({ id: g.id, cm: g.ev.wfl.cm, v: g.ev.wfl.value, warn: g.ev.wfl.warnings.some((w) => w.level !== 'info') }));
-  const showWfl = ageNow <= WFL_MAX_MONTHS;
   const showHead = ageNow <= INDICATORS.head.maxMonths || mine.some((g) => g.head);
 
   // Avvisi del modulo mentre si scrive
@@ -458,25 +417,23 @@ function Growth({ lang, kid, growth, setGrowth }) {
     setForm(null);
   };
 
-  const label = { weight: s.weight, height: s.height, head: s.head, bmi: s.bmi, wfl: s.wfl };
+  const label = { weight: s.weight, height: s.height, head: s.head, bmi: s.bmi };
   const showBmi = ageNow >= INDICATORS.bmi.minMonths || mine.some((g) => g.ev?.bmi);
   return (
     <div>
       <div className="seg" role="tablist">
-        {['weight', 'height', ...(showWfl ? ['wfl'] : []), ...(showBmi ? ['bmi'] : []), ...(showHead ? ['head'] : [])].map((k) => (
+        {['weight', 'height', ...(showBmi ? ['bmi'] : []), ...(showHead ? ['head'] : [])].map((k) => (
           <button key={k} className={ind === k ? 'on' : ''} onClick={() => setInd(k)} role="tab" aria-selected={ind === k}>
             {ind === k && <motion.i layoutId="seg-pill" className="seg-pill" transition={spring} />}<span>{label[k]}</span>
           </button>
         ))}
       </div>
       <motion.div className="chart-card" key={ind} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : ind === 'wfl' ? s.wflLong(ageNow) : s.weight} <small>({ind === 'wfl' ? 'kg / cm' : INDICATORS[ind].unit})</small></h3>
-        {ind === 'wfl'
-          ? <WflChart sex={sex} type={wflType0} points={wflPts} ageNow={ageNow} lang={lang} />
-          : <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />}
-        {ind === 'wfl' && <p className="small muted">{s.wflNote} <Refs ids={['W4', 'W7', 'W15']} /></p>}
+        <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : s.weight} <small>({INDICATORS[ind].unit})</small></h3>
+        <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />
+        {ind === 'weight' && ageNow <= WFL_MAX_MONTHS && <p className="small muted">{s.wflHint} <Refs ids={['W4', 'W15']} /></p>}
         {ind === 'bmi' && pts.some((p) => p.est) && <p className="small muted">{s.bmiEstLegend} <Refs ids={['W16']} /></p>}
-        {ind !== 'wfl' && <p className="small muted">{s.chartNote} {ind === 'weight' && ageNow < 61 && <>{s.noWfl} <Refs ids={['W4', 'W15']} /></>} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : []), ...(ind === 'bmi' ? ['X4', 'W16'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? <> {ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)}{ind === 'weight' && <> <Refs ids={['X5']} /></>}</> : ''}</p>}
+        <p className="small muted">{s.chartNote} {ind === 'weight' && ageNow < 61 && <>{s.noWfl} <Refs ids={['W4', 'W15']} /></>} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : []), ...(ind === 'bmi' ? ['X4', 'W16'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? <> {ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)}{ind === 'weight' && <> <Refs ids={['X5']} /></>}</> : ''}</p>
         {kid.gaWeeks && kid.gaWeeks < 37 && monthsAt(kid.birth, today()) < (kid.gaWeeks < 32 ? 24 : 12) && <p className="small muted">{s.pretermNote(kid.gaWeeks)} <Refs ids={['W13']} /></p>}
       </motion.div>
 
@@ -888,7 +845,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
               <div className="dl-vals">
                 {e.amount && <span className="chip">{fmt(e.amount, 2)} {e.unit === 'other' ? '' : s.units[e.unit] ?? e.unit}{e.conc ? ` (${e.conc} mg/ml)` : ''}{e.concIU ? ` (${e.concIU} ${s.iuPer[e.unit] || ''})` : ''}{e.route === 'rectal' ? ` · ${s.rectal}` : ''}</span>}
                 {mg && e.unit === 'ml' && <span className="chip">{fmt(mg)} mg</span>}
-                {mg && w && e.active && <span className="chip">{s.perKg(mg / w.kg)}</span>}
+                {mg && w && e.active && <span className="chip">{s.perKg(mg / w.kg, w)}</span>}
                 {e.note && <span className="chip muted">{e.note}</span>}
                 <button className="chip" onClick={() => again(e)}>{s.again}</button>
               </div>

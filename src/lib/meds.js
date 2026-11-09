@@ -49,7 +49,7 @@ export function latestWeight(growth, kidId, atISO) {
   const w = growth
     .filter((g) => g.kidId === kidId && g.weight > 0 && new Date(g.date).getTime() <= at + 86400000)
     .sort((a, b) => b.date.localeCompare(a.date))[0];
-  return w ? { kg: +w.weight, days: Math.round((at - new Date(w.date).getTime()) / 86400000) } : null;
+  return w ? { kg: +w.weight, date: w.date, days: Math.round((at - new Date(w.date).getTime()) / 86400000) } : null;
 }
 
 const CAP_WEIGHT_MAX_DAYS = 31; // peso più vecchio di 31 giorni: si usa la fascia d'età
@@ -125,7 +125,7 @@ export function checkDose(entry, log, { months, weight }) {
       frac += v / lim; mgKg += v; dayMax = lim;
     }
     if (frac > 1.001) out.push({ kind: 'dayHigh', level: 'warn', perKg: mgKg, max: dayMax });
-    if (weight.days > 31) out.push({ kind: 'oldWeight', level: 'info', days: weight.days });
+    if (weight.days > 31) out.push({ kind: 'oldWeight', level: 'warn', days: weight.days });
   } else if (mg && !weight) out.push({ kind: 'noWeight', level: 'info' });
   else if (!mg) out.push({ kind: 'noMg', level: 'info' });
 
