@@ -1,5 +1,9 @@
 # Novità di Lunibù
 
+## 1.10.0 — 9 novembre 2026
+- Tappe dell'età scolare (solo informative, senza avvisi per età): primo dentino che cade, primi denti definitivi (tabelle ADA, AAPD), leggere e scrivere a fine seconda primaria (Consensus Conference ISS).
+- Giochi 6–12 anni: movimento ogni giorno (OMS), sfide di costruzione, lettura guidata a casa; gioco dell'oca con i numeri fino a 8 anni. Livelli di prova più chiari.
+
 ## 1.9.0 — 9 novembre 2026
 - 14 nuove schede per 6–12 anni: sonno, alimentazione, pidocchi, vista, mal di testa (con segnali urgenti NICE), DSA, ADHD, ansia, bullismo, compiti e lettura, sport e certificato non agonistico, online e privacy, auto e strada (seggiolini R129), denti (sigillanti e fluoro); ogni dato con fonte e verifica indipendente.
 

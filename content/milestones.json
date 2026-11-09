@@ -624,6 +624,70 @@
         "it": "Segni di pubertà prima degli 8 anni nelle bambine o dei 9 nei bambini: parlane con il pediatra (Pediatric Endocrine Society; NHS: prima degli 8 anni per entrambi i sessi).",
         "ru": "Признаки полового созревания до 8 лет у девочек или до 9 лет у мальчиков: поговорите с педиатром (Pediatric Endocrine Society; NHS: до 8 лет для обоих полов)."
       }
+    },
+    {
+      "id": "d-shed-first",
+      "area": "dental",
+      "from": 72,
+      "to": null,
+      "type": "guideline-range",
+      "warn": false,
+      "src": [
+        "K33"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Cade il primo dentino da latte",
+        "info": "Tabella ADA: gli incisivi centrali da latte cadono di solito tra 6 e 7 anni, i laterali tra 7 e 8; canini e molari da latte tra 9 e 12 anni."
+      },
+      "ru": {
+        "title": "Выпадает первый молочный зуб",
+        "info": "Таблица ADA: молочные центральные резцы обычно выпадают в 6–7 лет, боковые — в 7–8 лет; клыки и моляры — в 9–12 лет."
+      }
+    },
+    {
+      "id": "d-perm-first",
+      "area": "dental",
+      "from": 72,
+      "to": null,
+      "type": "guideline-range",
+      "warn": false,
+      "src": [
+        "K34",
+        "K35"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Spuntano i primi denti definitivi",
+        "info": "Tabella ADA: i primi molari definitivi e gli incisivi centrali inferiori spuntano di solito tra 6 e 7 anni, gli altri incisivi tra 7 e 9, canini e premolari tra 9 e 12, i secondi molari tra 11 e 13. Secondo l'AAPD la dentatura mista (denti da latte e definitivi insieme) va circa dai 6 agli 11 anni."
+      },
+      "ru": {
+        "title": "Прорезываются первые постоянные зубы",
+        "info": "Таблица ADA: первые постоянные моляры и нижние центральные резцы обычно прорезываются в 6–7 лет, остальные резцы — в 7–9 лет, клыки и премоляры — в 9–12 лет, вторые моляры — в 11–13 лет. По данным AAPD, сменный прикус (молочные и постоянные зубы вместе) длится примерно с 6 до 11 лет."
+      }
+    },
+    {
+      "id": "l-school-literacy",
+      "area": "language",
+      "from": 90,
+      "to": null,
+      "type": "guideline-range",
+      "warn": false,
+      "src": [
+        "K36",
+        "K12",
+        "K13",
+        "K37"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Leggere e scrivere: la fine della seconda primaria",
+        "info": "Imparare a leggere e scrivere richiede tempo: secondo la Consensus Conference promossa dall'ISS, la dislessia si diagnostica di solito dalla fine della seconda primaria, perché una diagnosi anticipata aumenterebbe il rischio di falsi positivi. Per la disgrafia la linea guida ISS 2022 indica di segnalare le difficoltà dalla fine della seconda e di diagnosticarla alla fine della terza. Le attività della scuola per individuare i casi sospetti non sono una diagnosi (legge 170). Se leggere o scrivere resta molto faticoso, parlane con gli insegnanti e con il pediatra."
+      },
+      "ru": {
+        "title": "Чтение и письмо: конец второго класса",
+        "info": "Учиться читать и писать — долгий процесс: по данным консенсусной конференции, организованной ISS, дислексию в Италии обычно диагностируют с конца второго класса начальной школы, потому что более ранний диагноз повышал бы риск ложноположительных результатов. Для дисграфии рекомендации ISS 2022 советуют отмечать трудности с конца второго класса, а диагноз ставить в конце третьего. Школьные мероприятия по выявлению подозрительных случаев не являются диагнозом (закон № 170). Если читать или писать по-прежнему очень трудно, поговорите с учителями и педиатром."
+      }
     }
   ]
 }

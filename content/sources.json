@@ -1248,5 +1248,45 @@
     "label": "Ahovuo-Saloranta A et al. Sealants for preventing dental caries in the permanent teeth. Cochrane Database Syst Rev. 2017;CD001830.pub5",
     "url": "https://doi.org/10.1002/14651858.CD001830.pub5",
     "type": "revisione sistematica"
+  },
+  "K30": {
+    "label": "Nelson G et al. Investigating main effects and moderators of linear number board games: a meta-analytic review. Rev Educ Res. 2025 (online 17 nov)",
+    "url": "https://doi.org/10.3102/00346543251383552",
+    "type": "meta-analisi"
+  },
+  "K31": {
+    "label": "Laski EV, Siegler RS. Learning from number board games: You learn what you encode. Dev Psychol. 2014. doi:10.1037/a0034321",
+    "url": "https://doi.org/10.1037/a0034321",
+    "type": "studio sperimentale"
+  },
+  "K32": {
+    "label": "Dahl-Leonard K et al. Examining the effects of family-implemented literacy interventions for school-aged children: a meta-analysis. Educ Psychol Rev. 2025;37:10",
+    "url": "https://doi.org/10.1007/s10648-025-09985-3",
+    "type": "meta-analisi"
+  },
+  "K33": {
+    "label": "American Dental Association – MouthHealthy. Primary Tooth Development (tabella eruzione e caduta dei denti da latte). ©2012",
+    "url": "https://www.mouthhealthy.org/-/media/project/ada-organization/ada/mouthhealthy/files/activity-sheets/adaprimarytoothdev_eng.pdf",
+    "type": "società scientifica"
+  },
+  "K34": {
+    "label": "American Dental Association – MouthHealthy. Permanent Tooth Development (tabella eruzione dei denti definitivi). ©2012",
+    "url": "https://www.mouthhealthy.org/-/media/project/ada-organization/ada/mouthhealthy/files/activity-sheets/adapermanentteethdev_eng.pdf",
+    "type": "società scientifica"
+  },
+  "K35": {
+    "label": "American Academy of Pediatric Dentistry. Management of the developing dentition and occlusion in pediatric dentistry (Best Practices). The Reference Manual of Pediatric Dentistry. AAPD; 2026:525-543",
+    "url": "https://www.aapd.org/globalassets/media/policies_guidelines/bp_developdentition26.pdf",
+    "type": "linea guida"
+  },
+  "K36": {
+    "label": "Lorusso ML, Vernice M, Dieterich M, Brizzolara D, Mariani E, De Masi S, D'Angelo F, Lacorte E, Mele A. The process and criteria for diagnosing specific learning disorders: indications from the Consensus Conference promoted by the Italian National Institute of Health. Ann Ist Super Sanità. 2014;50(1):77-89",
+    "url": "https://scielosp.org/article/aiss/2014.v50n1/77-89",
+    "type": "consensus"
+  },
+  "K37": {
+    "label": "Eurydice (Commissione europea). Italia: organizzazione dell'istruzione primaria (età di iscrizione, calendario)",
+    "url": "https://eurydice.eacea.ec.europa.eu/it/eurypedia/italy/organizzazione-dellistruzione-primaria",
+    "type": "ente governativo"
   }
 }

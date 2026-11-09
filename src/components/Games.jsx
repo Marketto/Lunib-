@@ -17,8 +17,8 @@ export const GAME_TEXT = {
     mode: { insieme: 'Insieme', solo: 'Da solo', entrambi: 'Insieme o da solo' },
     evidence: {
       forte: 'Prove forti: studi controllati',
-      media: 'Prove moderate: studi osservazionali',
-      raccomandato: 'Consigliato dall\'AAP, benefici poco dimostrati',
+      media: 'Prove moderate: effetti piccoli, indiretti o studi osservazionali',
+      raccomandato: 'Consigliato da linee guida (AAP/OMS); benefici del singolo gioco poco dimostrati',
       tappa: 'Adatto alla tappa: prove descrittive'
     },
     minutes: (m) => `${m} min`,
@@ -38,8 +38,8 @@ export const GAME_TEXT = {
     mode: { insieme: 'Вместе', solo: 'Сам', entrambi: 'Вместе или сам' },
     evidence: {
       forte: 'Сильные доказательства: контролируемые исследования',
-      media: 'Умеренные доказательства: наблюдательные исследования',
-      raccomandato: 'Рекомендовано AAP, польза мало доказана',
+      media: 'Умеренные доказательства: небольшие или косвенные эффекты либо наблюдательные исследования',
+      raccomandato: 'Рекомендовано руководствами (AAP/ВОЗ); польза конкретной игры мало доказана',
       tappa: 'Подходит этапу: описательные данные'
     },
     minutes: (m) => `${m} мин`,
