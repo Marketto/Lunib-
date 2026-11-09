@@ -12,6 +12,37 @@ export function toMg(entry) {
   return null;
 }
 
+// Vitamina D: 1 µg = 40 UI (NIH ODS, fonte V3). concIU = UI per goccia (unità gocce) o UI per ml (unità ml), scritte sulla confezione.
+export const IU_PER_UG = 40;
+export function toIU(entry) {
+  const n = +entry.amount;
+  if (!(n > 0)) return null;
+  if (entry.unit === 'UI') return n;
+  if (entry.unit === 'µg' || entry.unit === 'mcg') return n * IU_PER_UG;
+  if ((entry.unit === 'gocce' || entry.unit === 'ml') && entry.concIU > 0) return n * entry.concIU;
+  return null;
+}
+
+/** Limite massimo giornaliero (UI) per età in mesi, dalla tabella EFSA in meds.json; null se l'età è fuori tabella. */
+export function vitDLimit(months) {
+  const t = ACTIVE.vitaminaD.ulIU.find((r) => months < r.underMonths);
+  return t || null;
+}
+const RX_VITD_ANALOG = /calcifediol|alfacalcidol|calcitriol|diidrotachisterol|dihydrotachysterol|кальцифедиол|альфакальцидол|кальцитриол|дигидротахистерол/i;
+const localDate = (iso) => { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+
+/** Totale UI di vitamina D registrate dal bimbo nello stesso giorno locale (entry incluso se passato in log). */
+export function vitDDayTotal(log, kidId, dayISO) {
+  const day = localDate(dayISO);
+  let iu = 0, missing = 0;
+  for (const e of log) {
+    if (e.kidId !== kidId || e.active !== 'vitaminaD' || localDate(e.at) !== day) continue;
+    const v = toIU(e);
+    if (v == null) missing++; else iu += v;
+  }
+  return { iu, missing };
+}
+
 // Ultimo peso noto (kg) prima della data, con età della misura in giorni
 export function latestWeight(growth, kidId, atISO) {
   const at = new Date(atISO).getTime();
@@ -27,7 +58,12 @@ export function latestWeight(growth, kidId, atISO) {
  */
 export function checkDose(entry, log, { months, weight }) {
   const a = ACTIVE[entry.active];
-  if (!a) return [{ kind: 'noCheck', level: 'info' }];
+  if (!a) {
+    const r = [{ kind: 'noCheck', level: 'info' }];
+    if (RX_VITD_ANALOG.test(entry.name || '')) r.push({ kind: 'vitDAnalog', level: 'info', refs: ACTIVE.vitaminaD.refs.vitDAnalog });
+    return r;
+  }
+  if (a.kind === 'daily') return checkDaily(entry, a, log, months);
   const out = [];
   const at = new Date(entry.at).getTime();
   const r = a.routes[entry.route] || a.routes.oral;
@@ -84,6 +120,23 @@ export function checkDose(entry, log, { months, weight }) {
   const other = log.find((e) => e.kidId === entry.kidId && e.active && e.active !== entry.active && ACTIVE[e.active]?.group === a.group &&
     Math.abs(at - new Date(e.at).getTime()) < 6 * H);
   if (other && a.group) out.push({ kind: 'alternating', level: 'info', other: other.active });
+  return out;
+}
+
+/** Integratori a limite giornaliero (vitamina D): somma del giorno vs limite EFSA per età; nessun controllo di intervalli o numero di dosi. */
+function checkDaily(entry, a, log, months) {
+  const out = [];
+  const others = log.filter((e) => e.id !== entry.id);
+  const { iu, missing } = vitDDayTotal([entry, ...others], entry.kidId, entry.at);
+  if (missing) out.push({ kind: 'vitDNoIU', level: 'info' });
+  const ul = months != null ? vitDLimit(months) : null;
+  if (ul) {
+    if (iu > ul.iu * a.strongFactor) out.push({ kind: 'vitDVeryHigh', level: 'stop', iu, ul: ul.iu, refs: ul.src });
+    else if (iu > ul.iu) out.push({ kind: 'vitDHigh', level: 'warn', iu, ul: ul.iu, refs: ul.src });
+  }
+  out.push({ kind: 'vitDInfo', level: 'info', refs: a.refs.vitDInfo });
+  out.push({ kind: 'vitDAllSources', level: 'info', refs: a.refs.vitDAllSources });
+  if (months != null) out.push({ kind: 'vitDRec', level: 'info', period: months < 12 ? 'infant' : 'child', refs: months < 12 ? ['V4', 'V5', 'V6'] : ['V3', 'V4', 'V5', 'V6'] });
   return out;
 }
 

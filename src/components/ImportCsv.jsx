@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { tap } from './Common.jsx';
-import { parseCsv, guessMapping, dateOrderState, buildRecords, FIELDS, detectPreset, buildFromBabyTracker, summarizeMeds } from '../lib/csv.js';
+import { parseCsv, guessMapping, dateOrderState, buildRecords, FIELDS, detectPreset, buildFromBabyTracker, summarizeMeds, suggestActive } from '../lib/csv.js';
 import { ACTIVE } from '../lib/meds.js';
 
 const MEDMAP_KEY = 'lunibu:medmap'; // scelte dell'utente: restano sul dispositivo, mai nel repository
@@ -26,7 +26,7 @@ const TX = {
     verify: 'Controlla che i valori importati siano giusti: l\'app non può verificarli.',
     recognized: 'Riconosciuto: esportazione di Baby Tracker', medTitle: 'Medicine trovate',
     medHelp: 'Lunibù non conosce i nomi commerciali: indica tu il principio attivo per attivare il controllo prudenziale.',
-    medTimes: (n) => `${n} volte`, activeLbl: 'Principio attivo', noCheck: 'Nessun controllo', conc: 'Concentrazione (mg/ml, scritta su confezione e foglietto)', concOther: 'altra',
+    medTimes: (n) => `${n} volte`, activeLbl: 'Principio attivo', noCheck: 'Nessun controllo', conc: 'Concentrazione (mg/ml, scritta su confezione e foglietto)', concIU: 'UI per goccia / per ml (scritte sulla confezione)', concOther: 'altra',
     notImported: (t, o) => [t && `${t} temperature`, o && `${o} altre attività`].filter(Boolean).join(' e ') + ' non importate (Lunibù non le registra)'
   },
   ru: {
@@ -44,11 +44,11 @@ const TX = {
     verify: 'Проверьте, что импортированные значения верны: приложение не может это проверить.',
     recognized: 'Распознано: экспорт из Baby Tracker', medTitle: 'Найденные лекарства',
     medHelp: 'Lunibù не знает торговых названий: укажите действующее вещество, чтобы включить осторожную проверку.',
-    medTimes: (n) => `${n} раз`, activeLbl: 'Действующее вещество', noCheck: 'Без проверки', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)', concOther: 'другая',
+    medTimes: (n) => `${n} раз`, activeLbl: 'Действующее вещество', noCheck: 'Без проверки', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)', concIU: 'МЕ на каплю / на мл (написано на упаковке)', concOther: 'другая',
     notImported: (t, o) => [t && `${t} измерений температуры`, o && `${o} других записей`].filter(Boolean).join(' и ') + ' не импортированы (Lunibù их не ведёт)'
   }
 };
-const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен' } };
+const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene', vitaminaD: 'Vitamina D (colecalciferolo)' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен', vitaminaD: 'Витамин D (колекальциферол)' } };
 const UNITS = { weight: ['kg', 'g', 'lb'], height: ['cm', 'in'], head: ['cm', 'in'], dose: ['mg', 'ml'] };
 
 // Struttura del file SENZA dati: nomi dei fogli, intestazioni e "forma" del primo valore di ogni colonna
@@ -84,6 +84,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
     const saved = loadMedMap(), out = {};
     for (const [k, v] of Object.entries(saved)) {
       const chips = ACTIVE[v.active]?.conc || [];
+      if (ACTIVE[v.active]?.kind === 'daily') { out[k] = { active: v.active, conc: v.conc > 0 ? 'other' : '', concOther: v.conc > 0 ? String(v.conc) : '' }; continue; }
       out[k] = { active: v.active || '', conc: v.conc > 0 ? (chips.includes(v.conc) ? String(v.conc) : 'other') : '', concOther: v.conc > 0 && !chips.includes(v.conc) ? String(v.conc) : '' };
     }
     return out;
@@ -149,6 +150,16 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
   const medList = built && preset ? summarizeMeds(built.meds) : [];
   const setSelFor = (key, patch) => setSel((p) => ({ ...p, [key]: { active: '', conc: '', concOther: '', ...p[key], ...patch } }));
 
+  // Suggerimento: nomi che sembrano vitamina D (o paracetamolo/ibuprofene) preselezionati, l'utente può cambiarli
+  const medKeys = medList.map((m) => m.key + '\u0000' + m.name).join('\u0001');
+  React.useEffect(() => {
+    setSel((p) => {
+      const add = {};
+      for (const m of medList) if (!p[m.key]) { const a = suggestActive(m.name); if (a) add[m.key] = { active: a, conc: '', concOther: '' }; }
+      return Object.keys(add).length ? { ...p, ...add } : p;
+    });
+  }, [medKeys]); // eslint-disable-line
+
   const confirm = () => {
     if (built.growth.length) setGrowth([...growth, ...built.growth]);
     if (built.meds.length) setMeds([...meds, ...built.meds]);
@@ -206,7 +217,11 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
                       <option value="">{s.noCheck}</option>
                       {Object.keys(ACTIVE).map((k) => <option key={k} value={k}>{NAMES[lang][k] || k}</option>)}
                     </select></label>
-                  {a && m.ml && (
+                  {a?.kind === 'daily' && (
+                    <label className="field"><span>{s.concIU}</span>
+                      <input inputMode="decimal" value={v.concOther} onChange={(e) => setSelFor(m.key, { conc: 'other', concOther: e.target.value })} /></label>
+                  )}
+                  {a?.conc && m.ml && (
                     <div className="field"><span>{s.conc}</span>
                       <div className="chips">
                         {[...a.conc, 'other'].map((c) => (

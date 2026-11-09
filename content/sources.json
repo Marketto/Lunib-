@@ -848,5 +848,35 @@
     "label": "AAP/Bright Futures. Recommendations for Preventive Pediatric Health Care (periodicity schedule). 2025",
     "url": "https://downloads.aap.org/AAP/PDF/periodicity_schedule.pdf",
     "type": "linea guida"
+  },
+  "V1": {
+    "label": "EFSA NDA Panel (Turck D et al.). Update of the tolerable upper intake level for vitamin D for infants. EFSA Journal 2018;16(8):e05365",
+    "url": "https://doi.org/10.2903/j.efsa.2018.5365",
+    "type": "ente regolatorio"
+  },
+  "V2": {
+    "label": "EFSA NDA Panel. Scientific opinion on the tolerable upper intake level for vitamin D, including the derivation of a conversion factor for calcidiol monohydrate. EFSA Journal 2023;21(8):8145",
+    "url": "https://doi.org/10.2903/j.efsa.2023.8145",
+    "type": "ente regolatorio"
+  },
+  "V3": {
+    "label": "NIH Office of Dietary Supplements. Vitamin D – Fact Sheet for Health Professionals",
+    "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+    "type": "ente sanitario"
+  },
+  "V4": {
+    "label": "Saggese G, Vierucci F, Prodam F et al. Vitamin D in pediatric age: consensus of the Italian Pediatric Society and the Italian Society of Preventive and Social Pediatrics, jointly with the Italian Federation of Pediatricians. Ital J Pediatr. 2018;44:51",
+    "url": "https://doi.org/10.1186/s13052-018-0488-7",
+    "type": "linea guida"
+  },
+  "V5": {
+    "label": "Braegger C et al. (ESPGHAN Committee on Nutrition). Vitamin D in the healthy European paediatric population. J Pediatr Gastroenterol Nutr. 2013;56(6):692-701",
+    "url": "https://doi.org/10.1097/MPG.0b013e31828f3c05",
+    "type": "linea guida"
+  },
+  "V6": {
+    "label": "Wagner CL, Greer FR. Prevention of rickets and vitamin D deficiency in infants, children, and adolescents. Pediatrics. 2008;122(5):1142-52",
+    "url": "https://doi.org/10.1542/peds.2008-1862",
+    "type": "linea guida"
   }
 }

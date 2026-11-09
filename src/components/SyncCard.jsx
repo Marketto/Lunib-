@@ -8,7 +8,7 @@ import { getDrive, setDrive, subscribe, passOf, savePass, forget, runSync, AUTO_
 import { createRemote } from '../lib/driveSync.js';
 import { MIN_PASS, exportEncrypted, importEncrypted, mergeData, buildQuickPayload, encodeQr, decodeQr } from '../lib/sync.js';
 
-const TX = {
+export const TX = {
   it: {
     title: 'Condividi i dati con l\'altro genitore', intro: 'Crea un file protetto da una frase segreta e invialo all\'altro genitore: i dati di crescita e medicine si uniscono sui due telefoni, senza server.',
     create: 'Crea file da inviare', open: 'Apri file ricevuto', qr: 'Mostra QR (ultimi aggiornamenti)',
@@ -64,10 +64,10 @@ const TX = {
 };
 
 const EM = { 'bad-pass': 'badPass', 'bad-file': 'badFile', auth: 'dAuthFail', network: 'dNet', conflict: 'dConflict', 'not-found': 'dNotFound' };
-const errMsg = (s, e) => s[EM[e?.message]] || (e instanceof TypeError ? s.dNet : s.fail);
-const version = () => (typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '');
+export const errMsg = (s, e) => s[EM[e?.message]] || (e instanceof TypeError ? s.dNet : s.fail);
+export const version = () => (typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '');
 
-function PassForm({ s, twice, onSubmit, onCancel, busy, label }) {
+export function PassForm({ s, twice, onSubmit, onCancel, busy, label }) {
   const [a, setA] = useState(''), [b, setB] = useState(''), [e, setE] = useState('');
   const submit = (ev) => {
     ev.preventDefault();

@@ -10,7 +10,13 @@
     "M6",
     "M7",
     "M8",
-    "M9"
+    "M9",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6"
   ],
   "active": {
     "paracetamolo": {
@@ -184,6 +190,66 @@
           "M8",
           "M9"
         ]
+      }
+    },
+    "vitaminaD": {
+      "kind": "daily",
+      "group": "supplement",
+      "ulIU": [
+        {
+          "underMonths": 6,
+          "iu": 1000,
+          "src": [
+            "V1"
+          ]
+        },
+        {
+          "underMonths": 12,
+          "iu": 1400,
+          "src": [
+            "V1"
+          ]
+        },
+        {
+          "underMonths": 132,
+          "iu": 2000,
+          "src": [
+            "V2"
+          ]
+        }
+      ],
+      "strongFactor": 2,
+      "src": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6"
+      ],
+      "refs": {
+        "vitDHigh": [
+          "V1",
+          "V2"
+        ],
+        "vitDInfo": [
+          "V1",
+          "V2"
+        ],
+        "vitDAllSources": [
+          "V1"
+        ],
+        "vitDRec": [
+          "V3",
+          "V4",
+          "V5",
+          "V6"
+        ],
+        "vitDAnalog": [
+          "V4"
+        ],
+        "vitDNoIU": [],
+        "vitDVeryHigh": ["V1", "V2"]
       }
     }
   }

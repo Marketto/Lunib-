@@ -115,6 +115,9 @@ const toCm = (v, u) => (u === 'in' ? v * 2.54 : v);
 const round = (v, d) => Math.round(v * 10 ** d) / 10 ** d;
 const RX_PARA = /paracetamol|acetaminophen|парацетамол/i;
 const RX_IBU = /ibuprofen|ибупрофен/i;
+export const RX_VITD = /vitamin[ae]?\s*d|colecalciferol|cholecalciferol|витамин\s*d/i;
+/** Principio attivo suggerito (preselezionato, modificabile dall'utente) per un nome importato. */
+export const suggestActive = (name) => (RX_VITD.test(String(name || '')) ? 'vitaminaD' : activeOf(name) || '');
 export const activeOf = (name) => (RX_PARA.test(name) ? 'paracetamolo' : RX_IBU.test(name) ? 'ibuprofene' : null);
 const LIMITS = { weight: [0.3, 40], height: [20, 130], head: [20, 60] };
 const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
@@ -203,11 +206,12 @@ export function detectPreset(rows) {
   return !!h && h.length >= 5 && BT_HEADER.every((x, i) => String(h[i] ?? '').trim().toLowerCase() === x) ? 'babytracker' : null;
 }
 
-const MED_UNIT = { ml: 'ml', mg: 'mg', g: 'g', mcg: 'mcg', 'µg': 'mcg', gocce: 'gocce', drops: 'gocce', 'капли': 'gocce' };
-const RX_MED = /^(.*?)[\s:\-–]*(\d+(?:[.,]\d+)?)\s*(ml|mg|gocce|drops|капли|mcg|µg|g)(?![\p{L}\d])\s*(.*)$/iu;
+const MED_UNIT = { ui: 'UI', iu: 'UI', 'ме': 'UI', ml: 'ml', mg: 'mg', g: 'g', mcg: 'mcg', 'µg': 'mcg', gocce: 'gocce', drops: 'gocce', 'капли': 'gocce' };
+// nome "greedy": se ci sono più quantità (es. "Vit. D 400 UI 5 gocce") quella data è l'ultima
+const RX_MED = /^(.*)(?:^|[\s:\-–]+)(\d+(?:[.,]\d+)?)\s*(ml|mg|gocce|drops|капли|mcg|µg|ui|iu|ме|g)(?![\p{L}\d])\s*(.*)$/iu;
 
 /** Testo libero di Baby Tracker -> { name, amount, unit, note } (nessun nome commerciale è noto all'app). */
-const RX_MED_FIRST = /^(\d+(?:[.,]\d+)?)\s*(ml|mg|gocce|drops|капли|mcg|µg|g)(?![\p{L}\d])\s+(.+)$/iu;
+const RX_MED_FIRST = /^(\d+(?:[.,]\d+)?)\s*(ml|mg|gocce|drops|капли|mcg|µg|ui|iu|ме|g)(?![\p{L}\d])\s+(.+)$/iu;
 const RX_CONC = /(\d+(?:[.,]\d+)?)\s*mg\s*\/\s*(\d+(?:[.,]\d+)?)\s*ml/iu;
 const RX_RECTAL = /suppost|suppositor|свеч/iu;
 const numIt = (x) => parseFloat(String(x).replace(',', '.'));
@@ -284,9 +288,12 @@ export function buildFromBabyTracker(rows, opts) {
       const name = p.name.slice(0, 60);
       const map = medMap[name.toLowerCase()] || {};
       const active = ACTIVE_KEYS.includes(map.active) ? map.active : null;
-      const conc = p.unit === 'ml' ? (map.conc > 0 ? +map.conc : p.conc) : null;
+      const daily = ACTIVE[active]?.kind === 'daily';
+      // vitamina D: map.conc = UI per goccia/ml (dall'etichetta); per gli altri = mg/ml
+      const conc = !daily && p.unit === 'ml' ? (map.conc > 0 ? +map.conc : p.conc) : null;
+      const concIU = daily && (p.unit === 'gocce' || p.unit === 'ml') && map.conc > 0 ? +map.conc : null;
       const e = {
-        id: uid(), kidId: kid.id, at, active, name, route: p.route || (active ? 'oral' : null), amount: p.amount, unit: p.unit, conc,
+        id: uid(), kidId: kid.id, at, active, name, route: p.route || (active ? 'oral' : null), amount: p.amount, unit: p.unit, conc, ...(concIU ? { concIU } : {}),
         flags: [], note: p.note.slice(0, 120), source: 'import', updatedAt: now
       };
       if (seenM.has(mKey(e)) || seenMB.has(base(e))) ignored.duplicate++;

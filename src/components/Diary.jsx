@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { KidPills, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
 import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
-import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg } from '../lib/meds.js';
+import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
 import { formatAge } from '../lib/age.js';
 import ImportCsv, { IMPORT_BTN } from './ImportCsv.jsx';
 import SOURCES from '../../content/sources.json';
@@ -50,14 +50,14 @@ export const DIARY_TEXT = {
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
     measureTips: 'Pesa senza vestiti (o con il body), sempre con la stessa bilancia. Sotto i 2 anni la lunghezza si misura sdraiato, poi in piedi senza scarpe. La testa: metro morbido sopra sopracciglia e orecchie, nel punto più largo.',
     // medicine
-    medsIntro: 'Registra ogni farmaco dato. Per paracetamolo e ibuprofene controllo intervalli, numero di dosi e dose per kg rispetto ai limiti delle fonti ufficiali.',
+    medsIntro: 'Registra ogni farmaco o integratore dato. Per paracetamolo e ibuprofene controllo intervalli, numero di dosi e dose per kg; per la vitamina D il totale del giorno rispetto al limite massimo EFSA per l\'età.',
     medsNever: 'Lunibù non calcola né suggerisce dosi. Usa sempre la dose indicata sulla confezione o dal pediatra, in base al peso attuale; per dubbi chiedi al pediatra o al farmacista.',
     medsRules: ['Controlla la concentrazione: lo stesso principio attivo esiste in gocce e sciroppo con concentrazioni molto diverse (anche 4 volte o più).', 'Conta insieme tutto il paracetamolo: sciroppo, gocce, supposte e farmaci combinati che lo contengono.', 'Si tratta il malessere, non il numero sul termometro.', 'Sospetto sovradosaggio: contatta subito un centro antiveleni o il 112, anche se il bimbo sembra stare bene.'],
     addMed: 'Registra un farmaco', med: 'Farmaco', other: 'Altro farmaco…', otherName: 'Nome del farmaco o principio attivo',
     route: 'Via', oral: 'bocca', rectal: 'supposta', amount: 'Quantità', unit: 'Unità', conc: 'Concentrazione (mg/ml, scritta su confezione e foglietto)',
     concOther: 'altra', when: 'Data e ora', note: 'Nota (facoltativa)', flags: 'In questo momento il bimbo…',
     flag: { dehydration: 'è disidratato (vomito o diarrea, beve poco)', chickenpox: 'ha la varicella', kidney: 'ha una malattia dei reni', liver: 'ha una malattia del fegato', nsaidAsthma: 'ha avuto asma o reazioni con aspirina o altri antinfiammatori (FANS)', otherNsaid: 'sta prendendo un altro antinfiammatorio (FANS)', asthma: 'ha l\'asma' },
-    names: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene' },
+    names: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene', vitaminaD: 'Vitamina D (colecalciferolo)' },
     check: 'Controllo', saveAnyway: 'Registra comunque', filters: 'Filtri', allMeds: 'Tutti', period: 'Periodo', days: (d) => (d ? `${d} giorni` : 'tutto'),
     noMeds: 'Nessun farmaco registrato in questo periodo.', perDay: 'Dosi al giorno', export: 'Esporta CSV (per il pediatra)',
     perKg: (v) => `${fmt(v)} mg/kg`,
@@ -68,7 +68,9 @@ export const DIARY_TEXT = {
     planName: 'Nome della medicina', planEvery: 'Ogni (ore)', planMax: 'Al massimo per 24 ore (dosi)', planDose: 'Dose come prescritta', planUntil: 'Fino al (data)', planNote: 'Nota (facoltativa)',
     planSummary: (p, s) => [p.intervalH ? `ogni ${p.intervalH} h` : '', p.maxPerDay ? `max ${p.maxPerDay} in 24 h` : '', p.dose ? `${fmt(p.dose.amount, 2)} ${s.units[p.dose.unit] ?? p.dose.unit}` : '', p.until ? `fino al ${new Date(p.until).toLocaleDateString('it')}` : ''].filter(Boolean).join(' · '),
     yourPlan: 'Il tuo schema',
-    units: { mg: 'mg', ml: 'ml', gocce: 'gocce', UI: 'UI', compresse: 'compresse', bustine: 'bustine', supposte: 'supposte', spruzzi: 'spruzzi', other: '—' },
+    concIU: { gocce: 'UI per goccia (scritte sulla confezione)', ml: 'UI per ml (scritte sulla confezione)' }, iuPer: { gocce: 'UI/goccia', ml: 'UI/ml' },
+    vitDToday: (iu, ul) => `Oggi: ${fmt(iu, 0)} UI registrate${ul ? `, limite massimo EFSA per l'età: ${ul} UI al giorno` : ''}`, vitDPartial: 'alcune dosi senza UI: il totale è incompleto',
+    units: { mg: 'mg', ml: 'ml', gocce: 'gocce', UI: 'UI', 'µg': 'µg', compresse: 'compresse', bustine: 'bustine', supposte: 'supposte', spruzzi: 'spruzzi', other: '—' },
     c: {
       noCheck: 'Nessun controllo automatico per questo farmaco: segui la prescrizione o il foglietto.',
       underAge: (p) => `Sotto i ${p.months} mesi chiedi sempre al pediatra prima di dare questo farmaco. Con febbre ≥ 38 °C sotto i 3 mesi serve una valutazione medica urgente.`,
@@ -92,6 +94,15 @@ export const DIARY_TEXT = {
       planTooMany: (p) => `Lo schema che hai inserito prevede al massimo ${p.max} dosi in 24 ore: con questa sarebbero ${p.n}.`,
       planEnded: (p) => `Lo schema che hai inserito termina il ${new Date(p.until).toLocaleDateString('it')}: chiedi al pediatra se continuare.`,
       planDoseDiff: 'Quantità diversa dalla dose che hai inserito nello schema.',
+      vitDHigh: (p) => `Totale di vitamina D oggi: ${fmt(p.iu, 0)} UI, sopra il limite massimo EFSA per questa età (${p.ul} UI al giorno).`,
+      vitDVeryHigh: (p) => `Totale di vitamina D oggi: ${fmt(p.iu, 0)} UI, più del doppio del limite massimo EFSA per questa età (${p.ul} UI al giorno) (soglia prudenziale scelta da Lunibù). Ricontrolla le quantità e chiedi subito al pediatra o a un centro antiveleni. Se è una dose settimanale o mensile prescritta dal pediatra, segui la prescrizione.`,
+      vitDInfo: 'Il limite è il livello massimo di assunzione tollerabile (UL) EFSA, non una soglia di tossicità né una dose. Se il pediatra ha prescritto una dose diversa, non modificarla: chiedi a lui.',
+      vitDAllSources: 'Conta tutte le fonti di vitamina D: altri integratori, multivitaminici e latte artificiale arricchito.',
+      vitDRec: (p) => (p.period === 'infant'
+        ? 'Per i bimbi da 0 a 12 mesi il consenso italiano ed ESPGHAN indicano 400 UI al giorno per tutti, qualunque sia l\'alimentazione; l\'AAP almeno 400 UI finché il bimbo non assume almeno 1 litro al giorno di latte artificiale arricchito. L\'Italia ammette fino a 1000 UI al giorno nei bimbi con fattori di rischio, su indicazione del pediatra. Segui l\'indicazione del tuo pediatra.'
+        : 'Dopo il primo anno l\'Italia ed ESPGHAN raccomandano l\'integrazione solo ai bambini con fattori di rischio; l\'Italia indica 600 UI al giorno con poca esposizione al sole, fino a 1000 con più fattori. L\'AAP indica almeno 400 UI e l\'IOM statunitense 600 UI al giorno per 1–13 anni. Segui l\'indicazione del tuo pediatra.'),
+      vitDNoIU: 'Inserisci le UI per goccia o per ml (scritte sulla confezione) per controllare il totale.',
+      vitDAnalog: 'Calcifediolo, alfacalcidolo, calcitriolo e diidrotachisterolo non sono per la prevenzione di routine (rischio di ipercalcemia).',
       ok: 'Nessun limite superato tra quelli controllati. Questo non garantisce che la dose sia giusta per il tuo bimbo.'
     },
     sources: 'Fonti'
@@ -131,14 +142,14 @@ export const DIARY_TEXT = {
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
-    medsIntro: 'Записывайте каждое лекарство. Для парацетамола и ибупрофена проверяются интервалы, число доз и доза на кг по пределам из официальных источников.',
+    medsIntro: 'Записывайте каждое лекарство или добавку. Для парацетамола и ибупрофена проверяются интервалы, число доз и доза на кг; для витамина D — сумма за день относительно верхнего уровня EFSA для возраста.',
     medsNever: 'Lunibù не рассчитывает и не предлагает дозы. Всегда используйте дозу с упаковки или назначенную педиатром, по текущему весу; при сомнениях спросите педиатра или фармацевта.',
     medsRules: ['Проверяйте концентрацию: одно и то же вещество выпускают в каплях и сиропе с очень разной концентрацией (в 4 раза и более).', 'Считайте вместе весь парацетамол: сироп, капли, свечи и комбинированные препараты с ним.', 'Лечат плохое самочувствие, а не цифру на термометре.', 'Подозрение на передозировку: сразу свяжитесь с токсикологическим центром или звоните 112, даже если ребёнок выглядит здоровым.'],
     addMed: 'Записать лекарство', med: 'Лекарство', other: 'Другое лекарство…', otherName: 'Название лекарства или действующего вещества',
     route: 'Способ', oral: 'внутрь', rectal: 'свеча', amount: 'Количество', unit: 'Ед.', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)',
     concOther: 'другая', when: 'Дата и время', note: 'Заметка (необязательно)', flags: 'Сейчас у ребёнка…',
     flag: { dehydration: 'обезвоживание (рвота или понос, мало пьёт)', chickenpox: 'ветрянка', kidney: 'болезнь почек', liver: 'болезнь печени', nsaidAsthma: 'была астма или реакция на аспирин или другие НПВС', otherNsaid: 'параллельно приём другого НПВС', asthma: 'астма' },
-    names: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен' },
+    names: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен', vitaminaD: 'Витамин D (колекальциферол)' },
     check: 'Проверка', saveAnyway: 'Всё равно записать', filters: 'Фильтры', allMeds: 'Все', period: 'Период', days: (d) => (d ? `${d} дн.` : 'всё'),
     noMeds: 'За этот период лекарств не записано.', perDay: 'Доз в день', export: 'Экспорт CSV (для педиатра)',
     perKg: (v) => `${fmt(v)} мг/кг`,
@@ -149,7 +160,9 @@ export const DIARY_TEXT = {
     planName: 'Название лекарства', planEvery: 'Каждые (часов)', planMax: 'Не больше за 24 часа (приёмов)', planDose: 'Доза как назначено', planUntil: 'До (дата)', planNote: 'Заметка (необязательно)',
     planSummary: (p, s) => [p.intervalH ? `каждые ${p.intervalH} ч` : '', p.maxPerDay ? `макс. ${p.maxPerDay} за 24 ч` : '', p.dose ? `${fmt(p.dose.amount, 2)} ${s.units[p.dose.unit] ?? p.dose.unit}` : '', p.until ? `до ${new Date(p.until).toLocaleDateString('ru')}` : ''].filter(Boolean).join(' · '),
     yourPlan: 'Ваша схема',
-    units: { mg: 'мг', ml: 'мл', gocce: 'капли', UI: 'МЕ', compresse: 'таблетки', bustine: 'пакетики', supposte: 'свечи', spruzzi: 'спреи', other: '—' },
+    concIU: { gocce: 'МЕ на каплю (написано на упаковке)', ml: 'МЕ на мл (написано на упаковке)' }, iuPer: { gocce: 'МЕ/капля', ml: 'МЕ/мл' },
+    vitDToday: (iu, ul) => `Сегодня: записано ${fmt(iu, 0)} МЕ${ul ? `, допустимый верхний уровень EFSA для возраста: ${ul} МЕ в сутки` : ''}`, vitDPartial: 'у некоторых приёмов нет МЕ: сумма неполная',
+    units: { mg: 'мг', ml: 'мл', gocce: 'капли', UI: 'МЕ', 'µg': 'мкг', compresse: 'таблетки', bustine: 'пакетики', supposte: 'свечи', spruzzi: 'спреи', other: '—' },
     c: {
       noCheck: 'Для этого лекарства нет автоматической проверки: следуйте назначению или инструкции.',
       underAge: (p) => `До ${p.months} месяцев всегда спрашивайте педиатра, прежде чем давать это лекарство. При температуре ≥ 38 °C до 3 месяцев нужен срочный осмотр врача.`,
@@ -173,6 +186,15 @@ export const DIARY_TEXT = {
       planTooMany: (p) => `Введённая вами схема предусматривает не больше ${p.max} доз за 24 часа: с этой будет ${p.n}.`,
       planEnded: (p) => `Введённая вами схема заканчивается ${new Date(p.until).toLocaleDateString('ru')}: спросите педиатра, продолжать ли.`,
       planDoseDiff: 'Количество отличается от дозы, которую вы ввели в схеме.',
+      vitDHigh: (p) => `Сумма витамина D за сегодня: ${fmt(p.iu, 0)} МЕ — выше допустимого верхнего уровня EFSA для этого возраста (${p.ul} МЕ в сутки).`,
+      vitDVeryHigh: (p) => `Сумма витамина D за сегодня: ${fmt(p.iu, 0)} МЕ — более чем вдвое выше допустимого верхнего уровня EFSA для этого возраста (${p.ul} МЕ в сутки) (осторожный порог, выбранный Lunibù). Перепроверьте количества и сразу обратитесь к педиатру или в токсикологический центр. Если это еженедельная или ежемесячная доза, назначенная педиатром, следуйте назначению.`,
+      vitDInfo: 'Лимит — это допустимый верхний уровень потребления (UL) EFSA, а не порог токсичности и не доза. Если педиатр назначил другую дозу, не меняйте её самостоятельно — обратитесь к нему.',
+      vitDAllSources: 'Учитывайте все источники витамина D: другие добавки, поливитамины и обогащённую молочную смесь.',
+      vitDRec: (p) => (p.period === 'infant'
+        ? 'Для детей от 0 до 12 месяцев итальянский консенсус и ESPGHAN указывают 400 МЕ в сутки всем, независимо от вида вскармливания; AAP — не менее 400 МЕ, пока ребёнок не получает не менее 1 литра обогащённой смеси в сутки. В Италии допускается до 1000 МЕ в сутки при факторах риска, по назначению педиатра. Следуйте указаниям вашего педиатра.'
+        : 'После первого года Италия и ESPGHAN рекомендуют добавку только детям с факторами риска; Италия указывает 600 МЕ в сутки при малом пребывании на солнце, до 1000 при нескольких факторах. AAP указывает не менее 400 МЕ, а американский IOM — 600 МЕ в сутки для возраста 1–13 лет. Следуйте указаниям вашего педиатра.'),
+      vitDNoIU: 'Укажите МЕ на каплю или на мл (написано на упаковке), чтобы проверить сумму.',
+      vitDAnalog: 'Кальцифедиол, альфакальцидол, кальцитриол и дигидротахистерол не предназначены для рутинной профилактики (риск гиперкальциемии).',
       ok: 'Ни один из проверяемых пределов не превышен. Это не гарантирует, что доза подходит вашему ребёнку.'
     },
     sources: 'Источники'
@@ -431,7 +453,7 @@ function CheckList({ results, s, active }) {
       <strong>{s.check}</strong>
       <ul>
         {msgs.map((r, i) => (
-          <li key={i} className={r.level}>{text(r)} <Refs ids={ACTIVE[active]?.refs?.[r.kind] || (r.level !== 'info' ? ACTIVE[active]?.src : null)} /></li>
+          <li key={i} className={r.level}>{text(r)} <Refs ids={r.refs ?? ACTIVE[active]?.refs?.[r.kind] ?? (r.level !== 'info' ? ACTIVE[active]?.src : null)} /></li>
         ))}
         {level === 'ok' && !msgs.some((r) => r.kind === 'noCheck') && !plan.length && <li>{s.c.ok}</li>}
       </ul>
@@ -447,7 +469,7 @@ function CheckList({ results, s, active }) {
 
 const PLAN_UNITS = ['mg', 'ml', 'gocce', 'UI', 'compresse', 'bustine', 'supposte', 'spruzzi', 'other'];
 
-function MyMeds({ s, lang, kid, mine, medPlans, setMedPlans, giveDose, again }) {
+function MyMeds({ s, lang, kid, months, mine, medPlans, setMedPlans, giveDose, again }) {
   const [pf, setPf] = useState(null);
   const plans = medPlans.filter((p) => p.kidId === kid.id);
   const nowMs = Date.now();
@@ -495,6 +517,17 @@ function MyMeds({ s, lang, kid, mine, medPlans, setMedPlans, giveDose, again }) 
               {g.plan && <span className="chip">{s.yourPlan}: {s.planSummary(g.plan, s) || '—'}</span>}
               {g.plan?.note && <span className="chip muted">{g.plan.note}</span>}
             </div>
+            {g.active === 'vitaminaD' && (() => {
+              const day = vitDDayTotal(mine, kid.id, new Date().toISOString());
+              const ul = months != null ? vitDLimit(months) : null;
+              const rec = months != null && s.c.vitDRec({ period: months < 12 ? 'infant' : 'child' });
+              return (
+                <div className="small muted">
+                  <p>{s.vitDToday(day.iu, ul?.iu)}{day.missing ? ` (${s.vitDPartial})` : ''} <Refs ids={ul?.src} /></p>
+                  {rec && <p>{rec} <Refs ids={months < 12 ? ['V4', 'V5', 'V6'] : ['V3', 'V4', 'V5', 'V6']} /></p>}
+                </div>
+              );
+            })()}
             <div className="row">
               <button className="btn small" onClick={() => startPlan(g)}>{g.plan ? s.editPlan : s.setPlan}</button>
               <button className="btn small" onClick={() => giveDose(g)}>{s.giveDose}</button>
@@ -549,18 +582,19 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
 
   const entryFrom = (f) => {
     const a = ACTIVE[f.active];
-    const conc = f.unit === 'ml' ? (f.conc === 'other' ? parseFloat(String(f.concOther).replace(',', '.')) : +f.conc) : null;
+    const conc = f.unit === 'ml' && !(a?.kind === 'daily') ? (f.conc === 'other' ? parseFloat(String(f.concOther).replace(',', '.')) : +f.conc) : null;
+    const concIU = a?.kind === 'daily' && (f.unit === 'gocce' || f.unit === 'ml') ? parseFloat(String(f.concIU || '').replace(',', '.')) || null : null;
     return {
       id: f.id || 'draft', kidId: kid.id, at: new Date(f.at).toISOString(), active: a ? f.active : null,
       name: a ? s.names[f.active] : (f.name || '').trim(), route: a ? f.route || 'oral' : null,
-      amount: parseFloat(String(f.amount || '').replace(',', '.')) || null, unit: f.unit, conc, flags: f.flags || [], note: f.note || ''
+      amount: parseFloat(String(f.amount || '').replace(',', '.')) || null, unit: f.unit, conc: a?.kind === 'daily' ? null : conc, ...(a?.kind === 'daily' ? { concIU } : {}), flags: f.flags || [], note: f.note || ''
     };
   };
   const draft = form && entryFrom(form);
   const results = useMemo(() => {
     if (!draft || (!draft.active && !draft.name)) return [];
     const weight = latestWeight(growth, kid.id, draft.at);
-    const r = [...checkDose(draft, meds, { months, weight }), ...checkPlan(draft, meds, findPlan(medPlans, draft))];
+    const r = [...checkDose(draft, meds, { months: monthsAt(kid.birth, draft.at), weight }), ...checkPlan(draft, meds, findPlan(medPlans, draft))];
     for (const c of ACTIVE[draft.active]?.cautions || []) if (draft.flags.includes(c)) r.push({ kind: 'caution', level: 'warn', flag: c });
     return r;
   }, [JSON.stringify(draft), meds, growth, medPlans]); // eslint-disable-line
@@ -612,16 +646,17 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
   const giveDose = (g) => {
     const d = g.plan?.dose;
     const act = g.active && ACTIVE[g.active] ? g.active : '';
-    const unit = d?.unit && (!act || d.unit === 'mg' || d.unit === 'ml') ? d.unit : act ? 'ml' : d?.unit || 'other';
+    const daily = ACTIVE[act]?.kind === 'daily';
+    const unit = d?.unit && (!act || (daily ? ['gocce', 'ml', 'UI', 'µg'] : ['mg', 'ml']).includes(d.unit)) ? d.unit : act ? (daily ? 'gocce' : 'ml') : d?.unit || 'other';
     openForm({ active: act, name: act ? '' : g.name, route: 'oral', unit, amount: d?.amount ? String(d.amount) : '', conc: '', at: nowLocal(), flags: [] });
   };
   // "Di nuovo": stessa medicina, quantità, unità, concentrazione e via; ora = adesso
   const again = (e) => {
     const A = ACTIVE[e.active];
-    const known = A && e.conc && A.conc.includes(e.conc);
+    const known = A?.conc && e.conc && A.conc.includes(e.conc);
     openForm({
       active: A ? e.active : '', name: A ? '' : e.name, route: e.route || 'oral', unit: e.unit || 'other', amount: e.amount ? String(e.amount) : '',
-      conc: e.unit === 'ml' && A && e.conc ? (known ? e.conc : 'other') : '', concOther: e.unit === 'ml' && A && e.conc && !known ? String(e.conc) : '',
+      concIU: e.concIU ? String(e.concIU) : '', conc: e.unit === 'ml' && A?.conc && e.conc ? (known ? e.conc : 'other') : '', concOther: e.unit === 'ml' && A?.conc && e.conc && !known ? String(e.conc) : '',
       at: nowLocal(), flags: [], note: ''
     });
   };
@@ -635,14 +670,14 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
         {form ? (
           <motion.div className="diary-form" ref={formRef} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
             <label className="field"><span>{s.med}</span>
-              <select value={form.active} onChange={(e) => setForm({ ...form, active: e.target.value, route: 'oral', flags: [], conc: '' })}>
+              <select value={form.active} onChange={(e) => setForm({ ...form, active: e.target.value, route: 'oral', flags: [], conc: '', concIU: '', unit: ACTIVE[e.target.value]?.kind === 'daily' ? 'gocce' : form.unit === 'gocce' ? 'ml' : form.unit })}>
                 {Object.keys(ACTIVE).map((k) => <option key={k} value={k}>{s.names[k]}</option>)}
                 <option value="">{s.other}</option>
               </select></label>
             {!a && <label className="field"><span>{s.otherName}</span>
               <input value={form.name || ''} maxLength={60} onChange={(e) => setForm({ ...form, name: e.target.value })} list="med-names" />
               <datalist id="med-names">{names.map((n) => <option key={n} value={n} />)}</datalist></label>}
-            {a && Object.keys(a.routes).length > 1 && (
+            {a?.routes && Object.keys(a.routes).length > 1 && (
               <div className="seg small">
                 {Object.keys(a.routes).map((r) => <button key={r} className={form.route === r ? 'on' : ''} onClick={() => setForm({ ...form, route: r, unit: r === 'rectal' ? 'mg' : form.unit })}><span>{s[r]}</span></button>)}
               </div>
@@ -652,11 +687,15 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
                 <input inputMode="decimal" value={form.amount || ''} onChange={(e) => setForm({ ...form, amount: e.target.value })} /></label>
               <label className="field narrow"><span>{s.unit}</span>
                 <select value={form.unit} onChange={(e) => setForm({ ...form, unit: e.target.value })}>
-                  <option value="mg">mg</option>{form.route !== 'rectal' && <option value="ml">ml</option>}
+                  {a?.kind === 'daily' ? ['gocce', 'ml', 'UI', 'µg'].map((u) => <option key={u} value={u}>{s.units[u]}</option>) : <><option value="mg">mg</option>{form.route !== 'rectal' && <option value="ml">ml</option>}</>}
                   {!a && ['gocce', 'UI', 'compresse', 'bustine', 'supposte', 'spruzzi', 'other'].map((u) => <option key={u} value={u}>{s.units[u]}</option>)}
                 </select></label>
             </div>
-            {form.unit === 'ml' && a && (
+            {a?.kind === 'daily' && (form.unit === 'gocce' || form.unit === 'ml') && (
+              <label className="field"><span>{s.concIU[form.unit]}</span>
+                <input inputMode="decimal" value={form.concIU || ''} onChange={(e) => setForm({ ...form, concIU: e.target.value })} /></label>
+            )}
+            {form.unit === 'ml' && a?.conc && (
               <label className="field"><span>{s.conc}</span>
                 <div className="chips">
                   {[...a.conc, 'other'].map((c) => (
@@ -691,7 +730,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
         )}
       </AnimatePresence>
 
-      <MyMeds s={s} lang={lang} kid={kid} mine={mine} medPlans={medPlans} setMedPlans={setMedPlans} giveDose={giveDose} again={again} />
+      <MyMeds s={s} lang={lang} kid={kid} months={months} mine={mine} medPlans={medPlans} setMedPlans={setMedPlans} giveDose={giveDose} again={again} />
 
       {mine.length > 0 && (
         <>
@@ -744,7 +783,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
                 <button className="link-btn" onClick={() => setMeds(meds.filter((x) => x.id !== e.id))} aria-label={s.del}>✕</button>
               </div>
               <div className="dl-vals">
-                {e.amount && <span className="chip">{fmt(e.amount, 2)} {e.unit === 'other' ? '' : s.units[e.unit] ?? e.unit}{e.conc ? ` (${e.conc} mg/ml)` : ''}{e.route === 'rectal' ? ` · ${s.rectal}` : ''}</span>}
+                {e.amount && <span className="chip">{fmt(e.amount, 2)} {e.unit === 'other' ? '' : s.units[e.unit] ?? e.unit}{e.conc ? ` (${e.conc} mg/ml)` : ''}{e.concIU ? ` (${e.concIU} ${s.iuPer[e.unit] || ''})` : ''}{e.route === 'rectal' ? ` · ${s.rectal}` : ''}</span>}
                 {mg && e.unit === 'ml' && <span className="chip">{fmt(mg)} mg</span>}
                 {mg && w && e.active && <span className="chip">{s.perKg(mg / w.kg)}</span>}
                 {e.note && <span className="chip muted">{e.note}</span>}

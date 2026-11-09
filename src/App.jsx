@@ -219,7 +219,8 @@ function Shell({ state, setState, update, setList, applySync }) {
         {splashEl}
         <Backdrop />
         <main className="app" style={{ paddingBottom: 30 }}>
-          <Onboarding lang={lang} setLang={setLang} onDone={(k) => update({ kids: k, accepted: true, activeKid: 0, terms: TERMS_VERSION, termsAt: new Date().toISOString() })} />
+          <Onboarding lang={lang} setLang={setLang} qrData={incoming} onQrClose={closeIncoming}
+            onDone={(k, extra = {}) => { closeIncoming(); update({ ...extra, kids: k, accepted: true, activeKid: 0, terms: TERMS_VERSION, termsAt: new Date().toISOString() }); }} />
         </main>
       </>
     );

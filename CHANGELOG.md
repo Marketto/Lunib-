@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.4.0 — 9 novembre 2026
+- vitamina D riconosciuta (totale giornaliero confrontato con il limite massimo EFSA per età, raccomandazioni con fonti)
+
 ## 1.3.0 — 9 novembre 2026
 - «Le mie medicine»: ogni farmaco o integratore si registra e, se vuoi, segue lo schema che copi dalla prescrizione o dal foglietto; «Di nuovo» per ripetere una dose.
 
