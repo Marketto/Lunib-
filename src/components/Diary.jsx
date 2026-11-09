@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { KidPills, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
 import { INDICATORS, GROWTH_SOURCES, assess, curve, monthsAt, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
-import { ACTIVE, MED_SOURCES, checkDose, filterLog, latestWeight, medKey, toCsv, toMg } from '../lib/meds.js';
+import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg } from '../lib/meds.js';
 import { formatAge } from '../lib/age.js';
 import ImportCsv, { IMPORT_BTN } from './ImportCsv.jsx';
 import SOURCES from '../../content/sources.json';
@@ -61,6 +61,14 @@ export const DIARY_TEXT = {
     check: 'Controllo', saveAnyway: 'Registra comunque', filters: 'Filtri', allMeds: 'Tutti', period: 'Periodo', days: (d) => (d ? `${d} giorni` : 'tutto'),
     noMeds: 'Nessun farmaco registrato in questo periodo.', perDay: 'Dosi al giorno', export: 'Esporta CSV (per il pediatra)',
     perKg: (v) => `${fmt(v)} mg/kg`,
+    myMeds: 'Le mie medicine', myMedsEmpty: 'Nessuna medicina ancora: registra una dose o aggiungi una medicina con il suo schema.',
+    addPlanMed: '＋ Aggiungi una medicina', lastGiven: 'Ultima dose', never: 'mai data', in24: (n) => `${n} ${n === 1 ? 'dose' : 'dosi'} nelle ultime 24 ore`,
+    setPlan: 'Imposta schema', editPlan: 'Modifica schema', delPlan: 'Elimina schema', giveDose: 'Registra una dose', again: '↻ Di nuovo',
+    planCopy: 'Copia i valori dalla prescrizione del medico o dal foglietto: Lunibù non suggerisce dosi.',
+    planName: 'Nome della medicina', planEvery: 'Ogni (ore)', planMax: 'Al massimo per 24 ore (dosi)', planDose: 'Dose come prescritta', planUntil: 'Fino al (data)', planNote: 'Nota (facoltativa)',
+    planSummary: (p, s) => [p.intervalH ? `ogni ${p.intervalH} h` : '', p.maxPerDay ? `max ${p.maxPerDay} in 24 h` : '', p.dose ? `${fmt(p.dose.amount, 2)} ${s.units[p.dose.unit] ?? p.dose.unit}` : '', p.until ? `fino al ${new Date(p.until).toLocaleDateString('it')}` : ''].filter(Boolean).join(' · '),
+    yourPlan: 'Il tuo schema',
+    units: { mg: 'mg', ml: 'ml', gocce: 'gocce', UI: 'UI', compresse: 'compresse', bustine: 'bustine', supposte: 'supposte', spruzzi: 'spruzzi', other: '—' },
     c: {
       noCheck: 'Nessun controllo automatico per questo farmaco: segui la prescrizione o il foglietto.',
       underAge: (p) => `Sotto i ${p.months} mesi chiedi sempre al pediatra prima di dare questo farmaco. Con febbre ≥ 38 °C sotto i 3 mesi serve una valutazione medica urgente.`,
@@ -80,6 +88,10 @@ export const DIARY_TEXT = {
       noMg: 'Inserisci la quantità in mg, oppure in ml con la concentrazione, per controllare la dose.',
       tooLong: (p) => `Usato da più di ${p.days === 1 ? '24 ore' : `${p.days} giorni`} di fila: senti il pediatra.`,
       alternating: (p, s) => `Hai dato anche ${s.names[p.other].toLowerCase()} nelle ultime ore: alternare o associare i due farmaci si fa solo su indicazione del medico.`,
+      planTooSoon: (p) => `Secondo lo schema che hai inserito (dalla prescrizione o dal foglietto) l'intervallo è di almeno ${p.hours} ore: dalla dose precedente ne sono passate ${fmt(p.gap)}.`,
+      planTooMany: (p) => `Lo schema che hai inserito prevede al massimo ${p.max} dosi in 24 ore: con questa sarebbero ${p.n}.`,
+      planEnded: (p) => `Lo schema che hai inserito termina il ${new Date(p.until).toLocaleDateString('it')}: chiedi al pediatra se continuare.`,
+      planDoseDiff: 'Quantità diversa dalla dose che hai inserito nello schema.',
       ok: 'Nessun limite superato tra quelli controllati. Questo non garantisce che la dose sia giusta per il tuo bimbo.'
     },
     sources: 'Fonti'
@@ -130,6 +142,14 @@ export const DIARY_TEXT = {
     check: 'Проверка', saveAnyway: 'Всё равно записать', filters: 'Фильтры', allMeds: 'Все', period: 'Период', days: (d) => (d ? `${d} дн.` : 'всё'),
     noMeds: 'За этот период лекарств не записано.', perDay: 'Доз в день', export: 'Экспорт CSV (для педиатра)',
     perKg: (v) => `${fmt(v)} мг/кг`,
+    myMeds: 'Мои лекарства', myMedsEmpty: 'Пока ничего нет: запишите приём или добавьте лекарство со схемой.',
+    addPlanMed: '＋ Добавить лекарство', lastGiven: 'Последний приём', never: 'ещё не давали', in24: (n) => `Приёмов за последние 24 часа: ${n}`,
+    setPlan: 'Задать схему', editPlan: 'Изменить схему', delPlan: 'Удалить схему', giveDose: 'Записать приём', again: '↻ Ещё раз',
+    planCopy: 'Перепишите значения из назначения врача или из инструкции: Lunibù не предлагает дозы.',
+    planName: 'Название лекарства', planEvery: 'Каждые (часов)', planMax: 'Не больше за 24 часа (приёмов)', planDose: 'Доза как назначено', planUntil: 'До (дата)', planNote: 'Заметка (необязательно)',
+    planSummary: (p, s) => [p.intervalH ? `каждые ${p.intervalH} ч` : '', p.maxPerDay ? `макс. ${p.maxPerDay} за 24 ч` : '', p.dose ? `${fmt(p.dose.amount, 2)} ${s.units[p.dose.unit] ?? p.dose.unit}` : '', p.until ? `до ${new Date(p.until).toLocaleDateString('ru')}` : ''].filter(Boolean).join(' · '),
+    yourPlan: 'Ваша схема',
+    units: { mg: 'мг', ml: 'мл', gocce: 'капли', UI: 'МЕ', compresse: 'таблетки', bustine: 'пакетики', supposte: 'свечи', spruzzi: 'спреи', other: '—' },
     c: {
       noCheck: 'Для этого лекарства нет автоматической проверки: следуйте назначению или инструкции.',
       underAge: (p) => `До ${p.months} месяцев всегда спрашивайте педиатра, прежде чем давать это лекарство. При температуре ≥ 38 °C до 3 месяцев нужен срочный осмотр врача.`,
@@ -149,6 +169,10 @@ export const DIARY_TEXT = {
       noMg: 'Укажите количество в мг или в мл с концентрацией, чтобы проверить дозу.',
       tooLong: (p) => `Применяется дольше ${p.days === 1 ? '24 часов' : `${p.days} дней`} подряд: обратитесь к педиатру.`,
       alternating: (p, s) => `В последние часы давали и ${s.names[p.other].toLowerCase()}: чередовать или сочетать эти лекарства можно только по указанию врача.`,
+      planTooSoon: (p) => `По схеме, которую вы ввели (из назначения или инструкции), интервал не менее ${p.hours} ч: с предыдущей дозы прошло ${fmt(p.gap)} ч.`,
+      planTooMany: (p) => `Введённая вами схема предусматривает не больше ${p.max} доз за 24 часа: с этой будет ${p.n}.`,
+      planEnded: (p) => `Введённая вами схема заканчивается ${new Date(p.until).toLocaleDateString('ru')}: спросите педиатра, продолжать ли.`,
+      planDoseDiff: 'Количество отличается от дозы, которую вы ввели в схеме.',
       ok: 'Ни один из проверяемых пределов не превышен. Это не гарантирует, что доза подходит вашему ребёнку.'
     },
     sources: 'Источники'
@@ -399,26 +423,129 @@ const COLORS = ['#b9b2ec', '#f7c48f', '#a8d0be', '#f1b4c3', '#a9c7ee', '#f7d79a'
 
 function CheckList({ results, s, active }) {
   const level = results.some((r) => r.level === 'stop') ? 'stop' : results.some((r) => r.level === 'warn') ? 'warn' : 'ok';
-  const msgs = results.filter((r) => r.kind !== 'ok');
+  const msgs = results.filter((r) => r.kind !== 'ok' && !r.kind.startsWith('plan'));
+  const plan = results.filter((r) => r.kind.startsWith('plan'));
+  const text = (r) => { const m = s.c[r.kind]; return typeof m === 'function' ? m(r, s) : m; };
   return (
     <div className={`dose-check ${level}`} role={level !== 'ok' ? 'alert' : undefined}>
       <strong>{s.check}</strong>
       <ul>
-        {msgs.map((r, i) => {
-          const m = s.c[r.kind];
-          return <li key={i} className={r.level}>{typeof m === 'function' ? m(r, s) : m} <Refs ids={ACTIVE[active]?.refs?.[r.kind] || (r.level !== 'info' ? ACTIVE[active]?.src : null)} /></li>;
-        })}
-        {level === 'ok' && !msgs.some((r) => r.kind === 'noCheck') && <li>{s.c.ok}</li>}
+        {msgs.map((r, i) => (
+          <li key={i} className={r.level}>{text(r)} <Refs ids={ACTIVE[active]?.refs?.[r.kind] || (r.level !== 'info' ? ACTIVE[active]?.src : null)} /></li>
+        ))}
+        {level === 'ok' && !msgs.some((r) => r.kind === 'noCheck') && !plan.length && <li>{s.c.ok}</li>}
       </ul>
+      {plan.length > 0 && (
+        <>
+          <strong>{s.yourPlan}</strong>
+          <ul>{plan.map((r, i) => <li key={i} className={r.level}>{text(r)}</li>)}</ul>
+        </>
+      )}
     </div>
   );
 }
 
-function Meds({ lang, kid, months, meds, setMeds, growth }) {
+const PLAN_UNITS = ['mg', 'ml', 'gocce', 'UI', 'compresse', 'bustine', 'supposte', 'spruzzi', 'other'];
+
+function MyMeds({ s, lang, kid, mine, medPlans, setMedPlans, giveDose, again }) {
+  const [pf, setPf] = useState(null);
+  const plans = medPlans.filter((p) => p.kidId === kid.id);
+  const nowMs = Date.now();
+  const groups = new Map();
+  for (const e of [...mine].sort((a, b) => b.at.localeCompare(a.at))) {
+    const k = medKey(e);
+    if (!groups.has(k)) groups.set(k, { key: k, name: e.active ? s.names[e.active] || e.name : e.name, active: e.active || null, last: e, n24: 0, sample: e });
+    if (nowMs - new Date(e.at).getTime() < 86400000 && new Date(e.at).getTime() <= nowMs) groups.get(k).n24++;
+  }
+  for (const g of groups.values()) g.plan = findPlan(plans, g.sample);
+  for (const p of plans) {
+    if ([...groups.values()].some((g) => g.plan === p)) continue;
+    groups.set(planKey(p), { key: planKey(p), name: p.active ? s.names[p.active] || p.name : p.name, active: p.active || null, last: null, n24: 0, plan: p });
+  }
+  const list = [...groups.values()];
+  const startPlan = (g) => {
+    const p = g.plan;
+    setPf({ id: p?.id, name: g.name, active: g.active || null, intervalH: p?.intervalH ?? '', maxPerDay: p?.maxPerDay ?? '', amount: p?.dose?.amount ?? '', unit: p?.dose?.unit || 'mg', until: p?.until || '', note: p?.note || '', fixedName: !!g.name });
+  };
+  const savePlan = () => {
+    const name = pf.name.trim();
+    if (!name) return;
+    const num = (v) => { const n = parseFloat(String(v).replace(',', '.')); return n > 0 ? n : undefined; };
+    const rec = { id: pf.id || uid(), kidId: kid.id, name, ...(pf.active ? { active: pf.active } : {}) };
+    const iv = num(pf.intervalH), mx = num(pf.maxPerDay), am = num(pf.amount);
+    if (iv) rec.intervalH = iv;
+    if (mx) rec.maxPerDay = Math.floor(mx);
+    if (am) rec.dose = { amount: am, unit: pf.unit };
+    if (pf.until) rec.until = pf.until;
+    if (pf.note.trim()) rec.note = pf.note.trim();
+    setMedPlans([...medPlans.filter((p) => p.id !== rec.id), rec]);
+    setPf(null);
+  };
+  return (
+    <details className="ga my-meds">
+      <summary>{s.myMeds}{list.length ? ` (${list.length})` : ''}</summary>
+      <ul className="diary-list">
+        {!list.length && <li className="empty">{s.myMedsEmpty}</li>}
+        {list.map((g) => (
+          <li key={g.key}>
+            <div className="dl-head"><strong>{g.name}</strong></div>
+            <div className="dl-vals">
+              <span className="chip">{s.lastGiven}: {g.last ? new Date(g.last.at).toLocaleString(lang, { dateStyle: 'short', timeStyle: 'short' }) : s.never}</span>
+              {g.n24 > 0 && <span className="chip">{s.in24(g.n24)}</span>}
+              {g.plan && <span className="chip">{s.yourPlan}: {s.planSummary(g.plan, s) || '—'}</span>}
+              {g.plan?.note && <span className="chip muted">{g.plan.note}</span>}
+            </div>
+            <div className="row">
+              <button className="btn small" onClick={() => startPlan(g)}>{g.plan ? s.editPlan : s.setPlan}</button>
+              <button className="btn small" onClick={() => giveDose(g)}>{s.giveDose}</button>
+              {g.plan && <button className="btn small ghost" onClick={() => setMedPlans(medPlans.filter((p) => p.id !== g.plan.id))}>{s.delPlan}</button>}
+            </div>
+          </li>
+        ))}
+      </ul>
+      {pf ? (
+        <div className="diary-form">
+          <p className="small muted">{s.planCopy}</p>
+          <label className="field"><span>{s.planName}</span>
+            <input value={pf.name} maxLength={60} readOnly={pf.fixedName} onChange={(e) => setPf({ ...pf, name: e.target.value })} /></label>
+          <div className="field-row">
+            <label className="field"><span>{s.planEvery}</span>
+              <input inputMode="decimal" value={pf.intervalH} onChange={(e) => setPf({ ...pf, intervalH: e.target.value })} /></label>
+            <label className="field"><span>{s.planMax}</span>
+              <input inputMode="numeric" value={pf.maxPerDay} onChange={(e) => setPf({ ...pf, maxPerDay: e.target.value })} /></label>
+          </div>
+          <div className="field-row">
+            <label className="field"><span>{s.planDose}</span>
+              <input inputMode="decimal" value={pf.amount} onChange={(e) => setPf({ ...pf, amount: e.target.value })} /></label>
+            <label className="field narrow"><span>{s.unit}</span>
+              <select value={pf.unit} onChange={(e) => setPf({ ...pf, unit: e.target.value })}>
+                {PLAN_UNITS.map((u) => <option key={u} value={u}>{s.units[u]}</option>)}
+              </select></label>
+          </div>
+          <label className="field"><span>{s.planUntil}</span>
+            <input type="date" value={pf.until} onChange={(e) => setPf({ ...pf, until: e.target.value })} /></label>
+          <label className="field"><span>{s.planNote}</span>
+            <input value={pf.note} maxLength={120} onChange={(e) => setPf({ ...pf, note: e.target.value })} /></label>
+          <div className="row">
+            <button className="btn ghost" onClick={() => setPf(null)}>{s.cancel}</button>
+            <button className="btn primary" onClick={savePlan} disabled={!pf.name.trim()}>{s.save}</button>
+          </div>
+        </div>
+      ) : <button className="btn ghost wide" onClick={() => setPf({ name: '', active: null, intervalH: '', maxPerDay: '', amount: '', unit: 'mg', until: '', note: '', fixedName: false })}>{s.addPlanMed}</button>}
+    </details>
+  );
+}
+
+function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans }) {
   const s = DIARY_TEXT[lang];
   const [form, setForm] = useState(null);
   const [fMed, setFMed] = useState('');
   const [fDays, setFDays] = useState(30);
+  const formRef = React.useRef(null);
+  const openForm = (f) => {
+    setForm(f);
+    setTimeout(() => formRef.current?.scrollIntoView({ block: 'start', behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }), 60);
+  };
 
   const entryFrom = (f) => {
     const a = ACTIVE[f.active];
@@ -433,20 +560,24 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
   const results = useMemo(() => {
     if (!draft || (!draft.active && !draft.name)) return [];
     const weight = latestWeight(growth, kid.id, draft.at);
-    const r = checkDose(draft, meds, { months, weight });
+    const r = [...checkDose(draft, meds, { months, weight }), ...checkPlan(draft, meds, findPlan(medPlans, draft))];
     for (const c of ACTIVE[draft.active]?.cautions || []) if (draft.flags.includes(c)) r.push({ kind: 'caution', level: 'warn', flag: c });
     return r;
-  }, [JSON.stringify(draft), meds, growth]); // eslint-disable-line
+  }, [JSON.stringify(draft), meds, growth, medPlans]); // eslint-disable-line
 
   const save = () => {
     if (!draft.active && !draft.name) return;
-    const e = { ...draft, id: form.id || uid() };
+    // stesso farmaco già registrato con altre maiuscole/spazi: usa la grafia esistente
+    const known = !draft.active && mine.find((m) => !m.active && normName(m.name) === normName(draft.name));
+    const e = { ...draft, ...(known ? { name: known.name } : {}), id: form.id || uid() };
     setMeds([...meds.filter((m) => m.id !== e.id), e]);
     setForm(null);
   };
 
   const mine = meds.filter((m) => m.kidId === kid.id);
+  const names = [...new Map([...mine.filter((m) => !m.active).map((m) => m.name), ...medPlans.filter((p) => p.kidId === kid.id && !p.active).map((p) => p.name)].map((n) => [normName(n), n])).values()];
   const keys = [...new Set(mine.map(medKey))];
+  const label = (k) => s.names[k] || mine.find((m) => medKey(m) === k)?.name || k;
   const color = (k) => COLORS[keys.indexOf(k) % COLORS.length];
   const shown = filterLog(mine, { kidId: kid.id, med: fMed, days: fDays });
 
@@ -478,6 +609,22 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
   };
 
   const a = form && ACTIVE[form.active];
+  const giveDose = (g) => {
+    const d = g.plan?.dose;
+    const act = g.active && ACTIVE[g.active] ? g.active : '';
+    const unit = d?.unit && (!act || d.unit === 'mg' || d.unit === 'ml') ? d.unit : act ? 'ml' : d?.unit || 'other';
+    openForm({ active: act, name: act ? '' : g.name, route: 'oral', unit, amount: d?.amount ? String(d.amount) : '', conc: '', at: nowLocal(), flags: [] });
+  };
+  // "Di nuovo": stessa medicina, quantità, unità, concentrazione e via; ora = adesso
+  const again = (e) => {
+    const A = ACTIVE[e.active];
+    const known = A && e.conc && A.conc.includes(e.conc);
+    openForm({
+      active: A ? e.active : '', name: A ? '' : e.name, route: e.route || 'oral', unit: e.unit || 'other', amount: e.amount ? String(e.amount) : '',
+      conc: e.unit === 'ml' && A && e.conc ? (known ? e.conc : 'other') : '', concOther: e.unit === 'ml' && A && e.conc && !known ? String(e.conc) : '',
+      at: nowLocal(), flags: [], note: ''
+    });
+  };
   return (
     <div>
       <p className="lead small">{s.medsIntro}</p>
@@ -486,7 +633,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
 
       <AnimatePresence>
         {form ? (
-          <motion.div className="diary-form" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
+          <motion.div className="diary-form" ref={formRef} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
             <label className="field"><span>{s.med}</span>
               <select value={form.active} onChange={(e) => setForm({ ...form, active: e.target.value, route: 'oral', flags: [], conc: '' })}>
                 {Object.keys(ACTIVE).map((k) => <option key={k} value={k}>{s.names[k]}</option>)}
@@ -494,7 +641,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
               </select></label>
             {!a && <label className="field"><span>{s.otherName}</span>
               <input value={form.name || ''} maxLength={60} onChange={(e) => setForm({ ...form, name: e.target.value })} list="med-names" />
-              <datalist id="med-names">{[...new Set(mine.filter((m) => !m.active).map((m) => m.name))].map((n) => <option key={n} value={n} />)}</datalist></label>}
+              <datalist id="med-names">{names.map((n) => <option key={n} value={n} />)}</datalist></label>}
             {a && Object.keys(a.routes).length > 1 && (
               <div className="seg small">
                 {Object.keys(a.routes).map((r) => <button key={r} className={form.route === r ? 'on' : ''} onClick={() => setForm({ ...form, route: r, unit: r === 'rectal' ? 'mg' : form.unit })}><span>{s[r]}</span></button>)}
@@ -506,7 +653,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
               <label className="field narrow"><span>{s.unit}</span>
                 <select value={form.unit} onChange={(e) => setForm({ ...form, unit: e.target.value })}>
                   <option value="mg">mg</option>{form.route !== 'rectal' && <option value="ml">ml</option>}
-                  {!a && <option value="other">—</option>}
+                  {!a && ['gocce', 'UI', 'compresse', 'bustine', 'supposte', 'spruzzi', 'other'].map((u) => <option key={u} value={u}>{s.units[u]}</option>)}
                 </select></label>
             </div>
             {form.unit === 'ml' && a && (
@@ -540,16 +687,18 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
           </motion.div>
         ) : (
           <motion.button className="btn primary wide" {...tap}
-            onClick={() => setForm({ active: Object.keys(ACTIVE)[0], route: 'oral', unit: 'ml', conc: '', at: nowLocal(), flags: [] })}>＋ {s.addMed}</motion.button>
+            onClick={() => openForm({ active: Object.keys(ACTIVE)[0], route: 'oral', unit: 'ml', conc: '', at: nowLocal(), flags: [] })}>＋ {s.addMed}</motion.button>
         )}
       </AnimatePresence>
+
+      <MyMeds s={s} lang={lang} kid={kid} mine={mine} medPlans={medPlans} setMedPlans={setMedPlans} giveDose={giveDose} again={again} />
 
       {mine.length > 0 && (
         <>
           <div className="filters">
             <select value={fMed} onChange={(e) => setFMed(e.target.value)} aria-label={s.med}>
               <option value="">{s.allMeds}</option>
-              {keys.map((k) => <option key={k} value={k}>{s.names[k] || k}</option>)}
+              {keys.map((k) => <option key={k} value={k}>{label(k)}</option>)}
             </select>
             <div className="seg small">
               {[7, 30, 90, 0].map((d) => <button key={d} className={fDays === d ? 'on' : ''} onClick={() => setFDays(d)}><span>{s.days(d)}</span></button>)}
@@ -575,7 +724,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
               <line x1="14" x2="334" y1="100" y2="100" className="base" />
               <text x="10" y={100 - 90 + 4} className="axis" textAnchor="end">{maxN}</text>
             </svg>
-            <div className="legend">{keys.map((k) => <span key={k}><i style={{ background: color(k) }} />{s.names[k] || k}</span>)}</div>
+            <div className="legend">{keys.map((k) => <span key={k}><i style={{ background: color(k) }} />{label(k)}</span>)}</div>
           </div>
         </>
       )}
@@ -585,7 +734,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
         {shown.map((e) => {
           const w = latestWeight(growth, kid.id, e.at);
           const mg = toMg(e);
-          const r = checkDose(e, meds, { months: monthsAt(kid.birth, e.at), weight: w }).filter((x) => x.level !== 'info');
+          const r = [...checkDose(e, meds, { months: monthsAt(kid.birth, e.at), weight: w }), ...checkPlan(e, meds, findPlan(medPlans, e))].filter((x) => x.level !== 'info');
           return (
             <motion.li key={e.id} layout initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
               <div className="dl-head">
@@ -595,10 +744,11 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
                 <button className="link-btn" onClick={() => setMeds(meds.filter((x) => x.id !== e.id))} aria-label={s.del}>✕</button>
               </div>
               <div className="dl-vals">
-                {e.amount && <span className="chip">{fmt(e.amount, 2)} {e.unit === 'other' ? '' : e.unit}{e.conc ? ` (${e.conc} mg/ml)` : ''}{e.route === 'rectal' ? ` · ${s.rectal}` : ''}</span>}
+                {e.amount && <span className="chip">{fmt(e.amount, 2)} {e.unit === 'other' ? '' : s.units[e.unit] ?? e.unit}{e.conc ? ` (${e.conc} mg/ml)` : ''}{e.route === 'rectal' ? ` · ${s.rectal}` : ''}</span>}
                 {mg && e.unit === 'ml' && <span className="chip">{fmt(mg)} mg</span>}
                 {mg && w && e.active && <span className="chip">{s.perKg(mg / w.kg)}</span>}
                 {e.note && <span className="chip muted">{e.note}</span>}
+                <button className="chip" onClick={() => again(e)}>{s.again}</button>
               </div>
               {r.length > 0 && <CheckList results={r} s={s} active={e.active} />}
             </motion.li>
@@ -612,7 +762,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth }) {
 }
 
 /* ---------- Pagina Diario ---------- */
-export default function Diary({ lang, kids, active, setActive, growth, meds, setGrowth, setMeds, setKid }) {
+export default function Diary({ lang, kids, active, setActive, growth, meds, setGrowth, setMeds, setKid, medPlans = [], setMedPlans }) {
   const s = DIARY_TEXT[lang];
   const [tab, setTab] = useState('growth');
   const [importing, setImporting] = useState(false);
@@ -653,7 +803,7 @@ export default function Diary({ lang, kids, active, setActive, growth, meds, set
           <Growth lang={lang} kid={kid} growth={growth} setGrowth={setGrowth} />
         </>
       )}
-      {tab === 'meds' && <Meds lang={lang} kid={kid} months={months} meds={meds} setMeds={setMeds} growth={growth} />}
+      {tab === 'meds' && <Meds lang={lang} kid={kid} months={months} meds={meds} setMeds={setMeds} growth={growth} medPlans={medPlans} setMedPlans={setMedPlans} />}
       {importing
         ? <ImportCsv lang={lang} kids={kids} active={Math.max(0, active)} growth={growth} meds={meds} setGrowth={setGrowth} setMeds={setMeds} onClose={() => setImporting(false)} />
         : <button className="btn ghost wide" style={{ marginTop: 14 }} onClick={() => setImporting(true)}>⤒ {IMPORT_BTN[lang]}</button>}

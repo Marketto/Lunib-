@@ -87,14 +87,56 @@ export function checkDose(entry, log, { months, weight }) {
   return out;
 }
 
+// Chiave di raggruppamento: principio attivo, oppure nome senza maiuscole e senza spazi
+export const normName = (n) => String(n || '').toLowerCase().replace(/\s+/g, '');
+export const medKey = (e) => e.active || normName(e.name);
+export const planKey = (p) => p.active || normName(p.name);
+
 export function filterLog(log, { kidId, med, days }) {
   const since = days ? Date.now() - days * 86400000 : 0;
   return log
-    .filter((e) => (kidId == null || e.kidId === kidId) && (!med || (e.active || e.name.toLowerCase()) === med) && new Date(e.at).getTime() >= since)
+    .filter((e) => (kidId == null || e.kidId === kidId) && (!med || medKey(e) === med) && new Date(e.at).getTime() >= since)
     .sort((a, b) => b.at.localeCompare(a.at));
 }
 
-export const medKey = (e) => e.active || e.name.trim().toLowerCase();
+/** Schema del genitore per una somministrazione: stesso bimbo e stesso nome (senza maiuscole/spazi), oppure stesso principio attivo. */
+export function findPlan(plans, entry) {
+  if (!entry) return null;
+  const list = (plans || []).filter((p) => p.kidId === entry.kidId);
+  return (entry.active && list.find((p) => p.active === entry.active)) ||
+    list.find((p) => normName(p.name) && normName(p.name) === normName(entry.name)) || null;
+}
+export const entryMatchesPlan = (e, plan) => e.kidId === plan.kidId && ((!!plan.active && e.active === plan.active) || (!!normName(plan.name) && normName(e.name) === normName(plan.name)));
+
+const localDay = (iso) => { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+
+/**
+ * Controlla una somministrazione solo rispetto ai valori che il genitore ha copiato da prescrizione/foglietto.
+ * Non propone mai valori. Stessa forma dei risultati di checkDose.
+ */
+export function checkPlan(entry, log, plan) {
+  if (!plan) return [];
+  const out = [];
+  const at = new Date(entry.at).getTime();
+  const same = log.filter((e) => e.id !== entry.id && entryMatchesPlan(e, plan));
+  if (plan.intervalH > 0) {
+    const last = same.filter((e) => new Date(e.at).getTime() <= at).sort((x, y) => y.at.localeCompare(x.at))[0];
+    if (last) {
+      const gap = (at - new Date(last.at).getTime()) / H;
+      if (gap < plan.intervalH) out.push({ kind: 'planTooSoon', level: 'warn', hours: plan.intervalH, gap });
+    }
+  }
+  if (plan.maxPerDay > 0) {
+    const n = 1 + same.filter((e) => { const t = new Date(e.at).getTime(); return t > at - 24 * H && t <= at; }).length;
+    if (n > plan.maxPerDay) out.push({ kind: 'planTooMany', level: 'warn', max: plan.maxPerDay, n });
+  }
+  if (plan.until && localDay(entry.at) > plan.until) out.push({ kind: 'planEnded', level: 'warn', until: plan.until });
+  const d = plan.dose;
+  if (d && d.amount > 0 && entry.amount && (+entry.amount !== +d.amount || (entry.unit || 'other') !== (d.unit || 'other'))) {
+    out.push({ kind: 'planDoseDiff', level: 'info', amount: d.amount, unit: d.unit });
+  }
+  return out;
+}
 
 export function toCsv(rows, header) {
   const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;

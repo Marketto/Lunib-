@@ -42,7 +42,7 @@ async function decryptBytes(salt, iv, ct, pass) {
 export function buildPayload(state, appVersion = '') {
   return {
     format: 'lunibu-sync', v: 1, exportedAt: new Date().toISOString(), appVersion,
-    kids: state.kids || [], growth: state.growth || [], meds: state.meds || [], deleted: state.deleted || {}
+    kids: state.kids || [], growth: state.growth || [], meds: state.meds || [], medPlans: state.medPlans || [], deleted: state.deleted || {}
   };
 }
 
@@ -95,10 +95,13 @@ export function buildQuickPayload(state, { now = Date.now(), medsOnly = false, a
     for (const g of latest.values()) ids.add(g.id);
     growth = (state.growth || []).filter((g) => ids.has(g.id));
   }
-  const kidIds = new Set([...growth, ...meds].map((r) => r.kidId));
+  const kidIds0 = new Set([...growth, ...meds].map((r) => r.kidId));
+  // gli schemi dei bimbi coinvolti viaggiano sempre (sono pochi e piccoli); quelli modificati di recente anche da soli se non è "solo medicine"
+  const medPlans = (state.medPlans || []).filter((p) => kidIds0.has(p.kidId) || recent(p));
+  const kidIds = new Set([...kidIds0, ...medPlans.map((p) => p.kidId)]);
   const kids = (state.kids || []).filter((k) => kidIds.has(k.id)).map(({ id, birth, name, sex }) => ({ id, birth, name, ...(sex ? { sex } : {}) }));
   const deleted = Object.fromEntries(Object.entries(state.deleted || {}).filter(([, t]) => t >= since));
-  return { format: 'lunibu-sync', v: 1, quick: true, exportedAt: new Date(now).toISOString(), appVersion, kids, growth, meds, deleted };
+  return { format: 'lunibu-sync', v: 1, quick: true, exportedAt: new Date(now).toISOString(), appVersion, kids, growth, meds, medPlans, deleted };
 }
 
 /** payload -> stringa base64url per il frammento dell'URL. [flag compressione][salt 16][iv 12][cifrato] */
@@ -166,6 +169,7 @@ export function mergeData(local, remote, { now = Date.now() } = {}) {
   };
   const g = mergeList(local.growth, remote.growth);
   const m = mergeList(local.meds, remote.meds);
+  const mp = mergeList(local.medPlans, remote.medPlans);
 
   const since = now - H24;
   const recentDoses = m.list
@@ -174,7 +178,7 @@ export function mergeData(local, remote, { now = Date.now() } = {}) {
     .map((e) => ({ id: e.id, kidId: e.kidId, name: e.name, at: e.at, amount: e.amount, unit: e.unit }));
 
   return {
-    kids, growth: g.list, meds: m.list, deleted,
-    stats: { addedGrowth: g.added.size, addedMeds: m.added.size, updated: g.updated.size + m.updated.size, addedKids, recentDoses }
+    kids, growth: g.list, meds: m.list, medPlans: mp.list, deleted,
+    stats: { addedGrowth: g.added.size, addedMeds: m.added.size, updated: g.updated.size + m.updated.size + mp.updated.size, addedPlans: mp.added.size, addedKids, recentDoses }
   };
 }

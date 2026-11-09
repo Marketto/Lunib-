@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.3.0 — 9 novembre 2026
+- «Le mie medicine»: ogni farmaco o integratore si registra e, se vuoi, segue lo schema che copi dalla prescrizione o dal foglietto; «Di nuovo» per ripetere una dose.
+
 ## 1.2.0 — 9 novembre 2026
 - Import diretto dall'esportazione di Baby Tracker (Android); per le medicine indichi tu il principio attivo.
 

@@ -638,3 +638,13 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .struct-box { margin: 10px 0; padding: 10px 12px; border-radius: 14px; background: rgba(46,47,87,.05); }
 .struct-box p { margin: 0 0 8px; }
 .btn.small { padding: 8px 12px; font-size: .85rem; }
+
+/* Le mie medicine */
+.my-meds { margin: 14px 0; }
+.my-meds .row { flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.my-meds button.chip { cursor: pointer; min-height: 32px; }
+.dose-check strong + ul + strong { display: block; margin-top: 8px; }
+.imp-med { display: block; padding: 10px 0; border-bottom: 1px dashed rgba(46,47,87,.15); }
+.imp-med:last-of-type { border-bottom: 0; }
+.imp-med .field { display: block; width: 100%; }
+.imp-med .chips { margin-top: 6px; }

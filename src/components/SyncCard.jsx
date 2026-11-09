@@ -20,6 +20,9 @@ const TX = {
     pick: 'Scegli il file .lunibu ricevuto', askPass: 'Frase segreta concordata', decrypt: 'Apri e unisci',
     badPass: 'Frase segreta sbagliata, oppure il file è stato modificato.', badFile: 'Questo non è un file Lunibù valido.', fail: 'Operazione non riuscita.',
     result: (g, m, u) => `Aggiunte ${g} misure e ${m} medicine; ${u} aggiornate.`,
+    received: (g, m, u) => `Ricevute dall'altro telefono: ${g} misure e ${m} medicine${u ? `, ${u} aggiornate` : ''}.`,
+    sent: (g, m, p) => `Inviate da questo telefono: ${g} misure e ${m} medicine${p ? `, ${p} schemi` : ''}.`,
+    inSync: 'Tutto già allineato tra i due telefoni.',
     doses: 'Dosi date dall\'altro genitore nelle ultime 24 ore', dosesNote: 'Controlla prima di dare un\'altra dose: non darla due volte.',
     qrHow: 'L\'altro genitore inquadra il QR con la normale fotocamera del telefono: si apre Lunibù e chiede la frase segreta.',
     qrBig: 'Troppi dati per un QR: usa il file.', qrMeds: 'Includi solo le medicine delle ultime 48 ore',
@@ -43,6 +46,9 @@ const TX = {
     pick: 'Выберите полученный файл .lunibu', askPass: 'Согласованная секретная фраза', decrypt: 'Открыть и объединить',
     badPass: 'Неверная секретная фраза, или файл изменён.', badFile: 'Это не корректный файл Lunibù.', fail: 'Не удалось выполнить.',
     result: (g, m, u) => `Добавлено ${g} измерений и ${m} лекарств; обновлено: ${u}.`,
+    received: (g, m, u) => `Получено с другого телефона: ${g} измерений и ${m} лекарств${u ? `, обновлено: ${u}` : ''}.`,
+    sent: (g, m, p) => `Отправлено с этого телефона: ${g} измерений и ${m} лекарств${p ? `, схем: ${p}` : ''}.`,
+    inSync: 'Данные на двух телефонах уже совпадают.',
     doses: 'Дозы, данные другим родителем за последние 24 часа', dosesNote: 'Проверьте перед следующей дозой: не давайте её дважды.',
     qrHow: 'Другой родитель наводит обычную камеру телефона на QR: откроется Lunibù и спросит секретную фразу.',
     qrBig: 'Слишком много данных для QR: используйте файл.', qrMeds: 'Включить только лекарства за последние 48 часов',
@@ -89,7 +95,16 @@ export function SyncResult({ s, lang, stats, kids }) {
   const name = (id) => kids.find((k) => k.id === id)?.name;
   return (
     <div role="status">
-      <p><strong>{s.result(stats.addedGrowth, stats.addedMeds, stats.updated)}</strong></p>
+      {stats.sent ? (
+        <>
+          {stats.addedGrowth + stats.addedMeds + stats.updated + stats.sent.growth + stats.sent.meds + stats.sent.plans === 0
+            ? <p><strong>{s.inSync}</strong></p>
+            : <>
+              <p><strong>{s.received(stats.addedGrowth, stats.addedMeds, stats.updated)}</strong></p>
+              <p><strong>{s.sent(stats.sent.growth, stats.sent.meds, stats.sent.plans)}</strong></p>
+            </>}
+        </>
+      ) : <p><strong>{s.result(stats.addedGrowth, stats.addedMeds, stats.updated)}</strong></p>}
       {stats.recentDoses.length > 0 && (
         <div className="note care" style={{ flexDirection: 'column', marginTop: 10 }}>
           <strong>{s.doses}</strong>
@@ -105,7 +120,7 @@ export function SyncResult({ s, lang, stats, kids }) {
   );
 }
 
-const readState = (st) => ({ kids: st.kids || [], growth: st.growth || [], meds: st.meds || [], deleted: st.deleted || {} });
+const readState = (st) => ({ kids: st.kids || [], growth: st.growth || [], meds: st.meds || [], medPlans: st.medPlans || [], deleted: st.deleted || {} });
 
 export default function SyncCard({ lang, state, onMerge }) {
   const s = TX[lang];
@@ -321,6 +336,22 @@ export function DriveAuto({ lang, state, onMerge }) {
     document.addEventListener('visibilitychange', tryAuto);
     return () => document.removeEventListener('visibilitychange', tryAuto);
   }, [d.fileId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // dopo una modifica locale (misura, dose, import): sincronizza dopo 8 s di calma, senza rincorrersi
+  const sig = (st) => JSON.stringify(['growth', 'meds', 'medPlans', 'kids'].map((k) => (st[k] || []).map((x) => `${x.id}:${x.updatedAt || ''}`).sort()));
+  const lastSig = useRef(null);
+  const curSig = sig(state);
+  useEffect(() => {
+    if (!driveEnabled || !d.fileId || !passOf()) return undefined;
+    if (lastSig.current === null) { lastSig.current = curSig; return undefined; }
+    if (curSig === lastSig.current) return undefined;
+    const t = setTimeout(async () => {
+      if (!navigator.onLine) return;
+      await run(true);
+      lastSig.current = sig(latest.current);
+    }, 8000);
+    return () => clearTimeout(t);
+  }, [curSig, d.fileId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!driveEnabled || !d.fileId) return null;
   return (

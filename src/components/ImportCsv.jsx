@@ -200,8 +200,8 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
               const v = sel[m.key] || { active: '', conc: '', concOther: '' };
               const a = ACTIVE[v.active];
               return (
-                <div key={m.key} className="imp-map">
-                  <label className="field"><span>{m.name} · {s.medTimes(m.count)}</span>
+                <div key={m.key} className="imp-med">
+                  <label className="field"><span><strong>{m.name}</strong> · {s.medTimes(m.count)}</span>
                     <select aria-label={`${s.activeLbl}: ${m.name}`} value={v.active} onChange={(e) => setSelFor(m.key, { active: e.target.value, conc: '', concOther: '' })}>
                       <option value="">{s.noCheck}</option>
                       {Object.keys(ACTIVE).map((k) => <option key={k} value={k}>{NAMES[lang][k] || k}</option>)}
