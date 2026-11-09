@@ -182,16 +182,17 @@ export const MILESTONE_TEXT = {
     alert: 'Se perde abilità che aveva già, o se hai un dubbio, parlane subito con il pediatra, a qualsiasi età.',
     checks: 'L\'AAP raccomanda screening dello sviluppo a 9, 18 e 30 mesi e dell\'autismo a 18 e 24 mesi.',
     preterm: (w) => `Fino a 24 mesi uso l'età corretta (nato a ${w} settimane).`,
-    areas: { motor: 'Motricità', language: 'Linguaggio', social: 'Socialità', feeding: 'Alimentazione', sleep: 'Sonno', toilet: 'Vasino', dental: 'Denti' },
+    areas: { motor: 'Motricità', language: 'Linguaggio', social: 'Socialità', feeding: 'Alimentazione', sleep: 'Sonno', toilet: 'Vasino', dental: 'Denti', puberty: 'Pubertà' },
     months: (n) => `${n} ${n === 1 ? 'mese' : 'mesi'}`,
     window: {
       'who-1-99': (a, b) => `di solito tra ${a} e ${b} mesi`,
       'cdc-75pct': (a, b) => `a ${b} mesi lo fa la maggior parte dei bambini`,
       'guideline-range': (a, b) => `le linee guida indicano tra ${a} e ${b} mesi`,
-      'not-before': (a) => (a === '0' ? 'fin dalla nascita' : `indicato da ${a} mesi`)
+      'not-before': (a) => (a === '0' ? 'fin dalla nascita' : `indicato da ${a} mesi`),
+      puberty: (sex) => (sex === 'f' ? 'nelle bambine: precoce prima degli 8 anni, in ritardo se il seno non è comparso a 13' : sex === 'm' ? 'nei bambini: il 95% inizia tra 9 e 14 anni' : 'bambine: precoce prima degli 8 anni, in ritardo se il seno non è comparso a 13; bambini: il 95% tra 9 e 14 anni')
     },
     open: (a) => `da ${a} mesi`,
-    status: { upcoming: 'tra poco', now: 'in corso', watch: 'da tenere d\'occhio', tip: 'promemoria', late: 'oltre la finestra', past: 'finestra passata', info: 'informazione', done: 'fatto' },
+    status: { upcoming: 'tra poco', now: 'in corso', watch: 'da tenere d\'occhio', tip: 'promemoria', late: 'oltre la finestra', early: 'parlane col pediatra', past: 'finestra passata', info: 'informazione', done: 'fatto' },
     watch: 'Siamo nell\'ultima parte della finestra osservata dall\'OMS nei bambini sani: è ancora del tutto normale. Se hai dubbi, parlane con il pediatra.',
     late: { who: (x) => `Secondo l'OMS il 99% dei bambini sani lo fa entro ${x} mesi: parlane con il pediatra.`,
       cdc: (x) => `A ${x} mesi la maggior parte dei bambini lo fa (CDC): parlane con il pediatra, senza aspettare.`,
@@ -210,16 +211,17 @@ export const MILESTONE_TEXT = {
     alert: 'Если ребёнок теряет уже приобретённые навыки или у вас есть сомнения, сразу поговорите с педиатром, в любом возрасте.',
     checks: 'AAP рекомендует скрининг развития в 9, 18 и 30 месяцев, а на аутизм — в 18 и 24 месяца.',
     preterm: (w) => `До 24 месяцев используется скорректированный возраст (родился на ${w} неделе).`,
-    areas: { motor: 'Моторика', language: 'Речь', social: 'Общение', feeding: 'Питание', sleep: 'Сон', toilet: 'Горшок', dental: 'Зубы' },
+    areas: { motor: 'Моторика', language: 'Речь', social: 'Общение', feeding: 'Питание', sleep: 'Сон', toilet: 'Горшок', dental: 'Зубы', puberty: 'Половое созревание' },
     months: (n) => `${n} мес.`,
     window: {
       'who-1-99': (a, b) => `обычно между ${a} и ${b} мес.`,
       'cdc-75pct': (a, b) => `к ${b} мес. это умеет большинство детей`,
       'guideline-range': (a, b) => `рекомендации указывают от ${a} до ${b} мес.`,
-      'not-before': (a) => (a === '0' ? 'с рождения' : `рекомендуется с ${a} мес.`)
+      'not-before': (a) => (a === '0' ? 'с рождения' : `рекомендуется с ${a} мес.`),
+      puberty: (sex) => (sex === 'f' ? 'у девочек: раннее — до 8 лет, задержка — если грудь не развилась к 13' : sex === 'm' ? 'у мальчиков: 95% начинают в 9–14 лет' : 'девочки: раннее — до 8 лет, задержка — если грудь не развилась к 13; мальчики: 95% в 9–14 лет')
     },
     open: (a) => `с ${a} мес.`,
-    status: { upcoming: 'скоро', now: 'сейчас', watch: 'стоит присмотреться', tip: 'напоминание', late: 'после окна', past: 'окно прошло', info: 'информация', done: 'сделано' },
+    status: { upcoming: 'скоро', now: 'сейчас', watch: 'стоит присмотреться', tip: 'напоминание', late: 'после окна', early: 'обсудить с педиатром', past: 'окно прошло', info: 'информация', done: 'сделано' },
     watch: 'Мы в последней части окна, наблюдаемого ВОЗ у здоровых детей: это всё ещё совершенно нормально. Если есть сомнения, поговорите с педиатром.',
     late: { who: (x) => `По данным ВОЗ, 99% здоровых детей делают это до ${x} мес.: поговорите с педиатром.`,
       cdc: (x) => `К ${x} мес. большинство детей это умеет (CDC): поговорите с педиатром, не откладывая.`,

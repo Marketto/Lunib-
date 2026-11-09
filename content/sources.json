@@ -1068,5 +1068,40 @@
     "label": "Dipartimento per le Politiche Europee. Il numero unico di emergenza europeo 112 (brochure)",
     "url": "https://www.affarieuropei.gov.it/files/brochure112.pdf",
     "type": "ente governativo"
+  },
+  "X1": {
+    "label": "AIFA. Schema posologico Tachipirina (paracetamolo) per peso corporeo. 2013",
+    "url": "https://www.aifa.gov.it/sites/default/files/Schema_posologico_Tachipirina_2013.pdf",
+    "type": "ente regolatorio"
+  },
+  "X4": {
+    "label": "WHO. BMI-for-age (5-19 years)",
+    "url": "https://www.who.int/tools/growth-reference-data-for-5to19-years/indicators/bmi-for-age",
+    "type": "ente sanitario"
+  },
+  "X5": {
+    "label": "WHO. Weight-for-age (5-10 years)",
+    "url": "https://www.who.int/tools/growth-reference-data-for-5to19-years/indicators/weight-for-age-5to10-years",
+    "type": "ente sanitario"
+  },
+  "X7": {
+    "label": "Pediatric Endocrine Society. Precocious puberty (patient resource)",
+    "url": "https://pedsendo.org/patient-resource/precocious-puberty",
+    "type": "società scientifica"
+  },
+  "X8": {
+    "label": "Pediatric Endocrine Society. Delayed puberty in girls",
+    "url": "https://pedsendo.org/patient-resource/delayed-puberty-girls/",
+    "type": "società scientifica"
+  },
+  "X9": {
+    "label": "Pediatric Endocrine Society. Delayed puberty in boys",
+    "url": "https://pedsendo.org/patient-resource/delayed-puberty-boys/",
+    "type": "società scientifica"
+  },
+  "X10": {
+    "label": "NHS. Early or delayed puberty (2026)",
+    "url": "https://www.nhs.uk/conditions/early-or-delayed-puberty/",
+    "type": "ente sanitario"
   }
 }

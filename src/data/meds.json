@@ -16,7 +16,8 @@
     "V3",
     "V4",
     "V5",
-    "V6"
+    "V6",
+    "X1"
   ],
   "active": {
     "paracetamolo": {
@@ -108,7 +109,69 @@
           "M5",
           "M8"
         ]
-      }
+      },
+      "caps": [
+        {
+          "minMonths": 72,
+          "maxMonths": 96,
+          "perDoseMg": 250,
+          "perDayMg": 1000,
+          "src": [
+            "M2"
+          ]
+        },
+        {
+          "minMonths": 96,
+          "maxMonths": 120,
+          "perDoseMg": 375,
+          "perDayMg": 1500,
+          "src": [
+            "M2"
+          ]
+        },
+        {
+          "minMonths": 120,
+          "perDoseMg": 500,
+          "perDayMg": 2000,
+          "src": [
+            "M2"
+          ]
+        },
+        {
+          "basis": "weight",
+          "minMonths": 72,
+          "minKg": 21,
+          "maxKg": 26,
+          "perDoseMg": 250,
+          "perDayMg": 1500,
+          "src": [
+            "X1"
+          ]
+        },
+        {
+          "basis": "weight",
+          "minMonths": 72,
+          "minKg": 26,
+          "maxKg": 40,
+          "maxKgInclusive": true,
+          "perDoseMg": 500,
+          "perDayMg": 2000,
+          "src": [
+            "X1"
+          ]
+        },
+        {
+          "basis": "weight",
+          "minMonths": 144,
+          "overKg": 40,
+          "perDoseMg": 750,
+          "perDayMg": 3000,
+          "src": [
+            "M2",
+            "X1"
+          ]
+        }
+      ]
     },
     "ibuprofene": {
       "group": "antipyretic",
@@ -190,7 +253,44 @@
           "M8",
           "M9"
         ]
-      }
+      },
+      "caps": [
+        {
+          "minMonths": 72,
+          "maxMonths": 84,
+          "perDoseMg": 150,
+          "perDayMg": 450,
+          "src": [
+            "M3"
+          ]
+        },
+        {
+          "minMonths": 84,
+          "maxMonths": 120,
+          "perDoseMg": 200,
+          "perDayMg": 600,
+          "src": [
+            "M3"
+          ]
+        },
+        {
+          "minMonths": 120,
+          "maxMonths": 144,
+          "perDoseMg": 300,
+          "perDayMg": 900,
+          "src": [
+            "M3"
+          ]
+        },
+        {
+          "minMonths": 144,
+          "perDoseMg": 400,
+          "perDayMg": 1200,
+          "src": [
+            "M3"
+          ]
+        }
+      ]
     },
     "vitaminaD": {
       "kind": "daily",
@@ -213,6 +313,13 @@
         {
           "underMonths": 132,
           "iu": 2000,
+          "src": [
+            "V2"
+          ]
+        },
+        {
+          "underMonths": 216,
+          "iu": 4000,
           "src": [
             "V2"
           ]
@@ -249,7 +356,10 @@
           "V4"
         ],
         "vitDNoIU": [],
-        "vitDVeryHigh": ["V1", "V2"]
+        "vitDVeryHigh": [
+          "V1",
+          "V2"
+        ]
       }
     }
   }

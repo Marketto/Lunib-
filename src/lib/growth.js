@@ -17,14 +17,14 @@ export const GROWTH_RULES = {
   warnZ: 2,          // oltre ±2 DS: fuori dall'intervallo tipico (OMS)
   strongZ: 3,        // oltre ±3 DS: molto lontano (OMS)
   implausible: { weight: [-6, 5], height: [-6, 6], head: [-5, 5], bmi: [-5, 5] }, // flag OMS di valori biologicamente improbabili
-  // TODO(ricerca in corso): soglie di avviso BMI (sovrappeso/obesità/magrezza) non ancora definite; per ora solo il flag generico 'implausible' (|z| > 5)
+  bmiFromMonths: 61, bmiToMonths: 228, // soglie OMS del BMI per età solo a 61–228 mesi (X4); sotto i 61 mesi solo la posizione
   space: 0.67,       // uno "spazio" tra centili maggiori ≈ 2/3 DS (W9)
   minGapDays: { weight: 28, head: 28, height: 90 }, // altezza: non più spesso di ogni 3 mesi (W6)
   newbornDays: 14,   // 0–2 settimane: calo fisiologico, niente confronto tra centili (W5, W6)
   below04: -2.652    // sotto lo 0,4° centile: valutazione anche se la crescita è regolare (W5)
 };
 
-export const GROWTH_SOURCES = ['W1', 'W2', 'W4', 'W8', 'W3', 'W7', 'W5', 'W9', 'W6', 'W10', 'W11', 'W13', 'W14', 'W12'];
+export const GROWTH_SOURCES = ['X4', 'X5', 'W1', 'W2', 'W4', 'W8', 'W3', 'W7', 'W5', 'W9', 'W6', 'W10', 'W11', 'W13', 'W14', 'W12'];
 
 const DAYS_PER_MONTH = 30.4375;
 
@@ -109,7 +109,14 @@ export function assess(indicator, sex, months, value, prev, opts = {}) {
   const warnings = [];
   const [lo, hi] = R.implausible[indicator];
   if (z < lo || z > hi) warnings.push({ kind: 'implausible', level: 'check' });
-  else if (indicator === 'bmi') { /* TODO(ricerca in corso): nessun avviso BMI oltre 'implausible' */ }
+  else if (indicator === 'bmi') { // soglie OMS 5–19 anni (X4); sotto i 61 mesi nessuna soglia
+    if (months >= R.bmiFromMonths && months <= R.bmiToMonths) {
+      if (z > 2) warnings.push({ kind: 'bmiObese', level: 'warn' });
+      else if (z > 1) warnings.push({ kind: 'bmiOverweight', level: 'warn' });
+      else if (z < -3) warnings.push({ kind: 'bmiVeryThin', level: 'strong' });
+      else if (z < -2) warnings.push({ kind: 'bmiThin', level: 'warn' });
+    }
+  }
   else if (indicator === 'height' && z > 3) warnings.push({ kind: 'tall', level: 'info' });        // raramente un problema (W3)
   else if (indicator === 'height' && z > 2) { /* nella norma per l'OMS */ }
   else if (indicator === 'weight' && z > 2) warnings.push({ kind: z > 3 ? 'weightVeryHigh' : 'weightHigh', level: 'warn' });

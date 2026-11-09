@@ -52,6 +52,24 @@ export function latestWeight(growth, kidId, atISO) {
   return w ? { kg: +w.weight, days: Math.round((at - new Date(w.date).getTime()) / 86400000) } : null;
 }
 
+const CAP_WEIGHT_MAX_DAYS = 31; // peso più vecchio di 31 giorni: si usa la fascia d'età
+
+/**
+ * Fascia dei tetti assoluti (meds.json `caps`): per peso se c'è un peso registrato negli ultimi 31 giorni, altrimenti per età.
+ * Se nessuna fascia di peso corrisponde (es. ≥12 anni ma ≤40 kg) si ricade sulla fascia d'età. Null sotto i 6 anni.
+ */
+export function capBand(caps, months, weight) {
+  if (!caps || months == null) return null;
+  const ageOk = (b) => months >= (b.minMonths ?? 0) && (b.maxMonths == null || months < b.maxMonths);
+  const kg = weight && weight.kg > 0 && weight.days <= CAP_WEIGHT_MAX_DAYS ? weight.kg : null;
+  const kgOk = (b) => (b.minKg == null || kg >= b.minKg) && (b.maxKg == null || (b.maxKgInclusive ? kg <= b.maxKg : kg < b.maxKg)) && (b.overKg == null || kg > b.overKg);
+  if (kg != null) {
+    const w = caps.find((b) => b.basis === 'weight' && ageOk(b) && kgOk(b));
+    if (w) return w;
+  }
+  return caps.find((b) => b.basis !== 'weight' && ageOk(b)) || null;
+}
+
 /**
  * Controlla una somministrazione rispetto alle altre dello stesso bimbo.
  * Ritorna una lista di { kind, level: 'stop'|'warn'|'info', ...valori }.
@@ -69,8 +87,8 @@ export function checkDose(entry, log, { months, weight }) {
   const r = a.routes[entry.route] || a.routes.oral;
 
   if (months != null && months < a.askDoctorUnderMonths) out.push({ kind: 'underAge', level: 'stop', months: a.askDoctorUnderMonths });
-  // Oltre i 6 anni i limiti verificati sono solo in mg/kg: manca un tetto assoluto per dose verificato (in arrivo)
-  if (months != null && months >= 72) out.push({ kind: 'olderChild', level: 'info' });
+  const cap = capBand(a.caps, months, weight);
+  if (a.caps && months != null && months >= 72 && months <= 144) out.push({ kind: 'rcpNote', level: 'info' }); // 6–12 anni
   if (a.minWeightKg && weight && weight.kg < a.minWeightKg) out.push({ kind: 'underWeight', level: 'stop', kg: a.minWeightKg });
   for (const c of a.contra || []) if (entry.flags?.includes(c)) out.push({ kind: 'contra', level: 'stop', flag: c });
 
@@ -110,6 +128,13 @@ export function checkDose(entry, log, { months, weight }) {
     if (weight.days > 31) out.push({ kind: 'oldWeight', level: 'info', days: weight.days });
   } else if (mg && !weight) out.push({ kind: 'noWeight', level: 'info' });
   else if (!mg) out.push({ kind: 'noMg', level: 'info' });
+
+  // Tetti assoluti per età/peso (6–12 anni): dose singola (solo per bocca) e totale 24 h su tutte le vie
+  if (cap) {
+    if (mg && (entry.route || 'oral') === 'oral' && mg > cap.perDoseMg + 1e-6) out.push({ kind: 'capDose', level: 'warn', max: cap.perDoseMg, refs: cap.src });
+    const total = in24.reduce((t, e) => t + (toMg(e) || 0), 0);
+    if (total > cap.perDayMg + 1e-6) out.push({ kind: 'capDay', level: 'warn', max: cap.perDayMg, mg: total, refs: cap.src });
+  }
 
   // Uso continuativo: un "episodio" continua finché tra due dosi passano ≤ 24 h
   const times = [at, ...before.map((e) => new Date(e.at).getTime())].sort((x, y) => y - x);

@@ -34,6 +34,10 @@ export const DIARY_TEXT = {
       tall: 'Molto più alto della media (oltre +3 DS): per l\'OMS raramente è un problema, ma è bene che il pediatra lo sappia.',
       weightHigh: 'Peso sopra i valori tipici per l\'età (oltre +2 DS). Il peso da solo non dice se è in sovrappeso: il pediatra lo valuta rispetto alla lunghezza (peso-per-lunghezza o BMI).',
       weightVeryHigh: 'Peso molto sopra i valori tipici per l\'età (oltre +3 DS). Il pediatra lo valuta rispetto alla lunghezza (peso-per-lunghezza o BMI).',
+      bmiOverweight: 'Il BMI per l\'età è sopra +1 DS: secondo i criteri OMS rientra nel sovrappeso. Non è una diagnosi: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
+      bmiObese: 'Il BMI per l\'età è sopra +2 DS: secondo i criteri OMS rientra nell\'obesità. Non è una diagnosi né una colpa: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
+      bmiThin: 'Il BMI per l\'età è sotto −2 DS: secondo i criteri OMS rientra nella magrezza. Non è una diagnosi: parlane con il pediatra, che valuta crescita e abitudini nel complesso.',
+      bmiVeryThin: 'Il BMI per l\'età è sotto −3 DS: secondo i criteri OMS è una magrezza marcata. Non è una diagnosi, ma è bene parlarne presto con il pediatra.',
       veryLow: 'Molto sotto i valori tipici per l\'età secondo l\'OMS (oltre −3 DS).',
       low: 'Sotto i valori tipici per l\'età secondo l\'OMS (oltre −2 DS).',
       below04: 'Sotto lo 0,4° percentile: è consigliata una valutazione del pediatra anche se la crescita è regolare.',
@@ -49,7 +53,7 @@ export const DIARY_TEXT = {
     beforeTerm: 'Prima del termine corretto (40 settimane) le curve OMS non si applicano: il pediatra usa curve specifiche per i pretermine.',
     noWfl: 'Lunibù non calcola il peso-per-lunghezza e non valuta il BMI come magrezza o sovrappeso: non può dire se è magro o in sovrappeso.',
     over10: 'Dopo i 10 anni l\'OMS usa l\'indice di massa corporea invece del peso per età.',
-    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Lunibù mostra la posizione sulle curve OMS ma non dà un giudizio: per interpretarlo chiedi al pediatra.',
+    bmiNote: 'BMI = peso (kg) ÷ altezza (m)², calcolato da peso e altezza della stessa misura. Fino a 5 anni Lunibù mostra solo la posizione sulle curve OMS; dai 5 anni segnala anche le soglie OMS (sopra +1 DS, sotto −2 DS), senza dare una diagnosi: per interpretarlo chiedi al pediatra.',
     pos: 'Come è stato misurato', lying: 'sdraiato', standing: 'in piedi',
     wFoot: 'Non è una diagnosi: una misura isolata può essere imprecisa. Ricontrolla come hai misurato e parlane con il pediatra.',
     measureTips: 'Pesa senza vestiti (o con il body), sempre con la stessa bilancia. Sotto i 2 anni la lunghezza si misura sdraiato, poi in piedi senza scarpe. La testa: metro morbido sopra sopracciglia e orecchie, nel punto più largo.',
@@ -77,7 +81,9 @@ export const DIARY_TEXT = {
     units: { mg: 'mg', ml: 'ml', gocce: 'gocce', UI: 'UI', 'µg': 'µg', compresse: 'compresse', bustine: 'bustine', supposte: 'supposte', spruzzi: 'spruzzi', other: '—' },
     c: {
       noCheck: 'Nessun controllo automatico per questo farmaco: segui la prescrizione o il foglietto.',
-      olderChild: 'Oltre i 6 anni Lunibù controlla solo i limiti per kg: verifica sul foglietto anche la dose massima per singola somministrazione e al giorno per l\'età.',
+      rcpNote: 'I fogli illustrativi italiani (RCP) non sono stati consultati direttamente in questo controllo: prevale il foglietto della tua confezione.',
+      capDose: (p) => `La dose supera il massimo per singola somministrazione indicato per l'età/peso (${fmt(p.max, 0)} mg secondo le fonti indicate): ricontrolla il foglietto della tua confezione e chiedi al farmacista o al pediatra.`,
+      capDay: (p) => `Il totale delle ultime 24 ore (${fmt(p.mg, 0)} mg, tutte le vie) supera il massimo giornaliero indicato per l'età/peso (${fmt(p.max, 0)} mg secondo le fonti indicate): ricontrolla il foglietto della tua confezione e chiedi al farmacista o al pediatra.`,
       underAge: (p) => `Sotto i ${p.months} mesi chiedi sempre al pediatra prima di dare questo farmaco. Con febbre ≥ 38 °C sotto i 3 mesi serve una valutazione medica urgente.`,
       underWeight: (p) => `Sotto i ${fmt(p.kg)} kg questo farmaco non va dato senza indicazione del medico.`,
       contra: (p, s) => `Con questa condizione (${s.flag[p.flag]}) chiedi prima al pediatra.`,
@@ -130,6 +136,10 @@ export const DIARY_TEXT = {
       tall: 'Намного выше среднего (более +3 SD): по ВОЗ это редко проблема, но педиатру стоит об этом знать.',
       weightHigh: 'Вес выше типичных для возраста значений (более +2 SD). Один вес не говорит о лишнем весе: педиатр оценивает его относительно длины тела (вес к длине или ИМТ).',
       weightVeryHigh: 'Вес намного выше типичных значений (более +3 SD). Педиатр оценивает его относительно длины тела (вес к длине или ИМТ).',
+      bmiOverweight: 'ИМТ для возраста выше +1 SD: по критериям ВОЗ это относится к избыточному весу. Это не диагноз: поговорите с педиатром, который оценивает рост и привычки в целом.',
+      bmiObese: 'ИМТ для возраста выше +2 SD: по критериям ВОЗ это относится к ожирению. Это не диагноз и не вина: поговорите с педиатром, который оценивает рост и привычки в целом.',
+      bmiThin: 'ИМТ для возраста ниже −2 SD: по критериям ВОЗ это относится к худобе. Это не диагноз: поговорите с педиатром, который оценивает рост и привычки в целом.',
+      bmiVeryThin: 'ИМТ для возраста ниже −3 SD: по критериям ВОЗ это выраженная худоба. Это не диагноз, но лучше скоро поговорить с педиатром.',
       veryLow: 'Намного ниже типичных для возраста значений ВОЗ (более −3 SD).',
       low: 'Ниже типичных для возраста значений ВОЗ (более −2 SD).',
       below04: 'Ниже 0,4-го перцентиля: рекомендуется осмотр педиатра, даже если ребёнок растёт равномерно.',
@@ -145,7 +155,7 @@ export const DIARY_TEXT = {
     beforeTerm: 'До достижения скорректированного срока 40 недель кривые ВОЗ не применяются: педиатр использует кривые для недоношенных.',
     noWfl: 'Lunibù не рассчитывает вес к длине и не оценивает ИМТ как недостаток или избыток веса: он не может сказать, худой ребёнок или с лишним весом.',
     over10: 'После 10 лет ВОЗ использует индекс массы тела вместо веса для возраста.',
-    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. Lunibù показывает положение на кривых ВОЗ, но не даёт оценки: для интерпретации обратитесь к педиатру.',
+    bmiNote: 'ИМТ = вес (кг) ÷ рост (м)², рассчитывается по весу и росту одного измерения. До 5 лет Lunibù показывает только положение на кривых ВОЗ; с 5 лет также отмечает пороги ВОЗ (выше +1 SD, ниже −2 SD), без диагноза: для интерпретации обратитесь к педиатру.',
     pos: 'Как измеряли', lying: 'лёжа', standing: 'стоя',
     wFoot: 'Это не диагноз: одно измерение может быть неточным. Проверьте, как вы измеряли, и обсудите с педиатром.',
     measureTips: 'Взвешивайте без одежды (или в боди), всегда на одних весах. До 2 лет длину измеряют лёжа, затем рост стоя без обуви. Голова: мягкой лентой над бровями и ушами, по самой широкой части.',
@@ -172,7 +182,9 @@ export const DIARY_TEXT = {
     units: { mg: 'мг', ml: 'мл', gocce: 'капли', UI: 'МЕ', 'µg': 'мкг', compresse: 'таблетки', bustine: 'пакетики', supposte: 'свечи', spruzzi: 'спреи', other: '—' },
     c: {
       noCheck: 'Для этого лекарства нет автоматической проверки: следуйте назначению или инструкции.',
-      olderChild: 'После 6 лет Lunibù проверяет только пределы на кг: сверьтесь с инструкцией и по максимальной разовой и суточной дозе для возраста.',
+      rcpNote: 'Итальянские инструкции (RCP) в этой проверке напрямую не изучались: приоритет у инструкции на вашей упаковке.',
+      capDose: (p) => `Доза превышает максимум на один приём, указанный для данного возраста/веса (${fmt(p.max, 0)} мг по указанным источникам): ещё раз проверьте инструкцию на вашей упаковке и спросите фармацевта или педиатра.`,
+      capDay: (p) => `Сумма за последние 24 часа (${fmt(p.mg, 0)} мг, всеми путями введения) превышает суточный максимум, указанный для данного возраста/веса (${fmt(p.max, 0)} мг по указанным источникам): ещё раз проверьте инструкцию на вашей упаковке и спросите фармацевта или педиатра.`,
       underAge: (p) => `До ${p.months} месяцев всегда спрашивайте педиатра, прежде чем давать это лекарство. При температуре ≥ 38 °C до 3 месяцев нужен срочный осмотр врача.`,
       underWeight: (p) => `При весе меньше ${fmt(p.kg)} кг это лекарство не дают без указания врача.`,
       contra: (p, s) => `При этом состоянии (${s.flag[p.flag]}) сначала спросите педиатра.`,
@@ -209,7 +221,7 @@ export const DIARY_TEXT = {
   }
 };
 
-const GROWTH_REFS = { implausible: ['W7', 'W12'], standingEarly: ['W7'], tall: ['W3'], weightHigh: ['W3'], weightVeryHigh: ['W3'], veryLow: ['W3', 'W1'], low: ['W3', 'W1'], below04: ['W5'], headHigh: ['W11', 'W8'], headVeryHigh: ['W11', 'W8'], headLow: ['W10', 'W8'], headVeryLow: ['W10', 'W8'], crossDown: ['W5', 'W9', 'W6'], crossUp: ['W5', 'W9'], newbornLoss: ['W6'], notRegained: ['W6'] };
+const GROWTH_REFS = { bmiOverweight: ['X4'], bmiObese: ['X4'], bmiThin: ['X4'], bmiVeryThin: ['X4'], implausible: ['W7', 'W12'], standingEarly: ['W7'], tall: ['W3'], weightHigh: ['W3'], weightVeryHigh: ['W3'], veryLow: ['W3', 'W1'], low: ['W3', 'W1'], below04: ['W5'], headHigh: ['W11', 'W8'], headVeryHigh: ['W11', 'W8'], headLow: ['W10', 'W8'], headVeryLow: ['W10', 'W8'], crossDown: ['W5', 'W9', 'W6'], crossUp: ['W5', 'W9'], newbornLoss: ['W6'], notRegained: ['W6'] };
 
 function SourceList({ ids, lang }) {
   const s = DIARY_TEXT[lang];
@@ -368,7 +380,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
       <motion.div className="chart-card" key={ind} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <h3>{ind === 'height' ? s.heightLong(ageNow) : ind === 'head' ? s.headLong : ind === 'bmi' ? s.bmi : s.weight} <small>({INDICATORS[ind].unit})</small></h3>
         <GrowthChart indicator={ind} sex={sex} points={pts} upTo={Math.min(ageNow, INDICATORS[ind].maxMonths)} lang={lang} />
-        <p className="small muted">{s.chartNote} {ind === 'weight' && s.noWfl} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? ' ' + (ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)) : ''}</p>
+        <p className="small muted">{s.chartNote} {ind === 'weight' && ageNow < 61 && s.noWfl} {ind === 'bmi' && s.bmiNote} <Refs ids={['W1', 'W2', ...(ind === 'head' ? ['W8'] : []), ...(ind === 'bmi' ? ['X4'] : [])]} />{ageNow > INDICATORS[ind].maxMonths ? <> {ind === 'weight' ? s.over10 : s.over(INDICATORS[ind].maxMonths)}{ind === 'weight' && <> <Refs ids={['X5']} /></>}</> : ''}</p>
         {kid.gaWeeks && kid.gaWeeks < 37 && monthsAt(kid.birth, today()) < (kid.gaWeeks < 32 ? 24 : 12) && <p className="small muted">{s.pretermNote(kid.gaWeeks)} <Refs ids={['W13']} /></p>}
       </motion.div>
 

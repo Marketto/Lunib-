@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.8.0 — 9 novembre 2026
+- 6–12 anni: tetti di dose per età/peso (paracetamolo, ibuprofene), vitamina D fino a 4000 UI dagli 11 anni (EFSA), soglie OMS del BMI dai 5 anni, tappa «primi segni di pubertà»
+
 ## 1.7.0 — 9 novembre 2026
 - 8 nuove schede su emozioni e comportamento (0–12 anni): genitorialità positiva, dare un nome alle emozioni, ansia da separazione, morsi e aggressività, come lodare, calmare con gli schermi, temperamento, benessere dei genitori (con avvisi urgenti); livello delle prove dichiarato.
 

@@ -32,8 +32,7 @@ describe('crescita fino a 12 anni', () => {
     expect(bmiOf(0, 120)).toBeNull();
     expect(GROWTH_RULES.implausible.bmi).toEqual([-5, 5]);
   });
-  it('BMI: solo avviso generico di valore improbabile', () => {
-    expect(assess('bmi', 'm', 100, 11).warnings).toEqual([]);
+  it('BMI: valore improbabile segnalato', () => {
     expect(assess('bmi', 'm', 100, 40).warnings[0].kind).toBe('implausible');
   });
 });
@@ -53,7 +52,8 @@ describe('età 0-12 anni', () => {
   it('limiti medicine robusti fino a 144 mesi', () => {
     for (const m of [72, 100, 131, 132, 144, 300]) expect(() => vitDLimit(m)).not.toThrow();
     expect(vitDLimit(131)).toBeTruthy();
-    expect(vitDLimit(132)).toBeNull();
+    expect(vitDLimit(132).iu).toBe(4000);
+    expect(vitDLimit(216)).toBeNull();
     const e = { id: 'x', kidId: 'k', active: 'vitaminaD', at: '2026-11-09T08:00:00', amount: 1000, unit: 'UI' };
     expect(() => checkDose(e, [e], { months: 140, weight: null })).not.toThrow();
   });

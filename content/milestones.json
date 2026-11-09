@@ -583,6 +583,47 @@
         "it": "Dopo i 5 anni bagnare il letto è ancora abbastanza comune e non è colpa del bambino: parlane con il pediatra, che può aiutare.",
         "ru": "После 5 лет ночное мочеиспускание всё ещё встречается довольно часто и не является виной ребёнка: поговорите с педиатром, он поможет."
       }
+    },
+    {
+      "id": "p-puberty",
+      "area": "puberty",
+      "from": 96,
+      "to": 168,
+      "type": "puberty",
+      "warn": false,
+      "showFrom": 72,
+      "bySex": {
+        "f": {
+          "from": 96,
+          "to": 156
+        },
+        "m": {
+          "from": 108,
+          "to": 168
+        }
+      },
+      "src": [
+        "X7",
+        "X8",
+        "X9"
+      ],
+      "verified": true,
+      "it": {
+        "title": "Primi segni di pubertà",
+        "info": "Nelle bambine è considerata precoce prima degli 8 anni e in ritardo se il seno non è comparso a 13; nei bambini il 95% inizia tra 9 e 14 anni (Pediatric Endocrine Society). La prima mestruazione arriva di solito 2–3 anni dopo l'inizio dello sviluppo del seno."
+      },
+      "ru": {
+        "title": "Первые признаки полового созревания",
+        "info": "У девочек начало до 8 лет считается ранним, а отсутствие развития груди к 13 годам — задержкой; у мальчиков 95% начинают в 9–14 лет (Pediatric Endocrine Society). Первые месячные обычно приходят через 2–3 года после начала развития груди."
+      },
+      "early": {
+        "src": [
+          "X7",
+          "X10"
+        ],
+        "it": "Segni di pubertà prima degli 8 anni nelle bambine o dei 9 nei bambini: parlane con il pediatra (Pediatric Endocrine Society; NHS: prima degli 8 anni per entrambi i sessi).",
+        "ru": "Признаки полового созревания до 8 лет у девочек или до 9 лет у мальчиков: поговорите с педиатром (Pediatric Endocrine Society; NHS: до 8 лет для обоих полов)."
+      }
     }
   ]
 }

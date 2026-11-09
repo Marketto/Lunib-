@@ -12,13 +12,13 @@ const today = () => new Date().toISOString().slice(0, 10);
 const num = (n) => String(Math.round(n * 10) / 10).replace('.', ',');
 const AREA_LOOK = {
   motor: { c: 'ladybug', bg: '#dcefe5' }, language: { c: 'cloud', bg: '#dfe9fb' }, social: { c: 'heart', bg: '#fbe3ea' },
-  feeding: { c: 'apple', bg: '#fdeedb' }, sleep: { c: 'moon', bg: '#e6e3fa' }, toilet: { c: 'drop', bg: '#d9eef3' }, dental: { c: 'star', bg: '#fff3cf' }
+  feeding: { c: 'apple', bg: '#fdeedb' }, sleep: { c: 'moon', bg: '#e6e3fa' }, toilet: { c: 'drop', bg: '#d9eef3' }, dental: { c: 'star', bg: '#fff3cf' }, puberty: { c: 'flower', bg: '#f3e3f7' }
 };
 // Fonti della nota generale: CDC key points, CDC/Zubler, CDC monitoraggio, W14 e B35 (controlli AAP)
 export const HEADER_REFS = ['TP15', 'TP2', 'TP14', 'W14', 'B35'];
 
-function WindowBar({ item, months, t }) {
-  const text = item.to == null ? (item.type === 'not-before' ? t.window['not-before'](num(item.from)) : t.open(num(item.from)))
+function WindowBar({ item, months, t, sex }) {
+  const text = item.type === 'puberty' ? t.window.puberty(sex) : item.to == null ? (item.type === 'not-before' ? t.window['not-before'](num(item.from)) : t.open(num(item.from)))
     : t.window[item.type](num(item.from), num(item.to));
   const pos = position(item, months);
   return (
@@ -36,6 +36,7 @@ function WindowBar({ item, months, t }) {
 
 function Note({ item, st, t, lang }) {
   let text = null;
+  if (st === 'early') return <p className="ms-note early" role="note">{item.early[lang] || item.early.it} <Refs ids={item.early.src} /></p>;
   if (st === 'watch') text = t.watch;
   else if (st === 'tip' || st === 'late') {
     if (item.note) text = item.note[lang] || item.note.it;
@@ -50,7 +51,12 @@ function Card({ item, lang, t, months, rec, kid, past = false, onDone, onChange,
   const [date, setDate] = useState(today());
   const [cheer, setCheer] = useState(false);
   const done = !!rec;
-  const st = past && !done ? 'past' : status(item, months, done);
+  const sex = kid.sex;
+  const ageAt = (d) => (d ? ageForMilestones(kid, d) : null);
+  // pubertà: stato "early" se la data segnata (anche oggi) cade prima della soglia, anche mentre si sta segnando
+  const st0 = past && !done ? 'past' : status(item, months, done, { sex, doneMonths: done ? ageAt(rec.date) : null });
+  const asksEarly = item.type === 'puberty' && asking && !done && status(item, months, true, { sex, doneMonths: ageAt(date) }) === 'early';
+  const st = asksEarly ? 'early' : st0;
   const L = item[lang] || item.it;
   const look = AREA_LOOK[item.area];
   const save = () => {
@@ -68,7 +74,7 @@ function Card({ item, lang, t, months, rec, kid, past = false, onDone, onChange,
         <span className={`chip ms-chip ${st}`}>{t.status[st]}</span>
       </div>
       {L.info && <p className="small">{L.info} <Refs ids={item.src} /></p>}
-      <WindowBar item={item} months={months} t={t} />
+      <WindowBar item={item} months={months} t={t} sex={sex} />
       {!L.info && <p className="small"><Refs ids={item.src} /></p>}
       <Note item={item} st={st} t={t} lang={lang} />
       {asking && (

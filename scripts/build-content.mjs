@@ -68,8 +68,8 @@ for (const g of games) {
 
 // Tappe: id univoci, fonti esistenti, finestre coerenti, testi it/ru
 const miles = JSON.parse(fs.readFileSync(path.join(root, 'content/milestones.json'), 'utf8')).items;
-const M_AREAS = ['motor', 'language', 'social', 'feeding', 'sleep', 'toilet', 'dental'];
-const M_TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before'];
+const M_AREAS = ['motor', 'language', 'social', 'feeding', 'sleep', 'toilet', 'dental', 'puberty'];
+const M_TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before', 'puberty'];
 const mSeen = new Set();
 for (const m of miles) {
   const where = `milestones.json:${m.id}`;
@@ -83,6 +83,12 @@ for (const m of miles) {
   if (!m.src?.length) errors.push(`${where} senza fonti`);
   for (const sid of m.src || []) if (!sources[sid]) errors.push(`${where} fonte mancante ${sid}`);
   for (const lang of LANGS) if (!m[lang]?.title) errors.push(`${where} ${lang}.title mancante`);
+  if (m.type === 'puberty') {
+    if (!m.bySex || !m.early?.it || !m.early?.ru || !(m.showFrom >= 0)) errors.push(`${where} pubertà: servono bySex, early it/ru e showFrom`);
+    for (const [sx, w] of Object.entries(m.bySex || {})) if (!['f', 'm'].includes(sx) || !(w.from >= 0 && w.to > w.from)) errors.push(`${where} bySex.${sx} non valido`);
+    for (const sid of m.early?.src || []) if (!sources[sid]) errors.push(`${where} early fonte mancante ${sid}`);
+    if (!m.early?.src?.length) errors.push(`${where} early senza fonti`);
+  }
   if (!!m.it?.info !== !!m.ru?.info) errors.push(`${where} info presente solo in una lingua`);
 }
 

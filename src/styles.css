@@ -662,13 +662,13 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .ms-head label { flex: 1; cursor: pointer; }
 .ms-chip { flex-shrink: 0; font-size: .72rem; }
 .ms-chip.watch { background: var(--care-bg); color: var(--care-ink); }
-.ms-chip.late { background: #ffe9c7; color: var(--care-ink); }
+.ms-chip.late, .ms-chip.early { background: #ffe9c7; color: var(--care-ink); }
 .ms-chip.done { background: #dcefe5; color: #2c5d46; }
 .ms-bar { position: relative; height: 8px; margin: 8px 6px 4px; border-radius: 99px; background: var(--mist-2); }
 .ms-fill { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: var(--lav); }
 .ms-mark { position: absolute; top: -4px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--ink); border: 3px solid var(--paper); box-sizing: border-box; }
 .ms-note { padding: 9px 12px; border-radius: 14px; background: var(--care-bg); color: var(--care-ink); font-size: .88rem; }
-.ms-note.late { border: 1.5px solid var(--care-line); }
+.ms-note.late, .ms-note.early { border: 1.5px solid var(--care-line); }
 .ms-ask { margin-top: 8px; }
 .ms-card.st-upcoming { opacity: .85; }
 .ms-cheer { position: absolute; right: 12px; top: -26px; display: flex; align-items: center; gap: 6px; padding: 4px 12px 4px 4px; border-radius: 99px; background: var(--paper); box-shadow: var(--lift); font-weight: 700; pointer-events: none; }

@@ -2,8 +2,8 @@
 // Dati in content/milestones.json (mesi). Non è uno screening né una diagnosi.
 import { monthsAt } from './growth.js';
 
-export const AREAS = ['motor', 'language', 'social', 'feeding', 'sleep', 'toilet', 'dental'];
-export const TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before'];
+export const AREAS = ['motor', 'language', 'social', 'feeding', 'sleep', 'toilet', 'dental', 'puberty'];
+export const TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before', 'puberty'];
 
 // Regole di avviso per tipo di finestra (modificabili dopo la verifica, senza toccare la UI).
 //  who-1-99: ultimo 25% della finestra = nota neutra 'watch'; dopo `to` = 'late'.
@@ -13,7 +13,8 @@ export const TYPES = ['who-1-99', 'cdc-75pct', 'guideline-range', 'not-before'];
 export const RULES = {
   'who-1-99': { warnAt: 0.75, lateAfterTo: true },
   'cdc-75pct': { warnAt: null, lateAfterTo: false },   // 'late' già a `to`
-  'guideline-range': { warnAt: null, lateAfterTo: true }
+  'guideline-range': { warnAt: null, lateAfterTo: true },
+  puberty: { warnAt: null, lateAfterTo: false }        // nessun avviso "in ritardo" nell'età dell'app: solo informazione; 'early' se compare prima della soglia
 };
 
 export const SHOW_AHEAD = 3;   // mesi: mostra le tappe che iniziano entro 3 mesi
@@ -40,8 +41,26 @@ export function warnPoint(item) {
   return item.from + r.warnAt * (item.to - item.from);
 }
 
-/** 'done' | 'upcoming' | 'now' | 'watch' | 'tip' | 'late' | 'info' */
-export function status(item, months, done = false) {
+/** Pubertà: finestra per sesso ('f' | 'm'); sesso ignoto = finestra generica con entrambi gli intervalli. */
+export function windowOf(item, sex) {
+  const w = item.bySex?.[sex];
+  return w ? { from: w.from, to: w.to } : { from: item.from, to: item.to };
+}
+
+/** Soglia di anticipo (mesi): prima di questa età i primi segni sono "precoci". Sesso ignoto: la soglia più bassa (nessun falso allarme). */
+export function earlyBefore(item, sex) {
+  const b = item.bySex;
+  if (!b) return null;
+  return b[sex] ? b[sex].from : Math.min(...Object.values(b).map((x) => x.from));
+}
+
+/** 'done' | 'early' | 'upcoming' | 'now' | 'watch' | 'tip' | 'late' | 'info'. `opts`: { sex, doneMonths } (età in mesi alla data in cui è stata segnata). */
+export function status(item, months, done = false, opts = {}) {
+  if (item.type === 'puberty') {
+    const lim = earlyBefore(item, opts.sex);
+    if (done) return opts.doneMonths != null && lim != null && opts.doneMonths < lim ? 'early' : 'done';
+    return months < windowOf(item, opts.sex).from ? 'upcoming' : 'info';
+  }
   if (done) return 'done';
   if (months < item.from) return 'upcoming';
   if (!item.warn) return 'info';
@@ -56,12 +75,13 @@ export function status(item, months, done = false) {
 
 /** Voce da mostrare tra le attive (non fatta): inizia entro 3 mesi e, se ha `to`, non è scaduta da più di 3 mesi. */
 export function isRelevant(item, months) {
+  if (item.showFrom != null) return months >= item.showFrom; // pubertà: visibile da 6 anni, sempre (anche per segnare segni precoci)
   if (item.from > months + SHOW_AHEAD) return false;
   return item.to != null ? months <= item.to + PAST_AFTER : months <= item.from + FADE_AFTER;
 }
 
 /** Tappa con `to` scaduta da più di 3 mesi: niente avvisi, sezione "Tappe passate". */
-export const isPast = (item, months) => item.to != null && months > item.to + PAST_AFTER;
+export const isPast = (item, months) => item.type !== 'puberty' && item.to != null && months > item.to + PAST_AFTER;
 
 /** Divide le voci in "attive", "passate" (non fatte) e "fatte". `doneIds`: Set di id voce. */
 export function split(items, months, doneIds) {
@@ -72,6 +92,7 @@ export function split(items, months, doneIds) {
 
 /** Posizione 0..1 del bimbo nella finestra (limitata). */
 export function position(item, months) {
+  if (item.type === 'puberty') return null;
   if (item.to == null || item.to <= item.from) return null;
   return Math.min(1, Math.max(0, (months - item.from) / (item.to - item.from)));
 }
