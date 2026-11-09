@@ -165,7 +165,7 @@ export default function App() {
   const applySync = (m) => setState((s) => ({ ...s, kids: withIds(m.kids), growth: m.growth, meds: m.meds, medPlans: m.medPlans || s.medPlans || [], milestones: m.milestones || s.milestones || [], deleted: m.deleted }));
   return (
     <MotionConfig reducedMotion="user">
-      <AudioProvider ambientPref={state.ambient} setAmbientPref={(v) => update({ ambient: v })}>
+      <AudioProvider lang={state.lang} ambientPref={state.ambient} setAmbientPref={(v) => update({ ambient: v })}>
         <Shell state={state} setState={setState} update={update} setList={setList} applySync={applySync} />
       </AudioProvider>
     </MotionConfig>

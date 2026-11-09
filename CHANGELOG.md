@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.12.0 — 9 novembre 2026
+- Suoni e musiche preparati in anticipo e riprodotti come un normale audio: niente più gracchi a schermo spento, comandi dalla schermata di blocco, timer e dissolvenza affidabili anche in background.
+
 ## 1.11.1 — 9 novembre 2026
 - Crescita: niente scheda peso-per-lunghezza (il controllo OMS resta, solo come avviso), schede che non si sovrappongono, grafico BMI più leggibile.
 - Medicine: accanto ai mg/kg si vede su quale peso registrato è calcolato; avviso visibile se quel peso ha più di 31 giorni.

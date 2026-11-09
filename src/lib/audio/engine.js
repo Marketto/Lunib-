@@ -1,9 +1,12 @@
 import * as R from './realistic.js';
+import { makeLoop, encodeWav, envelope } from './loop.js';
 
 // Motore audio interamente generativo (Web Audio API): nessun file, nessuna rete, nessun diritto d'autore.
 // Rumori, suoni della natura, ninne nanne in carillon (melodie di pubblico dominio) e musiche originali.
 
-let ctx = null;
+let ctx = null;          // contesto "corrente" per la sintesi: quello live, oppure (durante il rendering) quello offline
+let live = null;         // contesto live (anteprima rapida, microfono, grafo iOS)
+let OFF = null;          // { len, D, worklet } mentre si costruisce un grafo offline
 let master = null;
 let analyser = null;
 let reverb = null;
@@ -11,36 +14,48 @@ let tracksIn = null;
 const noiseCache = {};
 
 export function getContext() {
-  if (!ctx) {
+  if (!live) {
     const AC = window.AudioContext || window.webkitAudioContext;
-    ctx = new AC();
+    // 'playback': buffer grandi, meno rischio di buffer underrun (i crepitii) a scapito di qualche ms di latenza
+    try { ctx = new AC({ latencyHint: 'playback' }); } catch { ctx = new AC(); }
+    live = ctx;
+    // iOS 16.4+: l'audio continua con schermo spento e ignora il tasto silenzioso
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* */ }
     master = ctx.createGain();
     master.gain.value = 0.35;
     analyser = ctx.createAnalyser();
     analyser.fftSize = 2048;
     // Addolcimento comune: meno acuti (sopra ~3,5 kHz) e niente picchi improvvisi
-    const shelf = ctx.createBiquadFilter();
-    shelf.type = 'highshelf';
-    shelf.frequency.value = 3500;
-    shelf.gain.value = -6;
-    const top = ctx.createBiquadFilter();
-    top.type = 'lowpass';
-    top.frequency.value = 9000;
-    const limiter = ctx.createDynamicsCompressor();
-    limiter.threshold.value = -20;
-    limiter.knee.value = 10;
-    limiter.ratio.value = 8;
-    limiter.attack.value = 0.01;
-    limiter.release.value = 0.3;
-    tracksIn = ctx.createGain();
-    tracksIn.connect(shelf).connect(top).connect(limiter).connect(master);
+    const ch = makeChain(ctx);
+    tracksIn = ch.input;
+    ch.output.connect(master);
     master.connect(analyser).connect(ctx.destination);
     reverb = makeReverb(3.2);
     reverb.connect(tracksIn);
     R.initRealistic(ctx); // rumore continuo non ripetitivo (AudioWorklet), pronto in pochi ms
   }
-  if (ctx.state === 'suspended') ctx.resume();
-  return ctx;
+  if (live.state === 'suspended') live.resume();
+  return live;
+}
+
+// catena master: high-shelf -6 dB > 3,5 kHz, passa-basso 9 kHz, limitatore (identica live e nel rendering offline)
+function makeChain(c) {
+  const input = c.createGain();
+  const shelf = c.createBiquadFilter();
+  shelf.type = 'highshelf';
+  shelf.frequency.value = 3500;
+  shelf.gain.value = -6;
+  const top = c.createBiquadFilter();
+  top.type = 'lowpass';
+  top.frequency.value = 9000;
+  const limiter = c.createDynamicsCompressor();
+  limiter.threshold.value = -20;
+  limiter.knee.value = 10;
+  limiter.ratio.value = 8;
+  limiter.attack.value = 0.01;
+  limiter.release.value = 0.3;
+  input.connect(shelf).connect(top).connect(limiter);
+  return { input, output: limiter };
 }
 
 export function getAnalyser() { return analyser; }
@@ -50,7 +65,7 @@ export function prepare() { getContext(); }
 
 function realTrack(fn, level = 1, wet = 0) {
   const out = bus(level, wet);
-  const kit = R.makeKit(ctx, (type) => noiseSource(type));
+  const kit = R.makeKit(ctx, (type) => noiseSource(type), OFF);
   fn(ctx, kit, out, noiseBuffer('white'));
   return { out, stop: () => kit.stopAll() };
 }
@@ -237,14 +252,18 @@ function padVoice(t, freqs, dur, out, vel = 0.05) {
 function sequencer(stepFn, stepDur) {
   let next = ctx.currentTime + 0.1;
   let i = 0;
-  let alive = true;
-  const tick = () => {
-    if (!alive) return;
-    while (next < ctx.currentTime + 0.4) {
+  const run = (limit) => {
+    while (next < limit) {
       stepFn(i, next);
       next += typeof stepDur === 'function' ? stepDur(i) : stepDur;
       i++;
     }
+  };
+  if (OFF) { run(OFF.len); return () => {}; } // offline: tutte le note pianificate subito, nessun timer
+  let alive = true;
+  const tick = () => {
+    if (!alive) return;
+    run(ctx.currentTime + 0.4);
     timer = setTimeout(tick, 80);
   };
   let timer = setTimeout(tick, 0);
@@ -292,6 +311,11 @@ const FRA_MARTINO = [
   ['C4', 1], ['G3', 1], ['C4', 2], ['C4', 1], ['G3', 1], ['C4', 2]
 ];
 
+// durata di un giro completo della melodia (come in melodyLoop): serve a rendere il loop esatto
+function melodyPeriod(melody, bpm, pause) {
+  return melody.reduce((a, [, d]) => a + d, 0) * (60 / bpm) + pause;
+}
+
 const PENTA = [60, 62, 64, 67, 69, 72, 74, 76];
 
 // ---------- Catalogo ----------
@@ -309,20 +333,20 @@ export const TRACKS = [
   { id: 'rain', group: 'sleep', kind: 'nature', from: 6, to: 144, hue: '#a9c7ee', start: () => realTrack(R.rain, 1, 0.12) },
   { id: 'waves', group: 'sleep', kind: 'nature', from: 6, to: 144, hue: '#9ed3d6', start: () => realTrack(R.waves, 1, 0.2) },
   // --- Per dormire: musica ---
-  { id: 'brahms', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#b9b2ec', start: () => startMusicBox(BRAHMS, 66) },
-  { id: 'twinkle', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#f7d79a', start: () => startMusicBox(TWINKLE, 72) },
+  { id: 'brahms', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#b9b2ec', period: melodyPeriod(BRAHMS, 66, 3), start: () => startMusicBox(BRAHMS, 66) },
+  { id: 'twinkle', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#f7d79a', period: melodyPeriod(TWINKLE, 72, 3), start: () => startMusicBox(TWINKLE, 72) },
   { id: 'carillon', group: 'sleep', kind: 'music', from: 0, to: 144, hue: '#c9e3b8', start: startCarillon },
   { id: 'moon', group: 'sleep', kind: 'music', from: 12, to: 144, hue: '#8f8ad6', start: startAmbient },
   // --- Per giocare ---
   { id: 'bubbles', group: 'play', kind: 'music', from: 0, to: 12, hue: '#a9dcf0', start: startBubbles },
-  { id: 'marimba', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7c48f', start: () => startGroove(96, false) },
-  { id: 'twinkle-play', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7d79a', start: () => startMarimbaSong(TWINKLE, 108) },
-  { id: 'fra-martino', group: 'play', kind: 'music', from: 12, to: 144, hue: '#f1b4c3', start: startFraMartino },
-  { id: 'dance', group: 'play', kind: 'music', from: 18, to: 144, hue: '#a8d0be', start: () => startGroove(112, true) }
+  { id: 'marimba', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7c48f', period: 960 / 96, start: () => startGroove(96, false) },
+  { id: 'twinkle-play', group: 'play', kind: 'music', from: 6, to: 144, hue: '#f7d79a', period: melodyPeriod(TWINKLE, 108, 1), start: () => startMarimbaSong(TWINKLE, 108) },
+  { id: 'fra-martino', group: 'play', kind: 'music', from: 12, to: 144, hue: '#f1b4c3', period: melodyPeriod(FRA_MARTINO, 104, 1.2), start: startFraMartino },
+  { id: 'dance', group: 'play', kind: 'music', from: 18, to: 144, hue: '#a8d0be', period: 960 / 112, start: () => startGroove(112, true) }
 ];
 
 // Guadagni di normalizzazione (misurati, vedi tests/audio): tutte le tracce a volume percepito simile
-export const NORM = {'womb': 1.3, 'shush': 2.31, 'car': 1.1, 'dryer': 0.55, 'brown': 0.76, 'pink': 0.67, 'white': 0.5, 'fan': 0.66, 'rain': 0.79, 'waves': 0.67, 'brahms': 0.76, 'twinkle': 0.76, 'carillon': 1.07, 'moon': 1.17, 'bubbles': 3.0, 'marimba': 1.62, 'twinkle-play': 1.62, 'fra-martino': 1.68, 'dance': 1.32}; // misurati con pesatura K (BS.1770) su 14 s
+export const NORM = {'womb': 1.3, 'shush': 2.31, 'car': 1.1, 'dryer': 0.55, 'brown': 0.76, 'pink': 0.67, 'white': 0.5, 'fan': 0.66, 'rain': 0.79, 'waves': 0.95, 'brahms': 0.76, 'twinkle': 0.76, 'carillon': 1.07, 'moon': 1.17, 'bubbles': 3.0, 'marimba': 1.62, 'twinkle-play': 1.62, 'fra-martino': 1.68, 'dance': 1.32}; // misurati con pesatura K (BS.1770); waves ricalibrato dopo il passaggio ai loop renderizzati (inviluppo della schiuma corretto)
 
 // ---------- Generatori ----------
 function bus(level = 1, wet = 0) {
@@ -596,13 +620,105 @@ function startMarimbaSong(melody, bpm) {
   return { out, stop };
 }
 
+// ---------- Rendering offline dei loop ----------
+// Il suono NON è più generato in tempo reale con i timer (che il browser rallenta a schermo spento):
+// ogni traccia è renderizzata una volta in un OfflineAudioContext, con la stessa sintesi e la stessa catena
+// master, e riprodotta come loop da un <audio> (nessun timer JS mentre suona).
+// Stessa frequenza di campionamento del contesto live: i generatori di rumore (bianco/rosa/bruno) dipendono
+// dal sample rate, con un altro rate cambierebbero timbro e volume rispetto alle tracce normalizzate.
+const TAIL = 6;        // secondi di coda per la giunzione del loop (riverbero + code delle note)
+const RANDOM_LOOP = 90; // durata dei loop non periodici (rumori, natura, note casuali)
+const CACHE_MAX = 3;   // loop tenuti in memoria (~17 MB ciascuno a 48 kHz)
+const AMBIENT = { id: '__ambient', start: () => startAmbient(0.45) };
+const loops = new Map(); // id -> Promise<{ url, env, dur, periodic }>
+
+function loopSpec(track) {
+  if (track.period) {
+    // durata = numero intero di giri della melodia (>= 30 s): il loop È la ripetizione della melodia
+    return { D: track.period * Math.ceil(30 / track.period), X: TAIL, periodic: true };
+  }
+  return { D: RANDOM_LOOP, X: TAIL, periodic: false };
+}
+
+function buildGraph(track, off, spec, worklet) {
+  const prev = { ctx, tracksIn, reverb, OFF };
+  try {
+    ctx = off;
+    OFF = { len: spec.D + spec.X, D: spec.D, worklet };
+    tracksIn = makeChain(off);
+    tracksIn.output.connect(off.destination);
+    tracksIn = tracksIn.input;
+    reverb = makeReverb(3.2);
+    reverb.connect(tracksIn);
+    const h = track.start();
+    h.out.gain.value *= NORM[track.id] ?? 1; // stessa normalizzazione del live: loudness invariata
+  } finally {
+    ({ ctx, tracksIn, reverb, OFF } = prev);
+  }
+}
+
+const idle = () => new Promise((r) => setTimeout(r, 0)); // lascia respirare l'interfaccia
+
+async function renderLoop(track) {
+  const OAC = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+  if (!OAC) throw new Error('no OfflineAudioContext');
+  const SR = live.sampleRate;
+  const spec = loopSpec(track);
+  const len = Math.round(spec.D * SR);
+  const xf = Math.round(spec.X * SR);
+  const off = new OAC(2, len + xf, SR);
+  const worklet = await R.prepareWorklet(off);
+  buildGraph(track, off, spec, worklet);
+  const t0 = performance.now();
+  const rb = await off.startRendering(); // gira sul thread audio del browser
+  if (DEBUG) console.log('render', track.id, Math.round(performance.now() - t0), 'ms');
+  await idle();
+  const chans = makeLoop([rb.getChannelData(0), rb.getChannelData(1)], len, xf, spec.periodic);
+  await idle();
+  const env = envelope(chans, SR, 0.05);
+  const url = URL.createObjectURL(new Blob([encodeWav(chans, SR)], { type: 'audio/wav' }));
+  return { url, env, dur: spec.D, periodic: spec.periodic };
+}
+
+function getLoop(track) {
+  let p = loops.get(track.id);
+  if (p) { loops.delete(track.id); loops.set(track.id, p); return p; } // LRU
+  p = renderLoop(track).catch((e) => { loops.delete(track.id); throw e; });
+  loops.set(track.id, p);
+  while (loops.size > CACHE_MAX) {
+    const [oldId, old] = loops.entries().next().value;
+    if (oldId === current?.id) break;
+    loops.delete(oldId);
+    old.then((l) => { if (l.url !== curLoop?.url) URL.revokeObjectURL(l.url); }, () => {});
+  }
+  return p;
+}
+
 // ---------- Player ----------
-// Regola: suona UNA sola cosa alla volta. Ogni avvio ferma tutto ciò che è attivo,
-// anche le tracce ancora in dissolvenza e la musica di sottofondo.
-const active = new Set(); // handle in riproduzione o in dissolvenza
-let current = null;       // { id, handle }
-let ambient = null;
-let timer = null;
+// Regola: suona UNA sola cosa alla volta. Ogni avvio ferma tutto ciò che è attivo.
+// Fase 1 (subito): anteprima con il motore live. Fase 2 (a rendering finito): loop in <audio>, con dissolvenza incrociata.
+const DEBUG = typeof window !== 'undefined' && /[?&]debug/.test(window.location.search);
+const FADE_END_MS = 20000; // dissolvenza finale del timer
+const active = new Set();  // handle live in riproduzione o in dissolvenza
+let current = null;        // { id, ambient, handle, t0 }
+let token = 0;             // invalida i passaggi asincroni di un avvio superato
+let userVol = 0.35;
+let el = null, elGain = null, directVol = true;
+let elFactor = 1;          // fattore di dissolvenza dell'elemento audio (0–1)
+let fadeAnim = null;       // { from, to, t0, dur, then }
+let curLoop = null;
+let swapping = false, expectPause = false;
+let tickTimer = null;
+let timerEnd = 0, timerFadeStart = 0, timerCb = null, timerTimeout = null;
+let readyP = Promise.resolve();
+let silentUrl = null;
+const listeners = new Set();
+let titleOf = null;
+let lastPlay = null;
+
+export function subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); }
+const notify = (playing) => listeners.forEach((fn) => fn({ playing }));
+export function setTitleLookup(fn) { titleOf = fn; }
 
 function fadeIn(node, to, sec = 1.5) {
   const g = node.gain;
@@ -627,65 +743,227 @@ function kill(handle, sec = 0.8) {
   }, sec * 1000 + 80);
 }
 
-function killAll(sec) {
-  for (const h of active) kill(h, sec);
-  current = null;
+function killLive(sec) { for (const h of active) kill(h, sec); }
+
+// --- elemento <audio> ---
+function once(target, ev, ms = 10000) {
+  return new Promise((res, rej) => {
+    const to = setTimeout(() => { target.removeEventListener(ev, h); rej(new Error('timeout ' + ev)); }, ms);
+    const h = () => { clearTimeout(to); res(); };
+    target.addEventListener(ev, h, { once: true });
+  });
 }
 
-export function play(id) {
-  getContext();
-  clearTimeout(timer);
-  killAll(0.6);
-  if (ambient) { kill(ambient, 0.6); ambient = null; }
-  const track = TRACKS.find((t) => t.id === id);
+function ensureEl() {
+  if (el) return el;
+  el = new Audio();
+  el.loop = true;
+  el.preload = 'auto';
+  el.setAttribute('playsinline', '');
+  // iOS ignora HTMLMediaElement.volume: lì il volume passa dal grafo Web Audio (anche in ?debug, per l'analizzatore)
+  const t = new Audio();
+  t.volume = 0.5;
+  directVol = t.volume === 0.5 && !(DEBUG && !/[?&]direct/.test(window.location.search));
+  if (!directVol) {
+    const c = getContext();
+    elGain = c.createGain();
+    c.createMediaElementSource(el).connect(elGain);
+    elGain.connect(master);
+  }
+  el.addEventListener('timeupdate', stepEl); // scandito dall'orologio audio, non dai timer
+  el.addEventListener('pause', () => {
+    if (expectPause || swapping || !current) return;
+    stop(); // pausa dal sistema (cuffie, chiamata, centro di controllo)
+    notify(null);
+  });
+  return el;
+}
+
+function applyEl() {
+  if (!el) return;
+  if (directVol) el.volume = Math.max(0, Math.min(1, userVol * elFactor));
+  else elGain.gain.value = elFactor;
+}
+
+function fadeEl(to, sec, then) {
+  fadeAnim = { from: elFactor, to, t0: Date.now(), dur: Math.max(1, sec * 1000), then };
+  ensureTicker();
+  stepEl();
+}
+
+function pauseEl() {
+  if (!el || el.paused) return;
+  expectPause = true;
+  el.pause();
+  setTimeout(() => { expectPause = false; }, 50);
+}
+
+// Passo di dissolvenza/timer calcolato sull'ora reale: se il browser ritarda i timer a schermo spento,
+// al passo successivo il volume salta semplicemente al valore giusto (niente notte intera di silenzio o di ritardo).
+function stepEl() {
+  const now = Date.now();
+  if (fadeAnim) {
+    const k = Math.min(1, (now - fadeAnim.t0) / fadeAnim.dur);
+    elFactor = fadeAnim.from + (fadeAnim.to - fadeAnim.from) * k;
+    if (k >= 1) { const f = fadeAnim.then; fadeAnim = null; f?.(); }
+  }
+  if (timerEnd) {
+    if (now >= timerEnd) { finishTimer(); return; }
+    if (now > timerFadeStart) elFactor = Math.min(elFactor, ((timerEnd - now) / FADE_END_MS) ** 2);
+  }
+  applyEl();
+  if (!fadeAnim && !timerEnd && tickTimer) { clearInterval(tickTimer); tickTimer = null; }
+}
+
+function ensureTicker() { if (!tickTimer) tickTimer = setInterval(stepEl, 250); }
+
+function finishTimer() {
+  const cb = timerCb;
+  timerEnd = 0; timerCb = null; clearTimeout(timerTimeout);
+  stop();
+  cb?.();
+  notify(null);
+}
+
+async function unlockEl() {
+  // dentro il gesto dell'utente: l'elemento parte con un secondo di silenzio, così i play successivi
+  // (a rendering finito) sono permessi anche su iOS e la sessione multimediale è già attiva
+  ensureEl();
+  if (!el.paused) return;
+  silentUrl = silentUrl || URL.createObjectURL(new Blob([encodeWav([new Float32Array(8000)], 8000)], { type: 'audio/wav' }));
+  swapping = true;
+  el.src = silentUrl;
+  elFactor = 0; applyEl();
+  try { await el.play(); } catch { /* il prossimo gesto riproverà */ }
+  swapping = false;
+}
+
+async function startEl(loop, pos, fadeSec) {
+  swapping = true;
+  curLoop = loop;
+  el.src = loop.url;
+  el.loop = true;
+  await once(el, 'loadedmetadata');
+  try { el.currentTime = pos % loop.dur; } catch { /* */ }
+  elFactor = 0; applyEl();
+  await el.play();
+  swapping = false;
+  fadeEl(1, fadeSec);
+}
+
+function setSession(track) {
+  if (typeof navigator === 'undefined' || !('mediaSession' in navigator) || typeof MediaMetadata === 'undefined') return;
+  const ms = navigator.mediaSession;
+  const base = import.meta.env?.BASE_URL || '/';
+  ms.metadata = new MediaMetadata({
+    title: (track.id !== AMBIENT.id && titleOf?.(track.id)) || 'Lunibù',
+    artist: 'Lunibù',
+    artwork: [
+      { src: `${base}icons/icon-192.png`, sizes: '192x192', type: 'image/png' },
+      { src: `${base}icons/icon-512.png`, sizes: '512x512', type: 'image/png' }
+    ]
+  });
+  ms.playbackState = 'playing';
+  const set = (a, f) => { try { ms.setActionHandler(a, f); } catch { /* azione non supportata */ } };
+  set('play', () => { if (lastPlay && !current) { play(lastPlay.id, lastPlay.opts); notify(lastPlay.opts.ambient ? null : lastPlay.id); } });
+  set('pause', () => { stop(); notify(null); });
+  set('stop', () => { stop(); notify(null); });
+  for (const a of ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack']) set(a, null);
+}
+
+export function play(id, opts = {}) {
+  getContext(); // dentro il gesto: riprende il contesto live
+  const track = opts.ambient ? AMBIENT : TRACKS.find((t) => t.id === id);
   if (!track) return;
-  const handle = track.start();
-  const level = handle.out.gain.value * (NORM[id] ?? 1);
-  fadeIn(handle.out, level);
-  active.add(handle);
-  current = { id, handle };
+  const my = ++token;
+  clearTimeout(timerTimeout); timerEnd = 0; timerCb = null;
+  killLive(0.6);
+  const hadEl = el && !el.paused && curLoop && elFactor > 0;
+  if (hadEl) fadeEl(0, 0.5);
+  const waitOld = hadEl ? 550 : 0;
+  unlockEl();
+  lastPlay = { id: track.id, opts: { ambient: !!opts.ambient } };
+  setSession(track);
+  const fadeSec = opts.ambient ? 3 : 1.5;
+  const t0 = performance.now();
+  current = { id: track.id, ambient: !!opts.ambient, handle: null, t0 };
+  const cached = loops.has(track.id);
+  if (!cached) {
+    // anteprima live finché il loop non è pronto (pochi secondi)
+    const handle = track.start();
+    fadeIn(handle.out, handle.out.gain.value * (NORM[track.id] ?? 1), fadeSec);
+    active.add(handle);
+    current.handle = handle;
+  }
+  readyP = (async () => {
+    let loop;
+    try { loop = await getLoop(track); } catch { return; } // niente rendering offline: resta il motore live
+    await new Promise((r) => setTimeout(r, waitOld));
+    if (my !== token) return;
+    for (let n = 0; swapping && n < 100; n++) await idle(); // attende l'unlock
+    if (my !== token) return;
+    // melodie: la posizione nel loop segue quella dell'anteprima (stesse note, nessuna ripartenza)
+    // (la posizione u del loop corrisponde al tempo di rendering TAIL + u; la melodia parte a t = 0)
+    const e = cached ? 0 : (performance.now() - t0) / 1000 + 0.25;
+    const pos = loop.periodic ? (((e - TAIL) % loop.dur) + loop.dur) % loop.dur : Math.random() * loop.dur;
+    try {
+      await startEl(loop, pos, fadeSec);
+    } catch { swapping = false; return; }
+    if (my !== token) return;
+    if (current?.handle) { kill(current.handle, fadeSec); current.handle = null; }
+  })();
 }
 
 export function stop() {
-  clearTimeout(timer);
-  timer = null;
-  killAll(0.8);
+  token++;
+  clearTimeout(timerTimeout); timerEnd = 0; timerCb = null;
+  killLive(0.8);
+  current = null;
+  if (el && !el.paused) {
+    const my = token;
+    fadeEl(0, 0.8, () => { if (my === token) pauseEl(); });
+  }
+  try { if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none'; } catch { /* */ }
 }
 
-export function currentId() { return current?.id || null; }
+export function currentId() { return current && !current.ambient ? current.id : null; }
 
 export function setVolume(v) {
   getContext();
-  master.gain.setTargetAtTime(v, ctx.currentTime, 0.1);
+  userVol = v;
+  master.gain.setTargetAtTime(v, live.currentTime, 0.1);
+  applyEl();
 }
 
+// Timer di spegnimento: tutto calcolato sull'ora reale, con la dissolvenza in coda (20 s).
+// Un timeout in ritardo a schermo spento è innocuo: lo scatto successivo (timeupdate) porta il volume al valore giusto.
 export function setSleepTimer(minutes, onEnd) {
-  clearTimeout(timer);
+  clearTimeout(timerTimeout);
+  timerEnd = 0; timerCb = null;
   if (!minutes) return;
-  timer = setTimeout(() => {
-    killAll(20); // dissolvenza lunga e dolce
-    onEnd?.();
-  }, minutes * 60000);
+  timerFadeStart = Date.now() + minutes * 60000;
+  timerEnd = timerFadeStart + FADE_END_MS;
+  timerCb = onEnd;
+  timerTimeout = setTimeout(() => { stepEl(); if (timerEnd) finishTimer(); }, timerEnd - Date.now() + 100);
+  ensureTicker();
 }
 
 // Musica di sottofondo dell'app: parte solo se non c'è un'altra traccia
 export function setAmbient(on) {
   getContext();
-  if (on && !ambient && !current) {
-    ambient = startAmbient(0.45);
-    fadeIn(ambient.out, ambient.out.gain.value, 3);
-    active.add(ambient);
-  } else if (!on && ambient) {
-    kill(ambient, 1.5);
-    ambient = null;
-  }
+  if (on && !current) play(AMBIENT.id, { ambient: true });
+  else if (!on && current?.ambient) stop();
 }
 
-export function ambientOn() { return !!ambient && !ambient._dead; }
+export function ambientOn() { return !!current?.ambient; }
 
 // livello (0–1) per le animazioni che seguono il suono
 const buf = new Uint8Array(1024);
 export function level() {
+  if (el && !el.paused && curLoop && !swapping) {
+    const i = Math.floor(el.currentTime / 0.05);
+    return Math.min(1, (curLoop.env[i] || 0) * userVol * elFactor * 4);
+  }
   if (!analyser) return 0;
   analyser.getByteTimeDomainData(buf);
   let sum = 0;
@@ -700,7 +978,13 @@ export function level() {
 if (typeof window !== 'undefined' && /[?&]debug/.test(window.location.search)) {
   window.__ppAudio = {
     play, stop,
+    ready: () => readyP, // attende il loop renderizzato (per le misure)
+    cached: () => [...loops.keys()],
+    state: () => ({ paused: el ? el.paused : null, vol: el ? el.volume : null, factor: elFactor, pos: el ? el.currentTime : null, direct: directVol, current: current && current.id, live: active.size, mediaTitle: navigator.mediaSession?.metadata?.title }),
+    setSleepTimer, setVolume,
+    envOf: async (id) => Array.from((await loops.get(id)).env),
     measure() {
+      const ctx = live;
       const n = analyser.frequencyBinCount;
       const f = new Float32Array(n);
       analyser.getFloatFrequencyData(f);

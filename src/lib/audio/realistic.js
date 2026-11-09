@@ -34,19 +34,21 @@ class NoiseGen extends AudioWorkletProcessor {
 registerProcessor('noise-gen', NoiseGen);
 `;
 
-let ready = null;
+let workletUrl = null;
+const ready = new WeakMap();
+// ogni AudioContext (anche offline) vuole registrare il proprio modulo
 export function prepareWorklet(ctx) {
-  if (!ready) {
-    ready = (async () => {
+  if (!ready.has(ctx)) {
+    ready.set(ctx, (async () => {
       try {
         if (!ctx.audioWorklet) return false;
-        const url = URL.createObjectURL(new Blob([WORKLET], { type: 'application/javascript' }));
-        await ctx.audioWorklet.addModule(url);
+        workletUrl = workletUrl || URL.createObjectURL(new Blob([WORKLET], { type: 'application/javascript' }));
+        await ctx.audioWorklet.addModule(workletUrl);
         return true;
       } catch { return false; }
-    })();
+    })());
   }
-  return ready;
+  return ready.get(ctx);
 }
 
 let workletOk = false;
@@ -56,13 +58,16 @@ export async function initRealistic(ctx) {
 }
 
 // --- primitive ---
-export function makeKit(ctx, fallbackNoise) {
+// off = null (tempo reale: timer + lookahead) oppure { len, D, worklet } per il rendering offline:
+// tutti gli eventi sono pianificati in anticipo sull'orologio audio, senza alcun timer JS.
+export function makeKit(ctx, fallbackNoise, off = null) {
   const stops = [];
   const kit = {
     stops,
+    off,
     noise(type) {
       let n;
-      if (workletOk) {
+      if (off ? off.worklet : workletOk) {
         n = new AudioWorkletNode(ctx, 'noise-gen', { numberOfInputs: 0, outputChannelCount: [2], processorOptions: { type } });
         stops.push(() => n.disconnect());
       } else {
@@ -89,6 +94,15 @@ export function makeKit(ctx, fallbackNoise) {
     },
     // variazione lenta casuale di un parametro tra min e max (random walk morbido)
     drift(param, min, max, minSec = 4, maxSec = 12) {
+      param.value = (min + max) / 2;
+      if (off) {
+        for (let t = 0; t < off.len;) {
+          const dur = minSec + Math.random() * (maxSec - minSec);
+          param.setTargetAtTime(min + Math.random() * (max - min), t, dur / 3);
+          t += dur;
+        }
+        return;
+      }
       let alive = true;
       const go = () => {
         if (!alive) return;
@@ -97,12 +111,15 @@ export function makeKit(ctx, fallbackNoise) {
         param.setTargetAtTime(target, ctx.currentTime, dur / 3);
         setTimeout(go, dur * 1000);
       };
-      param.value = (min + max) / 2;
       go();
       stops.push(() => { alive = false; });
     },
     // eventi a intervalli casuali
     every(minSec, maxSec, fn) {
+      if (off) {
+        for (let t = Math.random() * maxSec * 0.5; t < off.len; t += minSec + Math.random() * (maxSec - minSec)) fn(t + 0.05);
+        return;
+      }
       let alive = true;
       let t;
       const go = () => {
@@ -113,6 +130,21 @@ export function makeKit(ctx, fallbackNoise) {
       t = setTimeout(go, Math.random() * maxSec * 500);
       stops.push(() => { alive = false; clearTimeout(t); });
     },
+    // pianificatore: step(limit) pianifica tutto ciò che cade prima di `limit`.
+    // Offline: una sola chiamata su tutta la durata. Tempo reale: lookahead + timer.
+    ahead(horizon, tickMs, step) {
+      if (off) { step(off.len); return; }
+      let alive = true;
+      const tick = () => {
+        if (!alive) return;
+        step(ctx.currentTime + horizon);
+        setTimeout(tick, tickMs);
+      };
+      tick();
+      stops.push(() => { alive = false; });
+    },
+    // pulizia ritardata dei nodi (inutile offline: il grafo sparisce con il rendering)
+    later(fn, ms) { if (!off) setTimeout(fn, ms); },
     stopAll() { stops.forEach((f) => f()); }
   };
   return kit;
@@ -120,15 +152,10 @@ export function makeKit(ctx, fallbackNoise) {
 
 // scheduler ad alta frequenza per i grani (gocce)
 function grainLoop(ctx, kit, fn) {
-  let alive = true;
   let next = ctx.currentTime + 0.1;
-  const tick = () => {
-    if (!alive) return;
-    while (next < ctx.currentTime + 0.2) { fn(next); next += 0.025; }
-    setTimeout(tick, 60);
-  };
-  tick();
-  kit.stops.push(() => { alive = false; });
+  kit.ahead(0.2, 60, (limit) => {
+    while (next < limit) { fn(next); next += 0.025; }
+  });
 }
 
 // --- suoni ---
@@ -190,6 +217,44 @@ export function fan(ctx, kit, out) {
   p.connect(out);
 }
 
+// Gocce di pioggia calcolate direttamente in un AudioBuffer stereo (stessa statistica del ramo in tempo reale:
+// rumore filtrato passa-banda 1,4–5,6 kHz, Q 1,5–6,5, inviluppo a rampa+decadimento, 8% di gocce grosse, posizione casuale)
+function rainGrains(ctx, seconds, intensityAt) {
+  const sr = ctx.sampleRate;
+  const buf = ctx.createBuffer(2, Math.ceil(seconds * sr), sr);
+  const L = buf.getChannelData(0), Rr = buf.getChannelData(1);
+  for (let t = 0.1; t < seconds; t += 0.025) {
+    const it = intensityAt(t);
+    const n = Math.random() < it ? 1 + Math.floor(Math.random() * 3 * it) : 0;
+    for (let k = 0; k < n; k++) {
+      const t0 = t + Math.random() * 0.025;
+      const big = Math.random() < 0.08;
+      const peak = (big ? 0.5 : 0.12) * (0.4 + Math.random() * 0.6);
+      const dur = (big ? 0.06 : 0.015) + Math.random() * 0.04;
+      const fc = 1400 + Math.random() * 4200, q = 1.5 + Math.random() * 5;
+      const x = (Math.random() * 2 - 1 + 1) / 2;
+      const gl = Math.cos(x * Math.PI / 2), gr = Math.sin(x * Math.PI / 2);
+      // biquad passa-banda (RBJ), un filtro per canale
+      const w = 2 * Math.PI * fc / sr, al = Math.sin(w) / (2 * q), a0 = 1 + al;
+      const b0 = al / a0, b2 = -al / a0, a1 = -2 * Math.cos(w) / a0, a2 = (1 - al) / a0;
+      const i0 = Math.floor(t0 * sr), cnt = Math.floor((dur + 0.02) * sr);
+      for (const [ch, gp] of [[L, gl], [Rr, gr]]) {
+        let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+        for (let i = 0; i < cnt && i0 + i < ch.length; i++) {
+          const ti = i / sr;
+          // inviluppo: rampa 2 ms, poi decadimento esponenziale fino a 0,0005 a fine goccia
+          const env = ti < 0.002 ? peak * ti / 0.002 : peak * Math.pow(0.0005 / peak, (ti - 0.002) / Math.max(dur - 0.002, 1e-3));
+          const xn = (Math.random() - 0.5);
+          const y = b0 * xn + b2 * x2 - a1 * y1 - a2 * y2;
+          x2 = x1; x1 = xn; y2 = y1; y1 = y;
+          ch[i0 + i] += y * env * gp * 1.4;
+        }
+      }
+    }
+  }
+  return buf;
+}
+
 export function rain(ctx, kit, out, slice) {
   // fondo di pioggia con intensità che cambia (raffiche)
   const bed = kit.noise('pink');
@@ -204,27 +269,40 @@ export function rain(ctx, kit, out, slice) {
   const rumG = kit.gain(0.35);
   rum.connect(rlp).connect(rumG).connect(out);
   // gocce: grani brevi, frequenza, durata e posizione casuali
-  let intensity = 0.6;
-  kit.every(8, 25, () => { intensity = 0.35 + Math.random() * 0.6; });
-  grainLoop(ctx, kit, (t) => {
-    const n = Math.random() < intensity ? 1 + Math.floor(Math.random() * 3 * intensity) : 0;
-    for (let k = 0; k < n; k++) {
-      const tt = t + Math.random() * 0.025;
-      const src = ctx.createBufferSource();
-      src.buffer = slice;
-      const f = kit.filter('bandpass', 1400 + Math.random() * 4200, 1.5 + Math.random() * 5);
-      const g = ctx.createGain();
-      const big = Math.random() < 0.08;
-      const peak = (big ? 0.5 : 0.12) * (0.4 + Math.random() * 0.6);
-      const dur = (big ? 0.06 : 0.015) + Math.random() * 0.04;
-      g.gain.setValueAtTime(0, tt);
-      g.gain.linearRampToValueAtTime(peak, tt + 0.002);
-      g.gain.exponentialRampToValueAtTime(0.0005, tt + dur);
-      const p = kit.pan(Math.random() * 2 - 1);
-      src.connect(f).connect(g).connect(p).connect(out);
-      src.start(tt, Math.random() * 6, dur + 0.02);
-    }
-  });
+  const swings = [[0, 0.6]]; // [tempo, intensità]: serve la storia perché offline gli eventi sono pianificati in anticipo
+  kit.every(8, 25, (t) => { swings.push([t, 0.35 + Math.random() * 0.6]); if (!kit.off && swings.length > 3) swings.shift(); });
+  const intensityAt = (t) => {
+    let intensity = swings[0][1];
+    for (const [ts, v] of swings) { if (ts <= t) intensity = v; else break; }
+    return intensity;
+  };
+  if (kit.off) {
+    // offline: migliaia di grani come nodi sarebbero lentissimi da renderizzare; li sommo in un solo buffer
+    const src = ctx.createBufferSource();
+    src.buffer = rainGrains(ctx, kit.off.len, intensityAt);
+    src.connect(out);
+    src.start(0);
+  } else {
+    grainLoop(ctx, kit, (t) => {
+      const n = Math.random() < intensityAt(t) ? 1 + Math.floor(Math.random() * 3 * intensityAt(t)) : 0;
+      for (let k = 0; k < n; k++) {
+        const tt = t + Math.random() * 0.025;
+        const src = ctx.createBufferSource();
+        src.buffer = slice;
+        const f = kit.filter('bandpass', 1400 + Math.random() * 4200, 1.5 + Math.random() * 5);
+        const g = ctx.createGain();
+        const big = Math.random() < 0.08;
+        const peak = (big ? 0.5 : 0.12) * (0.4 + Math.random() * 0.6);
+        const dur = (big ? 0.06 : 0.015) + Math.random() * 0.04;
+        g.gain.setValueAtTime(0, tt);
+        g.gain.linearRampToValueAtTime(peak, tt + 0.002);
+        g.gain.exponentialRampToValueAtTime(0.0005, tt + dur);
+        const p = kit.pan(Math.random() * 2 - 1);
+        src.connect(f).connect(g).connect(p).connect(out);
+        src.start(tt, Math.random() * 6, dur + 0.02);
+      }
+    });
+  }
   // gocciolio dalla grondaia: qualche "plic" intonato
   kit.every(2.5, 7, (t) => {
     const o = ctx.createOscillator();
@@ -259,6 +337,7 @@ export function waves(ctx, kit, out) {
     lp.frequency.exponentialRampToValueAtTime(1800 * size, t + swell);
     lp.frequency.exponentialRampToValueAtTime(500, t + swell + 3);
     const g = ctx.createGain();
+    g.gain.value = 0; // prima di t è muta (offline il nodo esiste da subito)
     g.gain.setValueAtTime(0.0001, t);
     g.gain.exponentialRampToValueAtTime(0.9 * size, t + swell);
     g.gain.exponentialRampToValueAtTime(0.0001, t + swell + 4.5);
@@ -267,11 +346,12 @@ export function waves(ctx, kit, out) {
     const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 1800;
     const wl = ctx.createBiquadFilter(); wl.type = 'lowpass'; wl.frequency.value = 6000;
     const wg = ctx.createGain();
+    wg.gain.value = 0;
     wg.gain.setValueAtTime(0.0001, t + swell * 0.9);
     wg.gain.exponentialRampToValueAtTime(0.25 * size, t + swell + 0.4);
     wg.gain.exponentialRampToValueAtTime(0.0001, t + swell + 5.5);
     washSrc.connect(hp); hp.connect(wl).connect(wg).connect(p);
-    setTimeout(() => { try { swellSrc.disconnect(lp); washSrc.disconnect(hp); p.disconnect(); } catch { /* */ } }, (swell + 6) * 1000);
+    kit.later(() => { try { swellSrc.disconnect(lp); washSrc.disconnect(hp); p.disconnect(); } catch { /* */ } }, (swell + 6) * 1000);
   });
 }
 
@@ -299,12 +379,13 @@ export function car(ctx, kit, out) {
     const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 0.8;
     bp.frequency.setValueAtTime(500, t); bp.frequency.linearRampToValueAtTime(900, t + 1.5); bp.frequency.linearRampToValueAtTime(400, t + 3.2);
     const g = ctx.createGain();
+    g.gain.value = 0;
     g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.35, t + 1.5); g.gain.exponentialRampToValueAtTime(0.0001, t + 3.4);
     const p = kit.pan(0);
     const dir = Math.random() < 0.5 ? -1 : 1;
     if (p.pan) { p.pan.setValueAtTime(-0.9 * dir, t); p.pan.linearRampToValueAtTime(0.9 * dir, t + 3.2); }
     pass.connect(bp); bp.connect(g).connect(p).connect(out);
-    setTimeout(() => { try { pass.disconnect(bp); } catch { /* */ } }, 3600);
+    kit.later(() => { try { pass.disconnect(bp); } catch { /* */ } }, 3600);
   });
   // piccoli sobbalzi
   kit.every(6, 14, (t) => {
@@ -353,32 +434,40 @@ export function womb(ctx, kit, out) {
   const flp = kit.filter('lowpass', 420, 0.6);
   const flowG = kit.gain(0.05);
   flow.connect(flp).connect(flowG).connect(out);
-  let alive = true;
-  let next = ctx.currentTime + 0.2;
-  const beat = () => {
-    if (!alive) return;
-    while (next < ctx.currentTime + 0.5) {
-      const t = next;
-      const rate = 64 + Math.random() * 8; // variabilità del battito
-      [0, 0.28].forEach((off, k) => {
-        const o = ctx.createOscillator();
-        o.frequency.setValueAtTime(k ? 58 : 50, t + off);
-        o.frequency.exponentialRampToValueAtTime(30, t + off + 0.16);
-        const g = ctx.createGain();
-        g.gain.setValueAtTime(0, t + off);
-        g.gain.linearRampToValueAtTime(k ? 0.32 : 0.48, t + off + 0.015);
-        g.gain.exponentialRampToValueAtTime(0.001, t + off + 0.24);
-        o.connect(g).connect(out); o.start(t + off); o.stop(t + off + 0.26);
-      });
-      flowG.gain.setValueAtTime(0.05, t);
-      flowG.gain.linearRampToValueAtTime(0.32, t + 0.12);
-      flowG.gain.exponentialRampToValueAtTime(0.05, t + 0.6);
-      next += 60 / rate;
-    }
-    setTimeout(beat, 100);
+  const thump = (t) => {
+    [0, 0.28].forEach((off, k) => {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(k ? 58 : 50, t + off);
+      o.frequency.exponentialRampToValueAtTime(30, t + off + 0.16);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0, t + off);
+      g.gain.linearRampToValueAtTime(k ? 0.32 : 0.48, t + off + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.001, t + off + 0.24);
+      o.connect(g).connect(out); o.start(t + off); o.stop(t + off + 0.26);
+    });
+    flowG.gain.setValueAtTime(0.05, t);
+    flowG.gain.linearRampToValueAtTime(0.32, t + 0.12);
+    flowG.gain.exponentialRampToValueAtTime(0.05, t + 0.6);
   };
-  beat();
-  kit.stops.push(() => { alive = false; });
+  if (kit.off) {
+    // offline: battiti con variabilità, ma la sequenza si chiude esattamente su D (periodica):
+    // nella dissolvenza del loop i battiti coincidono e non si sdoppiano
+    const { len, D } = kit.off;
+    const n = Math.round(D / (60 / 68));
+    const iv = Array.from({ length: n }, () => 60 / (64 + Math.random() * 8));
+    const k = D / iv.reduce((a, b) => a + b, 0);
+    let t = 0.2;
+    const times = iv.map((x) => { const r = t; t += x * k; return r; });
+    for (const r of times) for (let c = 0; r + c * D < len; c++) thump(r + c * D);
+    return;
+  }
+  let next = ctx.currentTime + 0.2;
+  kit.ahead(0.5, 100, (limit) => {
+    while (next < limit) {
+      thump(next);
+      next += 60 / (64 + Math.random() * 8); // variabilità del battito
+    }
+  });
 }
 
 export function shush(ctx, kit, out) {
@@ -395,11 +484,9 @@ export function shush(ctx, kit, out) {
   const blp = kit.filter('bandpass', 900, 0.6);
   const benv = kit.gain(0);
   breath.connect(blp).connect(benv).connect(out);
-  let alive = true;
   let next = ctx.currentTime + 0.2;
-  const tick = () => {
-    if (!alive) return;
-    while (next < ctx.currentTime + 1) {
+  kit.ahead(1, 200, (limit) => {
+    while (next < limit) {
       const t = next;
       const dur = 0.8 + Math.random() * 1.1;
       const lvl = 0.55 + Math.random() * 0.35;
@@ -414,8 +501,5 @@ export function shush(ctx, kit, out) {
       benv.gain.exponentialRampToValueAtTime(0.0001, t + dur + gap);
       next = t + dur + gap;
     }
-    setTimeout(tick, 200);
-  };
-  tick();
-  kit.stops.push(() => { alive = false; });
+  });
 }
