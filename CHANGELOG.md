@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.7.0 — 9 novembre 2026
+- 8 nuove schede su emozioni e comportamento (0–12 anni): genitorialità positiva, dare un nome alle emozioni, ansia da separazione, morsi e aggressività, come lodare, calmare con gli schermi, temperamento, benessere dei genitori (con avvisi urgenti); livello delle prove dichiarato.
+
 ## 1.6.0 — 9 novembre 2026
 - app estesa fino a 12 anni (fase 1: età, curve OMS di altezza fino a 12 anni, peso fino a 10 e BMI)
 

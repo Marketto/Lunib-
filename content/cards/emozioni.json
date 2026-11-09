@@ -646,5 +646,753 @@
         "Частая агрессия, которая не проходит, или воспитатели сообщают о серьёзных трудностях."
       ]
     }
+  },
+  {
+    "id": "genitorialita-positiva",
+    "category": "emozioni",
+    "ageFrom": 24,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "alta",
+    "sources": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "B30",
+      "B31"
+    ],
+    "it": {
+      "title": "Genitorialità positiva: attenzione, lodi e regole",
+      "summary": "I programmi per genitori basati su attenzione, regole chiare e rinforzo positivo hanno effetti da piccoli a moderati sul comportamento: l'OMS li raccomanda con forza (certezza delle prove moderata). Parte dei dati però viene da genitori e da autori legati ai programmi.",
+      "keywords": [
+        "genitorialità positiva",
+        "corso per genitori",
+        "parent training",
+        "triple p",
+        "incredible years",
+        "regole",
+        "disciplina positiva",
+        "comportamento",
+        "ignorare",
+        "time out",
+        "lodi",
+        "attenzione",
+        "supporto genitori"
+      ],
+      "research": [
+        {
+          "t": "L'OMS (2023) raccomanda con forza di rendere accessibili a tutti i genitori programmi basati sull'evidenza e sulla teoria dell'apprendimento sociale, di gruppo o individuali, per bambini di 2–10 anni; la certezza delle prove è moderata per maltrattamento, genitorialità positiva e comportamenti esternalizzanti, bassa per i problemi interiorizzati e per lo stress dei genitori.",
+          "from": 24,
+          "to": 120
+        },
+        "Una meta-analisi su 101 studi e 16.099 famiglie (Sanders 2014) ha trovato per il programma Triple P effetti da piccoli a moderati: d=0,47 sugli esiti dei bambini, d=0,58 sulle pratiche dei genitori, d=0,50 sul comportamento osservato dei bambini.",
+        "Una revisione sistematica (Wilson 2012) invita alla cautela: in 32 studi su 33 c'erano autori legati al programma, con rischio di distorsione elevato.",
+        "Una meta-analisi su 50 studi (Menting 2013) sul programma Incredible Years riporta un effetto complessivo di d=0,27 sui comportamenti dirompenti; gli effetti più grandi (d=0,50 negli studi di trattamento) derivano da valutazioni dei genitori.",
+        {
+          "t": "Una meta-analisi su 24 studi con bambini di 3–12 anni (Thomas e Zimmer-Gembeck 2007) ha trovato gli effetti maggiori nelle valutazioni riferite dai genitori.",
+          "from": 36,
+          "to": 144
+        },
+        "Per le punizioni fisiche vedi la scheda dedicata (Sege 2018; Gershoff e Grogan-Kaylor 2016)."
+      ],
+      "tips": [
+        "Dai attenzione e lode ai comportamenti che vuoi vedere più spesso; descrivi cosa ha fatto: \"Hai aspettato il tuo turno\".",
+        "Per le piccole scorrettezze senza rischi, ignorare per breve tempo può bastare (AAP).",
+        "Il time-out è l'ultima risorsa, non la prima (AAP).",
+        "Poche regole chiare e coerenti, dette in positivo.",
+        "Se vuoi un sostegno in più, chiedi al pediatra o al consultorio quali corsi per genitori sono disponibili vicino a te."
+      ]
+    },
+    "ru": {
+      "title": "Позитивное родительство: внимание, похвала и правила",
+      "summary": "Программы для родителей, основанные на внимании, чётких правилах и положительном подкреплении, дают эффекты от малых до умеренных для поведения: ВОЗ настоятельно рекомендует такие программы (достоверность данных умеренная). Но часть данных получена от самих родителей и от авторов, связанных с программами.",
+      "keywords": [
+        "позитивное родительство",
+        "курсы для родителей",
+        "тренинг для родителей",
+        "triple p",
+        "incredible years",
+        "правила",
+        "позитивная дисциплина",
+        "поведение",
+        "игнорировать",
+        "тайм-аут",
+        "похвала",
+        "внимание",
+        "поддержка родителей"
+      ],
+      "research": [
+        {
+          "t": "ВОЗ (2023) настоятельно рекомендует сделать доступными для всех родителей программы, основанные на доказательствах и теории социального научения, групповые или индивидуальные, для детей 2–10 лет; достоверность данных умеренная для жестокого обращения, позитивного родительства и экстернализирующего поведения и низкая для интернализирующих проблем и стресса родителей.",
+          "from": 24,
+          "to": 120
+        },
+        "Метаанализ 101 исследования и 16 099 семей (Sanders, 2014) выявил для программы Triple P эффекты от малых до умеренных: d=0,47 по показателям детей, d=0,58 по родительским практикам, d=0,50 по наблюдаемому поведению детей.",
+        "Систематический обзор (Wilson, 2012) призывает к осторожности: в 32 из 33 исследований были авторы, связанные с программой, при высоком риске систематической ошибки.",
+        "Метаанализ 50 исследований (Menting, 2013) программы Incredible Years сообщает об общем эффекте d=0,27 по деструктивному поведению; самые большие эффекты (d=0,50 в исследованиях лечения) основаны на оценках родителей.",
+        {
+          "t": "Метаанализ 24 исследований с детьми 3–12 лет (Thomas, Zimmer-Gembeck, 2007) выявил наибольшие эффекты в оценках, данных родителями.",
+          "from": 36,
+          "to": 144
+        },
+        "О физических наказаниях см. отдельную карточку (Sege, 2018; Gershoff, Grogan-Kaylor, 2016)."
+      ],
+      "tips": [
+        "Уделяйте внимание и хвалите то поведение, которое хотите видеть чаще; описывайте, что ребёнок сделал: «Ты дождался своей очереди».",
+        "Мелкие проступки без риска можно ненадолго проигнорировать (AAP).",
+        "Тайм-аут — последнее средство, а не первое (AAP).",
+        "Мало правил, чётких и последовательных, в позитивной форме.",
+        "Если нужна дополнительная поддержка, спросите у педиатра или в семейной консультации, какие курсы для родителей есть рядом с вами."
+      ]
+    }
+  },
+  {
+    "id": "emozioni-nome",
+    "category": "emozioni",
+    "ageFrom": 24,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "E7",
+      "E8"
+    ],
+    "it": {
+      "title": "Dare un nome alle emozioni",
+      "summary": "Un programma per genitori che insegna ad accogliere e nominare le emozioni dei figli ha dato risultati promettenti in uno studio controllato su bambini di 4–5 anni. Prove di livello medio: le prove vengono soprattutto da uno studio controllato, e le tabelle per età non esistono.",
+      "keywords": [
+        "emozioni",
+        "dare un nome alle emozioni",
+        "coaching emotivo",
+        "tuning in to kids",
+        "rabbia",
+        "tristezza",
+        "consolare",
+        "accogliere i sentimenti",
+        "parlare di emozioni",
+        "regolazione emotiva"
+      ],
+      "research": [
+        {
+          "t": "Uno studio controllato (Wilson 2012) su 128 genitori (62 nel programma) di bambini di da 4 anni a 5 anni e 11 mesi, con 6 incontri e un follow-up di circa 7 mesi, ha trovato che i genitori del programma erano meno svalutanti e facevano più \"coaching emotivo\"; i problemi di comportamento riferiti dai genitori sono calati più che nella lista d'attesa.",
+          "from": 48,
+          "to": 72
+        },
+        {
+          "t": "Nello stesso studio (Wilson 2012) la competenza sociale valutata dalle maestre è migliorata in entrambi i gruppi, quindi per questo esito non c'è una differenza chiara a favore del programma.",
+          "from": 48,
+          "to": 72
+        },
+        "Uno studio precedente in comunità (Havighurst 2010) conferma i risultati sui genitori; qui è una conferma secondaria.",
+        "Non esiste una tabella per età sulla regolazione delle emozioni: ogni bambino ha i suoi tempi."
+      ],
+      "tips": [
+        "Nomina l'emozione che vedi: \"Sei deluso perché è finito il gioco\".",
+        "Accogli prima il sentimento, poi, se serve, metti il limite al comportamento: \"Capisco che sei arrabbiato; non si tirano i giochi\".",
+        "Accogliere e nominare le emozioni è ciò che i genitori hanno imparato a fare nel programma studiato: puoi provarci a piccoli passi."
+      ]
+    },
+    "ru": {
+      "title": "Назвать эмоцию по имени",
+      "summary": "Программа для родителей, которая учит принимать и называть эмоции детей, дала многообещающие результаты в контролируемом исследовании с детьми 4–5 лет. Доказательства среднего уровня: данные получены в основном из одного контролируемого исследования, а таблиц по возрасту не существует.",
+      "keywords": [
+        "эмоции",
+        "называть эмоции",
+        "эмоциональный коучинг",
+        "tuning in to kids",
+        "гнев",
+        "грусть",
+        "утешать",
+        "принимать чувства",
+        "разговор об эмоциях",
+        "регуляция эмоций"
+      ],
+      "research": [
+        {
+          "t": "Контролируемое исследование (Wilson, 2012) с 128 родителями (62 в программе) детей от 4 лет до 5 лет 11 месяцев, 6 занятий и последующее наблюдение около 7 месяцев, показало, что родители из программы реже обесценивали чувства и чаще применяли «эмоциональный коучинг»; проблемы поведения по оценке родителей снизились больше, чем в группе ожидания.",
+          "from": 48,
+          "to": 72
+        },
+        {
+          "t": "В том же исследовании (Wilson, 2012) социальная компетентность по оценке воспитателей улучшилась в обеих группах, поэтому по этому показателю чёткого преимущества программы нет.",
+          "from": 48,
+          "to": 72
+        },
+        "Более раннее исследование в сообществе (Havighurst, 2010) подтверждает результаты по родителям; здесь это вторичное подтверждение.",
+        "Таблицы по возрасту для регуляции эмоций не существует: у каждого ребёнка свой темп."
+      ],
+      "tips": [
+        "Называйте эмоцию, которую видите: «Ты расстроен, потому что игра закончилась».",
+        "Сначала примите чувство, потом при необходимости поставьте границу поведению: «Понимаю, что ты злишься; игрушки бросать нельзя».",
+        "Принимать и называть эмоции — этому учились родители в изученной программе: можно пробовать маленькими шагами."
+      ]
+    }
+  },
+  {
+    "id": "separazione",
+    "category": "emozioni",
+    "ageFrom": 4,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "E9",
+      "E10"
+    ],
+    "it": {
+      "title": "Ansia da separazione e attaccamento",
+      "summary": "Piangere o agitarsi quando ti allontani è una fase comune dello sviluppo. Un saluto breve e coerente e piccole separazioni esercitate aiutano (indicazioni AAP); un attaccamento sicuro è associato a un migliore sviluppo sociale.",
+      "keywords": [
+        "ansia da separazione",
+        "separazione",
+        "piange quando esco",
+        "attaccamento",
+        "saluto",
+        "distacco",
+        "non mi lascia",
+        "mamma",
+        "papà",
+        "nido",
+        "scuola materna",
+        "legame"
+      ],
+      "research": [
+        {
+          "t": "Secondo l'AAP l'ansia da separazione può iniziare già a 4–5 mesi.",
+          "from": 4,
+          "to": 6
+        },
+        {
+          "t": "Secondo l'AAP diventa più marcata verso i 9 mesi.",
+          "from": 8,
+          "to": 12
+        },
+        {
+          "t": "Secondo l'AAP può ripresentarsi a 15–18 mesi.",
+          "from": 15,
+          "to": 18
+        },
+        "L'AAP indica che oltre l'età prescolare è raro che sia presente ogni giorno.",
+        "Una meta-analisi (Groh 2017) associa un attaccamento sicuro a una migliore competenza sociale e a meno problemi esternalizzanti e interiorizzati: è un'associazione, senza cifre qui riportate."
+      ],
+      "tips": [
+        "Usa un rituale di saluto breve e sempre uguale.",
+        "Al momento del saluto dagli tutta la tua attenzione, poi vai.",
+        "Mantieni le promesse: torna sempre quando hai detto che saresti tornato.",
+        "Esercitati con separazioni brevi, allungandole poco alla volta.",
+        "Spiega il tempo con parole da bambino: \"Torno dopo la merenda\"."
+      ],
+      "redFlags": [
+        "Se il bambino non riesce ad adattarsi alle separazioni, parlane col pediatra.",
+        "Se il disagio resta quotidiano oltre l'età prescolare, parlane col pediatra."
+      ]
+    },
+    "ru": {
+      "title": "Тревога разлуки и привязанность",
+      "summary": "Плач или беспокойство, когда вы уходите, — распространённый этап развития. Помогают короткое и последовательное прощание и небольшие тренировочные разлуки (рекомендации AAP); надёжная привязанность связана с лучшим социальным развитием.",
+      "keywords": [
+        "тревога разлуки",
+        "разлука",
+        "плачет когда ухожу",
+        "привязанность",
+        "прощание",
+        "расставание",
+        "не отпускает",
+        "мама",
+        "папа",
+        "ясли",
+        "детский сад",
+        "связь"
+      ],
+      "research": [
+        {
+          "t": "По данным AAP, тревога разлуки может начаться уже в 4–5 месяцев.",
+          "from": 4,
+          "to": 6
+        },
+        {
+          "t": "По данным AAP, она становится заметнее около 9 месяцев.",
+          "from": 8,
+          "to": 12
+        },
+        {
+          "t": "По данным AAP, она может вернуться в 15–18 месяцев.",
+          "from": 15,
+          "to": 18
+        },
+        "AAP указывает, что после дошкольного возраста она редко бывает ежедневной.",
+        "Метаанализ (Groh, 2017) связывает надёжную привязанность с лучшей социальной компетентностью и меньшим числом экстернализирующих и интернализирующих проблем: это связь, цифры здесь не приводятся."
+      ],
+      "tips": [
+        "Используйте короткий и всегда одинаковый ритуал прощания.",
+        "Во время прощания уделите ребёнку всё внимание, потом уходите.",
+        "Выполняйте обещания: возвращайтесь всегда, когда обещали.",
+        "Тренируйтесь на коротких разлуках, понемногу удлиняя их.",
+        "Объясняйте время понятными ребёнку словами: «Вернусь после полдника»."
+      ],
+      "redFlags": [
+        "Если ребёнок не может привыкнуть к разлукам, обсудите это с педиатром.",
+        "Если тревога остаётся ежедневной и после дошкольного возраста, обсудите это с педиатром."
+      ]
+    }
+  },
+  {
+    "id": "aggressivita",
+    "category": "emozioni",
+    "ageFrom": 12,
+    "ageTo": 144,
+    "alert": "pediatra",
+    "evidence": "moderata",
+    "sources": [
+      "E11",
+      "E12",
+      "E13",
+      "E6"
+    ],
+    "it": {
+      "title": "Morsi, spinte e aggressività",
+      "summary": "Spingere, mordere e picchiare è frequente nei più piccoli e di solito cala con la crescita. Prove di livello medio, basate soprattutto su questionari ai genitori. Alcuni segnali meritano però un confronto col pediatra.",
+      "keywords": [
+        "morde",
+        "morsi",
+        "spinge",
+        "spinte",
+        "picchia",
+        "aggressività",
+        "tira i capelli",
+        "graffia",
+        "lancia oggetti",
+        "rabbia",
+        "fa male agli altri",
+        "aggressivo"
+      ],
+      "research": [
+        {
+          "t": "Uno studio su 2.253 bambini (Alink 2006, dati riferiti dai genitori) ha trovato che l'aggressività fisica aumenta nel secondo anno di vita.",
+          "from": 12,
+          "to": 24
+        },
+        {
+          "t": "Nello stesso studio (Alink 2006) l'aggressività fisica diminuisce dal terzo compleanno.",
+          "from": 36,
+          "to": 50
+        },
+        "Uno studio su 504 bambini seguiti a 17, 30 e 42 mesi (Tremblay 2004) ha distinto circa il 28% con aggressività molto bassa, il 58% modesta e il 14% alta.",
+        {
+          "t": "Uno studio su 10.658 bambini di 2–11 anni (Côté 2006) ha distinto tre gruppi: 31% a livello basso in calo, 52% moderato in calo, 17% alto e stabile. L'appartenenza al gruppo alto e stabile è associata all'essere maschio (OR 1,67) e a una genitorialità ostile o inefficace (OR 1,16): è un'associazione, non una prova di causa.",
+          "from": 24,
+          "to": 132
+        }
+      ],
+      "tips": [
+        "Insegna le parole: \"Dillo con le parole: voglio il giocattolo\" (AAP).",
+        "Separalo per un momento dall'altro bambino finché si calma (AAP).",
+        "Coinvolgilo in un'altra attività per aiutarlo a calmarsi (AAP).",
+        "Loda la gentilezza quando la vedi (AAP).",
+        "Resta calmo: tu sei il suo modello (AAP)."
+      ],
+      "redFlags": [
+        "Aggressività insolita che dura più di qualche settimana.",
+        "Si fa male o fa male agli altri causando lesioni.",
+        "Attacca gli adulti.",
+        "Viene mandato a casa da scuola o dal nido.",
+        "Temi per la sicurezza degli altri."
+      ]
+    },
+    "ru": {
+      "title": "Укусы, толчки и агрессия",
+      "summary": "Толкаться, кусаться и драться у малышей — частое явление, которое обычно идёт на убыль с возрастом. Доказательства среднего уровня, в основном по опросам родителей. Но некоторые признаки стоит обсудить с педиатром.",
+      "keywords": [
+        "кусается",
+        "укусы",
+        "толкается",
+        "толчки",
+        "дерётся",
+        "агрессия",
+        "дёргает за волосы",
+        "царапается",
+        "бросает предметы",
+        "гнев",
+        "делает больно другим",
+        "агрессивный"
+      ],
+      "research": [
+        {
+          "t": "Исследование 2253 детей (Alink, 2006, данные от родителей) показало, что физическая агрессия растёт на втором году жизни.",
+          "from": 12,
+          "to": 24
+        },
+        {
+          "t": "В том же исследовании (Alink, 2006) физическая агрессия снижается с третьего дня рождения.",
+          "from": 36,
+          "to": 50
+        },
+        "Исследование 504 детей, обследованных в 17, 30 и 42 месяца (Tremblay, 2004), выделило около 28% с очень низкой агрессией, 58% с умеренной и 14% с высокой.",
+        {
+          "t": "Исследование 10 658 детей 2–11 лет (Côté, 2006) выделило три группы: 31% с низким снижающимся уровнем, 52% с умеренным снижающимся, 17% с высоким стабильным. Принадлежность к группе высокого стабильного уровня связана с мужским полом (OR 1,67) и с враждебным или неэффективным родительством (OR 1,16): это связь, а не доказательство причины.",
+          "from": 24,
+          "to": 132
+        }
+      ],
+      "tips": [
+        "Учите слова: «Скажи словами: хочу игрушку» (AAP).",
+        "На время отделите его от другого ребёнка, пока он не успокоится (AAP).",
+        "Переключите его на другое занятие, чтобы помочь успокоиться (AAP).",
+        "Хвалите доброту, когда её видите (AAP).",
+        "Сохраняйте спокойствие: вы для него пример (AAP)."
+      ],
+      "redFlags": [
+        "Необычная агрессия, которая длится дольше нескольких недель.",
+        "Он причиняет вред себе или другим, есть травмы.",
+        "Нападает на взрослых.",
+        "Его отправляют домой из школы или яслей.",
+        "Вы опасаетесь за безопасность других."
+      ]
+    }
+  },
+  {
+    "id": "lodi",
+    "category": "emozioni",
+    "ageFrom": 12,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "moderata",
+    "sources": [
+      "E14",
+      "E15",
+      "E16"
+    ],
+    "it": {
+      "title": "Come lodare",
+      "summary": "Le ricerche suggeriscono di lodare l'impegno e le strategie più delle qualità fisse della persona. Prove di livello medio: un esperimento a breve termine, e studi di associazione su famiglie.",
+      "keywords": [
+        "lodi",
+        "lodare",
+        "complimenti",
+        "bravo",
+        "impegno",
+        "motivazione",
+        "autostima",
+        "mentalità di crescita",
+        "narcisismo",
+        "premiare",
+        "incoraggiare"
+      ],
+      "research": [
+        "In 6 studi su 412 bambini di quinta elementare (Mueller e Dweck 1998), dopo un insuccesso i bambini lodati per l'intelligenza hanno insistito meno, si sono divertiti meno e hanno reso peggio. Sono esperimenti di breve durata.",
+        {
+          "t": "Uno studio su 53 famiglie (Gunderson 2013) ha trovato che le lodi al processo (impegno, strategie) ricevute a 14–38 mesi predicevano una mentalità di crescita a 7–8 anni; le lodi alla persona non risultavano associate a una mentalità fissa. È un'associazione.",
+          "from": 14,
+          "to": 38
+        },
+        {
+          "t": "Uno studio su 565 bambini di 7–12 anni seguiti in 4 rilevazioni (Brummelman 2015) ha trovato che la sopravvalutazione dei genitori prediceva il narcisismo e il calore dei genitori prediceva l'autostima. È un'associazione prospettica, non prova di causa.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Descrivi l'impegno o la strategia: \"Hai provato in tanti modi finché ci sei riuscito\".",
+        "Quando riesce, lodare l'impegno invece di dire «sei intelligente» può aiutarlo ad affrontare meglio gli insuccessi successivi (Mueller e Dweck 1998, esperimenti a breve termine).",
+        "Accompagna le lodi con calore e affetto."
+      ]
+    },
+    "ru": {
+      "title": "Как хвалить",
+      "summary": "Исследования предлагают хвалить усилие и стратегии больше, чем неизменные качества человека. Доказательства среднего уровня: краткосрочный эксперимент и исследования связи в семьях.",
+      "keywords": [
+        "похвала",
+        "хвалить",
+        "комплименты",
+        "молодец",
+        "усилие",
+        "мотивация",
+        "самооценка",
+        "установка на рост",
+        "нарциссизм",
+        "награждать",
+        "поощрять"
+      ],
+      "research": [
+        "В 6 исследованиях с 412 пятиклассниками (Mueller, Dweck, 1998) после неудачи дети, которых хвалили за ум, меньше упорствовали, получали меньше удовольствия и выполняли задание хуже. Это краткосрочные эксперименты.",
+        {
+          "t": "Исследование 53 семей (Gunderson, 2013) показало, что похвала за процесс (усилие, стратегии) в 14–38 месяцев предсказывала установку на рост в 7–8 лет; похвала личности не была связана с фиксированной установкой. Это связь.",
+          "from": 14,
+          "to": 38
+        },
+        {
+          "t": "Исследование 565 детей 7–12 лет, обследованных в 4 волнах (Brummelman, 2015), показало, что завышенная оценка со стороны родителей предсказывала нарциссизм, а родительское тепло предсказывало самооценку. Это проспективная связь, а не доказательство причины.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Описывайте усилие или стратегию: «Ты пробовал разными способами, пока не получилось».",
+        "Когда получилось, хвалите усилие, а не «ты умный»: это может помочь легче переносить последующие неудачи (Mueller, Dweck, 1998, краткосрочные эксперименты).",
+        "Сопровождайте похвалу теплом и лаской."
+      ]
+    }
+  },
+  {
+    "id": "calmare-schermi",
+    "category": "emozioni",
+    "ageFrom": 36,
+    "ageTo": 72,
+    "alert": "none",
+    "evidence": "bassa",
+    "sources": [
+      "E17"
+    ],
+    "it": {
+      "title": "Calmare con telefono o tablet",
+      "summary": "Capita di usare lo schermo per calmare un bambino di 3–5 anni. Un solo studio, con prove deboli, lo associa a più reattività emotiva dopo alcuni mesi: è un'associazione e non dimostra che sia la causa. Sotto i 2 anni valgono le regole sugli schermi.",
+      "keywords": [
+        "calmare",
+        "telefono",
+        "tablet",
+        "schermo",
+        "capricci",
+        "rabbia",
+        "reattività emotiva",
+        "distrarre",
+        "cellulare",
+        "regolazione emotiva",
+        "tv"
+      ],
+      "research": [
+        {
+          "t": "Uno studio su 422 coppie genitore-bambino di 3–5 anni (Radesky 2023) ha trovato che usare i dispositivi per calmare, all'inizio e a 3 mesi, era associato a maggiore reattività emotiva a 6 mesi (associazione piccola, r circa 0,20). Il percorso inverso non era significativo. L'associazione era più forte nei maschi e nei bambini con più \"surgency\" (un tratto del temperamento). I dati sono riferiti dai genitori; prove deboli.",
+          "from": 36,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Quando puoi, prova prima altri modi di calmare: un abbraccio, nominare l'emozione, una pausa insieme.",
+        "Niente panico se a volte usi lo schermo: lo studio è un'associazione, non dice che un uso occasionale faccia danni.",
+        "Sotto i 2 anni valgono le regole della scheda sugli schermi."
+      ]
+    },
+    "ru": {
+      "title": "Успокаивать с помощью телефона или планшета",
+      "summary": "Иногда ребёнка 3–5 лет успокаивают с помощью экрана. Одно исследование, со слабыми доказательствами, связывает это с большей эмоциональной реактивностью через несколько месяцев: это связь, и она не доказывает причину. До 2 лет действуют правила об экранах.",
+      "keywords": [
+        "успокоить",
+        "телефон",
+        "планшет",
+        "экран",
+        "капризы",
+        "гнев",
+        "эмоциональная реактивность",
+        "отвлечь",
+        "смартфон",
+        "регуляция эмоций",
+        "телевизор"
+      ],
+      "research": [
+        {
+          "t": "Исследование 422 пар родитель–ребёнок 3–5 лет (Radesky, 2023) показало, что использование устройств для успокоения в начале и через 3 месяца было связано с большей эмоциональной реактивностью через 6 месяцев (небольшая связь, r около 0,20). Обратный путь не был значимым. Связь была сильнее у мальчиков и у детей с более высоким «surgency» (чертой темперамента). Данные получены от родителей; доказательства слабые.",
+          "from": 36,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Когда можете, сначала пробуйте другие способы успокоить: объятия, назвать эмоцию, пауза вместе.",
+        "Не паникуйте, если иногда используете экран: исследование показывает связь и не говорит, что эпизодическое использование вредит.",
+        "До 2 лет действуют правила из карточки об экранах."
+      ]
+    }
+  },
+  {
+    "id": "temperamento",
+    "category": "emozioni",
+    "ageFrom": 0,
+    "ageTo": 144,
+    "alert": "none",
+    "evidence": "bassa",
+    "sources": [
+      "E18",
+      "E19"
+    ],
+    "it": {
+      "title": "Temperamento: ogni bambino è diverso",
+      "summary": "Ogni bambino ha un suo modo di reagire fin dalla nascita. Le prove sono deboli e in parte descrittive: servono per adattare le aspettative, non per etichettare il bambino.",
+      "keywords": [
+        "temperamento",
+        "carattere",
+        "timido",
+        "vivace",
+        "sensibile",
+        "intenso",
+        "adattabilità",
+        "irrequieto",
+        "difficile",
+        "personalità",
+        "reattivo",
+        "sensibilità"
+      ],
+      "research": [
+        "L'AAP descrive almeno 9 tratti di temperamento, come livello di attività, intensità, adattabilità, avvicinamento o ritiro, umore, capacità di attenzione, distraibilità, regolarità e soglia sensoriale; sono in gran parte innati ma possono essere modificati. Prove deboli e descrittive.",
+        "Una revisione teorica (Belsky e Pluess 2009) propone che alcuni bambini, per esempio quelli con temperamenti più reattivi, siano più sensibili sia alla genitorialità negativa sia a quella positiva; le prove sono correlazionali e quindi deboli."
+      ],
+      "tips": [
+        "Osserva il suo modo di reagire a novità, rumori e cambiamenti, e adatta le tue aspettative (AAP).",
+        "Un temperamento non è un difetto: non serve etichettare il bambino.",
+        "Se ti sembra difficile, parlane con il pediatra."
+      ]
+    },
+    "ru": {
+      "title": "Темперамент: каждый ребёнок особенный",
+      "summary": "У каждого ребёнка с рождения свой способ реагировать. Доказательства слабые и отчасти описательные: они помогают скорректировать ожидания, а не навешивать ярлыки.",
+      "keywords": [
+        "темперамент",
+        "характер",
+        "застенчивый",
+        "живой",
+        "чувствительный",
+        "интенсивный",
+        "адаптивность",
+        "беспокойный",
+        "трудный",
+        "личность",
+        "реактивный",
+        "чувствительность"
+      ],
+      "research": [
+        "AAP описывает не менее 9 черт темперамента, например уровень активности, интенсивность, адаптивность, приближение или избегание, настроение, продолжительность внимания, отвлекаемость, регулярность и сенсорный порог; они в значительной мере врождённые, но могут изменяться. Доказательства слабые и описательные.",
+        "Теоретический обзор (Belsky, Pluess, 2009) предполагает, что некоторые дети, например с более реактивным темпераментом, могут быть более чувствительны как к негативному, так и к позитивному родительству; данные корреляционные, а потому слабые."
+      ],
+      "tips": [
+        "Наблюдайте, как он реагирует на новое, шум и перемены, и корректируйте свои ожидания (AAP).",
+        "Темперамент — не недостаток: ярлыки навешивать не нужно.",
+        "Если вам кажется, что с ним трудно, обсудите это с педиатром."
+      ]
+    }
+  },
+  {
+    "id": "benessere-genitori",
+    "category": "emozioni",
+    "ageFrom": 0,
+    "ageTo": 144,
+    "alert": "urgente",
+    "evidence": "alta",
+    "sources": [
+      "E20",
+      "E21",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26",
+      "E27"
+    ],
+    "it": {
+      "title": "Il benessere dei genitori",
+      "summary": "Stanchezza, tristezza o ansia dopo la nascita di un figlio sono più comuni di quanto si pensi e riguardano anche i papà. Chiedere aiuto è utile e legittimo; esistono strumenti di screening e linee guida italiane. Prove forti, ma lo screening non è una diagnosi.",
+      "keywords": [
+        "depressione post partum",
+        "baby blues",
+        "tristezza",
+        "ansia",
+        "stanchezza",
+        "papà",
+        "genitori",
+        "benessere",
+        "edinburgh",
+        "EPDS",
+        "salute mentale",
+        "pensieri brutti",
+        "psicosi",
+        "aiuto"
+      ],
+      "research": [
+        {
+          "t": "L'AAP (Earls 2019) riporta che l'11–18% delle donne ha sintomi depressivi dopo il parto e raccomanda lo screening alle visite di 1, 2, 4 e 6 mesi; un punteggio EPDS di 10 o più suggerisce una possibile depressione, ma è uno screening e non una diagnosi.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "La psicosi post partum riguarda 1–2 parti su 1.000, di solito nelle prime 4 settimane, e richiede cure immediate (Earls 2019).",
+          "from": 0,
+          "to": 2
+        },
+        "Una meta-analisi mondiale (Wang 2021, 565 studi) stima il 17,2% di depressione post partum, più bassa nei paesi ad alto reddito.",
+        "Una meta-analisi (Paulson e Bazemore 2010) stima nei padri, tra gravidanza e primo anno, il 10,4% (8,5–12,7), con il picco a 3–6 mesi dopo il parto (25,6%); la correlazione con la depressione materna è moderata (r=0,31).",
+        "Una meta-analisi (Goodman 2011) trova associazioni piccole ma significative tra depressione materna e problemi nei figli: è un'associazione, non una prova di causa.",
+        "L'Edinburgh Postnatal Depression Scale (Cox 1987) ha 10 domande e richiede circa 5 minuti.",
+        "La task force USPSTF (Curry 2019) assegna grado B al counselling per chi ha un rischio aumentato di depressione perinatale.",
+        "Le linee guida dell'ISS RISEUP-PPD (dicembre 2023) contengono 48 raccomandazioni su prevenzione, screening e trattamento; l'ISS stima che circa 1 donna su 5 abbia problemi di salute mentale perinatali."
+      ],
+      "tips": [
+        "Parlane con il pediatra, il medico di famiglia, l'ostetrica o il consultorio: i controlli dopo il parto servono anche a questo.",
+        "Se vuoi, compila un questionario come l'EPDS (10 domande, circa 5 minuti) e portalo al medico: è uno screening, non una diagnosi.",
+        "Anche i papà possono avere sintomi: vale per entrambi i genitori.",
+        "Accetta l'aiuto di chi ti sta vicino e non restare solo con i pensieri."
+      ],
+      "redFlags": [
+        "Tristezza, ansia o perdita di interesse che durano e interferiscono con la vita quotidiana o con la cura del bambino: parlane con un medico.",
+        "Un punteggio EPDS di 10 o più: parlane con un medico. Se rispondi sì alla domanda sul farti del male, è urgente anche con punteggio basso: vedi sotto."
+      ],
+      "urgent": [
+        "Pensieri di farti del male o di fare del male al bambino: chiama subito il 112 (numero gratuito di emergenza europeo, attivo insieme al 118 in Italia). Non restare solo.",
+        "Confusione o allucinazioni, soprattutto nelle prime settimane dopo il parto: chiama subito il 112. Non restare solo.",
+        "Paura per la tua sicurezza o per quella del bambino: chiama subito il 112. Non restare solo."
+      ]
+    },
+    "ru": {
+      "title": "Благополучие родителей",
+      "summary": "Усталость, грусть или тревога после рождения ребёнка встречаются чаще, чем принято думать, и касаются также пап. Просить о помощи — полезно и нормально; есть инструменты скрининга и итальянские рекомендации. Доказательства убедительные, но скрининг — не диагноз.",
+      "keywords": [
+        "послеродовая депрессия",
+        "бэби-блюз",
+        "грусть",
+        "тревога",
+        "усталость",
+        "папа",
+        "родители",
+        "благополучие",
+        "эдинбургская шкала",
+        "EPDS",
+        "психическое здоровье",
+        "плохие мысли",
+        "психоз",
+        "помощь"
+      ],
+      "research": [
+        {
+          "t": "AAP (Earls, 2019) сообщает, что у 11–18% женщин после родов есть депрессивные симптомы, и рекомендует скрининг на визитах в 1, 2, 4 и 6 месяцев; балл EPDS 10 или выше говорит о возможной депрессии, но это скрининг, а не диагноз.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Послеродовый психоз встречается в 1–2 случаях на 1000 родов, обычно в первые 4 недели, и требует немедленной помощи (Earls, 2019).",
+          "from": 0,
+          "to": 2
+        },
+        "Мировой метаанализ (Wang, 2021, 565 исследований) оценивает послеродовую депрессию в 17,2%, ниже в странах с высоким доходом.",
+        "Метаанализ (Paulson, Bazemore, 2010) оценивает депрессию у отцов в период беременности и первого года в 10,4% (8,5–12,7) с пиком через 3–6 месяцев после родов (25,6%); корреляция с депрессией матери умеренная (r=0,31).",
+        "Метаанализ (Goodman, 2011) выявляет небольшие, но значимые связи между депрессией матери и проблемами у детей: это связь, а не доказательство причины.",
+        "Эдинбургская шкала послеродовой депрессии (Cox, 1987) содержит 10 вопросов, заполнение занимает около 5 минут.",
+        "Рабочая группа USPSTF (Curry, 2019) присваивает степень B консультированию для тех, у кого повышен риск перинатальной депрессии.",
+        "Рекомендации ISS RISEUP-PPD (декабрь 2023) содержат 48 рекомендаций по профилактике, скринингу и лечению; по оценке ISS, около 1 женщины из 5 имеет перинатальные проблемы с психическим здоровьем."
+      ],
+      "tips": [
+        "Поговорите с педиатром, семейным врачом, акушеркой или в семейной консультации: послеродовые осмотры нужны и для этого.",
+        "При желании заполните опросник вроде EPDS (10 вопросов, около 5 минут) и покажите врачу: это скрининг, а не диагноз.",
+        "Симптомы могут быть и у пап: это касается обоих родителей.",
+        "Принимайте помощь близких и не оставайтесь наедине с мыслями."
+      ],
+      "redFlags": [
+        "Грусть, тревога или потеря интереса, которые не проходят и мешают повседневной жизни или уходу за ребёнком: обсудите это с врачом.",
+        "Балл EPDS 10 или выше: обсудите это с врачом. Если вы ответили «да» на вопрос о причинении себе вреда, это срочно даже при низком балле: см. ниже."
+      ],
+      "urgent": [
+        "Мысли причинить вред себе или ребёнку: немедленно звоните 112 (бесплатный европейский номер экстренной помощи, в Италии работает наряду с 118). Не оставайтесь одни.",
+        "Спутанность сознания или галлюцинации, особенно в первые недели после родов: немедленно звоните 112. Не оставайтесь одни.",
+        "Страх за свою безопасность или безопасность ребёнка: немедленно звоните 112. Не оставайтесь одни."
+      ]
+    }
   }
 ]

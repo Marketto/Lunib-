@@ -933,5 +933,140 @@
     "label": "CDC. Milestone checklists – Key points",
     "url": "https://www.cdc.gov/act-early/milestones/key-points.html",
     "type": "ente sanitario"
+  },
+  "E1": {
+    "label": "WHO. Guidelines on parenting interventions to prevent maltreatment and enhance parent-child relationships with children aged 0-17 years. 2023",
+    "url": "https://www.who.int/publications/i/item/9789240065505",
+    "type": "linea guida"
+  },
+  "E2": {
+    "label": "Sanders MR, Kirby JN, Tellegen CL, Day JJ. The Triple P-Positive Parenting Program: a systematic review and meta-analysis of a multi-level system of parenting support. Clin Psychol Rev. 2014;34(4):337-357",
+    "url": "https://doi.org/10.1016/j.cpr.2014.04.003",
+    "type": "meta-analisi"
+  },
+  "E3": {
+    "label": "Wilson P, et al. How evidence-based is an 'evidence-based parenting program'? A PRISMA systematic review and meta-analysis of Triple P. BMC Med. 2012;10:130",
+    "url": "https://doi.org/10.1186/1741-7015-10-130",
+    "type": "revisione sistematica"
+  },
+  "E4": {
+    "label": "Menting ATA, Orobio de Castro B, Matthys WCHJ. Effectiveness of the Incredible Years parent training to modify disruptive and prosocial child behavior: a meta-analytic review. Clin Psychol Rev. 2013;33:901-913",
+    "url": "https://doi.org/10.1016/j.cpr.2013.07.006",
+    "type": "meta-analisi"
+  },
+  "E5": {
+    "label": "Thomas R, Zimmer-Gembeck MJ. Behavioral outcomes of Parent-Child Interaction Therapy and Triple P-Positive Parenting Program: a review and meta-analysis. J Abnorm Child Psychol. 2007;35:475-495",
+    "url": "https://doi.org/10.1007/s10802-007-9104-9",
+    "type": "meta-analisi"
+  },
+  "E6": {
+    "label": "AAP HealthyChildren.org. Aggressive Behavior in Toddlers",
+    "url": "https://www.healthychildren.org/English/ages-stages/toddler/pages/Aggressive-Behavior.aspx",
+    "type": "ente sanitario"
+  },
+  "E7": {
+    "label": "Wilson KR, Havighurst SS, Harley AE. Tuning in to Kids: an effectiveness trial of a parenting program targeting emotion socialization of preschoolers. J Fam Psychol. 2012;26(1):56-65",
+    "url": "https://doi.org/10.1037/a0026480",
+    "type": "RCT"
+  },
+  "E8": {
+    "label": "Havighurst SS, Wilson KR, Harley AE, Prior MR, Kehoe C. Tuning in to Kids: improving emotion socialization practices in parents of preschool children - findings from a community trial. J Child Psychol Psychiatry. 2010;51(12):1342-1350",
+    "type": "studio sperimentale",
+    "url": "https://doi.org/10.1111/j.1469-7610.2010.02303.x"
+  },
+  "E9": {
+    "label": "AAP HealthyChildren.org. How to Ease Your Child's Separation Anxiety",
+    "url": "https://www.healthychildren.org/English/ages-stages/toddler/Pages/Soothing-Your-Childs-Separation-Anxiety.aspx",
+    "type": "ente sanitario"
+  },
+  "E10": {
+    "label": "Groh AM, Fearon RMP, van IJzendoorn MH, Bakermans-Kranenburg MJ, Roisman GI. Attachment in the early life course: meta-analytic evidence for its role in socioemotional development. Child Dev Perspect. 2017;11(1):70-76",
+    "url": "https://doi.org/10.1111/cdep.12213",
+    "type": "meta-analisi"
+  },
+  "E11": {
+    "label": "Alink LRA, et al. The early childhood aggression curve: development of physical aggression in 10- to 50-month-old children. Child Dev. 2006;77(4):954-966",
+    "url": "https://doi.org/10.1111/j.1467-8624.2006.00912.x",
+    "type": "studio longitudinale"
+  },
+  "E12": {
+    "label": "Tremblay RE, et al. Physical aggression during early childhood: trajectories and predictors. Pediatrics. 2004;114(1):e43-e50",
+    "url": "https://doi.org/10.1542/peds.114.1.e43",
+    "type": "studio longitudinale"
+  },
+  "E13": {
+    "label": "Côté S, et al. The development of physical aggression from toddlerhood to pre-adolescence: a nation wide longitudinal study of Canadian children. J Abnorm Child Psychol. 2006;34(1):68-82",
+    "type": "studio longitudinale",
+    "url": "https://doi.org/10.1007/s10802-005-9001-z"
+  },
+  "E14": {
+    "label": "Mueller CM, Dweck CS. Praise for intelligence can undermine children's motivation and performance. J Pers Soc Psychol. 1998;75(1):33-52",
+    "url": "https://doi.org/10.1037/0022-3514.75.1.33",
+    "type": "studio sperimentale"
+  },
+  "E15": {
+    "label": "Gunderson EA, et al. Parent praise to 1- to 3-year-olds predicts children's motivational frameworks 5 years later. Child Dev. 2013;84(5):1526-1541",
+    "url": "https://doi.org/10.1111/cdev.12064",
+    "type": "studio longitudinale"
+  },
+  "E16": {
+    "label": "Brummelman E, Thomaes S, Orobio de Castro B, Overbeek G, Bushman BJ. Origins of narcissism in children. PNAS. 2015;112(12):3659-3662",
+    "url": "https://doi.org/10.1073/pnas.1420870112",
+    "type": "studio longitudinale"
+  },
+  "E17": {
+    "label": "Radesky JS, Kaciroti N, Weeks HM, Schaller A, Miller AL. Longitudinal associations between use of mobile devices for calming and emotional reactivity and executive functioning in children aged 3 to 5 years. JAMA Pediatr. 2023;177(1):62-70",
+    "url": "https://doi.org/10.1001/jamapediatrics.2022.4793",
+    "type": "studio longitudinale"
+  },
+  "E18": {
+    "label": "AAP HealthyChildren.org. How to Understand Your Child's Temperament",
+    "url": "https://www.healthychildren.org/English/ages-stages/gradeschool/Pages/How-to-Understand-Your-Childs-Temperament.aspx",
+    "type": "ente sanitario"
+  },
+  "E19": {
+    "label": "Belsky J, Pluess M. Beyond diathesis stress: differential susceptibility to environmental influences. Psychol Bull. 2009;135(6):885-908",
+    "url": "https://doi.org/10.1037/a0017376",
+    "type": "revisione"
+  },
+  "E20": {
+    "label": "Earls MF, Yogman MW, Mattson G, Rafferty J; AAP. Incorporating recognition and management of perinatal depression into pediatric practice. Pediatrics. 2019;143(1):e20183259",
+    "url": "https://doi.org/10.1542/peds.2018-3259",
+    "type": "clinical report"
+  },
+  "E21": {
+    "label": "Wang Z, et al. Mapping global prevalence of depression among postpartum women. Transl Psychiatry. 2021;11:543",
+    "url": "https://doi.org/10.1038/s41398-021-01663-6",
+    "type": "meta-analisi"
+  },
+  "E22": {
+    "label": "Paulson JF, Bazemore SD. Prenatal and postpartum depression in fathers and its association with maternal depression: a meta-analysis. JAMA. 2010;303(19):1961-1969",
+    "url": "https://doi.org/10.1001/jama.2010.605",
+    "type": "meta-analisi"
+  },
+  "E23": {
+    "label": "Goodman SH, et al. Maternal depression and child psychopathology: a meta-analytic review. Clin Child Fam Psychol Rev. 2011;14(1):1-27",
+    "url": "https://doi.org/10.1007/s10567-010-0080-1",
+    "type": "meta-analisi"
+  },
+  "E24": {
+    "label": "Cox JL, Holden JM, Sagovsky R. Detection of postnatal depression: development of the 10-item Edinburgh Postnatal Depression Scale. Br J Psychiatry. 1987;150:782-786",
+    "url": "https://doi.org/10.1192/bjp.150.6.782",
+    "type": "studio di validazione"
+  },
+  "E25": {
+    "label": "Curry SJ, et al (USPSTF). Interventions to prevent perinatal depression. JAMA. 2019;321(6):580-587",
+    "url": "https://doi.org/10.1001/jama.2019.0007",
+    "type": "linea guida"
+  },
+  "E26": {
+    "label": "Istituto Superiore di Sanità. Linee guida RISEUP-PPD sulla depressione perinatale. Dicembre 2023",
+    "url": "https://www.epicentro.iss.it/materno/linee-guida-depressione-peripartum",
+    "type": "linea guida"
+  },
+  "E27": {
+    "label": "Dipartimento per le Politiche Europee. Il numero unico di emergenza europeo 112 (brochure)",
+    "url": "https://www.affarieuropei.gov.it/files/brochure112.pdf",
+    "type": "ente governativo"
   }
 }
