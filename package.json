@@ -1,6 +1,6 @@
 {
   "name": "lunibu",
-  "version": "1.12.0",
+  "version": "1.12.1",
   "description": "PoC: risposte scientifiche per genitori 0-12 anni, offline, IT/RU",
   "scripts": {
     "content": "node scripts/build-growth.mjs && node scripts/build-content.mjs",
@@ -8,6 +8,7 @@
     "build": "npm run content && vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "audio:render": "node scripts/render-audio.mjs",
     "check:secrets": "node scripts/check-secrets.mjs",
     "pretest": "node scripts/build-content.mjs"
   },

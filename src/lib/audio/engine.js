@@ -61,7 +61,7 @@ function makeChain(c) {
 export function getAnalyser() { return analyser; }
 
 // da chiamare all'apertura della sezione Suoni: prepara il motore prima del primo tocco
-export function prepare() { getContext(); }
+export function prepare() { if (typeof window !== 'undefined' && /[?&]debug/.test(window.location.search)) getContext(); }
 
 function realTrack(fn, level = 1, wet = 0) {
   const out = bus(level, wet);
@@ -620,17 +620,16 @@ function startMarimbaSong(melody, bpm) {
   return { out, stop };
 }
 
-// ---------- Rendering offline dei loop ----------
-// Il suono NON è più generato in tempo reale con i timer (che il browser rallenta a schermo spento):
-// ogni traccia è renderizzata una volta in un OfflineAudioContext, con la stessa sintesi e la stessa catena
-// master, e riprodotta come loop da un <audio> (nessun timer JS mentre suona).
+// ---------- Rendering dei loop (SOLO in fase di build: scripts/render-audio.mjs) ----------
+// Il suono NON è più sintetizzato sul telefono: ogni traccia è renderizzata una volta (npm run audio:render) con la
+// stessa sintesi e la stessa catena master in un OfflineAudioContext di Chromium, codificata in AAC (public/audio/*.m4a)
+// e riprodotta da un <audio> persistente: nessun timer, nessuna sintesi né rendering mentre suona (schermo spento ok).
 // Stessa frequenza di campionamento del contesto live: i generatori di rumore (bianco/rosa/bruno) dipendono
 // dal sample rate, con un altro rate cambierebbero timbro e volume rispetto alle tracce normalizzate.
-const TAIL = 6;        // secondi di coda per la giunzione del loop (riverbero + code delle note)
-const RANDOM_LOOP = 90; // durata dei loop non periodici (rumori, natura, note casuali)
-const CACHE_MAX = 3;   // loop tenuti in memoria (~17 MB ciascuno a 48 kHz)
+const TAIL = 6;         // secondi di coda per la giunzione del loop (riverbero + code delle note)
+const RANDOM_LOOP = 60; // durata dei loop non periodici (rumori, natura, note casuali)
 const AMBIENT = { id: '__ambient', start: () => startAmbient(0.45) };
-const loops = new Map(); // id -> Promise<{ url, env, dur, periodic }>
+export const AUDIO_FILE = (id) => (id === AMBIENT.id ? 'ambient' : id) + '.m4a';
 
 function loopSpec(track) {
   if (track.period) {
@@ -651,17 +650,16 @@ function buildGraph(track, off, spec, worklet) {
     reverb = makeReverb(3.2);
     reverb.connect(tracksIn);
     const h = track.start();
-    h.out.gain.value *= NORM[track.id] ?? 1; // stessa normalizzazione del live: loudness invariata
+    h.out.gain.value *= NORM[track.id] ?? 1; // normalizzazione incorporata: il file ha già il livello finale
   } finally {
     ({ ctx, tracksIn, reverb, OFF } = prev);
   }
 }
 
-const idle = () => new Promise((r) => setTimeout(r, 0)); // lascia respirare l'interfaccia
-
+// Usata dallo script di build (tramite window.__ppAudio.renderLoop, con ?debug)
 async function renderLoop(track) {
+  getContext();
   const OAC = window.OfflineAudioContext || window.webkitOfflineAudioContext;
-  if (!OAC) throw new Error('no OfflineAudioContext');
   const SR = live.sampleRate;
   const spec = loopSpec(track);
   const len = Math.round(spec.D * SR);
@@ -669,49 +667,29 @@ async function renderLoop(track) {
   const off = new OAC(2, len + xf, SR);
   const worklet = await R.prepareWorklet(off);
   buildGraph(track, off, spec, worklet);
-  const t0 = performance.now();
-  const rb = await off.startRendering(); // gira sul thread audio del browser
-  if (DEBUG) console.log('render', track.id, Math.round(performance.now() - t0), 'ms');
-  await idle();
+  const rb = await off.startRendering();
   const chans = makeLoop([rb.getChannelData(0), rb.getChannelData(1)], len, xf, spec.periodic);
-  await idle();
-  const env = envelope(chans, SR, 0.05);
-  const url = URL.createObjectURL(new Blob([encodeWav(chans, SR)], { type: 'audio/wav' }));
-  return { url, env, dur: spec.D, periodic: spec.periodic };
-}
-
-function getLoop(track) {
-  let p = loops.get(track.id);
-  if (p) { loops.delete(track.id); loops.set(track.id, p); return p; } // LRU
-  p = renderLoop(track).catch((e) => { loops.delete(track.id); throw e; });
-  loops.set(track.id, p);
-  while (loops.size > CACHE_MAX) {
-    const [oldId, old] = loops.entries().next().value;
-    if (oldId === current?.id) break;
-    loops.delete(oldId);
-    old.then((l) => { if (l.url !== curLoop?.url) URL.revokeObjectURL(l.url); }, () => {});
-  }
-  return p;
+  return { chans, sr: SR, dur: spec.D, periodic: spec.periodic };
 }
 
 // ---------- Player ----------
-// Regola: suona UNA sola cosa alla volta. Ogni avvio ferma tutto ciò che è attivo.
-// Fase 1 (subito): anteprima con il motore live. Fase 2 (a rendering finito): loop in <audio>, con dissolvenza incrociata.
+// Regola: suona UNA sola cosa alla volta. Un solo <audio> persistente, riusato per tutte le tracce.
+// Su tocco (dentro il gesto) src + play() sono sincroni. Il motore live resta solo come ripiego se il file non si carica.
 const DEBUG = typeof window !== 'undefined' && /[?&]debug/.test(window.location.search);
 const FADE_END_MS = 20000; // dissolvenza finale del timer
-const active = new Set();  // handle live in riproduzione o in dissolvenza
-let current = null;        // { id, ambient, handle, t0 }
-let token = 0;             // invalida i passaggi asincroni di un avvio superato
+const FADE_IN_MS = 1500;
+const active = new Set();  // handle live (solo ripiego) in riproduzione o in dissolvenza
+let current = null;        // { id, ambient, handle, live }
+let token = 0;
 let userVol = 0.35;
-let el = null, elGain = null, directVol = true;
+let el = null, elGain = null, directVol = null;
 let elFactor = 1;          // fattore di dissolvenza dell'elemento audio (0–1)
 let fadeAnim = null;       // { from, to, t0, dur, then }
-let curLoop = null;
+let curEnv = null;         // inviluppo del loop corrente (per le animazioni)
+let envData = null;
 let swapping = false, expectPause = false;
 let tickTimer = null;
 let timerEnd = 0, timerFadeStart = 0, timerCb = null, timerTimeout = null;
-let readyP = Promise.resolve();
-let silentUrl = null;
 const listeners = new Set();
 let titleOf = null;
 let lastPlay = null;
@@ -732,11 +710,11 @@ function kill(handle, sec = 0.8) {
   if (!handle || handle._dead) return;
   handle._dead = true;
   const g = handle.out.gain;
-  const now = ctx.currentTime;
+  const now = live.currentTime;
   g.cancelScheduledValues(now);
   g.setValueAtTime(Math.max(g.value, 0.0001), now);
   g.exponentialRampToValueAtTime(0.0001, now + sec);
-  try { handle.stop(); } catch { /* già fermo */ } // ferma subito i sequencer: niente nuove note
+  try { handle.stop(); } catch { /* già fermo */ }
   setTimeout(() => {
     try { handle.out.disconnect(); } catch { /* già scollegato */ }
     active.delete(handle);
@@ -745,13 +723,14 @@ function kill(handle, sec = 0.8) {
 
 function killLive(sec) { for (const h of active) kill(h, sec); }
 
-// --- elemento <audio> ---
-function once(target, ev, ms = 10000) {
-  return new Promise((res, rej) => {
-    const to = setTimeout(() => { target.removeEventListener(ev, h); rej(new Error('timeout ' + ev)); }, ms);
-    const h = () => { clearTimeout(to); res(); };
-    target.addEventListener(ev, h, { once: true });
-  });
+// iOS ignora HTMLMediaElement.volume: lì il volume passa dal grafo Web Audio (anche in ?debug, per l'analizzatore)
+function probeDirect() {
+  if (directVol == null) {
+    const t = new Audio();
+    t.volume = 0.5;
+    directVol = t.volume === 0.5 && !(DEBUG && !/[?&]direct/.test(window.location.search));
+  }
+  return directVol;
 }
 
 function ensureEl() {
@@ -760,29 +739,28 @@ function ensureEl() {
   el.loop = true;
   el.preload = 'auto';
   el.setAttribute('playsinline', '');
-  // iOS ignora HTMLMediaElement.volume: lì il volume passa dal grafo Web Audio (anche in ?debug, per l'analizzatore)
-  const t = new Audio();
-  t.volume = 0.5;
-  directVol = t.volume === 0.5 && !(DEBUG && !/[?&]direct/.test(window.location.search));
-  if (!directVol) {
+  if (!probeDirect()) {
     const c = getContext();
     elGain = c.createGain();
     c.createMediaElementSource(el).connect(elGain);
     elGain.connect(master);
+    master.gain.value = userVol;
   }
   el.addEventListener('timeupdate', stepEl); // scandito dall'orologio audio, non dai timer
+  el.addEventListener('playing', () => { swapping = false; });
   el.addEventListener('pause', () => {
-    if (expectPause || swapping || !current) return;
+    if (expectPause || swapping || !current || current.live) return;
     stop(); // pausa dal sistema (cuffie, chiamata, centro di controllo)
     notify(null);
   });
+  el.addEventListener('error', () => { if (current && !current.live) fallbackLive(); });
   return el;
 }
 
 function applyEl() {
   if (!el) return;
   if (directVol) el.volume = Math.max(0, Math.min(1, userVol * elFactor));
-  else elGain.gain.value = elFactor;
+  else if (elGain) elGain.gain.value = elFactor;
 }
 
 function fadeEl(to, sec, then) {
@@ -799,7 +777,7 @@ function pauseEl() {
 }
 
 // Passo di dissolvenza/timer calcolato sull'ora reale: se il browser ritarda i timer a schermo spento,
-// al passo successivo il volume salta semplicemente al valore giusto (niente notte intera di silenzio o di ritardo).
+// al passo successivo (anche 'timeupdate' dell'audio) il volume salta semplicemente al valore giusto.
 function stepEl() {
   const now = Date.now();
   if (fadeAnim) {
@@ -825,30 +803,35 @@ function finishTimer() {
   notify(null);
 }
 
-async function unlockEl() {
-  // dentro il gesto dell'utente: l'elemento parte con un secondo di silenzio, così i play successivi
-  // (a rendering finito) sono permessi anche su iOS e la sessione multimediale è già attiva
-  ensureEl();
-  if (!el.paused) return;
-  silentUrl = silentUrl || URL.createObjectURL(new Blob([encodeWav([new Float32Array(8000)], 8000)], { type: 'audio/wav' }));
+// Ripiego: il file non si carica (cache corrotta, formato non supportato): si usa il motore live
+function fallbackLive() {
+  const c = current;
+  if (!c || c.live) return;
+  const track = c.ambient ? AMBIENT : TRACKS.find((t) => t.id === c.id);
+  if (!track) return;
+  c.live = true;
   swapping = true;
-  el.src = silentUrl;
-  elFactor = 0; applyEl();
-  try { await el.play(); } catch { /* il prossimo gesto riproverà */ }
-  swapping = false;
+  try { el.pause(); el.removeAttribute('src'); el.load(); } catch { /* */ }
+  getContext();
+  master.gain.value = userVol;
+  const handle = track.start();
+  fadeIn(handle.out, handle.out.gain.value * (NORM[track.id] ?? 1), 1.5);
+  active.add(handle);
+  c.handle = handle;
 }
 
-async function startEl(loop, pos, fadeSec) {
-  swapping = true;
-  curLoop = loop;
-  el.src = loop.url;
-  el.loop = true;
-  await once(el, 'loadedmetadata');
-  try { el.currentTime = pos % loop.dur; } catch { /* */ }
-  elFactor = 0; applyEl();
-  await el.play();
-  swapping = false;
-  fadeEl(1, fadeSec);
+async function loadEnv(id, my) {
+  try {
+    if (!envData) {
+      const r = await fetch(new URL('audio/env.json', document.baseURI));
+      envData = await r.json();
+    }
+    const b = envData[AUDIO_FILE(id).replace('.m4a', '')];
+    if (b && my === token) {
+      const bin = atob(b);
+      curEnv = Float32Array.from(bin, (ch) => (ch.charCodeAt(0) / 255) * 0.5);
+    }
+  } catch { /* le animazioni ripiegano sull'analizzatore */ }
 }
 
 function setSession(track) {
@@ -871,47 +854,33 @@ function setSession(track) {
   for (const a of ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack']) set(a, null);
 }
 
+// Dentro il gesto dell'utente: tutto sincrono (src + play), nessun await prima di play()
 export function play(id, opts = {}) {
-  getContext(); // dentro il gesto: riprende il contesto live
   const track = opts.ambient ? AMBIENT : TRACKS.find((t) => t.id === id);
   if (!track) return;
   const my = ++token;
   clearTimeout(timerTimeout); timerEnd = 0; timerCb = null;
-  killLive(0.6);
-  const hadEl = el && !el.paused && curLoop && elFactor > 0;
-  if (hadEl) fadeEl(0, 0.5);
-  const waitOld = hadEl ? 550 : 0;
-  unlockEl();
+  killLive(0.3);
+  ensureEl();
+  if (!directVol) getContext(); // iOS/debug: riprende il contesto Web Audio nel gesto
   lastPlay = { id: track.id, opts: { ambient: !!opts.ambient } };
+  current = { id: track.id, ambient: !!opts.ambient, handle: null, live: false };
+  curEnv = null;
+  swapping = true;
+  elFactor = 0.02; applyEl();
+  el.src = new URL('audio/' + AUDIO_FILE(track.id), document.baseURI).href;
+  el.loop = true;
+  fadeAnim = { from: 0.02, to: 1, t0: Date.now(), dur: opts.ambient ? 3000 : FADE_IN_MS, then: null };
+  ensureTicker();
+  const p = el.play();
+  p?.catch((e) => {
+    if (my !== token) return;
+    if (e?.name === 'AbortError') return; // un altro play() ha sostituito la sorgente
+    if (e?.name === 'NotAllowedError') { stop(); notify(null); return; }
+    fallbackLive();
+  });
   setSession(track);
-  const fadeSec = opts.ambient ? 3 : 1.5;
-  const t0 = performance.now();
-  current = { id: track.id, ambient: !!opts.ambient, handle: null, t0 };
-  const cached = loops.has(track.id);
-  if (!cached) {
-    // anteprima live finché il loop non è pronto (pochi secondi)
-    const handle = track.start();
-    fadeIn(handle.out, handle.out.gain.value * (NORM[track.id] ?? 1), fadeSec);
-    active.add(handle);
-    current.handle = handle;
-  }
-  readyP = (async () => {
-    let loop;
-    try { loop = await getLoop(track); } catch { return; } // niente rendering offline: resta il motore live
-    await new Promise((r) => setTimeout(r, waitOld));
-    if (my !== token) return;
-    for (let n = 0; swapping && n < 100; n++) await idle(); // attende l'unlock
-    if (my !== token) return;
-    // melodie: la posizione nel loop segue quella dell'anteprima (stesse note, nessuna ripartenza)
-    // (la posizione u del loop corrisponde al tempo di rendering TAIL + u; la melodia parte a t = 0)
-    const e = cached ? 0 : (performance.now() - t0) / 1000 + 0.25;
-    const pos = loop.periodic ? (((e - TAIL) % loop.dur) + loop.dur) % loop.dur : Math.random() * loop.dur;
-    try {
-      await startEl(loop, pos, fadeSec);
-    } catch { swapping = false; return; }
-    if (my !== token) return;
-    if (current?.handle) { kill(current.handle, fadeSec); current.handle = null; }
-  })();
+  loadEnv(track.id, my);
 }
 
 export function stop() {
@@ -929,9 +898,8 @@ export function stop() {
 export function currentId() { return current && !current.ambient ? current.id : null; }
 
 export function setVolume(v) {
-  getContext();
   userVol = v;
-  master.gain.setTargetAtTime(v, live.currentTime, 0.1);
+  if (master) master.gain.setTargetAtTime(v, live.currentTime, 0.1);
   applyEl();
 }
 
@@ -950,7 +918,6 @@ export function setSleepTimer(minutes, onEnd) {
 
 // Musica di sottofondo dell'app: parte solo se non c'è un'altra traccia
 export function setAmbient(on) {
-  getContext();
   if (on && !current) play(AMBIENT.id, { ambient: true });
   else if (!on && current?.ambient) stop();
 }
@@ -960,9 +927,9 @@ export function ambientOn() { return !!current?.ambient; }
 // livello (0–1) per le animazioni che seguono il suono
 const buf = new Uint8Array(1024);
 export function level() {
-  if (el && !el.paused && curLoop && !swapping) {
+  if (el && !el.paused && curEnv && !swapping) {
     const i = Math.floor(el.currentTime / 0.05);
-    return Math.min(1, (curLoop.env[i] || 0) * userVol * elFactor * 4);
+    return Math.min(1, (curEnv[i % curEnv.length] || 0) * userVol * elFactor * 4);
   }
   if (!analyser) return 0;
   analyser.getByteTimeDomainData(buf);
@@ -978,11 +945,23 @@ export function level() {
 if (typeof window !== 'undefined' && /[?&]debug/.test(window.location.search)) {
   window.__ppAudio = {
     play, stop,
-    ready: () => readyP, // attende il loop renderizzato (per le misure)
-    cached: () => [...loops.keys()],
-    state: () => ({ paused: el ? el.paused : null, vol: el ? el.volume : null, factor: elFactor, pos: el ? el.currentTime : null, direct: directVol, current: current && current.id, live: active.size, mediaTitle: navigator.mediaSession?.metadata?.title }),
+    state: () => ({ paused: el ? el.paused : null, vol: el ? el.volume : null, factor: elFactor, pos: el ? el.currentTime : null, direct: directVol, current: current && current.id, live: active.size, src: el ? el.src : null, mediaTitle: navigator.mediaSession?.metadata?.title }),
     setSleepTimer, setVolume,
-    envOf: async (id) => Array.from((await loops.get(id)).env),
+    element: () => el,
+    tracks: () => TRACKS.map((t) => t.id).concat('__ambient'),
+    // per scripts/render-audio.mjs: loop senza giunzione (WAV 16 bit in base64) + inviluppo RMS a 20 Hz (uint8)
+    async renderLoop(id) {
+      const track = id === AMBIENT.id ? AMBIENT : TRACKS.find((t) => t.id === id);
+      const r = await renderLoop(track);
+      const wav = new Uint8Array(encodeWav(r.chans, r.sr));
+      let s = '';
+      for (let i = 0; i < wav.length; i += 0x8000) s += String.fromCharCode.apply(null, wav.subarray(i, i + 0x8000));
+      const env = envelope(r.chans, r.sr, 0.05);
+      const e8 = Uint8Array.from(env, (v) => Math.max(0, Math.min(255, Math.round((v / 0.5) * 255))));
+      let es = '';
+      for (const v of e8) es += String.fromCharCode(v);
+      return { wav: btoa(s), env: btoa(es), sr: r.sr, dur: r.dur, periodic: r.periodic };
+    },
     measure() {
       const ctx = live;
       const n = analyser.frequencyBinCount;

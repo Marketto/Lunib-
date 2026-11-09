@@ -46,7 +46,9 @@ export default defineConfig({
       workbox: {
         // App shell + indici + blocchi di contenuto: tutto disponibile offline.
         // I blocchi vengono comunque caricati in memoria solo quando servono (lazy load).
-        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2}'],
+        // Anche i loop audio pre-renderizzati (public/audio/*.m4a, ~14 MB): niente rete, niente sintesi sul telefono.
+        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2,m4a}'],
+        importScripts: ['sw-audio.js'], // risposte 206 (Range) per l'elemento <audio> dalla cache
         navigateFallback: 'index.html'
       }
     })

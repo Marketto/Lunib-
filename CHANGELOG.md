@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.12.1 — 10 novembre 2026
+- Suoni: i loop sono ora file audio già pronti (nessuna sintesi né anteprima sul telefono), avviati al tocco: la ninna nanna parte subito pulita e continua a schermo spento.
+
 ## 1.12.0 — 9 novembre 2026
 - Suoni e musiche preparati in anticipo e riprodotti come un normale audio: niente più gracchi a schermo spento, comandi dalla schermata di blocco, timer e dissolvenza affidabili anche in background.
 
