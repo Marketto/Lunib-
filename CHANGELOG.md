@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.12.2 — 11 novembre 2026
+- Nuova icona dell'app: sfondo a tutto campo (niente più "quadrato nel quadrato"), luna, stella e nuvola dentro l'area sicura di Android/iOS.
+
 ## 1.12.1 — 10 novembre 2026
 - Suoni: i loop sono ora file audio già pronti (nessuna sintesi né anteprima sul telefono), avviati al tocco: la ninna nanna parte subito pulita e continua a schermo spento.
 
