@@ -8,6 +8,7 @@
     </radialGradient>
   </defs>
   <rect width="512" height="512" fill="url(#bg)"/>
+  <g transform="translate(256 252) scale(1.17) translate(-256 -252)">
   <circle cx="232" cy="250" r="170" fill="url(#glow)"/>
   <g fill="#fff6d6">
     <circle cx="150" cy="128" r="4"/><circle cx="372" cy="150" r="5"/><circle cx="392" cy="262" r="3.5"/><circle cx="128" cy="330" r="3.5"/>
@@ -29,4 +30,5 @@
   <!-- nuvola -->
   <g transform="translate(6 6)" fill="#cfd5ef"><circle cx="300" cy="360" r="34"/><circle cx="342" cy="338" r="46"/><circle cx="384" cy="366" r="30"/><rect x="266" y="356" width="148" height="44" rx="22"/></g>
   <g fill="#ffffff"><circle cx="300" cy="360" r="34"/><circle cx="342" cy="338" r="46"/><circle cx="384" cy="366" r="30"/><rect x="266" y="356" width="148" height="44" rx="22"/></g>
+  </g>
 </svg>

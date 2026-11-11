@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.12.3 — 11 novembre 2026
+- Icona: luna e stella più grandi nella versione arrotondata (iPhone e icone non ritagliate); la versione ritagliata da Android resta nell'area sicura.
+
 ## 1.12.2 — 11 novembre 2026
 - Nuova icona dell'app: sfondo a tutto campo (niente più "quadrato nel quadrato"), luna, stella e nuvola dentro l'area sicura di Android/iOS.
 
