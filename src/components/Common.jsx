@@ -13,9 +13,9 @@ export const tap = { whileTap: { scale: 0.95 }, transition: spring };
 
 export function LangSwitch({ lang, setLang }) {
   return (
-    <div className="lang-switch" role="group" aria-label="Lingua / Язык">
-      {[['it', 'Italiano'], ['ru', 'Русский']].map(([l, label]) => (
-        <motion.button key={l} className={lang === l ? 'on' : ''} onClick={() => setLang(l)} {...tap}>
+    <div className="lang-switch" role="group" aria-label="Lingua / Язык / Language">
+      {[['it', 'Italiano'], ['ru', 'Русский'], ['en', 'English']].map(([l, label]) => (
+        <motion.button key={l} lang={l} aria-pressed={lang === l} className={lang === l ? 'on' : ''} onClick={() => setLang(l)} {...tap}>
           {lang === l && <motion.i layoutId="ls-bg" className="ls-bg" transition={spring} />}
           <span>{label}</span>
         </motion.button>

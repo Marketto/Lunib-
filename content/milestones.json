@@ -19,6 +19,10 @@
       "ru": {
         "title": "Время на животике каждый день",
         "info": "ВОЗ 2019: для малышей, которые ещё не передвигаются, не менее 30 минут в день на животике в бодрствовании, в течение дня (сильная рекомендация, доказательства очень низкого качества)."
+      },
+      "en": {
+        "title": "Tummy time every day",
+        "info": "WHO 2019: for infants who are not yet mobile, at least 30 minutes a day on the tummy while awake, spread across the day (strong recommendation, very low-quality evidence)."
       }
     },
     {
@@ -39,6 +43,9 @@
       "ru": {
         "title": "Переворачивается с животика на спинку"
       },
+      "en": {
+        "title": "Rolls from tummy to back"
+      },
       "quote": "Rolls from tummy to back (6 months)"
     },
     {
@@ -57,6 +64,9 @@
       },
       "ru": {
         "title": "Сидит без опоры"
+      },
+      "en": {
+        "title": "Sits without support"
       }
     },
     {
@@ -75,6 +85,9 @@
       },
       "ru": {
         "title": "Стоит с опорой"
+      },
+      "en": {
+        "title": "Stands with support"
       }
     },
     {
@@ -95,6 +108,10 @@
       "ru": {
         "title": "Ползает (на руках и коленях)",
         "info": "В исследовании ВОЗ окно составляет от 5,2 до 13,5 месяца, но не все дети ползают (4,3% не ползали никогда): поэтому предупреждений нет."
+      },
+      "en": {
+        "title": "Crawls (hands and knees)",
+        "info": "In the WHO study the window runs from 5.2 to 13.5 months, but not all children crawl (4.3% never did): that is why there are no warnings."
       }
     },
     {
@@ -113,6 +130,9 @@
       },
       "ru": {
         "title": "Ходит с опорой"
+      },
+      "en": {
+        "title": "Walks with support"
       }
     },
     {
@@ -131,6 +151,9 @@
       },
       "ru": {
         "title": "Стоит самостоятельно"
+      },
+      "en": {
+        "title": "Stands alone"
       }
     },
     {
@@ -149,6 +172,9 @@
       },
       "ru": {
         "title": "Ходит самостоятельно"
+      },
+      "en": {
+        "title": "Walks alone"
       }
     },
     {
@@ -168,6 +194,9 @@
       },
       "ru": {
         "title": "Оборачивается, когда его зовут по имени"
+      },
+      "en": {
+        "title": "Looks when you call their name"
       },
       "quote": "Looks when you call her name (9 months)"
     },
@@ -189,6 +218,9 @@
       "ru": {
         "title": "Машет рукой на прощание"
       },
+      "en": {
+        "title": "Waves bye-bye"
+      },
       "quote": "Waves bye-bye (1 year)"
     },
     {
@@ -208,6 +240,9 @@
       },
       "ru": {
         "title": "Пытается сказать 1–2 слова, кроме «мама» и «папа»"
+      },
+      "en": {
+        "title": "Tries to say 1–2 words besides mama and dada"
       },
       "quote": "Tries to say one or two words besides mama or dada (15 months)"
     },
@@ -229,6 +264,9 @@
       "ru": {
         "title": "Показывает пальцем на интересное, чтобы показать вам"
       },
+      "en": {
+        "title": "Points to show you something interesting"
+      },
       "quote": "Points to show you something interesting (18 months)"
     },
     {
@@ -248,6 +286,9 @@
       },
       "ru": {
         "title": "Соединяет два слова (например, «ещё молока»)"
+      },
+      "en": {
+        "title": "Puts two words together (e.g. \"more milk\")"
       },
       "quote": "Says at least two words together (2 years)"
     },
@@ -269,6 +310,9 @@
       "ru": {
         "title": "Говорит около 50 слов"
       },
+      "en": {
+        "title": "Says about 50 words"
+      },
       "quote": "Says about 50 words (30 months)"
     },
     {
@@ -288,6 +332,9 @@
       },
       "ru": {
         "title": "Говорит так, что окружающие почти всегда понимают"
+      },
+      "en": {
+        "title": "Is understood by others most of the time"
       },
       "quote": "Talks well enough for others to understand, most of the time (3 years)"
     },
@@ -309,6 +356,9 @@
       "ru": {
         "title": "Замечает других детей и присоединяется к игре"
       },
+      "en": {
+        "title": "Notices other children and joins them to play"
+      },
       "quote": "Notices other children and joins them to play (3 years)"
     },
     {
@@ -329,6 +379,9 @@
       "ru": {
         "title": "Рассказывает историю как минимум из двух событий"
       },
+      "en": {
+        "title": "Tells a story with at least two events"
+      },
       "quote": "Tells a story she heard or made up with at least two events (5 years)"
     },
     {
@@ -348,6 +401,9 @@
       },
       "ru": {
         "title": "Следует правилам или ждёт своей очереди в играх"
+      },
+      "en": {
+        "title": "Follows rules or takes turns when playing games"
       },
       "quote": "Follows rules or takes turns when playing games with other children (5 years)"
     },
@@ -371,11 +427,16 @@
         "title": "Начало прикорма",
         "info": "ESPGHAN: прикорм не раньше 4 месяцев (17 недель) и не позже 6 месяцев (26 недель). ВОЗ: с 6 месяцев."
       },
+      "en": {
+        "title": "Starting solids (complementary feeding)",
+        "info": "ESPGHAN: complementary foods not before 4 months (17 weeks) and not later than 6 months (26 weeks). WHO: from 6 months."
+      },
       "note": {
         "at": 6.5,
         "level": "talk",
         "it": "ESPGHAN consiglia di non ritardare oltre i 6 mesi (26 settimane); l'OMS indica di iniziare a 6 mesi: parlane con il pediatra.",
-        "ru": "ESPGHAN советует не откладывать прикорм дольше 6 месяцев (26 недель); ВОЗ рекомендует начинать в 6 месяцев: поговорите с педиатром."
+        "ru": "ESPGHAN советует не откладывать прикорм дольше 6 месяцев (26 недель); ВОЗ рекомендует начинать в 6 месяцев: поговорите с педиатром.",
+        "en": "ESPGHAN advises not delaying beyond 6 months (26 weeks); the WHO advises starting at 6 months: talk to your pediatrician."
       }
     },
     {
@@ -398,6 +459,10 @@
       "ru": {
         "title": "Яйцо и арахис (в безопасной форме) в первый год, без отсрочки",
         "info": "ESPGHAN: нет данных, что откладывание аллергенных продуктов после 4 месяцев снижает риск аллергии. При тяжёлой экземе или аллергии на яйцо раннее введение арахиса нужно обсудить с педиатром или аллергологом (NIAID). Никогда не давайте целый арахис до 5 лет: риск удушья."
+      },
+      "en": {
+        "title": "Egg and peanuts (in a safe form) in the first year, without delaying them",
+        "info": "ESPGHAN: there is no evidence that delaying allergenic foods beyond 4 months reduces the risk of allergy. With severe eczema or egg allergy, early introduction of peanuts should be evaluated with the pediatrician or allergist (NIAID). Never whole peanuts before age 5: choking risk."
       }
     },
     {
@@ -416,6 +481,9 @@
       },
       "ru": {
         "title": "Предложить чашку"
+      },
+      "en": {
+        "title": "Offering a cup"
       },
       "quote": "Ideally, this transition will begin around 6 months, when you offer your child a cup for the first time."
     },
@@ -436,12 +504,16 @@
       "ru": {
         "title": "Отказ от бутылочки"
       },
+      "en": {
+        "title": "Giving up the bottle"
+      },
       "quote": "completing the transition sometime between 12 and 18 months",
       "note": {
         "at": 18,
         "level": "tip",
         "it": "L'AAP consiglia di lasciare il biberon tra 12 e 18 mesi.",
-        "ru": "AAP советует отказаться от бутылочки между 12 и 18 месяцами."
+        "ru": "AAP советует отказаться от бутылочки между 12 и 18 месяцами.",
+        "en": "The AAP advises giving up the bottle between 12 and 18 months."
       }
     },
     {
@@ -462,6 +534,10 @@
       "ru": {
         "title": "В комнате родителей, но в своей кроватке",
         "info": "AAP 2022: спать в комнате родителей, рядом с их кроватью, но на отдельной поверхности, предназначенной для младенцев, в идеале не менее первых 6 месяцев."
+      },
+      "en": {
+        "title": "In the parents' room, but in their own crib or bassinet",
+        "info": "AAP 2022: sleeping in the parents' room, close to their bed but on a separate surface designed for infants, ideally for at least the first 6 months."
       }
     },
     {
@@ -482,6 +558,10 @@
       "ru": {
         "title": "Зубная щётка с фторсодержащей пастой с появления первого зуба",
         "info": "AAP: с первого зуба, количество размером с рисовое зёрнышко до 3 лет, затем с горошину."
+      },
+      "en": {
+        "title": "Toothbrush with fluoride toothpaste from the first tooth",
+        "info": "AAP: from the first tooth, an amount the size of a grain of rice up to age 3, then a pea-sized amount."
       }
     },
     {
@@ -501,12 +581,16 @@
       "ru": {
         "title": "Первый визит к стоматологу"
       },
+      "en": {
+        "title": "First dentist visit"
+      },
       "quote": "See your child's dentist by their first birthday or within six months of their first tooth.",
       "note": {
         "at": 12,
         "level": "talk",
         "it": "Prenota la prima visita dal dentista (AAP: entro il primo compleanno o entro 6 mesi dal primo dente).",
-        "ru": "Запишитесь на первый визит к стоматологу (AAP: до первого дня рождения или в течение 6 месяцев после первого зуба)."
+        "ru": "Запишитесь на первый визит к стоматологу (AAP: до первого дня рождения или в течение 6 месяцев после первого зуба).",
+        "en": "Book the first dentist visit (AAP: by the first birthday or within 6 months of the first tooth)."
       }
     },
     {
@@ -528,6 +612,10 @@
       "ru": {
         "title": "Признаки готовности к горшку",
         "info": "Обычно признаки контроля мочевого пузыря и кишечника появляются между 18 и 24 месяцами; до трети детей готовы только к 30 месяцам. Приучение к горшку обычно начинается в 2–3 года."
+      },
+      "en": {
+        "title": "Signs of readiness for the potty",
+        "info": "Signs of bladder and bowel control usually appear between 18 and 24 months; up to one child in three is ready only around 30 months. Potty training usually starts between ages 2 and 3."
       }
     },
     {
@@ -551,11 +639,16 @@
         "title": "Сухой днём",
         "info": "Многие дети остаются сухими днём примерно к 3 годам. Если к 5 годам этого нет, это нетипично и требует оценки. Если после 2 лет ребёнок мочится и днём, и ночью, хотя чувствует позыв и пользуется горшком, поговорите с педиатром, не дожидаясь 5 лет (NICE)."
       },
+      "en": {
+        "title": "Dry during the day",
+        "info": "Many children are dry during the day around age 3. Not being dry by age 5 is unusual and should be evaluated. If after age 2 a child wets both day and night despite recognizing the urge and using the potty, talk to the pediatrician even before age 5 (NICE)."
+      },
       "note": {
         "at": 60,
         "level": "talk",
         "it": "A 5 anni non essere ancora asciutto di giorno è insolito e va valutato: parlane con il pediatra.",
-        "ru": "Отсутствие дневного контроля к 5 годам нетипично и требует оценки: поговорите с педиатром."
+        "ru": "Отсутствие дневного контроля к 5 годам нетипично и требует оценки: поговорите с педиатром.",
+        "en": "At age 5, not being dry during the day yet is unusual and should be evaluated: talk to your pediatrician."
       }
     },
     {
@@ -577,11 +670,16 @@
         "title": "Сухой ночью",
         "info": "NICE: обычно ожидается, что дети остаются сухими ночью к возрасту развития 5 лет; ночное мочеиспускание до 5 лет встречается часто (примерно у 1 ребёнка из 5 в 4,5 года). Педиатр может дать советы и раньше."
       },
+      "en": {
+        "title": "Dry at night",
+        "info": "NICE: children are generally expected to be dry at night by a developmental age of 5 years; bedwetting under age 5 is common (about 1 child in 5 at 4 and a half years). The pediatrician can offer advice even earlier."
+      },
       "note": {
         "at": 60,
         "level": "tip",
         "it": "Dopo i 5 anni bagnare il letto è ancora abbastanza comune e non è colpa del bambino: parlane con il pediatra, che può aiutare.",
-        "ru": "После 5 лет ночное мочеиспускание всё ещё встречается довольно часто и не является виной ребёнка: поговорите с педиатром, он поможет."
+        "ru": "После 5 лет ночное мочеиспускание всё ещё встречается довольно часто и не является виной ребёнка: поговорите с педиатром, он поможет.",
+        "en": "After age 5, bedwetting is still fairly common and is not the child's fault: talk to your pediatrician, who can help."
       }
     },
     {
@@ -616,13 +714,18 @@
         "title": "Первые признаки полового созревания",
         "info": "У девочек начало до 8 лет считается ранним, а отсутствие развития груди к 13 годам — задержкой; у мальчиков 95% начинают в 9–14 лет (Pediatric Endocrine Society). Первые месячные обычно приходят через 2–3 года после начала развития груди."
       },
+      "en": {
+        "title": "First signs of puberty",
+        "info": "In girls it is considered early before age 8 and delayed if breasts have not appeared by 13; in boys 95% start between 9 and 14 years (Pediatric Endocrine Society). The first period usually comes 2–3 years after breast development begins."
+      },
       "early": {
         "src": [
           "X7",
           "X10"
         ],
         "it": "Segni di pubertà prima degli 8 anni nelle bambine o dei 9 nei bambini: parlane con il pediatra (Pediatric Endocrine Society; NHS: prima degli 8 anni per entrambi i sessi).",
-        "ru": "Признаки полового созревания до 8 лет у девочек или до 9 лет у мальчиков: поговорите с педиатром (Pediatric Endocrine Society; NHS: до 8 лет для обоих полов)."
+        "ru": "Признаки полового созревания до 8 лет у девочек или до 9 лет у мальчиков: поговорите с педиатром (Pediatric Endocrine Society; NHS: до 8 лет для обоих полов).",
+        "en": "Signs of puberty before age 8 in girls or before age 9 in boys: talk to your pediatrician (Pediatric Endocrine Society; NHS: before age 8 for both sexes)."
       }
     },
     {
@@ -643,6 +746,10 @@
       "ru": {
         "title": "Выпадает первый молочный зуб",
         "info": "Таблица ADA: молочные центральные резцы обычно выпадают в 6–7 лет, боковые — в 7–8 лет; клыки и моляры — в 9–12 лет."
+      },
+      "en": {
+        "title": "First baby tooth falls out",
+        "info": "ADA chart: the central baby incisors usually fall out between 6 and 7 years, the lateral ones between 7 and 8; baby canines and molars between 9 and 12 years."
       }
     },
     {
@@ -664,6 +771,10 @@
       "ru": {
         "title": "Прорезываются первые постоянные зубы",
         "info": "Таблица ADA: первые постоянные моляры и нижние центральные резцы обычно прорезываются в 6–7 лет, остальные резцы — в 7–9 лет, клыки и премоляры — в 9–12 лет, вторые моляры — в 11–13 лет. По данным AAPD, сменный прикус (молочные и постоянные зубы вместе) длится примерно с 6 до 11 лет."
+      },
+      "en": {
+        "title": "First permanent teeth come in",
+        "info": "ADA chart: the first permanent molars and lower central incisors usually come in between 6 and 7 years, the other incisors between 7 and 9, canines and premolars between 9 and 12, second molars between 11 and 13. According to the AAPD, the mixed dentition (baby and permanent teeth together) runs from about 6 to 11 years."
       }
     },
     {
@@ -687,6 +798,10 @@
       "ru": {
         "title": "Чтение и письмо: конец второго класса",
         "info": "Учиться читать и писать — долгий процесс: по данным консенсусной конференции, организованной ISS, дислексию в Италии обычно диагностируют с конца второго класса начальной школы, потому что более ранний диагноз повышал бы риск ложноположительных результатов. Для дисграфии рекомендации ISS 2022 советуют отмечать трудности с конца второго класса, а диагноз ставить в конце третьего. Школьные мероприятия по выявлению подозрительных случаев не являются диагнозом (закон № 170). Если читать или писать по-прежнему очень трудно, поговорите с учителями и педиатром."
+      },
+      "en": {
+        "title": "Reading and writing: end of second grade (Italy)",
+        "info": "Learning to read and write takes time: according to the Consensus Conference promoted by the ISS (the Italian National Institute of Health), dyslexia is usually diagnosed from the end of the second year of primary school, because an earlier diagnosis would increase the risk of false positives. For dysgraphia, the 2022 ISS guideline says to flag difficulties from the end of second grade and to diagnose it at the end of third grade. School activities to identify suspected cases are not a diagnosis (Italian Law 170/2010). If reading or writing remains very hard, talk to their teachers and your pediatrician."
       }
     }
   ]

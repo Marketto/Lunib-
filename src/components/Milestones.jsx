@@ -9,7 +9,7 @@ import { AREAS, PRETERM_CORRECT_UNTIL, ageForMilestones, milestoneKey, position,
 import MILESTONES from '../../content/milestones.json';
 
 const today = () => new Date().toISOString().slice(0, 10);
-const num = (n) => String(Math.round(n * 10) / 10).replace('.', ',');
+const num = (n, lang) => String(Math.round(n * 10) / 10).replace('.', lang === 'en' ? '.' : ','); // separatore decimale per lingua
 const AREA_LOOK = {
   motor: { c: 'ladybug', bg: '#dcefe5' }, language: { c: 'cloud', bg: '#dfe9fb' }, social: { c: 'heart', bg: '#fbe3ea' },
   feeding: { c: 'apple', bg: '#fdeedb' }, sleep: { c: 'moon', bg: '#e6e3fa' }, toilet: { c: 'drop', bg: '#d9eef3' }, dental: { c: 'star', bg: '#fff3cf' }, puberty: { c: 'flower', bg: '#f3e3f7' }
@@ -17,9 +17,9 @@ const AREA_LOOK = {
 // Fonti della nota generale: CDC key points, CDC/Zubler, CDC monitoraggio, W14 e B35 (controlli AAP)
 export const HEADER_REFS = ['TP15', 'TP2', 'TP14', 'W14', 'B35'];
 
-function WindowBar({ item, months, t, sex }) {
-  const text = item.type === 'puberty' ? t.window.puberty(sex) : item.to == null ? (item.type === 'not-before' ? t.window['not-before'](num(item.from)) : t.open(num(item.from)))
-    : t.window[item.type](num(item.from), num(item.to));
+function WindowBar({ item, months, t, sex, lang }) {
+  const text = item.type === 'puberty' ? t.window.puberty(sex) : item.to == null ? (item.type === 'not-before' ? t.window['not-before'](num(item.from, lang)) : t.open(num(item.from, lang)))
+    : t.window[item.type](num(item.from, lang), num(item.to, lang));
   const pos = position(item, months);
   return (
     <div className="ms-win">
@@ -40,7 +40,7 @@ function Note({ item, st, t, lang }) {
   if (st === 'watch') text = t.watch;
   else if (st === 'tip' || st === 'late') {
     if (item.note) text = item.note[lang] || item.note.it;
-    else if (st === 'late') text = (t.late[item.type === 'who-1-99' ? 'who' : item.type === 'cdc-75pct' ? 'cdc' : 'other'])(num(item.to));
+    else if (st === 'late') text = (t.late[item.type === 'who-1-99' ? 'who' : item.type === 'cdc-75pct' ? 'cdc' : 'other'])(num(item.to, lang));
   }
   if (!text) return null;
   return <p className={`ms-note ${st}`} role="note">{text} <Refs ids={item.src} /></p>;
@@ -57,7 +57,7 @@ function Card({ item, lang, t, months, rec, kid, past = false, onDone, onChange,
   const st0 = past && !done ? 'past' : status(item, months, done, { sex, doneMonths: done ? ageAt(rec.date) : null });
   const asksEarly = item.type === 'puberty' && asking && !done && status(item, months, true, { sex, doneMonths: ageAt(date) }) === 'early';
   const st = asksEarly ? 'early' : st0;
-  const L = item[lang] || item.it;
+  const L = item[lang]?.title ? item[lang] : item.it;
   const look = AREA_LOOK[item.area];
   const save = () => {
     onDone(item, date || today());
@@ -74,7 +74,7 @@ function Card({ item, lang, t, months, rec, kid, past = false, onDone, onChange,
         <span className={`chip ms-chip ${st}`}>{t.status[st]}</span>
       </div>
       {L.info && <p className="small">{L.info} <Refs ids={item.src} /></p>}
-      <WindowBar item={item} months={months} t={t} sex={sex} />
+      <WindowBar item={item} months={months} t={t} sex={sex} lang={lang} />
       {!L.info && <p className="small"><Refs ids={item.src} /></p>}
       <Note item={item} st={st} t={t} lang={lang} />
       {asking && (

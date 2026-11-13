@@ -13,7 +13,11 @@ const STOP = {
     'здесь этом один почти мой тем чтобы нее сейчас были куда зачем всех никогда при наконец два об ' +
     'другой хоть после над больше тот через эти нас про всего них какая много разве три эту моя впрочем ' +
     'хорошо свою этой перед иногда лучше чуть том нельзя такой им более всегда конечно всю между ' +
-    'ребенок ребёнок ребенка ребёнка малыш малыша сын дочь').split(' '))
+    'ребенок ребёнок ребенка ребёнка малыш малыша сын дочь').split(' ')),
+  en: new Set(('a an the and or but if of to in on at by for with from as is are was were be been am do does did ' +
+    'it its this that these those i me my we our you your he she they them his her their what when how why who ' +
+    'which where can could should would will may might not no so than too very just also about into over ' +
+    'baby babies child children kid kids son daughter toddler').split(' '))
 };
 
 const RU_SUFFIXES = ['иями', 'ями', 'ами', 'ость', 'ости', 'ению', 'ения', 'ение', 'ениe',
@@ -24,6 +28,21 @@ const RU_SUFFIXES = ['иями', 'ями', 'ами', 'ость', 'ости', 'е
 const IT_SUFFIXES = ['amenti', 'amento', 'imenti', 'imento', 'azioni', 'azione', 'mente',
   'ini', 'ino', 'ina', 'ine', 'i', 'e', 'a', 'o'];
 
+// Stemming inglese leggero (plurali e suffissi comuni); radice minima di 3 lettere.
+const EN_SUFFIXES = ['ations', 'ation', 'ments', 'ment', 'ings', 'ing', 'ies', 'ied', 'ness', 'ly', 'ed', 'es', 's'];
+
+function stemEn(term) {
+  for (const suf of EN_SUFFIXES) {
+    if (term.length - suf.length >= ((suf === 'ies' || suf === 'ied') ? 2 : 3) && term.endsWith(suf)) {
+      let t = term.slice(0, -suf.length);
+      if (suf === 'ies' || suf === 'ied') t += 'y';
+      else if (/(.)\1$/.test(t) && !/(ll|ss|zz)$/.test(t)) t = t.slice(0, -1); // running → run
+      return t.replace(/e$/, '');
+    }
+  }
+  return term.replace(/e$/, '');
+}
+
 export function normalize(str, lang) {
   let s = String(str || '').toLowerCase();
   if (lang === 'ru') s = s.replace(/ё/g, 'е');
@@ -33,6 +52,7 @@ export function normalize(str, lang) {
 }
 
 export function stem(term, lang) {
+  if (lang === 'en') return stemEn(term);
   const list = lang === 'ru' ? RU_SUFFIXES : IT_SUFFIXES;
   const minRoot = lang === 'ru' ? 4 : 4;
   let t = term;

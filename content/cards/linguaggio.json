@@ -79,6 +79,41 @@
         "Пойте песенки и потешки с жестами.",
         "Выключайте фоновый телевизор: он забирает место у общения."
       ]
+    },
+    "en": {
+      "title": "How to help your child talk",
+      "summary": "More than the words heard, conversation matters: back-and-forth exchanges between adult and child are linked to language development.",
+      "keywords": [
+        "talking",
+        "language",
+        "first words",
+        "encouraging language",
+        "vocabulary",
+        "conversation",
+        "babbling",
+        "how to get them to talk",
+        "words"
+      ],
+      "research": [
+        "A neuroimaging study (Romeo 2018, on children aged 4–6 years) found that the number of conversational exchanges, more than the number of words heard, is associated with activity in the brain's language areas.",
+        "A meta-analysis (Dowdall 2020) shows that shared picture-book reading programs improve expressive and receptive language.",
+        {
+          "t": "From the first months infants respond to voice, gaze and \"conversation\" turns made of sounds and smiles.",
+          "from": 0,
+          "to": 12
+        }
+      ],
+      "tips": [
+        "Respond to your baby's sounds as if it were a conversation, and leave time for their turn.",
+        "Describe what you are doing together: \"Now we are putting on the red shoes.\"",
+        {
+          "t": "Pick up and expand on what your child says: if they say \"ball\", answer \"Yes, the blue ball is rolling!\".",
+          "from": 12,
+          "to": 48
+        },
+        "Sing songs and nursery rhymes with gestures.",
+        "Cut down on background TV: it takes space away from exchanges."
+      ]
     }
   },
   {
@@ -267,6 +302,94 @@
         },
         "Потеря уже освоенных слов или сомнения в слухе: обсудите сразу."
       ]
+    },
+    "en": {
+      "title": "Talks little: when to worry",
+      "summary": "The CDC/AAP 2022 milestones are set so that most children (about 75%) reach them by that age: if they are not there, it is worth talking to the pediatrician.",
+      "keywords": [
+        "not talking",
+        "talks little",
+        "language delay",
+        "late talker",
+        "how many words",
+        "sentences",
+        "speech therapist",
+        "language milestones",
+        "doesn't say mama"
+      ],
+      "research": [
+        {
+          "t": "CDC/AAP milestones (Zubler 2022): at 12 months calls a parent \"mama\", \"dada\" or another special name and waves \"bye-bye\".",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "CDC/AAP milestones: at 18 months tries to say at least 3 words besides mama and dada.",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "CDC/AAP milestones: at 24 months says at least 2 words together, for example \"more food\".",
+          "from": 24,
+          "to": 30
+        },
+        {
+          "t": "CDC/AAP milestones: at 30 months says about 50 words.",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "t": "CDC/AAP milestones: at 36 months has conversations with at least two back-and-forth exchanges.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "CDC/AAP milestones: at 4 years says sentences of at least 4 words, tells something about their day and answers simple questions (\"What is a coat for?\").",
+          "from": 48,
+          "to": 60
+        },
+        {
+          "t": "CDC/AAP milestones: at 5 years tells a story with at least two events, answers questions about a book read together, holds a conversation of more than three exchanges and recognizes simple rhymes.",
+          "from": 60,
+          "to": 72
+        },
+        "The milestones are set so that about 75% of children reach them by that age.",
+        "Assessing early does not mean labeling: it helps to understand whether support is needed, for example a hearing check or a speech-language pathologist (speech therapist)."
+      ],
+      "tips": [
+        "Give your child time to answer and do not always anticipate their requests.",
+        "Offer simple choices: \"Do you want the apple or the banana?\".",
+        "Read together every day, pointing to and naming the pictures.",
+        "Bilingual children reach the milestones on the typical schedule when both languages are considered together."
+      ],
+      "redFlags": [
+        {
+          "t": "At 12 months does not babble, does not point and does not use gestures like waving bye-bye.",
+          "from": 12,
+          "to": 18
+        },
+        {
+          "t": "At 18 months says no words besides mama and dada, or does not understand simple requests.",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "t": "At 24 months does not put two words together.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "At 36 months is hard to understand even for family members.",
+          "from": 36,
+          "to": 48
+        },
+        {
+          "t": "At 4–5 years speaks mostly in single words or very short sentences, or cannot tell what they have done.",
+          "from": 48,
+          "to": 72
+        },
+        "Loss of words already acquired, or doubts about hearing: talk to the pediatrician right away."
+      ]
     }
   },
   {
@@ -365,6 +488,50 @@
           "to": 72
         }
       ]
+    },
+    "en": {
+      "title": "Reading aloud from birth",
+      "summary": "The American Academy of Pediatrics recommends reading together from the first months: shared reading supports language, attention and bonding.",
+      "keywords": [
+        "reading",
+        "read",
+        "books",
+        "books for newborns",
+        "stories",
+        "reading aloud",
+        "fairy tale",
+        "nati per leggere",
+        "dialogic reading",
+        "bedtime story"
+      ],
+      "research": [
+        "The AAP policy (Klass 2024) considers promoting reading an essential part of pediatric care, starting from birth.",
+        "A meta-analysis (Dowdall 2020) shows benefits of shared reading on language, greater when the adult actively involves the child.",
+        "You do not need to read the whole text: pointing, naming, asking questions and letting your child turn the pages matters more."
+      ],
+      "tips": [
+        {
+          "t": "From 0 to 6 months: books with large, high-contrast pictures, a sing-song voice, rhythm.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "From 6 to 18 months: board books to touch and chew on, pictures to point to and name.",
+          "from": 6,
+          "to": 18
+        },
+        {
+          "t": "After 18 months: short stories, open questions (\"What happens now?\"), rereading the same books as often as they ask for them.",
+          "from": 18,
+          "to": 48
+        },
+        "Make reading a fixed moment, for example before bedtime.",
+        {
+          "t": "From 3 years: let your child tell the story by looking at the pictures, ask what they think will happen and connect it to their life.",
+          "from": 36,
+          "to": 72
+        }
+      ]
     }
   },
   {
@@ -425,6 +592,31 @@
         "Ищите богатые возможности на каждом языке: книги, песни, бабушки и дедушки, друзья, видеозвонки.",
         "Жёсткие правила не обязательны: важны качество и количество общения.",
         "Если есть сомнения в развитии речи, просите оценку с учётом обоих языков."
+      ]
+    },
+    "en": {
+      "title": "Growing up with two languages",
+      "summary": "Bilingualism does not cause language delays or disorders. In each language the vocabulary depends on how much the child hears it, but considering both languages together it is in line with age.",
+      "keywords": [
+        "bilingualism",
+        "bilingual",
+        "two languages",
+        "mother tongue",
+        "italian and russian",
+        "mixes up languages",
+        "mixes languages",
+        "foreign language"
+      ],
+      "research": [
+        "A longitudinal study (Hoff 2012) found that bilingual children, measured in one language only, may have fewer words; considering both languages together, their vocabulary is comparable to that of monolingual children.",
+        "The amount of exposure to each language predicts the speed of development in that language.",
+        "Mixing languages in the same sentence is normal in bilingual children and is not a sign of confusion."
+      ],
+      "tips": [
+        "Speak to your child in the language in which you express yourself best and with the most affection.",
+        "Look for rich opportunities in each language: books, songs, grandparents, friends, video calls.",
+        "A rigid rule is not needed: the quality and quantity of exposure matter.",
+        "If you have doubts about language development, ask for an assessment that takes both languages into account."
       ]
     }
   },
@@ -499,6 +691,37 @@
         "Ребёнок расстраивается, избегает говорить, или вы обеспокоены.",
         "Заикание у родственников или длится больше 6–12 месяцев без улучшения.",
         "Другие сомнения в речи или произношении."
+      ]
+    },
+    "en": {
+      "title": "Stutters: is it normal?",
+      "summary": "Stuttering often starts between ages 2 and 3½ and is more common than people think. Many children stop on their own, but not always within a year: some signs should be assessed.",
+      "keywords": [
+        "stuttering",
+        "stutters",
+        "repeats syllables",
+        "blocks when speaking",
+        "gets stuck",
+        "disfluency",
+        "speech therapist"
+      ],
+      "research": [
+        "In an Australian study that followed children from birth (Reilly 2013), 11% had started to stutter by age 4, mostly between ages 2 and 3½.",
+        "In the same study only 6% had stopped within 12 months of onset: recovery, when it comes, often takes longer.",
+        "Children who stuttered did not have worse language, temperament or quality of life than the others.",
+        "According to ASHA, the risk that it persists is higher in boys, with relatives who stutter, if it lasts more than 6–12 months or if it starts after age 3½."
+      ],
+      "tips": [
+        "Listen calmly and look at your child: what they say matters, not how they say it.",
+        "Do not finish words for them and do not tell them \"slow down\" or \"take a breath\".",
+        "Speak more slowly yourself and with pauses: it is a more useful model than any correction.",
+        "Create calm moments of chatting, without hurry and without a barrage of questions."
+      ],
+      "redFlags": [
+        "Obvious tension when speaking: grimaces, blinking eyes, head movements.",
+        "The child is frustrated, avoids speaking or you are worried.",
+        "Relatives who stutter, or stuttering that has lasted more than 6–12 months without improving.",
+        "Other doubts about language or pronunciation."
       ]
     }
   },
@@ -596,6 +819,50 @@
         "Учителя сообщают о стойких трудностях по сравнению с одноклассниками.",
         "Очень трудный или неразборчивый почерк, замеченный с конца второго класса начальной школы."
       ]
+    },
+    "en": {
+      "title": "Difficulties at school: specific learning disorders (DSA)",
+      "summary": "Specific learning disorders (DSA: dyslexia, dysorthography, dysgraphia, dyscalculia) are recognized by Italian law. If reading, writing or doing math is very hard work, talk to teachers and the pediatrician: diagnosis is up to the specialist services.",
+      "keywords": [
+        "DSA",
+        "specific learning disorders",
+        "dyslexia",
+        "dysgraphia",
+        "dysorthography",
+        "dyscalculia",
+        "difficulties at school",
+        "reading",
+        "writing",
+        "handwriting",
+        "math",
+        "arithmetic",
+        "mistakes",
+        "learning",
+        "teachers",
+        "diagnosis",
+        "law 170",
+        "legge 170"
+      ],
+      "research": [
+        "Law 170 (2010) in Italy recognizes dyslexia, dysgraphia, dysorthography and dyscalculia as specific learning disorders and does not set an age for diagnosis.",
+        "In Italy, in the certifications for the 2018/19 school year (data cited in the ISS-SNLG 2022 guideline), DSA affected 4.9% of students from 3rd grade of primary school through high school and 3.1% of students in grades 3–5 of primary school.",
+        "The ISS-SNLG guideline (2022) recommends caution in diagnosing dyscalculia using only tests of non-symbolic quantity representation (for example estimating quantities of dots), and indicates as good practice diagnosing it from 3rd grade of primary school.",
+        "For dysgraphia the ISS-SNLG guideline (2022) indicates reporting difficulties from the end of 2nd grade of primary school and diagnosing it only at the end of 3rd grade (strong recommendation).",
+        "For bilingual children the ISS-SNLG guideline (2022) indicates at least 2 years of regular schooling in Italian before diagnosis."
+      ],
+      "tips": [
+        "Talk to teachers: they observe how your child reads, writes and calculates compared with classmates.",
+        "Talk to the pediatrician, who can direct you to the services for assessment.",
+        "Value what your child can do: DSA, as defined by Law 170, occur in children with adequate cognitive abilities.",
+        "If your child is bilingual, remember that at least 2 years of regular school in Italian are needed before diagnosis.",
+        "To learn more, consult the ISS-SNLG guideline and the text of Law 170."
+      ],
+      "redFlags": [
+        "Reading, writing or doing math remains very hard work despite effort and help.",
+        "The child avoids homework, gets discouraged or says they are \"stupid\".",
+        "Teachers report persistent difficulties compared with classmates.",
+        "Very laborious or illegible handwriting, reported from the end of 2nd grade of primary school."
+      ]
     }
   },
   {
@@ -658,6 +925,32 @@
         "Дайте спокойное место и регулярное время, не выполняя задания за ребёнка.",
         "Если читать или писать по-прежнему очень трудно, несмотря на старания, посмотрите карточку про DSA.",
         "Чтобы узнать больше, прочитайте обзор Cooper и коллег (2006)."
+      ]
+    },
+    "en": {
+      "title": "Homework: what the research says",
+      "summary": "The evidence on homework in primary school is weak: in correlational studies the link with achievement is weaker than in later grades. Practical advice: if homework is always very hard work, talk to the teachers.",
+      "keywords": [
+        "homework",
+        "homework at home",
+        "primary school",
+        "achievement",
+        "studying",
+        "how long",
+        "homework time",
+        "teachers",
+        "effort",
+        "reading"
+      ],
+      "research": [
+        "A synthesis of research from 1987-2003 (Cooper 2006) finds that in correlational studies the association between homework and school achievement is stronger in grades 7-12 (roughly from the 2nd year of middle school in Italy to the end of high school) than in grades K-6 (from the last year of kindergarten to roughly the 1st year of middle school in Italy).",
+        "The authors (Cooper 2006) point out that all the study designs had limitations: these are associations, not proof that homework improves or does not improve achievement."
+      ],
+      "tips": [
+        "If homework becomes a constant source of tension or is very hard work, talk to the teachers.",
+        "Offer a quiet place and a regular time, without doing the homework for your child.",
+        "If reading or writing remains very difficult despite effort, see the card on DSA.",
+        "To learn more, consult the synthesis by Cooper and colleagues (2006)."
       ]
     }
   }

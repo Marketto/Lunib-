@@ -15,7 +15,7 @@
     ],
     "it": {
       "title": "Schermi, TV e tablet: quanto e quando",
-      "summary": "L'OMS sconsiglia gli schermi prima dei 2 anni e indica al massimo 1 ora al giorno tra 2 e 4 anni, meglio se meno. Le videochiamate con i familiari sono un'eccezione.",
+      "summary": "L'OMS sconsiglia gli schermi prima dei 2 anni e indica al massimo 1 ora al giorno tra 2 e 4 anni, e meno è meglio. L'AAP fa un'eccezione per le videochiamate con la famiglia.",
       "keywords": [
         "schermi",
         "tablet",
@@ -85,7 +85,7 @@
     },
     "ru": {
       "title": "Экраны, телевизор и планшет: сколько и когда",
-      "summary": "ВОЗ не рекомендует экраны до 2 лет и советует не больше 1 часа в день с 2 до 4 лет, лучше меньше. Видеозвонки с родными — исключение.",
+      "summary": "ВОЗ не рекомендует экраны до 2 лет и советует не больше 1 часа в день с 2 до 4 лет, и чем меньше, тем лучше. AAP делает исключение для видеозвонков с семьёй.",
       "keywords": [
         "экраны",
         "планшет",
@@ -146,6 +146,76 @@
         "Ваше собственное использование телефона при малыше тоже важно: попробуйте время «без экранов» для всех.",
         {
           "t": "С 5 лет (AAP): составьте семейный план с правилами по времени и содержанию, никаких устройств за час до сна и в спальне.",
+          "from": 60,
+          "to": 72
+        }
+      ]
+    },
+    "en": {
+      "title": "Screens, TV and tablets: how much and when",
+      "summary": "The WHO advises against screens before age 2 and sets a maximum of 1 hour a day between ages 2 and 4, and less is better. The AAP makes an exception for video calls with family.",
+      "keywords": [
+        "screens",
+        "tablet",
+        "tv",
+        "television",
+        "cartoons",
+        "phone",
+        "cell phone",
+        "smartphone",
+        "youtube",
+        "screen time",
+        "video call",
+        "apps"
+      ],
+      "research": [
+        {
+          "t": "WHO guidelines (2019): before age 2, screen time is not recommended.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "WHO guidelines (2019): at age 2, no more than 1 hour a day, and less is better.",
+          "from": 24,
+          "to": 36,
+          "strict": true
+        },
+        {
+          "t": "WHO guidelines (2019): from age 3 to 4, at most 1 hour a day, and less is better.",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "The AAP (2016) advises against screens under 18 months, except for video calls with family.",
+          "from": 0,
+          "to": 18
+        },
+        {
+          "t": "AAP (2016): between 18 and 24 months, if screens are used, choose quality content and watch it together with an adult.",
+          "from": 18,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "A cohort study (Madigan 2019) linked more screen time at 24 and 36 months to worse results on developmental tests in the following months.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "WHO (2020): from age 5, limit sitting time, especially recreational screen time.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "No screens during meals or in the hour before bedtime.",
+        "If you watch something, do it together and talk about it: it becomes a chance to build language.",
+        "Turn off the background TV when nobody is watching it.",
+        "Choose slow, age-appropriate content, without ads and without autoplay.",
+        "Your own phone use in front of your child counts too: try \"screen-free\" moments for everyone.",
+        {
+          "t": "From age 5 (AAP): make a family plan with rules on time and content, no devices in the hour before sleep and no screens in the bedroom.",
           "from": 60,
           "to": 72
         }
@@ -258,6 +328,53 @@
         },
         "Немного поскучать — нормально: это развивает фантазию."
       ]
+    },
+    "en": {
+      "title": "The power of play",
+      "summary": "Free play and play with an adult support the development of the brain, language, emotions and body. You don't need expensive toys.",
+      "keywords": [
+        "play",
+        "playing",
+        "toys",
+        "how to play",
+        "free play",
+        "boredom",
+        "activities",
+        "movement",
+        "games for newborns",
+        "pretend play",
+        "physical activity"
+      ],
+      "research": [
+        "The AAP report \"The Power of Play\" (Yogman 2018) describes play as essential for the development of executive functions, language and social skills, and for reducing stress.",
+        "Child-led play, with an available and engaged adult, is particularly effective.",
+        {
+          "t": "The WHO (2019) recommends at least 180 minutes a day of physical activity of any intensity for 1–2-year-olds.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "WHO (2019): at 3–4 years, at least 180 minutes of physical activity a day, including at least 60 minutes of energetic movement.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "WHO (2020): from age 5, an average of at least 60 minutes a day of moderate or vigorous activity.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "Follow your child's interest: let them lead the play while you comment and join in.",
+        "Simple objects work very well: boxes, pots, spoons, cushions, water.",
+        "A little outdoor play every day, when possible.",
+        {
+          "t": "Pretend play (cooking, talking on the phone, caring for a doll) is very valuable from 18 months onward.",
+          "from": 18,
+          "to": 48
+        },
+        "A little boredom is fine: it stimulates inventiveness."
+      ]
     }
   },
   {
@@ -291,7 +408,7 @@
           "to": 60
         },
         {
-          "t": "OMS (2019): a 3–4 anni non tenerlo fermo (passeggino, seggiolino) per più di 1 ora di fila; quando sta seduto, meglio leggere e raccontare storie insieme.",
+          "t": "OMS (2019): a 3–4 anni non tenerlo legato (ad esempio nel passeggino) per più di 1 ora di fila; quando sta seduto, meglio leggere e raccontare storie insieme.",
           "from": 36,
           "to": 60
         },
@@ -328,7 +445,7 @@
           "to": 60
         },
         {
-          "t": "ВОЗ (2019): в 3–4 года не держать ребёнка неподвижным (коляска, кресло) больше 1 часа подряд; когда он сидит, лучше читать и рассказывать истории вместе.",
+          "t": "ВОЗ (2019): в 3–4 года не держать ребёнка пристёгнутым (например, в коляске) больше 1 часа подряд; когда он сидит, лучше читать и рассказывать истории вместе.",
           "from": 36,
           "to": 60
         },
@@ -343,6 +460,43 @@
         "Каждый день немного на улице, даже в плохую погоду, если тепло одеты.",
         "Двигайтесь в повседневной жизни: пешком в садик, по лестнице.",
         "Двигайтесь вместе: дети подражают взрослым."
+      ]
+    },
+    "en": {
+      "title": "How much movement between ages 3 and 6",
+      "summary": "At 3–4 years the WHO advises at least 3 hours of movement a day, including one hour of energetic activity; from age 5, at least one hour a day of moderate or vigorous activity.",
+      "keywords": [
+        "movement",
+        "physical activity",
+        "sports",
+        "running",
+        "playing outdoors",
+        "sedentary",
+        "how much should they move",
+        "park"
+      ],
+      "research": [
+        {
+          "t": "WHO (2019): at 3–4 years, at least 180 minutes a day of physical activity of any intensity, of which at least 60 minutes of moderate or vigorous movement, spread across the day.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "WHO (2019): at 3–4 years, don't keep your child restrained (e.g., in a stroller) for more than 1 hour at a time; when sitting, it is better to read and tell stories together.",
+          "from": 36,
+          "to": 60
+        },
+        {
+          "t": "WHO (2020): from age 5, an average of at least 60 minutes a day of moderate or vigorous activity, and at least 3 days a week of more vigorous play that strengthens muscles and bones.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "You don't need an organized sport: running, jumping, climbing, riding a bike and dancing all count.",
+        "A little time outdoors every day, even in bad weather, if dressed for it.",
+        "Use your legs in everyday life: walk to preschool, take the stairs.",
+        "Move with your child: children imitate adults."
       ]
     }
   },
@@ -536,6 +690,93 @@
           "t": "Ненадутые или лопнувшие воздушные шарики",
           "v": "no",
           "why": "По данным CPSC, это главная причина смерти от удушья среди детских товаров.",
+          "src": "T4"
+        }
+      ]
+    },
+    "en": {
+      "title": "Toys: yes and no, 0–12 months",
+      "summary": "In the first year the best toy is you: faces, voices, peekaboo and safe objects to touch and put in the mouth. Some objects are dangerous or useless.",
+      "keywords": [
+        "newborn toys",
+        "toys",
+        "which toys to buy",
+        "baby walker",
+        "mobile",
+        "play gym",
+        "rattle",
+        "toys to avoid",
+        "first year toys"
+      ],
+      "research": [
+        "For the first year, the AAP (Yogman 2018) suggests games of eye contact and smiles, peekaboo, and safe objects to explore, including with the mouth.",
+        "The AAP (Healey 2019) reminds us that toys are mainly for playing together: electronic toys alone don't give the interaction a child needs."
+      ],
+      "tips": [
+        "Check for the CE mark (EU) and the warning \"not suitable for children under 36 months\".",
+        "A few toys at a time, rotated, are worth more than many all at once."
+      ],
+      "guide": [
+        {
+          "t": "Peekaboo, songs, faces and funny expressions",
+          "v": "si",
+          "why": "Back-and-forth play with an adult is the basis of social and language development (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Rattles, rings, soft objects to grasp and chew",
+          "v": "si",
+          "why": "At this age babies explore with hands and mouth: you need large, sturdy, washable objects.",
+          "src": "B27"
+        },
+        {
+          "t": "Board books",
+          "v": "si",
+          "why": "In one study (Sosa 2016), adults talked more to children with books than with electronic toys.",
+          "src": "T12"
+        },
+        {
+          "t": "Free time on the mat, tummy down",
+          "v": "si",
+          "why": "The WHO advises at least 30 minutes a day on the tummy for babies who are not yet mobile.",
+          "src": "A3"
+        },
+        {
+          "t": "Electronic toys with lights and sounds",
+          "v": "limita",
+          "why": "With these toys parents talk less and there are fewer exchanges (Sosa 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Baby walker",
+          "v": "no",
+          "why": "It doesn't help with walking, can delay motor development and causes falls down stairs: the AAP calls for a ban.",
+          "src": "T6"
+        },
+        {
+          "t": "Mobiles and crib gyms strung over the crib, after 5 months",
+          "v": "no",
+          "why": "Strangulation risk: they should be removed when the baby pushes up on hands and knees, or at 5 months.",
+          "src": "T8",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "Toys with small parts, long cords, toys for older children",
+          "v": "no",
+          "why": "Choking and strangulation risk: EU rules ban them under 36 months.",
+          "src": "T2"
+        },
+        {
+          "t": "Objects with accessible button batteries, magnets",
+          "v": "no",
+          "why": "If swallowed they can cause very serious injuries within a few hours.",
+          "src": "T3"
+        },
+        {
+          "t": "Uninflated or burst balloons",
+          "v": "no",
+          "why": "According to the CPSC they are the leading cause of suffocation death among children's products.",
           "src": "T4"
         }
       ]
@@ -749,6 +990,101 @@
           "src": "T4"
         }
       ]
+    },
+    "en": {
+      "title": "Toys: yes and no, 1–3 years",
+      "summary": "Building blocks, shape sorters, pretend play and lots of movement. A few simple toys and a present adult are worth more than many electronic toys.",
+      "keywords": [
+        "toys for 2 year olds",
+        "toys",
+        "which toys to buy",
+        "building blocks",
+        "puzzles",
+        "pretend play",
+        "tablet",
+        "toys to avoid",
+        "beads",
+        "magnets"
+      ],
+      "research": [
+        "The AAP (Yogman 2018) suggests for 1–3 years blocks, containers, wooden spoons, puzzles and chances to pretend.",
+        "In one study (Dauch 2018), toddlers aged 18–30 months with 4 toys played longer and in more varied ways than when they had 16."
+      ],
+      "tips": [
+        "Keep a few toys available and rotate them now and then.",
+        "Sit on the floor and follow your child's play: comment, imitate, suggest."
+      ],
+      "guide": [
+        {
+          "t": "Blocks, shape sorters, containers, simple puzzles",
+          "v": "si",
+          "why": "They train hands, thinking and patience; the AAP lists them for exactly this age.",
+          "src": "B27"
+        },
+        {
+          "t": "Pretend play: kitchen, dolls, toy phone",
+          "v": "si",
+          "why": "Symbolic play (a banana becomes a phone) develops language and imagination.",
+          "src": "B27"
+        },
+        {
+          "t": "Ball, pushing and pulling, movement games",
+          "v": "si",
+          "why": "Running, climbing and rough-and-tumble play grow along with walking and are good for children.",
+          "src": "B27"
+        },
+        {
+          "t": "Books to look through together",
+          "v": "si",
+          "why": "With books, adults use more words, and more specific ones (Sosa 2016).",
+          "src": "T12"
+        },
+        {
+          "t": "Too many toys all at once",
+          "v": "limita",
+          "why": "With fewer toys, children play longer with each one (Dauch 2018).",
+          "src": "T10"
+        },
+        {
+          "t": "Electronic toys and \"educational\" apps",
+          "v": "limita",
+          "why": "Many educational promises are not proven; they don't replace play with an adult (AAP).",
+          "src": "T1"
+        },
+        {
+          "t": "Tablet and phone for playing alone under age 2",
+          "v": "no",
+          "why": "The AAP advises against digital media under 18 months, except for video calls.",
+          "src": "B25",
+          "from": 12,
+          "to": 24,
+          "strict": true
+        },
+        {
+          "t": "Toys with small parts (\"not suitable under 36 months\" warning)",
+          "v": "no",
+          "why": "Choking risk: under EU law they are not for this age.",
+          "src": "T2"
+        },
+        {
+          "t": "Small, powerful magnets, magnetic toys with detachable pieces",
+          "v": "no",
+          "why": "If more than one is swallowed they can attract each other through the intestine and cause serious injuries.",
+          "src": "T3b"
+        },
+        {
+          "t": "Water beads",
+          "v": "no",
+          "why": "If swallowed they swell and can block the intestine.",
+          "src": "T7"
+        },
+        {
+          "t": "Uninflated or burst balloons",
+          "v": "no",
+          "why": "Leading cause of suffocation death among children's products (CPSC); under 8 years only with an adult.",
+          "src": "T4"
+        }
+      ]
     }
   },
   {
@@ -926,6 +1262,85 @@
           "src": "T4"
         }
       ]
+    },
+    "en": {
+      "title": "Toys: yes and no, 3–6 years",
+      "summary": "Room for imagination, play with friends, outdoors and a bit of adventure. Some toys, however, remain dangerous at this age.",
+      "keywords": [
+        "toys for 4 year olds",
+        "toys for 5 year olds",
+        "toys",
+        "which toys to buy",
+        "trampoline",
+        "outdoor play",
+        "board games",
+        "video games",
+        "toys to avoid"
+      ],
+      "research": [
+        "For ages 4–6, the AAP (Yogman 2018) suggests time and space to invent scenes and roles, play with friends and play outdoors.",
+        "A systematic review (Brussoni 2015) concludes, although with low-quality evidence, that outdoor play with a little risk supports children's health."
+      ],
+      "tips": [
+        "Leave some unstructured time: boredom gives rise to new games.",
+        "In \"guided play\" you set up the opportunity and your child leads: it is a great way to learn through play."
+      ],
+      "guide": [
+        {
+          "t": "Dress-up, puppets, puppet theaters, role-play",
+          "v": "si",
+          "why": "Inventing scenes and roles develops language, social rules and self-control (AAP).",
+          "src": "B27"
+        },
+        {
+          "t": "Outdoor play: running, climbing, exploring",
+          "v": "si",
+          "why": "It supports physical activity, social skills and behavior (Brussoni 2015).",
+          "src": "T11"
+        },
+        {
+          "t": "Simple board games, building sets, drawing and crafts",
+          "v": "si",
+          "why": "They train attention, turn-taking, rules and manual skills; with an adult they become \"guided play\".",
+          "src": "T9"
+        },
+        {
+          "t": "Playing with other children",
+          "v": "si",
+          "why": "The AAP advises scheduling time with friends: children learn to share and negotiate.",
+          "src": "B27"
+        },
+        {
+          "t": "Video games and apps",
+          "v": "limita",
+          "why": "Only age-appropriate content, with clear rules on time and place and never in the hour before bed (AAP).",
+          "src": "D12"
+        },
+        {
+          "t": "Backyard trampoline",
+          "v": "no",
+          "why": "The AAP strongly advises against it; under age 6 the risk of fractures is higher. If used: one child at a time, no somersaults, an adult watching.",
+          "src": "T5"
+        },
+        {
+          "t": "Small, powerful magnets (also in building sets for older children)",
+          "v": "no",
+          "why": "Swallowing more than one magnet can cause intestinal perforation.",
+          "src": "T3b"
+        },
+        {
+          "t": "Water beads",
+          "v": "no",
+          "why": "Once swallowed they swell and can cause an intestinal blockage.",
+          "src": "T7"
+        },
+        {
+          "t": "Uninflated balloons without an adult",
+          "v": "no",
+          "why": "Under 8 years only with supervision; pick up the pieces of burst ones right away (CPSC).",
+          "src": "T4"
+        }
+      ]
     }
   },
   {
@@ -1007,6 +1422,38 @@
         "Несколько видов спорта лучше одного: развиваются разные навыки и меньше риск устать.",
         "Без давления на результат: спрашивайте, было ли весело, а не победил ли он."
       ]
+    },
+    "en": {
+      "title": "Which sport and when?",
+      "summary": "Before age 6, free and varied movement matters more than organized sport. Choose based on your child's enjoyment, not on early specialization.",
+      "keywords": [
+        "sports",
+        "which sport",
+        "what age for sports",
+        "soccer",
+        "dance",
+        "gymnastics",
+        "swimming",
+        "martial arts",
+        "classes",
+        "sports activity",
+        "motor skills classes"
+      ],
+      "research": [
+        "The AAP (Logan and Cuff 2019) points to age 6 as a suitable age to start most organized sports: before that, many children don't yet have enough skills and attention, and they need lots of free play.",
+        "For ages 2–5 the AAP suggests basic activities such as running, swimming, somersaults, throwing and catching, without competition.",
+        "Two meta-analyses (Logan 2012; Wick 2017) show that well-structured movement programs in early childhood improve basic motor skills, more than free play alone; the quality of the evidence, however, is very low.",
+        "A review (Robinson 2015) links good motor competence in early childhood to more physical activity and a healthy weight in later years.",
+        "The AAP (Brenner 2016) advises against specializing in a single sport before age 15–16: early specialization is associated with more overuse injuries and dropout.",
+        "A review on dropping out of sport (Crane and Temple 2015) identifies the main causes as lack of enjoyment, not feeling competent enough, and pressure."
+      ],
+      "tips": [
+        "Before age 6: movement classes (psychomotricity, common in Italy), swimming, dance, ball games, biking: variety and fun.",
+        "Choose based on what your child likes and their personality: some love a group, others prefer individual activities.",
+        "Consider schedules, distance and costs too: the sport that lasts is the one that is sustainable for your family.",
+        "Several different sports are better than just one: they train different skills and reduce the risk of getting tired of it.",
+        "No pressure on results: ask your child whether they had fun, not whether they won."
+      ]
     }
   },
   {
@@ -1080,6 +1527,37 @@
         "Пусть ребёнок пробует разные виды спорта, а не выбирает один слишком рано.",
         "За справкой для некоревновательного (non agonistico) спорта обратитесь к педиатру или семейному врачу.",
         "Чтобы узнать больше, прочитайте клинический отчёт AAP (Brenner, 2016) и текст декрета."
+      ]
+    },
+    "en": {
+      "title": "Sports at ages 6–12: breaks and the medical certificate (Italy)",
+      "summary": "The AAP recommends regular breaks from the main sport and not specializing too early. In Italy, the annual non-competitive certificate is required for extracurricular sports activities organized by the school, for those doing activities organized by CONI (the Italian National Olympic Committee) or by clubs affiliated with Federations, Associated Disciplines or Sports Promotion Bodies recognized by CONI without being a competitive athlete, and for the Student Sports Games (Giochi sportivi studenteschi) before the national phase.",
+      "keywords": [
+        "sports",
+        "training",
+        "break",
+        "specialization",
+        "a single sport",
+        "certificate",
+        "medical certificate",
+        "non-competitive",
+        "extracurricular activities",
+        "school",
+        "gym",
+        "sports club"
+      ],
+      "research": [
+        "An AAP clinical report (Brenner 2016), not based on trials, recommends at least 1-2 days a week of rest from the main sport.",
+        "The same clinical report (Brenner 2016) recommends at least 3 months a year of rest from the main sport, in blocks of 1 month.",
+        "The same clinical report (Brenner 2016) advises delaying specialization in a single sport until late adolescence (about 15-16 years).",
+        "Decree of the Italian Ministry of Health, 24 April 2013 (art. 3): the annual certificate for non-competitive sports activity is required for pupils doing physical and sports activities organized by the school as \"extracurricular activities\" (attività parascolastiche), for those doing activities organized by CONI or by clubs affiliated with Federations, Associated Disciplines or Sports Promotion Bodies recognized by CONI without being a competitive athlete, and for those taking part in the Student Sports Games (Giochi sportivi studenteschi) in the phases before the national one; it is issued by the child's family doctor or pediatrician, or by a sports physician."
+      ],
+      "tips": [
+        "Plan at least 1-2 days each week without the main sport.",
+        "Plan at least 3 months of rest from the main sport during the year, in blocks of 1 month.",
+        "Let your child try several sports instead of picking just one too early.",
+        "For the non-competitive certificate, ask your pediatrician or family doctor.",
+        "To learn more, read the AAP clinical report (Brenner 2016) and the text of the decree."
       ]
     }
   },
@@ -1186,6 +1664,52 @@
         "До 13 лет не позволяйте ему сидеть в интернете без присмотра.",
         "Держите экраны вне спальни и за час до сна (см. карточку про сон).",
         "Чтобы узнать больше, прочитайте страницу SIP и упомянутые исследования."
+      ]
+    },
+    "en": {
+      "title": "Screens, internet and social media at 6-12 years",
+      "summary": "The SIP (Italian Society of Pediatrics) advises less than 2 hours a day after age 5, with adult supervision, and delaying a personal smartphone and social media. The data on well-being come from adolescents and show very small associations.",
+      "keywords": [
+        "screens",
+        "internet",
+        "smartphone",
+        "cell phone",
+        "social media",
+        "tablet",
+        "video games",
+        "screen time",
+        "13 years",
+        "14 years",
+        "consent",
+        "privacy",
+        "parental control",
+        "well-being"
+      ],
+      "research": [
+        {
+          "t": "The SIP (Il bambino digitale) advises, after age 5, less than 2 hours a day in front of screens with adult supervision.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "The SIP advises not giving a personal smartphone until at least age 13 and not letting children use the internet without supervision before age 13.",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "The SIP advises delaying access to social media as long as possible.",
+          "from": 72,
+          "to": 144
+        },
+        "A study of 355,358 ADOLESCENTS (Orben and Przybylski 2019), so not data on 6-12 year olds, finds a negative association between digital technology use and well-being that explains at most 0.4% of the variability in well-being; it is correlational.",
+        "Italian privacy code (Legislative Decree 196/2003, art. 2-quinquies): from age 14 a minor can give consent to the processing of personal data for information society services; under age 14, consent must be given by whoever holds parental responsibility."
+      ],
+      "tips": [
+        "Agree on rules about time and content with your family, and follow them yourself too.",
+        "Use the internet and video games together with your child, talking about what they see.",
+        "Before age 13, avoid letting your child browse without supervision.",
+        "Keep screens out of the bedroom and out of the hour before sleep (see the sleep card).",
+        "To learn more, read the SIP page and the studies cited."
       ]
     }
   }

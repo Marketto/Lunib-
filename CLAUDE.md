@@ -1,6 +1,6 @@
 # Lunibù — istruzioni per gli agenti
 
-App PWA per genitori di bambini 0–12 anni (IT/RU), offline, senza backend né AI a runtime.
+App PWA per genitori di bambini 0–12 anni (IT/RU/EN), offline, senza backend né AI a runtime.
 **È solo un'utility per cercare rapidamente dati tratti dalla ricerca**: ogni contenuto deve rimandare alle fonti
 e invitare ad approfondire e verificare.
 
@@ -29,6 +29,7 @@ e invitare ad approfondire e verificare.
 | **Verificare** dati, citazioni, testi, traduzioni | `evidence-verifier` | **opus · high** | è il controllo di affidabilità: indipendente e severo |
 | Scrivere/aggiornare schede e giochi (IT) dai dati verificati | `content-writer` + skill `add-content` | sonnet · medium | trasformazione guidata da schema |
 | Traduzione russa allineata | `translator-ru` | sonnet · medium | fedeltà di significato e numeri |
+| Traduzione inglese allineata | `translator-en` | sonnet · medium | fedeltà di significato e numeri; inglese US, unità metriche |
 | UI, animazioni, componenti React | `ui-engineer` | sonnet · medium | codice front-end |
 | Motore audio, misure di loudness | `audio-engineer` + skill `audio-loudness` | sonnet · medium | DSP e misure ripetibili |
 | Build, test, screenshot, controlli ripetitivi | `qa-runner` | haiku · low | comandi deterministici, basso consumo |
@@ -43,8 +44,8 @@ Regole di instradamento:
 ## Pipeline contenuti (skill `add-content`)
 
 ```
-source-researcher → evidence-verifier (fonti) → content-writer (IT) → translator-ru
-→ npm run content (schema) → evidence-verifier (testo IT+RU vs fonti) → npm test → qa-runner (screenshot)
+source-researcher → evidence-verifier (fonti) → content-writer (IT) → translator-ru + translator-en
+→ npm run content (schema) → evidence-verifier (testo IT+RU+EN vs fonti) → npm test → qa-runner (screenshot)
 ```
 
 Nuova funzionalità visibile → aggiungi una slide in `src/data/tour.js` con `since` = nuova versione.
@@ -54,14 +55,14 @@ Nuova funzionalità visibile → aggiungi una slide in `src/data/tour.js` con `s
 ```bash
 npm run dev            # sviluppo
 npm run content        # valida contenuti e genera indici (fallisce se mancano fonti/traduzioni/fasce)
-npm test               # età, tolleranza, filtri, soglie strict, ricerca IT/RU, guide
+npm test               # età, tolleranza, filtri, soglie strict, ricerca IT/RU/EN, guide
 npm run build          # build PWA in dist/
 npm run check:secrets  # cerca email personali, token e chiavi nei file tracciati
 ```
 
 ## Struttura
 
-- `content/cards/<categoria>.json` schede (IT+RU, voci con fasce `from/to`, `strict`, `guide`)
+- `content/cards/<categoria>.json` schede (IT+RU+EN, voci con fasce `from/to`, `strict`, `guide`)
 - `content/games.json` giochi con livello di evidenza (`forte|media|raccomandato|tappa`)
 - `content/sources.json` fonti verificate (id → citazione, URL, tipo)
 - `src/data/meds.json` limiti di controllo per paracetamolo/ibuprofene (dati di ricerca: ogni modifica → `evidence-verifier`)

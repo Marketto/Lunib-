@@ -4,7 +4,7 @@ import { KidPills, Refs, spring, tap } from './Common.jsx';
 import { Character } from './Characters.jsx';
 import { INDICATORS, INPUTS, bmiOf, GROWTH_SOURCES, assess, assessWfl, wflType, WFL_MAX_MONTHS, estimateHeight, dropWeightHigh, GROWTH_RULES, isCorrected, curve, monthsAt, growthAge, zScore, newbornCheck, adjustHeight } from '../lib/growth.js';
 import { ACTIVE, MED_SOURCES, checkDose, checkPlan, filterLog, findPlan, latestWeight, medKey, normName, planKey, toCsv, toMg, vitDDayTotal, vitDLimit } from '../lib/meds.js';
-import { MILESTONE_TEXT } from '../lib/i18n.js';
+import { MILESTONE_TEXT, LOCALE } from '../lib/i18n.js';
 import { formatAge } from '../lib/age.js';
 import Milestones from './Milestones.jsx';
 import ImportCsv, { IMPORT_BTN } from './ImportCsv.jsx';
@@ -14,6 +14,7 @@ const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(
 const today = () => new Date().toISOString().slice(0, 10);
 const nowLocal = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 16); };
 const fmt = (n, d = 1) => (n == null || isNaN(n) ? '–' : Number(n).toLocaleString(undefined, { maximumFractionDigits: d }));
+const ordEn = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' })[n % 10] || 'th'}`;
 
 export const DIARY_TEXT = {
   it: {
@@ -236,6 +237,117 @@ export const DIARY_TEXT = {
       ok: 'Ни один из проверяемых пределов не превышен. Это не гарантирует, что доза подходит вашему ребёнку.'
     },
     sources: 'Источники'
+  },
+  en: {
+    title: 'Diary', sub: 'Growth and medicines, only on your phone.',
+    tabGrowth: 'Growth', tabMeds: 'Medicines',
+    weight: 'Weight', height: 'Height', head: 'Head', bmi: 'BMI',
+    heightLong: (m) => (m < 24 ? 'Length (lying down)' : 'Height (standing)'), headLong: 'Head circumference',
+    sexAsk: 'To compare with the WHO curves we need to know whether it is…', boy: 'a boy', girl: 'a girl',
+    pretermQ: 'Born preterm?', preterm: 'Weeks of gestation at birth (for corrected age)',
+    pretermNote: (w) => `I use the corrected age (born at ${w} weeks) up to ${w < 32 ? '2 years' : '1 year'}.`,
+    add: 'Add measurement', date: 'Date', save: 'Save', cancel: 'Cancel', del: 'Delete', none: 'No measurements yet.',
+    pct: (p) => `${p < 1 ? '<1' : p > 99 ? '>99' : ordEn(Math.round(p))} percentile`,
+    chartNote: 'Lines: WHO percentiles 3, 15, 50, 85, 97. Dots: your measurements.',
+    over: (max) => `The WHO curves for this indicator are used up to ${max} months.`,
+    w: {
+      implausible: 'Very unlikely value for this age: check that you entered it correctly (unit, decimal point, date). If the value is right, talk to the pediatrician soon.',
+      standingEarly: 'Under 9 months a "standing" measurement is almost always an entry error: babies are measured lying down.',
+      tall: 'Much taller than average (above +3 SD): for the WHO it is rarely a problem, but it is good for the pediatrician to know.',
+      weightHigh: 'Weight for age above +2 SD. Weight for age cannot tell whether a child is overweight: the WHO assesses this with weight relative to length/height (or BMI). Enter the length/height measured on the same day.',
+      weightVeryHigh: 'Weight for age above +3 SD. Weight for age cannot tell whether a child is overweight: the WHO assesses this with weight relative to length/height (or BMI). Enter the length/height measured on the same day.',
+      wflOverweight: 'Weight relative to length/height is above +2 SD: according to the WHO criteria for children under 5 this counts as overweight. It is not a diagnosis: talk to the pediatrician.',
+      wflObese: 'Weight relative to length/height is above +3 SD: according to the WHO criteria for children under 5 this counts as obesity. It is not a diagnosis or anyone\'s fault: talk to the pediatrician.',
+      wflRisk: 'Weight relative to length/height is above +1 SD: for the WHO this is a possible risk of overweight, to be followed over time (it matters mostly if the curve climbs towards +2 SD).',
+      wflWasting: 'Weight relative to length/height is below −2 SD: according to the WHO criteria this indicates wasting (low weight for length). Recheck the measurements and talk to the pediatrician.',
+      wflSevereWasting: 'Weight relative to length/height is below −3 SD: according to the WHO criteria this indicates severe wasting. If the measurement is correct, contact the pediatrician soon.',
+      bmiEstimatedOut: 'Estimated BMI outside the typical range: for an assessment, measure weight and height on the same day.',
+      bmiOverweight: 'BMI for age is above +1 SD: according to the WHO criteria this counts as overweight. It is not a diagnosis: talk to the pediatrician, who assesses growth and habits as a whole.',
+      bmiObese: 'BMI for age is above +2 SD: according to the WHO criteria this counts as obesity. It is not a diagnosis or anyone\'s fault: talk to the pediatrician, who assesses growth and habits as a whole.',
+      bmiThin: 'BMI for age is below −2 SD: according to the WHO criteria this counts as thinness. It is not a diagnosis: talk to the pediatrician, who assesses growth and habits as a whole.',
+      bmiVeryThin: 'BMI for age is below −3 SD: according to the WHO criteria this is marked thinness. It is not a diagnosis, but it is good to talk to the pediatrician soon.',
+      veryLow: 'Far below the typical values for age according to the WHO (below −3 SD).',
+      low: 'Below the typical values for age according to the WHO (below −2 SD).',
+      below04: 'Below the 0.4th percentile: a pediatrician\'s assessment is recommended even if growth is steady.',
+      headHigh: 'Head circumference above the typical values (above +2 SD). It is often familial: it helps to compare it with the parents\' heads.',
+      headVeryHigh: 'Head circumference far above the typical values (above +3 SD).',
+      headLow: 'Head circumference below the typical values (below −2 SD).',
+      headVeryLow: 'Head circumference far below the typical values (below −3 SD).',
+      crossDown: (w) => `Compared with the previous measurements it has dropped by at least ${w.spaces === 1 ? 'one percentile "lane"' : `${w.spaces} percentile "lanes"`}.${w.ind === 'weight' ? ' If this is confirmed at the next measurement (after 2–3 weeks), talk to the pediatrician; a recent illness can lower weight for a short time.' : ' Talk to the pediatrician.'}`,
+      crossUp: 'Compared with the previous measurements it has risen by at least two percentile "lanes".',
+      newbornLoss: (w) => `A drop of about ${w.pct}% from birth weight: more than 10% needs to be assessed.`,
+      notRegained: 'At 3 weeks it has not yet regained its birth weight: it needs to be assessed.'
+    },
+    beforeTerm: 'Before the corrected term (40 weeks) the WHO curves do not apply: the pediatrician uses specific curves for preterm babies.',
+    noWfl: 'Weight for age alone does not say whether a child is thin or overweight. Under 5 years the WHO uses weight relative to length/height, which Lunibù calculates from measurements taken on the same day; BMI thresholds apply from age 5.',
+    wflHint: 'Under 5 years, if you enter weight and length/height on the same day, Lunibù compares them with the WHO weight-for-length/height standards and warns you only if needed.',
+    bmiEst: 'Estimated BMI', bmiEstLegend: 'Empty dashed circle: estimated BMI (position only, no thresholds).',
+    bmiEstText: (d, d1, d2) => `Estimated BMI: weight from ${d} with height estimated ${d2 ? `from the measurements of ${d1} and ${d2}` : `from the measurement of ${d1}`}. It is not a measurement: for an assessment, measure weight and length/height on the same day.`,
+    over10: 'After age 10 the WHO uses body mass index instead of weight for age.',
+    bmiNote: 'BMI = weight (kg) ÷ height (m)², calculated from the weight and height of the same measurement. From 2 to 5 years Lunibù shows only the position on the WHO curves: under 5 years the WHO uses weight relative to length/height; from age 5 Lunibù also flags the WHO BMI thresholds (above +1 SD, below −2 SD), without giving a diagnosis: ask the pediatrician to interpret it. When weight and height are measured on different days, Lunibù estimates height from nearby measurements (a conservative choice by Lunibù, inspired by Bailey 2013, which estimated height from nearby visits) and shows the estimated BMI only as a position.',
+    pos: 'How it was measured', lying: 'lying down', standing: 'standing',
+    wFoot: 'This is not a diagnosis: a single measurement can be inaccurate. Recheck how you measured and talk to the pediatrician.',
+    measureTips: 'Weigh without clothes (or in a bodysuit), always on the same scale. Under 2 years length is measured lying down, then standing without shoes. Head: soft tape above the eyebrows and ears, at the widest point.',
+    // medicines
+    medsIntro: 'Record every medicine or supplement given. For paracetamol and ibuprofen I check intervals, number of doses and dose per kg; for vitamin D, the day\'s total against the EFSA upper limit for age.',
+    medsNever: 'Lunibù does not calculate or suggest doses. Always use the dose given on the packaging or by the pediatrician, based on the current weight; if in doubt ask the pediatrician or the pharmacist.',
+    medsRules: ['Check the concentration: the same active ingredient exists in drops and syrup with very different concentrations (even 4 times or more).', 'Count all the paracetamol together: syrup, drops, suppositories and combination medicines that contain it.', 'You treat the discomfort, not the number on the thermometer.', 'Suspected overdose: right away, contact a poison control center or call 112 (EU) or your local emergency number, even if the child seems well.'],
+    addMed: 'Record a medicine', med: 'Medicine', other: 'Other medicine…', otherName: 'Name of the medicine or active ingredient',
+    route: 'Route', oral: 'by mouth', rectal: 'suppository', amount: 'Amount', unit: 'Unit', conc: 'Concentration (mg/ml, written on the packaging and leaflet)',
+    concOther: 'other', when: 'Date and time', note: 'Note (optional)', flags: 'Right now the child…',
+    flag: { dehydration: 'is dehydrated (vomiting or diarrhea, drinking little)', chickenpox: 'has chickenpox', kidney: 'has a kidney disease', liver: 'has a liver disease', nsaidAsthma: 'has had asthma or reactions with aspirin or other anti-inflammatories (NSAIDs)', otherNsaid: 'is taking another anti-inflammatory (NSAID)', asthma: 'has asthma' },
+    names: { paracetamolo: 'Paracetamol (acetaminophen)', ibuprofene: 'Ibuprofen', vitaminaD: 'Vitamin D (cholecalciferol)' },
+    check: 'Check', saveAnyway: 'Record anyway', filters: 'Filters', allMeds: 'All', period: 'Period', days: (d) => (d ? `${d} days` : 'all'),
+    noMeds: 'No medicine recorded in this period.', perDay: 'Doses per day', export: 'Export CSV (for the pediatrician)',
+    perKg: (v, w) => `${fmt(v)} mg/kg` + (w ? ` · based on ${fmt(w.kg)} kg (weighed ${w.date.slice(5, 7)}/${w.date.slice(8, 10)})` : ''),
+    myMeds: 'My medicines', myMedsEmpty: 'No medicines yet: record a dose or add a medicine with its plan.',
+    addPlanMed: '＋ Add a medicine', lastGiven: 'Last dose', never: 'never given', in24: (n) => `${n} ${n === 1 ? 'dose' : 'doses'} in the last 24 hours`,
+    setPlan: 'Set plan', editPlan: 'Edit plan', delPlan: 'Delete plan', giveDose: 'Record a dose', again: '↻ Again',
+    planCopy: 'Copy the values from the doctor\'s prescription or the leaflet: Lunibù does not suggest doses.',
+    planName: 'Name of the medicine', planEvery: 'Every (hours)', planMax: 'At most per 24 hours (doses)', planDose: 'Dose as prescribed', planUntil: 'Until (date)', planNote: 'Note (optional)',
+    planSummary: (p, s) => [p.intervalH ? `every ${p.intervalH} h` : '', p.maxPerDay ? `max ${p.maxPerDay} in 24 h` : '', p.dose ? `${fmt(p.dose.amount, 2)} ${s.units[p.dose.unit] ?? p.dose.unit}` : '', p.until ? `until ${new Date(p.until).toLocaleDateString('en-US')}` : ''].filter(Boolean).join(' · '),
+    yourPlan: 'Your plan',
+    concIU: { gocce: 'IU per drop (written on the packaging)', ml: 'IU per ml (written on the packaging)' }, iuPer: { gocce: 'IU/drop', ml: 'IU/ml' },
+    vitDToday: (iu, ul) => `Today: ${fmt(iu, 0)} IU recorded${ul ? `, EFSA upper limit for age: ${ul} IU per day` : ''}`, vitDPartial: 'some doses without IU: the total is incomplete',
+    units: { mg: 'mg', ml: 'ml', gocce: 'drops', UI: 'IU', 'µg': 'µg', compresse: 'tablets', bustine: 'sachets', supposte: 'suppositories', spruzzi: 'sprays', other: '—' },
+    c: {
+      noCheck: 'No automatic check for this medicine: follow the prescription or the leaflet.',
+      rcpNote: 'The Italian package leaflets (RCP) were not consulted directly in this check: the leaflet of your own package prevails.',
+      capDose: (p) => `The dose exceeds the maximum per single administration indicated for age/weight (${fmt(p.max, 0)} mg according to the sources listed): recheck the leaflet of your package and ask the pharmacist or the pediatrician.`,
+      capDay: (p) => `The total of the last 24 hours (${fmt(p.mg, 0)} mg, all routes) exceeds the daily maximum indicated for age/weight (${fmt(p.max, 0)} mg according to the sources listed): recheck the leaflet of your package and ask the pharmacist or the pediatrician.`,
+      underAge: (p) => `Under ${p.months} months always ask the pediatrician before giving this medicine. With a fever ≥ 38 °C under 3 months, urgent medical assessment is needed.`,
+      underWeight: (p) => `Under ${fmt(p.kg)} kg this medicine should not be given without a doctor's instruction.`,
+      contra: (p, s) => `With this condition (${s.flag[p.flag]}) ask the pediatrician first.`,
+      caution: (p, s) => `Caution: ${s.flag[p.flag]}. Ask the pediatrician for advice.`,
+      tooSoon: (p) => `${fmt(p.gap)} hours have passed since the previous dose, less than the minimum conservative interval checked by Lunibù (${p.hours} hours). Compare with the leaflet of your package and ask the pediatrician.`,
+      tooMany: (p) => `${p.n} doses in 24 hours: above the conservative limit checked by Lunibù (${p.max}). Compare with the leaflet of your package and ask the pediatrician.`,
+      doseHigh: (p) => `This dose is ${fmt(p.perKg)} mg/kg: above the usual maximum per dose (${p.max} mg/kg). Recheck weight, concentration and leaflet.`,
+      doseVeryHigh: (p) => `This dose is ${fmt(p.perKg)} mg/kg, above ${p.max} mg/kg: recheck right away and ask the pediatrician or a poison control center.`,
+      intervalCaution: (p) => `Many packages indicate at least ${p.hours} hours between one dose and the next: check the leaflet.`,
+      dayHigh: (p) => `In the last 24 hours, by mouth: ${fmt(p.perKg)} mg/kg, above the conservative limit checked by Lunibù (${p.max} mg/kg per day). Compare with the leaflet of your package and ask the pediatrician.`,
+      rectalBand: 'For suppositories, intervals and maximum number of doses depend on the weight band: follow the leaflet. Italian pediatric guidelines advise against the rectal route, except if the child is vomiting.',
+      mixedRoutes: 'You are using different routes (mouth and suppository): count all the paracetamol together and, if in doubt, ask the pediatrician.',
+      oldWeight: (p) => `The check uses the last recorded weight, from ${p.days} days before this dose: if the child has grown since then, the actual mg/kg are lower. Record a recent weight for a reliable check.`,
+      noWeight: 'Without a recorded weight I cannot check the dose per kg: add the weight in "Growth".',
+      noMg: 'Enter the amount in mg, or in ml with the concentration, to check the dose.',
+      tooLong: (p) => `Used for more than ${p.days === 1 ? '24 hours' : `${p.days} days`} in a row: talk to the pediatrician.`,
+      alternating: (p, s) => `You also gave ${s.names[p.other].toLowerCase()} in the last few hours: alternating or combining the two medicines is done only on a doctor's instruction.`,
+      planTooSoon: (p) => `According to the plan you entered (from the prescription or the leaflet) the interval is at least ${p.hours} hours: ${fmt(p.gap)} have passed since the previous dose.`,
+      planTooMany: (p) => `The plan you entered allows at most ${p.max} doses in 24 hours: with this one it would be ${p.n}.`,
+      planEnded: (p) => `The plan you entered ends on ${new Date(p.until).toLocaleDateString('en-US')}: ask the pediatrician whether to continue.`,
+      planDoseDiff: 'Amount different from the dose you entered in the plan.',
+      vitDHigh: (p) => `Total vitamin D today: ${fmt(p.iu, 0)} IU, above the EFSA upper limit for this age (${p.ul} IU per day).`,
+      vitDVeryHigh: (p) => `Total vitamin D today: ${fmt(p.iu, 0)} IU, more than double the EFSA upper limit for this age (${p.ul} IU per day) (conservative threshold chosen by Lunibù). Recheck the amounts and ask the pediatrician or a poison control center right away. If it is a weekly or monthly dose prescribed by the pediatrician, follow the prescription.`,
+      vitDInfo: 'The limit is the EFSA tolerable upper intake level (UL), not a toxicity threshold or a dose. If the pediatrician has prescribed a different dose, do not change it: ask them.',
+      vitDAllSources: 'Count all sources of vitamin D: other supplements, multivitamins and fortified formula.',
+      vitDRec: (p) => (p.period === 'infant'
+        ? 'For babies from 0 to 12 months the Italian consensus and ESPGHAN indicate 400 IU per day for everyone, whatever the feeding; the AAP at least 400 IU until the baby takes at least 1 liter per day of fortified formula. Italy allows up to 1000 IU per day in babies with risk factors, on the pediatrician\'s advice. Follow your pediatrician\'s advice.'
+        : 'After the first year Italy and ESPGHAN recommend supplementation only for children with risk factors; Italy indicates 600 IU per day with little sun exposure, up to 1000 with more factors. The AAP indicates at least 400 IU and the US IOM 600 IU per day for ages 1–13. Follow your pediatrician\'s advice.'),
+      vitDNoIU: 'Enter the IU per drop or per ml (written on the packaging) to check the total.',
+      vitDAnalog: 'Calcifediol, alfacalcidol, calcitriol and dihydrotachysterol are not for routine prevention (risk of hypercalcemia).',
+      ok: 'No limit exceeded among those checked. This does not guarantee that the dose is right for your child.'
+    },
+    sources: 'Sources'
   }
 };
 
@@ -296,7 +408,7 @@ function GrowthChart({ indicator, sex, points, upTo, lang }) {
         <motion.circle key={p.id} cx={x(p.m)} cy={y(p.v)} r={p.est ? 3.5 : p.warn ? 6 : 5} className={`kid-pt ${p.warn ? 'warn' : ''}`}
           style={p.est ? { fill: 'none', strokeDasharray: '2 1.5', strokeWidth: 1.5, opacity: .85 } : undefined}
           initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ...spring, delay: 0.05 * i }}>
-          {p.est && <title>{lang === 'ru' ? 'Расчётный ИМТ' : 'BMI stimato'}</title>}
+          {p.est && <title>{lang === 'ru' ? 'Расчётный ИМТ' : lang === 'en' ? 'Estimated BMI' : 'BMI stimato'}</title>}
         </motion.circle>
       ))}
     </svg>
@@ -476,7 +588,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
           return (
             <motion.li key={g.id} layout initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
               <div className="dl-head">
-                <strong>{new Date(g.date).toLocaleDateString(lang)}</strong>
+                <strong>{new Date(g.date).toLocaleDateString(LOCALE[lang])}</strong>
                 <span className="muted small">{formatAge(kid.birth, lang, new Date(g.date))}</span>
                 <button className="link-btn" onClick={() => setForm({ ...g, weight: g.weight ?? '', height: g.height ?? '', head: g.head ?? '' })}>✎</button>
                 <button className="link-btn" onClick={() => setGrowth(growth.filter((x) => x.id !== g.id))} aria-label={s.del}>✕</button>
@@ -488,7 +600,7 @@ function Growth({ lang, kid, growth, setGrowth }) {
                   </span>
                 ))}
               </div>
-              {g.ev.bmi?.estimated && <p className="small muted">{s.bmiEstText(new Date(g.date).toLocaleDateString(lang), new Date(g.ev.bmi.dates[0]).toLocaleDateString(lang), g.ev.bmi.dates[1] && new Date(g.ev.bmi.dates[1]).toLocaleDateString(lang))} <Refs ids={['W16']} /></p>}
+              {g.ev.bmi?.estimated && <p className="small muted">{s.bmiEstText(new Date(g.date).toLocaleDateString(LOCALE[lang]), new Date(g.ev.bmi.dates[0]).toLocaleDateString(LOCALE[lang]), g.ev.bmi.dates[1] && new Date(g.ev.bmi.dates[1]).toLocaleDateString(LOCALE[lang]))} <Refs ids={['W16']} /></p>}
               {g.beforeTerm && <p className="small muted">{s.beforeTerm} <Refs ids={['W13']} /></p>}
               <WarnBox warnings={warns} s={s} />
             </motion.li>
@@ -572,7 +684,7 @@ function MyMeds({ s, lang, kid, months, mine, medPlans, setMedPlans, giveDose, a
           <li key={g.key}>
             <div className="dl-head"><strong>{g.name}</strong></div>
             <div className="dl-vals">
-              <span className="chip">{s.lastGiven}: {g.last ? new Date(g.last.at).toLocaleString(lang, { dateStyle: 'short', timeStyle: 'short' }) : s.never}</span>
+              <span className="chip">{s.lastGiven}: {g.last ? new Date(g.last.at).toLocaleString(LOCALE[lang], { dateStyle: 'short', timeStyle: 'short' }) : s.never}</span>
               {g.n24 > 0 && <span className="chip">{s.in24(g.n24)}</span>}
               {g.plan && <span className="chip">{s.yourPlan}: {s.planSummary(g.plan, s) || '—'}</span>}
               {g.plan?.note && <span className="chip muted">{g.plan.note}</span>}
@@ -693,11 +805,13 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
       return [e.at.slice(0, 16).replace('T', ' '), e.name, e.route || '', e.amount, e.unit, e.conc || '', mg || '', w ? w.kg : '', mg && w ? (mg / w.kg).toFixed(1) : '', e.note];
     });
     const g = growth.filter((x) => x.kidId === kid.id).sort((a, b) => a.date.localeCompare(b.date)).map((x) => [x.date, x.weight || '', x.height || '', x.head || '']);
-    const csv = toCsv(rows, ['data_ora', 'farmaco', 'via', 'quantita', 'unita', 'mg_per_ml', 'mg', 'peso_kg', 'mg_per_kg', 'nota']) +
-      '\n\n' + toCsv(g, ['data', 'peso_kg', 'altezza_cm', 'testa_cm']);
+    const H = lang === 'en'
+      ? [['date_time', 'medicine', 'route', 'amount', 'unit', 'mg_per_ml', 'mg', 'weight_kg', 'mg_per_kg', 'note'], ['date', 'weight_kg', 'height_cm', 'head_cm']]
+      : [['data_ora', 'farmaco', 'via', 'quantita', 'unita', 'mg_per_ml', 'mg', 'peso_kg', 'mg_per_kg', 'nota'], ['data', 'peso_kg', 'altezza_cm', 'testa_cm']];
+    const csv = toCsv(rows, H[0]) + '\n\n' + toCsv(g, H[1]);
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv' }));
-    a.download = `lunibu-${(kid.name || 'bimbo').toLowerCase()}-${today()}.csv`;
+    a.download = `lunibu-${(kid.name || (lang === 'en' ? 'child' : lang === 'ru' ? 'rebenok' : 'bimbo')).toLowerCase()}-${today()}.csv`;
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   };
@@ -816,7 +930,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
                       return <motion.rect key={k} x={14 + i * bw + 1} width={Math.max(2, bw - 2)} y={y0} height={h} rx={2} fill={color(k)}
                         initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} style={{ transformOrigin: `0 100px` }} transition={{ delay: i * 0.01 }} />;
                     })}
-                    {(i === 0 || i === nDays - 1 || (i % 7 === 0 && nDays - 1 - i >= 4)) && <text x={14 + i * bw + bw / 2} y={114} className="axis" textAnchor="middle">{p.d.slice(8, 10)}/{p.d.slice(5, 7)}</text>}
+                    {(i === 0 || i === nDays - 1 || (i % 7 === 0 && nDays - 1 - i >= 4)) && <text x={14 + i * bw + bw / 2} y={114} className="axis" textAnchor="middle">{lang === 'en' ? `${p.d.slice(5, 7)}/${p.d.slice(8, 10)}` : `${p.d.slice(8, 10)}/${p.d.slice(5, 7)}`}</text>}
                   </g>
                 );
               })}
@@ -839,7 +953,7 @@ function Meds({ lang, kid, months, meds, setMeds, growth, medPlans, setMedPlans 
               <div className="dl-head">
                 <i className="dot" style={{ background: color(medKey(e)) }} />
                 <strong>{e.name}</strong>
-                <span className="muted small">{new Date(e.at).toLocaleString(lang, { dateStyle: 'short', timeStyle: 'short' })}</span>
+                <span className="muted small">{new Date(e.at).toLocaleString(LOCALE[lang], { dateStyle: 'short', timeStyle: 'short' })}</span>
                 <button className="link-btn" onClick={() => setMeds(meds.filter((x) => x.id !== e.id))} aria-label={s.del}>✕</button>
               </div>
               <div className="dl-vals">

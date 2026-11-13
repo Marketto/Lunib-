@@ -82,6 +82,42 @@
         "Агрессия к людям в большинстве эпизодов или никогда не может успокоиться сам.",
         "Истерики усиливаются после 4 лет или сочетаются с задержкой речи."
       ]
+    },
+    "en": {
+      "title": "Tantrums and angry outbursts",
+      "summary": "Angry outbursts are a normal part of development between ages 1 and 4: your child feels strong emotions but cannot manage them yet. Some features, however, deserve attention.",
+      "keywords": [
+        "tantrums",
+        "angry outbursts",
+        "anger",
+        "screaming",
+        "throws themselves on the floor",
+        "meltdowns",
+        "terrible twos",
+        "bites",
+        "hits",
+        "aggression",
+        "won't accept no",
+        "frustration"
+      ],
+      "research": [
+        "A study of behavior during tantrums (Potegal 2003) describes anger and sadness intertwined: it is a wave of emotion, not a strategy.",
+        "A clinical study (Belden 2008) identifies as more concerning tantrums with aggression toward people or objects in most episodes, self-harm, an average length over 25 minutes, very frequent tantrums, or being unable to calm down alone.",
+        "The AAP (Sege 2018) recommends positive discipline: clear limits, consistency and attention to positive behaviors."
+      ],
+      "tips": [
+        "Stay close and calm; name the emotion: \"You're angry because you wanted to stay at the park.\"",
+        "Say little during the tantrum: explanations work better afterward, when your child is calm.",
+        "Protect your child and others if they become aggressive, without physical punishment.",
+        "Prevent where you can: hunger, tiredness and sudden transitions are the big triggers.",
+        "Give a heads-up before changes and offer small choices."
+      ],
+      "redFlags": [
+        "Hurts themselves during tantrums (bangs their head, bites themselves).",
+        "Tantrums that often last more than 25 minutes, or are very frequent every day.",
+        "Aggression toward people in most episodes, or never manages to calm down alone.",
+        "Tantrums increase after age 4 or come with a language delay."
+      ]
     }
   },
   {
@@ -154,6 +190,36 @@
         "Если вы на пределе, сделайте паузу: родителям тоже нужно успокоиться.",
         "После трудного момента восстановите связь: объятие и пара слов многое значат."
       ]
+    },
+    "en": {
+      "title": "Spanking and punishment: what the research says",
+      "summary": "Physical punishment does not improve behavior over time and is associated with more aggression and other problems. The AAP recommends positive alternatives.",
+      "keywords": [
+        "spanking",
+        "spankings",
+        "slap",
+        "punishment",
+        "punishing",
+        "discipline",
+        "rules",
+        "no",
+        "time out",
+        "yelling",
+        "parenting",
+        "limits"
+      ],
+      "research": [
+        "A meta-analysis of decades of studies (Gershoff and Grogan-Kaylor 2016) linked spanking to worse outcomes, such as more aggression and behavior problems, and found no long-term benefit.",
+        "The AAP policy (Sege and Siegel 2018) advises against both physical punishment and verbal humiliation, and points to strategies based on relationship, clear rules and positive reinforcement.",
+        "Recognizing and praising the behaviors you want makes them more frequent."
+      ],
+      "tips": [
+        "Few rules, simple and stated in positive terms: \"We walk inside\" instead of \"Don't run.\"",
+        "Praise specific behaviors: \"Thank you for putting the blocks away.\"",
+        "Use logical, immediate consequences, for example putting the thrown toy away for a while.",
+        "If you are at your limit, take a break: parents need to calm down too.",
+        "After a hard moment, repair: a hug and a few words rebuild the bond."
+      ]
     }
   },
   {
@@ -224,6 +290,37 @@
         "Расскажите воспитателям о привычках, сне и сигналах вашего малыша.",
         "Будьте готовы к трудным дням даже после того, как казалось, что он привык: это нормально."
       ]
+    },
+    "en": {
+      "title": "Starting daycare or preschool",
+      "summary": "The first weeks at daycare are a demanding change for your child. A gradual start, with a parent present at the beginning, helps them cope.",
+      "keywords": [
+        "daycare",
+        "nursery",
+        "settling in",
+        "adjustment",
+        "separation anxiety",
+        "cries when I leave",
+        "separation",
+        "preschool",
+        "kindergarten",
+        "parting",
+        "pre-K",
+        "nursery school",
+        "first day of school"
+      ],
+      "research": [
+        "A study (Ahnert 2004) measured higher cortisol levels in children during the first weeks of daycare than at home, indicating that separation is a real emotional effort.",
+        "In the same study, a parent's presence during the early phases of the transition and a secure attachment were associated with milder stress reactions.",
+        "Crying at goodbye is common and usually eases over the weeks."
+      ],
+      "tips": [
+        "Plan a gradual start: first together, then short separations that get longer.",
+        "Always say goodbye before leaving, briefly and calmly: slipping away unnoticed increases anxiety.",
+        "Create a small goodbye ritual and bring an item from home.",
+        "Talk with the teachers about your child's habits, sleep and cues.",
+        "Expect a few harder days even after they seemed settled: it is normal."
+      ]
     }
   },
   {
@@ -290,6 +387,34 @@
         "Вовлекайте, если он хочет («Подашь подгузник?»), но не заставляйте.",
         "Принимайте регресс терпеливо: он проходит сам.",
         "Избегайте больших перемен в тот же период, например отучения от подгузника или смены кровати."
+      ]
+    },
+    "en": {
+      "title": "A baby brother or sister is coming",
+      "summary": "After a sibling is born, it is common for the firstborn to show jealousy, regression or more tantrums. These are usually temporary reactions.",
+      "keywords": [
+        "baby brother",
+        "baby sister",
+        "second child",
+        "jealousy",
+        "jealous",
+        "regression",
+        "starts having accidents again",
+        "firstborn",
+        "newborn",
+        "siblings"
+      ],
+      "research": [
+        "A literature review (Volling 2012) reports that after a sibling is born many firstborns show changes: more demands for attention, regression, sleep or behavior problems.",
+        "In most cases these changes are temporary; the family atmosphere and support for parents influence adjustment.",
+        "Reactions vary a lot depending on the firstborn's age and temperament."
+      ],
+      "tips": [
+        "Prepare them with simple books and stories, not too far ahead for the youngest children.",
+        "Set aside a little time every day just for them, even 10 minutes.",
+        "Involve them if they want (\"Can you hand me the diaper?\"), without forcing them.",
+        "Accept regression with patience: it goes away on its own.",
+        "Avoid big changes at the same time, such as starting potty training or switching beds."
       ]
     }
   },
@@ -359,6 +484,35 @@
         "Промахи нормальны: убирайте их без негативных комментариев.",
         "Хвалите старание, а не только результат.",
         "Ночной подгузник часто остаётся надолго: ночной контроль приходит позже."
+      ]
+    },
+    "en": {
+      "title": "Potty training: when are they ready?",
+      "summary": "There is no right age for everyone: you start when your child shows signs of readiness, usually between 18 and 36 months, with a calm approach and no punishment.",
+      "keywords": [
+        "potty",
+        "potty training",
+        "toilet training",
+        "diaper",
+        "pee",
+        "poop in the potty",
+        "toilet",
+        "toilet seat",
+        "accidents",
+        "bedwetting",
+        "bladder control"
+      ],
+      "research": [
+        "A review (Kaerts 2012) lists the most commonly used signs of readiness: staying dry for a couple of hours, interest in the bathroom, the ability to communicate the need and to follow simple instructions.",
+        "The same review notes that there is no single agreement on which signs are decisive: it is better to look at the child as a whole.",
+        "Constipation can get in the way of potty training, and pressure can worsen the tendency to hold it in."
+      ],
+      "tips": [
+        "Choose a quiet period, without a move, a birth or the start of daycare.",
+        "Offer the potty at regular times, for example after meals and on waking.",
+        "Accidents are normal: clean them up without negative comments.",
+        "Praise the effort, not just the result.",
+        "A nighttime diaper often stays for a long time: nighttime control comes later."
       ]
     }
   },
@@ -434,7 +588,39 @@
       "redFlags": [
         "Очень сильный страх, который длится месяцами и мешает делать обычные для возраста вещи.",
         "Сильная тревога неделями при каждом расставании, с болью в животе или отказом идти в садик.",
-        "Резкие изменения после тяжёлого события (утрата, авария, развод)."
+        "Резкие изменения после тяжёлого события (утрата, авария, расставание родителей)."
+      ]
+    },
+    "en": {
+      "title": "Fear of the dark, monsters and imaginary friends",
+      "summary": "Fear of the dark, monsters, animals or separation is typical of the preschool years and usually fades with age. An imaginary friend is normal too.",
+      "keywords": [
+        "fear of the dark",
+        "fear of monsters",
+        "fears",
+        "is scared",
+        "imaginary friend",
+        "imagination",
+        "anxiety",
+        "fear of separation",
+        "won't sleep alone"
+      ],
+      "research": [
+        "A review of a century of studies (Gullone 2000) describes fears of the dark, imaginary creatures, animals and separation as common and normal in the preschool years, declining with age.",
+        "Fears become a problem when they are excessive for the age, last a long time and limit the daily life of the child or the family.",
+        "In an American study (Taylor 2004), 65% of children had had an imaginary friend by age 7: it is a sign of imagination, not of a problem."
+      ],
+      "tips": [
+        "Take the fear seriously without making fun of it: \"I understand the dark scares you.\"",
+        "A night-light or a \"guardian\" stuffed toy can help.",
+        "Approach what scares them in small steps, together and without forcing.",
+        "Limit scary stories, videos and news, especially in the evening.",
+        "Welcome the imaginary friend with curiosity: it is a way to practice language and emotions."
+      ],
+      "redFlags": [
+        "A very intense fear that has lasted for months and keeps them from doing things normal for their age.",
+        "Strong distress for weeks every time you separate, with stomachaches or refusing to go to preschool.",
+        "Sudden changes after a difficult event (a death, an accident, parents separating)."
       ]
     }
   },
@@ -519,6 +705,40 @@
         "Проводите адаптацию постепенно, в начале оставаясь рядом (Ahnert, 2004).",
         "«Перестал плакать» не всегда значит «привык»: важно, что ребёнок исследует, улыбается и общается (Datler, 2012).",
         "Дома продолжайте читать, играть и разговаривать — это весит больше всего."
+      ]
+    },
+    "en": {
+      "title": "Daycare and preschool: what the research says",
+      "summary": "What matters most is the quality of the service, and the family remains the strongest influence. Attendance has effects, but they are small, positive or negative depending on quality and hours.",
+      "keywords": [
+        "daycare",
+        "nursery",
+        "preschool",
+        "kindergarten",
+        "sending them to daycare",
+        "is daycare good",
+        "when to enroll",
+        "socialization",
+        "daycare quality",
+        "hours in daycare"
+      ],
+      "research": [
+        "The large American NICHD study (NICHD 2006; Belsky 2007) found that parenting matters more than the type of care: at 4.5 years, the effect of daycare quality on language was about one third of that of the family.",
+        "In the same study, higher quality was associated with a better vocabulary up to the end of sixth grade; more hours in group settings were associated with slightly more difficult behaviors reported by teachers. The effects were small.",
+        "A meta-analysis of natural experiments, European and non-European (van Huizen and Plantenga 2018), finds mixed results overall, but high-quality services with consistently positive effects, larger for children from disadvantaged families; age of entry did not change the results in a consistent way.",
+        "A meta-analysis of 17 European studies (Ulferts 2019) links the quality of educational interactions to small advantages in language and math that last through the school years.",
+        {
+          "t": "A meta-analysis (Vermeer and van IJzendoorn 2006) found higher levels of cortisol, the stress hormone, on daycare days than at home, especially under age 3.",
+          "from": 6,
+          "to": 36
+        }
+      ],
+      "tips": [
+        "Look at quality: stable, warm caregivers, small groups, an appropriate adult-to-child ratio, time to play.",
+        "If you can choose, also consider how many hours a day: for the youngest children, long days are more demanding.",
+        "Plan a gradual start with you present at the beginning (Ahnert 2004).",
+        "Don't assume that \"no longer cries\" necessarily means they have settled in: what matters is that they explore, smile and interact (Datler 2012).",
+        "At home, keep reading, playing and talking: it's the ingredient that matters most."
       ]
     }
   },
@@ -645,6 +865,62 @@
         "Теряет уже освоенные социальные или речевые навыки.",
         "Частая агрессия, которая не проходит, или воспитатели сообщают о серьёзных трудностях."
       ]
+    },
+    "en": {
+      "title": "Friends and social skills: how they grow",
+      "summary": "Children move from playing alongside others to playing together, respecting turns and rules. The CDC/AAP milestones help you know what to expect at each age.",
+      "keywords": [
+        "social skills",
+        "friends",
+        "plays alone",
+        "doesn't play with others",
+        "sharing",
+        "taking turns",
+        "empathy",
+        "shy",
+        "social development",
+        "fights"
+      ],
+      "research": [
+        {
+          "t": "CDC/AAP 2022, 2 years: notices when someone is sad or hurt and looks at your face to figure out how to react in new situations.",
+          "from": 18,
+          "to": 30
+        },
+        {
+          "t": "CDC/AAP, 30 months: plays next to other children and sometimes with them.",
+          "from": 24,
+          "to": 36
+        },
+        {
+          "t": "CDC/AAP, 3 years: notices other children and joins their play; calms down within 10 minutes after being dropped off at daycare.",
+          "from": 30,
+          "to": 48
+        },
+        {
+          "t": "CDC/AAP, 4 years: pretends to be someone else, asks to play with friends, comforts someone who is sad and likes to help.",
+          "from": 42,
+          "to": 60
+        },
+        {
+          "t": "CDC/AAP, 5 years: follows rules or takes turns in games with other children.",
+          "from": 54,
+          "to": 72
+        },
+        "A meta-analysis of 48 studies (Murano 2020) shows that social-emotional learning programs in preschool improve social skills and reduce problem behaviors, with small to medium effects."
+      ],
+      "tips": [
+        "Set up playdates now and then with one or two children: small groups are easier to start with.",
+        "Name emotions (\"Luke is sad because...\") and ask what could be done.",
+        "Turn-taking games such as rolling a ball or simple board games practice waiting.",
+        "Don't force sharing of favorite toys: suggest putting them away before friends arrive.",
+        "Shyness is a trait, not a flaw: give them time and stay close at the beginning."
+      ],
+      "redFlags": [
+        "Shows no interest in other people or does not try to share with you what interests them.",
+        "Loses social or language skills they had.",
+        "Frequent aggression that does not improve, or teachers report significant difficulties."
+      ]
     }
   },
   {
@@ -747,6 +1023,48 @@
         "Мало правил, чётких и последовательных, в позитивной форме.",
         "Если нужна дополнительная поддержка, спросите у педиатра или в семейной консультации, какие курсы для родителей есть рядом с вами."
       ]
+    },
+    "en": {
+      "title": "Positive parenting: attention, praise and rules",
+      "summary": "Parenting programs based on attention, clear rules and positive reinforcement have small to moderate effects on behavior: the WHO strongly recommends them (moderate certainty of evidence). However, part of the data comes from parents and from authors tied to the programs.",
+      "keywords": [
+        "positive parenting",
+        "parenting class",
+        "parent training",
+        "triple p",
+        "incredible years",
+        "rules",
+        "positive discipline",
+        "behavior",
+        "ignoring",
+        "time out",
+        "praise",
+        "attention",
+        "parent support"
+      ],
+      "research": [
+        {
+          "t": "The WHO (2023) strongly recommends making evidence-based programs grounded in social learning theory, group or individual, accessible to all parents of children aged 2–10; the certainty of evidence is moderate for maltreatment, positive parenting and externalizing behaviors, and low for internalizing problems and parental stress.",
+          "from": 24,
+          "to": 120
+        },
+        "A meta-analysis of 101 studies and 16,099 families (Sanders 2014) found small to moderate effects for the Triple P program: d=0.47 on child outcomes, d=0.58 on parenting practices, d=0.50 on observed child behavior.",
+        "A systematic review (Wilson 2012) urges caution: in 32 of 33 studies there were authors tied to the program, with a high risk of bias.",
+        "A meta-analysis of 50 studies (Menting 2013) on the Incredible Years program reports an overall effect of d=0.27 on disruptive behaviors; the largest effects (d=0.50 in treatment studies) come from parent ratings.",
+        {
+          "t": "A meta-analysis of 24 studies with children aged 3–12 (Thomas and Zimmer-Gembeck 2007) found the largest effects in parent-reported ratings.",
+          "from": 36,
+          "to": 144
+        },
+        "For physical punishment see the dedicated card (Sege 2018; Gershoff and Grogan-Kaylor 2016)."
+      ],
+      "tips": [
+        "Give attention and praise to the behaviors you want to see more often; describe what they did: \"You waited for your turn.\"",
+        "For minor misbehavior with no risk, briefly ignoring can be enough (AAP).",
+        "Time-out is a last resort, not a first step (AAP).",
+        "A few clear, consistent rules, stated in positive terms.",
+        "If you want extra support, ask the pediatrician or the public family health center (consultorio familiare, in Italy) which parenting courses are available near you."
+      ]
     }
   },
   {
@@ -828,6 +1146,41 @@
         "Называйте эмоцию, которую видите: «Ты расстроен, потому что игра закончилась».",
         "Сначала примите чувство, потом при необходимости поставьте границу поведению: «Понимаю, что ты злишься; игрушки бросать нельзя».",
         "Принимать и называть эмоции — этому учились родители в изученной программе: можно пробовать маленькими шагами."
+      ]
+    },
+    "en": {
+      "title": "Naming emotions",
+      "summary": "A parent program that teaches how to accept and name children's emotions gave promising results in a controlled study of 4- to 5-year-olds. Medium-level evidence: it comes mostly from one controlled study, and there are no age tables.",
+      "keywords": [
+        "emotions",
+        "naming emotions",
+        "emotion coaching",
+        "tuning in to kids",
+        "anger",
+        "sadness",
+        "comforting",
+        "accepting feelings",
+        "talking about emotions",
+        "emotional regulation"
+      ],
+      "research": [
+        {
+          "t": "A controlled study (Wilson 2012) of 128 parents (62 in the program) of children aged 4 years to 5 years 11 months, with 6 sessions and a follow-up of about 7 months, found that program parents were less dismissive and did more \"emotion coaching\"; behavior problems reported by parents dropped more than in the waitlist group.",
+          "from": 48,
+          "to": 72
+        },
+        {
+          "t": "In the same study (Wilson 2012), social competence rated by teachers improved in both groups, so for this outcome there is no clear difference in favor of the program.",
+          "from": 48,
+          "to": 72
+        },
+        "An earlier community study (Havighurst 2010) confirms the results on parents; here it serves only as secondary support.",
+        "There is no age table for emotion regulation: every child has their own pace."
+      ],
+      "tips": [
+        "Name the emotion you see: \"You're disappointed because the game is over.\"",
+        "Accept the feeling first, then, if needed, set the limit on the behavior: \"I understand you're angry; we don't throw toys.\"",
+        "Accepting and naming emotions is what the parents learned to do in the program studied: you can try it in small steps."
       ]
     }
   },
@@ -936,6 +1289,54 @@
       "redFlags": [
         "Если ребёнок не может привыкнуть к разлукам, обсудите это с педиатром.",
         "Если тревога остаётся ежедневной и после дошкольного возраста, обсудите это с педиатром."
+      ]
+    },
+    "en": {
+      "title": "Separation anxiety and attachment",
+      "summary": "Crying or getting upset when you leave or step away is a common stage of development. A short, consistent goodbye and practicing small separations help (AAP guidance); a secure attachment is associated with better social development.",
+      "keywords": [
+        "separation anxiety",
+        "separation",
+        "cries when I leave",
+        "attachment",
+        "goodbye",
+        "parting",
+        "won't let go of me",
+        "mom",
+        "dad",
+        "daycare",
+        "preschool",
+        "bond"
+      ],
+      "research": [
+        {
+          "t": "According to the AAP, separation anxiety can begin as early as 4–5 months.",
+          "from": 4,
+          "to": 6
+        },
+        {
+          "t": "According to the AAP, it becomes more marked around 9 months.",
+          "from": 8,
+          "to": 12
+        },
+        {
+          "t": "According to the AAP, it can come back at 15–18 months.",
+          "from": 15,
+          "to": 18
+        },
+        "The AAP states that beyond the preschool years it is rare for it to be present every day.",
+        "A meta-analysis (Groh 2017) associates secure attachment with better social competence and fewer externalizing and internalizing problems: it is an association, with no figures reported here."
+      ],
+      "tips": [
+        "Use a short goodbye ritual that is always the same.",
+        "At goodbye, give your child your full attention, then go.",
+        "Keep your promises: always come back when you said you would.",
+        "Practice with short separations, lengthening them little by little.",
+        "Explain time in kid terms: \"I'll be back after snack.\""
+      ],
+      "redFlags": [
+        "If your child cannot adjust to separations, talk to the pediatrician.",
+        "If the distress stays daily beyond the preschool years, talk to the pediatrician."
       ]
     }
   },
@@ -1051,6 +1452,56 @@
         "Его отправляют домой из школы или яслей.",
         "Вы опасаетесь за безопасность других."
       ]
+    },
+    "en": {
+      "title": "Biting, pushing and aggression",
+      "summary": "Pushing, biting and hitting are common in the youngest children and usually decline with age. Medium-level evidence, based mostly on parent questionnaires. Some signs, however, deserve a conversation with the pediatrician.",
+      "keywords": [
+        "bites",
+        "biting",
+        "pushes",
+        "pushing",
+        "hits",
+        "aggression",
+        "pulls hair",
+        "scratches",
+        "throws objects",
+        "anger",
+        "hurts others",
+        "aggressive"
+      ],
+      "research": [
+        {
+          "t": "A study of 2,253 children (Alink 2006, parent-reported data) found that physical aggression increases in the second year of life.",
+          "from": 12,
+          "to": 24
+        },
+        {
+          "t": "In the same study (Alink 2006), physical aggression decreases from the third birthday.",
+          "from": 36,
+          "to": 50
+        },
+        "A study of 504 children followed at 17, 30 and 42 months (Tremblay 2004) identified about 28% with very low aggression, 58% modest and 14% high.",
+        {
+          "t": "A study of 10,658 children aged 2–11 (Côté 2006) identified three groups: 31% at a low, declining level, 52% moderate and declining, 17% high and stable. Membership in the high, stable group is associated with being male (OR 1.67) and with hostile or ineffective parenting (OR 1.16): this is an association, not proof of cause.",
+          "from": 24,
+          "to": 132
+        }
+      ],
+      "tips": [
+        "Teach the words: \"Use your words: I want the toy\" (AAP).",
+        "Separate them for a moment from the other child until they calm down (AAP).",
+        "Involve them in another activity to help them calm down (AAP).",
+        "Praise kindness when you see it (AAP).",
+        "Stay calm: you are their role model (AAP)."
+      ],
+      "redFlags": [
+        "Unusual aggression that lasts more than a few weeks.",
+        "Hurts themselves or hurts others, causing injuries.",
+        "Attacks adults.",
+        "Gets sent home from school or daycare.",
+        "You are worried about the safety of others."
+      ]
     }
   },
   {
@@ -1089,7 +1540,7 @@
           "to": 38
         },
         {
-          "t": "Uno studio su 565 bambini di 7–12 anni seguiti in 4 rilevazioni (Brummelman 2015) ha trovato che la sopravvalutazione dei genitori prediceva il narcisismo e il calore dei genitori prediceva l'autostima. È un'associazione prospettica, non prova di causa.",
+          "t": "Uno studio su 565 bambini di 7–11 anni all'inizio seguiti in 4 rilevazioni (Brummelman 2015) ha trovato che la sopravvalutazione dei genitori prediceva il narcisismo e il calore dei genitori prediceva l'autostima. È un'associazione prospettica, non prova di causa.",
           "from": 84,
           "to": 144
         }
@@ -1124,7 +1575,7 @@
           "to": 38
         },
         {
-          "t": "Исследование 565 детей 7–12 лет, обследованных в 4 волнах (Brummelman, 2015), показало, что завышенная оценка со стороны родителей предсказывала нарциссизм, а родительское тепло предсказывало самооценку. Это проспективная связь, а не доказательство причины.",
+          "t": "Исследование 565 детей 7–11 лет на старте, обследованных в 4 волнах (Brummelman, 2015), показало, что завышенная оценка со стороны родителей предсказывала нарциссизм, а родительское тепло предсказывало самооценку. Это проспективная связь, а не доказательство причины.",
           "from": 84,
           "to": 144
         }
@@ -1133,6 +1584,41 @@
         "Описывайте усилие или стратегию: «Ты пробовал разными способами, пока не получилось».",
         "Когда получилось, хвалите усилие, а не «ты умный»: это может помочь легче переносить последующие неудачи (Mueller, Dweck, 1998, краткосрочные эксперименты).",
         "Сопровождайте похвалу теплом и лаской."
+      ]
+    },
+    "en": {
+      "title": "How to praise",
+      "summary": "Research suggests praising effort and strategies more than fixed qualities of the person. Medium-level evidence: a short-term experiment, and association studies in families.",
+      "keywords": [
+        "praise",
+        "praising",
+        "compliments",
+        "good job",
+        "effort",
+        "motivation",
+        "self-esteem",
+        "growth mindset",
+        "narcissism",
+        "rewarding",
+        "encouraging"
+      ],
+      "research": [
+        "In 6 studies of 412 fifth-grade children (Mueller and Dweck 1998), after a failure, children praised for intelligence persisted less, enjoyed themselves less and performed worse. These are short-term experiments.",
+        {
+          "t": "A study of 53 families (Gunderson 2013) found that process praise (effort, strategies) received at 14–38 months predicted a growth mindset at 7–8 years; person praise was not associated with a fixed mindset. This is an association.",
+          "from": 14,
+          "to": 38
+        },
+        {
+          "t": "A study of 565 children aged 7–11 at the start, followed over 4 assessments (Brummelman 2015) found that parental overvaluation predicted narcissism and parental warmth predicted self-esteem. This is a prospective association, not proof of cause.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Describe the effort or the strategy: \"You tried so many ways until you got it.\"",
+        "When they succeed, praising effort instead of saying \"you're smart\" may help them handle later setbacks better (Mueller and Dweck 1998, short-term experiments).",
+        "Pair praise with warmth and affection."
       ]
     }
   },
@@ -1203,6 +1689,35 @@
         "Не паникуйте, если иногда используете экран: исследование показывает связь и не говорит, что эпизодическое использование вредит.",
         "До 2 лет действуют правила из карточки об экранах."
       ]
+    },
+    "en": {
+      "title": "Calming with a phone or tablet",
+      "summary": "Parents sometimes use a screen to calm a 3- to 5-year-old. A single study, with weak evidence, links this to more emotional reactivity a few months later: it is an association and does not show that it is the cause. Under age 2 the screen rules apply.",
+      "keywords": [
+        "calming",
+        "phone",
+        "tablet",
+        "screen",
+        "tantrums",
+        "anger",
+        "emotional reactivity",
+        "distracting",
+        "cell phone",
+        "emotional regulation",
+        "tv"
+      ],
+      "research": [
+        {
+          "t": "A study of 422 parent-child pairs with children aged 3–5 (Radesky 2023) found that using devices to calm, at baseline and at 3 months, was associated with greater emotional reactivity at 6 months (small association, r about 0.20). The reverse path was not significant. The association was stronger in boys and in children with more \"surgency\" (a temperament trait). The data are parent-reported; weak evidence.",
+          "from": 36,
+          "to": 72
+        }
+      ],
+      "tips": [
+        "When you can, try other ways of calming first: a hug, naming the emotion, a break together.",
+        "No need to panic if you sometimes use a screen: the study is an association and does not say that occasional use does harm.",
+        "Under age 2, the rules on the screens card apply."
+      ]
     }
   },
   {
@@ -1269,6 +1784,33 @@
         "Темперамент — не недостаток: ярлыки навешивать не нужно.",
         "Если вам кажется, что с ним трудно, обсудите это с педиатром."
       ]
+    },
+    "en": {
+      "title": "Temperament: every child is different",
+      "summary": "Every child has their own way of reacting from birth. The evidence is weak and partly descriptive: it is useful for adjusting expectations, not for labeling the child.",
+      "keywords": [
+        "temperament",
+        "personality",
+        "shy",
+        "lively",
+        "sensitive",
+        "intense",
+        "adaptability",
+        "restless",
+        "difficult",
+        "character",
+        "reactive",
+        "sensitivity"
+      ],
+      "research": [
+        "The AAP describes at least 9 temperament traits, such as activity level, intensity, adaptability, approach or withdrawal, mood, attention span, distractibility, regularity and sensory threshold; they are largely inborn but can be modified. Weak, descriptive evidence.",
+        "A theoretical review (Belsky and Pluess 2009) proposes that some children, for example those with more reactive temperaments, are more sensitive to both negative and positive parenting; the evidence is correlational and therefore weak."
+      ],
+      "tips": [
+        "Notice how your child reacts to new things, noises and changes, and adjust your expectations (AAP).",
+        "A temperament is not a flaw: there is no need to label the child.",
+        "If your child's temperament feels hard to handle, talk to the pediatrician."
+      ]
     }
   },
   {
@@ -1333,7 +1875,7 @@
       ],
       "redFlags": [
         "Tristezza, ansia o perdita di interesse che durano e interferiscono con la vita quotidiana o con la cura del bambino: parlane con un medico.",
-        "Un punteggio EPDS di 10 o più: parlane con un medico. Se rispondi sì alla domanda sul farti del male, è urgente anche con punteggio basso: vedi sotto."
+        "Un punteggio EPDS di 10 o più: parlane con un medico. Se alla domanda sul farti del male (domanda 10) rispondi qualcosa di diverso da «Mai», è urgente anche con punteggio basso: vedi sotto."
       ],
       "urgent": [
         "Pensieri di farti del male o di fare del male al bambino: chiama subito il 112 (numero gratuito di emergenza europeo, attivo insieme al 118 in Italia). Non restare solo.",
@@ -1386,12 +1928,65 @@
       ],
       "redFlags": [
         "Грусть, тревога или потеря интереса, которые не проходят и мешают повседневной жизни или уходу за ребёнком: обсудите это с врачом.",
-        "Балл EPDS 10 или выше: обсудите это с врачом. Если вы ответили «да» на вопрос о причинении себе вреда, это срочно даже при низком балле: см. ниже."
+        "Балл EPDS 10 или выше: обсудите это с врачом. Если на вопрос о причинении себе вреда (вопрос 10) вы ответили что-либо, кроме «Никогда», это срочно даже при низком балле: см. ниже."
       ],
       "urgent": [
         "Мысли причинить вред себе или ребёнку: немедленно звоните 112 (бесплатный европейский номер экстренной помощи, в Италии работает наряду с 118). Не оставайтесь одни.",
         "Спутанность сознания или галлюцинации, особенно в первые недели после родов: немедленно звоните 112. Не оставайтесь одни.",
         "Страх за свою безопасность или безопасность ребёнка: немедленно звоните 112. Не оставайтесь одни."
+      ]
+    },
+    "en": {
+      "title": "Parents' well-being",
+      "summary": "Tiredness, sadness or anxiety after a child is born are more common than people think and also affect fathers. Asking for help is useful and legitimate; screening tools and Italian guidelines exist. Strong evidence, but screening is not a diagnosis.",
+      "keywords": [
+        "postpartum depression",
+        "baby blues",
+        "sadness",
+        "anxiety",
+        "tiredness",
+        "dads",
+        "parents",
+        "well-being",
+        "edinburgh",
+        "EPDS",
+        "mental health",
+        "bad thoughts",
+        "psychosis",
+        "help"
+      ],
+      "research": [
+        {
+          "t": "The AAP (Earls 2019) reports that 11–18% of women have depressive symptoms after childbirth and recommends screening at the 1-, 2-, 4- and 6-month visits; an EPDS score of 10 or more suggests possible depression, but it is a screening tool and not a diagnosis.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Postpartum psychosis affects 1–2 in 1,000 births, usually in the first 4 weeks, and requires immediate care (Earls 2019).",
+          "from": 0,
+          "to": 2
+        },
+        "A worldwide meta-analysis (Wang 2021, 565 studies) estimates 17.2% postpartum depression, lower in high-income countries.",
+        "A meta-analysis (Paulson and Bazemore 2010) estimates in fathers, between pregnancy and the first year, 10.4% (8.5–12.7), with a peak at 3–6 months after birth (25.6%); the correlation with maternal depression is moderate (r=0.31).",
+        "A meta-analysis (Goodman 2011) finds small but significant associations between maternal depression and problems in children: it is an association, not proof of cause.",
+        "The Edinburgh Postnatal Depression Scale (Cox 1987) has 10 questions and takes about 5 minutes.",
+        "The USPSTF task force (Curry 2019) gives a grade B to counseling for people at increased risk of perinatal depression.",
+        "The Italian National Institute of Health (ISS) RISEUP-PPD guidelines (December 2023) contain 48 recommendations on prevention, screening and treatment; the ISS estimates that about 1 in 5 women has perinatal mental health problems."
+      ],
+      "tips": [
+        "Talk to the pediatrician, your family doctor, the midwife or the public family health center (consultorio familiare, in Italy): postpartum checkups are for this too.",
+        "If you like, fill in a questionnaire such as the EPDS (10 questions, about 5 minutes) and bring it to the doctor: it is a screening tool, not a diagnosis.",
+        "Fathers can have symptoms too: this applies to both parents.",
+        "Accept help from people close to you and don't stay alone with your thoughts."
+      ],
+      "redFlags": [
+        "Sadness, anxiety or loss of interest that last and interfere with daily life or with caring for the baby: talk to a doctor.",
+        "An EPDS score of 10 or more: talk to a doctor. If you give any answer other than \"Never\" to the question about harming yourself (question 10), it is urgent even with a low score: see below."
+      ],
+      "urgent": [
+        "Thoughts of harming yourself or the baby: call 112 right away (the free EU-wide emergency number; in Italy you can also call 118 for medical emergencies). Outside Italy, call your local emergency number. Do not stay alone.",
+        "Confusion or hallucinations, especially in the first weeks after birth: call 112 right away. Outside Italy, call your local emergency number. Do not stay alone.",
+        "Fear for your safety or the baby's: call 112 right away. Outside Italy, call your local emergency number. Do not stay alone."
       ]
     }
   },
@@ -1495,6 +2090,51 @@
         "Тревога мешает дружбе.",
         "Тревога ограничивает повседневную жизнь ребёнка или семьи."
       ]
+    },
+    "en": {
+      "title": "Anxiety in children aged 6-12",
+      "summary": "Worries and fears are part of growing up. If anxiety limits school, sleep, friendships or daily life, talk to the pediatrician: there are forms of help that have been studied, including some aimed at parents.",
+      "keywords": [
+        "anxiety",
+        "anxious",
+        "worries",
+        "fear",
+        "school",
+        "doesn't want to go to school",
+        "stomachache",
+        "avoidance",
+        "shyness",
+        "panic",
+        "cognitive behavioral therapy",
+        "CBT",
+        "SPACE",
+        "parents"
+      ],
+      "research": [
+        "An AACAP guideline (Walter 2020), for children and adolescents aged 6-18, recommends cognitive behavioral therapy (CBT) for several anxiety disorders (1C: recommendation with low-strength evidence). It also recommends some medications (1B, moderate evidence) and suggests that combined treatment may be preferred (2C); the choice of medication is up to the specialist.",
+        {
+          "t": "A randomized study of 124 children aged 7-14 (Lebowitz 2020) found that SPACE, a treatment aimed only at parents (the therapist does not see the child), was not inferior to the child's CBT on anxiety outcomes.",
+          "from": 84,
+          "to": 144
+        },
+        {
+          "t": "In the same study (Lebowitz 2020), SPACE reduced family accommodation more, that is, the changes in parents' routines made to spare the child anxiety.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Listen without minimizing and without getting scared.",
+        "Notice whether home routines are adapting to the anxiety (avoiding places, always staying with them): it is useful to talk about this with a professional.",
+        "Keep a note of when the anxiety shows up and what makes it worse, to bring to the visit.",
+        "To learn more, see the AACAP guideline and the SPACE study."
+      ],
+      "redFlags": [
+        "The anxiety limits school.",
+        "The anxiety disturbs sleep.",
+        "The anxiety limits friendships.",
+        "The anxiety limits the daily life of the child or the family."
+      ]
     }
   },
   {
@@ -1591,6 +2231,47 @@
       ],
       "urgent": [
         "Вы считаете, что ребёнок в непосредственной опасности: немедленно звоните 112 (бесплатный европейский номер экстренной помощи, в Италии работает наряду с 118). Не оставляйте его одного."
+      ]
+    },
+    "en": {
+      "title": "Bullying and cyberbullying",
+      "summary": "Bullying is common and can have lasting consequences. If your child talks about it, listen; school interventions reduce bullying and victimization by about 15-19% on average, with very variable results across studies.",
+      "keywords": [
+        "bullying",
+        "cyberbullying",
+        "harassment",
+        "intimidation",
+        "school",
+        "classmates",
+        "teased",
+        "exclusion",
+        "social media",
+        "chat",
+        "report",
+        "content removal",
+        "Italian privacy authority (Garante)",
+        "law 71"
+      ],
+      "research": [
+        "In the HBSC 2022 survey (ISS-EpiCentro, Italy), 20% of 11-year-olds report \"episodes of bullying\" at least once in the past two months; the share drops to about 15% at 13 and below 10% at 15.",
+        "In the same HBSC 2022 survey, cyberbullying affects fewer than 20% of young people aged 11 to 15 and repeated cyberbullying fewer than 2%.",
+        "A meta-analysis of 165 studies (Moore 2017) judged that the causal link with victimization is stronger for depression, anxiety, poor general health and suicidal thoughts or behaviors, and likely for smoking and drug use; for other outcomes the evidence is not enough to speak of cause (assessment by the authors, based on observational studies).",
+        "A meta-analysis of 100 evaluations of school programs (Gaffney 2021) estimates a reduction of about 18-19% in bullying behaviors and about 15-16% in victimization, with high heterogeneity and mostly self-reported data.",
+        "Italian Law 71/2017 (art. 2): a minor aged at least 14, or a parent, can ask the site or social network operator to obscure, remove or block the content; the operator has 24 hours to take the request on and 48 hours to act, otherwise you can turn to the Italian data protection authority (Garante privacy), which decides within 48 hours."
+      ],
+      "tips": [
+        "Calmly ask what is happening, without judging and without immediately taking the phone away.",
+        "Keep messages and screenshots: you need them if you have to report to the platforms or the school.",
+        "Talk to the teachers: school programs have been evaluated in many studies (Gaffney 2021).",
+        "For online content you can ask the site or social network operator to remove it and, if it does not act, turn to the Garante privacy (Law 71/2017, in Italy).",
+        "To learn more, see the HBSC data and the text of Law 71."
+      ],
+      "redFlags": [
+        "Sadness or anxiety that do not go away: talk to the pediatrician.",
+        "If they talk about hurting themselves or not wanting to live: do not leave them alone and contact the pediatrician right away; if you can't reach the pediatrician, go to the hospital emergency room (Pronto Soccorso)."
+      ],
+      "urgent": [
+        "If you think your child is in immediate danger, call 112 right away (the free EU-wide emergency number, active in Italy alongside 118). Outside Italy, call your local emergency number. Do not leave them alone."
       ]
     }
   }

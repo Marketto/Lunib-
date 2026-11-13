@@ -13,8 +13,14 @@ const cardsDir = path.join(root, 'content/cards');
 const sources = JSON.parse(fs.readFileSync(path.join(root, 'content/sources.json'), 'utf8'));
 const outDir = path.join(root, 'public/data');
 
-const ALERTS = ['none', 'pediatra', 'urgente'];
+// Traduzione inglese: con REQUIRE_EN = true (valore attuale) una scheda/gioco/tappa senza blocco `en` (o con `en`
+// incompleto o non allineato a `it`) è un ERRORE e la build fallisce. Mettendo false (o per bozze) diventa solo un
+// AVVISO e l'app ripiega sull'italiano.
+const REQUIRE_EN = true;
 const errors = [];
+const warnings = [];
+const enProblem = (msg) => (REQUIRE_EN ? errors : warnings).push(msg);
+const ALERTS = ['none', 'pediatra', 'urgente'];
 const cards = [];
 
 for (const file of fs.readdirSync(cardsDir).filter((f) => f.endsWith('.json')).sort()) {
@@ -26,25 +32,38 @@ for (const file of fs.readdirSync(cardsDir).filter((f) => f.endsWith('.json')).s
     if (!ALERTS.includes(c.alert)) errors.push(`${where} alert non valido`);
     if (!c.sources?.length) errors.push(`${where} senza fonti`);
     for (const s of c.sources || []) if (!sources[s]) errors.push(`${where} fonte mancante ${s}`);
-    for (const lang of LANGS) {
+    const keyOf = (x) => (typeof x === 'string' ? '*' : `${x.from ?? ''}-${x.to ?? ''}${x.strict ? '!' : ''}${x.v || ''}`);
+    // problemi di una lingua rispetto a it: testo completo, alert coerenti, voci/fasce/strict allineati
+    const langProblems = (lang) => {
+      const out = [];
       const t = c[lang];
-      if (!t?.title || !t?.summary || !t?.keywords?.length || !t?.research?.length || !t?.tips?.length) {
-        errors.push(`${where} testo ${lang} incompleto`);
+      if (!t?.title || !t?.summary || !t?.keywords?.length || !t?.research?.length || !t?.tips?.length) out.push(`${where} testo ${lang} incompleto`);
+      if (c.alert !== 'none' && !t?.redFlags?.length) out.push(`${where} ${lang}: alert senza segnali d'allarme`);
+      if (c.alert === 'urgente' && !t?.urgent?.length) out.push(`${where} ${lang}: urgente senza segni di emergenza`);
+      if (lang !== 'it') {
+        for (const sec of ['research', 'tips', 'redFlags', 'urgent', 'guide']) {
+          const a = c.it?.[sec] || [];
+          const b = t?.[sec] || [];
+          if (a.length !== b.length || a.some((x, i) => keyOf(x) !== keyOf(b[i]))) out.push(`${where} ${sec}: voci o fasce diverse tra it e ${lang}`);
+        }
       }
-      if (c.alert !== 'none' && !t?.redFlags?.length) errors.push(`${where} ${lang}: alert senza segnali d'allarme`);
-      if (c.alert === 'urgente' && !t?.urgent?.length) errors.push(`${where} ${lang}: urgente senza segni di emergenza`);
+      return out;
+    };
+    for (const lang of LANGS) {
+      if (lang === 'en') {
+        if (!c.en) { enProblem(`${where} manca il blocco en (ripiego su it)`); continue; }
+        const p = langProblems('en');
+        if (p.length) { for (const m of p) enProblem(m); c.en = undefined; } // en non utilizzabile: ripiego su it
+        continue;
+      }
+      errors.push(...langProblems(lang));
     }
     for (const sec of ['research', 'tips', 'redFlags', 'urgent', 'guide']) {
       const a = c.it?.[sec] || [];
-      const b = c.ru?.[sec] || [];
-      const key = (x) => (typeof x === 'string' ? '*' : `${x.from ?? ''}-${x.to ?? ''}${x.strict ? '!' : ''}${x.v || ''}`);
-      if (a.length !== b.length || a.some((x, i) => key(x) !== key(b[i]))) {
-        errors.push(`${where} ${sec}: voci o fasce diverse tra it e ru`);
-      }
       for (const x of a) {
         if (typeof x !== 'string' && !(x.t && (x.from == null || (x.from >= 0 && x.to > x.from)))) errors.push(`${where} ${sec}: voce non valida`);
-      if (sec === 'guide' && !['si', 'limita', 'no'].includes(x.v)) errors.push(`${where} guide: verdetto non valido`);
-      if (sec === 'guide' && (!x.why || !sources[x.src] || !c.sources.includes(x.src))) errors.push(`${where} guide: motivo o fonte mancante (${x.t})`);
+        if (sec === 'guide' && !['si', 'limita', 'no'].includes(x.v)) errors.push(`${where} guide: verdetto non valido`);
+        if (sec === 'guide' && (!x.why || !sources[x.src] || !c.sources.includes(x.src))) errors.push(`${where} guide: motivo o fonte mancante (${x.t})`);
       }
     }
     if (cards.some((x) => x.id === c.id)) errors.push(`${where} id duplicato`);
@@ -63,7 +82,13 @@ for (const g of games) {
   for (const sid of g.sources || []) if (!sources[sid]) errors.push(`${where} fonte mancante ${sid}`);
   if (!g.sources?.length) errors.push(`${where} senza fonti`);
   for (const k of ['materials', 'steps']) if (g.it[k]?.length !== g.ru[k]?.length) errors.push(`${where} ${k} diversi tra it e ru`);
-  for (const lang of LANGS) for (const k of ['title', 'intro', 'why']) if (!g[lang]?.[k]) errors.push(`${where} ${lang}.${k} mancante`);
+  for (const lang of ['it', 'ru']) for (const k of ['title', 'intro', 'why']) if (!g[lang]?.[k]) errors.push(`${where} ${lang}.${k} mancante`);
+  if (!g.en) enProblem(`${where} manca il blocco en (ripiego su it)`);
+  else {
+    for (const k of ['title', 'intro', 'why']) if (!g.en[k]) enProblem(`${where} en.${k} mancante (ripiego su it)`);
+    for (const k of ['materials', 'steps']) if (g.it[k]?.length !== g.en[k]?.length) enProblem(`${where} ${k} diversi tra it e en (ripiego su it)`);
+    if (!!g.it.tip !== !!g.en.tip) enProblem(`${where} tip presente solo in una lingua tra it e en`);
+  }
 }
 
 // Tappe: id univoci, fonti esistenti, finestre coerenti, testi it/ru
@@ -82,14 +107,22 @@ for (const m of miles) {
   if (typeof m.warn !== 'boolean' || typeof m.verified !== 'boolean') errors.push(`${where} warn/verified devono essere booleani`);
   if (!m.src?.length) errors.push(`${where} senza fonti`);
   for (const sid of m.src || []) if (!sources[sid]) errors.push(`${where} fonte mancante ${sid}`);
-  for (const lang of LANGS) if (!m[lang]?.title) errors.push(`${where} ${lang}.title mancante`);
+  for (const lang of ['it', 'ru']) if (!m[lang]?.title) errors.push(`${where} ${lang}.title mancante`);
+  if (!m.en?.title) enProblem(`${where} en.title mancante (ripiego su it)`);
   if (m.type === 'puberty') {
+    if (m.early && !m.early.en) enProblem(`${where} early.en mancante (ripiego su it)`);
     if (!m.bySex || !m.early?.it || !m.early?.ru || !(m.showFrom >= 0)) errors.push(`${where} pubertà: servono bySex, early it/ru e showFrom`);
     for (const [sx, w] of Object.entries(m.bySex || {})) if (!['f', 'm'].includes(sx) || !(w.from >= 0 && w.to > w.from)) errors.push(`${where} bySex.${sx} non valido`);
     for (const sid of m.early?.src || []) if (!sources[sid]) errors.push(`${where} early fonte mancante ${sid}`);
     if (!m.early?.src?.length) errors.push(`${where} early senza fonti`);
   }
   if (!!m.it?.info !== !!m.ru?.info) errors.push(`${where} info presente solo in una lingua`);
+  if (m.en && !!m.it?.info !== !!m.en?.info) enProblem(`${where} info presente solo in una lingua tra it e en`);
+}
+
+if (warnings.length) {
+  const shown = warnings.slice(0, 8).join('\n - ');
+  console.warn(`Avvisi en (${warnings.length}; REQUIRE_EN disattivato): le voci senza traduzione inglese ripiegano su it.\n - ${shown}${warnings.length > 8 ? `\n - … altre ${warnings.length - 8}` : ''}`);
 }
 
 if (errors.length) {
@@ -104,7 +137,7 @@ for (const lang of LANGS) {
   const docs = {};
   const chunks = {};
   for (const c of cards) {
-    const t = c[lang];
+    const t = c[lang] || c.it; // en mancante o non utilizzabile → italiano
     ms.add({
       id: c.id,
       title: t.title,

@@ -1,12 +1,12 @@
-// Condizioni d'uso e scarico di responsabilità (IT / RU).
+// Condizioni d'uso e scarico di responsabilità (IT / RU / EN).
 // NB: testo da far verificare a un legale prima della pubblicazione.
-export const TERMS_VERSION = '1.4';
-export const TERMS_DATE = '2026-11-09';
+export const TERMS_VERSION = '1.5';
+export const TERMS_DATE = '2026-11-14';
 
 export const TERMS = {
   it: {
     title: "Condizioni d'uso e avvertenze",
-    updated: 'Versione 1.4 · 9 novembre 2026',
+    updated: 'Versione 1.5 · 14 novembre 2026',
     accept: "Ho letto e accetto le condizioni d'uso",
     read: "Leggi le condizioni d'uso",
     mustAccept: 'Per continuare devi accettare le condizioni.',
@@ -25,7 +25,7 @@ export const TERMS = {
       ['Fonti e marchi',
         'Ogni scheda indica le fonti consultate. La citazione di un\'organizzazione o di una pubblicazione non implica alcuna affiliazione, approvazione o sponsorizzazione da parte loro. Marchi e nomi citati appartengono ai rispettivi titolari.'],
       ['Diario di crescita e medicine',
-        'Il diario confronta le misure con gli standard OMS e segnala valori lontani da quelli tipici: non è una diagnosi e una singola misura può essere imprecisa. Il controllo delle medicine NON calcola né suggerisce dosi: verifica soltanto intervalli, numero di dosi e dose per kg rispetto a limiti prudenziali tratti da schede tecniche AIFA e linee guida (NICE, NHS, MHRA, SIP, Ministero della Salute russo), solo per paracetamolo e ibuprofene. L\'assenza di avvisi non garantisce che una dose sia corretta. Segui sempre la prescrizione, la confezione e il foglietto illustrativo, e per qualsiasi dubbio chiedi al pediatra o al farmacista. I dati restano solo sul dispositivo: esporta il CSV se vuoi conservarli.'],
+        'Il diario confronta le misure con gli standard OMS e segnala valori lontani da quelli tipici: non è una diagnosi e una singola misura può essere imprecisa. Il controllo delle medicine NON calcola né suggerisce dosi: verifica soltanto intervalli, numero di dosi e dose per kg rispetto a limiti prudenziali tratti da schede tecniche AIFA e linee guida (NICE, NHS, MHRA, SIP, Ministero della Salute russo), solo per paracetamolo e ibuprofene; per la vitamina D confronta soltanto il totale giornaliero con il livello massimo tollerabile di assunzione (UL) dell\'EFSA. L\'assenza di avvisi non garantisce che una dose sia corretta. Segui sempre la prescrizione, la confezione e il foglietto illustrativo, e per qualsiasi dubbio chiedi al pediatra o al farmacista. I dati restano solo sul dispositivo: esporta il CSV se vuoi conservarli.'],
       ['Suoni e musica',
         'I suoni per dormire e per giocare vanno usati a volume basso, con il dispositivo lontano dal lettino e sotto la responsabilità dell\'adulto. L\'app non può misurare il volume reale nella stanza.'],
       ['Responsabilità dell\'utente',
@@ -40,7 +40,7 @@ export const TERMS = {
   },
   ru: {
     title: 'Условия использования и предупреждения',
-    updated: 'Версия 1.4 · 9 ноября 2026',
+    updated: 'Версия 1.5 · 14 ноября 2026',
     accept: 'Я прочитал(а) и принимаю условия использования',
     read: 'Прочитать условия использования',
     mustAccept: 'Чтобы продолжить, нужно принять условия.',
@@ -59,7 +59,7 @@ export const TERMS = {
       ['Источники и товарные знаки',
         'В каждой карточке указаны источники. Упоминание организации или публикации не означает связи с ней, её одобрения или спонсорства. Упомянутые товарные знаки и названия принадлежат их владельцам.'],
       ['Дневник роста и лекарств',
-        'Дневник сравнивает измерения со стандартами ВОЗ и отмечает значения, далёкие от типичных: это не диагноз, и одно измерение может быть неточным. Проверка лекарств НЕ рассчитывает и не предлагает дозы: она лишь сверяет интервалы, число доз и дозу на кг с осторожными пределами из официальных инструкций (AIFA) и рекомендаций (NICE, NHS, MHRA, SIP, Минздрав РФ) — только для парацетамола и ибупрофена. Отсутствие предупреждений не гарантирует, что доза правильная. Всегда следуйте назначению, упаковке и инструкции, а при любых сомнениях спрашивайте педиатра или фармацевта. Данные хранятся только на устройстве: экспортируйте CSV, если хотите их сохранить.'],
+        'Дневник сравнивает измерения со стандартами ВОЗ и отмечает значения, далёкие от типичных: это не диагноз, и одно измерение может быть неточным. Проверка лекарств НЕ рассчитывает и не предлагает дозы: она лишь сверяет интервалы, число доз и дозу на кг с осторожными пределами из официальных инструкций (AIFA) и рекомендаций (NICE, NHS, MHRA, SIP, Минздрав РФ) — только для парацетамола и ибупрофена; для витамина D проверка лишь сравнивает суточное количество с допустимым верхним уровнем потребления (UL) EFSA. Отсутствие предупреждений не гарантирует, что доза правильная. Всегда следуйте назначению, упаковке и инструкции, а при любых сомнениях спрашивайте педиатра или фармацевта. Данные хранятся только на устройстве: экспортируйте CSV, если хотите их сохранить.'],
       ['Звуки и музыка',
         'Звуки для сна и игры следует использовать на низкой громкости, держа устройство подальше от кроватки, под ответственность взрослого. Приложение не может измерить реальную громкость в комнате.'],
       ['Ответственность пользователя',
@@ -70,6 +70,40 @@ export const TERMS = {
         'Введённые данные (даты рождения, имена, если указаны, измерения (вес, рост, голова) и записанные лекарства) хранятся только на этом устройстве: они не отправляются на серверы, аккаунт не нужен, систем отслеживания нет. Удалить их можно в любой момент: Дети → Удалить все данные. Необязательная синхронизация с Google Drive сохраняет зашифрованный файл в вашем личном Drive и получает доступ только к этому файлу; автор не получает никаких данных.'],
       ['Изменения',
         'Эти условия могут обновляться. В случае изменений мы попросим вас прочитать и принять их снова.']
+    ]
+  },
+  en: {
+    title: 'Terms of use and warnings',
+    updated: 'Version 1.5 · November 14, 2026 · English translation: in case of any discrepancy, the Italian version prevails.',
+    accept: 'I have read and accept the terms of use',
+    read: 'Read the terms of use',
+    mustAccept: 'To continue you must accept the terms.',
+    newVersion: 'We have updated the terms of use: read and accept them to continue.',
+    sections: [
+      ['Only a quick research tool',
+        'Lunibù is only a utility for quickly looking up data and guidance drawn from the scientific literature. The cards are simplified summaries: we always invite you to dig deeper, to read and check the original sources cited, and to talk to a professional before making any decision.'],
+      ['What Lunibù is',
+        'Lunibù is a tool for simplified consultation of the published scientific literature and of the guidance of health bodies and scientific societies (for example the WHO, and national and international pediatric societies). It offers general, informational content, organized by age and topic, with the sources indicated.'],
+      ['It does not replace professionals',
+        'The information in the app is not medical advice and does not in any way replace the examination, diagnosis, treatment or advice of pediatricians, doctors, nutritionists, dietitians, speech therapists, psychologists or other health and childcare professionals. Lunibù is not a medical device, does not make diagnoses, does not prescribe medicines or dosages and does not provide personalized advice. For any doubt about your child\'s health, nutrition or development, always consult the pediatrician or a qualified professional.'],
+      ['Emergencies',
+        'In an emergency call 112 (EU) or your local emergency number right away. For suspected poisoning contact a Poison Control Center. Do not use the app to decide whether and when to ask for urgent help, and do not delay care in order to consult it.'],
+      ['Limits of the content',
+        'The content consists of simplified summaries and may be incomplete, out of date or unsuitable for your child\'s specific situation. Scientific research evolves and recommendations may change after the date of writing. The relevance score, the age filter (with a tolerance of ±3 months) and the search results are indicative and may show irrelevant information or omit other information.'],
+      ['Sources and trademarks',
+        'Each card lists the sources consulted. Citing an organization or a publication does not imply any affiliation, endorsement or sponsorship by them. Trademarks and names cited belong to their respective owners.'],
+      ['Growth and medicine diary',
+        'The diary compares measurements with the WHO standards and flags values far from the typical ones: it is not a diagnosis and a single measurement can be inaccurate. The medicine check does NOT calculate or suggest doses: it only checks intervals, number of doses and dose per kg against conservative limits taken from AIFA product information and guidelines (NICE, NHS, MHRA, SIP, Russian Ministry of Health), for paracetamol and ibuprofen only; for vitamin D it only compares the daily total with the EFSA tolerable upper intake level (UL). The absence of warnings does not guarantee that a dose is correct. Always follow the prescription, the packaging and the package leaflet, and for any doubt ask the pediatrician or the pharmacist. Your data stays only on the device: export the CSV if you want to keep it.'],
+      ['Sounds and music',
+        'Sleep and play sounds should be used at low volume, with the device away from the crib and under the adult\'s responsibility. The app cannot measure the actual volume in the room.'],
+      ['User responsibility',
+        'Decisions about the child\'s health, nutrition, safety and upbringing remain with those responsible for the child, together with the professionals who care for the child. By using the app you agree to evaluate the information critically and to check it with a professional.'],
+      ['Disclaimer of liability',
+        'To the maximum extent permitted by applicable law, the authors and distributors of Lunibù are not liable for direct or indirect damages arising from the use, non-use or interpretation of the information and sounds of the app. The app is provided "as is", without warranties of completeness, accuracy or fitness for a particular purpose. The rights that the law mandatorily grants to consumers remain unaffected.'],
+      ['Privacy',
+        'The data you enter (dates of birth, any names, growth measurements and recorded medicines) stays only on this device: it is not sent to servers, no account is needed and there are no tracking systems. You can delete it at any time from Kids → Delete all data. The optional synchronization with Google Drive saves an encrypted file in your personal Drive and accesses only that file; the author receives no data.'],
+      ['Changes',
+        'These terms may be updated. If they change, we will ask you to read and accept them again.']
     ]
   }
 };

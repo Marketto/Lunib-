@@ -47,7 +47,7 @@ export default function Settings({ lang, setLang, kids, setKids, onReset, syncSt
       <ShareCard lang={lang} />
 
       <h2 style={{ marginTop: 30 }}>{s.language}</h2>
-      <div style={{ marginTop: 10 }}><LangSwitch lang={lang} setLang={setLang} /></div>
+      <div style={{ marginTop: 10 }} data-tour="lang"><LangSwitch lang={lang} setLang={setLang} /></div>
 
       <button className="toggle-row" style={{ width: '100%', textAlign: 'left', marginTop: 24 }} onClick={audio.toggleAmbient} role="switch" aria-checked={audio.ambient}>
         <span>

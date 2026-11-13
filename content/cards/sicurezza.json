@@ -32,11 +32,16 @@
       "research": [
         "Le linee di indirizzo del Ministero della Salute (2017) indicano tra i cibi più a rischio quelli piccoli, tondi, lisci o duri: uva, pomodorini, olive, würstel, frutta secca, caramelle, pop corn.",
         "Le stesse linee raccomandano di modificare forma e consistenza (tagliare per il lungo, schiacciare, cuocere) e di mangiare sempre seduti e sotto la supervisione di un adulto.",
-        "Lo studio BLISS (Fangupo 2016) mostra che anche l'autosvezzamento è sicuro se i cibi sono preparati in modo adeguato."
+        "Nello studio BLISS (Fangupo 2016) l'autosvezzamento, con indicazioni ai genitori sui cibi a rischio di soffocamento, non ha causato più episodi di soffocamento dello svezzamento tradizionale."
       ],
       "tips": [
         "Taglia uva, pomodorini e olive in quattro per il lungo; i würstel per il lungo e poi a pezzetti.",
-        "Niente frutta secca intera, caramelle dure, pop corn o gomme sotto i 4–5 anni.",
+        {
+          "t": "Niente frutta secca intera, caramelle dure, pop corn o gomme sotto i 4–5 anni.",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
         "Mai mangiare mentre corre, gioca, piange o è in macchina senza sorveglianza.",
         "Segui un corso di disostruzione pediatrica: imparare le manovre dal vivo fa la differenza."
       ],
@@ -69,11 +74,16 @@
       "research": [
         "Рекомендации Министерства здравоохранения Италии (2017) относят к самым опасным маленькие, круглые, гладкие или твёрдые продукты: виноград, помидоры черри, оливки, сосиски, орехи, леденцы, попкорн.",
         "Те же рекомендации советуют менять форму и консистенцию (резать вдоль, разминать, варить) и всегда есть сидя под присмотром взрослого.",
-        "Исследование BLISS (Fangupo, 2016) показывает, что и самостоятельный прикорм безопасен при правильном приготовлении еды."
+        "В исследовании BLISS (Fangupo, 2016) прикорм по методу baby-led weaning при инструктаже родителей о продуктах с риском удушья не приводил к большему числу эпизодов удушья, чем традиционный прикорм с ложки."
       ],
       "tips": [
         "Режьте виноград, черри и оливки вдоль на четыре части; сосиски — вдоль, а потом кусочками.",
-        "Никаких целых орехов, твёрдых леденцов, попкорна и жвачки до 4–5 лет.",
+        {
+          "t": "Никаких целых орехов, твёрдых леденцов, попкорна и жвачки до 4–5 лет.",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
         "Никогда не есть на бегу, во время игры, плача или в машине без присмотра.",
         "Пройдите курс первой помощи при удушье у детей: живая практика очень важна."
       ],
@@ -84,6 +94,50 @@
         "Не может кашлять, плакать или говорить, или синеет: сразу звоните 112 и начинайте приёмы освобождения дыхательных путей.",
         "Если сильно кашляет, дайте ему кашлять, не стучите по спине и не лезьте пальцами в рот: звоните 112, если не проходит.",
         "Ребёнок теряет сознание: 112 и сердечно-лёгочная реанимация по указаниям диспетчера."
+      ]
+    },
+    "en": {
+      "title": "Preventing choking on food",
+      "summary": "Some foods, because of their shape and texture, are especially dangerous under 4–5 years. Cutting them the right way and eating seated and supervised greatly reduces the risk.",
+      "keywords": [
+        "choking",
+        "chokes",
+        "choked",
+        "went down the wrong way",
+        "choking rescue",
+        "maneuver",
+        "grapes",
+        "hot dogs",
+        "wieners",
+        "nuts",
+        "popcorn",
+        "candy",
+        "pieces of food",
+        "cutting food"
+      ],
+      "research": [
+        "The guidelines of the Italian Ministry of Health (2017) list among the highest-risk foods those that are small, round, smooth or hard: grapes, cherry tomatoes, olives, hot dogs, nuts, candy, popcorn.",
+        "The same guidelines recommend changing shape and texture (cutting lengthwise, mashing, cooking) and always eating seated and under adult supervision.",
+        "In the BLISS trial (Fangupo 2016), baby-led weaning with advice to parents on choking-risk foods did not lead to more choking than traditional spoon-feeding."
+      ],
+      "tips": [
+        "Cut grapes, cherry tomatoes and olives into quarters lengthwise; hot dogs lengthwise and then into small pieces.",
+        {
+          "t": "No whole nuts, hard candy, popcorn or chewing gum under 4–5 years.",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
+        "Never let your child eat while running, playing, crying or in the car without supervision.",
+        "Take a pediatric choking-rescue course: learning the maneuvers in person makes a difference."
+      ],
+      "redFlags": [
+        "After a choking episode that has resolved, if cough, noisy breathing or labored breathing remain, have your child examined: a fragment may have stayed in the airways."
+      ],
+      "urgent": [
+        "Your child cannot cough, cry or speak, or their skin turns bluish: call 112 (in Italy; elsewhere, your local emergency number) right away and start choking-rescue maneuvers.",
+        "If your child is coughing forcefully, let them cough and do not hit their back or put fingers in their mouth: call 112 (in Italy; elsewhere, your local emergency number) if it does not resolve.",
+        "Child who loses consciousness: call 112 (in Italy; elsewhere, your local emergency number) and start CPR as instructed by the dispatcher."
       ]
     }
   },
@@ -171,6 +225,45 @@
         "Избегайте б/у кресел с неизвестной историей: после аварии их нужно менять.",
         {
           "t": "Все дети ездят на заднем сиденье.",
+          "from": 24,
+          "to": 72
+        }
+      ]
+    },
+    "en": {
+      "title": "Car seat: rear-facing for as long as possible",
+      "summary": "The AAP recommends traveling rear-facing for as long as the car seat allows by weight and height. In Italy, an anti-abandonment device (an alarm that warns if a child is left in the car) is mandatory for children under 4.",
+      "keywords": [
+        "car seat",
+        "child car seat",
+        "infant carrier",
+        "rear-facing",
+        "car",
+        "automobile",
+        "isofix",
+        "i-size",
+        "anti-abandonment",
+        "seat belt",
+        "car trip"
+      ],
+      "research": [
+        "The AAP policy (Durbin and Hoffman 2018) recommends keeping the child rear-facing for as long as possible, up to the weight or height limits of the car seat, no longer setting an age limit of 2 years.",
+        "Law 117/2018, implemented by Ministerial Decree 122/2019, makes an anti-abandonment device mandatory in Italy from November 7, 2019 for children under 4 years.",
+        {
+          "t": "AAP: after rear-facing, a forward-facing seat with a 5-point harness for as long as possible; then a booster seat with a back until the car's seat belt fits well (usually around 145 cm, between 8 and 12 years).",
+          "from": 24,
+          "to": 72
+        },
+        "Italian Highway Code (Codice della Strada, art. 172): children under 1.50 m must travel with an approved restraint system suited to their weight."
+      ],
+      "tips": [
+        "No padded jackets under the harness straps: they loosen the harness. A blanket on top is better.",
+        "The harness must be snug: you should not be able to pinch any slack in the harness strap at the shoulder.",
+        "Never use a rear-facing car seat in front of an active front airbag.",
+        "Use the car seat for short trips too.",
+        "Avoid used car seats whose history you do not know: after a crash they must be replaced.",
+        {
+          "t": "All children ride in the back seat.",
           "from": 24,
           "to": 72
         }
@@ -271,6 +364,49 @@
         "После падения: потеря сознания, судороги, трудности с движением или дыханием.",
         "После эпизода в воде, даже если кажется, что всё хорошо: стойкий кашель, затруднённое дыхание или сонливость."
       ]
+    },
+    "en": {
+      "title": "Safe home: falls, water, burns, poisons",
+      "summary": "Falls, drowning, burns and poisoning are among the main causes of injury in young children, and many can be prevented with simple precautions.",
+      "keywords": [
+        "home safety",
+        "household accidents",
+        "falls",
+        "fell off the bed",
+        "drowning",
+        "pool",
+        "bathtub",
+        "burns",
+        "scalds",
+        "poisoning",
+        "swallowed",
+        "detergents",
+        "medicines",
+        "button batteries",
+        "magnets",
+        "baby gate"
+      ],
+      "research": [
+        "The WHO/UNICEF report on child injury prevention (Peden 2008) identifies falls, drowning, burns and poisoning among the main causes of injury in childhood.",
+        "The same report indicates that environmental measures, such as barriers, safety locks and proper storage of dangerous products, are among the most effective interventions.",
+        "Young children can drown in a few centimeters of water and in a few seconds, without making a sound."
+      ],
+      "tips": [
+        "Never leave your child alone on the changing table, bed or sofa, not even for a moment.",
+        "Gates on stairs, locks on windows and balconies, furniture anchored to the wall.",
+        "Constant supervision near water: bathtub, pool, buckets; always empty the tub after bath time.",
+        "Medicines, detergents, button batteries and magnets up high and locked away.",
+        "Pot handles turned inward, hot drinks out of your child's reach; check the bath water temperature."
+      ],
+      "redFlags": [
+        "After a fall: vomiting, unusual sleepiness, inconsolable crying or a large bump need to be evaluated.",
+        "A burn larger than the palm of your child's hand, or on the face, hands, genitals or joints."
+      ],
+      "urgent": [
+        "Suspected ingestion of a button battery, magnets, medicines or chemicals: 112 (in Italy; elsewhere, your local emergency number) or a poison control center (Centro Antiveleni in Italy) right away, do not induce vomiting.",
+        "After a fall: loss of consciousness, seizures, difficulty moving or breathing.",
+        "After an episode in the water, even if your child seems fine: persistent cough, difficult breathing or sleepiness."
+      ]
     }
   },
   {
@@ -366,6 +502,48 @@
         "Даже если ребёнок умеет плавать, никогда не оставляйте его одного у воды.",
         "Научитесь детской реанимации — это подарок для всей семьи."
       ]
+    },
+    "en": {
+      "title": "Swimming lessons and water safety",
+      "summary": "The AAP advises starting swimming lessons after the first birthday. Swimming helps, but on its own it does not protect against drowning: an adult within arm's reach is always needed.",
+      "keywords": [
+        "swimming",
+        "swimming lessons",
+        "pool",
+        "water familiarization",
+        "infant swimming",
+        "drowning",
+        "sea",
+        "arm floaties",
+        "life jacket",
+        "water safety"
+      ],
+      "research": [
+        {
+          "t": "AAP (Shenoi 2026): there is no evidence that water-familiarization classes for infants reduce drowning; they can be an enjoyable moment, not a protection.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "AAP (Shenoi 2026): start swimming lessons after the first birthday.",
+          "from": 12,
+          "to": 72,
+          "strict": true
+        },
+        {
+          "t": "In a case-control study (Brenner 2009) between 1 and 4 years, swimming lessons were associated with a lower risk of drowning (about −88%), but the numbers were small and the uncertainty wide.",
+          "from": 12,
+          "to": 60
+        },
+        "The AAP recommends multiple layers of protection: constant adult supervision within arm's reach for infants, toddlers and anyone who does not yet swim well, four-sided pool fencing with a self-closing gate, life jackets, knowing how to call for help and how to do resuscitation."
+      ],
+      "tips": [
+        "In the water, an adult always within arm's reach, with no phone in hand.",
+        "Arm floaties and pool rings are not safety devices: on a boat and at the lake a certified (approved) life jacket is needed.",
+        "Even if your child can swim, never leave them alone near water.",
+        "Learn pediatric resuscitation: it is a gift for the whole family."
+      ]
     }
   },
   {
@@ -423,6 +601,30 @@
         "Надевайте его и на самокат, ролики и беговел.",
         "Показывайте пример — надевайте шлем сами.",
         "Меняйте шлем после сильного удара."
+      ]
+    },
+    "en": {
+      "title": "Bike and helmet",
+      "summary": "In studies, people wearing a helmet had about half the likelihood of head injury in a fall or bike crash. It should always be worn, even on short trips and on balance bikes.",
+      "keywords": [
+        "bike",
+        "bicycle",
+        "helmet",
+        "balance bike",
+        "scooter",
+        "training wheels",
+        "pedaling",
+        "head injury"
+      ],
+      "research": [
+        "A meta-analysis of 40 studies on over 64,000 injured cyclists (Olivier and Creighton 2017) found that helmets are associated with about 51% fewer head injuries, 69% fewer serious head injuries and 65% fewer fatal head injuries.",
+        "The meta-analysis covers all ages and does not report separate estimates for young children: that a helmet protects them too is a reasonable extension, not a result of the study."
+      ],
+      "tips": [
+        "Helmet of the right size: sitting level on the forehead, straps forming a V under the ears, one finger between strap and chin.",
+        "Use it on scooters, skates and balance bikes too.",
+        "Set a good example by wearing one yourself.",
+        "Replace it after a significant impact."
       ]
     }
   },
@@ -514,6 +716,45 @@
         "Если у вас уже есть кресло R44, его можно продолжать использовать; новые покупки — R129.",
         "Тренируйтесь переходить дорогу вместе, обсуждая, куда смотреть (в упомянутом исследовании использовалась тренировка в симуляторе, а не на реальной дороге).",
         "Чтобы узнать больше, прочитайте текст статьи 172 и исследование Thomson (2005)."
+      ]
+    },
+    "en": {
+      "title": "In the car and on the road at ages 6–12",
+      "summary": "Under 1.50 m in height the child travels with an approved restraint system. For crossing the street, a single experimental study found improvements with simulated training.",
+      "keywords": [
+        "car seat",
+        "booster",
+        "car",
+        "seat belt",
+        "1.50 m",
+        "R129",
+        "i-Size",
+        "R44",
+        "crossing the street",
+        "pedestrian",
+        "road safety education",
+        "road",
+        "road safety"
+      ],
+      "research": [
+        {
+          "t": "Italian Highway Code (Codice della Strada, art. 172, paragraph 1): children shorter than 1.50 m must travel secured with an approved restraint system suited to their weight.",
+          "from": 72,
+          "to": 144,
+          "strict": true
+        },
+        "From September 1, 2024 only R129 (i-Size) car seats are on sale in Italy; R44 seats already owned can still be used (ASAPS).",
+        {
+          "t": "A controlled experimental study (Thomson 2005) found that virtual reality training improved crossing judgments in children aged 7, 9 and 11, with improvements maintained at 8 months; it is a single study.",
+          "from": 84,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Check your child's height: as long as it is under 1.50 m, an approved restraint system suited to the weight is needed.",
+        "If you already have an R44 car seat, you can keep using it; new purchases are R129.",
+        "Practice crossing together, talking about what to look at (the study cited used simulated training, not the real street).",
+        "To learn more, consult the text of art. 172 and the study by Thomson (2005)."
       ]
     }
   }

@@ -24,7 +24,7 @@
         "Muovi piano il giochino davanti ai suoi occhi e parlagli con voce allegra.",
         "Fermati appena protesta e riprova più tardi: più momenti brevi vanno benissimo."
       ],
-      "why": "L'OMS consiglia almeno 30 minuti al giorno, distribuiti nella giornata, da sveglio, a pancia in giù per i bimbi che non si spostano ancora. Una revisione sistematica (Hewitt 2020) lo associa a un migliore sviluppo motorio e a meno testa piatta.",
+      "why": "L'OMS consiglia almeno 30 minuti al giorno, distribuiti nella giornata, da sveglio, a pancia in giù per i bimbi che non si spostano ancora. Una revisione sistematica (Hewitt 2020) lo associa a un migliore sviluppo motorio e a meno appiattimento della parte posteriore della testa.",
       "tip": "Per dormire, invece, sempre a pancia in su."
     },
     "ru": {
@@ -40,8 +40,24 @@
         "Медленно двигайте игрушку перед глазами и говорите весёлым голосом.",
         "Остановитесь, как только он начнёт протестовать, и попробуйте позже: несколько коротких подходов — это отлично."
       ],
-      "why": "ВОЗ советует не меньше 30 минут в день на животе для детей, которые ещё не передвигаются самостоятельно. Систематический обзор (Hewitt, 2020) связывает это с лучшим моторным развитием и меньшим риском плоского затылка.",
+      "why": "ВОЗ советует не меньше 30 минут в день на животе для детей, которые ещё не передвигаются самостоятельно. Систематический обзор (Hewitt, 2020) связывает это с лучшим моторным развитием и меньшим уплощением затылка.",
       "tip": "А спать — всегда на спине."
+    },
+    "en": {
+      "title": "Tummy down, face to face",
+      "intro": "A game for the very first months, while awake and always with you beside your baby.",
+      "materials": [
+        "A soft mat",
+        "A colorful toy or an unbreakable mirror"
+      ],
+      "steps": [
+        "Place your baby tummy down on the mat or on your chest.",
+        "Lie down in front of your baby, with your face at their level.",
+        "Slowly move the toy in front of their eyes and talk to them in a cheerful voice.",
+        "Stop as soon as they protest and try again later: several short moments are perfectly fine."
+      ],
+      "why": "The WHO recommends at least 30 minutes a day, spread across the day, while awake, on the tummy for babies who are not yet mobile. A systematic review (Hewitt 2020) associates it with better motor development and less flattening of the back of the head.",
+      "tip": "For sleep, though, always place your baby on their back."
     }
   },
   {
@@ -85,6 +101,21 @@
       ],
       "why": "В лонгитюдном исследовании (Tamis-LeMonda, 2001) быстрые и уместные ответы мам в 9 и 13 месяцев предсказывали более раннее достижение речевых этапов. Это связь, а не доказательство причины.",
       "tip": "Выключите фоновый телевизор: останется больше места для общения."
+    },
+    "en": {
+      "title": "Back and forth with sounds and smiles",
+      "intro": "A \"conversation\" without words: your baby makes a sound, you answer.",
+      "materials": [
+        "Nothing: the two of you are enough"
+      ],
+      "steps": [
+        "Face your baby, about 20–30 cm (8–12 inches) away.",
+        "Wait for a sound, a smile or a gesture.",
+        "Answer right away by imitating, or by naming what they are looking at (\"Yes, the ball!\").",
+        "Leave a pause: it's their turn again."
+      ],
+      "why": "In a longitudinal study (Tamis-LeMonda 2001), mothers' prompt and relevant responses at 9 and 13 months predicted earlier achievement of language milestones. It is an association, not proof of cause.",
+      "tip": "Turn off the background TV: it leaves more room for back-and-forth exchanges."
     }
   },
   {
@@ -128,6 +159,21 @@
       ],
       "why": "AAP (Yogman, 2018) советует «ку-ку» в 7–12 месяцев: повторяющиеся игры дарят ребёнку радость предсказывать, что будет дальше. Исследование (Parrott, Gleitman, 1989) показывает, что младенцы ожидают появления того же человека. Это рекомендуемая приятная игра, а не «тренировка» с доказанной пользой.",
       "tip": "Когда подрастёт, прятаться будет он сам."
+    },
+    "en": {
+      "title": "Peekaboo!",
+      "intro": "The classic of classics: disappearing and reappearing, with lots of anticipation and lots of laughs.",
+      "materials": [
+        "Your hands or a light scarf"
+      ],
+      "steps": [
+        "Cover your face with your hands or the scarf.",
+        "Ask \"Where's mommy? Where's daddy?\" in a surprised voice.",
+        "Reappear saying \"Peekaboo!\" with a big smile.",
+        "Repeat, changing the timing a little: the wait is the fun part."
+      ],
+      "why": "The AAP (Yogman 2018) recommends peekaboo between 7 and 12 months: repetitive games give a baby the joy of predicting what will happen. A study (Parrott and Gleitman 1989) shows that infants expect the same person to reappear. It is a recommended, enjoyable game, not \"training\" with proven benefits.",
+      "tip": "When your child is older, they will be the one to hide."
     }
   },
   {
@@ -173,6 +219,22 @@
       ],
       "why": "В эти месяцы дети открывают, что предметы существуют, даже когда их не видно: лонгитюдное исследование (Diamond, 1985) показывает, что способность помнить, где спрятан предмет, растёт с каждым месяцем. Игра следует за этим этапом; доказательств, что она его ускоряет, нет.",
       "tip": "Берите крупные предметы: никаких мелких деталей, которые можно взять в рот."
+    },
+    "en": {
+      "title": "Where did the stuffed toy go?",
+      "intro": "Hiding a little toy under a cloth while your baby watches.",
+      "materials": [
+        "A stuffed toy your baby likes",
+        "A cloth or an upside-down cup"
+      ],
+      "steps": [
+        "Show your baby the toy and make it \"talk\".",
+        "While they watch, cover it halfway with the cloth.",
+        "Let them discover it on their own and celebrate.",
+        "When they manage it, cover it completely; then try with two cloths."
+      ],
+      "why": "In these months babies discover that things exist even when they can't be seen: a longitudinal study (Diamond 1985) shows that the ability to remember where an object is hidden grows month by month. The game follows this milestone; there is no evidence that it speeds it up.",
+      "tip": "Use large objects: no small pieces your baby could put in the mouth."
     }
   },
   {
@@ -216,6 +278,21 @@
       ],
       "why": "Контролируемое исследование (Whitehurst, 1988, дети 21–35 месяцев) и метаанализ 16 исследований (Mol, 2008) показывают, что такое чтение улучшает активный словарь сильнее, чем простое чтение. Эффект сильнее в 2–3 года и уменьшается к 4–5.",
       "tip": "Достаточно нескольких минут в день, в одно и то же время."
+    },
+    "en": {
+      "title": "Reading by asking questions",
+      "intro": "\"Dialogic reading\": your child becomes the storyteller and you help.",
+      "materials": [
+        "An illustrated book your child likes"
+      ],
+      "steps": [
+        "Point to a picture and ask \"What's this?\" or \"What is it doing?\".",
+        "Listen to the answer and praise it.",
+        "Expand on it: if your child says \"dog\", answer \"Yes, a brown dog running!\".",
+        "Ask your child to repeat the longer sentence, then move on to the next page."
+      ],
+      "why": "A controlled study (Whitehurst 1988, children aged 21–35 months) and a meta-analysis of 16 studies (Mol 2008) show that this way of reading improves expressive vocabulary more than simple reading. The effect is stronger at 2–3 years and gets smaller toward 4–5.",
+      "tip": "A few minutes a day are enough, always at the same time."
     }
   },
   {
@@ -258,6 +335,21 @@
       ],
       "why": "Лонгитюдное исследование (Levine, 2012): дети, которые чаще собирали пазлы в 2–4 года, в 4,5 года лучше мысленно вращали фигуры. Это связь: авторы пока не считают её доказательством причины.",
       "tip": "Слова о пространстве, которые вы произносите, так же важны, как сам пазл."
+    },
+    "en": {
+      "title": "Just-right puzzles",
+      "intro": "From 2–4-piece inset puzzles to bigger ones.",
+      "materials": [
+        "Age-appropriate puzzles (large pieces, no small parts under age 3)"
+      ],
+      "steps": [
+        "Choose an easy puzzle: your child should almost manage it alone.",
+        "Turn the pieces over together and look for corners or matching colors.",
+        "Use spatial words: \"on top\", \"turned\", \"next to\".",
+        "When your child feels sure, move on to a slightly harder puzzle."
+      ],
+      "why": "A longitudinal study (Levine 2012) found that children who played with puzzles more often between ages 2 and 4 had better skills at mentally rotating shapes at age 4 and a half. It is an association: the authors do not yet consider it proof of cause.",
+      "tip": "The spatial words you use matter as much as the puzzle."
     }
   },
   {
@@ -301,6 +393,21 @@
       ],
       "why": "Исследование трёхлеток (Verdine, 2014): кто умеет копировать постройки из конструктора, тот лучше справляется и с начальной математикой. Метаанализ (Uttal, 2013) показывает, что пространственные навыки можно тренировать. Прямая связь между домашним конструктором и математикой не доказана.",
       "tip": "Чем меньше деталей под рукой, тем дольше игра."
+    },
+    "en": {
+      "title": "Build like me",
+      "intro": "You build a small tower or a bridge, and your child tries to copy it.",
+      "materials": [
+        "Large blocks or bricks"
+      ],
+      "steps": [
+        "Build a simple model with 3–4 pieces.",
+        "Give your child the same pieces and ask them to copy it.",
+        "Compare the two models together: \"Does the red one go on top or underneath?\".",
+        "Swap roles: now your child builds and you copy."
+      ],
+      "why": "A study of 3-year-olds (Verdine 2014) found that children who can copy brick constructions also have better early math skills. A meta-analysis (Uttal 2013) shows that spatial skills can be trained. A direct link between building at home and math has not been proven.",
+      "tip": "With fewer pieces available, the game lasts longer."
     }
   },
   {
@@ -346,6 +453,22 @@
       ],
       "why": "Лонгитюдное исследование (Bryant, 1989): знание потешек в 3 года предсказывает чтение и письмо через годы — через умение слышать звуки слов. Метаанализ (Ehri, 2001): тренировка фонематического восприятия (отдельных звуков) помогает научиться читать.",
       "tip": "Подойдут и итальянские, и русские стихи: звуки тренируют один и тот же навык."
+    },
+    "en": {
+      "title": "Nursery rhymes, rhymes and clapping",
+      "intro": "Singing, rhyming and clapping hands on the syllables of words.",
+      "materials": [
+        "Rhymes you know",
+        "Your hands"
+      ],
+      "steps": [
+        "Recite a rhyme with gestures.",
+        "Stop before the rhyming word and let your child complete it.",
+        "Clap out the syllables of your child's name: \"Lu-ca\", \"So-fi-a\".",
+        "From age 4: \"What rhymes with cat? Hat, mat…\"."
+      ],
+      "why": "A longitudinal study (Bryant 1989) found that knowing nursery rhymes at age 3 predicts reading and writing years later, through the ability to hear the sounds of words. A meta-analysis (Ehri 2001) shows that training awareness of individual sounds (phonemes) helps with learning to read.",
+      "tip": "In other languages too (Italian, Russian…): the sounds train the same skill."
     }
   },
   {
@@ -389,6 +512,21 @@
       ],
       "why": "AAP (Yogman, 2018) советует оставлять время и место для игры понарошку. Но большой обзор (Lillard, 2013) предупреждает: доказательства, что такая игра сама по себе улучшает интеллект, творчество или самоконтроль, слабые. Она ценна прежде всего как естественная игра и повод для разговора и рассказа.",
       "tip": "Простые предметы рождают больше идей, чем игрушки, которые всё делают сами."
+    },
+    "en": {
+      "title": "Let's pretend that…",
+      "intro": "Cooking for the teddy bears, caring for the doll, playing store.",
+      "materials": [
+        "Small pots, cups, boxes, old clothes"
+      ],
+      "steps": [
+        "Suggest a situation: \"Let's pretend the stuffed animals are hungry\".",
+        "Follow your child's ideas and add small problems to solve (\"Oh, the milk is all gone!\").",
+        "Give the characters a voice and put names to their emotions.",
+        "Let your child lead the story."
+      ],
+      "why": "The AAP (Yogman 2018) recommends leaving time and space for pretend play. A large review (Lillard 2013), however, warns that the evidence that pretending on its own improves intelligence, creativity or self-control is weak: it is valuable mainly as natural play and an opportunity for dialogue and storytelling.",
+      "tip": "Simple objects spark more ideas than toys that do everything on their own."
     }
   },
   {
@@ -433,6 +571,21 @@
       ],
       "why": "Игры «стоп — вперёд» входят в программы, которые в контролируемых исследованиях в детском саду (Tominey, McClelland, 2011; Schmitt, 2015) улучшили саморегуляцию, особенно у детей, начинавших с низкого уровня. Доказательства касаются полных программ в группе, а не одной игры дома.",
       "tip": "Повышайте сложность постепенно — так тренируется самоконтроль (Diamond, Lee, 2011)."
+    },
+    "en": {
+      "title": "Musical statues",
+      "intro": "Everyone dances while the music plays; when it stops, everyone freezes like a statue.",
+      "materials": [
+        "Music (also from the Sounds → For playing section)"
+      ],
+      "steps": [
+        "Start the music and dance freely.",
+        "Stop the music suddenly: everyone freeze!",
+        "Start again; every so often change the rule: \"when it stops, we jump\".",
+        "Later, reverse the rules: dance in silence and stop when the music plays."
+      ],
+      "why": "Stop-and-go games like this are part of programs that, in controlled studies in preschool (Tominey and McClelland 2011; Schmitt 2015), improved self-regulation, especially in children who started out behind. The evidence concerns the complete classroom programs, not the single game at home.",
+      "tip": "Raise the difficulty gradually: that is how self-control is trained (Diamond and Lee 2011)."
     }
   },
   {
@@ -476,6 +629,21 @@
       ],
       "why": "В контролируемом исследовании 276 детей из малообеспеченных семей (Head Start) (Schmitt, 2015) 8 недель таких игр в группе улучшили саморегуляцию по сравнению с контрольной группой. В пилотном исследовании (Tominey, McClelland, 2011) улучшение саморегуляции наблюдалось только у детей, у которых она изначально была слабее.",
       "tip": "Смейтесь над ошибками: ошибаться — часть игры."
+    },
+    "en": {
+      "title": "Traffic light and \"head–toes\"",
+      "intro": "Games in which you have to do the opposite of what comes naturally.",
+      "materials": [
+        "Two sheets of colored paper (red and green, then other colors)"
+      ],
+      "steps": [
+        "Traffic light: on green you walk, on red you stop.",
+        "Change the rules: now purple means stop and red means walk.",
+        "Head–toes: when you say \"touch your head\" your child has to touch their toes, and vice versa.",
+        "Add knees and shoulders when it gets easy."
+      ],
+      "why": "In a controlled study of 276 children from low-income families (Head Start) (Schmitt 2015), 8 weeks of games like these in the classroom improved self-regulation compared with the control group. In the pilot study (Tominey and McClelland 2011), the improvements in self-regulation were seen only in children who had less of it at the start.",
+      "tip": "Laugh at mistakes: getting it wrong is part of the game."
     }
   },
   {
@@ -525,6 +693,23 @@
       ],
       "why": "В контролируемых исследованиях (Siegler, Ramani, 2008; Ramani, Siegler, 2008) дети 4–5 лет из малообеспеченных семей, сыгравшие в сумме около часа в линейную числовую дорожку, улучшили сравнение чисел, счёт и оценку, и эффект сохранялся через 9 недель. С дорожкой из одних цветов пользы не было. Метаанализ (Nelson, 2025; 18 исследований, от дошкольного возраста до 2-го класса американской школы (около 7–8 лет)) показывает небольшой эффект линейных числовых игр (g = 0,21); исследования в среднем соответствуют 61% показателей качества отчётности. В экспериментальном исследовании (Laski, Siegler, 2014) с детьми около 6 лет счёт от текущей клетки улучшил оценку на числовой прямой, а счёт с 1 — нет. Данных старше примерно 8 лет нет.",
       "tip": "Главное — прямой ряд и проговаривание чисел вслух."
+    },
+    "en": {
+      "title": "The number path from 1 to 10",
+      "intro": "A very simple homemade board game, with the squares in a row.",
+      "materials": [
+        "A sheet with 10 numbered squares in a straight line",
+        "Two pawns",
+        "A spinner or a die with 1 and 2"
+      ],
+      "steps": [
+        "Draw 10 squares in a row together, numbered from 1 to 10.",
+        "Take turns spinning or rolling and moving forward 1 or 2 squares.",
+        "While moving the pawn, your child says the numbers out loud: \"4, 5\".",
+        "Whoever reaches 10 wins: then you start again."
+      ],
+      "why": "In controlled studies (Siegler and Ramani 2008; Ramani and Siegler 2008), 4–5-year-olds from low-income families who played about one hour in total on a numbered linear path improved at comparing numbers, counting and estimation, with effects still present after 9 weeks. With a path of colors only, there were no benefits. A meta-analysis (Nelson 2025; 18 studies, from preschool to second grade) finds a small effect of linear number games (g = 0.21), with studies that on average meet 61% of the reporting quality indicators. In an experimental study (Laski and Siegler 2014) with children of about 6 years, counting on from the square you are on improved number line estimation, while counting from 1 did not. There are no data beyond about 8 years.",
+      "tip": "The key is the straight row and saying the numbers out loud."
     }
   },
   {
@@ -569,6 +754,22 @@
       ],
       "why": "Систематический обзор (Dankiw, 2020) связывает свободную игру на природе с большей физической активностью и более богатой игрой воображения (исследования детей от 2 лет); качество исследований, однако, разное.",
       "tip": "Внимательный присмотр у воды; никаких ягод, грибов, камешков и желудей в рот."
+    },
+    "en": {
+      "title": "Outdoor explorers",
+      "intro": "Park, woods, meadow: free time to explore, collect, climb.",
+      "materials": [
+        "Clothes that can get dirty",
+        "A cloth bag for treasures"
+      ],
+      "steps": [
+        "Choose a safe place and let your child explore in their own way.",
+        "Suggest small missions: find three different leaves, a smooth stone.",
+        "Leave room for games your child invents too.",
+        "At home, look at the \"treasures\" together and talk about the day."
+      ],
+      "why": "A systematic review (Dankiw 2020) links free play in nature to more physical activity and richer imaginative play (studies of children from age 2); the quality of the studies, however, varies.",
+      "tip": "Watch closely near water; no wild berries, mushrooms, pebbles or acorns in the mouth."
     }
   },
   {
@@ -613,6 +814,22 @@
       ],
       "why": "Лонгитюдное исследование (Cameron, 2012): умение копировать фигуры в 3–4 года предсказывает успеваемость при поступлении в американский kindergarten (около 5–6 лет) и прогресс за этот год независимо от исполнительных функций. Это связь, а не доказательство, что домашние упражнения улучшают результаты.",
       "tip": "Хвалите старание, а не идеальность рисунка."
+    },
+    "en": {
+      "title": "Copy the shape",
+      "intro": "Drawing circles, crosses, squares and little houses by copying a model.",
+      "materials": [
+        "Sheets of paper",
+        "Thick wax crayons or pencils"
+      ],
+      "steps": [
+        "Draw a simple shape: a line, a circle.",
+        "Ask your child to draw it the same, next to yours.",
+        "Move on to a cross, a square, a triangle as your child grows.",
+        "Then put shapes together: a little house, a sun, a stick figure."
+      ],
+      "why": "A longitudinal study (Cameron 2012) found that the ability to copy shapes at 3–4 years predicts school results at entry into American kindergarten (about 5–6 years) and progress during that year, independently of executive functions. It is an association, not proof that practicing at home improves results.",
+      "tip": "Praise the effort, not how perfect the drawing is."
     }
   },
   {
@@ -662,6 +879,24 @@
       ],
       "why": "Рекомендации ВОЗ (Bull, 2020) для возраста 5–17 лет: в среднем не менее 60 минут в день умеренной или интенсивной, преимущественно аэробной физической активности в течение недели (сильная рекомендация, умеренная достоверность), интенсивные нагрузки и упражнения для мышц и костей минимум 3 дня в неделю, а также ограничение малоподвижного времени, особенно развлекательного экранного (порог не указан). Немного активности лучше, чем никакой; занятия должны быть приятными, разнообразными и подходить по возрасту и возможностям. Это рекомендация, а не доказательство конкретной пользы.",
       "tip": "Рядом с дорогой или водой нужен присмотр взрослого (общая мера осторожности, не вывод исследований). На велосипеде — всегда шлем."
+    },
+    "en": {
+      "title": "Movement every day",
+      "intro": "A little energetic movement every day, chosen together from things your child enjoys.",
+      "materials": [
+        "Comfortable shoes",
+        "A safe space: park, yard, gym or living room",
+        "A jump rope or a ball (optional)"
+      ],
+      "steps": [
+        "Ask your child which activities they like: running, biking, ball games, jumping rope, dancing.",
+        "Make a small plan for the week with different activities.",
+        "Include at least 3 days with games that involve running or jumping and strength (climbing, hopping, easy push-ups).",
+        "Mark the days with a sticker.",
+        "Join in when you can: walking, playing ball, dancing together."
+      ],
+      "why": "The WHO guidelines (Bull 2020) for ages 5–17 recommend an average of at least 60 minutes a day of moderate to vigorous physical activity, mostly aerobic, across the week (strong recommendation, moderate certainty), with vigorous and muscle- and bone-strengthening activities at least 3 days a week, and recommend limiting sedentary time, in particular recreational screen time (no threshold given). Some physical activity is better than none; activities should be enjoyable, varied and suited to age and abilities. It is a guideline, not proof of a specific benefit.",
+      "tip": "Near roads or water, adult supervision is needed (a general precaution, not drawn from research). Always wear a helmet on a bike."
     }
   },
   {
@@ -710,6 +945,24 @@
       ],
       "why": "Метаанализ 217 исследований (Uttal, 2013) показал, что тренировка пространственных навыков улучшает пространственные навыки по сравнению с контрольными группами (g = 0,47), эффекты долговременны и переносятся на нетренированные пространственные задачи; контрольные группы тоже улучшились (0,45 против 0,62 у тренированных). Дети младше 13 лет значимо не отличались от взрослых, а тип тренировки (курсы, видеоигры, пространственные задания) не давал значимо разных результатов. Данные относятся к пространственной тренировке в целом, а не именно к конструктору или танграму, и не доказывают пользы для математики.",
       "tip": "Позвольте ошибаться и пробовать снова: задача должна быть игрой, а не проверкой."
+    },
+    "en": {
+      "title": "Building challenges",
+      "intro": "Building, fitting together and rotating shapes to reproduce a model.",
+      "materials": [
+        "Bricks, blocks or tangrams",
+        "Paper and pencil",
+        "A timer (optional)"
+      ],
+      "steps": [
+        "Build a simple model and cover it, or draw it on a sheet.",
+        "Ask your child to reproduce it with the pieces, looking at it from a different side if they like.",
+        "Take turns inventing a model for the other and trying to reproduce it.",
+        "Increase the difficulty little by little: more pieces, models to rotate.",
+        "At the end, compare and talk about how you did it."
+      ],
+      "why": "A meta-analysis of 217 studies (Uttal 2013) found that spatial skills training improves spatial skills compared with control groups (g = 0.47), with lasting effects that transfer to untrained spatial tasks; control groups improved too (0.45 versus 0.62 in the trained groups). Children under 13 did not differ significantly from adults, and the type of training (courses, video games, spatial tasks) did not give significantly different results. The evidence concerns spatial training in general, not specifically bricks or tangrams, and does not show benefits in math.",
+      "tip": "Let your child make mistakes and try again: the challenge should be a game, not a test."
     }
   },
   {
@@ -758,6 +1011,24 @@
       ],
       "why": "Метаанализ 22 исследований (Dahl-Leonard, 2025) показал, что семейные вмешательства по чтению, то есть короткие структурированные занятия чтением под руководством родителя, обычно после обучения и часто со сценариями и текстами, в исследованиях с контрольной группой связаны со средним эффектом g = 0,36 (с упором на смысл 0,41, с упором на код 0,28). Занятия длились 10–20 минут, 3–5 дней в неделю; в основном это классы K–2 американской школы (примерно 5–8 лет), лишь 4 из 22 — 3–5-е классы (примерно 8–11 лет), а исследований старше начальной школы нет. Качество исследований формально не оценивалось, и авторы предупреждают, что не все они высокого качества.",
       "tip": "Если превращается в борьбу, сократите занятие и попробуйте в другой день."
+    },
+    "en": {
+      "title": "Guided reading at home",
+      "intro": "Short structured reading activities, led by a parent, with a text and a few questions.",
+      "materials": [
+        "A short text suited to your child's level",
+        "A sheet with 2–3 prepared questions",
+        "A notebook to mark the days"
+      ],
+      "steps": [
+        "Choose a fixed time, 3–5 days a week, for 10–20 minutes.",
+        "Read the text together, taking turns or with your child reading aloud.",
+        "Help with difficult words: split them into syllables and read them again.",
+        "Ask the 2–3 questions about the meaning of the text: who, what, why.",
+        "Mark the day in the notebook and praise the effort."
+      ],
+      "why": "A meta-analysis of 22 studies (Dahl-Leonard 2025) found that home-based reading interventions, that is, short structured activities led by a parent, usually after training and often with scripts and texts, are associated in studies with a comparison group with a mean effect of g = 0.36 (more meaning-focused 0.41, more code-focused 0.28). Sessions lasted 10–20 minutes, 3–5 days a week; the studies mostly involve grades K to 2 of the US school system (about 5–8 years), only 4 of 22 involve grades 3–5 (about 8–11 years) and none go beyond elementary school. The quality of the studies was not formally assessed and the authors warn that not all of the studies may be of high quality.",
+      "tip": "If it turns into a struggle, shorten it and try again another day."
     }
   }
 ]

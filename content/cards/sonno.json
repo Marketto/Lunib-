@@ -71,6 +71,38 @@
         "Не перегревайте: без шапочки дома и с комфортной температурой в комнате.",
         "Если используете спальный мешок, выбирайте его по размеру и без капюшона."
       ]
+    },
+    "en": {
+      "title": "Safe sleep: how to reduce the risk of SIDS",
+      "summary": "Sleeping on the back, on a firm, flat surface, in the parents' room but in their own crib, reduces the risk of sudden infant death.",
+      "keywords": [
+        "sids",
+        "crib death",
+        "sudden death",
+        "sleep",
+        "bassinet",
+        "crib",
+        "sleeping on the back",
+        "co-sleeping",
+        "bed sharing",
+        "pillow",
+        "bumpers",
+        "safe sleep"
+      ],
+      "research": [
+        "The American Academy of Pediatrics recommendations (2022) confirm that the supine position (on the back) is the safest for every sleep, including naps.",
+        "The surface must be firm, flat and not inclined: products inclined more than 10° are not safe for sleeping.",
+        "Sharing a room without sharing a bed, ideally for at least the first 6 months, is associated with a lower risk.",
+        "Offering a pacifier at sleep time reduces the risk; for breastfed babies it is best to wait until breastfeeding is well established.",
+        "Breastfeeding, no smoking during pregnancy or after birth, and keeping up to date with routine vaccinations are protective factors."
+      ],
+      "tips": [
+        "Always put your baby down to sleep on the back, even if they later learn to roll over on their own.",
+        "In the crib only a firm mattress and a fitted sheet: no pillows, bumpers, stuffed toys or soft blankets.",
+        "Avoid falling asleep with your baby on the sofa or armchair: it is one of the riskiest situations.",
+        "Do not overdress your baby: no hat indoors and a comfortable room temperature.",
+        "If you use a sleep sack, choose the right size and one without a hood."
+      ]
     }
   },
   {
@@ -195,6 +227,63 @@
           "to": 72
         }
       ]
+    },
+    "en": {
+      "title": "How many hours should my baby sleep?",
+      "summary": "Recommended hours of sleep change a lot with age: from 14–17 hours in the first months to 10–13 hours around 3–4 years, naps included.",
+      "keywords": [
+        "hours of sleep",
+        "how much sleep",
+        "sleeps little",
+        "sleeps too much",
+        "nap",
+        "catnap",
+        "short nap",
+        "sleep needs",
+        "sleep"
+      ],
+      "research": [
+        {
+          "t": "WHO (2019): from 0 to 3 months, 14–17 hours of sleep in 24 hours are needed, naps included.",
+          "from": 0,
+          "to": 4
+        },
+        {
+          "t": "WHO (2019): from 4 to 11 months, 12–16 hours in 24 hours, naps included.",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "t": "WHO and the American Academy of Sleep Medicine agree: from 1 to 2 years, 11–14 hours in 24 hours.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "WHO (2019) and the American Academy of Sleep Medicine: between 3 and 5 years, 10–13 hours in 24 hours, nap included.",
+          "from": 36,
+          "to": 72
+        },
+        "These are ranges: every child has their own needs, and how they are doing during the day matters more than the exact number."
+      ],
+      "tips": [
+        "Watch mood and energy during the day: a cheerful, active child usually sleeps enough.",
+        "Keep regular bedtimes and wake-up times, on weekends too.",
+        {
+          "t": "In the first months sleep is fragmented: this is normal and is not due to parents' mistakes.",
+          "from": 0,
+          "to": 6
+        },
+        {
+          "t": "Between 1 and 3 years many children go from two naps to one: follow the signs of tiredness.",
+          "from": 12,
+          "to": 36
+        },
+        {
+          "t": "Around 3–5 years many children stop napping: if they are exhausted in the evening, move bedtime a little earlier.",
+          "from": 36,
+          "to": 72
+        }
+      ]
     }
   },
   {
@@ -269,6 +358,39 @@
         "Избегайте экранов за час до сна.",
         {
           "t": "До 6 месяцев ночные пробуждения для кормления — норма: методы не нужны.",
+          "from": 0,
+          "to": 6
+        }
+      ]
+    },
+    "en": {
+      "title": "Wakes up often at night: what works",
+      "summary": "A consistent bedtime routine helps sleep; after 6 months some gradual behavioral methods are effective and, in studies, have shown no long-term negative effects.",
+      "keywords": [
+        "night wakings",
+        "wakes up at night",
+        "not sleeping",
+        "won't sleep",
+        "falling asleep",
+        "bedtime routine",
+        "method",
+        "graduated extinction",
+        "wake-up",
+        "night"
+      ],
+      "research": [
+        "A study in 14 countries (Mindell 2015) found that the more often a bedtime routine is followed, the better the child's sleep: they fall asleep sooner and wake up less.",
+        "A controlled trial (Gradisar 2016) on babies aged 6–16 months showed that graduated extinction and bedtime fading improve sleep.",
+        "A 5-year follow-up (Price 2012) found no harm to emotions, behavior, stress or the parent-child relationship in children treated with behavioral methods.",
+        "A more responsive approach is also a legitimate choice: the methods are options, not obligations."
+      ],
+      "tips": [
+        "Create a short sequence that is always the same: bath or wash, pajamas, a story, a cuddle, dim light.",
+        "Try putting your baby in the crib drowsy but still awake, so they learn to fall asleep on their own.",
+        "If you choose a gradual method, decide the rules in advance with the other parent and stick to them for at least 1–2 weeks.",
+        "Avoid screens in the hour before bedtime.",
+        {
+          "t": "Before 6 months, waking to feed is normal: no methods are needed.",
           "from": 0,
           "to": 6
         }
@@ -367,6 +489,47 @@
           "to": 48
         }
       ]
+    },
+    "en": {
+      "title": "The pacifier: yes or no, and until when?",
+      "summary": "A pacifier during sleep reduces the risk of SIDS in the first year; prolonged use in later years is associated with tooth alignment problems.",
+      "keywords": [
+        "pacifier",
+        "dummy",
+        "soother",
+        "taking away the pacifier",
+        "crooked teeth",
+        "malocclusion",
+        "sucking",
+        "thumb"
+      ],
+      "research": [
+        {
+          "t": "The AAP (2022) recommends offering a pacifier at sleep time in the first year because it reduces the risk of SIDS, even if it falls out after the baby has fallen asleep.",
+          "from": 0,
+          "to": 12
+        },
+        {
+          "t": "For breastfed babies it is better to introduce it when breastfeeding is well established.",
+          "from": 0,
+          "to": 6
+        },
+        "A meta-analysis (Doğramacı 2016) found an association between prolonged non-nutritive sucking (pacifier or finger) and malocclusions such as open bite."
+      ],
+      "tips": [
+        "Do not force it if your baby refuses it, and do not put it back in the mouth if it falls out while they sleep.",
+        {
+          "t": "Never dip it in honey or sugar: honey must not be given under 1 year because of the risk of botulism.",
+          "from": 0,
+          "to": 12
+        },
+        "Do not tie it with cords around the neck or to the crib.",
+        {
+          "t": "After 2 years try to gradually limit it to sleep time, calmly and without punishment.",
+          "from": 24,
+          "to": 48
+        }
+      ]
     }
   },
   {
@@ -439,6 +602,36 @@
         "Очень частые эпизоды — несколько раз за ночь или в любое время ночи.",
         "Всегда одинаковые повторяющиеся движения или риск травмы.",
         "Громко храпит, делает паузы в дыхании или очень сонлив днём."
+      ]
+    },
+    "en": {
+      "title": "Nightmares and night terrors",
+      "summary": "In a night terror the child screams but is not really awake and remembers nothing in the morning; from a nightmare, instead, they wake up, remember and calm down in your arms.",
+      "keywords": [
+        "night terror",
+        "pavor nocturnus",
+        "nightmares",
+        "screaming at night",
+        "wakes up screaming",
+        "bad dreams",
+        "sleepwalking",
+        "fear at night"
+      ],
+      "research": [
+        "In a Canadian cohort (Petit 2015) night terrors were very common in early childhood: 34% at 18 months, then declining with age; overall more than half of the children had them.",
+        "A review (Leung 2020) explains that terrors occur in the first hours of sleep, from deep sleep: the child is not awake and does not remember the episode.",
+        "Nightmares occur more toward morning: the child wakes up fully, remembers the dream and can be comforted (Kotagal 2009)."
+      ],
+      "tips": [
+        "During a night terror do not wake or shake your child: stay close and make sure they do not get hurt.",
+        "After a nightmare comfort your child, listen to the dream and reassure them that they are safe.",
+        "Regular schedules and enough sleep reduce episodes: tiredness makes them more likely.",
+        "If terrors are frequent and always at the same time, the pediatrician may suggest gently waking your child shortly before."
+      ],
+      "redFlags": [
+        "Very frequent episodes, several times a night or at any time of the night.",
+        "Repetitive, always identical movements, or a risk of getting hurt.",
+        "Snores loudly, has pauses in breathing or is very sleepy during the day."
       ]
     }
   },
@@ -520,6 +713,39 @@
         "Попробуйте выключать экраны и устройства за 30–60 минут до сна.",
         "По возможности оставляйте телефоны и планшеты на ночь вне комнаты.",
         "В комнате тихо и прохладно."
+      ]
+    },
+    "en": {
+      "title": "Sleep at 6–12 years: how many hours and screens",
+      "summary": "Between 6 and 12 years the AASM indicates 9–12 hours of sleep every 24 hours. On screens in the bedroom the evidence is moderate and associational: it does not show that screens are the cause.",
+      "keywords": [
+        "sleep",
+        "sleeping",
+        "hours of sleep",
+        "how many hours",
+        "school",
+        "tiredness",
+        "falling asleep",
+        "schedule",
+        "going to bed",
+        "screens",
+        "tablet",
+        "phone",
+        "tv in the bedroom",
+        "evening routine"
+      ],
+      "research": [
+        "The American Academy of Sleep Medicine (Paruthi 2016) recommends 9–12 hours of sleep every 24 hours, regularly, for children aged 6–12 years; the studies it is based on are largely correlational.",
+        "A study of 2,048 US students in 4th and 7th grade (mean age 9.4 and 12.3 years) (Falbe 2015) associated sleeping near a small screen with 20.6 fewer minutes of sleep on school nights and a TV in the bedroom with 18.0 fewer minutes; the small screen was associated with more perceived insufficient rest (PR 1.39). A cross-sectional study with data reported by the children: it is an association and could run in either direction.",
+        "A systematic review of 67 studies (Hale and Guan 2015) found an unfavorable association between screen time and sleep (later bedtime, fewer hours) in about 90%; causality is not confirmed.",
+        "The AASM (2023 statement) suggests a relaxing routine before sleep (about 15 minutes), devices off 30–60 minutes before lights out, and a quiet, cool bedroom."
+      ],
+      "tips": [
+        "Choose a fairly regular bedtime, on weekends too, so that your child reaches 9–12 hours.",
+        "A short, calm routine of about 15 minutes (brushing teeth, reading together) helps the transition to sleep.",
+        "Try turning off screens and devices 30–60 minutes before bed.",
+        "If you can, keep phones and tablets out of the bedroom overnight.",
+        "A quiet, cool bedroom."
       ]
     }
   }

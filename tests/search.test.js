@@ -47,6 +47,22 @@ const cases = {
     ['горшок', 'vasino'],
     ['мёд', 'latte-miele'],
     ['колики', 'coliche']
+  ],
+  en: [
+    ['high fever', 'febbre'],
+    ['tylenol', 'antipiretici'],
+    ['baby wakes up at night', 'risvegli-notturni'],
+    ['tantrums', 'capricci'],
+    ['when to start solids', 'svezzamento'],
+    ['choking on grapes', 'soffocamento'],
+    ['constipation', 'stitichezza'],
+    ['cartoons', 'schermi'],
+    ['not talking', 'ritardo-linguaggio'],
+    ['vaccines', 'vaccini'],
+    ['teething', 'dentizione'],
+    ['potty', 'vasino'],
+    ['honey', 'latte-miele'],
+    ['colic', 'coliche']
   ]
 };
 
@@ -62,6 +78,14 @@ describe('ricerca offline', () => {
       });
     }
   }
+
+  it('en: se la scheda non ha testo inglese l\'indice usa l\'italiano (mai vuoto)', async () => {
+    const en = await search('en', 'fever', null);
+    expect(en.length).toBeGreaterThan(0);
+    const c = await loadCard('en', 'febbre');
+    expect(c.title).toBeTruthy();
+    expect(c.sources[0].url).toMatch(/^https:/);
+  });
 
   it('il filtro età esclude schede fuori tolleranza', async () => {
     const r = await search('it', 'svezzamento', 30); // 2a6m, svezzamento è 4–12

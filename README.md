@@ -10,9 +10,15 @@
 >
 > *RU:* Lunibù — **лишь инструмент для быстрого поиска данных** из рекомендаций и исследований. Это не медицинское
 > изделие и не замена педиатру или другим специалистам. **Всегда проверяйте первоисточники.** В экстренных случаях — **112**.
+>
+> *EN:* Lunibù is **only a utility for quickly looking up data** drawn from guidelines (WHO, scientific societies) and
+> published studies. **It is not a medical device, does not make diagnoses and does not replace pediatricians,
+> nutritionists, speech therapists, psychologists or other professionals in any way.** The content may be incomplete,
+> simplified or out of date: **always dig deeper and check the original sources** cited in every card, and for any
+> doubt about your child's health talk to the pediatrician. In an emergency call **112 (EU) or your local emergency number**.
 
 PoC di un'app per genitori di bambini **0–12 anni**: risposte e consigli basati su linee guida e studi
-scientifici revisionati, in **italiano e russo**, che funziona **offline**, senza backend e senza AI.
+scientifici revisionati, in **italiano, russo e inglese**, che funziona **offline**, senza backend e senza AI.
 
 ## Cosa fa
 
@@ -21,7 +27,7 @@ scientifici revisionati, in **italiano e russo**, che funziona **offline**, senz
 - **Tolleranza ±3 mesi**: misurata dal "compleanno di confine" della fascia.
   Es. 2a10m vede le schede "2 anni" (in fascia) e "3 anni" (fascia vicina); 3a3m vede "3 anni" e "2 anni".
   Logica in `src/lib/age.js`, testata in `tests/age.test.js`.
-- **Ricerca offline** (MiniSearch) con stemming leggero IT/RU, sinonimi colloquiali e **indice di pertinenza 0–100%**
+- **Ricerca offline** (MiniSearch) con stemming leggero IT/RU/EN, sinonimi colloquiali e **indice di pertinenza 0–100%**
   assoluto (dove compare la parola + quanto è esatta), non relativo al primo risultato.
 - **Lazy load**: l'indice di una lingua si carica alla prima ricerca; il testo completo di una scheda
   (blocco per categoria) solo quando la si apre. Il service worker mette tutto in cache per l'uso offline.
@@ -58,13 +64,30 @@ scientifici revisionati, in **italiano e russo**, che funziona **offline**, senz
   Hugh 2014, +3 dB di margine stanza), suggerisce la distanza minima e **abbassa** il volume in automatico (mai alza).
   Calibrazione opzionale con un fonometro o un'app calibrata; senza calibrazione margine di 6 dB (limite 44 invece di 50 dB(A)).
 
+## Lingue (IT / RU / EN)
+
+- Interfaccia e contenuti in italiano, russo e inglese. La lingua del telefono (`navigator.language`) sceglie `ru` o `en`; altrimenti `it`. Si cambia da Bimbi → Lingua.
+- Le schede, i giochi e le tappe hanno un blocco `it`, `ru` e `en`. Se `en` manca (o non è allineato a `it`), l'app mostra l'italiano.
+- `npm run content` controlla che `en` abbia le stesse voci, fasce `from/to` e `strict` di `it`. In `scripts/build-content.mjs` la costante `REQUIRE_EN` (o la variabile d'ambiente `REQUIRE_EN=1`) trasforma gli avvisi sull'inglese in errori.
+- Formati: date e numeri in `en-US`, unità metriche.
+
+## English (summary)
+
+> **Disclaimer.** Lunibù is only a quick-lookup utility for data drawn from guidelines and published studies. It is not a
+> medical device, makes no diagnoses and does not replace pediatricians or other professionals. Always check the original
+> sources cited in every card. In an emergency call 112 (EU) or your local emergency number.
+
+Lunibù is an offline PWA for parents of children aged 0–12, available in Italian, Russian and English. Everything stays on
+the device: no account, no server, no AI at runtime. Every statement links to its sources; the medicine check never
+calculates or suggests doses. The Italian version of the terms of use prevails in case of discrepancy.
+
 ## Comandi
 
 ```bash
 npm install
 npm run dev      # genera indici + avvia in sviluppo
 npm run build    # genera indici + build PWA in dist/
-npm test         # età, tolleranza, filtri per età nelle schede, soglie strict, stemming, ricerca IT/RU
+npm test         # età, tolleranza, filtri per età nelle schede, soglie strict, stemming, ricerca IT/RU/EN
 ```
 
 ## Contenuti
@@ -72,7 +95,7 @@ npm test         # età, tolleranza, filtri per età nelle schede, soglie strict
 ```
 content/
   sources.json          # fonti verificate (id → citazione, url, tipo)
-  cards/<categoria>.json # schede con testo it + ru
+  cards/<categoria>.json # schede con testo it + ru + en
 scripts/build-content.mjs # valida e genera public/data/<lang>/index.json e c/<categoria>.json
 ```
 
@@ -123,7 +146,7 @@ ricerca; il livello di evidenza è dichiarato (forte / media / raccomandato da l
 - **Medicine**: registrazione di qualsiasi farmaco, filtri per farmaco e periodo, grafico delle dosi al giorno, export CSV.
   Per **paracetamolo e ibuprofene** (solo principi attivi, nessuna marca) un **controllo** prudenziale – intervallo,
   numero di dosi, mg/kg per dose e al giorno, età/peso minimi, controindicazioni, durata – con limiti verificati su
-  RCP AIFA, NICE NG143, NHS, MHRA, SIP 2016 e linee guida del Minzdrav RF (`src/data/meds.json`).
+  RCP AIFA, NICE NG143, NHS, MHRA, SIP 2016 e linee guida del Minzdrav RF (`src/data/meds.json`). Per la **vitamina D** il totale giornaliero è confrontato con il livello massimo tollerabile (UL) EFSA.
   **L'app non calcola né suggerisce dosi.**
 - Ogni avviso e ogni indicazione mostra in linea le sue fonti; le schede mostrano le fonti per voce e per sezione.
 

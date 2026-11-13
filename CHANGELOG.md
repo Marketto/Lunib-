@@ -1,5 +1,9 @@
 # Novità di Lunibù
 
+## 1.14.0 — 14 novembre 2026
+- Nuova lingua: l'app è ora disponibile anche in inglese (Italiano, Русский, English), con interfaccia, condizioni d'uso, diario, giochi e schede tradotti. Si cambia da Bimbi → Lingua; la lingua del telefono è riconosciuta automaticamente. Dove una traduzione manca ancora, l'app mostra il testo italiano.
+- Il giro delle funzioni mostra la novità e porta al selettore della lingua.
+
 ## 1.13.1 — 13 novembre 2026
 - Il giro delle funzioni ora evidenzia le parti reali dell'app, con un breve suggerimento per ciascuna: tocca per andare avanti.
 

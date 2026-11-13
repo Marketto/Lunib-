@@ -1,8 +1,8 @@
-// Categorie, colori e frasi motivazionali per tema (IT / RU).
+// Categorie, colori e frasi motivazionali per tema (IT / RU / EN).
 export const CATEGORIES = [
   {
     id: 'sonno', emoji: '🌙', color: '#b9b2ec',
-    name: { it: 'Sonno', ru: 'Сон' },
+    name: { it: 'Sonno', ru: 'Сон', en: 'Sleep' },
     quotes: {
       it: [
         'Anche le notti più lunghe finiscono con un buongiorno.',
@@ -13,12 +13,17 @@ export const CATEGORIES = [
         'Даже самая длинная ночь заканчивается добрым утром.',
         'Каждый малыш находит свой ритм — вы ищете его вместе.',
         'Отдыхать, когда можете, — это не лень, а забота.'
+      ],
+      en: [
+        'Even the longest nights end with a good morning.',
+        'Every baby finds their own rhythm: you are looking for it together.',
+        'Resting when you can is not laziness, it is care.'
       ]
     }
   },
   {
     id: 'alimentazione', emoji: '🥕', color: '#f7c48f',
-    name: { it: 'Alimentazione', ru: 'Питание' },
+    name: { it: 'Alimentazione', ru: 'Питание', en: 'Feeding' },
     quotes: {
       it: [
         'Un assaggio oggi, un sorriso domani: il gusto si costruisce piano.',
@@ -29,12 +34,17 @@ export const CATEGORIES = [
         'Сегодня — кусочек, завтра — улыбка: вкус растёт постепенно.',
         'За столом спокойствие важнее пустой тарелки.',
         'Вы решаете, что предложить, малыш — сколько съесть. Вы команда.'
+      ],
+      en: [
+        'A taste today, a smile tomorrow: flavor is built slowly.',
+        'At the table, calm matters more than an empty plate.',
+        'You decide what to offer, they decide how much to eat: you are a team.'
       ]
     }
   },
   {
     id: 'salute', emoji: '🩺', color: '#f1b4c3',
-    name: { it: 'Salute', ru: 'Здоровье' },
+    name: { it: 'Salute', ru: 'Здоровье', en: 'Health' },
     quotes: {
       it: [
         'Chiedere aiuto al pediatra è un gesto d\'amore, non un fallimento.',
@@ -45,12 +55,17 @@ export const CATEGORIES = [
         'Обратиться к педиатру — это проявление любви, а не слабость.',
         'Вы знаете своего малыша лучше всех — доверяйте себе.',
         'Вдохните. Шаг за шагом — у вас всё получается.'
+      ],
+      en: [
+        'Asking the pediatrician for help is an act of love, not a failure.',
+        'You know your child better than anyone: trust your instincts.',
+        'Breathe. One step at a time, you are doing well.'
       ]
     }
   },
   {
     id: 'sviluppo', emoji: '🐣', color: '#a8d0be',
-    name: { it: 'Crescita e movimento', ru: 'Развитие и движение' },
+    name: { it: 'Crescita e movimento', ru: 'Развитие и движение', en: 'Growth and movement' },
     quotes: {
       it: [
         'Ogni bimbo sboccia nel suo tempo, come i fiori.',
@@ -61,12 +76,17 @@ export const CATEGORIES = [
         'Каждый малыш расцветает в своё время, как цветок.',
         'Это не гонка, а чудесное путешествие.',
         'Сегодня — перекат, завтра — шаг: важно всё.'
+      ],
+      en: [
+        'Every child blooms in their own time, like flowers.',
+        'It is not a race: it is a wonderful journey.',
+        'A roll today, a step tomorrow: everything counts.'
       ]
     }
   },
   {
     id: 'linguaggio', emoji: '💬', color: '#a9c7ee',
-    name: { it: 'Linguaggio e lettura', ru: 'Речь и чтение' },
+    name: { it: 'Linguaggio e lettura', ru: 'Речь и чтение', en: 'Language and reading' },
     quotes: {
       it: [
         'Ogni parola che gli regali è un mattoncino del suo mondo.',
@@ -77,12 +97,17 @@ export const CATEGORIES = [
         'Каждое ваше слово — кирпичик его мира.',
         'Говорите, пойте, читайте: ваш голос — самый любимый.',
         'Сказка перед сном стоит тысячи игрушек.'
+      ],
+      en: [
+        'Every word you give them is a little brick in their world.',
+        'Talking, singing, reading: their favorite voice is yours.',
+        'A story before bedtime is worth a thousand toys.'
       ]
     }
   },
   {
     id: 'emozioni', emoji: '🌈', color: '#f7d79a',
-    name: { it: 'Emozioni e comportamento', ru: 'Эмоции и поведение' },
+    name: { it: 'Emozioni e comportamento', ru: 'Эмоции и поведение', en: 'Emotions and behavior' },
     quotes: {
       it: [
         'Dietro un capriccio c\'è un piccolo cuore che sta imparando.',
@@ -93,12 +118,17 @@ export const CATEGORIES = [
         'За капризом стоит маленькое сердце, которое учится.',
         'Не нужно быть идеальными родителями — достаточно быть рядом.',
         'Спокойствию малыш учится, глядя на ваше.'
+      ],
+      en: [
+        'Behind a tantrum there is a little heart that is learning.',
+        'You do not need to be perfect parents, just present ones.',
+        'Calm is learned by watching yours.'
       ]
     }
   },
   {
     id: 'gioco', emoji: '🧸', color: '#f5b39b',
-    name: { it: 'Gioco e schermi', ru: 'Игра и экраны' },
+    name: { it: 'Gioco e schermi', ru: 'Игра и экраны', en: 'Play and screens' },
     quotes: {
       it: [
         'Giocare è il lavoro più serio dei bambini.',
@@ -109,12 +139,17 @@ export const CATEGORIES = [
         'Игра — самая серьёзная работа детей.',
         'Лучшая игра — та, в которой есть вы.',
         'Картонная коробка может стать замком.'
+      ],
+      en: [
+        'Play is children\'s most serious work.',
+        'The best game? The one you are part of too.',
+        'A cardboard box can become a castle.'
       ]
     }
   },
   {
     id: 'sicurezza', emoji: '🛡️', color: '#9ed3d6',
-    name: { it: 'Sicurezza', ru: 'Безопасность' },
+    name: { it: 'Sicurezza', ru: 'Безопасность', en: 'Safety' },
     quotes: {
       it: [
         'Piccole attenzioni oggi, grandi tranquillità domani.',
@@ -125,6 +160,11 @@ export const CATEGORIES = [
         'Маленькие меры сегодня — большое спокойствие завтра.',
         'Защищать — не значит всё запрещать, а значит подготовить пространство.',
         'Безопасная среда оставляет место для любопытства.'
+      ],
+      en: [
+        'Small precautions today, great peace of mind tomorrow.',
+        'Protecting does not mean forbidding everything: it means preparing the ground.',
+        'A safe environment leaves room for curiosity.'
       ]
     }
   }
@@ -147,11 +187,18 @@ export const GENERAL_QUOTES = {
     'Ни одна книга не знает вашего малыша так, как вы.',
     'Глубокий вдох, чашка чего-то тёплого — и дальше.',
     'Дни длинные, а годы летят: порадуйтесь улыбке сегодня.'
+  ],
+  en: [
+    'You are doing an extraordinary job, even on the rough days.',
+    'The fact that you are looking for answers already says a lot about you.',
+    'No manual knows your child the way you do.',
+    'A deep breath, a warm cup, and off we go.',
+    'The days are long, but the years fly: enjoy a smile today.'
   ]
 };
 
 export function pickQuote(lang, categoryId, seed = Date.now()) {
   const list = categoryId ? CAT[categoryId]?.quotes[lang] : GENERAL_QUOTES[lang];
-  const arr = list?.length ? list : GENERAL_QUOTES[lang];
+  const arr = list?.length ? list : (GENERAL_QUOTES[lang] || GENERAL_QUOTES.it);
   return arr[Math.abs(Math.floor(seed)) % arr.length];
 }

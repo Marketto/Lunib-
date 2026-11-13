@@ -51,6 +51,7 @@ export function formatAge(birthISO, lang, today = new Date()) {
   if (m < 2) {
     const w = Math.floor(ageInDays(birthISO, today) / 7);
     if (lang === 'ru') return `${w} ${plRu(w, 'неделя', 'недели', 'недель')}`;
+    if (lang === 'en') return `${w} ${w === 1 ? 'week' : 'weeks'}`;
     return `${w} ${w === 1 ? 'settimana' : 'settimane'}`;
   }
   const y = Math.floor(m / 12);
@@ -59,6 +60,11 @@ export function formatAge(birthISO, lang, today = new Date()) {
     const ys = y ? `${y} ${plRu(y, 'год', 'года', 'лет')}` : '';
     const ms = r ? `${r} ${plRu(r, 'месяц', 'месяца', 'месяцев')}` : '';
     return [ys, ms].filter(Boolean).join(' ');
+  }
+  if (lang === 'en') {
+    const ys = y ? `${y} ${y === 1 ? 'year' : 'years'}` : '';
+    const ms = r ? `${r} ${r === 1 ? 'month' : 'months'}` : '';
+    return [ys, ms].filter(Boolean).join(' and ');
   }
   const ys = y ? `${y} ${y === 1 ? 'anno' : 'anni'}` : '';
   const ms = r ? `${r} ${r === 1 ? 'mese' : 'mesi'}` : '';
@@ -69,11 +75,13 @@ export function formatRange(from, to, lang) {
   const f = (n) => {
     if (n % 12 === 0 && n > 0) {
       const y = n / 12;
+      if (lang === 'en') return `${y} ${y === 1 ? 'year' : 'years'}`;
       return lang === 'ru' ? `${y} ${plRu(y, 'год', 'года', 'лет')}` : `${y} ${y === 1 ? 'anno' : 'anni'}`;
     }
+    if (lang === 'en') return `${n} ${n === 1 ? 'month' : 'months'}`;
     return lang === 'ru' ? `${n} мес.` : `${n} mesi`;
   };
-  if (from === 0) return lang === 'ru' ? `0 – ${f(to)}` : `0 – ${f(to)}`;
+  if (from === 0) return `0 – ${f(to)}`;
   return `${f(from)} – ${f(to)}`;
 }
 

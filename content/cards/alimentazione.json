@@ -71,6 +71,36 @@
         "Нет возраста, когда грудное молоко перестаёт быть полезным: вы сами решаете, когда закончить, без чувства вины.",
         "Как бы вы ни кормили малыша, важны близость и контакт во время кормления."
       ]
+    },
+    "en": {
+      "title": "Breastfeeding: how much and for how long",
+      "summary": "The WHO recommends exclusive breastfeeding for the first 6 months, and continuing it alongside other foods up to 2 years and beyond, if mother and baby both wish to.",
+      "keywords": [
+        "breastfeeding",
+        "nursing",
+        "breast milk",
+        "breast",
+        "feed",
+        "exclusive breastfeeding",
+        "formula",
+        "infant formula",
+        "weaning from the breast"
+      ],
+      "research": [
+        {
+          "t": "A Cochrane review (Kramer and Kakuma 2012) found that exclusive breastfeeding for 6 months reduces gastrointestinal infections compared with 3–4 months, with no negative effects on growth.",
+          "from": 0,
+          "to": 12
+        },
+        "The Lancet series (Victora 2016) links breastfeeding to fewer infections and hospital admissions in children, and to health benefits for the mother as well.",
+        "Infant formula is a safe and adequate alternative when breastfeeding is not possible or is not the family's choice."
+      ],
+      "tips": [
+        "Feed on demand, following hunger cues: the baby roots around, brings hands to the mouth, smacks the lips.",
+        "If you have persistent pain or doubts about growth, ask for help early from a midwife, a lactation consultant or the pediatrician.",
+        "There is no age at which breast milk stops being useful: you decide when to stop, without guilt.",
+        "However you feed your baby, closeness and contact during the feed matter."
+      ]
     }
   },
   {
@@ -106,7 +136,7 @@
       "research": [
         "ESPGHAN (2017): i cibi complementari non vanno introdotti prima delle 17 settimane né dopo le 26 settimane; l'OMS (2023) indica di iniziare a 6 mesi.",
         "Niente sale e zucchero aggiunti nel primo anno; il glutine può essere introdotto tra i 4 e i 12 mesi.",
-        "Uno studio controllato (BLISS, Fangupo 2016) ha mostrato che un autosvezzamento con cibi preparati in modo sicuro non aumenta il rischio di soffocamento rispetto all'approccio tradizionale.",
+        "Nello studio BLISS (Fangupo 2016) l'autosvezzamento, con indicazioni ai genitori sui cibi a rischio di soffocamento, non ha causato più episodi di soffocamento dello svezzamento tradizionale.",
         "Servono cibi ricchi di ferro (carne, pesce, legumi, uova, cereali fortificati) perché le riserve di ferro calano verso i 6 mesi."
       ],
       "tips": [
@@ -135,7 +165,7 @@
       "research": [
         "ESPGHAN (2017): прикорм не следует вводить раньше 17 недель и позже 26 недель; ВОЗ (2023) рекомендует начинать в 6 месяцев.",
         "Без добавленной соли и сахара на первом году; глютен можно вводить между 4 и 12 месяцами.",
-        "Контролируемое исследование (BLISS, Fangupo, 2016) показало, что самостоятельный прикорм с безопасно приготовленной едой не повышает риск удушья по сравнению с традиционным.",
+        "В исследовании BLISS (Fangupo, 2016) прикорм по методу baby-led weaning при инструктаже родителей о продуктах с риском удушья не приводил к большему числу эпизодов удушья, чем традиционный прикорм с ложки.",
         "Нужны продукты, богатые железом (мясо, рыба, бобовые, яйца, обогащённые каши): запасы железа к 6 месяцам снижаются."
       ],
       "tips": [
@@ -143,6 +173,36 @@
         "Предлагайте разнообразные вкусы, включая горьковатые овощи, и повторно — те, от которых отказался.",
         "Пюре или кусочки — подавайте мягкую текстуру безопасной формы, малыш всегда сидит и под присмотром.",
         "Молоко (грудное или смесь) остаётся основной едой большую часть первого года."
+      ]
+    },
+    "en": {
+      "title": "Starting solids: when and how",
+      "summary": "European pediatric societies advise starting solid foods no earlier than 17 weeks and no later than 26; the WHO says 6 months. Your baby's readiness signs matter.",
+      "keywords": [
+        "starting solids",
+        "complementary feeding",
+        "baby-led weaning",
+        "blw",
+        "first foods",
+        "purees",
+        "solid foods",
+        "baby food jars",
+        "when to start",
+        "salt",
+        "sugar",
+        "gluten"
+      ],
+      "research": [
+        "ESPGHAN (2017): complementary foods should not be introduced before 17 weeks or after 26 weeks; the WHO (2023) says to start at 6 months.",
+        "No added salt or sugar in the first year; gluten can be introduced between 4 and 12 months.",
+        "In the BLISS trial (Fangupo 2016), baby-led weaning with advice to parents on choking-risk foods did not lead to more choking than traditional spoon-feeding.",
+        "Iron-rich foods are needed (meat, fish, legumes, eggs, fortified cereals) because iron stores run down around 6 months."
+      ],
+      "tips": [
+        "Readiness signs: sits with little support, has good head control, shows interest in food and does not push everything out with the tongue.",
+        "Offer a variety of flavors, including bitter vegetables, and offer rejected ones again several times.",
+        "Whether you choose purees or finger foods, serve soft textures and safe shapes, and always keep your baby seated and supervised.",
+        "Milk (breast milk or formula) remains the main food for much of the first year."
       ]
     }
   },
@@ -160,7 +220,7 @@
     ],
     "it": {
       "title": "Allergeni: uovo e arachidi vanno ritardati?",
-      "summary": "No: ritardare gli alimenti allergizzanti non previene le allergie. Le linee guida europee suggeriscono di introdurre uovo ben cotto e arachidi in forma sicura durante lo svezzamento.",
+      "summary": "No: ritardare gli alimenti allergizzanti non previene le allergie. Le linee guida europee suggeriscono di introdurre l'uovo ben cotto durante lo svezzamento e, dove l'allergia alle arachidi è frequente, anche le arachidi in forma sicura.",
       "keywords": [
         "allergeni",
         "allergia alimentare",
@@ -175,7 +235,7 @@
       ],
       "research": [
         "Lo studio LEAP (Du Toit 2015) ha mostrato che dare arachidi regolarmente dai 4–11 mesi a bimbi ad alto rischio riduceva molto l'allergia alle arachidi a 5 anni.",
-        "Le linee guida EAACI (2021) raccomandano di introdurre l'uovo ben cotto (non crudo né pastorizzato poco cotto) quando inizia lo svezzamento, e le arachidi in forma adatta all'età, soprattutto dove l'allergia è frequente.",
+        "Le linee guida EAACI (2021) suggeriscono di introdurre l'uovo ben cotto (non crudo né pastorizzato non cotto) all'inizio dello svezzamento e, dove l'allergia alle arachidi è frequente, le arachidi in forma adatta all'età.",
         "Lo studio EAT (Perkin 2016) indica che l'introduzione precoce funziona se l'assunzione è regolare nel tempo."
       ],
       "tips": [
@@ -195,7 +255,7 @@
     },
     "ru": {
       "title": "Аллергены: нужно ли откладывать яйцо и арахис?",
-      "summary": "Нет: откладывание аллергенных продуктов не предотвращает аллергию. Европейские рекомендации советуют вводить хорошо проваренное яйцо и арахис в безопасной форме во время прикорма.",
+      "summary": "Нет: откладывание аллергенных продуктов не предотвращает аллергию. Европейские рекомендации предлагают вводить хорошо проваренное яйцо во время прикорма, а там, где аллергия на арахис распространена, — и арахис в безопасной форме.",
       "keywords": [
         "аллергены",
         "пищевая аллергия",
@@ -210,7 +270,7 @@
       ],
       "research": [
         "Исследование LEAP (Du Toit, 2015): регулярное употребление арахиса с 4–11 месяцев детьми из группы высокого риска сильно снижало аллергию на арахис к 5 годам.",
-        "Рекомендации EAACI (2021): вводить хорошо проваренное яйцо (не сырое и не недоваренное пастеризованное) с началом прикорма, а арахис — в форме, подходящей по возрасту, особенно там, где эта аллергия распространена.",
+        "В рекомендациях EAACI (2021) предлагается вводить хорошо проваренное яйцо (не сырое и не пастеризованное без термообработки) в начале прикорма и там, где аллергия на арахис распространена, — арахис в подходящей возрасту форме.",
         "Исследование EAT (Perkin, 2016) показывает, что раннее введение работает при регулярном употреблении."
       ],
       "tips": [
@@ -226,6 +286,41 @@
       "urgent": [
         "Затруднённое дыхание, упорный кашель или внезапная осиплость после еды.",
         "Отёк языка или горла, бледность, обморок или сильная вялость."
+      ]
+    },
+    "en": {
+      "title": "Allergens: should egg and peanuts be delayed?",
+      "summary": "No: delaying allergenic foods does not prevent allergies. European guidelines suggest introducing well-cooked egg when starting solids and, where peanut allergy is common, peanuts in a safe form.",
+      "keywords": [
+        "allergens",
+        "food allergy",
+        "egg",
+        "peanuts",
+        "peanut butter",
+        "tree nuts",
+        "fish",
+        "allergy prevention",
+        "hives",
+        "allergic reaction"
+      ],
+      "research": [
+        "The LEAP study (Du Toit 2015) showed that giving peanuts regularly from 4–11 months to high-risk babies greatly reduced peanut allergy at 5 years.",
+        "The EAACI guidelines (2021) suggest introducing well-cooked egg (not raw, and not uncooked pasteurized egg) when starting solids and, where peanut allergy is common, peanuts in an age-appropriate form.",
+        "The EAT study (Perkin 2016) indicates that early introduction works if intake is regular over time."
+      ],
+      "tips": [
+        "Never give whole peanuts or nuts under 4–5 years: use smooth, thinned nut butters or finely ground nuts.",
+        "Introduce one new food at a time, during the day and at home, so you can watch for any reactions.",
+        "Once a food has been introduced and tolerated, keep offering it regularly.",
+        "If your baby has severe eczema or an already known allergy, talk to the pediatrician before introducing these foods."
+      ],
+      "redFlags": [
+        "Hives, swelling of the lips or face, or vomiting after a new food: stop that food and call the pediatrician.",
+        "Severe eczema or an already diagnosed allergy: ask the pediatrician for an introduction plan."
+      ],
+      "urgent": [
+        "Difficulty breathing, persistent cough or a sudden hoarse voice after a food.",
+        "Swelling of the tongue or throat, paleness, fainting or a baby who is very drowsy or listless."
       ]
     }
   },
@@ -293,6 +388,32 @@
         "Никакого мёда до первого дня рождения, даже в выпечке или чаях.",
         "До года, если вы не кормите грудью, уточните у педиатра, какое молоко давать.",
         "После 6 месяцев лучший напиток — вода из чашки; избегайте соков и сладких напитков."
+      ]
+    },
+    "en": {
+      "title": "Honey and cow's milk before 1 year",
+      "summary": "Honey should be avoided under 12 months because of the risk of infant botulism. On cow's milk as a main drink before 1 year, European pediatric societies and the WHO give different advice.",
+      "keywords": [
+        "honey",
+        "botulism",
+        "cow's milk",
+        "whole milk",
+        "growing-up milk",
+        "drinks",
+        "water",
+        "juice",
+        "chamomile"
+      ],
+      "research": [
+        "The CDC recommends not giving honey, even in products that contain it or on a pacifier, to babies under 1 year: it may contain botulism spores.",
+        "ESPGHAN (2017) advises not using cow's milk as the main drink before 12 months; small amounts in prepared foods are fine.",
+        "The WHO (2023), for non-breastfed babies aged 6–11 months, considers both formula and animal milk acceptable. Many pediatric societies, including ESPGHAN, disagree.",
+        "After 12 months the WHO does not consider so-called growing-up milks necessary."
+      ],
+      "tips": [
+        "No honey before the first birthday, not even cooked into cookies or in herbal teas.",
+        "Before 1 year, if you are not breastfeeding, ask the pediatrician which milk to use.",
+        "After 6 months water is the best drink, offered in a cup; avoid juices and sugary drinks."
       ]
     }
   },
@@ -377,6 +498,41 @@
         "Отказывается от целых групп продуктов, давится, срыгивает или с трудом жуёт и глотает.",
         "Еда — постоянный источник сильного стресса для всей семьи."
       ]
+    },
+    "en": {
+      "title": "Won't eat anything, or only a few things",
+      "summary": "Picky eating is very common between 1 and 3 years. Offering the same foods several times, without pressure, increases acceptance.",
+      "keywords": [
+        "won't eat",
+        "loss of appetite",
+        "eats little",
+        "picky eater",
+        "food selectivity",
+        "refuses vegetables",
+        "food neophobia",
+        "mealtime tantrums",
+        "appetite",
+        "puree"
+      ],
+      "research": [
+        "A review (Taylor 2015) describes picky eating as frequent in early childhood; in most cases it does not affect growth.",
+        "Fear of new foods (neophobia) appears around 2 years, is stronger in the preschool years (about 2–6 years) and then tends to fade (Dovey 2008).",
+        "A review (Cooke 2007) shows that repeatedly tasting a food increases liking and intake; often 8–10 tastes or more are needed.",
+        "Pressure, bribes and food rewards tend to make refusal worse.",
+        "In the English ALSPAC cohort, about 10% of children were \"picky\" at 2 years and 15% around 3 years, with fewer after that (Taylor and Emmett 2019)."
+      ],
+      "tips": [
+        "You choose what and when to offer; your child decides how much to eat.",
+        "Always put a food they know and like on the plate, next to the new one.",
+        "Eat together: children learn by watching adults.",
+        "Small portions, meals at regular times, no constant snacking or too much milk between meals.",
+        "Turn off screens at the table."
+      ],
+      "redFlags": [
+        "Is losing weight or not growing as expected on the pediatrician's growth charts.",
+        "Refuses whole categories of food, gags, vomits or has great difficulty chewing or swallowing.",
+        "Mealtime is always a source of strong stress for the whole family."
+      ]
     }
   },
   {
@@ -436,6 +592,29 @@
         "Давайте капли каждый день в одно и то же время, например во время кормления.",
         "Используйте препарат и дозу, назначенные педиатром.",
         "Не держите новорождённого на прямом солнце «ради витамина D»: кожа нежная и нуждается в защите."
+      ]
+    },
+    "en": {
+      "title": "Vitamin D in the first year",
+      "summary": "Italian and European pediatric societies recommend 400 IU a day of vitamin D for all infants in the first year, whatever the type of milk.",
+      "keywords": [
+        "vitamin d",
+        "drops",
+        "supplement",
+        "cholecalciferol",
+        "rickets",
+        "bones",
+        "sun"
+      ],
+      "research": [
+        "The consensus of the Italian Society of Pediatrics (Saggese 2018) indicates 400 IU a day from birth to 12 months, for both breastfed and formula-fed babies.",
+        "ESPGHAN (2013) recommends the same dose for all European infants.",
+        "When risk factors are present, the pediatrician may indicate different doses."
+      ],
+      "tips": [
+        "Give the drops every day at the same time, for example during a feed or a meal.",
+        "Always use the product and dose your pediatrician has indicated.",
+        "Do not expose your newborn to direct sun to \"make vitamin D\": the skin is delicate and needs protection."
       ]
     }
   },
@@ -498,7 +677,7 @@
         {
           "t": "Uovo ben cotto e arachidi in crema liscia o farina",
           "v": "si",
-          "why": "Introdurli presto e regolarmente riduce il rischio di allergia, secondo le linee guida EAACI.",
+          "why": "Introdurli presto e regolarmente può ridurre il rischio di allergia, secondo le linee guida EAACI.",
           "src": "A13"
         },
         {
@@ -561,14 +740,20 @@
         {
           "t": "Uova, carne e pesce crudi o poco cotti; latte crudo e formaggi a latte crudo",
           "v": "no",
-          "why": "Rischio di Salmonella, Listeria ed E. coli, che nei bimbi sotto i 5 anni può causare gravi complicazioni ai reni.",
-          "src": "F6"
+          "why": "Rischio di Salmonella, Listeria ed E. coli, che nei bimbi sotto i 5 anni può causare gravi complicazioni ai reni (sindrome emolitico-uremica, SEU).",
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Frutta secca intera, uva e pomodorini interi, pezzi duri",
           "v": "no",
           "why": "Rischio di soffocamento: tagliare per il lungo in quattro, schiacciare o macinare.",
-          "src": "A16"
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Tè, tisane e caffè",
@@ -615,7 +800,7 @@
         {
           "t": "Хорошо проваренное яйцо и арахис в виде гладкой пасты или муки",
           "v": "si",
-          "why": "Раннее и регулярное введение снижает риск аллергии (рекомендации EAACI).",
+          "why": "Раннее и регулярное введение может снизить риск аллергии (рекомендации EAACI).",
           "src": "A13"
         },
         {
@@ -678,19 +863,148 @@
         {
           "t": "Сырые или недоваренные яйца, мясо и рыба; сырое молоко и сыры из него",
           "v": "no",
-          "why": "Риск сальмонеллы, листерии и кишечной палочки, которая у детей до 5 лет может вызвать тяжёлые осложнения на почки.",
-          "src": "F6"
+          "why": "Риск сальмонеллы, листерии и кишечной палочки, которая у детей до 5 лет может вызвать тяжёлые осложнения на почки (гемолитико-уремический синдром, ГУС).",
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Цельные орехи, целый виноград и черри, твёрдые кусочки",
           "v": "no",
           "why": "Риск удушья: резать вдоль на четыре части, разминать или измельчать.",
-          "src": "A16"
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Чай, травяные чаи и кофе",
           "v": "no",
           "why": "Снижают усвоение железа (чёрный чай — до 80–90%) и содержат кофеин.",
+          "src": "F10b"
+        }
+      ]
+    },
+    "en": {
+      "title": "Foods to offer and foods to avoid: 6–12 months",
+      "summary": "What to offer when starting solids, what to limit and what to avoid, with the reason behind each choice.",
+      "keywords": [
+        "what can they eat",
+        "recommended foods",
+        "forbidden foods",
+        "foods to avoid",
+        "starting solids",
+        "food",
+        "food list",
+        "first year"
+      ],
+      "research": [
+        "The WHO (2023) recommends animal-source foods every day (meat, fish or eggs), fruit and vegetables every day, and legumes often.",
+        "ESPGHAN (2017): no added salt or sugar; fruit juices and sugary drinks should be avoided."
+      ],
+      "tips": [
+        "Milk (breast milk or formula) remains the main food for much of the first year.",
+        "Offer rejected foods again several times: taste is built through exposure."
+      ],
+      "guide": [
+        {
+          "t": "Meat, fish, well-cooked eggs, legumes",
+          "v": "si",
+          "why": "They provide iron and protein just when a baby's iron stores run down, around 6 months.",
+          "src": "A9"
+        },
+        {
+          "t": "Vegetables and fruit every day, including bitter-tasting ones",
+          "v": "si",
+          "why": "The WHO recommends them daily; repeated tastes help acceptance.",
+          "src": "A9"
+        },
+        {
+          "t": "Well-cooked egg and peanuts as smooth spread or flour",
+          "v": "si",
+          "why": "Introducing them early and regularly may reduce the risk of allergy, according to the EAACI guidelines.",
+          "src": "A13"
+        },
+        {
+          "t": "Water, in a cup or glass",
+          "v": "si",
+          "why": "It is the right drink besides milk; juices and soft drinks are not needed.",
+          "src": "F1"
+        },
+        {
+          "t": "Spinach, chard and other leafy greens",
+          "v": "limita",
+          "why": "They can contain a lot of nitrates: moderate portions, refrigerate right after cooking, no spinach during a stomach bug.",
+          "src": "F15"
+        },
+        {
+          "t": "Large predatory fish (swordfish, shark, pike) and tuna",
+          "v": "limita",
+          "why": "They accumulate mercury. EFSA advises limiting these species; other fish are perfectly fine.",
+          "src": "F5"
+        },
+        {
+          "t": "Honey, even in cookies or on a pacifier",
+          "v": "no",
+          "why": "It may contain botulism spores, which are dangerous under 12 months.",
+          "src": "A17",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Added salt and sugar",
+          "v": "no",
+          "why": "The kidneys are immature and taste gets used to sweet and salty: ESPGHAN advises against them in the first year.",
+          "src": "A10"
+        },
+        {
+          "t": "Fruit juices and sugary drinks",
+          "v": "no",
+          "why": "Sugars without fiber and a risk of cavities; the AAP advises against juice before 12 months.",
+          "src": "F1",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Cow's milk as the main drink",
+          "v": "no",
+          "why": "Little iron and too much protein: ESPGHAN advises not using it as the main drink before 12 months (small amounts in purees are fine).",
+          "src": "A10",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        },
+        {
+          "t": "Plant-based drinks (rice, almond, oat…) instead of milk",
+          "v": "no",
+          "why": "They are not suitable: rice drinks contain arsenic; under 1 year, only breast milk or formula.",
+          "src": "F4"
+        },
+        {
+          "t": "Raw or undercooked eggs, meat and fish; raw milk and raw-milk cheeses",
+          "v": "no",
+          "why": "Risk of Salmonella, Listeria and E. coli, which in children under 5 years can cause serious kidney complications (hemolytic uremic syndrome, HUS).",
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Whole nuts, whole grapes and cherry tomatoes, hard pieces",
+          "v": "no",
+          "why": "Choking risk: cut lengthwise into quarters, mash or grind.",
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Tea, herbal teas and coffee",
+          "v": "no",
+          "why": "They reduce iron absorption (black tea by up to 80–90%) and contain caffeine.",
           "src": "F10b"
         }
       ]
@@ -823,13 +1137,19 @@
           "t": "Latte crudo, formaggi a latte crudo, uova o carne poco cotte",
           "v": "no",
           "why": "Rischio di infezioni gravi; l'ISS sconsiglia il latte crudo sotto i 5 anni.",
-          "src": "F6"
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Frutta secca intera, caramelle dure, pop corn, gomme; uva e würstel non tagliati",
           "v": "no",
           "why": "Rischio di soffocamento fino a 4–5 anni: tagliare per il lungo, macinare o evitare.",
-          "src": "A16"
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
         }
       ]
     },
@@ -938,13 +1258,140 @@
           "t": "Сырое молоко, сыры из сырого молока, недоваренные яйца или мясо",
           "v": "no",
           "why": "Риск тяжёлых инфекций; ISS не рекомендует сырое молоко до 5 лет.",
-          "src": "F6"
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
         },
         {
           "t": "Цельные орехи, леденцы, попкорн, жвачка; неразрезанные виноград и сосиски",
           "v": "no",
           "why": "Риск удушья до 4–5 лет: резать вдоль, измельчать или избегать.",
-          "src": "A16"
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        }
+      ]
+    },
+    "en": {
+      "title": "Foods to offer and foods to avoid: 1–3 years",
+      "summary": "From the first birthday your child eats almost like the family, with a bit more care around salt, sugars, drinks and safety.",
+      "keywords": [
+        "what can they eat",
+        "recommended foods",
+        "foods to avoid",
+        "feeding a 2-year-old",
+        "snack",
+        "fruit juice",
+        "cow's milk",
+        "cold cuts",
+        "sweets"
+      ],
+      "research": [
+        "The WHO (2023) recommends animal milk between 12 and 23 months and advises against growing-up milks.",
+        "ESPGHAN (2017): free sugars should be less than 5% of calories from age 2, and even less under 2."
+      ],
+      "tips": [
+        "Bring the same foods as the family to the table, prepared with little salt.",
+        "Whole fruit instead of juices and packaged snacks."
+      ],
+      "guide": [
+        {
+          "t": "Fruit, vegetables, legumes and whole grains",
+          "v": "si",
+          "why": "The Italian guidelines (CREA) recommend more fruit, vegetables, legumes and whole grains for the whole family.",
+          "src": "F14"
+        },
+        {
+          "t": "Whole cow's milk and plain yogurt",
+          "v": "si",
+          "why": "The WHO indicates animal milk after 12 months; growing-up milks are not needed.",
+          "src": "A9"
+        },
+        {
+          "t": "Fish, 1–4 servings a week",
+          "v": "si",
+          "why": "EFSA links the benefits of fish to 1–4 servings a week, choosing mainly low-mercury species.",
+          "src": "F5"
+        },
+        {
+          "t": "Water as the everyday drink",
+          "v": "si",
+          "why": "It is the reference drink in the CREA guidelines.",
+          "src": "F14"
+        },
+        {
+          "t": "100% fruit juice",
+          "v": "limita",
+          "why": "At most about 120 ml (4 oz) a day (AAP), never in a bottle or in a sippy cup to sip all day.",
+          "src": "F1"
+        },
+        {
+          "t": "Salt and very salty foods (aged cheeses, bouillon cubes, snacks)",
+          "v": "limita",
+          "why": "For ages 1–3 EFSA indicates about 1.1 g of sodium a day (about 2.8 g of salt) from all foods: added salt is hardly needed.",
+          "src": "F8"
+        },
+        {
+          "t": "Cold cuts, hot dogs and processed meats",
+          "v": "limita",
+          "why": "A lot of salt and nitrites; IARC classifies processed meat as carcinogenic to humans.",
+          "src": "F13"
+        },
+        {
+          "t": "Sweets, cookies, packaged snacks and sugary cereals",
+          "v": "limita",
+          "why": "ESPGHAN: free sugars under 5% of calories, and even less before age 2.",
+          "src": "F9"
+        },
+        {
+          "t": "Large predatory fish and tuna",
+          "v": "limita",
+          "why": "They accumulate mercury: better to limit them and vary with other fish.",
+          "src": "F5"
+        },
+        {
+          "t": "Sugary drinks, iced tea, juices with sugar",
+          "v": "no",
+          "why": "Liquid sugars that do not fill you up: replace them with water or milk.",
+          "src": "F9"
+        },
+        {
+          "t": "Coffee, caffeinated drinks and energy drinks",
+          "v": "no",
+          "why": "For young children EFSA has not set a safe level of caffeine.",
+          "src": "F10"
+        },
+        {
+          "t": "Rice drinks",
+          "v": "no",
+          "why": "They may contain arsenic: ESPGHAN advises against them in young children.",
+          "src": "F4"
+        },
+        {
+          "t": "Plant-based drinks instead of milk (almond, oat, coconut…)",
+          "v": "no",
+          "why": "Little protein and few nutrients: they are not a suitable substitute. If an alternative is needed, ask the pediatrician (fortified soy is the most suitable).",
+          "src": "F7"
+        },
+        {
+          "t": "Raw milk, raw-milk cheeses, undercooked eggs or meat",
+          "v": "no",
+          "why": "Risk of serious infections; Italy's National Institute of Health (ISS) advises against raw milk under 5 years.",
+          "src": "F6",
+          "from": 0,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Whole nuts, hard candies, popcorn, chewing gum; uncut grapes and hot dogs",
+          "v": "no",
+          "why": "Choking risk up to 4–5 years: cut lengthwise, grind or avoid.",
+          "src": "A16",
+          "from": 0,
+          "to": 60,
+          "strict": true
         }
       ]
     }
@@ -1053,7 +1500,7 @@
         {
           "t": "Latte crudo e formaggi a latte crudo",
           "v": "no",
-          "why": "L'ISS li sconsiglia sotto i 5 anni per il rischio di infezioni gravi ai reni (SEU).",
+          "why": "L'ISS li sconsiglia sotto i 5 anni per il rischio di infezioni gravi che possono danneggiare i reni (sindrome emolitico-uremica, SEU).",
           "src": "F6",
           "from": 36,
           "to": 60,
@@ -1165,7 +1612,7 @@
         {
           "t": "Сырое молоко и сыры из сырого молока",
           "v": "no",
-          "why": "ISS не рекомендует их до 5 лет из-за риска тяжёлой инфекции с поражением почек (ГУС).",
+          "why": "ISS не рекомендует их до 5 лет из-за риска тяжёлых инфекций, которые могут повредить почки (гемолитико-уремический синдром, ГУС).",
           "src": "F6",
           "from": 36,
           "to": 60,
@@ -1184,6 +1631,118 @@
           "t": "Цельные орехи — сидя и под присмотром",
           "v": "si",
           "why": "После 5 лет можно давать, но только за столом, а не на бегу или во время игры.",
+          "src": "A16",
+          "from": 60,
+          "to": 72,
+          "strict": true
+        }
+      ]
+    },
+    "en": {
+      "title": "Foods to offer and foods to avoid: 3–6 years",
+      "summary": "In the preschool years the basis is the same healthy diet as the family; watch out for sugary drinks, salt and choking-risk foods.",
+      "keywords": [
+        "what can they eat",
+        "recommended foods",
+        "foods to avoid",
+        "feeding a 4-year-old",
+        "school snack",
+        "sweets",
+        "chips",
+        "juice",
+        "nuts"
+      ],
+      "research": [
+        "The Italian CREA guidelines (2018) recommend for everyone more fruit, vegetables, legumes and whole grains, plenty of water, and less sugar and salt.",
+        "WHO and ESPGHAN: free sugars as low as possible, ideally under 5% of calories."
+      ],
+      "tips": [
+        "Involve your child in shopping and cooking: children are more willing to try food they helped prepare.",
+        "Simple snacks: fruit, plain yogurt, bread, crunchy raw vegetables."
+      ],
+      "guide": [
+        {
+          "t": "Fruit and vegetables at every meal, legumes several times a week",
+          "v": "si",
+          "why": "The basis of a healthy diet according to the CREA guidelines.",
+          "src": "F14"
+        },
+        {
+          "t": "Water",
+          "v": "si",
+          "why": "The everyday drink, at school and during play too.",
+          "src": "F14"
+        },
+        {
+          "t": "Fish 1–4 times a week, varying the species",
+          "v": "si",
+          "why": "Benefits for growth with regular consumption (EFSA).",
+          "src": "F5"
+        },
+        {
+          "t": "100% fruit juice",
+          "v": "limita",
+          "why": "At most 120–180 ml (4–6 oz) a day at ages 4–6 (AAP); whole fruit is better.",
+          "src": "F1"
+        },
+        {
+          "t": "Salt, salty snacks and chips",
+          "v": "limita",
+          "why": "At ages 4–6 EFSA indicates about 1.3 g of sodium a day (about 3.3 g of salt) from all foods.",
+          "src": "F8"
+        },
+        {
+          "t": "Sweets, packaged snacks, ice cream, sugary cereals",
+          "v": "limita",
+          "why": "Free sugars under 5% of calories (ESPGHAN): better with meals than as constant snacking.",
+          "src": "F9"
+        },
+        {
+          "t": "Cold cuts, hot dogs and processed meats",
+          "v": "limita",
+          "why": "Salt and nitrites; processed meat is carcinogenic according to IARC.",
+          "src": "F13"
+        },
+        {
+          "t": "Swordfish, shark, tuna",
+          "v": "limita",
+          "why": "Species high in mercury: occasionally, not every week.",
+          "src": "F5"
+        },
+        {
+          "t": "Sugary drinks and juices with added sugar",
+          "v": "no",
+          "why": "Liquid sugar: increases the risk of cavities and excess weight.",
+          "src": "F9"
+        },
+        {
+          "t": "Energy drinks, coffee and caffeinated drinks",
+          "v": "no",
+          "why": "For children EFSA indicates a limit of 3 mg of caffeine per kg of body weight a day: for a small child it takes very little to exceed it.",
+          "src": "F10"
+        },
+        {
+          "t": "Raw milk and raw-milk cheeses",
+          "v": "no",
+          "why": "Italy's National Institute of Health (ISS) advises against them under 5 years because of the risk of serious infections that can damage the kidneys (hemolytic uremic syndrome, HUS).",
+          "src": "F6",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Whole nuts, hard candies, popcorn, chewing gum",
+          "v": "no",
+          "why": "Choking risk up to 4–5 years: better ground or as a spread.",
+          "src": "A16",
+          "from": 36,
+          "to": 60,
+          "strict": true
+        },
+        {
+          "t": "Whole nuts, seated and supervised",
+          "v": "si",
+          "why": "After 5 years they can be introduced, always at the table, never while running or playing.",
           "src": "A16",
           "from": 60,
           "to": 72,
@@ -1272,6 +1831,41 @@
         "Полноценный завтрак — привычка, о которой стоит заботиться: по данным OKkio 2023 почти половина детей его пропускает или завтракает неполноценно.",
         "Ешьте вместе и привлекайте детей к выбору и приготовлению еды.",
         "Для углубления обратитесь к рекомендациям CREA и поговорите с педиатром, если есть сомнения насчёт веса."
+      ]
+    },
+    "en": {
+      "title": "Eating at 6–12 years: sugars, breakfast and Italian data",
+      "summary": "The WHO recommends keeping free sugars down. Italian data from OKkio alla SALUTE describe children's habits and weight: they are descriptive data, not proof of cause.",
+      "keywords": [
+        "eating",
+        "food",
+        "sugars",
+        "sweets",
+        "soft drinks",
+        "sugary drinks",
+        "orange soda",
+        "juices",
+        "breakfast",
+        "snack",
+        "overweight",
+        "obesity",
+        "weight",
+        "diet",
+        "screens",
+        "guidelines"
+      ],
+      "research": [
+        "The WHO (2015) recommends reducing free sugars to less than 10% of total energy (strong recommendation); going below 5% (about 25 g, 6 teaspoons a day for an adult) would give further benefits (conditional recommendation). The sugars in fresh fruit, vegetables and those naturally present in milk are not considered free sugars; those in fruit juices are.",
+        "The WHO (2015) reports that children who consume a lot of sugary drinks are more likely to be overweight: this is an association.",
+        "The OKkio alla SALUTE survey by the ISS (2023), on more than 46,000 children in 3rd grade of primary school in Italy (ages 8–9), describes overweight at 19.0% and obesity at 9.8% (of which severe obesity 2.6%, included in the obesity figure); sugary or fizzy drinks every day 24.6%; no breakfast 10.9%, inadequate breakfast 36.5%; screens for more than 2 hours a day 45.1%. These are descriptive data: they do not indicate causes.",
+        "The CREA Guidelines for healthy eating (2018) are the Italian reference for further reading."
+      ],
+      "tips": [
+        "When thirsty, water first: keep sugary drinks as an exception.",
+        "The sugars in fresh fruit, vegetables and milk are not part of the WHO's free sugars; those in fruit juices are.",
+        "A proper breakfast is a habit worth nurturing: according to OKkio 2023 almost half of children skip it or have an inadequate one.",
+        "Eat together and involve children in choosing and preparing meals.",
+        "To learn more, consult the CREA guidelines and talk to the pediatrician if you have doubts about weight."
       ]
     }
   }

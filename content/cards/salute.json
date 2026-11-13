@@ -135,6 +135,69 @@
           "to": 18
         }
       ]
+    },
+    "en": {
+      "title": "Fever: when to worry",
+      "summary": "Fever is usually a helpful reaction of the body to infection. Your child's age and how they are doing matter more than the number on the thermometer.",
+      "keywords": [
+        "fever",
+        "temperature",
+        "thermometer",
+        "feels hot",
+        "high fever",
+        "38",
+        "39",
+        "40",
+        "chills",
+        "newborn with fever",
+        "infant with fever"
+      ],
+      "research": [
+        {
+          "t": "The NICE guideline (2019) classifies a child under 3 months with a temperature of 38 °C or higher as high risk.",
+          "from": 0,
+          "to": 3
+        },
+        {
+          "t": "The NICE guideline (2019) classifies a child aged 3–6 months with a temperature of 39 °C or higher as intermediate risk.",
+          "from": 3,
+          "to": 6
+        },
+        "The guideline of the Italian Society of Pediatrics (Chiappini 2017) reminds us that the goal is the child's comfort, not bringing the temperature down at all costs.",
+        "Skin color, alertness, breathing and how much your child drinks help you judge how serious things are better than the fever reading does."
+      ],
+      "tips": [
+        "Take the temperature with an electronic thermometer (under the arm in the youngest children).",
+        "Offer fluids or the breast often: dehydration is the main risk.",
+        "Dress your child lightly; sponging and cold baths are not recommended.",
+        "Watch how your child is when the fever comes down: if they play and drink, that is a good sign."
+      ],
+      "redFlags": [
+        {
+          "t": "Fever of 39 °C or higher in a child aged 3–6 months.",
+          "from": 3,
+          "to": 6
+        },
+        "Fever lasting more than 3 days.",
+        "Drinks little, pees less (fewer wet diapers), is unusually irritable or sleepy.",
+        "Fever with a rash, ear pain, a persistent cough or crying when peeing."
+      ],
+      "urgent": [
+        {
+          "t": "Fever of 38 °C or higher in a child under 3 months.",
+          "from": 0,
+          "to": 3
+        },
+        "Red-purple spots that do not fade when you press a glass against them.",
+        "Difficulty breathing, or gray, pale or bluish skin color.",
+        "Child who is very listless or hard to wake, has a stiff neck, or is having seizures.",
+        "Signs of severe dehydration: no pee for many hours, dry mouth, crying without tears.",
+        {
+          "t": "Sunken fontanelle (the soft spot on the head).",
+          "from": 0,
+          "to": 18
+        }
+      ]
     }
   },
   {
@@ -166,7 +229,7 @@
       ],
       "research": [
         "NICE (2019) sconsiglia di usare gli antipiretici con il solo obiettivo di abbassare la temperatura; vanno usati se il bimbo è sofferente.",
-        "NICE suggerisce di passare all'altro farmaco solo se il disagio persiste o ritorna prima della dose successiva, e di non alternarli di routine.",
+        "Il NICE suggerisce di valutare l'altro farmaco se il malessere non si attenua, di valutare l'alternanza solo se il malessere persiste o ritorna prima della dose successiva, e di non darli mai insieme.",
         "La Società Italiana di Pediatria (Chiappini 2017) sconsiglia l'uso combinato di paracetamolo e ibuprofene.",
         "Gli antipiretici non prevengono le convulsioni febbrili."
       ],
@@ -203,7 +266,7 @@
       ],
       "research": [
         "NICE (2019) не рекомендует давать жаропонижающие только ради снижения температуры; их применяют, если ребёнку плохо.",
-        "NICE советует переходить на другой препарат только если дискомфорт сохраняется или возвращается до следующей дозы, и не чередовать их постоянно.",
+        "NICE предлагает рассмотреть другое средство, если дискомфорт не уменьшается, рассматривать чередование, только если дискомфорт сохраняется или возвращается до следующего приёма, и никогда не давать оба одновременно.",
         "Итальянское общество педиатрии (Chiappini, 2017) не рекомендует совместное применение парацетамола и ибупрофена.",
         "Жаропонижающие не предотвращают фебрильные судороги."
       ],
@@ -221,6 +284,44 @@
         },
         "Ребёнку по-прежнему очень плохо, несмотря на правильную дозу.",
         "Сомнения в дозе или подозрение на передозировку: сразу свяжитесь с педиатром или токсикологическим центром."
+      ]
+    },
+    "en": {
+      "title": "Paracetamol (acetaminophen) and ibuprofen: how to use them",
+      "summary": "They are used to make your child feel better, not to bring the temperature down at all costs. The dose depends on weight and should be confirmed by your pediatrician.",
+      "keywords": [
+        "paracetamol",
+        "ibuprofen",
+        "acetaminophen",
+        "fever medicine",
+        "antipyretic",
+        "fever reducer",
+        "alternating",
+        "dose",
+        "suppository",
+        "syrup",
+        "fever medications"
+      ],
+      "research": [
+        "NICE (2019) advises against using antipyretics with the sole aim of lowering the temperature; they should be used if the child is distressed.",
+        "NICE suggests considering the other medicine if distress is not relieved, considering alternating only if distress persists or returns before the next dose is due, and not giving both at the same time.",
+        "The Italian Society of Pediatrics (Chiappini 2017) advises against combining paracetamol and ibuprofen.",
+        "Antipyretics do not prevent febrile seizures."
+      ],
+      "tips": [
+        "Work out the dose by weight, not by age, using the dosing device that comes in the package.",
+        "Respect the minimum interval between doses and the maximum number of doses per day stated.",
+        "Never give aspirin to children.",
+        "If your child is vomiting a lot or drinking very little, ask your pediatrician before giving ibuprofen."
+      ],
+      "redFlags": [
+        {
+          "t": "Child under 3 months: always ask your pediatrician before giving any medicine.",
+          "from": 0,
+          "to": 3
+        },
+        "Your child remains very distressed despite the medicine at the correct dose.",
+        "Unsure about the dose, or you suspect you gave too much: contact your pediatrician or a poison control center (Centro Antiveleni in Italy) right away."
       ]
     }
   },
@@ -303,6 +404,41 @@
         "Приступ длится больше 5 минут или повторяется.",
         "Ребёнку трудно дышать или он плохо реагирует после приступа.",
         "Ригидность шеи, пятна на коже или повторная рвота."
+      ]
+    },
+    "en": {
+      "title": "Seizures with fever",
+      "summary": "Febrile seizures affect 2–5% of children between 6 months and 5 years. They are very frightening, but simple ones usually leave no lasting effects.",
+      "keywords": [
+        "seizures",
+        "febrile seizure",
+        "fit",
+        "shaking",
+        "eyes rolling back",
+        "stiffening",
+        "fainting",
+        "fever and seizures"
+      ],
+      "research": [
+        "The AAP guideline (2011) defines a simple febrile seizure as generalized, lasting under 15 minutes and not recurring within 24 hours.",
+        "It affects 2–5% of children between 6 and 60 months.",
+        "A Cochrane review (Offringa 2021) found no benefit of antipyretics in preventing recurrences."
+      ],
+      "tips": [
+        "Stay calm and look at the clock: the duration is important information.",
+        "Place your child on their side, on a safe surface, away from dangerous objects.",
+        "Do not put anything in their mouth and do not try to restrain their movements.",
+        "After the seizure it is normal for your child to be tired and confused for a while."
+      ],
+      "redFlags": [
+        "After any seizure, even a brief one that has already passed, have your pediatrician evaluate your child.",
+        "If it has happened before, ask your pediatrician for a plan on what to do."
+      ],
+      "urgent": [
+        "Very first seizure: call 112 (in Italy; elsewhere, your local emergency number).",
+        "The seizure lasts more than 5 minutes or repeats.",
+        "Your child has trouble breathing or stays poorly responsive after the seizure.",
+        "Stiff neck, a rash or repeated vomiting."
       ]
     }
   },
@@ -389,6 +525,43 @@
       "urgent": [
         "Никогда не трясите ребёнка: это может вызвать тяжёлое повреждение мозга. Если это случилось, сразу звоните 112.",
         "Плач с затруднённым дыханием, серым или синюшным цветом кожи или ребёнок не реагирует."
+      ]
+    },
+    "en": {
+      "title": "Inconsolable crying and colic",
+      "summary": "Colic means long periods of crying in a healthy baby, starting and ending within 5 months. It is exhausting but it passes: it is normal to need help.",
+      "keywords": [
+        "colic",
+        "colicky baby",
+        "crying",
+        "cries all the time",
+        "inconsolable crying",
+        "tummy",
+        "gas",
+        "evening",
+        "probiotics",
+        "lactobacillus reuteri",
+        "shaking"
+      ],
+      "research": [
+        "The Rome IV criteria (Benninga 2016) define colic as prolonged, recurrent crying with no obvious cause in a baby who is growing well, starting and ending before 5 months.",
+        "A meta-analysis (Sung 2018) found that the probiotic L. reuteri DSM 17938 reduces crying in breastfed babies; in formula-fed babies the evidence is not sufficient.",
+        "The \"Period of PURPLE Crying\" program (Barr 2009) showed that informing parents about normal crying improves their knowledge of the risks of shaking."
+      ],
+      "tips": [
+        "Try skin-to-skin contact, a baby carrier, lullabies, white noise or a walk.",
+        "If you feel you are losing your patience, put the baby safely in the crib, leave the room and breathe for a few minutes.",
+        "Ask someone else to take over: parents' rest matters.",
+        "Ask your pediatrician before trying probiotics, drops or switching formula."
+      ],
+      "redFlags": [
+        "Crying with fever, repeated vomiting, diarrhea or blood in the stool.",
+        "Not growing, eating little, or the crying is very different from usual (high-pitched, moaning).",
+        "The crying continues after 4–5 months or you feel at the end of your rope."
+      ],
+      "urgent": [
+        "Never shake a baby: it can cause serious brain damage. If it has happened, call 112 (in Italy; elsewhere, your local emergency number) right away.",
+        "Crying with difficulty breathing, gray or bluish skin color, or a baby who does not respond."
       ]
     }
   },
@@ -479,6 +652,46 @@
           "to": 3
         },
         "Вздутый твёрдый живот, сильная вялость или признаки обезвоживания."
+      ]
+    },
+    "en": {
+      "title": "Spit-up and reflux",
+      "summary": "Spit-up is very common in healthy infants and usually improves on its own during the first year. If your baby is growing well and seems otherwise well, no medicines are needed.",
+      "keywords": [
+        "spit-up",
+        "reflux",
+        "spits up",
+        "vomits milk",
+        "spits milk",
+        "after feeding",
+        "burping",
+        "antacid",
+        "projectile vomiting"
+      ],
+      "research": [
+        "The NASPGHAN/ESPGHAN guideline (Rosen 2018) advises against acid-suppressing medicines for crying alone or visible spit-up in otherwise healthy infants.",
+        "Signs that call for evaluation include: green (bilious) vomit, blood, consistently forceful vomiting, onset after 6 months and poor growth.",
+        "In formula-fed babies the pediatrician may consider thickened formulas and smaller feeds."
+      ],
+      "tips": [
+        "Avoid overfeeding: smaller, more frequent feeds may help.",
+        "Burp your baby during and after the feed.",
+        "Hold your baby upright in your arms for a while after the feed.",
+        "For sleep, always place your baby on their back: pillows and inclined mattresses are not safe."
+      ],
+      "redFlags": [
+        "Not gaining weight, refusing feeds or crying a lot during the feed.",
+        "The spit-up starts after 6 months or gets worse after 12–18 months.",
+        "Persistent cough or noisy breathing linked to feeds."
+      ],
+      "urgent": [
+        "Green vomit or vomit with blood (red or coffee-ground colored).",
+        {
+          "t": "Projectile vomiting after every feed in the first weeks of life.",
+          "from": 0,
+          "to": 3
+        },
+        "Swollen, hard belly, a very listless baby or signs of dehydration."
       ]
     }
   },
@@ -590,6 +803,56 @@
         },
         "Вздутый живот, рвота, температура или плохой рост."
       ]
+    },
+    "en": {
+      "title": "Constipation: not pooping",
+      "summary": "In breastfed infants it is also normal to have bowel movements only rarely if the stools are soft. In older children constipation is often functional and responds well to treatment.",
+      "keywords": [
+        "constipation",
+        "constipated",
+        "not pooping",
+        "hard poop",
+        "hard stools",
+        "poop",
+        "pushing",
+        "pain when pooping",
+        "holding it in",
+        "suppository",
+        "laxative"
+      ],
+      "research": [
+        "The ESPGHAN/NASPGHAN guideline (Tabbers 2014) states that in the vast majority of children constipation is functional, meaning there is no underlying disease.",
+        "When treatment is needed, the pediatrician chooses the most suitable medicine; do-it-yourself use of enemas or frequent remedies is not recommended.",
+        "In older children fear of pain leads to holding it in: that is why it is important to act early."
+      ],
+      "tips": [
+        {
+          "t": "After starting solid foods, offer water, fruit, vegetables and legumes.",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "t": "During potty training do not force it: offer the potty after meals, calmly and without hurry.",
+          "from": 18,
+          "to": 48
+        },
+        {
+          "t": "A footstool under the feet helps with position on the potty or toilet.",
+          "from": 18,
+          "to": 48
+        },
+        "Avoid rectal stimulation with a thermometer or cotton swabs."
+      ],
+      "redFlags": [
+        "Hard, painful stools for more than 2 weeks, or your child holds it in out of fear.",
+        "Blood in the stool or anal fissures.",
+        {
+          "t": "Constipation in the first weeks of life, or first meconium passed more than 48 hours after birth.",
+          "from": 0,
+          "to": 3
+        },
+        "Swollen belly, vomiting, fever or poor growth."
+      ]
     }
   },
   {
@@ -684,6 +947,48 @@
         "Признаки обезвоживания: нет мочи много часов, сухие рот и язык, плач без слёз, запавшие глаза или родничок.",
         "Ребёнок очень сонный, его трудно разбудить, или он очень раздражителен.",
         "Зелёная рвота, кровь в стуле или сильная боль в животе."
+      ]
+    },
+    "en": {
+      "title": "Diarrhea and vomiting: avoiding dehydration",
+      "summary": "In gastroenteritis the most important thing is to rehydrate with oral rehydration solution, little and often, and to keep breastfeeding and eating as soon as possible.",
+      "keywords": [
+        "diarrhea",
+        "loose stools",
+        "watery poop",
+        "vomiting",
+        "gastroenteritis",
+        "stomach bug",
+        "rotavirus",
+        "dehydration",
+        "rehydration solution",
+        "salts",
+        "runny poop"
+      ],
+      "research": [
+        "The ESPGHAN/ESPID guideline (Guarino 2014) indicates reduced-osmolarity oral rehydration solution as the first treatment.",
+        "Breastfeeding should continue, and the usual diet should be resumed early, with no fasting diets.",
+        "Sugary drinks, juices and sodas are not suitable for rehydration."
+      ],
+      "tips": [
+        "Give the rehydration solution in small sips or by teaspoon every few minutes, especially if your child is vomiting.",
+        "Count wet diapers: they are a good indicator of hydration.",
+        "Wash hands and surfaces well: stomach viruses spread easily.",
+        "Do not give antidiarrheal medicines unless your pediatrician advises it."
+      ],
+      "redFlags": [
+        {
+          "t": "Child under 6 months with diarrhea or repeated vomiting.",
+          "from": 0,
+          "to": 6
+        },
+        "Diarrhea with high fever or lasting more than a week.",
+        "Cannot keep fluids down."
+      ],
+      "urgent": [
+        "Signs of dehydration: no pee for many hours, dry mouth and tongue, crying without tears, sunken eyes or fontanelle.",
+        "Child who is very sleepy, hard to wake or very irritable.",
+        "Green vomit, blood in the stool or severe belly pain."
       ]
     }
   },
@@ -837,6 +1142,75 @@
         "Очень частое дыхание, кряхтение на каждом вдохе, выраженное втяжение между рёбрами или под грудиной.",
         "Малыш очень вялый, плохо просыпается или не пьёт."
       ]
+    },
+    "en": {
+      "title": "Cough, colds and bronchiolitis",
+      "summary": "Most coughs and colds are viral and go away on their own. Under 2 years, bronchiolitis can make breathing and eating difficult: it should be watched carefully.",
+      "keywords": [
+        "cough",
+        "cold",
+        "stuffy nose",
+        "phlegm",
+        "mucus",
+        "bronchiolitis",
+        "rsv",
+        "breathing",
+        "short of breath",
+        "nasal washes",
+        "nebulizer",
+        "cough syrup",
+        "honey for cough"
+      ],
+      "research": [
+        {
+          "t": "The NICE guideline (updated 2021) and the AAP guideline (Ralston 2014) for bronchiolitis, typical under 2 years, do not routinely recommend antibiotics, bronchodilators or corticosteroids.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "A Cochrane review (Oduwole 2018) indicates that honey probably relieves cough more than placebo. It can be given only after 12 months.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        {
+          "t": "The FDA advises against cough and cold syrups containing decongestants or antihistamines under 2 years because of the risk of serious side effects.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "Never give honey under 12 months, not even for a cough: risk of botulism.",
+          "from": 0,
+          "to": 12,
+          "strict": true
+        }
+      ],
+      "tips": [
+        "Clean the nose with saline before meals and before sleep.",
+        "Offer smaller, more frequent meals if eating is hard for your child.",
+        {
+          "t": "A teaspoon of honey before bedtime can soothe the cough.",
+          "from": 12,
+          "to": 48,
+          "strict": true
+        },
+        "Keep your home smoke-free and wash hands often."
+      ],
+      "redFlags": [
+        "Eats or drinks less than half of the usual amount.",
+        "High fever, a cough lasting more than 3 weeks or an earache.",
+        "Labored or wheezy breathing.",
+        {
+          "t": "Any cough in a child under 3 months.",
+          "from": 0,
+          "to": 3
+        }
+      ],
+      "urgent": [
+        "Pauses in breathing (apnea) or bluish lips.",
+        "Very fast breathing, grunting with every breath, marked chest retractions between the ribs or below the breastbone.",
+        "Child who is very listless, is hard to wake or does not drink."
+      ]
     }
   },
   {
@@ -930,6 +1304,47 @@
       ],
       "urgent": [
         "Внезапное появление пузырьков или болезненных язвочек на дерматите с температурой или вялостью (возможна герпетическая инфекция): нужен осмотр в тот же день или в приёмном покое."
+      ]
+    },
+    "en": {
+      "title": "Dry skin and atopic dermatitis",
+      "summary": "Atopic dermatitis is common in the early years. Daily emollients and, when needed, creams prescribed by the pediatrician keep it under control.",
+      "keywords": [
+        "dermatitis",
+        "atopic dermatitis",
+        "eczema",
+        "dry skin",
+        "red patches",
+        "itching",
+        "crust",
+        "cradle cap",
+        "cream",
+        "emollient",
+        "corticosteroid",
+        "red spots"
+      ],
+      "research": [
+        "The American Academy of Dermatology guideline (Eichenfield 2014) indicates emollients as the basis of treatment and topical corticosteroids as an effective and safe therapy when used as prescribed.",
+        {
+          "t": "The BEEP study (Chalmers 2020) showed that applying emollients every day in the first year does not prevent dermatitis from appearing, and may increase skin infections.",
+          "from": 0,
+          "to": 12
+        },
+        "In many children dermatitis tends to improve as they grow."
+      ],
+      "tips": [
+        "Short baths in lukewarm water, with gentle, fragrance-free cleansers.",
+        "Apply the emollient right after the bath, on skin that is still slightly damp.",
+        "Choose cotton clothes and keep nails short to reduce damage from scratching.",
+        "Do not be afraid of prescribed corticosteroid cream: used as prescribed, it is safe."
+      ],
+      "redFlags": [
+        "The patches do not improve with emollients or the itching disturbs sleep.",
+        "Yellowish crusts, pus or areas spreading quickly (possible infection).",
+        "Dermatitis together with poor growth or reactions after meals."
+      ],
+      "urgent": [
+        "Sudden appearance of blisters or small painful sores on the dermatitis, with fever or a listless child (possible herpes infection): needs to be seen the same day or at the emergency room (Pronto Soccorso in Italy)."
       ]
     }
   },
@@ -1038,6 +1453,53 @@
           "to": 24
         }
       ]
+    },
+    "en": {
+      "title": "Baby teeth: teething and oral hygiene",
+      "summary": "Teething can cause irritability, drooling and a slight rise in temperature, but not true fever. From the first tooth, fluoride toothpaste is needed.",
+      "keywords": [
+        "teeth",
+        "baby teeth",
+        "teething",
+        "teeth coming in",
+        "gums",
+        "drool",
+        "chewing",
+        "toothpaste",
+        "fluoride",
+        "toothbrush",
+        "cavities",
+        "amber necklace"
+      ],
+      "research": [
+        "A meta-analysis (Massignan 2016) found that tooth eruption is associated with gum irritation, irritability and drooling, and with a slight rise in temperature that does not reach fever.",
+        {
+          "t": "European guideline (EAPD, Toumba 2019): from the first tooth to 2 years, toothpaste with 1000 ppm fluoride, in an amount equal to a grain of rice.",
+          "from": 0,
+          "to": 24
+        },
+        {
+          "t": "European guideline (EAPD, Toumba 2019): from 2 to 6 years, toothpaste with 1000 ppm, in an amount equal to a pea.",
+          "from": 24,
+          "to": 72
+        },
+        "The FDA warns against teething necklaces and bracelets, including amber ones, because of the risk of strangulation and choking."
+      ],
+      "tips": [
+        "Brush teeth twice a day, the last time after the last meal before bed.",
+        "For gum discomfort: massage with a clean finger or a cold (not frozen) teething ring.",
+        "Avoid bottles with milk or sweetened drinks during the night.",
+        "First dentist visit around age 1–2, or as your pediatrician advises."
+      ],
+      "redFlags": [
+        "Fever of 38 °C or higher: do not blame it on teeth, look into other causes with your pediatrician.",
+        "White or dark spots on the teeth, or swollen gums with pus.",
+        {
+          "t": "No teeth by 18 months.",
+          "from": 12,
+          "to": 24
+        }
+      ]
     }
   },
   {
@@ -1119,6 +1581,40 @@
         "Очень обширный отёк или отёк, который усиливается через несколько дней.",
         "Неутешный плач в течение нескольких часов."
       ]
+    },
+    "en": {
+      "title": "Vaccinations: common questions",
+      "summary": "Vaccines protect against serious diseases. In Italy 10 vaccinations are mandatory from 0 to 16 years; others are recommended and free. Studies rule out a link with autism.",
+      "keywords": [
+        "vaccines",
+        "vaccinations",
+        "vaccine",
+        "hexavalent",
+        "measles",
+        "mmr",
+        "chickenpox",
+        "autism and vaccines",
+        "vaccination schedule",
+        "mandatory",
+        "vaccine reaction",
+        "fever after vaccine"
+      ],
+      "research": [
+        "A meta-analysis of over 1.2 million children (Taylor 2014) found no association between vaccines and autism.",
+        "Law 119/2017 makes 10 vaccinations mandatory from 0 to 16 years in Italy: polio, diphtheria, tetanus, hepatitis B, pertussis, Haemophilus influenzae b, measles, mumps, rubella and chickenpox.",
+        "The National Vaccine Prevention Plan (Piano Nazionale di Prevenzione Vaccinale) in Italy also recommends and offers free of charge other vaccines, such as those against pneumococcus, meningococci and rotavirus."
+      ],
+      "tips": [
+        "Follow the schedule of your local health authority (ASL): keeping to the timing protects in the most delicate months.",
+        "After the vaccine, a mild fever, swelling at the injection site and irritability for 1–2 days are common.",
+        "Prepare your questions for the pediatrician or the vaccination center before the appointment.",
+        "Keep the vaccination record book at hand."
+      ],
+      "redFlags": [
+        "High fever lasting more than 48 hours after the vaccine.",
+        "Very extensive swelling or swelling that gets worse after a few days.",
+        "Inconsolable crying for hours."
+      ]
     }
   },
   {
@@ -1199,6 +1695,40 @@
         "Постоянно хочет пить или пьёт очень много.",
         "Снова начал писаться после долгого «сухого» периода или очень переживает."
       ]
+    },
+    "en": {
+      "title": "Still wetting the bed",
+      "summary": "Wetting the bed at night is common in young children: it is called enuresis only from age 5, and every year a share of children stop on their own.",
+      "keywords": [
+        "bedwetting",
+        "enuresis",
+        "wets the bed",
+        "nighttime diaper",
+        "dry night",
+        "pees at night",
+        "enuresis alarm"
+      ],
+      "research": [
+        "According to the International Children's Continence Society (Austin 2016), nocturnal enuresis is diagnosed only from age 5: before that it is part of normal development.",
+        "In a study of 1129 children (Forsythe 1974), about 14–16% of children with enuresis stopped spontaneously each year.",
+        "The ICCS guideline (Nevéus 2020) indicates the night alarm or desmopressin as first-line treatments, generally from age 6, after evaluation by the pediatrician."
+      ],
+      "tips": [
+        "Do not punish or scold: your child does not do it on purpose and cannot control it.",
+        "Make sure your child drinks well during the day and less in the hour before bed; pee before sleeping.",
+        "Use a bed pad or mattress protector to reduce stress for everyone.",
+        {
+          "t": "If your child is already 5 and it bothers them, talk to your pediatrician: effective treatments exist.",
+          "from": 60,
+          "to": 72
+        }
+      ],
+      "redFlags": [
+        "Wets during the day too or has trouble peeing.",
+        "Frequent constipation.",
+        "Always very thirsty or drinks a great deal.",
+        "Starts wetting again after being dry for a long time, or it upsets your child a lot."
+      ]
     }
   },
   {
@@ -1270,6 +1800,37 @@
         "Избегайте неодобренных средств и самодельных рецептов.",
         "Если сообщаете школе или другим семьям, делайте это деликатно: AAP подчёркивает важность конфиденциальности, чтобы избежать стигмы.",
         "Частое мытьё не защищает от вшей: дело не в гигиене."
+      ]
+    },
+    "en": {
+      "title": "Head lice: what the guidelines say",
+      "summary": "Head lice are common at school and are not a sign of poor hygiene. The AAP recommends not excluding children from school. For treatment, choose with your pediatrician or pharmacist.",
+      "keywords": [
+        "lice",
+        "nits",
+        "itchy head",
+        "head",
+        "hair",
+        "school",
+        "pediculosis",
+        "lice comb",
+        "infestation",
+        "contagion",
+        "treatment"
+      ],
+      "research": [
+        "The AAP (Nolt 2022) recommends abandoning \"no-nit\" policies, which exclude children with nits from school, and not restricting school attendance because of lice.",
+        "The AAP (Nolt 2022) notes that screening for lice at school is not cost-effective.",
+        "A US survey cited by the AAP (Nolt 2022) found lice in 1.6% of children and nits in 3.6%.",
+        "According to the AAP (Nolt 2022), nits more than 1 cm from the scalp are unlikely to be viable.",
+        "The AAP (Nolt 2022) indicates that several approved treatments exist, to be chosen with your pediatrician or pharmacist because the ages of use of the products differ; for some, repeating is needed only if live lice are still seen. Wet combing is an option with limited evidence. The AAP advises against unapproved products."
+      ],
+      "tips": [
+        "Check the hair in good light with a fine-toothed comb, especially if your child is scratching.",
+        "If you find live lice, talk to your pediatrician or pharmacist before choosing a treatment.",
+        "Avoid unapproved products or improvised remedies.",
+        "If you inform the school or other families, do it discreetly: the AAP stresses confidentiality to avoid stigma.",
+        "Washing often is not enough to prevent them: it is not a matter of hygiene."
       ]
     }
   },
@@ -1365,6 +1926,48 @@
         "Изменённый красный рефлекс.",
         "Родственники первой степени с амблиопией или косоглазием: поговорите с педиатром.",
         "Непройденная проверка зрения или найденная аномалия: визит к специалисту."
+      ]
+    },
+    "en": {
+      "title": "Vision: checks and signs not to overlook",
+      "summary": "Vision screening is part of routine pediatric visits. If a screening is not passed or an abnormality is found, the pediatrician refers you to a specialist.",
+      "keywords": [
+        "vision",
+        "eyes",
+        "glasses",
+        "nearsightedness",
+        "strabismus",
+        "lazy eye",
+        "amblyopia",
+        "seeing",
+        "blackboard",
+        "squints",
+        "eye doctor",
+        "red reflex",
+        "eyelid"
+      ],
+      "research": [
+        "The US pediatric and ophthalmology societies (AAP, AAPOS, AACO, AAO 2016) recommend vision checks at routine pediatric visits.",
+        {
+          "t": "According to the same societies (AAP, AAPOS, AACO, AAO 2016), measuring visual acuity with optotypes is the standard from age 4 and is more reliable from age 6.",
+          "from": 72,
+          "to": 144
+        },
+        "The same societies (AAP, AAPOS, AACO, AAO 2016) indicate referring to a specialist if a screening is not passed or an abnormality is found, and considering first-degree relatives with amblyopia or strabismus."
+      ],
+      "tips": [
+        "Ask your pediatrician to have your child's vision checked at routine visits.",
+        "If you notice your child struggling to see (for example the board or when reading), talk to your pediatrician.",
+        "If a screening is not passed, book the specialist visit without waiting.",
+        "Tell your pediatrician if there are cases of strabismus or lazy eye in the family.",
+        "If your child wears glasses, talk to the specialist about follow-up checks."
+      ],
+      "redFlags": [
+        "Tearing with sensitivity to light, or a cloudy or enlarged cornea: prompt specialist evaluation.",
+        "Drooping eyelid with pupils of different sizes.",
+        "Abnormal red reflex.",
+        "First-degree relatives with amblyopia or strabismus: talk to your pediatrician.",
+        "Failed vision screening or an abnormality found: see the specialist."
       ]
     }
   },
@@ -1467,6 +2070,51 @@
         "Головная боль в течение 5 дней после удара по голове.",
         "Косоглазие или невозможность смотреть вверх."
       ]
+    },
+    "en": {
+      "title": "Headache in children: signs not to overlook",
+      "summary": "Headache is common in children. The NICE guideline, however, lists some signs for which you should seek medical evaluation right away. Talk to your pediatrician.",
+      "keywords": [
+        "headache",
+        "head pain",
+        "migraine",
+        "head hurts",
+        "nausea",
+        "vomiting",
+        "light",
+        "school",
+        "pain relievers",
+        "pain",
+        "warning signs",
+        "head injury"
+      ],
+      "research": [
+        "NICE (QS198) lists the signs for which a child under 12 with a headache should be referred for immediate evaluation: headache that wakes them from sleep, is present on waking, gets progressively worse, is triggered or worsened by coughing, sneezing or bending over, comes with fever and signs of meningism, with vomiting, difficulty with balance, coordination or speech (ataxia), altered consciousness or lethargy, within 5 days of a head injury, with a squint (misaligned eyes) or failure of upward gaze ('sunsetting').",
+        "The AAN/AHS guideline on migraine treatment in children and adolescents (Oskoui 2019) indicates that common pain relievers have evidence of effectiveness in children (the pediatrician can advise one), that it is best to treat early during the attack, and that guidance is needed on triggers and on avoiding medication overuse."
+      ],
+      "tips": [
+        "Let your child rest in a quiet, dimly lit place; offer something to drink.",
+        "Keep a short diary: when it appears, how long it lasts, what happened beforehand (sleep, meals, stress, screens).",
+        "For medicines ask your pediatrician which to use and how: we give no guidance here.",
+        "Avoid turning to medicines too often: talk to your pediatrician if they are needed frequently.",
+        "Bring the diary to the visit if the headache keeps coming back."
+      ],
+      "redFlags": [
+        "Frequent headache that interferes with school, play or sleep.",
+        "Needing pain relievers very often: talk to your pediatrician.",
+        "You have doubts about the headache or its causes: talk to your pediatrician."
+      ],
+      "urgent": [
+        "The headache wakes your child from sleep or is present on waking.",
+        "The headache gets progressively worse.",
+        "It appears or gets worse with coughing, sneezing or bending over.",
+        "Fever with a stiff neck or other signs of meningism.",
+        "Vomiting together with the headache.",
+        "Difficulty with balance, coordination or speech (ataxia).",
+        "Altered consciousness or unusual sleepiness (lethargy).",
+        "Headache within 5 days of a blow to the head.",
+        "A squint (eyes not lined up / crossed eyes) or inability to look upward ('sunsetting' eyes)."
+      ]
     }
   },
   {
@@ -1556,6 +2204,45 @@
         "После чистки пусть ребёнок не полощет рот большим количеством воды.",
         "Спросите стоматолога, можно ли загерметизировать первые постоянные моляры.",
         "Чтобы узнать больше, прочитайте обзор Cochrane и руководство EAPD."
+      ]
+    },
+    "en": {
+      "title": "Teeth at 6–12 years: sealants and fluoride",
+      "summary": "Sealants on the first permanent molars reduce cavities in children aged 5–10; for brushing over age 6, the EAPD guideline indicates fluoride toothpaste twice a day.",
+      "keywords": [
+        "teeth",
+        "cavities",
+        "sealants",
+        "molars",
+        "toothpaste",
+        "fluoride",
+        "brushing teeth",
+        "toothbrush",
+        "dentist",
+        "permanent teeth",
+        "oral hygiene",
+        "rinsing"
+      ],
+      "research": [
+        "A Cochrane review (Ahovuo-Saloranta 2017) in children aged 5–10: resin sealants on the first permanent molars, compared with no sealant, reduce cavities at 24 months (OR 0.12; 95% CI 0.08–0.19; 7 studies; moderate certainty).",
+        "In the same review (Ahovuo-Saloranta 2017), at 48–54 months the OR is 0.21 (95% CI 0.16–0.28).",
+        {
+          "t": "The EAPD guideline (Toumba 2019) for those over 6 years indicates toothpaste with 1450 ppm fluoride, twice a day, in an amount of 0.5–1 g (enough to cover the whole head of the toothbrush).",
+          "from": 72,
+          "to": 144
+        },
+        {
+          "t": "The same EAPD guideline (Toumba 2019) indicates helping or supervising brushing until at least age 7 and avoiding rinsing with lots of water after brushing.",
+          "from": 72,
+          "to": 144
+        }
+      ],
+      "tips": [
+        "Brush teeth twice a day with fluoride toothpaste.",
+        "Supervise brushing until your child is at least 7.",
+        "After brushing, avoid rinsing with lots of water.",
+        "Ask the dentist whether the first permanent molars can be sealed.",
+        "To learn more, consult the Cochrane review and the EAPD guideline."
       ]
     }
   }

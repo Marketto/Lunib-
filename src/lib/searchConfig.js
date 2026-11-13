@@ -1,6 +1,6 @@
 import { processTerm, tokenize } from './text.js';
 
-export const LANGS = ['it', 'ru'];
+export const LANGS = ['it', 'ru', 'en'];
 
 // Configurazione condivisa: build dell'indice (Node) e caricamento nell'app.
 export function miniSearchOptions(lang) {

@@ -65,6 +65,15 @@ const OT = {
     fileTitle: 'Открыть общий файл', connect: 'Подключить Google Drive', pickDrive: 'Выбрать файл в Drive',
     qrTitle: 'Данные из QR-кода', found: (n, names, g, m) => `Найдено детей: ${n}${names.length ? ` (${names.join(', ')})` : ''}, измерений: ${g}, лекарств: ${m}.`,
     review: 'Проверьте детей', reviewHint: 'Можно исправить имена и даты рождения.', fromScratch: 'Начать с нуля'
+  },
+  en: {
+    askTitle: 'Do you already have data shared by the other parent?', no: 'No, I\'m starting from scratch', noSub: 'I\'ll add my children.',
+    file: 'Yes, I have a Lunibù file (.lunibu)', fileSub: 'I\'ll open it with the agreed secret phrase.',
+    drive: 'Yes, we use Google Drive', driveSub: 'I\'ll connect Drive and choose the shared file.',
+    qrHint: 'If the other parent showed you a QR code, scan it with the phone camera: Lunibù will open with the data.',
+    fileTitle: 'Open the shared file', connect: 'Connect Google Drive', pickDrive: 'Choose the file on Drive',
+    qrTitle: 'Data received from a QR', found: (n, names, g, m) => `Found ${n} ${n === 1 ? 'child' : 'children'}${names.length ? `: ${names.join(', ')}` : ''}, ${g} measurements, ${m} medicines.`,
+    review: 'Check the children', reviewHint: 'You can correct names and dates of birth.', fromScratch: 'Start from scratch'
   }
 };
 

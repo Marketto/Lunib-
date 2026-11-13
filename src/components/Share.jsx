@@ -18,6 +18,13 @@ export const SHARE_TEXT = {
     message: 'Lunibù: быстрый поиск научных данных для родителей детей 0–12 лет. Работает и офлайн.',
     version: (v, b, d) => `Версия ${v} · сборка ${b} · ${d}`,
     updated: (v) => `Lunibù обновлено до версии ${v}.`, ready: 'Новая версия готова: обновится при следующем открытии.', now: 'Обновить сейчас', ok: 'Ок'
+  },
+  en: {
+    title: 'Share Lunibù', sub: 'Send the app link (without your data: it stays only on this phone).',
+    share: 'Share', copy: 'Copy link', copied: 'Link copied', qr: 'Or let them scan this QR code',
+    message: 'Lunibù: quick lookup of scientific data for parents of children aged 0–12. Works offline too.',
+    version: (v, b, d) => `Version ${v} · build ${b} · ${d}`,
+    updated: (v) => `Lunibù has been updated to version ${v}.`, ready: 'New version ready: it will update the next time you open the app.', now: 'Update now', ok: 'OK'
   }
 };
 

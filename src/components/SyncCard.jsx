@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion';
 import qrcode from 'qrcode-generator';
 import { tap } from './Common.jsx';
+import { LOCALE } from '../lib/i18n.js';
 import { appUrl } from './Share.jsx';
 import { driveEnabled, fileLink, getToken, pickFile, share, revoke, transport } from '../lib/drive.js';
 import { getDrive, setDrive, subscribe, passOf, savePass, forget, runSync, AUTO_MS } from '../lib/driveStore.js';
@@ -29,7 +30,7 @@ export const TX = {
     qrNote: 'Contiene solo gli ultimi aggiornamenti (48 ore) ed è cifrato; i dati stanno nel link, che non viene inviato a nessun server.',
     recvTitle: 'Aggiornamento dall\'altro genitore', recvIntro: 'Hai aperto un QR di Lunibù. Inserisci la frase segreta concordata per unire i dati.',
     dTitle: 'Sincronizzazione con Google Drive', dConnect: 'Collega Google Drive', dCreate: 'Crea file di sincronizzazione', dPick: 'Usa il file ricevuto dall\'altro genitore',
-    dFileName: 'Lunibù – sincronizzazione.lunibu', dShareBtn: 'Condividi con l\'altro genitore', dEmail: 'Email Google dell\'altro genitore', dShareGo: 'Invia invito', dShared: 'Invito inviato: l\'altro genitore ora sceglie "Usa il file ricevuto".',
+    dFileName: 'Lunibù – sincronizzazione.lunibu', dShareBtn: 'Condividi con l\'altro genitore', dEmail: 'Email Google dell\'altro genitore', dShareGo: 'Invia invito', dShared: 'Invito inviato: l\'altro genitore ora sceglie "Usa il file ricevuto dall\'altro genitore".',
     dOpen: 'Apri il file in Drive', dLast: 'Ultima sincronizzazione', dNever: 'mai', dNow: 'Sincronizza ora', dUnlink: 'Scollega', dRemember: 'Ricorda la frase segreta su questo telefono',
     dChip: 'Tocca per sincronizzare', dAuthFail: 'Accesso a Google non riuscito o annullato.', dNet: 'Rete non disponibile o Google non raggiungibile.', dConflict: 'Il file è stato modificato nel frattempo: riprova.', dNotFound: 'File non trovato su Drive.',
     dNote: 'Il file in Drive è cifrato con la tua frase segreta: Google e l\'autore dell\'app non possono leggerlo. L\'app accede solo al file creato o scelto, mai al resto del tuo Drive. La sincronizzazione è facoltativa: senza, tutto resta sul telefono.',
@@ -60,6 +61,32 @@ export const TX = {
     dChip: 'Нажмите для синхронизации', dAuthFail: 'Не удалось войти в Google или вход отменён.', dNet: 'Нет сети или Google недоступен.', dConflict: 'Файл тем временем изменён: попробуйте ещё раз.', dNotFound: 'Файл не найден в Drive.',
     dNote: 'Файл в Drive зашифрован вашей секретной фразой: Google и автор приложения не могут его прочитать. Приложение получает доступ только к созданному или выбранному файлу, но не к остальному вашему Drive. Синхронизация необязательна: без неё всё остаётся на телефоне.',
     dUpToDate: 'Уже актуально.'
+  },
+  en: {
+    title: 'Share your data with the other parent', intro: 'Create a file protected by a secret phrase and send it to the other parent: growth and medicine data merge on the two phones, with no server.',
+    create: 'Create a file to send', open: 'Open a received file', qr: 'Show QR (latest updates)',
+    privacy: 'The file contains health data. It is protected by the secret phrase and is not saved anywhere else: only you keep it and forward it.',
+    pass: 'Secret phrase', pass2: 'Repeat the secret phrase', hint: `At least ${MIN_PASS} characters. Agree on it out loud and do not send it in the same chat as the file.`,
+    short: `The phrase must have at least ${MIN_PASS} characters.`, mismatch: 'The two phrases do not match.',
+    go: 'Continue', cancel: 'Cancel', close: 'Close', busy: 'One moment…',
+    shared: 'File ready.', downloaded: 'File downloaded: send it to the other parent.',
+    pick: 'Choose the .lunibu file you received', askPass: 'Agreed secret phrase', decrypt: 'Open and merge',
+    badPass: 'Wrong secret phrase, or the file has been modified.', badFile: 'This is not a valid Lunibù file.', fail: 'Operation failed.',
+    result: (g, m, u) => `Added ${g} measurements and ${m} medicines; ${u} updated.`,
+    received: (g, m, u) => `Received from the other phone: ${g} measurements and ${m} medicines${u ? `, ${u} updated` : ''}.`,
+    sent: (g, m, p) => `Sent from this phone: ${g} measurements and ${m} medicines${p ? `, ${p} plans` : ''}.`,
+    inSync: 'Everything is already in sync between the two phones.',
+    doses: 'Doses given by the other parent in the last 24 hours', dosesNote: 'Check before giving another dose: do not give it twice.',
+    qrHow: 'The other parent scans the QR with the phone\'s normal camera: Lunibù opens and asks for the secret phrase.',
+    qrBig: 'Too much data for a QR: use the file.', qrMeds: 'Include only the medicines of the last 48 hours',
+    qrNote: 'It contains only the latest updates (48 hours) and is encrypted; the data is in the link, which is not sent to any server.',
+    recvTitle: 'Update from the other parent', recvIntro: 'You opened a Lunibù QR. Enter the agreed secret phrase to merge the data.',
+    dTitle: 'Sync with Google Drive', dConnect: 'Connect Google Drive', dCreate: 'Create sync file', dPick: 'Use the file received from the other parent',
+    dFileName: 'Lunibù – sync.lunibu', dShareBtn: 'Share with the other parent', dEmail: 'Other parent\'s Google email', dShareGo: 'Send invitation', dShared: 'Invitation sent: the other parent now chooses "Use the file received from the other parent".',
+    dOpen: 'Open the file in Drive', dLast: 'Last sync', dNever: 'never', dNow: 'Sync now', dUnlink: 'Disconnect', dRemember: 'Remember the secret phrase on this phone',
+    dChip: 'Tap to sync', dAuthFail: 'Google sign-in failed or was cancelled.', dNet: 'Network unavailable or Google unreachable.', dConflict: 'The file was modified in the meantime: try again.', dNotFound: 'File not found on Drive.',
+    dNote: 'The file in Drive is encrypted with your secret phrase: Google and the app\'s author cannot read it. The app accesses only the file it created or that you chose, never the rest of your Drive. Syncing is optional: without it, everything stays on the phone.',
+    dUpToDate: 'Already up to date.'
   }
 };
 
@@ -110,7 +137,7 @@ export function SyncResult({ s, lang, stats, kids }) {
           <strong>{s.doses}</strong>
           <ul className="sync-doses">
             {stats.recentDoses.map((d) => (
-              <li key={d.id}>{d.name}{name(d.kidId) ? ` (${name(d.kidId)})` : ''} · {new Date(d.at).toLocaleString(lang, { dateStyle: 'short', timeStyle: 'short' })}</li>
+              <li key={d.id}>{d.name}{name(d.kidId) ? ` (${name(d.kidId)})` : ''} · {new Date(d.at).toLocaleString(LOCALE[lang], { dateStyle: 'short', timeStyle: 'short' })}</li>
             ))}
           </ul>
           <span className="small">{s.dosesNote}</span>
@@ -257,7 +284,7 @@ function DriveSection({ lang, state, onMerge }) {
   const unlink = () => guard(async () => { forget(); setLinked(false); setMode(null); setRes(null); await revoke(); });
 
   const connected = Boolean(d.fileId);
-  const last = d.lastSync ? new Date(d.lastSync).toLocaleString(lang, { dateStyle: 'short', timeStyle: 'short' }) : s.dNever;
+  const last = d.lastSync ? new Date(d.lastSync).toLocaleString(LOCALE[lang], { dateStyle: 'short', timeStyle: 'short' }) : s.dNever;
   const remEl = (
     <label className="small" style={{ display: 'flex', gap: 10, alignItems: 'center' }}><input type="checkbox" checked={remember} onChange={(e) => toggleRemember(e.target.checked)} /> <span>{s.dRemember}</span></label>
   );

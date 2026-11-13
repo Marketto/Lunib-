@@ -32,5 +32,6 @@ export function clearState() {
 
 export function guessLang() {
   const l = (typeof navigator !== 'undefined' && navigator.language) || 'it';
-  return l.toLowerCase().startsWith('ru') ? 'ru' : 'it';
+  const c = l.toLowerCase();
+  return c.startsWith('ru') ? 'ru' : c.startsWith('en') ? 'en' : 'it';
 }

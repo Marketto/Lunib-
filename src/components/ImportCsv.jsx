@@ -8,7 +8,7 @@ const MEDMAP_KEY = 'lunibu:medmap'; // scelte dell'utente: restano sul dispositi
 const loadMedMap = () => { try { return JSON.parse(localStorage.getItem(MEDMAP_KEY)) || {}; } catch { return {}; } };
 const saveMedMap = (m) => { try { localStorage.setItem(MEDMAP_KEY, JSON.stringify(m)); } catch { /* storage pieno/bloccato */ } };
 
-export const IMPORT_BTN = { it: 'Importa da un\'altra app (CSV)', ru: 'Импорт из другого приложения (CSV)' };
+export const IMPORT_BTN = { it: 'Importa da un\'altra app (CSV)', ru: 'Импорт из другого приложения (CSV)', en: 'Import from another app (CSV)' };
 
 const TX = {
   it: {
@@ -46,9 +46,27 @@ const TX = {
     medHelp: 'Lunibù не знает торговых названий: укажите действующее вещество, чтобы включить осторожную проверку.',
     medTimes: (n) => `${n} раз`, activeLbl: 'Действующее вещество', noCheck: 'Без проверки', conc: 'Концентрация (мг/мл, указана на упаковке и в инструкции)', concIU: 'МЕ на каплю / на мл (написано на упаковке)', concOther: 'другая',
     notImported: (t, o) => [t && `${t} измерений температуры`, o && `${o} других записей`].filter(Boolean).join(' и ') + ' не импортированы (Lunibù их не ведёт)'
+  },
+  en: {
+    structHint: 'Is your file not recognized well? Copy only its structure (sheet and column names, no data, no photos) and send it to get support.', structCopy: 'Copy the file structure', structCopied: 'Structure copied',
+    title: 'Import from CSV or Excel', local: 'The file is read only on your phone: it is not sent anywhere.',
+    pick: 'Choose a CSV or Excel file (.xls, .xlsx)', step: (n) => `Step ${n} of 3`, preview: 'Preview of the first 5 rows',
+    next: 'Next', back: 'Back', cancel: 'Close', empty: 'No readable rows in this file.', err: 'Unable to read the file.',
+    mapTitle: 'Match the columns', none: '— do not import —',
+    f: { date: 'Date / date and time', weight: 'Weight', height: 'Length / height', head: 'Head circumference', med: 'Medicine name', dose: 'Amount of medicine', note: 'Note' },
+    unitFor: 'Unit', dateOrder: 'The dates are ambiguous (e.g. 03/04/2025). How are they written?', dmy: 'day/month', mdy: 'month/day',
+    needDate: 'Choose the date column and at least one data item to import.',
+    kidAsk: 'Which child is this data for?', summary: (g, m, k) => `${g} measurements, ${m} medicines, ${k} rows ignored`,
+    reasons: { noDate: 'missing or unreadable date', empty: 'no data', badValue: 'implausible values', outOfRange: 'date before birth or in the future', noName: 'dose without a medicine name', duplicate: 'already present' },
+    confirm: 'Import', done: (g, m) => `Imported ${g} measurements and ${m} medicines. Assessments and dose checks update on their own.`,
+    verify: 'Check that the imported values are correct: the app cannot verify them.',
+    recognized: 'Recognized: Baby Tracker export', medTitle: 'Medicines found',
+    medHelp: 'Lunibù does not know brand names: indicate the active ingredient yourself to turn on the cautionary check.',
+    medTimes: (n) => `${n} ${n === 1 ? 'time' : 'times'}`, activeLbl: 'Active ingredient', noCheck: 'No check', conc: 'Concentration (mg/ml, written on the packaging and leaflet)', concIU: 'IU per drop / per ml (written on the packaging)', concOther: 'other',
+    notImported: (t, o) => [t && `${t} temperature readings`, o && `${o} other activities`].filter(Boolean).join(' and ') + ' not imported (Lunibù does not record them)'
   }
 };
-const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene', vitaminaD: 'Vitamina D (colecalciferolo)' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен', vitaminaD: 'Витамин D (колекальциферол)' } };
+const NAMES = { it: { paracetamolo: 'Paracetamolo', ibuprofene: 'Ibuprofene', vitaminaD: 'Vitamina D (colecalciferolo)' }, ru: { paracetamolo: 'Парацетамол', ibuprofene: 'Ибупрофен', vitaminaD: 'Витамин D (колекальциферол)' }, en: { paracetamolo: 'Paracetamol (acetaminophen)', ibuprofene: 'Ibuprofen', vitaminaD: 'Vitamin D (cholecalciferol)' } };
 const UNITS = { weight: ['kg', 'g', 'lb'], height: ['cm', 'in'], head: ['cm', 'in'], dose: ['mg', 'ml'] };
 
 // Struttura del file SENZA dati: nomi dei fogli, intestazioni e "forma" del primo valore di ogni colonna
@@ -172,7 +190,7 @@ export default function ImportCsv({ lang, kids, active, growth, meds, setGrowth,
       <h3>{s.title} {step > 0 && !result && <small className="muted">· {s.step(step)}</small>}</h3>
       <p className="small muted">{s.local}</p>
       {preset && step >= 1 && !result && <p className="small" role="status"><strong>{s.recognized}</strong></p>}
-      {sheets && step === 1 && <p className="small muted">{lang === 'ru' ? 'Лист' : 'Foglio'}: {sheets}</p>}
+      {sheets && step === 1 && <p className="small muted">{lang === 'ru' ? 'Лист' : lang === 'en' ? 'Sheet' : 'Foglio'}: {sheets}</p>}
       {structure && step >= 1 && !result && (
         <div className="struct-box">
           <p className="small muted">{s.structHint}</p>

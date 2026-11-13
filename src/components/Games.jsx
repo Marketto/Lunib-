@@ -50,7 +50,34 @@ export const GAME_TEXT = {
     sources: 'Источники',
     empty: 'Для этого возраста с таким фильтром игр нет.',
     note: 'Мы включили только игры, подтверждённые исследованиями, и для каждой указываем, насколько надёжны доказательства. Всегда проверяйте источники.'
+  },
+  en: {
+    title: 'Games',
+    subtitle: 'Play ideas backed by research, suited to the age.',
+    forKid: (n, a) => `For ${n}, ${a}`,
+    all: 'All', together: 'Together', alone: 'Alone',
+    mode: { insieme: 'Together', solo: 'Alone', entrambi: 'Together or alone' },
+    evidence: {
+      forte: 'Strong evidence: controlled studies',
+      media: 'Moderate evidence: small or indirect effects, or observational studies',
+      raccomandato: 'Recommended by guidelines (AAP/WHO); benefits of the single game poorly demonstrated',
+      tappa: 'Suited to the stage: descriptive evidence'
+    },
+    minutes: (m) => `${m} min`,
+    materials: 'What you need',
+    steps: 'How to play',
+    why: 'What the research says',
+    tip: 'Tip',
+    sources: 'Sources',
+    empty: 'No games for this age with this filter.',
+    note: 'We included only games with some backing in the research and, for each one, we say how solid the evidence is. Always dig deeper into the sources.'
   }
+};
+
+// Testo del gioco nella lingua scelta; se `en` manca o è incompleta si ripiega sull'italiano
+export const gameText = (g, lang) => {
+  const x = g[lang];
+  return x?.title && x.intro && x.why && x.materials?.length === g.it.materials.length && x.steps?.length === g.it.steps.length ? x : g.it;
 };
 
 let cache = null;
@@ -91,7 +118,7 @@ export function GamesList({ lang, kids, active, setActive, months, go }) {
               initial={{ opacity: 0, y: 20, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
               transition={{ ...spring, delay: Math.min(i, 8) * 0.05 }} whileTap={{ scale: 0.97 }}>
               <Scene id={g.scene} color={COLORS[g.i % COLORS.length]} height={140} />
-              <strong>{g[lang].title}</strong>
+              <strong>{gameText(g, lang).title}</strong>
               <span className="game-meta">
                 <span className="chip">{s.mode[g.mode]}</span>
                 <span className="chip">{formatRange(g.from, g.to, lang)}</span>
@@ -115,7 +142,7 @@ export function GameView({ lang, id }) {
   const idx = games.findIndex((x) => x.id === id);
   const g = games[idx];
   if (!g) return <p className="empty">{s.empty}</p>;
-  const t = g[lang];
+  const t = gameText(g, lang);
   return (
     <article>
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={spring}>
