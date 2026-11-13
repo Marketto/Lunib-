@@ -689,12 +689,17 @@ button.chip.on { background: #7b6fd6; color: #fff; }
   border: 1.5px solid var(--ink-faint); color: var(--ink-soft); font-size: .85rem; min-height: 40px; }
 .tour-recall span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--lav); color: var(--ink); font-weight: 700; font-size: .8rem; }
 .night .tour-recall { color: #dfe2f5; border-color: #8f93bd; }
-.tour-scrim { position: fixed; inset: 0; z-index: 80; display: flex; align-items: flex-end; justify-content: center; background: rgba(30, 31, 70, .5); padding: 12px; }
-.tour-sheet { width: 100%; max-width: 480px; max-height: calc(100dvh - 24px); overflow-y: auto; background: var(--paper); color: var(--ink);
-  border-radius: 28px; padding: 16px 18px calc(18px + env(safe-area-inset-bottom)); box-shadow: 0 20px 50px rgba(20, 20, 60, .35); outline: none; }
-.tour-top { display: flex; align-items: center; justify-content: space-between; min-height: 40px; }
-.tour-slide { text-align: center; padding: 6px 4px 4px; min-height: 250px; }
-.tour-art { display: grid; place-items: center; height: 120px; }
-.tour-slide h2 { margin: 6px 0 8px; }
-.tour-slide p { margin: 0 0 12px; line-height: 1.5; color: var(--ink-soft); }
-.tour-sheet .dots { margin: 8px 0 12px; }
+
+/* Giro a coach-mark */
+.tour-scrim { position: fixed; inset: 0; z-index: 80; cursor: pointer; overflow: hidden; }
+.tour-spot { position: fixed; left: 0; top: 0; pointer-events: none; box-shadow: 0 0 0 100vmax rgba(30, 31, 70, .62); }
+.tour-ring { position: absolute; inset: -4px; border: 2.5px solid #fff; animation: tour-pulse 1.6s ease-out infinite; }
+@keyframes tour-pulse { 0% { opacity: .95; transform: scale(1); } 100% { opacity: 0; transform: scale(1.18); } }
+.tour-bubble { position: fixed; left: 0; top: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: center; padding: 10px 14px;
+  background: var(--paper); color: var(--ink); border-radius: 16px; box-shadow: 0 8px 28px rgba(20, 21, 60, .35); outline-offset: 3px; }
+.tour-ico { font-size: 1.4rem; line-height: 1; }
+.tour-text { font-weight: 600; line-height: 1.3; }
+.tour-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; }
+.tour-count { font-size: .8rem; color: var(--ink-soft); }
+.tour-skip { background: none; border: 0; padding: 8px 6px; margin: -8px -6px; min-height: 36px; color: var(--ink); font: inherit; font-size: .85rem; text-decoration: underline; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .tour-ring { animation: none; opacity: .9; } }

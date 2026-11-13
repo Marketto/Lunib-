@@ -113,7 +113,7 @@ function BottomNav({ view, go, lang }) {
       {tabs.map(([r, label, icon, views]) => {
         const on = views.includes(view);
         return (
-          <motion.button key={r} className={`nav-item ${on ? 'on' : ''}`} onClick={() => go(r)} {...tap} aria-current={on ? 'page' : undefined}>
+          <motion.button key={r} data-tour={`nav-${r || 'domande'}`} className={`nav-item ${on ? 'on' : ''}`} onClick={() => go(r)} {...tap} aria-current={on ? 'page' : undefined}>
             {on && <motion.i layoutId="nav-pill" className="nav-pill" transition={spring} />}
             <motion.span animate={on ? { y: [0, -4, 0] } : { y: 0 }} transition={{ duration: 0.35 }} style={{ display: 'grid' }}>{icon}</motion.span>
             <span>{label}</span>
@@ -308,10 +308,10 @@ function Shell({ state, setState, update, setList, applySync }) {
           </motion.div>
         </AnimatePresence>
         <TourRecall lang={lang} onClick={() => setTourOpen('all')} />
-        <p className="footnote">{s.disclaimerShort}. {s.emergency}. <a href="#condizioni">{TERMS[lang].title}</a> · <VersionLine lang={lang} /></p>
+        <p className="footnote" data-tour="footer">{s.disclaimerShort}. {s.emergency}. <a href="#condizioni">{TERMS[lang].title}</a> · <VersionLine lang={lang} /></p>
       </main>
       <AnimatePresence>
-        {tourOpen && tourReady && tourSlides.length > 0 && <Tour key="tour" lang={lang} slides={tourSlides} onClose={closeTour} go={go} />}
+        {tourOpen && tourReady && tourSlides.length > 0 && <Tour key="tour" lang={lang} slides={tourSlides} onClose={closeTour} go={go} route={route} />}
       </AnimatePresence>
       <MiniPlayer lang={lang} go={go} />
       <BottomNav view={view} go={go} lang={lang} />

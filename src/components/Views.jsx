@@ -77,7 +77,7 @@ export function Home({ lang, kids, active, setActive, months, query, setQuery, g
 
       {kids.length > 0 && <KidPills kids={kids} active={active} setActive={setActive} lang={lang} id="home" />}
 
-      <div className="search">
+      <div className="search" data-tour="search">
         <IconSearch />
         <input type="search" value={query} placeholder={s.searchPlaceholder} aria-label={s.searchPlaceholder}
           onChange={(e) => setQuery(e.target.value)} />

@@ -1,5 +1,8 @@
 # Novità di Lunibù
 
+## 1.13.1 — 13 novembre 2026
+- Il giro delle funzioni ora evidenzia le parti reali dell'app, con un breve suggerimento per ciascuna: tocca per andare avanti.
+
 ## 1.13.0 — 13 novembre 2026
 - Nuovo giro delle funzioni: una breve presentazione dell'app, mostrata una volta; con i prossimi aggiornamenti mostrerà solo le novità. Si riapre dal pulsante "Scopri l'app" in fondo a ogni pagina.
 
