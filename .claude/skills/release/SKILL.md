@@ -6,6 +6,8 @@ description: Commit, push and deploy Lunibù to GitHub Pages safely (secret scan
 
 1. Aggiorna `version` in `package.json` (semver: correzioni → patch, funzioni nuove → minor) e aggiungi le novità in cima a `CHANGELOG.md`.
 
+   Nuova funzionalità visibile → aggiungi una slide in `src/data/tour.js` con `since` = nuova versione (il giro mostra solo le slide non ancora viste).
+
 ```bash
 npm run check:secrets      # blocca email personali, token, chiavi
 npm test && npm run build

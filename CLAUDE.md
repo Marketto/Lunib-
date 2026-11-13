@@ -47,6 +47,8 @@ source-researcher → evidence-verifier (fonti) → content-writer (IT) → tran
 → npm run content (schema) → evidence-verifier (testo IT+RU vs fonti) → npm test → qa-runner (screenshot)
 ```
 
+Nuova funzionalità visibile → aggiungi una slide in `src/data/tour.js` con `since` = nuova versione.
+
 ## Comandi
 
 ```bash
@@ -65,6 +67,7 @@ npm run check:secrets  # cerca email personali, token e chiavi nei file tracciat
 - `src/data/meds.json` limiti di controllo per paracetamolo/ibuprofene (dati di ricerca: ogni modifica → `evidence-verifier`)
 - `src/data/growth.json` generato da `scripts/build-growth.mjs` (tabelle LMS OMS in `scripts/data-raw`)
 - `src/lib/` età, ricerca, i18n, audio (`audio/engine.js`, `audio/realistic.js`, `audio/meter.js`)
+- `src/data/tour.js` slide del giro delle funzioni (logica in `src/lib/tour.js`, stato `lunibu:tour` non sincronizzato)
 - `src/components/` UI (Paper, Characters, Scenes, Views, Sounds, Games, Diary, VolumeCheck, Terms)
 - `scripts/` build contenuti, controlli, hook
 - `.claude/agents/`, `.claude/skills/` configurazione agentica

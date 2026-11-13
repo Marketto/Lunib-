@@ -13,6 +13,9 @@ import Diary from './components/Diary.jsx';
 import { QuickReceive, DriveAuto } from './components/SyncCard.jsx';
 import { syncFromHash } from './lib/sync.js';
 import { VersionLine, SHARE_TEXT } from './components/Share.jsx';
+import Tour, { TourRecall } from './components/Tour.jsx';
+import { TOUR } from './data/tour.js';
+import { pendingSlides, markSeen, loadTour, saveTour } from './lib/tour.js';
 import { initUpdates, onUpdate, applyUpdate, dismissUpdated } from './lib/update.js';
 
 initUpdates();
@@ -211,6 +214,17 @@ function Shell({ state, setState, update, setList, applySync }) {
   const [view, param] = route.split('--');
   const night = view === 'suoni' && group === 'sleep';
 
+  // Giro delle funzioni: solo a termini e onboarding finiti, senza import QR in corso e a splash chiuso
+  const [tourSeen, setTourSeen] = useState(() => loadTour().seen);
+  const [tourOpen, setTourOpen] = useState(null); // null | 'new' | 'all'
+  const tourReady = !splash && !incoming && accepted && kids.length > 0 && state.terms === TERMS_VERSION;
+  useEffect(() => { if (tourReady && tourOpen === null && pendingSlides(tourSeen).length) setTourOpen('new'); }, [tourReady]); // eslint-disable-line react-hooks/exhaustive-deps
+  const tourSlides = tourOpen === 'all' ? TOUR : pendingSlides(tourSeen);
+  const closeTour = () => {
+    const seen = markSeen(tourSeen, tourSlides.map((x) => x.id));
+    saveTour({ seen }); setTourSeen(seen); setTourOpen(false);
+  };
+
   const splashEl = <AnimatePresence>{splash && <Splash lang={lang} onDone={() => setSplash(false)} />}</AnimatePresence>;
 
   if (!accepted || !kids.length) {
@@ -293,8 +307,12 @@ function Shell({ state, setState, update, setList, applySync }) {
             {content}
           </motion.div>
         </AnimatePresence>
+        <TourRecall lang={lang} onClick={() => setTourOpen('all')} />
         <p className="footnote">{s.disclaimerShort}. {s.emergency}. <a href="#condizioni">{TERMS[lang].title}</a> · <VersionLine lang={lang} /></p>
       </main>
+      <AnimatePresence>
+        {tourOpen && tourReady && tourSlides.length > 0 && <Tour key="tour" lang={lang} slides={tourSlides} onClose={closeTour} go={go} />}
+      </AnimatePresence>
       <MiniPlayer lang={lang} go={go} />
       <BottomNav view={view} go={go} lang={lang} />
     </>

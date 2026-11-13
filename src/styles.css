@@ -682,3 +682,19 @@ button.chip.on { background: #7b6fd6; color: #fff; }
 .ms-chip.tip { background: var(--mist-2); }
 .ms-note.tip { border: 1px dashed var(--care-line); }
 .ms-past { margin-top: 16px; }
+
+/* ---------- Giro delle funzioni ---------- */
+.tour-recall-wrap { display: flex; justify-content: center; margin-top: 22px; }
+.tour-recall { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: transparent;
+  border: 1.5px solid var(--ink-faint); color: var(--ink-soft); font-size: .85rem; min-height: 40px; }
+.tour-recall span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--lav); color: var(--ink); font-weight: 700; font-size: .8rem; }
+.night .tour-recall { color: #dfe2f5; border-color: #8f93bd; }
+.tour-scrim { position: fixed; inset: 0; z-index: 80; display: flex; align-items: flex-end; justify-content: center; background: rgba(30, 31, 70, .5); padding: 12px; }
+.tour-sheet { width: 100%; max-width: 480px; max-height: calc(100dvh - 24px); overflow-y: auto; background: var(--paper); color: var(--ink);
+  border-radius: 28px; padding: 16px 18px calc(18px + env(safe-area-inset-bottom)); box-shadow: 0 20px 50px rgba(20, 20, 60, .35); outline: none; }
+.tour-top { display: flex; align-items: center; justify-content: space-between; min-height: 40px; }
+.tour-slide { text-align: center; padding: 6px 4px 4px; min-height: 250px; }
+.tour-art { display: grid; place-items: center; height: 120px; }
+.tour-slide h2 { margin: 6px 0 8px; }
+.tour-slide p { margin: 0 0 12px; line-height: 1.5; color: var(--ink-soft); }
+.tour-sheet .dots { margin: 8px 0 12px; }
